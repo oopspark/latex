@@ -1,0 +1,188 @@
+% 패키지 불러오기
+\usepackage{kotex}           % 한글
+\newfontfamily\hanjafont{Noto Serif CJK KR}  % 예: 윈도우 내장 중국어 폰트
+\usepackage[a4paper,
+  left=30mm,
+  right=25mm,
+  top=30mm,
+  bottom=30mm,
+  includeheadfoot]{geometry}
+
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{array}
+\usepackage{booktabs} 
+
+\usepackage{makecell}
+\usepackage[table]{xcolor} % 색상 패키지
+
+\usepackage{indentfirst}
+
+
+\usepackage{tabularx}
+% \usepackage{ltablex} % tabularx의 확장판
+% \keepXColumns % 중복 방지
+
+% 열 정의: X열을 포함해서 자동 너비 분배 + 회색 배경 열 정의
+% \newcolumntype{C}{>{\columncolor{gray!20}}c}  % 고정폭 회색열
+\newcolumntype{Y}{>{\centering \arraybackslash}X}  % 가변폭 열 (tabularx 전용)
+
+\renewcommand{\arraystretch}{1.5}
+
+
+
+\usepackage{pgfkeys}
+\usepackage{csvsimple}
+
+  % 여백
+\usepackage{setspace}     
+
+
+\usepackage{lmodern}
+\usepackage{xparse}
+\usepackage{expl3}
+
+\usepackage{fancyhdr}           % 머리말/꼬리말
+\usepackage{graphicx}           % 이미지
+\usepackage{amsmath,amssymb}    % 수학
+
+
+\usepackage[
+  backend=biber
+  ,style=authoryear
+  ,language=korean
+  ]{biblatex}
+
+
+\addbibresource{data/references.bib} % .bib 파일 연결
+
+
+% 폰트 설정 (XeLaTeX인 경우)
+% \usepackage{fontspec}
+\setmainfont{나눔명조OTF}[
+  BoldFont = 나눔명조OTF Bold]
+
+
+% \renewcommand{\contentsname}{} %  빈칸으로 (아예 안 보이게)
+\renewcommand{\chaptername}{제~\thechapter~장} % "제 1 장" 처럼 출력
+
+
+\usepackage{titlesec}
+
+% 챕터 제목 크기 및 스타일 변경
+\titleformat{\chapter}[hang] % display: 별도 줄에 크게
+  {\normalfont\Large\bfseries\centering}   % 글꼴: 기본, Huge 크기, 굵게
+  {\chaptername }   % 번호 앞에 'Chapter' 붙이기 (영어 기준)
+  {20pt}                        % 번호와 제목 사이 간격
+  {}                       % 제목 글꼴 (추가 설정)
+
+% 섹션 제목 크기 및 스타일 변경
+\renewcommand{\thesection}{\arabic{section}}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries}      % 글꼴
+  {제~\thesection~절}                    % 번호 스타일 (여기서 '1.'처럼 점 붙임)
+  {1em}                            % 번호와 제목 사이 간격
+  {}
+
+
+% 서브섹션 제목 크기 및 스타일 변경
+\renewcommand{\thesubsection}{\arabic{subsection}}
+
+\titleformat{\subsection}
+  {\normalfont\large\bfseries} % 기본 크기, 굵게
+  {\thesubsection .}
+  {1em}
+  {}
+
+
+
+
+\renewcommand{\contentsname}{목 차}
+
+% \renewcommand{\figurename}{그림}
+% \renewcommand{\tablename}{표}
+\renewcommand{\listfigurename}{그림 목차}
+\renewcommand{\listtablename}{표 목차}
+
+
+
+\usepackage{caption}
+
+\DeclareCaptionLabelFormat{brackets}{[#1~#2]}
+
+\captionsetup{
+  labelformat=brackets,
+  labelsep=space,
+  format=hang,
+  font=normalsize
+}
+
+\captionsetup[figure]{name=그림}
+\captionsetup[table]{name=표}
+
+
+
+\makeatletter
+\spaceskip=0.7em plus 0.2em minus 0.2em
+\makeatother
+
+
+\titlespacing*{\chapter}{0pt}{0pt}{80pt}
+
+
+  % 들여쓰기 없음
+\setlength{\parskip}{0pt}       % 문단 간격
+\linespread{1.5}            % 1.5줄 간격
+
+
+\usepackage{tocloft}
+
+\renewcommand{\cftchapfont}{\Large\bfseries} % 목차에서 chapter 글씨 크기, 굵게
+\renewcommand{\cftsecfont}{\large}            % 목차에서 section 글씨 크기
+\renewcommand{\cftsubsecfont}{\normalsize}    % 목차에서 subsection 글씨 크기
+
+
+\renewcommand{\cftchappagefont}{\Large}  % chapter 페이지 번호 크기
+\renewcommand{\cftsecpagefont}{\large}   % section 페이지 번호 크기
+\renewcommand{\cftsubsecpagefont}{\normalsize} % subsection 페이지 번호 크
+
+
+% 목차 항목 간 행간 간격 조절
+\setlength{\cftbeforechapskip}{10pt}   % 챕터 항목 위 간격 (행간)
+\setlength{\cftbeforesecskip}{5pt}     % 섹션 항목 위 간격
+\setlength{\cftbeforesubsecskip}{0pt}  % 서브섹션 항목 위 간격
+
+
+
+
+% \makeatletter
+% \patchcmd{\@makechapterhead}{50\p@}{0pt}{}{}
+% \patchcmd{\@makeschapterhead}{50\p@}{0pt}{}{}
+% \makeatother
+
+
+
+
+
+
+\usepackage{etoolbox}
+
+\usepackage{etoc}
+
+% 목차 제목 글꼴/크기 변경 예시 (글꼴 크기와 굵기 조정)
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\tableofcontents}
+  {\chapter*{\contentsname}}% 원래 코드
+  {\chapter*{\fontsize{20}{24}\selectfont\bfseries\centering 목차}}% 중앙정렬 추가
+  {}{}
+\patchcmd{\listoffigures}
+  {\chapter*{\listfigurename}}
+  {\chapter*{\fontsize{18}{22}\selectfont\bfseries\centering 그림 목록}}% 중앙정렬 추가
+  {}{}
+\patchcmd{\listoftables}
+  {\chapter*{\listtablename}}
+  {\chapter*{\fontsize{18}{22}\selectfont\bfseries\centering 표 목록}}% 중앙정렬 추가
+  {}{}
+\makeatother

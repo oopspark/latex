@@ -1,0 +1,40 @@
+# LaTeX intermediate files
+*.aux
+*.bbl
+*.blg
+*.brf
+*.fls
+*.fdb_latexmk
+*.log
+*.nav
+*.out
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+*.xdv
+
+*.bcf
+*.lof
+*.lot
+*.run.xml
+
+# PDF output (optional — keep if you're not tracking compiled output)
+*.pdf
+
+# Editor swap/backup files
+*~
+*.swp
+*.bak
+*.tmp
+*.backup
+
+# Mac OS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# TeXShop
+*.synctex
+*.synctex.gz(busy)
