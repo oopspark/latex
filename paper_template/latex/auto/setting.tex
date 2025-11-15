@@ -1,6 +1,6 @@
 % 패키지 불러오기
-\usepackage{kotex}           % 한글
-\newfontfamily\hanjafont{Noto Serif CJK KR}  % 예: 윈도우 내장 중국어 폰트
+\usepackage{xeCJK}           % 한글
+\newfontfamily\hanjafont{NotoSerifTC-Medium}  % 예: 윈도우 내장 중국어 폰트
 \usepackage[a4paper,
   left=30mm,
   right=25mm,
@@ -59,9 +59,10 @@
 
 % 폰트 설정 (XeLaTeX인 경우)
 % \usepackage{fontspec}
-\setmainfont{나눔명조OTF}[
-  BoldFont = 나눔명조OTF Bold]
+\setmainfont{NanumMyeongjo}[
+  BoldFont = NanumMyeongjoBold]
 
+\setCJKmainfont{Noto Serif CJK KR} % 한자 fallback
 
 % \renewcommand{\contentsname}{} %  빈칸으로 (아예 안 보이게)
 \renewcommand{\chaptername}{제~\thechapter~장} % "제 1 장" 처럼 출력
