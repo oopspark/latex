@@ -1,6 +1,19 @@
-% 패키지 불러오기
-\usepackage{xeCJK}           % 한글
-\newfontfamily\hanjafont{NotoSerifTC-Medium}  % 예: 윈도우 내장 중국어 폰트
+% ─────────────────────────────────────────────
+% 1) 글꼴 및 한글 설정 (XeLaTeX 전용)
+% ─────────────────────────────────────────────
+\usepackage{fontspec}
+\usepackage{xeCJK}
+
+% 기본 폰트 설정
+\setmainfont{NanumMyeongjo}[
+  BoldFont = NanumMyeongjoBold
+]
+
+\setCJKmainfont{Noto Serif CJK KR}
+
+% ─────────────────────────────────────────────
+% 2) 여백 및 문서 스타일
+% ─────────────────────────────────────────────
 \usepackage[a4paper,
   left=30mm,
   right=25mm,
@@ -8,106 +21,80 @@
   bottom=30mm,
   includeheadfoot]{geometry}
 
+\usepackage{setspace}
+\linespread{1.5}
+
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{2em}
+
+% ─────────────────────────────────────────────
+% 3) 표 관련 패키지
+% ─────────────────────────────────────────────
 \usepackage{multirow}
 \usepackage{hhline}
 \usepackage{array}
-\usepackage{booktabs} 
-
+\usepackage{booktabs}
 \usepackage{makecell}
-\usepackage[table]{xcolor} % 색상 패키지
-
-\usepackage{indentfirst}
-
+\usepackage[table]{xcolor}
 
 \usepackage{tabularx}
-% \usepackage{ltablex} % tabularx의 확장판
-% \keepXColumns % 중복 방지
-
-% 열 정의: X열을 포함해서 자동 너비 분배 + 회색 배경 열 정의
-% \newcolumntype{C}{>{\columncolor{gray!20}}c}  % 고정폭 회색열
-\newcolumntype{Y}{>{\centering \arraybackslash}X}  % 가변폭 열 (tabularx 전용)
-
+\newcolumntype{Y}{>{\centering\arraybackslash}X} % tabularx 용 중앙 정렬 컬럼
 \renewcommand{\arraystretch}{1.5}
 
+% ─────────────────────────────────────────────
+% 4) 그림/수식/헤더
+% ─────────────────────────────────────────────
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{fancyhdr}
 
-
-\usepackage{pgfkeys}
-\usepackage{csvsimple}
-
-  % 여백
-\usepackage{setspace}     
-
-
-\usepackage{lmodern}
-\usepackage{xparse}
-\usepackage{expl3}
-
-\usepackage{fancyhdr}           % 머리말/꼬리말
-\usepackage{graphicx}           % 이미지
-\usepackage{amsmath,amssymb}    % 수학
-
-
+% ─────────────────────────────────────────────
+% 5) 참고문헌 (biblatex + biber)
+% ─────────────────────────────────────────────
 \usepackage[
-  backend=biber
-  ,style=authoryear
-  ,language=korean
-  ]{biblatex}
+  backend=biber,
+  style=authoryear,
+  language=korean
+]{biblatex}
 
+\addbibresource{data/references.bib}
 
-\addbibresource{data/references.bib} % .bib 파일 연결
-
-
-% 폰트 설정 (XeLaTeX인 경우)
-% \usepackage{fontspec}
-\setmainfont{NanumMyeongjo}[
-  BoldFont = NanumMyeongjoBold]
-
-\setCJKmainfont{Noto Serif CJK KR} % 한자 fallback
-
-% \renewcommand{\contentsname}{} %  빈칸으로 (아예 안 보이게)
-\renewcommand{\chaptername}{제~\thechapter~장} % "제 1 장" 처럼 출력
-
-
+% ─────────────────────────────────────────────
+% 6) 챕터/섹션 제목 설정 (titlesec)
+% ─────────────────────────────────────────────
 \usepackage{titlesec}
 
-% 챕터 제목 크기 및 스타일 변경
-\titleformat{\chapter}[hang] % display: 별도 줄에 크게
-  {\normalfont\Large\bfseries\centering}   % 글꼴: 기본, Huge 크기, 굵게
-  {\chaptername }   % 번호 앞에 'Chapter' 붙이기 (영어 기준)
-  {20pt}                        % 번호와 제목 사이 간격
-  {}                       % 제목 글꼴 (추가 설정)
+\renewcommand{\chaptername}{제~\thechapter~장}
 
-% 섹션 제목 크기 및 스타일 변경
-\renewcommand{\thesection}{\arabic{section}}
-
-\titleformat{\section}
-  {\normalfont\Large\bfseries}      % 글꼴
-  {제~\thesection~절}                    % 번호 스타일 (여기서 '1.'처럼 점 붙임)
-  {1em}                            % 번호와 제목 사이 간격
+% Chapter 제목
+\titleformat{\chapter}[hang]
+  {\normalfont\Large\bfseries\centering}
+  {\chaptername}
+  {20pt}
   {}
 
+% Section 제목
+\renewcommand{\thesection}{\arabic{section}}
+\titleformat{\section}
+  {\normalfont\Large\bfseries}
+  {제~\thesection~절}
+  {1em}
+  {}
 
-% 서브섹션 제목 크기 및 스타일 변경
+% Subsection 제목
 \renewcommand{\thesubsection}{\arabic{subsection}}
-
 \titleformat{\subsection}
-  {\normalfont\large\bfseries} % 기본 크기, 굵게
+  {\normalfont\large\bfseries}
   {\thesubsection .}
   {1em}
   {}
 
+% Chapter titlespacing
+\titlespacing*{\chapter}{0pt}{0pt}{80pt}
 
-
-
-\renewcommand{\contentsname}{목 차}
-
-% \renewcommand{\figurename}{그림}
-% \renewcommand{\tablename}{표}
-\renewcommand{\listfigurename}{그림 목차}
-\renewcommand{\listtablename}{표 목차}
-
-
-
+% ─────────────────────────────────────────────
+% 7) 캡션 설정 (figure/table)
+% ─────────────────────────────────────────────
 \usepackage{caption}
 
 \DeclareCaptionLabelFormat{brackets}{[#1~#2]}
@@ -122,68 +109,42 @@
 \captionsetup[figure]{name=그림}
 \captionsetup[table]{name=표}
 
-
-
-\makeatletter
-\spaceskip=0.7em plus 0.2em minus 0.2em
-\makeatother
-
-
-\titlespacing*{\chapter}{0pt}{0pt}{80pt}
-
-
-  % 들여쓰기 없음
-\setlength{\parskip}{0pt}       % 문단 간격
-\linespread{1.5}            % 1.5줄 간격
-
-
+% ─────────────────────────────────────────────
+% 8) 목차(toC), 그림목차, 표목차 (tocloft만 사용)
+% ─────────────────────────────────────────────
 \usepackage{tocloft}
 
-\renewcommand{\cftchapfont}{\Large\bfseries} % 목차에서 chapter 글씨 크기, 굵게
-\renewcommand{\cftsecfont}{\large}            % 목차에서 section 글씨 크기
-\renewcommand{\cftsubsecfont}{\normalsize}    % 목차에서 subsection 글씨 크기
+\renewcommand{\contentsname}{목 차}
+\renewcommand{\listfigurename}{그림 목차}
+\renewcommand{\listtablename}{표 목차}
 
+% 목차 글꼴
+\renewcommand{\cftchapfont}{\Large\bfseries}
+\renewcommand{\cftsecfont}{\large}
+\renewcommand{\cftsubsecfont}{\normalsize}
 
-\renewcommand{\cftchappagefont}{\Large}  % chapter 페이지 번호 크기
-\renewcommand{\cftsecpagefont}{\large}   % section 페이지 번호 크기
-\renewcommand{\cftsubsecpagefont}{\normalsize} % subsection 페이지 번호 크
+\renewcommand{\cftchappagefont}{\Large}
+\renewcommand{\cftsecpagefont}{\large}
+\renewcommand{\cftsubsecpagefont}{\normalsize}
 
+% 목차 간격
+\setlength{\cftbeforechapskip}{10pt}
+\setlength{\cftbeforesecskip}{5pt}
+\setlength{\cftbeforesubsecskip}{0pt}
 
-% 목차 항목 간 행간 간격 조절
-\setlength{\cftbeforechapskip}{10pt}   % 챕터 항목 위 간격 (행간)
-\setlength{\cftbeforesecskip}{5pt}     % 섹션 항목 위 간격
-\setlength{\cftbeforesubsecskip}{0pt}  % 서브섹션 항목 위 간격
-
-
-
-
-% \makeatletter
-% \patchcmd{\@makechapterhead}{50\p@}{0pt}{}{}
-% \patchcmd{\@makeschapterhead}{50\p@}{0pt}{}{}
-% \makeatother
-
-
-
-
-
-
-\usepackage{etoolbox}
-
-\usepackage{etoc}
-
-% 목차 제목 글꼴/크기 변경 예시 (글꼴 크기와 굵기 조정)
+% 목차 제목 커스텀
 \usepackage{etoolbox}
 \makeatletter
 \patchcmd{\tableofcontents}
-  {\chapter*{\contentsname}}% 원래 코드
-  {\chapter*{\fontsize{20}{24}\selectfont\bfseries\centering 목차}}% 중앙정렬 추가
+  {\chapter*{\contentsname}}
+  {\chapter*{\fontsize{20}{24}\selectfont\bfseries\centering 목차}}
   {}{}
 \patchcmd{\listoffigures}
   {\chapter*{\listfigurename}}
-  {\chapter*{\fontsize{18}{22}\selectfont\bfseries\centering 그림 목록}}% 중앙정렬 추가
+  {\chapter*{\fontsize{18}{22}\selectfont\bfseries\centering 그림 목록}}
   {}{}
 \patchcmd{\listoftables}
   {\chapter*{\listtablename}}
-  {\chapter*{\fontsize{18}{22}\selectfont\bfseries\centering 표 목록}}% 중앙정렬 추가
+  {\chapter*{\fontsize{18}{22}\selectfont\bfseries\centering 표 목록}}
   {}{}
 \makeatother
