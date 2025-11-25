@@ -3,6 +3,11 @@
 
 %%%%%%%%%%%% basic_info
 
+% Ensure \CJKfont is defined (some templates use it to switch CJK glyphs).
+% If a more specific font-switch is desired, replace this with a proper
+% \newcommand{\CJKfont}{...} or a \newCJKfontfamily call in the preamble.
+\providecommand{\CJKfont}{}
+
 \newcommand{\authorname}{박지민} % basic_info.authorname
 \newcommand{\authornameen}{Park Ji Min} % basic_info.authorname_en
 \newcommand{\studentnumber}{2025-20181} % basic_info.student_number
