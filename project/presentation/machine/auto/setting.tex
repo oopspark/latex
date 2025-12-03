@@ -72,12 +72,12 @@
         rectangle ($(current page.south east) + (0,#1pt)$);
     \end{tikzpicture}
 
-    % 중앙 세로 하이라이트 선 (바 폭에 따라 이동)
+    % 중앙 가로 하이라이트 선 (바 폭에 따라 이동)
     \begin{tikzpicture}[remember picture,overlay]
       \draw[line width=1pt, white, line cap=round]
-        ($(current page.center) + (0.75\textheight, #1pt - 145pt)$)
+        ($(current page.center) + (0.72\textheight, #1pt - 145pt)$)
         --
-        ($(current page.center) + (-0.75\textheight, #1pt - 145pt)$);
+        ($(current page.center) + (-0.72\textheight, #1pt - 145pt)$);
     \end{tikzpicture}
   }%
 }
