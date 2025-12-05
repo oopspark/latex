@@ -23,53 +23,54 @@
 \slide
 {\maintitle}
 {\chapterone}
-{콩 수급현황}{
+{콩 수급방정식}{
 \hfill \normalsize (단위: 1,000톤)
 \large{
 \begin{center}
 \renewcommand{\arraystretch}{1} 
-\begin{tabularx}{\textwidth}{c|c|c|c|Y|Y}
+\begin{tabularx}{\textwidth}{c|Y|c|Y|Y|Y}
 \hline
 \rowcolor{gray!30}
-연도 & 국내 생산량 & 국내 소비량 & 수출량 & 수입량 & 재고 변화량 \\
+연도 & 국내 생산량 & = & 국내 소비량 & 순수출량 & 재고 변화량 \\
 \hline\hline
 % 여기부터 CSV 데이터 행 자동 삽입
 \csvreader[
   late after line=\\\hline
-]{asset/콩_수급균형.csv}{}{% head to column names 제거, 인덱스 기반 컬럼 사용
-  \csvcoli & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi
+]{asset/콩_수급균형_modified.csv}{}{% head to column names 제거, 인덱스 기반 컬럼 사용
+  \csvcoli & \csvcolii & = & \csvcoliii & \csvcoliv & \csvcolv 
 }
 \end{tabularx}
 \end{center}
 }
-\normalsize {출처: FAOSTAT} 
+\small {출처: FAOSTAT} \\ [5pt]
+{\large - 대외무역과 재고행위를 고려한 수급균형방정식 : \par
+\hspace{5pt} 국내 생산량 = 국내 소비량 + 순수출량 + 재고 변화량}
 }
 
 
 \slide
 {\maintitle}
 {\chapterone}
-{콩 수급방정식}{
+{콩 수급 변동 분석}{
 \hfill \normalsize (단위: 1,000톤)
 \large{
 \begin{center}
 \renewcommand{\arraystretch}{1} 
-\begin{tabularx}{\textwidth}{c|Y|Y|Y}
+\begin{tabularx}{\textwidth}{c|Y|c|Y|Y|Y}
 \hline
 \rowcolor{gray!30}
-연도 & Δ국내 수급량 & Δ순수출량 & Δ재고 변화량 \\
+연도 & Δ국내 생산량 & = & Δ국내 소비량 & Δ순수출량 & Δ재고 변화량 \\
 \hline\hline
 % 여기부터 CSV 데이터 행 자동 삽입
 \csvreader[
   late after line=\\\hline
 ]{asset/콩_수급균형_diff.csv}{}{% head to column names 제거, 인덱스 기반 컬럼 사용
-  \csvcoli & \csvcolii & \csvcoliii & \csvcoliv
+  \csvcoli & \csvcolii & = & \csvcoliii & \csvcoliv & \csvcolv
 }
 \end{tabularx}
 \end{center}
 }
-\normalsize { Δ국내 수급량 = Δ(국내 생산량 - 국내 소비량)} \\ [5pt]
-\normalsize {수급균형 방정식 : Δ국내 수급량 = Δ순수출량 + Δ재고 변화량}
+\normalsize { Δ국내 생산량 = Δ국내 소비량 + Δ순수출량 + Δ재고 변화량} 
 }
 
 
