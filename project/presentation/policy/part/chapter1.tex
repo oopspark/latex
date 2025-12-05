@@ -1,52 +1,110 @@
 
 
-\slideone
-{\maintitle}
-{\chapterone}
-{연구 개요}{
-• 연구 목적 \\
-• 주요 내용 \\
-• 기대 효과
-}
-
 \slide
 {\maintitle}
 {\chapterone}
-{결과}{
-\begin{figure}[ht]
-    \centering
-    \input{asset/chart_bar.pgf}
-\end{figure}
+{식량 자급률}{
 
+\begin{center}
+    \hspace*{-30pt}\resizebox{1.2\textwidth}{!}{\input{asset/식량_자급률_라인그래프.pgf}}
+\end{center}
 }
 
 
 \slide
 {\maintitle}
 {\chapterone}
-{연구 배경}
-{
-\begin{minipage}[c]{0.7\textwidth}
-    \includegraphics[width=0.6\textwidth]{샤_벡터.png}
-\end{minipage}
-\hfill
-\begin{minipage}[c]{0.3\textwidth}
-    {\textbf{제목}}\par
-    \vspace{8mm}
-    {내용 내용 내용 내용 내용 내용}
-\end{minipage}
+{콩 자급률}{
+\begin{center}
+    \hspace*{-35pt}\resizebox{1.2\textwidth}{!}{\input{asset/콩_자급률_라인그래프.pgf}}
+\end{center}
 }
 
 \slide
 {\maintitle}
 {\chapterone}
-{연구 방법}{
-• 데이터 수집 \\
-• 모델 구조 \\
-• 실험 조건
+{콩 수급현황}{
+\hfill \normalsize (단위: 1,000톤)
+\large{
+\begin{center}
+\renewcommand{\arraystretch}{1} 
+\begin{tabularx}{\textwidth}{c|c|c|c|Y|Y}
+\hline
+\rowcolor{gray!30}
+연도 & 국내 생산량 & 국내 소비량 & 수출량 & 수입량 & 재고 변화량 \\
+\hline\hline
+% 여기부터 CSV 데이터 행 자동 삽입
+\csvreader[
+  late after line=\\\hline
+]{asset/콩_수급균형.csv}{}{% head to column names 제거, 인덱스 기반 컬럼 사용
+  \csvcoli & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi
+}
+\end{tabularx}
+\end{center}
+}
+\normalsize {출처: FAOSTAT} 
 }
 
-% \slideA{결과}{
-% • 성능 지표 \\
-% • 핵심 결과 요약
-% }
+
+\slide
+{\maintitle}
+{\chapterone}
+{콩 수급방정식}{
+\hfill \normalsize (단위: 1,000톤)
+\large{
+\begin{center}
+\renewcommand{\arraystretch}{1} 
+\begin{tabularx}{\textwidth}{c|Y|Y|Y}
+\hline
+\rowcolor{gray!30}
+연도 & Δ국내 수급량 & Δ순수출량 & Δ재고 변화량 \\
+\hline\hline
+% 여기부터 CSV 데이터 행 자동 삽입
+\csvreader[
+  late after line=\\\hline
+]{asset/콩_수급균형_diff.csv}{}{% head to column names 제거, 인덱스 기반 컬럼 사용
+  \csvcoli & \csvcolii & \csvcoliii & \csvcoliv
+}
+\end{tabularx}
+\end{center}
+}
+\normalsize { Δ국내 수급량 = Δ(국내 생산량 - 국내 소비량)} \\ [5pt]
+\normalsize {수급균형 방정식 : Δ국내 수급량 = Δ순수출량 + Δ재고 변화량}
+}
+
+
+\slide
+{\maintitle}
+{\chapterone}
+{국내 콩 생산량}{
+\begin{center}
+    \hspace*{-55pt}\resizebox{1.5\textwidth}{!}{\input{asset/콩_생산량_전국.pgf}}
+\end{center}
+}
+
+\slide
+{\maintitle}
+{\chapterone}
+{국내 콩 생산량}{
+\begin{center}
+    \hspace*{-55pt}\resizebox{1.5\textwidth}{!}{\input{asset/콩_지역별_생산량.pgf}}
+\end{center}
+}
+
+\slide
+{\maintitle}
+{\chapterone}
+{국내 콩 생산면적}{
+\begin{center}
+    \hspace*{-55pt}\resizebox{1.5\textwidth}{!}{\input{asset/콩_면적_전국.pgf}}
+\end{center}
+}
+
+\slide
+{\maintitle}
+{\chapterone}
+{국내 콩 생산면적}{
+\begin{center}
+    \hspace*{-55pt}\resizebox{1.5\textwidth}{!}{\input{asset/콩_지역별_면적.pgf}}
+\end{center}
+}
