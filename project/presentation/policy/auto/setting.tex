@@ -22,7 +22,10 @@
 \usepackage{csvsimple}
 \usepackage{tabularx}
 \usepackage[table]{xcolor}
+\usepackage{multirow}
 
+
+\usepackage[most]{tcolorbox}
 
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
 
@@ -107,14 +110,24 @@
 \newpage
 \SlideBorderHor{250}
 
-\small {\hfill {\textcolor{white}{#1}}}
-\\[-\dimexpr \firstgap pt -12pt \relax]
+\small {\hfill {\textcolor{white}{#1}}
+\\[-\dimexpr \firstgap pt -12pt \relax]}
 
-\LARGE \textcolor{white}{\textbf{#3}} \hfill \raisebox{-2pt}{{\large \textcolor{white}{#2}}}
+\LARGE {\textcolor{white}{\textbf{#3}} \hfill \raisebox{-2pt}{{\large \textcolor{white}{#2}}}
+}
+\vfill
+\Large {#4}
+\vfill
+}
 
-\vfill
-\Large #4
-\vfill
+
+\newcommand{\intro}[1]{%
+\newpage
+\SlideBorderHor{0}
+\vspace*{0.38\textheight}
+\begin{center}
+\Huge \textcolor{white}{\textbf {#1}}
+\end{center}
 }
 
 

@@ -22,9 +22,9 @@
 %%   \def\mathdefault#1{#1}
 %%   \everymath=\expandafter{\the\everymath\displaystyle}
 %%   \IfFileExists{scrextend.sty}{
-%%     \usepackage[fontsize=5.000000pt]{scrextend}
+%%     \usepackage[fontsize=9.000000pt]{scrextend}
 %%   }{
-%%     \renewcommand{\normalsize}{\fontsize{5.000000}{6.000000}\selectfont}
+%%     \renewcommand{\normalsize}{\fontsize{9.000000}{10.800000}\selectfont}
 %%     \normalsize
 %%   }
 %%   
@@ -39,7 +39,7 @@
 \begingroup%
 \makeatletter%
 \begin{pgfpicture}%
-\pgfpathrectangle{\pgfpointorigin}{\pgfqpoint{5.555556in}{2.777778in}}%
+\pgfpathrectangle{\pgfpointorigin}{\pgfqpoint{6.250000in}{3.194444in}}%
 \pgfusepath{use as bounding box, clip}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -51,9 +51,9 @@
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{0.000000in}{0.000000in}}%
-\pgfpathlineto{\pgfqpoint{5.555556in}{0.000000in}}%
-\pgfpathlineto{\pgfqpoint{5.555556in}{2.777778in}}%
-\pgfpathlineto{\pgfqpoint{0.000000in}{2.777778in}}%
+\pgfpathlineto{\pgfqpoint{6.250000in}{0.000000in}}%
+\pgfpathlineto{\pgfqpoint{6.250000in}{3.194444in}}%
+\pgfpathlineto{\pgfqpoint{0.000000in}{3.194444in}}%
 \pgfpathlineto{\pgfqpoint{0.000000in}{0.000000in}}%
 \pgfpathclose%
 \pgfusepath{fill}%
@@ -68,11 +68,11 @@
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetstrokeopacity{0.000000}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{0.694444in}{0.555556in}}%
-\pgfpathlineto{\pgfqpoint{4.444444in}{0.555556in}}%
-\pgfpathlineto{\pgfqpoint{4.444444in}{2.444444in}}%
-\pgfpathlineto{\pgfqpoint{0.694444in}{2.444444in}}%
-\pgfpathlineto{\pgfqpoint{0.694444in}{0.555556in}}%
+\pgfpathmoveto{\pgfqpoint{0.781250in}{0.638889in}}%
+\pgfpathlineto{\pgfqpoint{5.000000in}{0.638889in}}%
+\pgfpathlineto{\pgfqpoint{5.000000in}{2.811111in}}%
+\pgfpathlineto{\pgfqpoint{0.781250in}{2.811111in}}%
+\pgfpathlineto{\pgfqpoint{0.781250in}{0.638889in}}%
 \pgfpathclose%
 \pgfusepath{fill}%
 \end{pgfscope}%
@@ -91,7 +91,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{0.864899in}{0.555556in}%
+\pgfsys@transformshift{0.973011in}{0.638889in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -99,7 +99,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.864899in,y=0.493056in,,top]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2010}}%
+\pgftext[x=0.903138in, y=0.315885in, left, base,rotate=45.000000]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2010}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -116,7 +116,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{1.108405in}{0.555556in}%
+\pgfsys@transformshift{1.246956in}{0.638889in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -124,7 +124,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=1.108405in,y=0.493056in,,top]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2011}}%
+\pgftext[x=1.177083in, y=0.315885in, left, base,rotate=45.000000]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2011}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -141,7 +141,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{1.351912in}{0.555556in}%
+\pgfsys@transformshift{1.520901in}{0.638889in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -149,7 +149,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=1.351912in,y=0.493056in,,top]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2012}}%
+\pgftext[x=1.451028in, y=0.315885in, left, base,rotate=45.000000]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2012}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -166,7 +166,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{1.595418in}{0.555556in}%
+\pgfsys@transformshift{1.794846in}{0.638889in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -174,7 +174,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=1.595418in,y=0.493056in,,top]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2013}}%
+\pgftext[x=1.724972in, y=0.315885in, left, base,rotate=45.000000]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2013}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -191,7 +191,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{1.838925in}{0.555556in}%
+\pgfsys@transformshift{2.068791in}{0.638889in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -199,7 +199,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=1.838925in,y=0.493056in,,top]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2014}}%
+\pgftext[x=1.998917in, y=0.315885in, left, base,rotate=45.000000]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2014}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -216,7 +216,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{2.082431in}{0.555556in}%
+\pgfsys@transformshift{2.342735in}{0.638889in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -224,7 +224,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.082431in,y=0.493056in,,top]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2015}}%
+\pgftext[x=2.272862in, y=0.315885in, left, base,rotate=45.000000]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2015}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -241,7 +241,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{2.325938in}{0.555556in}%
+\pgfsys@transformshift{2.616680in}{0.638889in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -249,7 +249,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.325938in,y=0.493056in,,top]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2016}}%
+\pgftext[x=2.546807in, y=0.315885in, left, base,rotate=45.000000]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2016}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -266,7 +266,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{2.569444in}{0.555556in}%
+\pgfsys@transformshift{2.890625in}{0.638889in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -274,7 +274,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.569444in,y=0.493056in,,top]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2017}}%
+\pgftext[x=2.820752in, y=0.315885in, left, base,rotate=45.000000]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2017}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -291,7 +291,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{2.812951in}{0.555556in}%
+\pgfsys@transformshift{3.164570in}{0.638889in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -299,7 +299,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.812951in,y=0.493056in,,top]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2018}}%
+\pgftext[x=3.094696in, y=0.315885in, left, base,rotate=45.000000]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2018}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -316,7 +316,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{3.056457in}{0.555556in}%
+\pgfsys@transformshift{3.438515in}{0.638889in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -324,7 +324,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=3.056457in,y=0.493056in,,top]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2019}}%
+\pgftext[x=3.368641in, y=0.315885in, left, base,rotate=45.000000]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2019}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -341,7 +341,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{3.299964in}{0.555556in}%
+\pgfsys@transformshift{3.712459in}{0.638889in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -349,7 +349,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=3.299964in,y=0.493056in,,top]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2020}}%
+\pgftext[x=3.642586in, y=0.315885in, left, base,rotate=45.000000]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2020}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -366,7 +366,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{3.543470in}{0.555556in}%
+\pgfsys@transformshift{3.986404in}{0.638889in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -374,7 +374,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=3.543470in,y=0.493056in,,top]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2021}}%
+\pgftext[x=3.916531in, y=0.315885in, left, base,rotate=45.000000]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2021}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -391,7 +391,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{3.786977in}{0.555556in}%
+\pgfsys@transformshift{4.260349in}{0.638889in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -399,7 +399,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=3.786977in,y=0.493056in,,top]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2022}}%
+\pgftext[x=4.190476in, y=0.315885in, left, base,rotate=45.000000]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2022}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -416,7 +416,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{4.030483in}{0.555556in}%
+\pgfsys@transformshift{4.534294in}{0.638889in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -424,7 +424,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=4.030483in,y=0.493056in,,top]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2023}}%
+\pgftext[x=4.464420in, y=0.315885in, left, base,rotate=45.000000]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2023}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -441,7 +441,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{4.273990in}{0.555556in}%
+\pgfsys@transformshift{4.808239in}{0.638889in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -449,10 +449,10 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=4.273990in,y=0.493056in,,top]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2024}}%
+\pgftext[x=4.738365in, y=0.315885in, left, base,rotate=45.000000]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}2024}}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.694444in}{0.555556in}}{\pgfqpoint{3.750000in}{1.888889in}}%
+\pgfpathrectangle{\pgfqpoint{0.781250in}{0.638889in}}{\pgfqpoint{4.218750in}{2.172222in}}%
 \pgfusepath{clip}%
 \pgfsetbuttcap%
 \pgfsetroundjoin%
@@ -461,8 +461,8 @@
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetstrokeopacity{0.400000}%
 \pgfsetdash{{2.220000pt}{0.960000pt}}{0.000000pt}%
-\pgfpathmoveto{\pgfqpoint{0.694444in}{0.555556in}}%
-\pgfpathlineto{\pgfqpoint{4.444444in}{0.555556in}}%
+\pgfpathmoveto{\pgfqpoint{0.781250in}{0.638889in}}%
+\pgfpathlineto{\pgfqpoint{5.000000in}{0.638889in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -480,7 +480,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{0.694444in}{0.555556in}%
+\pgfsys@transformshift{0.781250in}{0.638889in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -488,10 +488,10 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.594645in, y=0.527818in, left, base]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}0}}%
+\pgftext[x=0.651611in, y=0.588962in, left, base]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}0}}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.694444in}{0.555556in}}{\pgfqpoint{3.750000in}{1.888889in}}%
+\pgfpathrectangle{\pgfqpoint{0.781250in}{0.638889in}}{\pgfqpoint{4.218750in}{2.172222in}}%
 \pgfusepath{clip}%
 \pgfsetbuttcap%
 \pgfsetroundjoin%
@@ -500,8 +500,8 @@
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetstrokeopacity{0.400000}%
 \pgfsetdash{{2.220000pt}{0.960000pt}}{0.000000pt}%
-\pgfpathmoveto{\pgfqpoint{0.694444in}{0.765432in}}%
-\pgfpathlineto{\pgfqpoint{4.444444in}{0.765432in}}%
+\pgfpathmoveto{\pgfqpoint{0.781250in}{0.880247in}}%
+\pgfpathlineto{\pgfqpoint{5.000000in}{0.880247in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -519,7 +519,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{0.694444in}{0.765432in}%
+\pgfsys@transformshift{0.781250in}{0.880247in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -527,10 +527,10 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.594645in, y=0.737695in, left, base]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}5}}%
+\pgftext[x=0.651611in, y=0.830320in, left, base]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}5}}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.694444in}{0.555556in}}{\pgfqpoint{3.750000in}{1.888889in}}%
+\pgfpathrectangle{\pgfqpoint{0.781250in}{0.638889in}}{\pgfqpoint{4.218750in}{2.172222in}}%
 \pgfusepath{clip}%
 \pgfsetbuttcap%
 \pgfsetroundjoin%
@@ -539,8 +539,8 @@
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetstrokeopacity{0.400000}%
 \pgfsetdash{{2.220000pt}{0.960000pt}}{0.000000pt}%
-\pgfpathmoveto{\pgfqpoint{0.694444in}{0.975309in}}%
-\pgfpathlineto{\pgfqpoint{4.444444in}{0.975309in}}%
+\pgfpathmoveto{\pgfqpoint{0.781250in}{1.121605in}}%
+\pgfpathlineto{\pgfqpoint{5.000000in}{1.121605in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -558,7 +558,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{0.694444in}{0.975309in}%
+\pgfsys@transformshift{0.781250in}{1.121605in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -566,10 +566,10 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.557346in, y=0.947572in, left, base]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}10}}%
+\pgftext[x=0.584473in, y=1.071678in, left, base]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}10}}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.694444in}{0.555556in}}{\pgfqpoint{3.750000in}{1.888889in}}%
+\pgfpathrectangle{\pgfqpoint{0.781250in}{0.638889in}}{\pgfqpoint{4.218750in}{2.172222in}}%
 \pgfusepath{clip}%
 \pgfsetbuttcap%
 \pgfsetroundjoin%
@@ -578,8 +578,8 @@
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetstrokeopacity{0.400000}%
 \pgfsetdash{{2.220000pt}{0.960000pt}}{0.000000pt}%
-\pgfpathmoveto{\pgfqpoint{0.694444in}{1.185185in}}%
-\pgfpathlineto{\pgfqpoint{4.444444in}{1.185185in}}%
+\pgfpathmoveto{\pgfqpoint{0.781250in}{1.362963in}}%
+\pgfpathlineto{\pgfqpoint{5.000000in}{1.362963in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -597,7 +597,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{0.694444in}{1.185185in}%
+\pgfsys@transformshift{0.781250in}{1.362963in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -605,10 +605,10 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.557346in, y=1.157448in, left, base]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}15}}%
+\pgftext[x=0.584473in, y=1.313036in, left, base]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}15}}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.694444in}{0.555556in}}{\pgfqpoint{3.750000in}{1.888889in}}%
+\pgfpathrectangle{\pgfqpoint{0.781250in}{0.638889in}}{\pgfqpoint{4.218750in}{2.172222in}}%
 \pgfusepath{clip}%
 \pgfsetbuttcap%
 \pgfsetroundjoin%
@@ -617,8 +617,8 @@
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetstrokeopacity{0.400000}%
 \pgfsetdash{{2.220000pt}{0.960000pt}}{0.000000pt}%
-\pgfpathmoveto{\pgfqpoint{0.694444in}{1.395062in}}%
-\pgfpathlineto{\pgfqpoint{4.444444in}{1.395062in}}%
+\pgfpathmoveto{\pgfqpoint{0.781250in}{1.604321in}}%
+\pgfpathlineto{\pgfqpoint{5.000000in}{1.604321in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -636,7 +636,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{0.694444in}{1.395062in}%
+\pgfsys@transformshift{0.781250in}{1.604321in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -644,10 +644,10 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.557346in, y=1.367325in, left, base]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}20}}%
+\pgftext[x=0.584473in, y=1.554394in, left, base]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}20}}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.694444in}{0.555556in}}{\pgfqpoint{3.750000in}{1.888889in}}%
+\pgfpathrectangle{\pgfqpoint{0.781250in}{0.638889in}}{\pgfqpoint{4.218750in}{2.172222in}}%
 \pgfusepath{clip}%
 \pgfsetbuttcap%
 \pgfsetroundjoin%
@@ -656,8 +656,8 @@
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetstrokeopacity{0.400000}%
 \pgfsetdash{{2.220000pt}{0.960000pt}}{0.000000pt}%
-\pgfpathmoveto{\pgfqpoint{0.694444in}{1.604938in}}%
-\pgfpathlineto{\pgfqpoint{4.444444in}{1.604938in}}%
+\pgfpathmoveto{\pgfqpoint{0.781250in}{1.845679in}}%
+\pgfpathlineto{\pgfqpoint{5.000000in}{1.845679in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -675,7 +675,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{0.694444in}{1.604938in}%
+\pgfsys@transformshift{0.781250in}{1.845679in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -683,10 +683,10 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.557346in, y=1.577201in, left, base]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}25}}%
+\pgftext[x=0.584473in, y=1.795752in, left, base]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}25}}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.694444in}{0.555556in}}{\pgfqpoint{3.750000in}{1.888889in}}%
+\pgfpathrectangle{\pgfqpoint{0.781250in}{0.638889in}}{\pgfqpoint{4.218750in}{2.172222in}}%
 \pgfusepath{clip}%
 \pgfsetbuttcap%
 \pgfsetroundjoin%
@@ -695,8 +695,8 @@
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetstrokeopacity{0.400000}%
 \pgfsetdash{{2.220000pt}{0.960000pt}}{0.000000pt}%
-\pgfpathmoveto{\pgfqpoint{0.694444in}{1.814815in}}%
-\pgfpathlineto{\pgfqpoint{4.444444in}{1.814815in}}%
+\pgfpathmoveto{\pgfqpoint{0.781250in}{2.087037in}}%
+\pgfpathlineto{\pgfqpoint{5.000000in}{2.087037in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -714,7 +714,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{0.694444in}{1.814815in}%
+\pgfsys@transformshift{0.781250in}{2.087037in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -722,10 +722,10 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.557346in, y=1.787078in, left, base]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}30}}%
+\pgftext[x=0.584473in, y=2.037110in, left, base]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}30}}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.694444in}{0.555556in}}{\pgfqpoint{3.750000in}{1.888889in}}%
+\pgfpathrectangle{\pgfqpoint{0.781250in}{0.638889in}}{\pgfqpoint{4.218750in}{2.172222in}}%
 \pgfusepath{clip}%
 \pgfsetbuttcap%
 \pgfsetroundjoin%
@@ -734,8 +734,8 @@
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetstrokeopacity{0.400000}%
 \pgfsetdash{{2.220000pt}{0.960000pt}}{0.000000pt}%
-\pgfpathmoveto{\pgfqpoint{0.694444in}{2.024691in}}%
-\pgfpathlineto{\pgfqpoint{4.444444in}{2.024691in}}%
+\pgfpathmoveto{\pgfqpoint{0.781250in}{2.328395in}}%
+\pgfpathlineto{\pgfqpoint{5.000000in}{2.328395in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -753,7 +753,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{0.694444in}{2.024691in}%
+\pgfsys@transformshift{0.781250in}{2.328395in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -761,10 +761,10 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.557346in, y=1.996954in, left, base]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}35}}%
+\pgftext[x=0.584473in, y=2.278468in, left, base]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}35}}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.694444in}{0.555556in}}{\pgfqpoint{3.750000in}{1.888889in}}%
+\pgfpathrectangle{\pgfqpoint{0.781250in}{0.638889in}}{\pgfqpoint{4.218750in}{2.172222in}}%
 \pgfusepath{clip}%
 \pgfsetbuttcap%
 \pgfsetroundjoin%
@@ -773,8 +773,8 @@
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetstrokeopacity{0.400000}%
 \pgfsetdash{{2.220000pt}{0.960000pt}}{0.000000pt}%
-\pgfpathmoveto{\pgfqpoint{0.694444in}{2.234568in}}%
-\pgfpathlineto{\pgfqpoint{4.444444in}{2.234568in}}%
+\pgfpathmoveto{\pgfqpoint{0.781250in}{2.569753in}}%
+\pgfpathlineto{\pgfqpoint{5.000000in}{2.569753in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -792,7 +792,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{0.694444in}{2.234568in}%
+\pgfsys@transformshift{0.781250in}{2.569753in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -800,10 +800,10 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.557346in, y=2.206831in, left, base]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}40}}%
+\pgftext[x=0.584473in, y=2.519826in, left, base]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}40}}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.694444in}{0.555556in}}{\pgfqpoint{3.750000in}{1.888889in}}%
+\pgfpathrectangle{\pgfqpoint{0.781250in}{0.638889in}}{\pgfqpoint{4.218750in}{2.172222in}}%
 \pgfusepath{clip}%
 \pgfsetbuttcap%
 \pgfsetroundjoin%
@@ -812,8 +812,8 @@
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetstrokeopacity{0.400000}%
 \pgfsetdash{{2.220000pt}{0.960000pt}}{0.000000pt}%
-\pgfpathmoveto{\pgfqpoint{0.694444in}{2.444444in}}%
-\pgfpathlineto{\pgfqpoint{4.444444in}{2.444444in}}%
+\pgfpathmoveto{\pgfqpoint{0.781250in}{2.811111in}}%
+\pgfpathlineto{\pgfqpoint{5.000000in}{2.811111in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -831,7 +831,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{0.694444in}{2.444444in}%
+\pgfsys@transformshift{0.781250in}{2.811111in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -839,10 +839,10 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.557346in, y=2.416707in, left, base]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}45}}%
+\pgftext[x=0.584473in, y=2.761184in, left, base]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}45}}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.694444in}{0.555556in}}{\pgfqpoint{3.750000in}{1.888889in}}%
+\pgfpathrectangle{\pgfqpoint{0.781250in}{0.638889in}}{\pgfqpoint{4.218750in}{2.172222in}}%
 \pgfusepath{clip}%
 \pgfsetrectcap%
 \pgfsetroundjoin%
@@ -850,25 +850,25 @@
 \definecolor{currentstroke}{rgb}{0.235294,0.490196,0.764706}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{0.864899in}{1.915556in}}%
-\pgfpathlineto{\pgfqpoint{1.108405in}{1.651111in}}%
-\pgfpathlineto{\pgfqpoint{1.351912in}{1.848395in}}%
-\pgfpathlineto{\pgfqpoint{1.595418in}{1.798025in}}%
-\pgfpathlineto{\pgfqpoint{1.838925in}{2.062469in}}%
-\pgfpathlineto{\pgfqpoint{2.082431in}{1.902963in}}%
-\pgfpathlineto{\pgfqpoint{2.325938in}{1.588148in}}%
-\pgfpathlineto{\pgfqpoint{2.569444in}{1.479012in}}%
-\pgfpathlineto{\pgfqpoint{2.812951in}{1.617531in}}%
-\pgfpathlineto{\pgfqpoint{3.056457in}{1.676296in}}%
-\pgfpathlineto{\pgfqpoint{3.299964in}{1.831605in}}%
-\pgfpathlineto{\pgfqpoint{3.543470in}{1.550370in}}%
-\pgfpathlineto{\pgfqpoint{3.786977in}{1.756049in}}%
-\pgfpathlineto{\pgfqpoint{4.030483in}{2.054074in}}%
-\pgfpathlineto{\pgfqpoint{4.273990in}{2.175802in}}%
+\pgfpathmoveto{\pgfqpoint{0.973011in}{2.202889in}}%
+\pgfpathlineto{\pgfqpoint{1.246956in}{1.898778in}}%
+\pgfpathlineto{\pgfqpoint{1.520901in}{2.125654in}}%
+\pgfpathlineto{\pgfqpoint{1.794846in}{2.067728in}}%
+\pgfpathlineto{\pgfqpoint{2.068791in}{2.371840in}}%
+\pgfpathlineto{\pgfqpoint{2.342735in}{2.188407in}}%
+\pgfpathlineto{\pgfqpoint{2.616680in}{1.826370in}}%
+\pgfpathlineto{\pgfqpoint{2.890625in}{1.700864in}}%
+\pgfpathlineto{\pgfqpoint{3.164570in}{1.860160in}}%
+\pgfpathlineto{\pgfqpoint{3.438515in}{1.927741in}}%
+\pgfpathlineto{\pgfqpoint{3.712459in}{2.106346in}}%
+\pgfpathlineto{\pgfqpoint{3.986404in}{1.782926in}}%
+\pgfpathlineto{\pgfqpoint{4.260349in}{2.019457in}}%
+\pgfpathlineto{\pgfqpoint{4.534294in}{2.362185in}}%
+\pgfpathlineto{\pgfqpoint{4.808239in}{2.502173in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.694444in}{0.555556in}}{\pgfqpoint{3.750000in}{1.888889in}}%
+\pgfpathrectangle{\pgfqpoint{0.781250in}{0.638889in}}{\pgfqpoint{4.218750in}{2.172222in}}%
 \pgfusepath{clip}%
 \pgfsetbuttcap%
 \pgfsetroundjoin%
@@ -893,68 +893,68 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{0.864899in}{1.915556in}%
+\pgfsys@transformshift{0.973011in}{2.202889in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{1.108405in}{1.651111in}%
+\pgfsys@transformshift{1.246956in}{1.898778in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{1.351912in}{1.848395in}%
+\pgfsys@transformshift{1.520901in}{2.125654in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{1.595418in}{1.798025in}%
+\pgfsys@transformshift{1.794846in}{2.067728in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{1.838925in}{2.062469in}%
+\pgfsys@transformshift{2.068791in}{2.371840in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{2.082431in}{1.902963in}%
+\pgfsys@transformshift{2.342735in}{2.188407in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{2.325938in}{1.588148in}%
+\pgfsys@transformshift{2.616680in}{1.826370in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{2.569444in}{1.479012in}%
+\pgfsys@transformshift{2.890625in}{1.700864in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{2.812951in}{1.617531in}%
+\pgfsys@transformshift{3.164570in}{1.860160in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{3.056457in}{1.676296in}%
+\pgfsys@transformshift{3.438515in}{1.927741in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{3.299964in}{1.831605in}%
+\pgfsys@transformshift{3.712459in}{2.106346in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{3.543470in}{1.550370in}%
+\pgfsys@transformshift{3.986404in}{1.782926in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{3.786977in}{1.756049in}%
+\pgfsys@transformshift{4.260349in}{2.019457in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{4.030483in}{2.054074in}%
+\pgfsys@transformshift{4.534294in}{2.362185in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{4.273990in}{2.175802in}%
+\pgfsys@transformshift{4.808239in}{2.502173in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.694444in}{0.555556in}}{\pgfqpoint{3.750000in}{1.888889in}}%
+\pgfpathrectangle{\pgfqpoint{0.781250in}{0.638889in}}{\pgfqpoint{4.218750in}{2.172222in}}%
 \pgfusepath{clip}%
 \pgfsetrectcap%
 \pgfsetroundjoin%
@@ -962,24 +962,24 @@
 \definecolor{currentstroke}{rgb}{0.337255,0.713725,0.627451}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{0.864899in}{0.979506in}}%
-\pgfpathlineto{\pgfqpoint{1.108405in}{0.891358in}}%
-\pgfpathlineto{\pgfqpoint{1.351912in}{0.992099in}}%
-\pgfpathlineto{\pgfqpoint{1.595418in}{0.962716in}}%
-\pgfpathlineto{\pgfqpoint{1.838925in}{1.029877in}}%
-\pgfpathlineto{\pgfqpoint{2.082431in}{0.950123in}}%
-\pgfpathlineto{\pgfqpoint{2.325938in}{0.849383in}}%
-\pgfpathlineto{\pgfqpoint{2.569444in}{0.782222in}}%
-\pgfpathlineto{\pgfqpoint{2.812951in}{0.820000in}}%
-\pgfpathlineto{\pgfqpoint{3.056457in}{0.832593in}}%
-\pgfpathlineto{\pgfqpoint{3.299964in}{0.870370in}}%
-\pgfpathlineto{\pgfqpoint{3.543470in}{0.803210in}}%
-\pgfpathlineto{\pgfqpoint{3.786977in}{0.878765in}}%
-\pgfpathlineto{\pgfqpoint{4.030483in}{0.945926in}}%
+\pgfpathmoveto{\pgfqpoint{0.973011in}{1.126432in}}%
+\pgfpathlineto{\pgfqpoint{1.246956in}{1.025062in}}%
+\pgfpathlineto{\pgfqpoint{1.520901in}{1.140914in}}%
+\pgfpathlineto{\pgfqpoint{1.794846in}{1.107123in}}%
+\pgfpathlineto{\pgfqpoint{2.068791in}{1.184358in}}%
+\pgfpathlineto{\pgfqpoint{2.342735in}{1.092642in}}%
+\pgfpathlineto{\pgfqpoint{2.616680in}{0.976790in}}%
+\pgfpathlineto{\pgfqpoint{2.890625in}{0.899556in}}%
+\pgfpathlineto{\pgfqpoint{3.164570in}{0.943000in}}%
+\pgfpathlineto{\pgfqpoint{3.438515in}{0.957481in}}%
+\pgfpathlineto{\pgfqpoint{3.712459in}{1.000926in}}%
+\pgfpathlineto{\pgfqpoint{3.986404in}{0.923691in}}%
+\pgfpathlineto{\pgfqpoint{4.260349in}{1.010580in}}%
+\pgfpathlineto{\pgfqpoint{4.534294in}{1.087815in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.694444in}{0.555556in}}{\pgfqpoint{3.750000in}{1.888889in}}%
+\pgfpathrectangle{\pgfqpoint{0.781250in}{0.638889in}}{\pgfqpoint{4.218750in}{2.172222in}}%
 \pgfusepath{clip}%
 \pgfsetbuttcap%
 \pgfsetroundjoin%
@@ -1004,59 +1004,59 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{0.864899in}{0.979506in}%
+\pgfsys@transformshift{0.973011in}{1.126432in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{1.108405in}{0.891358in}%
+\pgfsys@transformshift{1.246956in}{1.025062in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{1.351912in}{0.992099in}%
+\pgfsys@transformshift{1.520901in}{1.140914in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{1.595418in}{0.962716in}%
+\pgfsys@transformshift{1.794846in}{1.107123in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{1.838925in}{1.029877in}%
+\pgfsys@transformshift{2.068791in}{1.184358in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{2.082431in}{0.950123in}%
+\pgfsys@transformshift{2.342735in}{1.092642in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{2.325938in}{0.849383in}%
+\pgfsys@transformshift{2.616680in}{0.976790in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{2.569444in}{0.782222in}%
+\pgfsys@transformshift{2.890625in}{0.899556in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{2.812951in}{0.820000in}%
+\pgfsys@transformshift{3.164570in}{0.943000in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{3.056457in}{0.832593in}%
+\pgfsys@transformshift{3.438515in}{0.957481in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{3.299964in}{0.870370in}%
+\pgfsys@transformshift{3.712459in}{1.000926in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{3.543470in}{0.803210in}%
+\pgfsys@transformshift{3.986404in}{0.923691in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{3.786977in}{0.878765in}%
+\pgfsys@transformshift{4.260349in}{1.010580in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{4.030483in}{0.945926in}%
+\pgfsys@transformshift{4.534294in}{1.087815in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -1067,8 +1067,8 @@
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{0.694444in}{0.555556in}}%
-\pgfpathlineto{\pgfqpoint{0.694444in}{2.444444in}}%
+\pgfpathmoveto{\pgfqpoint{0.781250in}{0.638889in}}%
+\pgfpathlineto{\pgfqpoint{0.781250in}{2.811111in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -1078,183 +1078,183 @@
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{0.694444in}{0.555556in}}%
-\pgfpathlineto{\pgfqpoint{4.444444in}{0.555556in}}%
+\pgfpathmoveto{\pgfqpoint{0.781250in}{0.638889in}}%
+\pgfpathlineto{\pgfqpoint{5.000000in}{0.638889in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.864899in,y=1.943333in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}32.4}}%
+\pgftext[x=0.973011in,y=2.258444in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}32.4}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=1.108405in,y=1.678889in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}26.1}}%
+\pgftext[x=1.246956in,y=1.954333in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}26.1}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=1.351912in,y=1.876173in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}30.8}}%
+\pgftext[x=1.520901in,y=2.181210in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}30.8}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=1.595418in,y=1.825802in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}29.6}}%
+\pgftext[x=1.794846in,y=2.123284in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}29.6}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=1.838925in,y=2.090247in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}35.9}}%
+\pgftext[x=2.068791in,y=2.427395in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}35.9}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.082431in,y=1.930741in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}32.1}}%
+\pgftext[x=2.342735in,y=2.243963in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}32.1}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.325938in,y=1.615926in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}24.6}}%
+\pgftext[x=2.616680in,y=1.881926in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}24.6}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.569444in,y=1.506790in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}22.0}}%
+\pgftext[x=2.890625in,y=1.756420in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}22.0}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.812951in,y=1.645309in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}25.3}}%
+\pgftext[x=3.164570in,y=1.915716in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}25.3}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=3.056457in,y=1.704074in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}26.7}}%
+\pgftext[x=3.438515in,y=1.983296in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}26.7}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=3.299964in,y=1.859383in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}30.4}}%
+\pgftext[x=3.712459in,y=2.161901in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}30.4}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=3.543470in,y=1.578148in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}23.7}}%
+\pgftext[x=3.986404in,y=1.838481in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}23.7}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=3.786977in,y=1.783827in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}28.6}}%
+\pgftext[x=4.260349in,y=2.075012in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}28.6}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=4.030483in,y=2.081852in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}35.7}}%
+\pgftext[x=4.534294in,y=2.417741in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}35.7}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=4.273990in,y=2.203580in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}38.6}}%
+\pgftext[x=4.808239in,y=2.557728in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}38.6}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.864899in,y=1.007284in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}10.1}}%
+\pgftext[x=0.973011in,y=1.181988in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}10.1}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=1.108405in,y=0.919136in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}8.0}}%
+\pgftext[x=1.246956in,y=1.080617in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}8.0}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=1.351912in,y=1.019877in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}10.4}}%
+\pgftext[x=1.520901in,y=1.196469in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}10.4}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=1.595418in,y=0.990494in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}9.7}}%
+\pgftext[x=1.794846in,y=1.162679in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}9.7}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=1.838925in,y=1.057654in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}11.3}}%
+\pgftext[x=2.068791in,y=1.239914in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}11.3}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.082431in,y=0.977901in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}9.4}}%
+\pgftext[x=2.342735in,y=1.148198in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}9.4}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.325938in,y=0.877160in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}7.0}}%
+\pgftext[x=2.616680in,y=1.032346in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}7.0}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.569444in,y=0.810000in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}5.4}}%
+\pgftext[x=2.890625in,y=0.955111in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}5.4}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.812951in,y=0.847778in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}6.3}}%
+\pgftext[x=3.164570in,y=0.998556in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}6.3}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=3.056457in,y=0.860370in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}6.6}}%
+\pgftext[x=3.438515in,y=1.013037in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}6.6}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=3.299964in,y=0.898148in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}7.5}}%
+\pgftext[x=3.712459in,y=1.056481in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}7.5}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=3.543470in,y=0.830988in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}5.9}}%
+\pgftext[x=3.986404in,y=0.979247in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}5.9}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=3.786977in,y=0.906543in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}7.7}}%
+\pgftext[x=4.260349in,y=1.066136in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}7.7}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.133333,0.133333,0.133333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=4.030483in,y=0.973704in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}9.3}}%
+\pgftext[x=4.534294in,y=1.143370in,,bottom]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}9.3}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%
@@ -1263,9 +1263,9 @@
 \definecolor{currentstroke}{rgb}{0.235294,0.490196,0.764706}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{4.506944in}{2.350776in}}%
-\pgfpathlineto{\pgfqpoint{4.576389in}{2.350776in}}%
-\pgfpathlineto{\pgfqpoint{4.645833in}{2.350776in}}%
+\pgfpathmoveto{\pgfqpoint{5.112500in}{2.642508in}}%
+\pgfpathlineto{\pgfqpoint{5.237500in}{2.642508in}}%
+\pgfpathlineto{\pgfqpoint{5.362500in}{2.642508in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -1292,7 +1292,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{4.576389in}{2.350776in}%
+\pgfsys@transformshift{5.237500in}{2.642508in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -1300,7 +1300,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=4.701389in,y=2.326470in,left,base]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}사료제외}}%
+\pgftext[x=5.462500in,y=2.598758in,left,base]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}사료제외}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%
@@ -1309,9 +1309,9 @@
 \definecolor{currentstroke}{rgb}{0.337255,0.713725,0.627451}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{4.506944in}{2.244507in}}%
-\pgfpathlineto{\pgfqpoint{4.576389in}{2.244507in}}%
-\pgfpathlineto{\pgfqpoint{4.645833in}{2.244507in}}%
+\pgfpathmoveto{\pgfqpoint{5.112500in}{2.451224in}}%
+\pgfpathlineto{\pgfqpoint{5.237500in}{2.451224in}}%
+\pgfpathlineto{\pgfqpoint{5.362500in}{2.451224in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -1338,7 +1338,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{4.576389in}{2.244507in}%
+\pgfsys@transformshift{5.237500in}{2.451224in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -1346,19 +1346,19 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=4.701389in,y=2.220202in,left,base]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}사료포함}}%
+\pgftext[x=5.462500in,y=2.407474in,left,base]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}사료포함}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.333333,0.333333,0.333333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.222222in,y=0.277778in,,top]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}출처: 국가농식품통계서비스(KASS) 자료 기반 저자 작성, 2024년 데이터의 출처는 농촌진흥청 보도자료임}}%
+\pgftext[x=2.187500in,y=0.159722in,,top]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}출처: 국가농식품통계서비스(KASS) 자료 기반 저자 작성}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.333333,0.333333,0.333333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=4.166667in,y=2.583333in,,top]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{5.000000}{6.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}(단위: %)}}%
+\pgftext[x=4.687500in,y=2.970833in,,top]{\color{textcolor}{\ifdefined\pdftexversion\else\setmainfont{NanumMyeongjo}\rmfamily\fi\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}(단위: %)}}%
 \end{pgfscope}%
 \end{pgfpicture}%
 \makeatother%
