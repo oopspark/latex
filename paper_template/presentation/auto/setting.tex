@@ -3,8 +3,8 @@
 \usepackage[
   a6paper,
   landscape,
-  top=10pt,
-  bottom=10pt,
+  top=5pt,
+  bottom=5pt,
   left=20pt,
   right=20pt
 ]{geometry}
@@ -18,6 +18,17 @@
 \usepackage{tikz}
 \usetikzlibrary{calc}
 
+
+\usepackage{csvsimple}
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\usepackage{multirow}
+
+
+\usepackage[most]{tcolorbox}
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
 % ===============================  FONTS & KOREAN  =============================
 \usepackage{xetexko}
 \usepackage{fontspec}
@@ -30,7 +41,7 @@
 
 % ================================  COLORS   ===================================
 \usepackage{xcolor}
-\definecolor{slidebg}{rgb}{0.059, 0.059, 0.439}
+\definecolor{slidebg}{rgb}{0.2, 0.2, 0.4}
 
 
 % ============================ TITLE BACKGROUND IMAGE ==========================
@@ -75,9 +86,9 @@
     % 중앙 세로 하이라이트 선 (바 폭에 따라 이동)
     \begin{tikzpicture}[remember picture,overlay]
       \draw[line width=1pt, white, line cap=round]
-        ($(current page.center) + (0.75\textheight, #1pt - 145pt)$)
+        ($(current page.center) + (0.7\textheight, #1pt - 145pt)$)
         --
-        ($(current page.center) + (-0.75\textheight, #1pt - 145pt)$);
+        ($(current page.center) + (-0.7\textheight, #1pt - 145pt)$);
     \end{tikzpicture}
   }%
 }
@@ -95,32 +106,28 @@
 \newcommand{\firstgap}{26}
 
 
-\newcommand{\slideone}[4]{%
-\newpage
-\SlideBorderHor{250}
-
-\hfill {\small \textcolor{white}{#1}}%
-\\[-\dimexpr \firstgap pt + 4pt \relax]
-
-\LARGE \textcolor{white}{\textbf{#3}} \hfill \raisebox{-4pt}{{\large \textcolor{white}{#2}}}
-
-\vfill
-\Large #4
-\vfill
-}
 \newcommand{\slide}[4]{%
 \newpage
 \SlideBorderHor{250}
 
-\hfill {\small  \textcolor{white}{#1}}%
-\\[-\dimexpr \firstgap pt \relax]
+\small {\hfill {\textcolor{white}{#1}}
+\\[-\dimexpr \firstgap pt -12pt \relax]}
 
-\LARGE \textcolor{white}{\textbf{#3}} \hfill \raisebox{-4pt}{{\large \textcolor{white}{#2}}}
-
+\LARGE {\textcolor{white}{\textbf{#3}} \hfill \raisebox{-2pt}{{\large \textcolor{white}{#2}}}
+}
 \vfill
-\Large #4
+\Large {#4}
 \vfill
 }
 
+
+\newcommand{\intro}[1]{%
+\newpage
+\SlideBorderHor{0}
+\vspace*{0.38\textheight}
+\begin{center}
+\huge \textcolor{white}{\textbf {#1}}
+\end{center}
+}
 
 
