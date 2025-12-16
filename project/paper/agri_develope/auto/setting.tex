@@ -74,3 +74,26 @@
   {1.5ex plus .2ex}
 
 \usepackage{multirow}
+
+
+
+\setcounter{secnumdepth}{3}  % subsubsection까지 번호
+
+\renewcommand{\thesubsubsection}{\hspace{10pt} (\arabic{subsubsection})}
+
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries}
+  {\thesubsubsection}{4pt}{}
+
+
+
+\usepackage[
+backend=biber,
+style=apa,   % numeric, authoryear, chicago 등
+sorting=nyt         % name-year-title
+]{biblatex}
+
+\addbibresource{auto/refer.bib}
+
+\setlength{\bibhang}{40pt}
+
