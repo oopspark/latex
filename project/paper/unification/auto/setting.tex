@@ -125,3 +125,16 @@ sorting=nyt
   round-mode = places,
   round-precision = 0
 }
+
+
+
+
+% 날짜가 있어도 "연도만" 보이게 (bibliography + citation 모두)
+\AtEveryBibitem{%
+  \clearfield{month}%
+  \clearfield{day}%
+}
+\AtEveryCitekey{%
+  \clearfield{month}%
+  \clearfield{day}%
+}
