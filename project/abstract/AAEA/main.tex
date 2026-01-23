@@ -1,29 +1,24 @@
 \documentclass[11pt,a4paper]{report}
 
-% 여백 설정
+% =========================
+% Layout and fonts
+% =========================
 \usepackage[a4paper, margin=2cm]{geometry}
 
-% 한글/영문 폰트 설정 (XeLaTeX)
 \usepackage{xetexko}
 \usepackage{fontspec}
+\setmainfont{TeX Gyre Pagella}
 
-\setmainfont{TeX Gyre Pagella}         % 영문/숫자
-
-% 줄간격
 \usepackage{setspace}
 \singlespacing
 
-
-% 문단 들여쓰기
 \usepackage{indentfirst}
 \setlength{\parindent}{10pt}
 
-
-% 수식
+% =========================
+% Math and tables
+% =========================
 \usepackage{amsmath}
-
-
-% 숫자 포맷 (천 단위 콤마 등)
 \usepackage{siunitx}
 \sisetup{
   group-separator = {,},
@@ -33,37 +28,33 @@
 }
 
 \usepackage{multicol}
-
-
-
-\usepackage{graphicx}
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.18}  % 버전에 맞게 숫자는 조정 가능
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\begin{document}
+\usepackage{booktabs}
+\usepackage{colortbl}
 
 % =========================
-% Title block
+% Figures and links
+% =========================
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\usepackage{float}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[
+    colorlinks=true,
+    linkcolor=MidnightBlue
+]{hyperref}
+
+% =========================
+\begin{document}
 % =========================
 
 \begin{center}
 {\LARGE \bfseries
-Quantifying Structural Reconfiguration \\ in the Global Grain Trade Network
+Quantifying Structural Reconfiguration\\
+in the Global Grain Trade Network
 \par}
-\vspace{0.5em}
+\vspace{0.8em}
 
 {\large
 A Multi-Commodity Vector Approach
@@ -72,157 +63,265 @@ A Multi-Commodity Vector Approach
 
 \vspace{1em}
 
-% =========================
-% Abstract (two columns)
-% =========================
+% ======================================================
+% Abstract
+% ======================================================
 
 \begin{multicols}{2}
-\noindent\textbf{Motivation and Relevance.}
 
-Structural change in global grain trade has gained renewed attention in the context
-of repeated geopolitical shocks, supply chain disruptions, and rising concerns
-over food security.
-Previous studies of international grain markets have primarily relied on
-network indicators based on single commodities or aggregate trade volumes.
-While such measures capture changes in trade intensity,
-they provide limited information on how the internal composition of bilateral
-trade relationships evolves over time.
-By abstracting from the multi-commodity nature of trade flows,
-existing approaches often fail to distinguish structural reconfiguration
-from proportional scaling of trade volumes.
+\noindent\textbf{Motivation and relevance.}
 
-Recent disruptions illustrate this limitation.
-Adjustments in global grain markets frequently occur through reallocations
-across commodities and trading partners within established trade relationships,
-rather than through uniform contractions or expansions of total trade.
-This study addresses the need for a measure that captures such compositional
-adjustments in a systematic and comparable manner.
+Recent geopolitical shocks, supply chain disruptions, and food security concerns
+have intensified structural change in global grain trade.
+Most existing network-based analyses rely on single-commodity flows or
+aggregate trade volumes, which are informative about changes in overall
+trade intensity but remain silent on how the \emph{commodity composition}
+of bilateral trade relationships evolves.
+As a result, proportional scaling of trade volumes is often conflated with
+genuine reconfiguration in the structure of trade.
+
+This study develops a vector-based framework that represents each bilateral
+trade relationship as a multi-commodity object.
+The approach yields two distinct but compatible global indices that separately
+capture (i) changes in commodity composition and (ii) changes in the scale
+of bilateral trade.
 
 \vspace{0.6em}
 
 \noindent\textbf{Methodology.}
 
-The global grain trade system is represented as a sequence of weighted,
-directed adjacency matrices constructed from FAOSTAT bilateral trade data
-from the late 1980s onward.
-For each year $t$, the trade relationship between importing country $i$
-and exporting country $j$ is described by a four-dimensional vector
+The global grain trade network is represented as a sequence of weighted,
+directed adjacency matrices constructed from the FAOSTAT Detailed Trade Matrix.
+In year $t$, the trade relationship between importer $i$ and exporter $j$
+is described by a four-dimensional commodity vector
 \[
 \mathbf{x}_{ij,t}
-= (x^{\text{wheat}}_{ij,t}, x^{\text{soy}}_{ij,t},
-   x^{\text{maize}}_{ij,t}, x^{\text{rice}}_{ij,t}),
+=
+\bigl(
+x^{\text{wheat}}_{ij,t},
+x^{\text{soy}}_{ij,t},
+x^{\text{maize}}_{ij,t},
+x^{\text{rice}}_{ij,t}
+\bigr),
 \]
-where each element denotes the import quantity of a major grain commodity.
-The collection of these vectors forms a vector-valued adjacency matrix
-$\mathbf{X}_t$, summarizing the multi-commodity structure of global grain trade
-in year $t$.
+and the collection of all such vectors forms a vector-valued adjacency matrix
+$\mathbf{X}_t$.
 
 Structural change between years $t-1$ and $t$ is measured at the link level.
 Changes in commodity composition are captured by the intertemporal angle
-$\theta_{ij,t}$ between $\mathbf{x}_{ij,t-1}$ and $\mathbf{x}_{ij,t}$,
+between consecutive trade vectors,
 \[
 \theta_{ij,t}
-= \arccos\!\left(
-\frac{\mathbf{x}_{ij,t-1}\cdot \mathbf{x}_{ij,t}}
-{\lVert \mathbf{x}_{ij,t-1} \rVert \, \lVert \mathbf{x}_{ij,t} \rVert}
-\right).
+=
+\arccos\!\left(
+\frac{
+\mathbf{x}_{ij,t-1} \cdot \mathbf{x}_{ij,t}
+}{
+\lVert \mathbf{x}_{ij,t-1} \rVert
+\lVert \mathbf{x}_{ij,t} \rVert
+}
+\right),
 \]
-To reflect the economic importance of each link,
-this angular change is weighted by the norm of the previous-year vector
-$\lVert \mathbf{x}_{ij,t-1} \rVert$,
-yielding a link-level structural change measure
-\[
-m_{ij,t} = \lVert \mathbf{x}_{ij,t-1} \rVert \, \theta_{ij,t}.
-\]
-Aggregating across all country pairs produces an annual global index
-\[
-D_t = \left( \sum_{i,j} m_{ij,t}^2 \right)^{1/2},
-\]
-which corresponds to the Frobenius norm of the matrix of link-level changes.
-This formulation allows the global index to be decomposed into bilateral
-contributions without loss of information.
+which isolates changes in relative commodity shares independently of scale.
 
+To ensure that compositional adjustments occurring in economically important
+relationships receive greater weight, angular change is scaled by the average
+trade magnitude,
+\[
+m^{\text{comp}}_{ij,t}
+=
+\frac{
+\lVert \mathbf{x}_{ij,t-1} \rVert
++
+\lVert \mathbf{x}_{ij,t} \rVert
+}{2}
+\,
+\theta_{ij,t}.
+\]
+
+Changes in the overall scale of bilateral trade are measured by the absolute
+change in vector magnitude,
+\[
+m^{\text{scale}}_{ij,t}
+=
+\frac{1}{2}
+\,
+\bigl|
+\lVert \mathbf{x}_{ij,t} \rVert
+-
+\lVert \mathbf{x}_{ij,t-1} \rVert
+\bigr|.
+\]
+
+For either component $m_{ij,t} \in
+\{ m^{\text{comp}}_{ij,t}, m^{\text{scale}}_{ij,t} \}$,
+the corresponding global index is defined as the Frobenius norm
+\[
+D_t
+=
+\left(
+\sum_{i,j}
+m_{ij,t}^2
+\right)^{1/2}.
+\]
 
 \end{multicols}
 
+% ======================================================
+% Figure
+% ======================================================
 
-\begin{center}
-  \hspace*{-45pt}\input{곡물네트워크.pgf}
+\begin{figure}[H]
+  \centering
+  {\hspace*{-60pt}\input{곡물네트워크_multi_single_axis.pgf}}
+  \caption{Global indices of composition- and scale-based structural change, 1987--2024}
+  \label{fig:global_indices}
+\end{figure}
 
-  \vspace{0.5em}
-  \small
-  Figure~\ref{fig:global_index}. Global structural change in grain trade, 1988--2023.
-\end{center}
+% ======================================================
+% Tables (placeholders; values to be updated)
+% ======================================================
+
+
+\begin{table}[ht]
+\centering
+\footnotesize{
+\hfill (1,000 metric tons)\\
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{c | c | c | c | c | c | c | c | c | c | c}
+\hline 
+\rowcolor{gray!30}
+Importer($i$) & Exporter($j$) &
+$x^{\text{wheat}}_{ij,2017}$ &
+$x^{\text{soy}}_{ij,2017}$ &
+$x^{\text{maize}}_{ij,2017}$ &
+$x^{\text{rice}}_{ij,2017}$ &
+$x^{\text{wheat}}_{ij,2018}$ &
+$x^{\text{soy}}_{ij,2018}$ &
+$x^{\text{maize}}_{ij,2018}$ &
+$x^{\text{rice}}_{ij,2018}$ &
+Contrib.\\
+\hline
+\hline
+China & USA    & 1,555 &	32,853 &	756 &	0 & 361 & 16,640 & 312 & 0 & 0.4036\\
+China & Brazil & 0 & 50,927 & 0 & 0 & 0 & 66,084 & 0 & 0 & 0.3511\\
+China & Argentina & 0 &	6,581 &	0 &	0 &	0 & 1,463 &	0 & 0 & 0.0400\\
+\hline
+\end{tabular}
+}
+\caption{Top 3 contributing bilateral links to global scale change in 2018}
+\label{tab:stop_links}
+\end{table}
+
+
+\begin{table}[ht]
+\centering
+\footnotesize{
+\hfill (1,000 metric tons)\\
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{c | c | c | c | c | c | c | c | c | c | c}
+\hline 
+\rowcolor{gray!30}
+Importer($i$) & Exporter($j$) &
+$x^{\text{wheat}}_{ij,2022}$ &
+$x^{\text{soy}}_{ij,2022}$ &
+$x^{\text{maize}}_{ij,2022}$ &
+$x^{\text{rice}}_{ij,2022}$ &
+$x^{\text{wheat}}_{ij,2023}$ &
+$x^{\text{soy}}_{ij,2023}$ &
+$x^{\text{maize}}_{ij,2023}$ &
+$x^{\text{rice}}_{ij,2023}$ &
+Contrib.\\
+\hline
+\hline
+China & Brazil & 0 & 54,393 & 0 & 0 & 0 & 71,592 & 11,920 & 0 & 0.6384\\
+China & USA & 625 & 29,532 & 14,864 & 0 & 925 & 26,506 & 7,144 & 0 & 0.2207\\
+Spain & Ukraine & 1,017 & 26 & 3,132 & 0 & 4,097 & 21 & 3,894 & 0 & 0.0287\\
+\hline
+\end{tabular}
+}
+\caption{Top 3 contributing bilateral links to global composition change in 2023}
+\label{tab:btop_links}
+\end{table}
+
+
 
 
 \begin{multicols}{2}
 
-\noindent\textbf{Empirical Patterns.}
 
-Figure~\ref{fig:global_index} plots the evolution of the global structural
-change index $D_t$ over time.
-The index exhibits substantial variation, with distinct peaks corresponding
-to periods of major reorganization in global grain trade.
-
-
-
-In the late 1980s, structural change increases markedly alongside broader
-transformations in the international political and economic environment.
-A limited number of large bilateral relationships—particularly those involving
-the United States, the former Soviet Union (USSR), Japan, and Algeria—
-account for a substantial share of the observed change.
-These contributions are associated with shifts in commodity composition
-within existing trade links rather than the formation of new ones.
-
-After a relatively stable period in the 2000s,
-structural change rises again in the early 2020s.
-In contrast to earlier episodes, the peak observed in 2023 is dominated
-by commodity-specific reorientation within a small number of links.
-Table~\ref{tab:top_links} shows that China’s maize imports from Brazil
-constitute the single largest contribution to global structural change in that year.
-
-\begin{table}[h]
-\centering
-\caption{Top contributing bilateral links to structural change}
-\label{tab:top_links}
-\begin{tabular}{l l l r}
-\hline
-Year & Importer & Exporter & Contribution \\
-\hline
-2023 & China & Brazil & --- \\
-\vdots & \vdots & \vdots & \vdots \\
-\hline
-\end{tabular}
-\end{table}
-
-This pattern suggests that recent structural change reflects a reallocation
-of sourcing strategies by major importers rather than a generalized disruption
-of global trade.
+And the contribution of a specific link $(i,j)$ is given by
+\[
+\text{Contribution}_{ij,t}
+=
+\frac{m_{ij,t}^2}
+{\sum_{k,\ell} m_{k\ell,t}^2}.
+\]
+This decomposition ensures that each global index can be written as the
+sum of link-level contributions, allowing episodes of structural change
+to be traced back to a small number of economically significant trade
+relationships.
 
 \vspace{0.6em}
 
-\noindent\textbf{Interpretation and Discussion.}
+\noindent\textbf{Empirical patterns.}
 
-Weighting angular change by the magnitude of the previous-year trade vector
-plays a central role in the interpretation of the index.
-If structural change were measured solely by angular variation,
-reconfigurations among small trade links would receive the same weight
-as those occurring within large-scale relationships.
-By scaling the intertemporal angle by lagged trade volume,
-the measure assigns greater importance to adjustments within
-economically significant links.
+Figure~\ref{fig:global_indices} plots the evolution of the composition-based
+and scale-based indices of structural change.
+Both indices exhibit substantial year-to-year variation, but their relative
+magnitudes differ markedly across episodes, highlighting that structural change
+in global grain trade can operate through distinct adjustment margins.
 
-Domestic production and self-sufficiency are excluded from the diagonal
-elements of the adjacency matrix.
-This restriction keeps the interpretation of $D_t$ focused on
-international trade reconfiguration rather than overall supply adjustment.
-Future extensions may incorporate domestic production as a separate layer,
-allowing joint analysis of trade dependence and self-sufficiency.
+A particularly informative episode occurs in 2018, during the escalation of
+the United States--China trade conflict.
+In that year, the scale-based index rises sharply, reflecting a large contraction
+in bilateral trade volumes, while the composition-based index remains
+comparatively moderate.
+This pattern indicates that adjustment took place primarily through
+proportional scaling of existing trade relationships rather than through
+substantial reallocation across commodities.
+Indeed, imports from the United States declined sharply but broadly uniformly
+across major grain categories, leaving the trade vectors
+$\mathbf{x}_{ij,2017}$ and $\mathbf{x}_{ij,2018}$ closely aligned and resulting
+in a small intertemporal angle $\theta_{ij,t}$.
+Consequently, China--U.S. links emerge as dominant contributors to
+$D^{\text{scale}}_{2018}$ but play a much more limited role in
+$D^{\text{comp}}_{2018}$.
+
+By contrast, 2023 represents an episode in which both indices increase
+substantially.
+In that year, large changes in overall trade volumes coincide with pronounced
+shifts in the commodity composition of bilateral relationships.
+The simultaneous rise in $D^{\text{scale}}_{2023}$ and $D^{\text{comp}}_{2023}$
+suggests a more fundamental reconfiguration of the global grain trade network,
+in which adjustment operates not only through expansion and contraction of
+existing links but also through changes in the internal commodity structure of
+trade.
+This contrast between 2018 and 2023 underscores the value of separating scale
+and composition when characterizing episodes of structural change.
+
+\vspace{0.6em}
+
+\noindent\textbf{Interpretation.}
+
+Separating structural change into composition and scale clarifies the adjustment
+mechanisms of global trade networks.
+Large shocks need not entail substantial reallocation across commodities;
+instead, they may operate primarily through proportional expansion or
+contraction of existing trade links.
+Conversely, meaningful structural reconfiguration can occur even when aggregate
+trade volumes change little.
+
+By weighting angular change by average trade magnitude, the composition index
+emphasizes economically significant reconfiguration while limiting the influence
+of small links.
+The scale index complements this perspective by explicitly tracking changes in
+trade volume through absolute changes in vector magnitude.
+Together, the two indices provide a compact and interpretable characterization
+of structural change in the global grain trade network and allow aggregate
+patterns to be traced back to a small number of key bilateral relationships.
 
 
 \end{multicols}
-
-
-
 
 \end{document}
