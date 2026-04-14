@@ -3289,7 +3289,167 @@ corresponding to this input distance function.
 \end{tcolorbox}
 
 
+\section*{Solution}
 
+Given the input distance function
+\[
+D_i(x,y)=\frac{\sqrt{x_1x_2}}{\sqrt{y_1^2+y_2^2}},
+\]
+let
+\[
+Y:=y_1^2+y_2^2.
+\]
+Then
+\[
+D_i(x,y)=\frac{\sqrt{x_1x_2}}{\sqrt{Y}}.
+\]
+
+The associated cost function is defined by
+\[
+c(w,y)=\min_{x_1,x_2\ge 0}\{\,w_1x_1+w_2x_2:\ D_i(x,y)\ge 1\,\}.
+\]
+
+Since
+\[
+D_i(x,y)\ge 1
+\iff
+\frac{\sqrt{x_1x_2}}{\sqrt{Y}}\ge 1
+\iff
+x_1x_2\ge Y,
+\]
+the cost-minimization problem becomes
+\[
+\min_{x_1,x_2\ge 0}\; w_1x_1+w_2x_2
+\quad \text{subject to} \quad
+x_1x_2\ge Y.
+\]
+
+\subsection*{1. Conditional factor demands}
+
+Because \(w_1,w_2>0\), the constraint must bind at the optimum:
+\[
+x_1x_2=Y.
+\]
+Thus
+\[
+x_2=\frac{Y}{x_1}.
+\]
+Substituting into the objective function gives
+\[
+w_1x_1+w_2x_2
+=
+w_1x_1+w_2\frac{Y}{x_1}.
+\]
+
+Differentiate with respect to \(x_1\):
+\[
+\frac{d}{dx_1}\left(w_1x_1+w_2\frac{Y}{x_1}\right)
+=
+w_1-\frac{w_2Y}{x_1^2}.
+\]
+Set this equal to zero:
+\[
+w_1-\frac{w_2Y}{x_1^2}=0
+\quad \Rightarrow \quad
+x_1^2=\frac{w_2Y}{w_1}.
+\]
+Hence
+\[
+x_1^*(w,y)=\sqrt{\frac{w_2Y}{w_1}}
+=
+\sqrt{\frac{w_2}{w_1}}\sqrt{y_1^2+y_2^2}.
+\]
+
+Using \(x_2=Y/x_1\), we get
+\[
+x_2^*(w,y)=\sqrt{\frac{w_1Y}{w_2}}
+=
+\sqrt{\frac{w_1}{w_2}}\sqrt{y_1^2+y_2^2}.
+\]
+
+Therefore, the conditional factor demand functions are
+\[
+\boxed{
+x_1^*(w,y)=\sqrt{\frac{w_2}{w_1}}\sqrt{y_1^2+y_2^2},
+\qquad
+x_2^*(w,y)=\sqrt{\frac{w_1}{w_2}}\sqrt{y_1^2+y_2^2}.
+}
+\]
+
+\subsection*{2. Cost function}
+
+Substituting the optimal inputs into the objective function gives
+\[
+c(w,y)
+=
+w_1x_1^*+w_2x_2^*.
+\]
+Hence
+\[
+c(w,y)
+=
+w_1\sqrt{\frac{w_2Y}{w_1}}
++
+w_2\sqrt{\frac{w_1Y}{w_2}}.
+\]
+Simplifying,
+\[
+c(w,y)
+=
+\sqrt{w_1w_2Y}+\sqrt{w_1w_2Y}
+=
+2\sqrt{w_1w_2Y}.
+\]
+Since \(Y=y_1^2+y_2^2\), we obtain
+\[
+\boxed{
+c(w,y)=2\sqrt{w_1w_2}\,\sqrt{y_1^2+y_2^2}.
+}
+\]
+
+\subsection*{3. Verification}
+
+At the optimum,
+\[
+x_1^*x_2^*
+=
+\left(\sqrt{\frac{w_2}{w_1}}\sqrt{Y}\right)
+\left(\sqrt{\frac{w_1}{w_2}}\sqrt{Y}\right)
+=
+Y.
+\]
+Therefore
+\[
+D_i(x^*,y)
+=
+\frac{\sqrt{x_1^*x_2^*}}{\sqrt{Y}}
+=
+\frac{\sqrt{Y}}{\sqrt{Y}}
+=
+1,
+\]
+so the constraint is indeed satisfied with equality.
+
+\subsection*{Conclusion}
+
+The conditional factor demand functions corresponding to
+\[
+D_i(x,y)=\frac{\sqrt{x_1x_2}}{\sqrt{y_1^2+y_2^2}}
+\]
+are
+\[
+\boxed{
+x_1^*(w,y)=\sqrt{\frac{w_2}{w_1}}\sqrt{y_1^2+y_2^2},
+\qquad
+x_2^*(w,y)=\sqrt{\frac{w_1}{w_2}}\sqrt{y_1^2+y_2^2},
+}
+\]
+and the associated cost function is
+\[
+\boxed{
+c(w,y)=2\sqrt{w_1w_2}\,\sqrt{y_1^2+y_2^2}.
+}
+\]
 
 
 
@@ -3308,7 +3468,88 @@ using a diagram similar to Figure 14.
 \end{tcolorbox}
 
 
+\section*{Illustration of}
+\[
+D_i(x,y)=\min_{w\ge 0}\{\,w\cdot x : c(w,y)\ge 1\,\}.
+\]
 
+Fix an output vector \(y\). In the \((w_1,w_2)\)-plane, consider the unit-cost locus
+\[
+c(w,y)=1.
+\]
+Since the cost function is homogeneous of degree one in input prices, the set
+\[
+\{\,w\ge 0 : c(w,y)\ge 1\,\}
+\]
+lies on and above this unit-cost curve.
+
+Now fix an input vector \(x=(x_1,x_2)\).  
+For any constant \(k>0\), the equation
+\[
+w\cdot x=w_1x_1+w_2x_2=k
+\]
+defines an isodistance line in price space. Its slope is
+\[
+-\frac{x_1}{x_2}.
+\]
+The input distance function
+\[
+D_i(x,y)=\min_{w\ge 0}\{\,w\cdot x : c(w,y)\ge 1\,\}
+\]
+is obtained by shifting the line
+\[
+w\cdot x=k
+\]
+toward the origin until it just touches the set
+\[
+\{\,w\ge 0 : c(w,y)\ge 1\,\}.
+\]
+At the tangency point \(w^*\), we have
+\[
+D_i(x,y)=w^*\cdot x.
+\]
+
+Thus, geometrically, \(D_i(x,y)\) is the smallest value of \(w\cdot x\) such that the corresponding price vector \(w\) lies on or above the unit-cost curve \(c(w,y)=1\).
+
+\bigskip
+
+\begin{center}
+\begin{tikzpicture}[scale=1.1]
+    % Axes
+    \draw[->] (0,0) -- (6,0) node[right] {$w_1$};
+    \draw[->] (0,0) -- (0,5) node[above] {$w_2$};
+
+    % Unit cost curve
+    \draw[thick, domain=0.7:5, smooth, variable=\t]
+        plot ({\t},{2.8/(\t)^0.7})
+        node[right] {$c(w,y)=1$};
+
+    % Shaded feasible region
+    \fill[gray!15, domain=0.7:5, smooth, variable=\t]
+        plot ({\t},{2.8/(\t)^0.7})
+        -- (5,5) -- (0.7,5) -- cycle;
+
+    % Isodistance line tangent
+    \draw[thick] (0.8,3.6) -- (4.8,0.6)
+        node[right] {$w\cdot x=D_i(x,y)$};
+
+    % Higher isodistance line
+    \draw[dashed] (0.5,4.4) -- (5.0,1.0)
+        node[right] {$w\cdot x=k$};
+
+    % Tangency point
+    \fill (2.2,2.55) circle (2pt) node[above right] {$w^*$};
+
+    % Region label
+    \node at (4.2,4.3) {$c(w,y)\ge 1$};
+\end{tikzpicture}
+\end{center}
+
+\noindent
+The dashed line represents a larger value of \(w\cdot x\), while the solid line is the smallest isodistance line that still touches the set \(c(w,y)\ge 1\). Therefore the tangency value is exactly
+\[
+D_i(x,y)=\min_{w\ge 0}\{\,w\cdot x : c(w,y)\ge 1\,\}.
+\]
 
 
 \vspace{30pt}
@@ -3321,7 +3562,61 @@ Derive a revenue function from a known profit function $\Pi(p,w)$.
 \end{tcolorbox}
 
 
+\section*{Solution}
 
+We want to derive the revenue function \(R(p,x)\) from a known profit function \(\Pi(p,w)\).
+
+\subsection*{1. Dual representation of the profit function}
+
+Recall that the profit function can be written as
+\[
+\Pi(p,w)=\max_{x}\{\,R(p,x)-w\cdot x\,\}.
+\]
+This shows that \(\Pi(p,w)\) is the supremum over \(x\) of the function \(R(p,x)-w\cdot x\).
+
+\subsection*{2. Inequality}
+
+From the definition above, for any \(x\),
+\[
+\Pi(p,w)\ge R(p,x)-w\cdot x.
+\]
+Rearranging,
+\[
+R(p,x)\le \Pi(p,w)+w\cdot x
+\qquad \text{for all } w\ge 0.
+\]
+Since this inequality holds for all \(w\), we obtain
+\[
+R(p,x)\le \inf_{w\ge 0}\{\Pi(p,w)+w\cdot x\}.
+\]
+
+\subsection*{3. Equality}
+
+To show equality, note that if \(x\) is chosen optimally in the profit maximization problem, then there exists a supporting price vector \(w\) such that
+\[
+\Pi(p,w)=R(p,x)-w\cdot x.
+\]
+Substituting into the expression \(\Pi(p,w)+w\cdot x\), we get
+\[
+\Pi(p,w)+w\cdot x
+=
+R(p,x).
+\]
+Thus the infimum is attained at this \(w\), and hence
+\[
+R(p,x)=\inf_{w\ge 0}\{\Pi(p,w)+w\cdot x\}.
+\]
+
+\subsection*{4. Conclusion}
+
+Therefore, the revenue function can be recovered from the profit function as
+\[
+\boxed{
+R(p,x)=\inf_{w\ge 0}\{\Pi(p,w)+w\cdot x\}.
+}
+\]
+
+This shows that the revenue function is the convex dual (in input prices) of the profit function.
 
 
 
@@ -3335,7 +3630,294 @@ cost function is either a generalized Leontief function or a translog function.
 
 \end{tcolorbox}
 
+\section*{Solution}
 
+Let the conditional factor demand functions be derived from the cost function
+\[
+x_i(w,y)=\frac{\partial c(w,y)}{\partial w_i},
+\]
+by Shephard's lemma. The own- and cross-price elasticities of factor demands are defined by
+\[
+\varepsilon_{ij}
+=
+\frac{\partial x_i}{\partial w_j}\frac{w_j}{x_i}.
+\]
+
+We derive these elasticities for the generalized Leontief cost function and the translog cost function.
+
+\bigskip
+\section*{1. Generalized Leontief Cost Function}
+
+Consider the generalized Leontief cost function
+\[
+c(w,y)
+=
+y\sum_{i=1}^N\sum_{j=1}^N b_{ij}(w_i w_j)^{1/2},
+\qquad b_{ij}=b_{ji}.
+\]
+
+\subsection*{1.1 Conditional factor demands}
+
+By Shephard's lemma,
+\[
+x_i(w,y)=\frac{\partial c(w,y)}{\partial w_i}.
+\]
+Differentiate:
+\[
+x_i(w,y)
+=
+y\sum_{j=1}^N b_{ij}\frac{\partial}{\partial w_i}(w_i w_j)^{1/2}.
+\]
+Since
+\[
+\frac{\partial}{\partial w_i}(w_i w_j)^{1/2}
+=
+\frac{1}{2}(w_i w_j)^{-1/2}w_j
+=
+\frac{1}{2}\left(\frac{w_j}{w_i}\right)^{1/2},
+\]
+we obtain
+\[
+\boxed{
+x_i(w,y)
+=
+\frac{y}{2}\sum_{j=1}^N b_{ij}\left(\frac{w_j}{w_i}\right)^{1/2}.
+}
+\]
+
+\subsection*{1.2 Own- and cross-price elasticities}
+
+Differentiate \(x_i\) with respect to \(w_j\).
+
+\paragraph{Case 1: \(j\neq i\).}
+Only the \(j\)-th term depends on \(w_j\), so
+\[
+\frac{\partial x_i}{\partial w_j}
+=
+\frac{y}{2}b_{ij}\frac{\partial}{\partial w_j}\left(\frac{w_j}{w_i}\right)^{1/2}
+=
+\frac{y}{2}b_{ij}\cdot \frac{1}{2}(w_i^{-1}w_j)^{-1/2}\frac{1}{w_i}
+=
+\frac{y}{4}b_{ij}\frac{1}{\sqrt{w_i w_j}}.
+\]
+Hence
+\[
+\boxed{
+\varepsilon_{ij}
+=
+\frac{\partial x_i}{\partial w_j}\frac{w_j}{x_i}
+=
+\frac{y}{4}b_{ij}\frac{1}{\sqrt{w_i w_j}}\frac{w_j}{x_i}
+=
+\frac{y}{4x_i}b_{ij}\left(\frac{w_j}{w_i}\right)^{1/2},
+\qquad i\neq j.
+}
+\]
+
+\paragraph{Case 2: \(j=i\).}
+From
+\[
+x_i
+=
+\frac{y}{2}\sum_{k=1}^N b_{ik}\left(\frac{w_k}{w_i}\right)^{1/2},
+\]
+differentiate with respect to \(w_i\):
+\[
+\frac{\partial x_i}{\partial w_i}
+=
+\frac{y}{2}\sum_{k=1}^N b_{ik}\left(-\frac{1}{2}\right)\left(\frac{w_k}{w_i}\right)^{1/2}\frac{1}{w_i}
+=
+-\frac{y}{4w_i}\sum_{k=1}^N b_{ik}\left(\frac{w_k}{w_i}\right)^{1/2}.
+\]
+Since
+\[
+x_i=\frac{y}{2}\sum_{k=1}^N b_{ik}\left(\frac{w_k}{w_i}\right)^{1/2},
+\]
+it follows that
+\[
+\frac{\partial x_i}{\partial w_i}
+=
+-\frac{x_i}{2w_i}.
+\]
+Therefore
+\[
+\boxed{
+\varepsilon_{ii}
+=
+\frac{\partial x_i}{\partial w_i}\frac{w_i}{x_i}
+=
+-\frac{1}{2}.
+}
+\]
+
+Thus for the generalized Leontief cost function,
+\[
+\boxed{
+\varepsilon_{ii}=-\frac{1}{2},
+\qquad
+\varepsilon_{ij}
+=
+\frac{y}{4x_i}b_{ij}\left(\frac{w_j}{w_i}\right)^{1/2}
+\ \ (i\neq j).
+}
+\]
+
+\bigskip
+\section*{2. Translog Cost Function}
+
+Consider the translog cost function
+\[
+\ln c(w,y)
+=
+\alpha_0
++
+\sum_{i=1}^N \alpha_i \ln w_i
++
+\frac{1}{2}\sum_{i=1}^N\sum_{j=1}^N \gamma_{ij}\ln w_i \ln w_j
++
+\beta \ln y
++
+\frac{1}{2}\delta (\ln y)^2
++
+\sum_{i=1}^N \phi_i \ln w_i \ln y.
+\]
+
+\subsection*{2.1 Cost shares}
+
+By Shephard's lemma,
+\[
+x_i=\frac{\partial c}{\partial w_i}.
+\]
+Define the cost share of factor \(i\) by
+\[
+s_i=\frac{w_i x_i}{c}.
+\]
+Using
+\[
+\frac{\partial \ln c}{\partial \ln w_i}
+=
+\frac{w_i}{c}\frac{\partial c}{\partial w_i}
+=
+\frac{w_i x_i}{c}
+=
+s_i,
+\]
+we obtain
+\[
+\boxed{
+s_i
+=
+\alpha_i+\sum_{j=1}^N \gamma_{ij}\ln w_j+\phi_i \ln y.
+}
+\]
+
+Also,
+\[
+x_i=\frac{c}{w_i}s_i.
+\]
+
+\subsection*{2.2 Elasticities}
+
+Take logs:
+\[
+\ln x_i=\ln c+\ln s_i-\ln w_i.
+\]
+Differentiate with respect to \(\ln w_j\):
+\[
+\frac{\partial \ln x_i}{\partial \ln w_j}
+=
+\frac{\partial \ln c}{\partial \ln w_j}
++
+\frac{1}{s_i}\frac{\partial s_i}{\partial \ln w_j}
+-
+\delta_{ij},
+\]
+where \(\delta_{ij}\) is the Kronecker delta.
+
+Now
+\[
+\frac{\partial \ln c}{\partial \ln w_j}=s_j,
+\qquad
+\frac{\partial s_i}{\partial \ln w_j}=\gamma_{ij}.
+\]
+Therefore
+\[
+\boxed{
+\varepsilon_{ij}
+=
+\frac{\partial \ln x_i}{\partial \ln w_j}
+=
+s_j+\frac{\gamma_{ij}}{s_i}-\delta_{ij}.
+}
+\]
+
+Hence:
+
+\paragraph{Own-price elasticity (\(i=j\)):}
+\[
+\boxed{
+\varepsilon_{ii}
+=
+s_i+\frac{\gamma_{ii}}{s_i}-1.
+}
+\]
+
+\paragraph{Cross-price elasticity (\(i\neq j\)):}
+\[
+\boxed{
+\varepsilon_{ij}
+=
+s_j+\frac{\gamma_{ij}}{s_i}.
+}
+\]
+
+\bigskip
+\section*{3. Final Summary}
+
+\paragraph{Generalized Leontief:}
+\[
+x_i
+=
+\frac{y}{2}\sum_{j=1}^N b_{ij}\left(\frac{w_j}{w_i}\right)^{1/2},
+\]
+\[
+\boxed{
+\varepsilon_{ii}=-\frac{1}{2},
+\qquad
+\varepsilon_{ij}
+=
+\frac{y}{4x_i}b_{ij}\left(\frac{w_j}{w_i}\right)^{1/2}
+\ \ (i\neq j).
+}
+\]
+
+\paragraph{Translog:}
+\[
+s_i=\frac{w_i x_i}{c}
+=
+\alpha_i+\sum_{j=1}^N \gamma_{ij}\ln w_j+\phi_i\ln y,
+\]
+and
+\[
+\boxed{
+\varepsilon_{ij}
+=
+s_j+\frac{\gamma_{ij}}{s_i}-\delta_{ij}.
+}
+\]
+That is,
+\[
+\boxed{
+\varepsilon_{ii}
+=
+s_i+\frac{\gamma_{ii}}{s_i}-1,
+\qquad
+\varepsilon_{ij}
+=
+s_j+\frac{\gamma_{ij}}{s_i}
+\ \ (i\neq j).
+}
+\]
 
 
 \vspace{30pt}
@@ -3350,7 +3932,139 @@ respectively.
 \end{tcolorbox}
 
 
+\section*{Solution}
 
+Consider a single-output translog cost function of the form
+\[
+\ln c(w,y)
+=
+\alpha_0
++
+\sum_{i=1}^N \alpha_i \ln w_i
++
+\frac{1}{2}\sum_{i=1}^N \sum_{j=1}^N \gamma_{ij}\ln w_i \ln w_j
++
+\beta \ln y
++
+\frac{1}{2}\delta (\ln y)^2
++
+\sum_{i=1}^N \phi_i \ln w_i \ln y.
+\]
+For a well-defined translog cost function, one usually also imposes the symmetry and linear homogeneity restrictions
+\[
+\gamma_{ij}=\gamma_{ji},
+\qquad
+\sum_{i=1}^N \alpha_i=1,
+\qquad
+\sum_{i=1}^N \gamma_{ij}=0 \ \ \text{for all } j,
+\qquad
+\sum_{i=1}^N \phi_i=0.
+\]
+
+We now show how to impose \emph{input homotheticity} and \emph{input separability}.
+
+\subsection*{1. Input homotheticity}
+
+Input homotheticity means that the conditional input ratios depend only on input prices and not on output. Equivalently, the cost share equations should not depend on \(y\).
+
+By Shephard's lemma,
+\[
+s_i
+=
+\frac{\partial \ln c(w,y)}{\partial \ln w_i}
+=
+\alpha_i+\sum_{j=1}^N \gamma_{ij}\ln w_j+\phi_i \ln y.
+\]
+Thus the cost shares depend on output through the term \(\phi_i \ln y\). Therefore, in order for the shares to be independent of output, we must impose
+\[
+\boxed{\phi_i=0 \qquad \text{for all } i=1,\dots,N.}
+\]
+
+Hence, under input homotheticity, the translog cost function becomes
+\[
+\ln c(w,y)
+=
+\alpha_0
++
+\sum_{i=1}^N \alpha_i \ln w_i
++
+\frac{1}{2}\sum_{i=1}^N \sum_{j=1}^N \gamma_{ij}\ln w_i \ln w_j
++
+\beta \ln y
++
+\frac{1}{2}\delta (\ln y)^2.
+\]
+
+\subsection*{2. Input separability}
+
+Input separability means that the marginal rate of substitution between any two inputs is independent of the quantities or prices of inputs outside the relevant group. In the single-output translog cost function, a sufficient and standard way to impose global input separability is to require the matrix \(\Gamma=(\gamma_{ij})\) to have the additive separability form
+\[
+\gamma_{ij}=\theta_i\theta_j
+\quad \text{for } i\neq j,
+\]
+together with the homogeneity restrictions.
+
+Equivalently, one imposes that the substitution terms are of rank one:
+\[
+\boxed{\gamma_{ij}=\lambda_i \lambda_j \qquad \text{for all } i,j,}
+\]
+subject to symmetry and homogeneity restrictions. Since linear homogeneity requires
+\[
+\sum_{i=1}^N \gamma_{ij}=0 \qquad \text{for each } j,
+\]
+this rank-one structure implies
+\[
+\sum_{i=1}^N \lambda_i =0.
+\]
+
+Under these restrictions, the translog price aggregator becomes separable in the sense that the Hessian of \(\ln c\) with respect to \(\ln w\) has rank one, which is the translog analogue of input separability.
+
+Thus, the restriction for input separability is
+\[
+\boxed{
+\gamma_{ij}=\lambda_i\lambda_j
+\quad \text{for all } i,j,
+\qquad
+\sum_{i=1}^N \lambda_i=0.
+}
+\]
+
+\subsection*{3. Summary}
+
+For the single-output translog cost function
+\[
+\ln c(w,y)
+=
+\alpha_0
++
+\sum_i \alpha_i \ln w_i
++
+\frac{1}{2}\sum_i\sum_j \gamma_{ij}\ln w_i \ln w_j
++
+\beta \ln y
++
+\frac{1}{2}\delta (\ln y)^2
++
+\sum_i \phi_i \ln w_i \ln y,
+\]
+the restrictions are:
+
+\begin{itemize}
+\item \textbf{Input homotheticity:}
+\[
+\boxed{\phi_i=0 \qquad \forall i.}
+\]
+
+\item \textbf{Input separability:}
+\[
+\boxed{\gamma_{ij}=\lambda_i\lambda_j \qquad \forall i,j,}
+\]
+with
+\[
+\boxed{\sum_{i=1}^N \lambda_i=0}
+\]
+to satisfy linear homogeneity.
+\end{itemize}
 
 \vspace{30pt}
 \begin{tcolorbox}[enhanced, breakable]
@@ -3434,4 +4148,489 @@ for the cases where \(k = j\) and \(k \neq j\), respectively.
 \end{tcolorbox}
 
 
+\section*{Solution}
 
+The GDP function is
+\[
+G(p,V)
+=
+\max_{\{v_i\}}
+\left\{
+\sum_{i=1}^N p_i f_i(v_i)
+\;\middle|\;
+\sum_{i=1}^N v_i \le V
+\right\}.
+\]
+Since each \(f_i(\cdot)\) is positive, increasing, concave, and homogeneous of degree one, the GDP function inherits standard duality properties.
+
+\begin{enumerate}
+\item[(i)] \textbf{\(G(p,V)\) is homogeneous of degree one in \(p\).}
+
+Let \(t>0\). Then
+\[
+G(tp,V)
+=
+\max_{\{v_i\}}
+\left\{
+\sum_{i=1}^N tp_i f_i(v_i)
+\;\middle|\;
+\sum_{i=1}^N v_i \le V
+\right\}.
+\]
+Factor out \(t\):
+\[
+G(tp,V)
+=
+t
+\max_{\{v_i\}}
+\left\{
+\sum_{i=1}^N p_i f_i(v_i)
+\;\middle|\;
+\sum_{i=1}^N v_i \le V
+\right\}
+=
+t\,G(p,V).
+\]
+Hence
+\[
+\boxed{G(tp,V)=t\,G(p,V),}
+\]
+so \(G\) is homogeneous of degree one in \(p\).
+
+\item[(ii)] \textbf{\(G(p,V)\) is homogeneous of degree one in \(V\).}
+
+Let \(t>0\). Then
+\[
+G(p,tV)
+=
+\max_{\{v_i\}}
+\left\{
+\sum_{i=1}^N p_i f_i(v_i)
+\;\middle|\;
+\sum_{i=1}^N v_i \le tV
+\right\}.
+\]
+Write \(v_i=t\tilde v_i\). Then the constraint becomes
+\[
+\sum_{i=1}^N \tilde v_i \le V.
+\]
+Using the homogeneity of degree one of each \(f_i\),
+\[
+f_i(v_i)=f_i(t\tilde v_i)=t f_i(\tilde v_i).
+\]
+Therefore
+\[
+G(p,tV)
+=
+\max_{\{\tilde v_i\}}
+\left\{
+\sum_{i=1}^N p_i\, t f_i(\tilde v_i)
+\;\middle|\;
+\sum_{i=1}^N \tilde v_i \le V
+\right\}
+=
+t\,G(p,V).
+\]
+Hence
+\[
+\boxed{G(p,tV)=t\,G(p,V),}
+\]
+so \(G\) is homogeneous of degree one in \(V\).
+
+\item[(iii)] \textbf{Show that}
+\[
+\frac{\partial G}{\partial p_i}=y_i,
+\qquad
+\frac{\partial G}{\partial V_j}=w_j,
+\qquad
+\frac{d w_j}{d p_i}=\frac{d y_i}{d V_j}.
+\]
+
+Let \(v_i^*(p,V)\) denote the optimal factor allocation and
+\[
+y_i(p,V)=f_i(v_i^*(p,V))
+\]
+the corresponding optimal output.
+
+By the envelope theorem,
+\[
+\frac{\partial G}{\partial p_i}
+=
+f_i(v_i^*(p,V))
+=
+y_i.
+\]
+Hence
+\[
+\boxed{\frac{\partial G}{\partial p_i}=y_i.}
+\]
+
+Now let \(w_j\) be the Lagrange multiplier on the \(j\)-th factor constraint.  
+The Lagrangian is
+\[
+\mathcal L
+=
+\sum_{i=1}^N p_i f_i(v_i)
++
+\sum_{j=1}^M w_j
+\left(
+V_j-\sum_{i=1}^N v_{ij}
+\right).
+\]
+Again by the envelope theorem,
+\[
+\frac{\partial G}{\partial V_j}=w_j.
+\]
+Thus
+\[
+\boxed{\frac{\partial G}{\partial V_j}=w_j.}
+\]
+
+Finally, since \(G\) is twice continuously differentiable under the maintained assumptions,
+\[
+\frac{d w_j}{d p_i}
+=
+\frac{\partial}{\partial p_i}\left(\frac{\partial G}{\partial V_j}\right)
+=
+\frac{\partial^2 G}{\partial p_i\,\partial V_j}
+=
+\frac{\partial}{\partial V_j}\left(\frac{\partial G}{\partial p_i}\right)
+=
+\frac{\partial y_i}{\partial V_j}.
+\]
+Therefore
+\[
+\boxed{\frac{d w_j}{d p_i}=\frac{d y_i}{d V_j}.}
+\]
+
+\item[(iv)] \textbf{Restrictions on the translog GDP function.}
+
+Suppose
+\[
+\begin{aligned}
+\ln G
+&= \alpha_0
++ \sum_{i=1}^N \alpha_i \ln p_i
++ \sum_{k=1}^M \beta_k \ln V_k \\
+&\quad
++ \frac{1}{2}\sum_{i=1}^N\sum_{j=1}^N \gamma_{ij}\ln p_i \ln p_j
++ \frac{1}{2}\sum_{k=1}^M\sum_{l=1}^M \delta_{kl}\ln V_k \ln V_l
++ \sum_{i=1}^N\sum_{k=1}^M \phi_{ik}\ln p_i \ln V_k.
+\end{aligned}
+\]
+
+To be consistent with the properties in (i) and (ii), the following restrictions must hold.
+
+\paragraph{(a) Symmetry}
+\[
+\boxed{\gamma_{ij}=\gamma_{ji}\quad \forall i,j,}
+\qquad
+\boxed{\delta_{kl}=\delta_{lk}\quad \forall k,l.}
+\]
+
+\paragraph{(b) Linear homogeneity in prices \(p\)}
+Since \(G\) is homogeneous of degree one in \(p\),
+\[
+\boxed{\sum_{i=1}^N \alpha_i=1,}
+\]
+\[
+\boxed{\sum_{i=1}^N \gamma_{ij}=0\quad \forall j,}
+\qquad
+\boxed{\sum_{j=1}^N \gamma_{ij}=0\quad \forall i,}
+\]
+\[
+\boxed{\sum_{i=1}^N \phi_{ik}=0\quad \forall k.}
+\]
+
+\paragraph{(c) Linear homogeneity in factor endowments \(V\)}
+Since \(G\) is homogeneous of degree one in \(V\),
+\[
+\boxed{\sum_{k=1}^M \beta_k=1,}
+\]
+\[
+\boxed{\sum_{k=1}^M \delta_{kl}=0\quad \forall l,}
+\qquad
+\boxed{\sum_{l=1}^M \delta_{kl}=0\quad \forall k,}
+\]
+\[
+\boxed{\sum_{k=1}^M \phi_{ik}=0\quad \forall i.}
+\]
+
+Thus the translog GDP function requires symmetry plus the two sets of homogeneity restrictions above.
+
+\item[(v)] \textbf{Rybczynski effect \(\partial y_i/\partial V_j\).}
+
+From Hotelling's lemma,
+\[
+y_i=\frac{\partial G}{\partial p_i}.
+\]
+Since
+\[
+\frac{\partial \ln G}{\partial \ln p_i}
+=
+\alpha_i+\sum_{m=1}^N \gamma_{im}\ln p_m+\sum_{k=1}^M \phi_{ik}\ln V_k,
+\]
+define the output share
+\[
+s_i^y:=\frac{p_i y_i}{G}
+=
+\frac{\partial \ln G}{\partial \ln p_i}
+=
+\alpha_i+\sum_{m=1}^N \gamma_{im}\ln p_m+\sum_{k=1}^M \phi_{ik}\ln V_k.
+\]
+Thus
+\[
+y_i=\frac{G}{p_i}s_i^y.
+\]
+
+Differentiate with respect to \(V_j\):
+\[
+\frac{\partial y_i}{\partial V_j}
+=
+\frac{\partial}{\partial V_j}\left(\frac{G}{p_i}s_i^y\right).
+\]
+Using
+\[
+\frac{\partial G}{\partial V_j}=w_j,
+\qquad
+\frac{\partial s_i^y}{\partial V_j}=\frac{\phi_{ij}}{V_j},
+\]
+we obtain
+\[
+\frac{\partial y_i}{\partial V_j}
+=
+\frac{1}{p_i}\left(
+w_j s_i^y + G\frac{\phi_{ij}}{V_j}
+\right).
+\]
+Since
+\[
+\frac{w_jV_j}{G}=:s_j^w,
+\]
+this can be written as
+\[
+\boxed{
+\frac{\partial y_i}{\partial V_j}
+=
+\frac{G}{p_iV_j}\left(s_i^y s_j^w+\phi_{ij}\right).
+}
+\]
+
+Therefore the Rybczynski elasticity is
+\[
+\boxed{
+\frac{\partial y_i}{\partial V_j}\frac{V_j}{y_i}
+=
+\frac{s_i^y s_j^w+\phi_{ij}}{s_i^y}
+=
+s_j^w+\frac{\phi_{ij}}{s_i^y}.
+}
+\]
+
+\item[(vi)] \textbf{Stolper--Samuelson effect \(\partial w_j/\partial p_i\).}
+
+From (iii),
+\[
+\frac{\partial w_j}{\partial p_i}=\frac{\partial y_i}{\partial V_j}.
+\]
+Hence directly from part (v),
+\[
+\boxed{
+\frac{\partial w_j}{\partial p_i}
+=
+\frac{G}{p_iV_j}\left(s_i^y s_j^w+\phi_{ij}\right).
+}
+\]
+
+Therefore the Stolper--Samuelson elasticity is
+\[
+\boxed{
+\frac{\partial w_j}{\partial p_i}\frac{p_i}{w_j}
+=
+\frac{s_i^y s_j^w+\phi_{ij}}{s_j^w}
+=
+s_i^y+\frac{\phi_{ij}}{s_j^w}.
+}
+\]
+
+\item[(vii)] \textbf{Derive \(\partial w_j/\partial V_k\) for \(k=j\) and \(k\neq j\).}
+
+Since
+\[
+w_j=\frac{\partial G}{\partial V_j},
+\]
+define the factor share
+\[
+s_j^w:=\frac{w_jV_j}{G}
+=
+\frac{\partial \ln G}{\partial \ln V_j}
+=
+\beta_j+\sum_{l=1}^M \delta_{jl}\ln V_l+\sum_{m=1}^N \phi_{mj}\ln p_m.
+\]
+Hence
+\[
+w_j=\frac{G}{V_j}s_j^w.
+\]
+
+Differentiate with respect to \(V_k\):
+\[
+\frac{\partial w_j}{\partial V_k}
+=
+\frac{\partial}{\partial V_k}\left(\frac{G}{V_j}s_j^w\right).
+\]
+
+\paragraph{Case 1: \(k\neq j\).}
+Then \(V_j\) is constant with respect to \(V_k\), so
+\[
+\frac{\partial w_j}{\partial V_k}
+=
+\frac{1}{V_j}\left(
+\frac{\partial G}{\partial V_k}s_j^w
++
+G\frac{\partial s_j^w}{\partial V_k}
+\right).
+\]
+Using
+\[
+\frac{\partial G}{\partial V_k}=w_k,
+\qquad
+\frac{\partial s_j^w}{\partial V_k}=\frac{\delta_{jk}}{V_k},
+\]
+we get
+\[
+\frac{\partial w_j}{\partial V_k}
+=
+\frac{1}{V_j}\left(
+w_k s_j^w + G\frac{\delta_{jk}}{V_k}
+\right)
+=
+\frac{G}{V_jV_k}\left(s_j^w s_k^w+\delta_{jk}\right).
+\]
+Thus, for \(k\neq j\),
+\[
+\boxed{
+\frac{\partial w_j}{\partial V_k}
+=
+\frac{G}{V_jV_k}\left(s_j^w s_k^w+\delta_{jk}\right).
+}
+\]
+
+The corresponding elasticity is
+\[
+\boxed{
+\frac{\partial w_j}{\partial V_k}\frac{V_k}{w_j}
+=
+\frac{s_j^w s_k^w+\delta_{jk}}{s_j^w}
+=
+s_k^w+\frac{\delta_{jk}}{s_j^w}.
+}
+\]
+
+\paragraph{Case 2: \(k=j\).}
+Now
+\[
+w_j=\frac{G}{V_j}s_j^w,
+\]
+so
+\[
+\frac{\partial w_j}{\partial V_j}
+=
+\frac{1}{V_j}\left(
+\frac{\partial G}{\partial V_j}s_j^w
++
+G\frac{\partial s_j^w}{\partial V_j}
+\right)
+-
+\frac{G}{V_j^2}s_j^w.
+\]
+Using
+\[
+\frac{\partial G}{\partial V_j}=w_j=\frac{G}{V_j}s_j^w,
+\qquad
+\frac{\partial s_j^w}{\partial V_j}=\frac{\delta_{jj}}{V_j},
+\]
+we obtain
+\[
+\frac{\partial w_j}{\partial V_j}
+=
+\frac{G}{V_j^2}\left((s_j^w)^2+\delta_{jj}-s_j^w\right).
+\]
+Hence
+\[
+\boxed{
+\frac{\partial w_j}{\partial V_j}
+=
+\frac{G}{V_j^2}\left((s_j^w)^2+\delta_{jj}-s_j^w\right).
+}
+\]
+
+The corresponding elasticity is
+\[
+\boxed{
+\frac{\partial w_j}{\partial V_j}\frac{V_j}{w_j}
+=
+\frac{(s_j^w)^2+\delta_{jj}-s_j^w}{s_j^w}
+=
+s_j^w-1+\frac{\delta_{jj}}{s_j^w}.
+}
+\]
+
+\end{enumerate}
+
+\subsection*{Summary}
+
+The key dual relations are
+\[
+\boxed{
+\frac{\partial G}{\partial p_i}=y_i,
+\qquad
+\frac{\partial G}{\partial V_j}=w_j,
+\qquad
+\frac{\partial w_j}{\partial p_i}=\frac{\partial y_i}{\partial V_j}.
+}
+\]
+
+For the translog GDP function, define
+\[
+s_i^y=\frac{p_i y_i}{G},
+\qquad
+s_j^w=\frac{w_jV_j}{G}.
+\]
+Then
+\[
+\boxed{
+\frac{\partial y_i}{\partial V_j}
+=
+\frac{G}{p_iV_j}\left(s_i^y s_j^w+\phi_{ij}\right),
+\qquad
+\frac{\partial y_i}{\partial V_j}\frac{V_j}{y_i}
+=
+s_j^w+\frac{\phi_{ij}}{s_i^y}.
+}
+\]
+\[
+\boxed{
+\frac{\partial w_j}{\partial p_i}
+=
+\frac{G}{p_iV_j}\left(s_i^y s_j^w+\phi_{ij}\right),
+\qquad
+\frac{\partial w_j}{\partial p_i}\frac{p_i}{w_j}
+=
+s_i^y+\frac{\phi_{ij}}{s_j^w}.
+}
+\]
+\[
+\boxed{
+\frac{\partial w_j}{\partial V_k}
+=
+\frac{G}{V_jV_k}\left(s_j^w s_k^w+\delta_{jk}\right)
+\quad (k\neq j),
+}
+\]
+\[
+\boxed{
+\frac{\partial w_j}{\partial V_j}
+=
+\frac{G}{V_j^2}\left((s_j^w)^2+\delta_{jj}-s_j^w\right).
+}
+\]
