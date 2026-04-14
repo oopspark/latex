@@ -1,0 +1,3437 @@
+
+\chapter*{Exercise}
+
+\begin{tcolorbox}
+\subsection*{Exercise 1-1}
+
+Assume that $f(x_1, \dots, x_N)$ and $g(x_1, \dots, x_N)$ are homogeneous
+of degrees $r$ and $s$, respectively. Check whether the function
+$h(x_1, \dots, x_N)$ defined in the following ways is homogeneous.
+In the cases in which it is, determine its degree of homogeneity:
+
+\begin{enumerate}
+    \item[(i)] $h(x_1, \dots, x_N) = f(x_1^p, \dots, x_N^p)$
+    \item[(ii)] $h(x_1, \dots, x_N) = [g(x_1, \dots, x_N)]^p$
+    \item[(iii)] $h(x_1, \dots, x_N) = f(x_1, \dots, x_N) + g(x_1, \dots, x_N)$
+    \item[(iv)] $h(x_1, \dots, x_N) = f(x_1, \dots, x_N)\, g(x_1, \dots, x_N)$
+    \item[(v)] $h(x_1, \dots, x_N) = \dfrac{f(x_1, \dots, x_N)}{g(x_1, \dots, x_N)}, \qquad g \neq 0$
+\end{enumerate}
+
+\end{tcolorbox}
+
+
+\section*{Exercise 1}
+
+Let $f(x_1,\dots,x_N)$ and $g(x_1,\dots,x_N)$ be homogeneous functions of degrees $r$ and $s$, respectively. That is,
+\[
+f(tx_1,\dots,tx_N)=t^r f(x_1,\dots,x_N), \quad
+g(tx_1,\dots,tx_N)=t^s g(x_1,\dots,x_N).
+\]
+
+We examine whether each function $h$ is homogeneous and determine its degree.
+
+\begin{enumerate}
+    \item[(i)] $h(x_1,\dots,x_N)=f(x_1^v,\dots,x_N^v)$
+
+    \[
+    h(tx_1,\dots,tx_N)
+    = f((tx_1)^v,\dots,(tx_N)^v)
+    = f(t^v x_1^v,\dots,t^v x_N^v)
+    = (t^v)^r f(x_1^v,\dots,x_N^v)
+    = t^{vr} h(x_1,\dots,x_N).
+    \]
+
+    Hence, $h$ is homogeneous of degree $\boxed{vr}$.
+
+    \item[(ii)] $h(x_1,\dots,x_N)=[g(x_1,\dots,x_N)]^p$
+
+    \[
+    h(tx_1,\dots,tx_N)
+    = [g(tx_1,\dots,tx_N)]^p
+    = [t^s g(x_1,\dots,x_N)]^p
+    = t^{sp} h(x_1,\dots,x_N).
+    \]
+
+    Hence, $h$ is homogeneous of degree $\boxed{sp}$.
+
+    \item[(iii)] $h(x_1,\dots,x_N)=f(x_1,\dots,x_N)+g(x_1,\dots,x_N)$
+
+    \[
+    h(tx_1,\dots,tx_N)
+    = t^r f(x_1,\dots,x_N) + t^s g(x_1,\dots,x_N).
+    \]
+
+    This expression is generally not of the form $t^k h(x)$ unless $r=s$.  
+    If $r=s$, then
+    \[
+    h(tx)=t^r(f(x)+g(x))=t^r h(x).
+    \]
+
+    Therefore, $h$ is homogeneous if and only if $r=s$, and in that case the degree is $\boxed{r}$.
+
+    \item[(iv)] $h(x_1,\dots,x_N)=f(x_1,\dots,x_N)\cdot g(x_1,\dots,x_N)$
+
+    \[
+    h(tx_1,\dots,tx_N)
+    = f(tx)g(tx)
+    = (t^r f(x))(t^s g(x))
+    = t^{r+s} h(x_1,\dots,x_N).
+    \]
+
+    Hence, $h$ is homogeneous of degree $\boxed{r+s}$.
+
+    \item[(v)] $h(x_1,\dots,x_N)=\dfrac{f(x_1,\dots,x_N)}{g(x_1,\dots,x_N)}$, $g\neq 0$
+
+    \[
+    h(tx_1,\dots,tx_N)
+    = \frac{f(tx)}{g(tx)}
+    = \frac{t^r f(x)}{t^s g(x)}
+    = t^{r-s} h(x_1,\dots,x_N).
+    \]
+
+    Hence, $h$ is homogeneous of degree $\boxed{r-s}$.
+\end{enumerate}
+
+
+
+
+\vspace{30pt}
+\begin{tcolorbox}
+\subsection*{Exercise 2}
+
+Define the function
+\[
+f(x_1,x_2) = A\left(\delta x_1^{\rho} + (1-\delta)x_2^{\rho}\right)^{1/\rho},
+\]
+where $\rho \neq 0$, $0 \le \delta \le 1$, $A>0$, $x_1>0$, $x_2>0$.
+
+This is the CES function. Examine whether it is concave or convex.
+
+\end{tcolorbox}
+
+Define
+\[
+f(x_1,x_2)=A\left[\delta x_1^{-p}+(1-\delta)x_2^{-p}\right]^{-1/p},
+\qquad p\neq 0,\; 0\le \delta \le 1,\; A>0,\; x_1,x_2>0.
+\]
+Let
+\[
+g(x_1,x_2)=\delta x_1^{-p}+(1-\delta)x_2^{-p},
+\]
+so that
+\[
+f=A g^{-1/p}.
+\]
+
+First derivatives are
+\[
+f_{x_1}=A\delta g^{-1/p-1}x_1^{-p-1},
+\qquad
+f_{x_2}=A(1-\delta)g^{-1/p-1}x_2^{-p-1}.
+\]
+
+Second derivatives are
+\[
+f_{x_1x_1}
+=
+-A\delta(1-\delta)(1+p)\,
+g^{-1/p-2}x_1^{-p-2}x_2^{-p},
+\]
+\[
+f_{x_2x_2}
+=
+-A\delta(1-\delta)(1+p)\,
+g^{-1/p-2}x_1^{-p}x_2^{-p-2},
+\]
+\[
+f_{x_1x_2}
+=
+A\delta(1-\delta)(1+p)\,
+g^{-1/p-2}x_1^{-p-1}x_2^{-p-1}.
+\]
+
+Hence the Hessian matrix can be written as
+\[
+H_f
+=
+A\delta(1-\delta)(1+p)g^{-1/p-2}x_1^{-p-2}x_2^{-p-2}
+\begin{pmatrix}
+-x_2^2 & x_1x_2\\
+x_1x_2 & -x_1^2
+\end{pmatrix}.
+\]
+
+Now, since \(x_1,x_2>0\), we have \(x_1^{-p}>0\) and \(x_2^{-p}>0\), and therefore
+\[
+g=\delta x_1^{-p}+(1-\delta)x_2^{-p}>0.
+\]
+Also, \(A>0\), \(\delta(1-\delta)\ge 0\), and \(x_1^{-p-2}x_2^{-p-2}>0\). Thus the sign of the Hessian is determined by the sign of \(1+p\), since
+\[
+\begin{pmatrix}
+-x_2^2 & x_1x_2\\
+x_1x_2 & -x_1^2
+\end{pmatrix}
+\]
+is negative semidefinite.
+
+Therefore:
+\[
+\boxed{
+\begin{cases}
+p>-1 &\Rightarrow f \text{ is concave},\\[1mm]
+p=-1 &\Rightarrow f \text{ is linear, hence both concave and convex},\\[1mm]
+p<-1 &\Rightarrow f \text{ is convex}.
+\end{cases}}
+\]
+
+
+
+
+\vspace{30pt}
+\begin{tcolorbox}
+
+\subsection*{Exercise 3}
+
+Prove that the function
+\[
+f(x) = \left(x_1^2 + \cdots + x_N^2\right)^{1/2}
+\]
+is convex.
+
+\textit{Hint: This is a norm, and every norm is convex.}
+
+\end{tcolorbox}
+
+
+
+Consider
+\[
+f(x)=\left(x_1^2+\cdots+x_n^2\right)^{1/2}=\|x\|_2.
+\]
+This is the Euclidean norm. Every norm is convex. Indeed, for any \(x,y\in\mathbb{R}^n\) and any \(0\le \lambda \le 1\),
+\[
+f(\lambda x+(1-\lambda)y)
+=
+\|\lambda x+(1-\lambda)y\|_2
+\le
+\|\lambda x\|_2+\|(1-\lambda)y\|_2
+=
+\lambda \|x\|_2+(1-\lambda)\|y\|_2.
+\]
+Hence,
+\[
+f(\lambda x+(1-\lambda)y)\le \lambda f(x)+(1-\lambda)f(y),
+\]
+so \(f\) is convex.
+
+Thus,
+\[
+\boxed{
+f(x)=\left(x_1^2+\cdots+x_n^2\right)^{1/2}
+\text{ is convex.}}
+\]
+
+
+
+
+
+\vspace{30pt}
+\begin{tcolorbox}
+
+\subsection*{Exercise 4}
+
+Assume $x \in \mathbb{R}$. Prove that any monotonic function of $x$
+is both quasiconvex and quasiconcave.
+
+
+\end{tcolorbox}
+
+
+Assume \(x\in \mathbb{R}\), and let \(f:\mathbb{R}\to\mathbb{R}\) be monotonic.  
+We show that \(f\) is both quasiconvex and quasiconcave.
+
+Take any \(x,y\in\mathbb{R}\) and \(0\le \lambda \le 1\), and define
+\[
+z=\lambda x+(1-\lambda)y.
+\]
+Then \(z\) lies between \(x\) and \(y\). Since \(f\) is monotonic, \(f(z)\) lies between \(f(x)\) and \(f(y)\). Therefore,
+\[
+\min\{f(x),f(y)\}\le f(\lambda x+(1-\lambda)y)\le \max\{f(x),f(y)\}.
+\]
+
+Hence,
+\[
+f(\lambda x+(1-\lambda)y)\le \max\{f(x),f(y)\},
+\]
+so \(f\) is quasiconvex, and
+\[
+f(\lambda x+(1-\lambda)y)\ge \min\{f(x),f(y)\},
+\]
+so \(f\) is quasiconcave.
+
+Thus,
+\[
+\boxed{\text{Any monotonic function on } \mathbb{R} \text{ is both quasiconvex and quasiconcave.}}
+\]
+
+
+
+
+
+\vspace{30pt}
+\begin{tcolorbox}
+
+\subsection*{Exercise 5}
+
+Prove that the Cobb--Douglas function
+\[
+f(x) = A x_1^{\alpha_1} x_2^{\alpha_2} \cdots x_N^{\alpha_N}
+\]
+is
+
+\begin{enumerate}
+    \item[(i)] always quasiconcave,
+    \item[(ii)] strictly concave if $\alpha = \alpha_1+\cdots+\alpha_N < 1$,
+    \item[(iii)] concave if and only if $\alpha \le 1$.
+\end{enumerate}
+
+\textit{Hint: Taking a log transformation may help.}
+
+\end{tcolorbox}
+
+
+
+
+Consider the Cobb-Douglas function
+\[
+f(x)=A x_1^{a_1}x_2^{a_2}\cdots x_N^{a_N},
+\qquad A>0,\; x_i>0,\; a_i\ge 0,
+\]
+and let
+\[
+a=a_1+\cdots+a_N.
+\]
+
+\subsection*{(i) \(f\) is always quasiconcave}
+
+Take logs:
+\[
+\ln f(x)=\ln A+\sum_{i=1}^N a_i \ln x_i.
+\]
+Since each \(\ln x_i\) is concave on \(\mathbb{R}_{++}\), and each \(a_i\ge 0\), the function \(\ln f(x)\) is concave. Because the logarithm is strictly increasing, the upper contour sets of \(f\) are the same as those of \(\ln f\). Hence \(f\) is quasiconcave.
+
+Therefore,
+\[
+\boxed{f \text{ is always quasiconcave.}}
+\]
+
+\subsection*{(ii) \(f\) is strictly concave if \(a<1\)}
+
+First derivatives are
+\[
+f_i=\frac{\partial f}{\partial x_i}=\frac{a_i}{x_i}f.
+\]
+Second derivatives are
+\[
+f_{ii}=a_i(a_i-1)\frac{f}{x_i^2},
+\qquad
+f_{ij}=a_i a_j \frac{f}{x_i x_j}\quad (i\ne j).
+\]
+
+For any \(z=(z_1,\dots,z_N)\in\mathbb{R}^N\), let
+\[
+u_i=\frac{z_i}{x_i}.
+\]
+Then
+\[
+z'H z
+=
+f\left[
+\left(\sum_{i=1}^N a_i u_i\right)^2
+-
+\sum_{i=1}^N a_i u_i^2
+\right].
+\]
+By the Cauchy-Schwarz inequality,
+\[
+\left(\sum_{i=1}^N a_i u_i\right)^2
+=
+\left(\sum_{i=1}^N \sqrt{a_i}\,\sqrt{a_i}u_i\right)^2
+\le
+\left(\sum_{i=1}^N a_i\right)\left(\sum_{i=1}^N a_i u_i^2\right)
+=
+a\sum_{i=1}^N a_i u_i^2.
+\]
+Hence,
+\[
+z'H z
+\le
+f(a-1)\sum_{i=1}^N a_i u_i^2.
+\]
+If \(a<1\), then \(a-1<0\), so for every nonzero \(z\),
+\[
+z'H z<0.
+\]
+Thus the Hessian is negative definite, and \(f\) is strictly concave.
+
+Therefore,
+\[
+\boxed{a<1 \Rightarrow f \text{ is strictly concave.}}
+\]
+
+\subsection*{(iii) \(f\) is concave if and only if \(a\le 1\)}
+
+From the previous computation,
+\[
+z'H z
+\le
+f(a-1)\sum_{i=1}^N a_i u_i^2.
+\]
+So if \(a\le 1\), then \(z'H z\le 0\), and therefore \(f\) is concave.
+
+Conversely, \(f\) is homogeneous of degree \(a\), since
+\[
+f(tx)=t^a f(x), \qquad t>0.
+\]
+If \(f\) is concave, then for \(0<t<1\),
+\[
+f(tx)\ge t f(x).
+\]
+Using homogeneity,
+\[
+t^a f(x)\ge t f(x).
+\]
+Since \(f(x)>0\), this implies
+\[
+t^a\ge t \qquad \text{for all } 0<t<1.
+\]
+This is possible only if \(a\le 1\).
+
+Hence,
+\[
+\boxed{f \text{ is concave if and only if } a\le 1.}
+\]
+
+
+
+\vspace{30pt}
+\begin{tcolorbox}
+
+\subsection*{Exercise 6}
+
+Consider the system
+\[
+u^3 + xu - 2y - z = 0
+\]
+and
+\[
+u - zv^3 + xy + xv = 0.
+\]
+
+Can you define $u$ and $v$ as differentiable functions of $x,y,z$
+in a neighborhood of
+\[
+(x,y,z,u,v)=(0,1,-1,1,-1)?
+\]
+
+If the answer is yes, then compute the partial derivatives of
+$u$ and $v$ with respect to $x$, $y$, and $z$.
+
+\end{tcolorbox}
+
+
+Consider the system
+\[
+F_1(x,y,z,u,v)=u^3+xu-2y-z=0,
+\]
+\[
+F_2(x,y,z,u,v)=u-zv^3+xy+xv=0.
+\]
+
+We study whether \(u\) and \(v\) can be defined as differentiable functions of \(x,y,z\) in a neighborhood of
+\[
+(x,y,z,u,v)=(0,1,-1,1,-1).
+\]
+
+First check that the point satisfies the system:
+\[
+1^3+0\cdot 1-2\cdot 1-(-1)=1-2+1=0,
+\]
+\[
+1-(-1)(-1)^3+0\cdot 1+0\cdot (-1)=1-1=0.
+\]
+
+Now compute the Jacobian matrix with respect to \((u,v)\):
+\[
+\frac{\partial(F_1,F_2)}{\partial(u,v)}
+=
+\begin{pmatrix}
+\frac{\partial F_1}{\partial u} & \frac{\partial F_1}{\partial v}\\
+\frac{\partial F_2}{\partial u} & \frac{\partial F_2}{\partial v}
+\end{pmatrix}
+=
+\begin{pmatrix}
+3u^2+x & 0\\
+1 & -3zv^2+x
+\end{pmatrix}.
+\]
+At \((0,1,-1,1,-1)\),
+\[
+\frac{\partial(F_1,F_2)}{\partial(u,v)}
+=
+\begin{pmatrix}
+3 & 0\\
+1 & 3
+\end{pmatrix},
+\]
+whose determinant is
+\[
+\det
+\begin{pmatrix}
+3 & 0\\
+1 & 3
+\end{pmatrix}
+=9\neq 0.
+\]
+Therefore, by the Implicit Function Theorem, \(u\) and \(v\) can indeed be defined as differentiable functions of \(x,y,z\) in a neighborhood of the given point.
+
+\subsection*{Partial derivatives with respect to \(x\)}
+
+Differentiate
+\[
+u^3+xu-2y-z=0
+\]
+with respect to \(x\):
+\[
+3u^2u_x+u+xu_x=0.
+\]
+At the point, this becomes
+\[
+3u_x+1=0,
+\]
+so
+\[
+u_x=-\frac13.
+\]
+
+Differentiate
+\[
+u-zv^3+xy+xv=0
+\]
+with respect to \(x\):
+\[
+u_x-z(3v^2v_x)+y+v+xv_x=0.
+\]
+At the point,
+\[
+u_x+3v_x+1-1=0,
+\]
+so
+\[
+u_x+3v_x=0.
+\]
+Using \(u_x=-\frac13\), we get
+\[
+v_x=\frac19.
+\]
+
+\subsection*{Partial derivatives with respect to \(y\)}
+
+Differentiate
+\[
+u^3+xu-2y-z=0
+\]
+with respect to \(y\):
+\[
+3u^2u_y+xu_y-2=0.
+\]
+At the point,
+\[
+3u_y-2=0,
+\]
+so
+\[
+u_y=\frac23.
+\]
+
+Differentiate
+\[
+u-zv^3+xy+xv=0
+\]
+with respect to \(y\):
+\[
+u_y-z(3v^2v_y)+x+xv_y=0.
+\]
+At the point,
+\[
+u_y+3v_y=0.
+\]
+Thus,
+\[
+\frac23+3v_y=0,
+\]
+and therefore
+\[
+v_y=-\frac29.
+\]
+
+\subsection*{Partial derivatives with respect to \(z\)}
+
+Differentiate
+\[
+u^3+xu-2y-z=0
+\]
+with respect to \(z\):
+\[
+3u^2u_z+xu_z-1=0.
+\]
+At the point,
+\[
+3u_z-1=0,
+\]
+so
+\[
+u_z=\frac13.
+\]
+
+Differentiate
+\[
+u-zv^3+xy+xv=0
+\]
+with respect to \(z\):
+\[
+u_z-\frac{\partial}{\partial z}(zv^3)+xv_z=0.
+\]
+Since
+\[
+\frac{\partial}{\partial z}(zv^3)=v^3+3zv^2v_z,
+\]
+we obtain
+\[
+u_z-v^3-3zv^2v_z+xv_z=0.
+\]
+At the point,
+\[
+u_z-(-1)+3v_z=0,
+\]
+so
+\[
+u_z+1+3v_z=0.
+\]
+Using \(u_z=\frac13\), we get
+\[
+\frac13+1+3v_z=0,
+\]
+hence
+\[
+v_z=-\frac49.
+\]
+
+Therefore,
+\[
+\boxed{
+u_x=-\frac13,\quad u_y=\frac23,\quad u_z=\frac13
+}
+\]
+and
+\[
+\boxed{
+v_x=\frac19,\quad v_y=-\frac29,\quad v_z=-\frac49.
+}
+\]
+
+
+
+
+
+\vspace{30pt}
+\begin{tcolorbox}
+
+\subsection*{Exercise 7}
+
+Consider the function
+\[
+f(x,y) = x^2 - xy + y^2 + 3x - 2y + 1.
+\]
+
+Find the minimum of $f$ and prove that it is the global minimum.
+
+\end{tcolorbox}
+
+
+
+We first find the critical point by setting the first-order partial derivatives equal to zero:
+\[
+\frac{\partial f}{\partial x}=2x-y+3,
+\qquad
+\frac{\partial f}{\partial y}=-x+2y-2.
+\]
+Hence we solve
+\[
+2x-y+3=0,
+\qquad
+-x+2y-2=0.
+\]
+
+From the first equation,
+\[
+y=2x+3.
+\]
+Substituting this into the second equation gives
+\[
+-x+2(2x+3)-2=0
+\]
+\[
+-x+4x+6-2=0
+\]
+\[
+3x+4=0,
+\]
+so
+\[
+x=-\frac{4}{3}.
+\]
+Then
+\[
+y=2\left(-\frac{4}{3}\right)+3=\frac{1}{3}.
+\]
+
+Therefore the only critical point is
+\[
+\left(-\frac{4}{3},\frac{1}{3}\right).
+\]
+
+Now evaluate \(f\) at this point:
+\[
+f\left(-\frac{4}{3},\frac{1}{3}\right)
+=
+\left(-\frac{4}{3}\right)^2
+-\left(-\frac{4}{3}\cdot\frac{1}{3}\right)
++\left(\frac{1}{3}\right)^2
++3\left(-\frac{4}{3}\right)
+-2\left(\frac{1}{3}\right)+1.
+\]
+That is,
+\[
+=
+\frac{16}{9}+\frac{4}{9}+\frac{1}{9}-4-\frac{2}{3}+1
+=
+\frac{21}{9}-3-\frac{2}{3}
+=
+\frac{7}{3}-3-\frac{2}{3}
+=
+-\frac{4}{3}.
+\]
+
+So the minimum value candidate is
+\[
+-\frac{4}{3}.
+\]
+
+To prove that this is the global minimum, compute the Hessian matrix:
+\[
+H=
+\begin{pmatrix}
+f_{xx} & f_{xy}\\
+f_{yx} & f_{yy}
+\end{pmatrix}
+=
+\begin{pmatrix}
+2 & -1\\
+-1 & 2
+\end{pmatrix}.
+\]
+Its leading principal minors are
+\[
+2>0,
+\qquad
+\det(H)=2\cdot 2-(-1)^2=4-1=3>0.
+\]
+Hence \(H\) is positive definite, so \(f\) is strictly convex on \(\mathbb{R}^2\).
+
+A strictly convex function has at most one critical point, and that critical point must be the unique global minimizer. Therefore
+\[
+\boxed{
+\left(x^*,y^*\right)=\left(-\frac{4}{3},\frac{1}{3}\right)
+}
+\]
+is the unique global minimizer, and the global minimum value is
+\[
+\boxed{
+f\left(-\frac{4}{3},\frac{1}{3}\right)=-\frac{4}{3}.
+}
+\]
+
+
+
+\vspace{30pt}
+\begin{tcolorbox}
+\subsection*{Exercise 8}
+
+Let
+\[
+f(x_1,x_2) = -x_2,
+\qquad
+g(x_1,x_2)=x_2^3 - x_1^2=0.
+\]
+
+Show that $(0,0)$ is the unique maximizer of the constrained maximization problem.
+Check the constraint qualification condition at $(0,0)$.
+
+\end{tcolorbox}
+
+
+
+We will show that \((0,0)\) is the unique maximizer and then check the constraint qualification at \((0,0)\).
+
+\subsection*{1. Feasible set}
+
+The constraint is
+\[
+x_2^3-x_1^2=0,
+\]
+that is,
+\[
+x_1^2=x_2^3.
+\]
+Since \(x_1^2\ge 0\), we must have
+\[
+x_2^3\ge 0,
+\]
+which implies
+\[
+x_2\ge 0.
+\]
+Therefore every feasible point satisfies
+\[
+x_2\ge 0.
+\]
+
+\subsection*{2. Maximizer of the objective function}
+
+Since
+\[
+f(x_1,x_2)=-x_2
+\]
+and every feasible point satisfies \(x_2\ge 0\), we have
+\[
+f(x_1,x_2)=-x_2\le 0.
+\]
+Thus the largest possible value of \(f\) is \(0\), and this occurs only when
+\[
+x_2=0.
+\]
+
+Now if \(x_2=0\), then the constraint gives
+\[
+x_1^2=x_2^3=0,
+\]
+so
+\[
+x_1=0.
+\]
+Hence the only feasible point with \(x_2=0\) is \((0,0)\).
+
+Therefore,
+\[
+\boxed{(0,0) \text{ is the unique maximizer.}}
+\]
+
+\subsection*{3. Constraint qualification at \((0,0)\)}
+
+A standard constraint qualification for equality constraints requires that the gradient of the constraint be nonzero at the candidate point.
+
+Compute the gradient:
+\[
+\nabla g(x_1,x_2)
+=
+\left(
+\frac{\partial g}{\partial x_1},
+\frac{\partial g}{\partial x_2}
+\right)
+=
+(-2x_1,\,3x_2^2).
+\]
+At \((0,0)\),
+\[
+\nabla g(0,0)=(0,0).
+\]
+
+Since the gradient of the equality constraint vanishes at \((0,0)\), the Jacobian of the constraint does not have full rank there. Therefore the usual constraint qualification fails at \((0,0)\).
+
+Thus,
+\[
+\boxed{\nabla g(0,0)=(0,0), \text{ so the constraint qualification condition does not hold at } (0,0).}
+\]
+
+\subsection*{Conclusion}
+
+The feasible set is given by \(x_1^2=x_2^3\), which implies \(x_2\ge 0\). Hence
+\[
+f(x_1,x_2)=-x_2\le 0
+\]
+for every feasible point, with equality only at \((0,0)\). So \((0,0)\) is the unique maximizer. However,
+\[
+\nabla g(0,0)=(0,0),
+\]
+so the usual constraint qualification fails at that point.
+
+
+
+
+\vspace{30pt}
+\begin{tcolorbox}
+
+\subsection*{Exercise 9}
+
+Consider the problem
+\[
+\max \ (\min)\ x^2 + y^2 + z^2
+\]
+subject to
+\[
+x + 2y + z = 1
+\]
+and
+\[
+2x - y - 3z = 4.
+\]
+
+Obtain the solution using the Lagrange method.
+Did you find a maximum, a minimum, or neither?
+
+\end{tcolorbox}
+
+
+
+\section*{Solution}
+
+Consider the problem
+\[
+\max \ (\min)\ f(x,y,z)=x^2+y^2+z^2
+\]
+subject to
+\[
+g_1(x,y,z)=x+2y+z-1=0
+\]
+and
+\[
+g_2(x,y,z)=2x-y-3z-4=0.
+\]
+
+We solve it by the Lagrange method.
+
+\subsection*{1. Lagrangian}
+
+Define
+\[
+\mathcal{L}(x,y,z,\lambda,\mu)
+=
+x^2+y^2+z^2
++\lambda(x+2y+z-1)
++\mu(2x-y-3z-4).
+\]
+
+The first-order conditions are
+\[
+\frac{\partial \mathcal{L}}{\partial x}=2x+\lambda+2\mu=0,
+\]
+\[
+\frac{\partial \mathcal{L}}{\partial y}=2y+2\lambda-\mu=0,
+\]
+\[
+\frac{\partial \mathcal{L}}{\partial z}=2z+\lambda-3\mu=0,
+\]
+together with the constraints
+\[
+x+2y+z=1,
+\]
+\[
+2x-y-3z=4.
+\]
+
+Thus,
+\[
+x=-\frac{\lambda+2\mu}{2},\qquad
+y=-\frac{2\lambda-\mu}{2},\qquad
+z=-\frac{\lambda-3\mu}{2}.
+\]
+
+\subsection*{2. Substitute into the constraints}
+
+Using \(x+2y+z=1\),
+\[
+-\frac{\lambda+2\mu}{2}
++2\left(-\frac{2\lambda-\mu}{2}\right)
+-\frac{\lambda-3\mu}{2}
+=1.
+\]
+This simplifies to
+\[
+-\frac{\lambda+2\mu}{2}-(2\lambda-\mu)-\frac{\lambda-3\mu}{2}=1,
+\]
+\[
+-\lambda-2\lambda-\lambda-\mu+\mu+\frac{3\mu}{2}-\frac{2\mu}{2}=1,
+\]
+or more directly,
+\[
+-3\lambda+\mu=1. \tag{1}
+\]
+
+Using \(2x-y-3z=4\),
+\[
+2\left(-\frac{\lambda+2\mu}{2}\right)
+-\left(-\frac{2\lambda-\mu}{2}\right)
+-3\left(-\frac{\lambda-3\mu}{2}\right)
+=4.
+\]
+This becomes
+\[
+-(\lambda+2\mu)+\frac{2\lambda-\mu}{2}+\frac{3\lambda-9\mu}{2}=4,
+\]
+hence
+\[
+\lambda-7\mu=4. \tag{2}
+\]
+
+So we solve the linear system
+\[
+-3\lambda+\mu=1,
+\qquad
+\lambda-7\mu=4.
+\]
+
+From (1),
+\[
+\mu=1+3\lambda.
+\]
+Substitute into (2):
+\[
+\lambda-7(1+3\lambda)=4,
+\]
+\[
+\lambda-7-21\lambda=4,
+\]
+\[
+-20\lambda=11,
+\]
+so
+\[
+\lambda=-\frac{11}{20}.
+\]
+Then
+\[
+\mu=1+3\left(-\frac{11}{20}\right)
+=1-\frac{33}{20}
+=-\frac{13}{20}.
+\]
+
+\subsection*{3. Compute \(x,y,z\)}
+
+Now
+\[
+x=-\frac{\lambda+2\mu}{2}
+=
+-\frac{-\frac{11}{20}+2\left(-\frac{13}{20}\right)}{2}
+=
+-\frac{-\frac{37}{20}}{2}
+=
+\frac{37}{40},
+\]
+\[
+y=-\frac{2\lambda-\mu}{2}
+=
+-\frac{2\left(-\frac{11}{20}\right)-\left(-\frac{13}{20}\right)}{2}
+=
+-\frac{-\frac{9}{20}}{2}
+=
+\frac{9}{40},
+\]
+\[
+z=-\frac{\lambda-3\mu}{2}
+=
+-\frac{-\frac{11}{20}-3\left(-\frac{13}{20}\right)}{2}
+=
+-\frac{\frac{28}{20}}{2}
+=
+-\frac{7}{10}.
+\]
+
+Therefore the critical point is
+\[
+\boxed{
+\left(x,y,z\right)=\left(\frac{37}{40},\frac{9}{40},-\frac{7}{10}\right).
+}
+\]
+
+\subsection*{4. Value of the objective function}
+
+\[
+f\left(\frac{37}{40},\frac{9}{40},-\frac{7}{10}\right)
+=
+\left(\frac{37}{40}\right)^2
++
+\left(\frac{9}{40}\right)^2
++
+\left(-\frac{7}{10}\right)^2.
+\]
+That is,
+\[
+=
+\frac{1369}{1600}
++
+\frac{81}{1600}
++
+\frac{49}{100}
+=
+\frac{1450}{1600}+\frac{784}{1600}
+=
+\frac{2234}{1600}
+=
+\frac{1117}{800}.
+\]
+
+So
+\[
+\boxed{
+f_{\min}=\frac{1117}{800}.
+}
+\]
+
+\subsection*{5. Maximum, minimum, or neither?}
+
+The objective function
+\[
+f(x,y,z)=x^2+y^2+z^2
+\]
+is strictly convex, since its Hessian is
+\[
+H=
+\begin{pmatrix}
+2 & 0 & 0\\
+0 & 2 & 0\\
+0 & 0 & 2
+\end{pmatrix},
+\]
+which is positive definite.
+
+The constraints are linear, so the feasible set is an affine line in \(\mathbb{R}^3\). A strictly convex function restricted to an affine set has at most one minimizer, and that minimizer is global.
+
+Moreover, along the feasible line, \(x^2+y^2+z^2\to \infty\) as \(\|(x,y,z)\|\to\infty\). Hence there is no maximum.
+
+Therefore, the point
+\[
+\boxed{
+\left(\frac{37}{40},\frac{9}{40},-\frac{7}{10}\right)
+}
+\]
+is the \emph{global minimum}, and there is \emph{no maximum}.
+
+\subsection*{Conclusion}
+
+Using the Lagrange method, we obtain
+\[
+\boxed{
+\left(x,y,z\right)=\left(\frac{37}{40},\frac{9}{40},-\frac{7}{10}\right)
+}
+\]
+with
+\[
+\boxed{
+f_{\min}=\frac{1117}{800}.
+}
+\]
+Thus the constrained problem has a \textbf{minimum}, not a maximum.
+
+
+
+\vspace{30pt}
+\begin{tcolorbox}
+
+\subsection*{Exercise 10}
+
+Find a solution to the problem
+\[
+\max f(x,y,z)=x+y+z
+\]
+subject to
+\[
+g_1(x,y,z)=x^2+y^2+z^2 \le 1,
+\]
+\[
+g_2(x,y,z)=x-y-z \le 1,
+\]
+\[
+g_3(x,y,z)=-x \le 0.
+\]
+
+\end{tcolorbox}
+
+
+Consider the problem
+\[
+\max \ f(x,y,z)=x+y+z
+\]
+subject to
+\[
+g_1(x,y,z)=x^2+y^2+z^2-1\le 0,
+\]
+\[
+g_2(x,y,z)=x-y-z-1\le 0,
+\]
+\[
+g_3(x,y,z)=-x\le 0.
+\]
+
+We solve it using the Kuhn-Tucker conditions.
+
+Define the Lagrangian
+\[
+\mathcal{L}(x,y,z,\lambda_1,\lambda_2,\lambda_3)
+=
+x+y+z
+-\lambda_1(x^2+y^2+z^2-1)
+-\lambda_2(x-y-z-1)
+-\lambda_3(-x),
+\]
+with
+\[
+\lambda_1,\lambda_2,\lambda_3\ge 0.
+\]
+
+The first-order conditions are
+\[
+\frac{\partial \mathcal{L}}{\partial x}
+=
+1-2\lambda_1 x-\lambda_2+\lambda_3=0, \tag{1}
+\]
+\[
+\frac{\partial \mathcal{L}}{\partial y}
+=
+1-2\lambda_1 y+\lambda_2=0, \tag{2}
+\]
+\[
+\frac{\partial \mathcal{L}}{\partial z}
+=
+1-2\lambda_1 z+\lambda_2=0. \tag{3}
+\]
+
+The complementary slackness conditions are
+\[
+\lambda_1(x^2+y^2+z^2-1)=0, \tag{4}
+\]
+\[
+\lambda_2(x-y-z-1)=0, \tag{5}
+\]
+\[
+\lambda_3(-x)=0. \tag{6}
+\]
+
+From (2) and (3), we obtain
+\[
+-2\lambda_1 y+2\lambda_1 z=0,
+\]
+that is,
+\[
+\lambda_1(y-z)=0.
+\]
+
+If \(\lambda_1=0\), then from (2),
+\[
+1+\lambda_2=0,
+\]
+which is impossible since \(\lambda_2\ge 0\). Hence
+\[
+\lambda_1>0.
+\]
+Therefore, by (4),
+\[
+x^2+y^2+z^2=1,
+\]
+and since \(\lambda_1>0\), we also get
+\[
+y=z.
+\]
+
+Now consider the possible cases for \(\lambda_2\) and \(\lambda_3\).
+
+\subsection*{Case 1: \(\lambda_2=0,\ \lambda_3=0\)}
+
+Then (1), (2), and (3) become
+\[
+1-2\lambda_1 x=0,\qquad
+1-2\lambda_1 y=0,\qquad
+1-2\lambda_1 z=0.
+\]
+Thus
+\[
+x=y=z=\frac{1}{2\lambda_1}.
+\]
+Since \(x^2+y^2+z^2=1\),
+\[
+3x^2=1,
+\]
+so
+\[
+x=y=z=\frac{1}{\sqrt{3}}.
+\]
+Check feasibility:
+\[
+x-y-z-1
+=
+\frac1{\sqrt3}-\frac1{\sqrt3}-\frac1{\sqrt3}-1
+=
+-\frac1{\sqrt3}-1<0,
+\]
+and
+\[
+-x=-\frac1{\sqrt3}<0.
+\]
+So this point is feasible.
+
+\subsection*{Case 2: \(\lambda_2>0,\ \lambda_3=0\)}
+
+Then by (5),
+\[
+x-y-z-1=0.
+\]
+Since \(y=z\),
+\[
+x-2y-1=0,
+\qquad\text{so}\qquad
+x=1+2y.
+\]
+Using \(x^2+y^2+z^2=1\) and \(z=y\), we get
+\[
+x^2+2y^2=1.
+\]
+Substituting \(x=1+2y\),
+\[
+(1+2y)^2+2y^2=1,
+\]
+\[
+1+4y+6y^2=1,
+\]
+\[
+4y+6y^2=0,
+\]
+\[
+2y(2+3y)=0.
+\]
+Hence
+\[
+y=0 \quad\text{or}\quad y=-\frac23.
+\]
+
+If \(y=0\), then \(z=0\) and \(x=1\). But then from (2),
+\[
+1+\lambda_2=0,
+\]
+a contradiction.
+
+If \(y=-\frac23\), then \(z=-\frac23\) and
+\[
+x=1+2\left(-\frac23\right)=-\frac13,
+\]
+which violates the constraint \(x\ge 0\).
+
+Hence this case is impossible.
+
+\subsection*{Case 3: \(\lambda_2=0,\ \lambda_3>0\)}
+
+Then by (6),
+\[
+x=0.
+\]
+Substituting into (1),
+\[
+1+\lambda_3=0,
+\]
+which is impossible since \(\lambda_3\ge 0\).
+
+Hence this case is impossible.
+
+\subsection*{Case 4: \(\lambda_2>0,\ \lambda_3>0\)}
+
+Then by (5) and (6),
+\[
+x-y-z-1=0,
+\qquad
+x=0.
+\]
+Since \(y=z\),
+\[
+-y-z-1=0,
+\]
+so
+\[
+2y=-1,
+\qquad
+y=z=-\frac12.
+\]
+Then
+\[
+x^2+y^2+z^2
+=
+0+\frac14+\frac14
+=
+\frac12 \neq 1,
+\]
+which contradicts \(x^2+y^2+z^2=1\).
+
+Hence this case is also impossible.
+
+Therefore the only feasible KKT point is
+\[
+\boxed{
+\left(x^*,y^*,z^*\right)
+=
+\left(\frac1{\sqrt3},\frac1{\sqrt3},\frac1{\sqrt3}\right).
+}
+\]
+
+The maximum value is
+\[
+\boxed{
+f(x^*,y^*,z^*)=\sqrt3.
+}
+\]
+
+
+
+\vspace{30pt}
+\begin{tcolorbox}
+
+\subsection*{Exercise 11}
+
+Consider the following cost-minimization problem, where
+\[
+x_1^2 + x_2^2 \ge y
+\]
+represents the production technology:
+\[
+\min \; w_1 x_1 + w_2 x_2
+\]
+subject to
+\[
+x_1 \ge 0,\qquad x_2 \ge 0,\qquad x_1^2 + x_2^2 - y \ge 0.
+\]
+
+We may transform the problem into a maximization problem:
+\[
+\max \; -w_1 x_1 - w_2 x_2
+\]
+subject to
+\[
+x_1 \ge 0,\qquad x_2 \ge 0,\qquad x_1^2 + x_2^2 - y \ge 0.
+\]
+
+\begin{enumerate}
+    \item[(i)] Set up the Lagrangian and derive the first-order conditions
+    of the Kuhn--Tucker theorem.
+    \item[(ii)] Derive the explicit solution(s).
+\end{enumerate}
+
+\end{tcolorbox}
+
+
+
+\section*{Solution}
+
+Consider the problem
+\[
+\min \; w_1x_1+w_2x_2
+\]
+subject to
+\[
+x_1\ge 0,\qquad x_2\ge 0,\qquad x_1^2+x_2^2-y\ge 0.
+\]
+Equivalently, we may write it as
+\[
+\max \; -w_1x_1-w_2x_2
+\]
+subject to
+\[
+x_1\ge 0,\qquad x_2\ge 0,\qquad x_1^2+x_2^2-y\ge 0.
+\]
+
+We assume \(w_1>0\), \(w_2>0\), and \(y\ge 0\).
+
+\subsection*{(i) Lagrangian and Kuhn--Tucker first-order conditions}
+
+Since all constraints are of the form \(\ge 0\) and the problem is written as a maximization problem, the Lagrangian is
+\[
+\mathcal{L}(x_1,x_2,\lambda_1,\lambda_2,\lambda_3)
+=
+-w_1x_1-w_2x_2
++\lambda_1x_1+\lambda_2x_2+\lambda_3(x_1^2+x_2^2-y),
+\]
+where
+\[
+\lambda_1,\lambda_2,\lambda_3\ge 0.
+\]
+
+The Kuhn--Tucker first-order conditions are:
+
+\paragraph{Stationarity}
+\[
+\frac{\partial \mathcal{L}}{\partial x_1}
+=
+-w_1+\lambda_1+2\lambda_3x_1=0,
+\]
+\[
+\frac{\partial \mathcal{L}}{\partial x_2}
+=
+-w_2+\lambda_2+2\lambda_3x_2=0.
+\]
+
+\paragraph{Primal feasibility}
+\[
+x_1\ge 0,\qquad x_2\ge 0,\qquad x_1^2+x_2^2-y\ge 0.
+\]
+
+\paragraph{Dual feasibility}
+\[
+\lambda_1\ge 0,\qquad \lambda_2\ge 0,\qquad \lambda_3\ge 0.
+\]
+
+\paragraph{Complementary slackness}
+\[
+\lambda_1x_1=0,\qquad \lambda_2x_2=0,\qquad \lambda_3(x_1^2+x_2^2-y)=0.
+\]
+
+Thus the complete Kuhn--Tucker system is
+\[
+-w_1+\lambda_1+2\lambda_3x_1=0,
+\]
+\[
+-w_2+\lambda_2+2\lambda_3x_2=0,
+\]
+\[
+x_1\ge 0,\quad x_2\ge 0,\quad x_1^2+x_2^2-y\ge 0,
+\]
+\[
+\lambda_1\ge 0,\quad \lambda_2\ge 0,\quad \lambda_3\ge 0,
+\]
+\[
+\lambda_1x_1=0,\quad \lambda_2x_2=0,\quad \lambda_3(x_1^2+x_2^2-y)=0.
+\]
+
+\subsection*{(ii) Explicit solution}
+
+Because \(w_1,w_2>0\), the objective \(w_1x_1+w_2x_2\) is increasing in both \(x_1\) and \(x_2\). Hence at the optimum we must have
+\[
+x_1^2+x_2^2-y=0,
+\]
+for otherwise one could reduce some input and lower cost.
+
+So the production constraint binds:
+\[
+x_1^2+x_2^2=y.
+\]
+
+Also, if \(y>0\), then the optimum cannot have \(x_1=0\) and \(x_2=0\). In fact, the optimal bundle will satisfy \(x_1>0\) and \(x_2>0\), so by complementary slackness,
+\[
+\lambda_1=\lambda_2=0.
+\]
+
+Then the stationarity conditions become
+\[
+-w_1+2\lambda_3x_1=0,
+\qquad
+-w_2+2\lambda_3x_2=0.
+\]
+Hence
+\[
+x_1=\frac{w_1}{2\lambda_3},
+\qquad
+x_2=\frac{w_2}{2\lambda_3}.
+\]
+
+Substitute into \(x_1^2+x_2^2=y\):
+\[
+\left(\frac{w_1}{2\lambda_3}\right)^2
++
+\left(\frac{w_2}{2\lambda_3}\right)^2
+=
+y.
+\]
+Therefore
+\[
+\frac{w_1^2+w_2^2}{4\lambda_3^2}=y,
+\]
+so
+\[
+\lambda_3=\frac{\sqrt{w_1^2+w_2^2}}{2\sqrt{y}}.
+\]
+Using this in the formulas for \(x_1,x_2\), we obtain
+\[
+x_1^*
+=
+\frac{w_1\sqrt{y}}{\sqrt{w_1^2+w_2^2}},
+\qquad
+x_2^*
+=
+\frac{w_2\sqrt{y}}{\sqrt{w_1^2+w_2^2}}.
+\]
+
+Thus, for \(y>0\),
+\[
+\boxed{
+x_1^*
+=
+\frac{w_1\sqrt{y}}{\sqrt{w_1^2+w_2^2}},
+\qquad
+x_2^*
+=
+\frac{w_2\sqrt{y}}{\sqrt{w_1^2+w_2^2}}.
+}
+\]
+
+The minimized cost is
+\[
+C(w_1,w_2,y)
+=
+w_1x_1^*+w_2x_2^*
+=
+\frac{w_1^2\sqrt{y}+w_2^2\sqrt{y}}{\sqrt{w_1^2+w_2^2}}
+=
+\sqrt{y}\,\sqrt{w_1^2+w_2^2}.
+\]
+Hence
+\[
+\boxed{
+C(w_1,w_2,y)=\sqrt{y\,(w_1^2+w_2^2)}.
+}
+\]
+
+\paragraph{Special case: \(y=0\)}
+If \(y=0\), the constraint becomes
+\[
+x_1^2+x_2^2\ge 0,
+\]
+which is always satisfied for \(x_1,x_2\ge 0\). Therefore the minimum cost is attained at
+\[
+\boxed{x_1^*=0,\qquad x_2^*=0,}
+\]
+and
+\[
+\boxed{C(w_1,w_2,0)=0.}
+\]
+
+\subsection*{Conclusion}
+
+The Kuhn--Tucker conditions are given by
+\[
+-w_1+\lambda_1+2\lambda_3x_1=0,\qquad
+-w_2+\lambda_2+2\lambda_3x_2=0,
+\]
+together with feasibility, dual feasibility, and complementary slackness.
+
+The explicit solution is:
+\[
+\boxed{
+x_1^*
+=
+\frac{w_1\sqrt{y}}{\sqrt{w_1^2+w_2^2}},
+\qquad
+x_2^*
+=
+\frac{w_2\sqrt{y}}{\sqrt{w_1^2+w_2^2}}
+\quad (y>0),
+}
+\]
+with cost
+\[
+\boxed{
+C(w_1,w_2,y)=\sqrt{y\,(w_1^2+w_2^2)}.
+}
+\]
+If \(y=0\), then
+\[
+\boxed{x_1^*=x_2^*=0,\qquad C(w_1,w_2,0)=0.}
+\]
+
+
+
+
+\vspace{30pt}
+\begin{tcolorbox}
+
+\subsection*{Exercise 1}
+
+\[
+Y(x)=\{\,y : (x,y)\in T\,\},
+\]
+
+\begin{itemize}
+\item[(Y.1)] \(Y(x)\) is nonempty.
+\item[(Y.2)] \(Y(x)\) is closed.
+\item[(Y.3)] \(Y(x)\) is convex.
+\item[(Y.4)] If \(x' \geq x\), then \(Y(x') \supseteq Y(x)\).
+\item[(Y.5)] If \(y \in Y(x)\) and \(y' \leq y\), then \(y' \in Y(x)\).
+\item[(Y.6)] \(Y(x)\) is bounded from above for finite \(x\).
+\item[(Y.7)] If \(y \ge 0\), then \(y \notin Y(0)\), and \(0 \in Y(x)\).
+\end{itemize}
+
+Prove Y.1--Y.7.
+
+\end{tcolorbox}
+
+
+\section*{Proof of Y.1--Y.7}
+
+Recall that
+\[
+Y(x)=\{\,y:(x,y)\in T\,\}.
+\]
+
+Assume that the production set \(T\) satisfies the usual properties:
+closedness, convexity, free disposability of inputs and outputs, boundedness of outputs for finite inputs, and inactivity/no-free-output conditions.
+
+\begin{itemize}
+\item[(Y.1)] \textbf{\(Y(x)\) is nonempty.}
+
+Since inactivity is feasible, we have
+\[
+0 \in Y(x)
+\]
+for every \(x\). Hence \(Y(x)\neq \varnothing\).
+
+\item[(Y.2)] \textbf{\(Y(x)\) is closed.}
+
+Let \(\{y^n\}\subset Y(x)\) and suppose \(y^n \to y\).  
+Since \(y^n\in Y(x)\), by definition
+\[
+(x,y^n)\in T \qquad \text{for all } n.
+\]
+Because \(T\) is closed and \((x,y^n)\to (x,y)\), it follows that
+\[
+(x,y)\in T.
+\]
+Therefore \(y\in Y(x)\), so \(Y(x)\) is closed.
+
+\item[(Y.3)] \textbf{\(Y(x)\) is convex.}
+
+Take any \(y^1,y^2\in Y(x)\). Then
+\[
+(x,y^1)\in T
+\qquad \text{and} \qquad
+(x,y^2)\in T.
+\]
+Since \(T\) is convex, for every \(0\le \lambda \le 1\),
+\[
+\lambda (x,y^1)+(1-\lambda)(x,y^2)
+=
+(x,\lambda y^1+(1-\lambda)y^2)\in T.
+\]
+Hence
+\[
+\lambda y^1+(1-\lambda)y^2\in Y(x),
+\]
+so \(Y(x)\) is convex.
+
+\item[(Y.4)] \textbf{If \(x'\ge x\), then \(Y(x')\supseteq Y(x)\).}
+
+Take any \(y\in Y(x)\). Then
+\[
+(x,y)\in T.
+\]
+By free disposability of inputs, if \(x'\ge x\), then
+\[
+(x',y)\in T.
+\]
+Hence \(y\in Y(x')\). Therefore every element of \(Y(x)\) also belongs to \(Y(x')\), so
+\[
+Y(x')\supseteq Y(x).
+\]
+
+\item[(Y.5)] \textbf{If \(y\in Y(x)\) and \(y'\le y\), then \(y'\in Y(x)\).}
+
+If \(y\in Y(x)\), then
+\[
+(x,y)\in T.
+\]
+By free disposability of outputs, whenever \(y'\le y\),
+\[
+(x,y')\in T.
+\]
+Thus \(y'\in Y(x)\).
+
+\item[(Y.6)] \textbf{\(Y(x)\) is bounded from above for finite \(x\).}
+
+By assumption on the production set, for every finite input vector \(x\), the set of feasible outputs associated with \(x\) is bounded above. Since
+\[
+Y(x)=\{\,y:(x,y)\in T\,\},
+\]
+it follows immediately that \(Y(x)\) is bounded from above.
+
+\item[(Y.7)] \textbf{If \(y\ge 0\) and \(y\neq 0\), then \(y\notin Y(0)\); equivalently, \(0\in Y(x)\).}
+
+The statement \(0\in Y(x)\) means
+\[
+(x,0)\in T,
+\]
+that is, with any input bundle one can always produce zero output. This is exactly the inactivity assumption.
+
+The statement
+\[
+y\ge 0,\; y\neq 0 \;\Rightarrow\; y\notin Y(0)
+\]
+means
+\[
+(0,y)\notin T \qquad \text{for every } y\ge 0,\; y\neq 0,
+\]
+that is, no strictly positive output can be produced without inputs. This is the no-free-output assumption.
+
+Hence \(Y.7\) follows directly from the corresponding assumption on \(T\).
+\end{itemize}
+
+Therefore, under the standard assumptions on the production set \(T\), properties \(Y.1\)--\(Y.7\) all hold.
+
+
+
+\vspace{30pt}
+\begin{tcolorbox}
+
+\subsection*{Exercise 2}
+
+Derive a cost function that is consistent with the CES production function
+\[
+y = \left(a x_1^{\rho} + b x_2^{\rho}\right)^{1/\rho},
+\qquad a>0,\; b>0.
+\]
+
+\end{tcolorbox}
+
+
+\section*{Solution}
+
+Consider the CES production function
+\[
+y=\left(a x_1^{\rho}+b x_2^{\rho}\right)^{1/\rho},
+\qquad a>0,\; b>0.
+\]
+
+We want to derive the associated cost function
+\[
+c(w_1,w_2,y)=\min_{x_1,x_2}\{w_1x_1+w_2x_2:\ (a x_1^\rho+b x_2^\rho)^{1/\rho}\ge y\}.
+\]
+
+Since cost minimization will satisfy the constraint with equality, we solve
+\[
+\min_{x_1,x_2}\; w_1x_1+w_2x_2
+\quad \text{s.t.} \quad
+a x_1^\rho+b x_2^\rho=y^\rho.
+\]
+
+\subsection*{1. Lagrangian}
+
+Define
+\[
+\mathcal L=w_1x_1+w_2x_2+\lambda\left(y^\rho-a x_1^\rho-b x_2^\rho\right).
+\]
+
+The first-order conditions are
+\[
+\frac{\partial \mathcal L}{\partial x_1}
+=
+w_1-\lambda a\rho x_1^{\rho-1}=0,
+\]
+\[
+\frac{\partial \mathcal L}{\partial x_2}
+=
+w_2-\lambda b\rho x_2^{\rho-1}=0,
+\]
+\[
+a x_1^\rho+b x_2^\rho=y^\rho.
+\]
+
+From the first two conditions,
+\[
+\lambda=\frac{w_1}{a\rho x_1^{\rho-1}}
+=\frac{w_2}{b\rho x_2^{\rho-1}}.
+\]
+Hence
+\[
+\frac{w_1}{a x_1^{\rho-1}}=\frac{w_2}{b x_2^{\rho-1}},
+\]
+so
+\[
+\frac{x_2}{x_1}
+=
+\left(\frac{a w_2}{b w_1}\right)^{\frac{1}{\rho-1}}.
+\]
+
+Let
+\[
+r=\left(\frac{a w_2}{b w_1}\right)^{\frac{1}{\rho-1}}.
+\]
+Then
+\[
+x_2=r x_1.
+\]
+
+\subsection*{2. Solve for input demands}
+
+Substitute \(x_2=rx_1\) into the constraint:
+\[
+a x_1^\rho+b(rx_1)^\rho=y^\rho,
+\]
+that is,
+\[
+x_1^\rho(a+b r^\rho)=y^\rho.
+\]
+Thus
+\[
+x_1=\frac{y}{(a+b r^\rho)^{1/\rho}},
+\qquad
+x_2=\frac{yr}{(a+b r^\rho)^{1/\rho}}.
+\]
+
+\subsection*{3. Compute the cost function}
+
+Therefore
+\[
+c(w_1,w_2,y)=w_1x_1+w_2x_2
+=
+\frac{y(w_1+w_2 r)}{(a+b r^\rho)^{1/\rho}}.
+\]
+
+Now simplify this expression. Using
+\[
+r=\left(\frac{a w_2}{b w_1}\right)^{\frac{1}{\rho-1}},
+\]
+the cost function can be written in the standard dual CES form:
+\[
+\boxed{
+c(w_1,w_2,y)
+=
+y
+\left[
+\left(\frac{w_1}{a}\right)^{\frac{\rho}{\rho-1}}
++
+\left(\frac{w_2}{b}\right)^{\frac{\rho}{\rho-1}}
+\right]^{\frac{\rho-1}{\rho}}.
+}
+\]
+
+\subsection*{4. Final answer}
+
+Hence the cost function consistent with
+\[
+y=\left(a x_1^\rho+b x_2^\rho\right)^{1/\rho}
+\]
+is
+\[
+\boxed{
+c(w_1,w_2,y)
+=
+y
+\left[
+\left(\frac{w_1}{a}\right)^{\frac{\rho}{\rho-1}}
++
+\left(\frac{w_2}{b}\right)^{\frac{\rho}{\rho-1}}
+\right]^{\frac{\rho-1}{\rho}}.
+}
+\]
+
+This function is homogeneous of degree one in \(y\) and in input prices \((w_1,w_2)\), as required.
+
+
+
+
+\vspace{30pt}
+\begin{tcolorbox}
+
+\subsection*{Exercise 3}
+
+Suppose the cost function is
+\[
+c(w,y)=w_2\left[1+y+\ln\left(\frac{w_1}{w_2}\right)\right],
+\qquad y \in \mathbb{R}_+.
+\]
+
+Derive the corresponding production function.
+
+\end{tcolorbox}
+
+\section*{Solution}
+
+We are given the cost function
+\[
+c(w,y)=w_2\left[1+y+\ln\left(\frac{w_1}{w_2}\right)\right],
+\qquad y\in \mathbb{R}_+.
+\]
+
+To recover the corresponding production function, use Shephard's lemma.
+
+\subsection*{1. Conditional input demands}
+
+By Shephard's lemma,
+\[
+x_i(w,y)=\frac{\partial c(w,y)}{\partial w_i}.
+\]
+
+First,
+\[
+x_1(w,y)=\frac{\partial c}{\partial w_1}
+=
+w_2 \cdot \frac{\partial}{\partial w_1}\ln\left(\frac{w_1}{w_2}\right)
+=
+w_2\cdot \frac{1}{w_1}
+=
+\frac{w_2}{w_1}.
+\]
+
+Next,
+\[
+x_2(w,y)=\frac{\partial c}{\partial w_2}.
+\]
+Since
+\[
+c(w,y)=w_2(1+y+\ln(w_1/w_2)),
+\]
+we get
+\[
+x_2(w,y)
+=
+1+y+\ln\left(\frac{w_1}{w_2}\right)
++
+w_2\left(-\frac{1}{w_2}\right)
+=
+y+\ln\left(\frac{w_1}{w_2}\right).
+\]
+
+Thus the conditional factor demands are
+\[
+x_1=\frac{w_2}{w_1},
+\qquad
+x_2=y+\ln\left(\frac{w_1}{w_2}\right).
+\]
+
+\subsection*{2. Eliminate prices}
+
+From
+\[
+x_1=\frac{w_2}{w_1},
+\]
+we obtain
+\[
+\frac{w_1}{w_2}=\frac{1}{x_1}.
+\]
+Substitute this into the expression for \(x_2\):
+\[
+x_2
+=
+y+\ln\left(\frac{1}{x_1}\right)
+=
+y-\ln x_1.
+\]
+Hence
+\[
+y=x_2+\ln x_1.
+\]
+
+Therefore, the corresponding production function is
+\[
+\boxed{
+f(x_1,x_2)=x_2+\ln x_1,
+\qquad x_1>0.
+}
+\]
+
+\subsection*{3. Verification}
+
+Consider the cost-minimization problem
+\[
+\min_{x_1,x_2}\; w_1x_1+w_2x_2
+\]
+subject to
+\[
+x_2+\ln x_1\ge y.
+\]
+At the optimum the constraint binds:
+\[
+x_2=y-\ln x_1.
+\]
+Substituting into the objective gives
+\[
+w_1x_1+w_2(y-\ln x_1).
+\]
+The first-order condition is
+\[
+w_1-\frac{w_2}{x_1}=0,
+\]
+so
+\[
+x_1=\frac{w_2}{w_1}.
+\]
+Then
+\[
+x_2=y-\ln\left(\frac{w_2}{w_1}\right)
+=
+y+\ln\left(\frac{w_1}{w_2}\right).
+\]
+Hence the minimized cost is
+\[
+w_1\frac{w_2}{w_1}
++
+w_2\left[y+\ln\left(\frac{w_1}{w_2}\right)\right]
+=
+w_2\left[1+y+\ln\left(\frac{w_1}{w_2}\right)\right],
+\]
+which is exactly the given cost function.
+
+Thus the production function is indeed
+\[
+\boxed{
+f(x_1,x_2)=x_2+\ln x_1.
+}
+\]
+
+
+\vspace{30pt}
+\begin{tcolorbox}
+
+\subsection*{Exercise 4}
+
+If the technology has nonincreasing, constant, or nondecreasing returns to scale,
+show that
+\[
+c(w,ty) \le t\,c(w,y)
+\]
+for $0<t<1$, for all $t$, or for all $t>1$, respectively.
+
+If y is one-dimensional and there are constant returns to scale, show that
+\[
+c(w,y)=y\,c(w,1).
+\]
+
+\end{tcolorbox}
+
+
+\section*{Solution}
+
+Recall the cost function
+\[
+c(w,y)=\min_{x}\{\,w\cdot x : x \text{ can produce } y\,\}.
+\]
+
+We use the definition of returns to scale.
+
+\subsection*{1. Nonincreasing returns to scale}
+
+Suppose the technology has nonincreasing returns to scale.  
+Then if \(x\) can produce \(y\), the scaled input bundle \(tx\) can produce \(ty\) for every \(0<t<1\).
+
+Let \(x^*(w,y)\) be a cost-minimizing input bundle for output \(y\). Then \(x^*(w,y)\) produces \(y\), so by nonincreasing returns to scale, \(t x^*(w,y)\) produces \(ty\). Hence \(t x^*(w,y)\) is feasible for producing \(ty\), and therefore
+\[
+c(w,ty)\le w\cdot (t x^*(w,y))=t\, w\cdot x^*(w,y)=t\,c(w,y),
+\qquad 0<t<1.
+\]
+
+Thus,
+\[
+\boxed{c(w,ty)\le t\,c(w,y)\qquad (0<t<1).}
+\]
+
+\subsection*{2. Constant returns to scale}
+
+Suppose the technology has constant returns to scale.  
+Then if \(x\) can produce \(y\), the scaled input bundle \(tx\) can produce \(ty\) for every \(t>0\).
+
+Again let \(x^*(w,y)\) be cost-minimizing for \(y\). Since \(t x^*(w,y)\) can produce \(ty\), we have
+\[
+c(w,ty)\le w\cdot (t x^*(w,y))=t\,c(w,y)
+\qquad \text{for all } t>0.
+\]
+Now replace \(y\) by \(ty\) and \(t\) by \(1/t\). Since constant returns to scale holds for every positive scalar,
+\[
+c(w,y)=c\!\left(w,\frac{1}{t}(ty)\right)\le \frac{1}{t}c(w,ty).
+\]
+Multiplying both sides by \(t\), we get
+\[
+t\,c(w,y)\le c(w,ty).
+\]
+Combining the two inequalities yields
+\[
+c(w,ty)=t\,c(w,y)
+\qquad \text{for all } t>0.
+\]
+
+Therefore,
+\[
+\boxed{c(w,ty)=t\,c(w,y)\qquad \text{for all } t>0.}
+\]
+
+\subsection*{3. Nondecreasing returns to scale}
+
+Suppose the technology has nondecreasing returns to scale.  
+Then if \(x\) can produce \(y\), the scaled input bundle \(tx\) can produce \(ty\) for every \(t>1\).
+
+Let \(x^*(w,y)\) be cost-minimizing for \(y\). Then \(t x^*(w,y)\) is feasible for \(ty\), so
+\[
+c(w,ty)\le w\cdot (t x^*(w,y))=t\,c(w,y),
+\qquad t>1.
+\]
+
+Hence,
+\[
+\boxed{c(w,ty)\le t\,c(w,y)\qquad (t>1).}
+\]
+
+\subsection*{4. One-dimensional output under constant returns to scale}
+
+Now suppose output \(y\) is one-dimensional and the technology has constant returns to scale. From the previous part,
+\[
+c(w,ty)=t\,c(w,y)
+\qquad \text{for all } t>0.
+\]
+Set \(y=1\). Then for any scalar output level \(y>0\),
+\[
+c(w,y)=c(w,y\cdot 1)=y\,c(w,1).
+\]
+
+Therefore,
+\[
+\boxed{c(w,y)=y\,c(w,1).}
+\]
+
+This shows that under constant returns to scale and one-dimensional output, the cost function is linear in output.
+
+
+
+\vspace{30pt}
+\begin{tcolorbox}
+
+\subsection*{Exercise 5}
+
+Consider a single-output production function
+\[
+y=f(x), \qquad x \in \mathbb{R}_+^N.
+\]
+
+The elasticity of scale is defined as
+\[
+\mathcal{E}(x,y)
+=
+\sum_{i=1}^N \frac{\partial f(x)}{\partial x_i}\frac{x_i}{y}
+=
+\sum_{i=1}^N \epsilon_i.
+\]
+That is, the elasticity of scale is the sum of the individual scale elasticities.
+
+Let the corresponding cost function be $c(w,y)$.
+
+Define the elasticity of size by
+\[
+\frac{1}{\mathcal{E}^*(w,y)}
+=
+\frac{\partial c(w,y)}{\partial y}\frac{y}{c(w,y)}.
+\]
+
+Show that
+\[
+\mathcal{E}(x,y)=\mathcal{E}^*(w,y)
+\]
+when cost-minimizing inputs are chosen.
+
+\end{tcolorbox}
+
+
+
+\section*{Solution}
+
+Consider a single-output production function
+\[
+y=f(x), \qquad x\in \mathbb{R}_+^N,
+\]
+and let the associated cost function be
+\[
+c(w,y)=\min_x \{\, w\cdot x : f(x)\ge y \,\}.
+\]
+
+The elasticity of scale is defined by
+\[
+\mathcal E(x,y)
+=
+\sum_{i=1}^N \frac{\partial f(x)}{\partial x_i}\frac{x_i}{y}.
+\]
+The elasticity of size is defined by
+\[
+\frac{1}{\mathcal E^*(w,y)}
+=
+\frac{\partial c(w,y)}{\partial y}\frac{y}{c(w,y)}.
+\]
+
+We want to show that
+\[
+\mathcal E(x,y)=\mathcal E^*(w,y)
+\]
+when \(x\) is chosen optimally, i.e. when \(x=x(w,y)\) is the cost-minimizing input vector.
+
+\subsection*{1. Cost minimization problem}
+
+Consider
+\[
+\min_x \; w\cdot x
+\quad \text{subject to} \quad
+f(x)\ge y.
+\]
+At an interior cost-minimizing solution, the constraint binds:
+\[
+f(x)=y.
+\]
+
+Form the Lagrangian
+\[
+\mathcal L(x,\lambda)=w\cdot x+\lambda\bigl(y-f(x)\bigr).
+\]
+
+The first-order conditions are
+\[
+w_i-\lambda \frac{\partial f(x)}{\partial x_i}=0,
+\qquad i=1,\dots,N.
+\]
+Hence
+\[
+w_i=\lambda f_i(x),
+\qquad i=1,\dots,N,
+\]
+where
+\[
+f_i(x)=\frac{\partial f(x)}{\partial x_i}.
+\]
+
+\subsection*{2. Use the first-order conditions}
+
+Multiply each first-order condition by \(x_i\) and sum over \(i\):
+\[
+\sum_{i=1}^N w_i x_i
+=
+\lambda \sum_{i=1}^N f_i(x)x_i.
+\]
+Since \(\sum_{i=1}^N w_i x_i = c(w,y)\), we have
+\[
+c(w,y)=\lambda \sum_{i=1}^N f_i(x)x_i.
+\]
+Divide both sides by \(y\):
+\[
+\frac{c(w,y)}{y}
+=
+\lambda \sum_{i=1}^N f_i(x)\frac{x_i}{y}.
+\]
+Using the definition of the elasticity of scale,
+\[
+\mathcal E(x,y)=\sum_{i=1}^N f_i(x)\frac{x_i}{y},
+\]
+we obtain
+\[
+\frac{c(w,y)}{y}=\lambda \mathcal E(x,y).
+\]
+Therefore,
+\[
+\lambda=\frac{c(w,y)}{y\,\mathcal E(x,y)}.
+\]
+
+\subsection*{3. Apply Shephard's lemma / Envelope theorem}
+
+By the envelope theorem,
+\[
+\frac{\partial c(w,y)}{\partial y}=\lambda.
+\]
+Thus
+\[
+\frac{\partial c(w,y)}{\partial y}
+=
+\frac{c(w,y)}{y\,\mathcal E(x,y)}.
+\]
+Multiply both sides by \(y/c(w,y)\):
+\[
+\frac{\partial c(w,y)}{\partial y}\frac{y}{c(w,y)}
+=
+\frac{1}{\mathcal E(x,y)}.
+\]
+
+But by definition of the elasticity of size,
+\[
+\frac{1}{\mathcal E^*(w,y)}
+=
+\frac{\partial c(w,y)}{\partial y}\frac{y}{c(w,y)}.
+\]
+Hence
+\[
+\frac{1}{\mathcal E^*(w,y)}=\frac{1}{\mathcal E(x,y)}.
+\]
+Therefore,
+\[
+\boxed{
+\mathcal E(x,y)=\mathcal E^*(w,y)
+}
+\]
+when \(x\) is the cost-minimizing input vector.
+
+\subsection*{Conclusion}
+
+Under cost minimization, the elasticity of scale measured from the production function equals the elasticity of size measured from the cost function:
+\[
+\boxed{
+\mathcal E(x,y)=\mathcal E^*(w,y).
+}
+\]
+This is the duality relation between the production side and the cost side.
+
+
+
+\vspace{30pt}
+\begin{tcolorbox}
+
+\subsection*{Exercise 6}
+
+Suppose
+\[
+c(w,y)=y\,c(w)
+\]
+is the cost function, and $p$ is the output price.
+
+If the output market is competitive, then producer profit is zero, so
+\[
+p=c(w).
+\]
+
+Now output is not fixed but determined by a demand schedule
+\[
+D(p)=y.
+\]
+
+Derive the response of input demand $x_i$ to a change in input price $w_j$,
+or in elasticity form
+\[
+\frac{\partial x_i}{\partial w_j} \frac{w_j}{x_i},
+\].
+
+If the effect can be decomposed into multiple parts, show the decomposition.
+
+\end{tcolorbox}
+
+
+\section*{Solution}
+
+Suppose the cost function is
+\[
+c(w,y)=y\,c(w),
+\]
+where \(c(w)\) is unit cost, and let \(p\) be the output price.
+
+Under perfect competition in the output market, profit is zero, so
+\[
+p=c(w).
+\]
+If output is determined by demand,
+\[
+y=D(p),
+\]
+then using \(p=c(w)\), output can be written as
+\[
+y=D(c(w)).
+\]
+
+Hence total cost is
+\[
+c(w,y)=y\,c(w)=D(c(w))\,c(w),
+\]
+and by Shephard's lemma, input demand is
+\[
+x_i(w)=\frac{\partial}{\partial w_i}\bigl[y\,c(w)\bigr].
+\]
+
+Since \(y=D(c(w))\) depends on \(w\), we must apply the product rule:
+\[
+x_i(w)
+=
+\frac{\partial}{\partial w_i}\Bigl(D(c(w))\,c(w)\Bigr)
+=
+D(c(w))\frac{\partial c(w)}{\partial w_i}
++
+c(w)D'(c(w))\frac{\partial c(w)}{\partial w_i}.
+\]
+Thus
+\[
+x_i(w)
+=
+\left[D(c(w))+c(w)D'(c(w))\right]\frac{\partial c(w)}{\partial w_i}.
+\]
+
+\subsection*{Response of input demand to a change in input price \(w_j\)}
+
+Differentiate \(x_i(w)\) with respect to \(w_j\):
+\[
+\frac{\partial x_i}{\partial w_j}
+=
+\frac{\partial}{\partial w_j}
+\left\{
+\left[D(c(w))+c(w)D'(c(w))\right]\frac{\partial c(w)}{\partial w_i}
+\right\}.
+\]
+Using the product rule,
+\[
+\frac{\partial x_i}{\partial w_j}
+=
+\left[D(c(w))+c(w)D'(c(w))\right]\frac{\partial^2 c(w)}{\partial w_i\partial w_j}
++
+\frac{\partial}{\partial w_j}\left[D(c(w))+c(w)D'(c(w))\right]\frac{\partial c(w)}{\partial w_i}.
+\]
+
+Now compute the derivative of the bracketed term:
+\[
+\frac{\partial}{\partial w_j}\left[D(c(w))+c(w)D'(c(w))\right]
+=
+\left[2D'(c(w))+c(w)D''(c(w))\right]\frac{\partial c(w)}{\partial w_j}.
+\]
+Therefore,
+\[
+\boxed{
+\frac{\partial x_i}{\partial w_j}
+=
+\left[D(c(w))+c(w)D'(c(w))\right]\frac{\partial^2 c(w)}{\partial w_i\partial w_j}
++
+\left[2D'(c(w))+c(w)D''(c(w))\right]
+\frac{\partial c(w)}{\partial w_i}
+\frac{\partial c(w)}{\partial w_j}.
+}
+\]
+
+\subsection*{Decomposition}
+
+This expression can be decomposed into two parts:
+
+\[
+\frac{\partial x_i}{\partial w_j}
+=
+\underbrace{
+\left[D(c(w))+c(w)D'(c(w))\right]\frac{\partial^2 c(w)}{\partial w_i\partial w_j}
+}_{\text{substitution effect}}
++
+\underbrace{
+\left[2D'(c(w))+c(w)D''(c(w))\right]
+\frac{\partial c(w)}{\partial w_i}
+\frac{\partial c(w)}{\partial w_j}
+}_{\text{output effect}}.
+\]
+
+The first term reflects the change in conditional factor demand due to the change in relative input prices.  
+The second term reflects the induced change in output through the demand schedule \(y=D(p)=D(c(w))\).
+
+\subsection*{Elasticity form}
+
+The elasticity of input demand \(x_i\) with respect to input price \(w_j\) is
+\[
+\frac{\partial x_i}{\partial w_j}\frac{w_j}{x_i}.
+\]
+Using the expression above,
+\[
+\boxed{
+\frac{\partial x_i}{\partial w_j}\frac{w_j}{x_i}
+=
+\frac{w_j}{x_i}
+\left\{
+\left[D(c(w))+c(w)D'(c(w))\right]\frac{\partial^2 c(w)}{\partial w_i\partial w_j}
++
+\left[2D'(c(w))+c(w)D''(c(w))\right]
+\frac{\partial c(w)}{\partial w_i}
+\frac{\partial c(w)}{\partial w_j}
+\right\}.
+}
+\]
+
+Equivalently, the elasticity can be written as the sum of two components:
+\[
+\frac{\partial x_i}{\partial w_j}\frac{w_j}{x_i}
+=
+\underbrace{
+\left[D(c(w))+c(w)D'(c(w))\right]
+\frac{\partial^2 c(w)}{\partial w_i\partial w_j}
+\frac{w_j}{x_i}
+}_{\text{substitution component}}
++
+\underbrace{
+\left[2D'(c(w))+c(w)D''(c(w))\right]
+\frac{\partial c(w)}{\partial w_i}
+\frac{\partial c(w)}{\partial w_j}
+\frac{w_j}{x_i}
+}_{\text{output component}}.
+\]
+
+\subsection*{Conclusion}
+
+When output is endogenous through the demand schedule \(y=D(p)\) and \(p=c(w)\), input demand responds to a change in input price through:
+\begin{enumerate}
+\item a \emph{substitution effect}, coming from the curvature of the unit cost function, and
+\item an \emph{output effect}, coming from the effect of input prices on unit cost, then on price, then on demand, and hence on output.
+\end{enumerate}
+
+Thus the response of input demand is
+\[
+\boxed{
+\frac{\partial x_i}{\partial w_j}
+=
+\left[D(c(w))+c(w)D'(c(w))\right]\frac{\partial^2 c(w)}{\partial w_i\partial w_j}
++
+\left[2D'(c(w))+c(w)D''(c(w))\right]
+\frac{\partial c(w)}{\partial w_i}
+\frac{\partial c(w)}{\partial w_j},
+}
+\]
+with the corresponding elasticity obtained by multiplying by \(w_j/x_i\).
+
+
+\vspace{30pt}
+\begin{tcolorbox}
+
+\subsection*{Exercise 7}
+
+\begin{equation}
+\Pi(p,w)=\max_{x,y}\{py-wx : (x,y)\in T,\; p>0,\; w>0\}. \tag{1}
+\end{equation}
+
+\begin{equation}
+\Pi(p,w)=\max_{y}\{py-c(w,y) : p>0,\; w>0\}, \tag{2}
+\end{equation}
+
+\begin{equation}
+\Pi(p,w)=\max_{x}\{R(p,x)-wx : p>0,\; w>0\}. \tag{3}
+\end{equation}
+
+
+
+
+Prove that (1) $\iff$ (3) by showing that
+\[
+y(p,x(p,w)) = y(p,w).
+\]
+\end{tcolorbox}
+
+\section*{Proof that (1) $\iff$ (3)}
+
+We want to show that
+\[
+\Pi(p,w)=\max_{x,y}\{py-wx:(x,y)\in T\}
+\]
+is equivalent to
+\[
+\Pi(p,w)=\max_x\{R(p,x)-wx\},
+\]
+where
+\[
+R(p,x)=\max_y\{py:(x,y)\in T\}.
+\]
+
+To prove this, it is enough to show that
+\[
+y(p,x(p,w))=y(p,w),
+\]
+that is, the output chosen by revenue maximization conditional on the profit-maximizing input \(x(p,w)\) coincides with the profit-maximizing output.
+
+\subsection*{(1) $\Rightarrow$ (3)}
+
+Let \((x(p,w),y(p,w))\) be a profit-maximizing pair for problem (1).  
+For a given input \(x\), let \(y(p,x)\) denote the revenue-maximizing output, i.e.
+\[
+R(p,x)=p\,y(p,x).
+\]
+
+We claim that
+\[
+y(p,x(p,w))=y(p,w).
+\]
+
+Suppose not. Then there exists some \(y(p,x(p,w))\neq y(p,w)\) such that
+\[
+p\,y(p,x(p,w))>p\,y(p,w),
+\]
+because \(y(p,x(p,w))\) is, by definition, the output that maximizes revenue given \(x(p,w)\).
+
+Since \((x(p,w),y(p,w))\in T\), and \(y(p,x(p,w))\) is feasible with the same input \(x(p,w)\), we would then have
+\[
+p\,y(p,x(p,w))-w x(p,w)
+>
+p\,y(p,w)-w x(p,w)
+=
+\Pi(p,w).
+\]
+But this contradicts the fact that \((x(p,w),y(p,w))\) is a profit-maximizing pair.
+
+Hence it must be that
+\[
+y(p,x(p,w))=y(p,w).
+\]
+
+Therefore,
+\[
+\Pi(p,w)
+=
+p\,y(p,w)-w x(p,w)
+=
+p\,y(p,x(p,w))-w x(p,w)
+=
+R(p,x(p,w))-w x(p,w).
+\]
+Since \(x(p,w)\) is feasible, this implies
+\[
+\Pi(p,w)\le \max_x\{R(p,x)-wx\}.
+\]
+Conversely, for any \(x\),
+\[
+R(p,x)-wx
+=
+\max_y\{py:(x,y)\in T\}-wx
+\le
+\max_{x,y}\{py-wx:(x,y)\in T\}
+=
+\Pi(p,w).
+\]
+Thus
+\[
+\Pi(p,w)=\max_x\{R(p,x)-wx\}.
+\]
+
+\subsection*{(3) $\Rightarrow$ (1)}
+
+Now suppose
+\[
+\Pi(p,w)=\max_x\{R(p,x)-wx\}.
+\]
+For each \(x\), by definition of \(R(p,x)\),
+\[
+R(p,x)=\max_y\{py:(x,y)\in T\}.
+\]
+Hence
+\[
+R(p,x)-wx
+=
+\max_y\{py-wx:(x,y)\in T\}.
+\]
+Taking the maximum over \(x\), we obtain
+\[
+\Pi(p,w)
+=
+\max_x\max_y\{py-wx:(x,y)\in T\}
+=
+\max_{x,y}\{py-wx:(x,y)\in T\}.
+\]
+Therefore (1) holds.
+
+\subsection*{Conclusion}
+
+We have shown that if \((x(p,w),y(p,w))\) solves the profit-maximization problem, then
+\[
+y(p,x(p,w))=y(p,w),
+\]
+and consequently
+\[
+\Pi(p,w)=\max_x\{R(p,x)-wx\}.
+\]
+Conversely, (3) immediately implies (1). Therefore,
+\[
+\boxed{(1)\iff (3).}
+\]
+
+
+\vspace{30pt}
+\begin{tcolorbox}
+
+\subsection*{Exercise 8}
+
+Prove that a profit-maximizing producer chooses output levels $y(p,w)$ such that
+\[
+p_i = \frac{\partial c(w,y)}{\partial y_i}.
+\]
+
+Moreover, show that the marginal cost
+\[
+\frac{\partial c(w,y)}{\partial y_i}
+\]
+increases in $y_i$ at the optimal choice.
+
+\end{tcolorbox}
+
+
+
+\section*{Solution}
+
+Consider the producer's profit-maximization problem written in terms of the cost function:
+\[
+\Pi(p,w)=\max_{y}\{\,p\cdot y-c(w,y)\,\}.
+\]
+Let \(y(p,w)\) denote a profit-maximizing output vector.
+
+We will show that at an interior optimum,
+\[
+p_i=\frac{\partial c(w,y)}{\partial y_i},
+\]
+and that the marginal cost
+\[
+\frac{\partial c(w,y)}{\partial y_i}
+\]
+is increasing in \(y_i\) at the optimum.
+
+\subsection*{1. First-order condition}
+
+Define the objective function
+\[
+\phi(y)=p\cdot y-c(w,y).
+\]
+Then
+\[
+\frac{\partial \phi(y)}{\partial y_i}
+=
+p_i-\frac{\partial c(w,y)}{\partial y_i}.
+\]
+At an interior profit-maximizing choice \(y(p,w)\), the first-order condition is
+\[
+\frac{\partial \phi(y)}{\partial y_i}=0
+\qquad \text{for all } i.
+\]
+Hence
+\[
+p_i-\frac{\partial c(w,y)}{\partial y_i}=0,
+\]
+so
+\[
+\boxed{
+p_i=\frac{\partial c(w,y)}{\partial y_i}.
+}
+\]
+
+Thus, at the profit-maximizing output vector, price equals marginal cost for each output.
+
+\subsection*{2. Second-order condition}
+
+For \(y(p,w)\) to be a profit maximum, the Hessian matrix of \(\phi(y)\) must be negative semidefinite. Since
+\[
+\phi(y)=p\cdot y-c(w,y),
+\]
+and \(p\cdot y\) is linear in \(y\), its second derivatives are zero. Therefore
+\[
+\frac{\partial^2 \phi(y)}{\partial y_i\partial y_j}
+=
+-\frac{\partial^2 c(w,y)}{\partial y_i\partial y_j}.
+\]
+So the Hessian of \(\phi\) is
+\[
+H_\phi=-H_c.
+\]
+Hence the second-order condition for profit maximization implies that
+\[
+-H_c \quad \text{is negative semidefinite},
+\]
+or equivalently,
+\[
+H_c \quad \text{is positive semidefinite}.
+\]
+
+In particular, the diagonal elements must satisfy
+\[
+\frac{\partial^2 c(w,y)}{\partial y_i^2}\ge 0.
+\]
+But
+\[
+\frac{\partial^2 c(w,y)}{\partial y_i^2}
+=
+\frac{\partial}{\partial y_i}
+\left(
+\frac{\partial c(w,y)}{\partial y_i}
+\right).
+\]
+Therefore,
+\[
+\boxed{
+\frac{\partial c(w,y)}{\partial y_i}
+\text{ is increasing in } y_i.
+}
+\]
+
+\subsection*{3. Conclusion}
+
+A profit-maximizing producer solves
+\[
+\max_y \{\,p\cdot y-c(w,y)\,\},
+\]
+so at an interior optimum,
+\[
+\boxed{
+p_i=\frac{\partial c(w,y)}{\partial y_i}
+}
+\]
+for each \(i\). Moreover, the second-order condition implies
+\[
+\frac{\partial^2 c(w,y)}{\partial y_i^2}\ge 0,
+\]
+so marginal cost is nondecreasing in own output:
+\[
+\boxed{
+\frac{\partial c(w,y)}{\partial y_i}
+\text{ increases in } y_i.
+}
+\]
+
+
+
+\vspace{30pt}
+\begin{tcolorbox}
+
+\subsection*{Exercise 9}
+
+Let the production function be CES:
+\[
+y = \left(x_1^\rho + x_2^\rho\right)^{\beta/\rho},
+\qquad \beta<1,\quad 0\ne \rho<1.
+\]
+
+Derive the input demand functions and the profit function.
+
+
+\end{tcolorbox}
+
+
+\section*{Solution}
+
+Consider the CES production function
+\[
+y=\left(x_1^\rho+x_2^\rho\right)^{\beta/\rho},
+\qquad \beta<1,\quad 0\ne \rho<1.
+\]
+Let output price be \(p>0\) and input prices \(w_1,w_2>0\).
+
+\subsection*{1. Profit maximization}
+
+The firm solves
+\[
+\max_{x_1,x_2\ge 0}\; p\left(x_1^\rho+x_2^\rho\right)^{\beta/\rho}-w_1x_1-w_2x_2.
+\]
+Let \(S=x_1^\rho+x_2^\rho\). Then \(y=S^{\beta/\rho}\).
+The first-order conditions are
+\[
+\frac{\partial}{\partial x_i}\bigl[p S^{\beta/\rho}\bigr]=w_i
+\quad (i=1,2),
+\]
+i.e.
+\[
+p\,\frac{\beta}{\rho}S^{\beta/\rho-1}\cdot \rho x_i^{\rho-1}
+=
+p\beta S^{\beta/\rho-1}x_i^{\rho-1}
+=
+w_i.
+\]
+Hence
+\[
+w_i=p\beta S^{\beta/\rho-1}x_i^{\rho-1},\qquad i=1,2.
+\]
+
+\subsection*{2. Input ratio}
+
+Divide the two FOCs:
+\[
+\frac{w_1}{w_2}=\left(\frac{x_1}{x_2}\right)^{\rho-1}
+\quad\Rightarrow\quad
+\frac{x_1}{x_2}
+=
+\left(\frac{w_1}{w_2}\right)^{\frac{1}{\rho-1}}.
+\]
+Let
+\[
+t:=\left(\frac{w_1}{w_2}\right)^{\frac{1}{\rho-1}},
+\quad\text{so that}\quad x_1=t\,x_2.
+\]
+
+\subsection*{3. Solve for inputs}
+
+Then
+\[
+S=x_1^\rho+x_2^\rho=(t^\rho+1)x_2^\rho.
+\]
+Use the FOC for \(i=2\):
+\[
+w_2=p\beta S^{\beta/\rho-1}x_2^{\rho-1}.
+\]
+Substitute \(S=(t^\rho+1)x_2^\rho\):
+\[
+w_2=p\beta (t^\rho+1)^{\beta/\rho-1}x_2^{\beta-\rho}x_2^{\rho-1}
+=
+p\beta (t^\rho+1)^{\beta/\rho-1}x_2^{\beta-1}.
+\]
+Hence
+\[
+x_2^{\beta-1}
+=
+\frac{w_2}{p\beta (t^\rho+1)^{\beta/\rho-1}},
+\]
+so
+\[
+x_2^*
+=
+\left[
+\frac{w_2}{p\beta (t^\rho+1)^{\beta/\rho-1}}
+\right]^{\frac{1}{\beta-1}}.
+\]
+Similarly,
+\[
+x_1^*
+=
+t\,x_2^*
+=
+\left(\frac{w_1}{w_2}\right)^{\frac{1}{\rho-1}}
+\left[
+\frac{w_2}{p\beta (t^\rho+1)^{\beta/\rho-1}}
+\right]^{\frac{1}{\beta-1}}.
+\]
+
+Thus the input demand functions are
+\[
+\boxed{
+x_2^*(p,w)
+=
+\left[
+\frac{w_2}{p\beta \bigl(1+(w_1/w_2)^{\rho/(\rho-1)}\bigr)^{\beta/\rho-1}}
+\right]^{\frac{1}{\beta-1}},
+}
+\]
+\[
+\boxed{
+x_1^*(p,w)
+=
+\left(\frac{w_1}{w_2}\right)^{\frac{1}{\rho-1}} x_2^*(p,w).
+}
+\]
+
+\subsection*{4. Profit function}
+
+At the optimum,
+\[
+p\,\frac{\partial f(x)}{\partial x_i}=w_i.
+\]
+Multiplying by \(x_i\) and summing over \(i\),
+\[
+p\sum_i f_i(x)x_i=\sum_i w_ix_i.
+\]
+Since \(f\) is homogeneous of degree \(\beta\),
+\[
+\sum_i f_i(x)x_i=\beta f(x)=\beta y.
+\]
+Hence
+\[
+\sum_i w_ix_i=p\beta y.
+\]
+Therefore profit is
+\[
+\Pi(p,w)=py-w\cdot x=p y-p\beta y=p(1-\beta)y.
+\]
+
+Thus
+\[
+\boxed{
+\Pi(p,w)=p(1-\beta)\,y^*(p,w),
+}
+\]
+where
+\[
+y^*(p,w)=\left(x_1^{*\rho}+x_2^{*\rho}\right)^{\beta/\rho}.
+\]
+
+\subsection*{Conclusion}
+
+The input demands are given by
+\[
+\boxed{
+\frac{x_1^*}{x_2^*}
+=
+\left(\frac{w_1}{w_2}\right)^{\frac{1}{\rho-1}},
+}
+\]
+together with the explicit formula for \(x_2^*\) above, and the profit function is
+\[
+\boxed{
+\Pi(p,w)=p(1-\beta)\,y^*(p,w).
+}
+\]
+
+
+
+\vspace{30pt}
+\begin{tcolorbox}
+
+\subsection*{Exercise 10}
+
+Given a profit function $\Pi(p,w)$, define the set
+\[
+\begin{aligned}
+T^*
+=
+\{(x,y)\in \mathbb{R}_+^{N+M} : p\cdot y - w\cdot x \le \Pi(p,w)\\
+\text{for all } p>0,\ w>0\}.
+\end{aligned}
+\]
+
+Derive the properties of $T^*$ and compare them with those of $T$.
+
+\end{tcolorbox}
+
+\section*{Solution}
+
+Given a profit function \(\Pi(p,w)\), define
+\[
+T^*
+=
+\left\{
+(x,y)\in \mathbb{R}_+^{N+M}
+:
+p\cdot y-w\cdot x\le \Pi(p,w)
+\text{ for all } p>0,\; w>0
+\right\}.
+\]
+
+This set is the technology set \emph{generated by the profit function}.  
+We now derive its properties and compare them with the usual properties of the original technology set \(T\).
+
+\subsection*{1. \(T \subseteq T^*\)}
+
+Suppose \((x,y)\in T\). By definition of the profit function,
+\[
+\Pi(p,w)=\sup\{\,p\cdot y'-w\cdot x' : (x',y')\in T\,\}.
+\]
+Since \((x,y)\in T\), we must have
+\[
+p\cdot y-w\cdot x\le \Pi(p,w)
+\qquad \text{for all } p>0,\; w>0.
+\]
+Hence \((x,y)\in T^*\). Therefore,
+\[
+\boxed{T\subseteq T^*.}
+\]
+
+Thus \(T^*\) is always an outer envelope of the original technology set.
+
+\subsection*{2. \(T^*\) is closed}
+
+For each \((p,w)\), define
+\[
+H(p,w)=\{(x,y): p\cdot y-w\cdot x\le \Pi(p,w)\}.
+\]
+This is a closed half-space, since the function
+\[
+(x,y)\mapsto p\cdot y-w\cdot x
+\]
+is continuous. Since
+\[
+T^*=\bigcap_{p>0,\;w>0} H(p,w),
+\]
+it follows that \(T^*\) is an intersection of closed sets. Hence
+\[
+\boxed{T^* \text{ is closed}.}
+\]
+
+\subsection*{3. \(T^*\) is convex}
+
+Each set \(H(p,w)\) is a convex half-space. Since \(T^*\) is the intersection of such half-spaces,
+\[
+\boxed{T^* \text{ is convex}.}
+\]
+
+\subsection*{4. Free disposability of inputs and outputs}
+
+\paragraph{Inputs.}
+Suppose \((x,y)\in T^*\) and \(x'\ge x\). Then for every \(p>0,\;w>0\),
+\[
+p\cdot y-w\cdot x'
+\le
+p\cdot y-w\cdot x
+\le
+\Pi(p,w),
+\]
+because \(w>0\) and \(x'\ge x\) imply \(w\cdot x'\ge w\cdot x\). Thus \((x',y)\in T^*\). Hence
+\[
+\boxed{\text{If } (x,y)\in T^* \text{ and } x'\ge x,\text{ then } (x',y)\in T^*.}
+\]
+
+\paragraph{Outputs.}
+Suppose \((x,y)\in T^*\) and \(y'\le y\). Then for every \(p>0,\;w>0\),
+\[
+p\cdot y'-w\cdot x
+\le
+p\cdot y-w\cdot x
+\le
+\Pi(p,w),
+\]
+because \(p>0\) and \(y'\le y\) imply \(p\cdot y'\le p\cdot y\). Thus \((x,y')\in T^*\). Hence
+\[
+\boxed{\text{If } (x,y)\in T^* \text{ and } y'\le y,\text{ then } (x,y')\in T^*.}
+\]
+
+Therefore \(T^*\) satisfies free disposability of both inputs and outputs.
+
+\subsection*{5. \(0\in Y^*(x)\) and no free output}
+
+Let
+\[
+Y^*(x)=\{\,y:(x,y)\in T^*\,\}.
+\]
+
+For any \(x\ge 0\), if \(y=0\), then
+\[
+p\cdot 0-w\cdot x=-w\cdot x\le 0.
+\]
+Since the firm can always choose inactivity, profit is nonnegative:
+\[
+\Pi(p,w)\ge 0.
+\]
+Thus
+\[
+-w\cdot x\le \Pi(p,w)
+\qquad \text{for all } p>0,\; w>0,
+\]
+so \((x,0)\in T^*\). Therefore
+\[
+\boxed{0\in Y^*(x)\text{ for all }x\ge 0.}
+\]
+
+Now consider \(x=0\). If \(y\ge 0\) and \(y\neq 0\), then \(p\cdot y>0\) for all sufficiently positive price vectors \(p\). Since
+\[
+p\cdot y-w\cdot 0=p\cdot y,
+\]
+the condition
+\[
+p\cdot y\le \Pi(p,w)
+\quad \text{for all } p>0,\;w>0
+\]
+would require the profit function to dominate arbitrarily large positive revenues at zero input, which is inconsistent with an economically meaningful profit function. Hence typically
+\[
+\boxed{(0,y)\notin T^* \text{ for } y\ge 0,\; y\neq 0.}
+\]
+
+So \(T^*\) also satisfies inactivity and no-free-output properties.
+
+\subsection*{6. Boundedness from above}
+
+Fix a finite \(x\). If outputs were not bounded above in \(Y^*(x)\), then there would exist a sequence \(y^n\in Y^*(x)\) with some component going to \(+\infty\). Since \(p>0\), we would have
+\[
+p\cdot y^n-w\cdot x \to +\infty
+\]
+for some positive price vector \(p\), contradicting
+\[
+p\cdot y^n-w\cdot x\le \Pi(p,w).
+\]
+Hence
+\[
+\boxed{Y^*(x)\text{ is bounded from above for finite }x.}
+\]
+
+\subsection*{7. Comparison with the original technology set \(T\)}
+
+The set \(T^*\) has the standard regularity properties usually imposed on a production set:
+
+\begin{itemize}
+\item \(T^*\) is closed,
+\item \(T^*\) is convex,
+\item \(T^*\) satisfies free disposability of inputs,
+\item \(T^*\) satisfies free disposability of outputs,
+\item \(0\in Y^*(x)\) for all \(x\),
+\item no strictly positive output can be produced with zero input,
+\item \(Y^*(x)\) is bounded above for finite \(x\).
+\end{itemize}
+
+Thus \(T^*\) has essentially the same structural properties as the usual technology set \(T\).
+
+The key relationship is
+\[
+\boxed{T\subseteq T^*.}
+\]
+So \(T^*\) is the smallest closed, convex, freely disposable technology set consistent with the observed profit function.
+
+If the original technology set \(T\) itself is closed, convex, and satisfies free disposability, then the profit function \(\Pi(p,w)\) completely characterizes \(T\), and in that case
+\[
+\boxed{T=T^*.}
+\]
+
+\subsection*{Conclusion}
+
+The set generated by the profit function,
+\[
+T^*=\{(x,y):p\cdot y-w\cdot x\le \Pi(p,w)\ \forall p>0,w>0\},
+\]
+is a closed, convex, freely disposable technology set with the usual inactivity and boundedness properties. Moreover,
+\[
+\boxed{T\subseteq T^*,}
+\]
+and under the usual regularity assumptions on \(T\),
+\[
+\boxed{T=T^*.}
+\]
+Hence \(T^*\) can be interpreted as the dual representation of the original production technology.
+
+
+
+
+\vspace{30pt}
+\begin{tcolorbox}
+
+\subsection*{Exercise 11}
+
+Consider the input distance function
+\[
+D_i(x,y)=\frac{\sqrt{x_1 x_2}}{\sqrt{y_1^2+y_2^2}}.
+\]
+
+Derive the conditional factor demand functions and the cost function
+corresponding to this input distance function.
+
+
+\end{tcolorbox}
+
+
+
+
+
+
+
+\vspace{30pt}
+\begin{tcolorbox}
+
+\subsection*{Exercise 12}
+
+Illustrate (3) 
+\[
+D_i(x,y)=\min_{w \ge 0}\{\,w \cdot x : c(w,y)\ge 1\,\}
+\]\\
+using a diagram similar to Figure 14.
+
+\end{tcolorbox}
+
+
+
+
+
+\vspace{30pt}
+\begin{tcolorbox}
+
+\subsection*{Exercise 13}
+
+Derive a revenue function from a known profit function $\Pi(p,w)$.
+
+\end{tcolorbox}
+
+
+
+
+
+
+\vspace{30pt}
+\begin{tcolorbox}
+
+\subsection*{Exercise 1}
+
+Derive the own- and cross-price elasticities of factor demands when the
+cost function is either a generalized Leontief function or a translog function.
+
+\end{tcolorbox}
+
+
+
+
+\vspace{30pt}
+\begin{tcolorbox}
+
+\subsection*{Exercise 2}
+
+Consider a single-output translog cost function.
+Show how to impose the restrictions of input homotheticity and input separability,
+respectively.
+
+\end{tcolorbox}
+
+
+
+
+\vspace{30pt}
+\begin{tcolorbox}[enhanced, breakable]
+
+\subsection*{Exercise 3}
+
+There are \(i = 1, \dots, N\) goods, produced with \(j = 1, \dots, M\) factors.  
+The production functions are written as
+\[
+y_i = f_i(v_i),
+\]
+where
+\[
+v_i = (v_{i1}, \dots, v_{iM})
+\]
+is the vector of factor inputs.
+
+The production functions are assumed to be positive, increasing, concave, and homogeneous of degree one for all \(v_i\).
+
+Let \(p_i\) be the price of output \(i\) and \(w_j\) be the price of factor \(j\).
+
+The GDP (gross domestic product) function of the economy is defined as
+\[
+G(p, V) = \max_{\{v_i\}} \left\{ \sum_{i=1}^N p_i f_i(v_i) \;\middle|\; \sum_{i=1}^N v_i \leq V \right\},
+\]
+where
+\[
+V = (V_1, \dots, V_M)
+\]
+is the \((M \times 1)\) endowment vector, and
+\[
+p = (p_1, \dots, p_N)
+\]
+is the \((N \times 1)\) output price vector.
+
+\begin{enumerate}
+\item[(i)] Show that \(G(p, V)\) is homogeneous of degree one in \(p\).
+
+\item[(ii)] Show that \(G(p, V)\) is homogeneous of degree one in \(V\).
+
+\item[(iii)] Show that
+\[
+\frac{\partial G}{\partial p_i} = y_i,
+\qquad
+\frac{\partial G}{\partial V_j} = w_j,
+\qquad
+\frac{d w_j}{d p_i} = \frac{d y_i}{d V_j}.
+\]
+
+\item[(iv)] What are the restrictions that have to be imposed on \(\alpha\), \(\beta\), \(\delta\), and \(\phi\) if you want to estimate the GDP function using an international data set:
+\[
+\begin{aligned}
+\ln G &= \alpha_0 \\
+&\quad + \sum_{i=1}^N \alpha_i \ln p_i \\
+&\quad + \sum_{k=1}^M \beta_k \ln V_k \\
+&\quad + \frac{1}{2} \sum_{i=1}^N \sum_{j=1}^N \gamma_{ij} \ln p_i \ln p_j \\
+&\quad + \frac{1}{2} \sum_{k=1}^M \sum_{l=1}^M \delta_{kl} \ln V_k \ln V_l \\
+&\quad + \sum_{i=1}^N \sum_{k=1}^M \phi_{ik} \ln p_i \ln V_k.
+\end{aligned}
+\]
+
+\item[(v)] From the GDP function in (iv), derive the effect
+\[
+\frac{\partial y_i}{\partial V_j}
+\quad \text{(Rybczynski elasticity)}.
+\]
+
+\item[(vi)] Derive the effect
+\[
+\frac{\partial w_j}{\partial p_i}
+\quad \text{(Stolper-Samuelson elasticity)}.
+\]
+
+\item[(vii)] Derive the effects
+\[
+\frac{\partial w_j}{\partial V_k}
+\]
+for the cases where \(k = j\) and \(k \neq j\), respectively.
+\end{enumerate}
+
+\end{tcolorbox}
+
+
+
