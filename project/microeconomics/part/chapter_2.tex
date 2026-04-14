@@ -1,0 +1,2249 @@
+\chapter{Theory of  Production}
+
+\section{Primal Representation of Technology}
+
+Representation of technology can be expressed in several equivalent ways:
+
+\begin{enumerate}
+    \item Production possibilities set
+    \item Input requirement set
+    \item Producible-output set
+    \item Production (transformation) function
+    \item Distance function
+\end{enumerate}
+
+\subsection*{1.1 Production Possibilities Set $T$}
+
+\[
+T = \{(x,y) : x \text{ can produce } y\},
+\qquad x \in \mathbb{R}^N_+,\; y \in \mathbb{R}^M_+.
+\]
+
+\subsection*{Properties of $T$}
+
+\begin{itemize}
+    \item[T.1] $T$ is nonempty.
+    
+    \item[T.2] $T$ is closed.
+    
+    \item[T.3] $T$ is convex.
+    
+    \item[T.4] If $(x,y) \in T$ and $x' \ge x$, then $(x',y) \in T$
+    \hfill (free disposability of inputs).
+    
+    \item[T.5] If $(x,y) \in T$ and $y' \le y$, then $(x,y') \in T$
+    \hfill (free disposability of outputs).
+    
+    \item[T.6] For every finite $x$, the set of feasible outputs is bounded above.
+    
+    \item[T.7] $(x,0) \in T$, but if $y \ne 0$, then $(0,y) \notin T$
+    \hfill (weak essentiality / no free lunch).
+\end{itemize}
+
+\medskip
+
+\textbf{Interpretation of properties:}
+
+\begin{itemize}
+    \item[T.1] There exist feasible input-output combinations.
+    
+    \item[T.2] The boundary of $T$ is included in $T$ (no holes).
+    
+    \item[T.3] If $(x,y) \in T$ and $(x',y') \in T$, then
+    \[
+    (\alpha x + (1-\alpha)x',\ \alpha y + (1-\alpha)y') \in T,
+    \quad \alpha \in [0,1].
+    \]
+    That is, convex combinations are feasible.
+\end{itemize}
+
+
+
+\subsection*{(continued)}
+
+Property T.3 is closely related to the concept of a diminishing marginal
+rate of technical substitution (MRTS).
+
+\medskip
+
+\textbf{Further interpretation of properties:}
+
+\begin{itemize}
+    \item[T.4] If an input bundle $x$ can produce a given output bundle $y$,
+    then any larger input bundle $x' \ge x$ can also produce $y$.
+
+    \item[T.5] If $(x,y) \in T$, then producing a smaller output bundle
+    $y' \le y$ does not require more input.
+
+    \item[T.6] This is a technical condition ensuring the existence of
+    a production function and guaranteeing that optimization problems
+    have solutions.
+
+    \item[T.7] This represents the \textit{no free lunch} condition:
+    zero output is always feasible, but positive output requires
+    positive input.
+\end{itemize}
+
+\subsection*{1.2 Input Requirement Set $V(y)$}
+
+\[
+V(y)
+=
+\{x : (x,y) \in T\},
+\]
+that is, the set of all input bundles capable of producing
+the output bundle $y$.
+
+\subsection*{Properties of $V(y)$}
+
+\begin{itemize}
+    \item[V.1] $V(y)$ is nonempty for at least one finite $y$.
+
+    \item[V.2] $V(y)$ is closed.
+
+    \item[V.3] $V(y)$ is convex.
+
+    \item[V.4] If $x \in V(y)$ and $x' \ge x$, then $x' \in V(y)$
+    \hfill (free disposability of inputs).
+
+    \item[V.5] If $y' \le y$, $y \ge 0$, then
+    \[
+    V(y') \subseteq V(y).
+    \]
+\end{itemize}
+
+
+
+
+\subsection*{(continued)}
+
+\textbf{Additional property:}
+
+\begin{itemize}
+    \item[V.6] $0 \in V(0)$
+    \hfill (follows from T.7: zero output is always producible).
+\end{itemize}
+
+\subsection*{Proof of properties of $V(y)$}
+
+$V(y)$ is nonempty for at least one finite output vector since T.1 implies
+that at least one feasible input-output combination exists.
+
+However, it does not imply that $V(y)$ is nonempty for all $y$.
+
+\medskip
+
+V.2 follows directly from T.2.
+
+\medskip
+
+V.3: Suppose $x,x' \in V(y)$. Then $(x,y) \in T$ and $(x',y) \in T$.
+By convexity of $T$,
+\[
+(\alpha x + (1-\alpha)x',\ \alpha y + (1-\alpha)y)
+=
+(\alpha x + (1-\alpha)x',\ y) \in T.
+\]
+Thus,
+\[
+\alpha x + (1-\alpha)x' \in V(y),
+\]
+so $V(y)$ is convex.
+
+\medskip
+
+V.4 and V.5 follow from T.4 and T.5, respectively.
+
+\medskip
+
+T.7 implies V.6. \hfill $\blacksquare$
+
+\subsection*{Convexity and Production Functions}
+
+The conditions V.3 and T.3 are closely related but not equivalent.
+
+\medskip
+
+V.3 implies that the set
+\[
+V(y)=\{x : f(x) \ge y\}
+\]
+is convex, and thus $f(x)$ is a \textbf{quasiconcave function}.
+
+\medskip
+
+\subsection*{Definition 1 (Concavity)}
+
+Let $f$ be a function defined on a convex set $A \subset \mathbb{R}^N$.
+
+Define
+\[
+T = \{(x,y) \in \mathbb{R}^{N+1} : x \in A,\ y \le f(x)\}.
+\]
+
+Then $f$ is \textbf{concave} on $A$ if and only if $T$ is convex.
+
+\medskip
+
+\subsection*{Implications}
+
+\begin{itemize}
+    \item T.3 $\Rightarrow$ $f(x)$ is concave.
+    \item V.3 $\Rightarrow$ $f(x)$ is quasiconcave.
+\end{itemize}
+
+Thus, T.3 is more restrictive than V.3.
+
+
+
+\subsection*{1.3 Producible-Output Set $Y(x)$}
+
+\[
+Y(x)=\{y : (x,y)\in T\},
+\]
+that is, the set of all output bundles that can be produced using
+a given input bundle $x$.
+
+\subsection*{Properties of $Y(x)$}
+
+\begin{itemize}
+    \item[Y.1] $Y(x)$ is nonempty.
+    
+    \item[Y.2] $Y(x)$ is closed.
+    
+    \item[Y.3] $Y(x)$ is convex.
+    
+    \item[Y.4] If $x' \ge x$, then
+    \[
+    Y(x') \supseteq Y(x).
+    \]
+    
+    \item[Y.5] If $y \in Y(x)$ and $y' \le y$, then
+    \[
+    y' \in Y(x).
+    \]
+    
+    \item[Y.6] $Y(x)$ is bounded from above for finite $x$.
+    
+    \item[Y.7] If $y \ne 0$, then
+    \[
+    y \notin Y(0_N),
+    \qquad
+    0_M \in Y(x).
+    \]
+\end{itemize}
+
+\begin{tcolorbox}
+
+\subsection*{Exercise 1}
+
+Prove Y.1--Y.7.
+
+\end{tcolorbox}
+
+\medskip
+
+The frontiers of $T$, $V(y)$, and $Y(x)$ are, respectively,
+
+
+\begin{itemize}
+    \item the production function,
+    \item the isoquant,
+    \item the production possibility frontier.
+\end{itemize}
+
+Thus, $T$, $V(y)$, and $Y(x)$ convey almost identical information
+about production technology.
+
+\subsection*{Example 1}
+
+Representing CRS technology:
+
+
+
+
+\subsection*{Example 1 (CRS Technology)}
+
+The technology set $T$ exhibits \textbf{constant returns to scale (CRS)} if
+\[
+(x,y) \in T \;\Rightarrow\; (\theta x,\theta y) \in T,
+\qquad \theta > 0.
+\]
+
+\medskip
+
+Under CRS,
+\[
+V(\theta y)
+=
+\{x : (x,\theta y)\in T\}
+=
+\{x : (x/\theta, y)\in T\}
+=
+\theta \{x/\theta : (x/\theta,y)\in T\}
+=
+\theta V(y).
+\]
+
+Similarly,
+\[
+Y(\theta x)
+=
+\{y : (\theta x,y)\in T\}
+=
+\{y : (x, y/\theta)\in T\}
+=
+\theta \{y/\theta : (x,y/\theta)\in T\}
+=
+\theta Y(x).
+\]
+
+\subsection*{1.4 Production or Transformation Function}
+
+\subsection*{1.4.1 A Production Function}
+
+The production function is defined as
+\[
+f(x)
+=
+\max \{y : (x,y)\in T\}
+=
+\max \{y \in Y(x)\},
+\qquad y \in \mathbb{R}_+.
+\]
+
+\subsection*{Properties of the Production Function}
+
+\begin{itemize}
+    \item[f.1] $f(x)$ exists for all finite $x$.
+    
+    \item[f.2] If $x' \ge x$, then
+    \[
+    f(x') \ge f(x)
+    \quad \text{(monotonicity)}.
+    \]
+    
+    \item[f.3] $f(x)$ is quasiconcave.
+    
+    \item[f.4] $f(0_N)=0$
+    \quad \text{(weak essentiality)}.
+\end{itemize}
+
+\subsection*{Proof}
+
+From T.2 and T.6, the set $T$ is compact.
+By the Weierstrass theorem, the maximum exists, so $f(x)$ is well-defined.
+
+\medskip
+
+From T.4, if $x' \ge x$, then
+\[
+Y(x) \subseteq Y(x'),
+\]
+so the feasible set expands, implying
+\[
+\max Y(x') \ge \max Y(x),
+\]
+hence $f(x') \ge f(x)$.
+
+\medskip
+
+Since
+\[
+V(y) = \{x : f(x) \ge y\}
+\]
+is convex, it follows that $f(x)$ is quasiconcave.
+\hfill $\blacksquare$
+
+
+
+
+
+
+\subsection*{1.4.2 A Transformation Function}
+
+A transformation function is an implicit representation of technology.
+
+For multi-output production, define
+\[
+Y(x,y)=0, \qquad y \in \mathbb{R}^M_+.
+\]
+
+For the scalar-output case,
+\[
+Y(x,y)=y - f(x)=0.
+\]
+
+\medskip
+
+Note that
+\[
+V(y)=\{x : Y(x,y)\le 0\},
+\qquad
+Y(x)=\{y : Y(x,y)\le 0\}.
+\]
+
+\subsection*{Properties of the Transformation Function}
+
+\begin{itemize}
+    \item[J.1] If $Y(x_0,y_0)\le 0$ and $Y(x,y)\le 0$, then
+    \[
+    Y(\theta x_0+(1-\theta)x,\ \theta y_0+(1-\theta)y)
+    \le
+    \theta Y(x_0,y_0)+(1-\theta)Y(x,y)
+    \quad (\text{convexity}).
+    \]
+
+    \item[J.2] If $Y(x,y)\le 0$, then
+    \[
+    Y(x',y)\le 0 \quad \text{for } x' \ge x.
+    \]
+
+    \item[J.3] 
+    \[
+    Y(0_N,y)>0 \quad \text{for } y \ne 0_M.
+    \]
+\end{itemize}
+
+\subsection*{1.5 Output and Input Distance Functions}
+
+\subsection*{1.5.1 Output Distance Function}
+
+\[
+D^O(x,y)
+=
+\inf \{\theta > 0 : y/\theta \in Y(x)\}.
+\]
+
+\medskip
+
+The output distance function measures the maximum proportional expansion
+of the output vector $y$ that is feasible given input $x$.
+
+That is, it pushes $y$ as far as possible away from the origin along
+the ray through $y$, while remaining in the feasible set $Y(x)$.
+
+
+\subsection*{(continued)}
+
+From the properties of the output distance function,
+\[
+D^O(x,y+y') \le D^O(x,y) + D^O(x,y').
+\]
+
+Let $y = \lambda y$ and $y' = (1-\lambda)y'$. Then,
+\[
+D^O(x, \lambda y + (1-\lambda)y')
+\le
+\lambda D^O(x,y) + (1-\lambda)D^O(x,y'),
+\]
+which shows convexity of $D^O(x,y)$ in $y$.
+\hfill $\blacksquare$
+
+\subsection*{1.5.2 Input Distance Function}
+
+\[
+D^I(x,y)
+=
+\sup \{\lambda > 0 : x/\lambda \in V(y)\}.
+\]
+
+\medskip
+
+The input distance function measures the maximal proportional contraction
+of the input vector $x$ along the ray through $x$ while remaining feasible.
+
+\medskip
+
+Note that
+\[
+x \in V(y) \;\Longleftrightarrow\; D^I(x,y) \ge 1.
+\]
+
+\subsection*{Properties of the Input Distance Function}
+
+\begin{itemize}
+    \item[Di.1] 
+    \[
+    D^I(x,0)=+\infty \text{ if } x \ne 0,
+    \qquad
+    D^I(0,y)=0.
+    \]
+
+    \item[Di.2] 
+    \[
+    D^I(x,y') \le D^I(x,y)
+    \quad \text{if } y \le y'
+    \]
+    (non-increasing in $y$).
+
+    \item[Di.3] 
+    \[
+    D^I(x,y) \le D^I(x',y)
+    \quad \text{if } x' \le x
+    \]
+    (non-decreasing in $x$).
+
+    \item[Di.4] 
+    \[
+    D^I(\mu x,y)=\mu D^I(x,y), \qquad \mu>0
+    \]
+    (homogeneous of degree 1 in $x$).
+
+    \item[Di.5] 
+    \[
+    D^I(\lambda x+(1-\lambda)x',y)
+    \ge
+    \lambda D^I(x,y)+(1-\lambda)D^I(x',y)
+    \]
+    (concave in $x$).
+\end{itemize}
+
+\subsection*{Relationship Between Distance Functions}
+
+In general, there is no direct relationship between the output distance
+function and the input distance function.
+
+\medskip
+
+However, under constant returns to scale (CRS),
+\[
+D^O(x,y) = \frac{1}{D^I(x,y)}.
+\]
+
+
+
+
+\subsection*{(continued)}
+
+\subsection*{Proof of the CRS Relationship}
+
+Under CRS, we have
+\[
+D^O(x,y)
+=
+\min \{\theta > 0 : y/\theta \in Y(x)\}.
+\]
+
+Using CRS,
+\[
+y/\theta \in Y(x)
+\;\Longleftrightarrow\;
+y \in \theta Y(x)
+\;\Longleftrightarrow\;
+y \in Y(\theta x).
+\]
+
+Thus,
+\[
+D^O(x,y)
+=
+\min \{\theta > 0 : \theta x \in V(y)\}.
+\]
+
+This implies
+\[
+D^O(x,y)
+=
+\frac{1}{\max \{ \lambda > 0 : x/\lambda \in V(y)\}}
+=
+\frac{1}{D^I(x,y)}.
+\quad \blacksquare
+\]
+
+\subsection*{A Digression: Directional Distance Function}
+
+Following Luenberger (1992), Chambers et al. (1996), and Chambers (2002),
+the directional technology distance function is defined as
+\[
+D^{\rightarrow}(x,y;g_x,g_y)
+=
+\max \{\beta \in \mathbb{R} : (x - \beta g_x,\ y + \beta g_y) \in T\},
+\]
+where
+\[
+g_x \in \mathbb{R}^N,\quad g_y \in \mathbb{R}^M,\quad (g_x,g_y) \ne (0_N,0_M).
+\]
+
+If no such $\beta$ exists, then
+\[
+D^{\rightarrow}(x,y;g_x,g_y) = -\infty.
+\]
+
+\medskip
+
+Here $(g_x,g_y)$ is a reference direction for inputs and outputs.
+The function $D^{\rightarrow}(x,y;g_x,g_y)$ represents the maximal translation
+of $(x,y)$ in the direction
+\[
+(-g_x,\ g_y)
+\]
+that keeps the point inside the technology set $T$.
+
+\medskip
+
+A firm is said to be \textbf{efficient} if
+\[
+D^{\rightarrow}(x,y;g_x,g_y) = 0.
+\]
+
+\medskip
+
+The directional distance function allows both inputs and outputs to change
+simultaneously.
+
+\medskip
+
+\textbf{Remark.}  
+The output and input distance functions are special cases of the directional
+distance function.
+
+Moreover, there are important dual relationships between the directional
+distance function and the profit function.
+
+
+
+
+\section{Indirect Objective Functions}
+
+\subsection*{2.1 Cost Function}
+
+The cost function is defined as
+\[
+c(w,y)
+=
+\min_{x \ge 0} \{ w \cdot x : x \in V(y) \},
+\qquad w \in \mathbb{R}^N_+.
+\]
+
+The solution is denoted by
+\[
+x(w,y),
+\]
+which is called the \textbf{conditional factor demand function}.
+
+\subsection*{Properties of the Cost Function}
+
+\begin{itemize}
+    \item[c.1] $c(w,y) > 0$ for $y>0$ \hfill (nonnegativity)
+
+    \item[c.2] If $w' \ge w$, then
+    \[
+    c(w',y) \ge c(w,y)
+    \]
+    \hfill (nondecreasing in $w$)
+
+    \item[c.3] 
+    \[
+    c(tw+(1-t)w',y)
+    \ge
+    t c(w,y)+(1-t)c(w',y),
+    \quad 0<t<1
+    \]
+    \hfill (concave in $w$)
+
+    \item[c.4] 
+    \[
+    c(tw,y)=t c(w,y),
+    \quad t>0
+    \]
+    \hfill (homogeneous of degree 1 in $w$)
+
+    \item[c.5] If $y \ge y'$, then
+    \[
+    c(w,y) \ge c(w,y')
+    \]
+    \hfill (nondecreasing in $y$)
+
+    \item[c.6] 
+    \[
+    c(w,0)=0
+    \]
+    \hfill (no fixed cost; not required in general)
+
+    \item[c.7] (\textbf{Shephard’s Lemma})
+    If $c(w,y)$ is differentiable at $(w,y)$ and $w_i>0$, then
+    \[
+    x_i(w,y)=\frac{\partial c(w,y)}{\partial w_i},
+    \quad i=1,\dots,N.
+    \]
+\end{itemize}
+
+\subsection*{Proof Sketch}
+
+\begin{itemize}
+    \item[c.2] If $x,x'$ minimize cost at $w,w'$ respectively, then
+    $wx \le wx'$ and since $w \le w'$, we get $wx' \le w'x'$.
+
+    \item[c.3] Let $w''=tw+(1-t)w'$. Then
+    \[
+    c(w'',y)=w''x'' = t w x'' + (1-t) w' x''
+    \]
+    and use optimality.
+
+    \item[c.4] Scaling argument: minimizing at $w$ is equivalent to minimizing at $tw$.
+
+    \item[c.5] If $y \ge y'$, then $V(y) \subseteq V(y')$.
+
+    \item[c.7] Apply the envelope theorem to
+    \[
+    \mathcal{L}=w\cdot x + \lambda Y(x,y).
+    \]
+\end{itemize}
+
+\subsection*{Continuity}
+
+$c(w,y)$ is continuous if $V(y)$ is strictly convex.
+
+\subsection*{Comparative Statics}
+
+\textbf{A. Symmetry (Young’s theorem)}
+
+\[
+\frac{\partial x_i(w,y)}{\partial w_j}
+=
+\frac{\partial x_j(w,y)}{\partial w_i}
+\]
+
+Cross-price effects are symmetric.
+
+\medskip
+
+\textbf{B. Own-price effect}
+
+\[
+\frac{\partial x_i(w,y)}{\partial w_i} \le 0
+\]
+
+Own-price effects are nonpositive.
+
+
+
+
+\subsection*{(continued)}
+
+\textbf{C. Fundamental inequality of cost minimization}
+
+\[
+(x^1 - x^2)\cdot (w^1 - w^2) \le 0.
+\]
+
+Indeed, since $x^1$ minimizes cost at $w^1$ and $x^2$ minimizes cost at $w^2$,
+we have
+\[
+w^1 \cdot x^1 \le w^1 \cdot x^2,
+\qquad
+w^2 \cdot x^2 \le w^2 \cdot x^1.
+\]
+Adding these two inequalities and rearranging yields
+\[
+(x^1 - x^2)\cdot (w^1 - w^2) \le 0.
+\]
+
+\begin{tcolorbox}
+
+\subsection*{Exercise 2}
+
+Derive a cost function consistent with the CES production function
+\[
+y = \left(a x_1^{\rho} + b x_2^{\rho}\right)^{1/\rho},
+\qquad a>0,\; b>0.
+\]
+
+\end{tcolorbox}
+
+\begin{tcolorbox}
+
+\subsection*{Exercise 3}
+
+Suppose the cost function is
+\[
+c(w,y)=w_2\left[1+y+\ln\left(\frac{w_1}{w_2}\right)\right],
+\qquad y \in \mathbb{R}_+.
+\]
+
+Derive the corresponding production function.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}
+
+\subsection*{Exercise 4}
+
+If the technology has nonincreasing, constant, or nondecreasing returns to scale,
+show that
+\[
+c(w,ty) \le t\,c(w,y)
+\]
+for $0<t<1$, for all $t$, or for all $t>1$, respectively.
+
+If output is one-dimensional and there are constant returns to scale, show that
+\[
+c(w,y)=y\,c(w,1).
+\]
+
+\end{tcolorbox}
+
+\begin{tcolorbox}
+
+\subsection*{Exercise 5}
+
+Consider a single-output production function
+\[
+y=f(x), \qquad x \in \mathbb{R}_+^N.
+\]
+
+The elasticity of scale is defined as
+\[
+\mathcal{E}(x,y)
+=
+\sum_{i=1}^N \frac{\partial f(x)}{\partial x_i}\frac{x_i}{y}
+=
+\sum_{i=1}^N e_i.
+\]
+That is, the elasticity of scale is the sum of the individual scale elasticities.
+
+Let the corresponding cost function be $c(w,y)$.
+
+Define the elasticity of size by
+\[
+\mathcal{E}^*(w,y)
+=
+\frac{\partial c(w,y)}{\partial y}\frac{y}{c(w,y)}.
+\]
+
+Show that
+\[
+\mathcal{E}(x,y)=\mathcal{E}^*(w,y)
+\]
+when cost-minimizing inputs are chosen.
+
+\end{tcolorbox}
+
+
+\begin{tcolorbox}
+
+\subsection*{Exercise 6}
+
+Suppose
+\[
+c(w,y)=y\,e(w)
+\]
+is the cost function, and $p$ is the output price.
+
+If the output market is competitive, then producer profit is zero, so
+\[
+p=c(w).
+\]
+
+Now output is not fixed but determined by a demand schedule
+\[
+D(p)=y.
+\]
+
+Derive the response of input demand $x_i$ to a change in input price $w_j$,
+that is,
+\[
+\frac{\partial x_i}{\partial w_j},
+\]
+or in elasticity form.
+
+If the effect can be decomposed into multiple parts, show the decomposition.
+
+\end{tcolorbox}
+
+
+\subsection*{2.2 Revenue Function}
+
+The revenue function is defined as
+\[
+R(p,x)
+=
+\max_{y \ge 0} \{p \cdot y : y \in Y(x)\},
+\qquad p \in \mathbb{R}_+^M.
+\]
+
+The solution is denoted by
+\[
+y(p,x).
+\]
+
+\subsection*{Properties of the Revenue Function}
+
+\begin{itemize}
+    \item[R.1] 
+    \[
+    R(p,x)>0
+    \]
+    \hfill (nonnegativity)
+
+    \item[R.2] If $p \le p'$, then
+    \[
+    R(p,x) \le R(p',x)
+    \]
+    \hfill (nondecreasing in $p$)
+
+    \item[R.3]
+    \[
+    R(tp+(1-t)p',x)
+    \le
+    tR(p,x)+(1-t)R(p',x),
+    \qquad 0\le t\le 1
+    \]
+    \hfill (convex in $p$)
+
+    \item[R.4]
+    \[
+    R(tp,x)=tR(p,x),
+    \qquad t>0
+    \]
+    \hfill (homogeneous of degree 1 in $p$)
+
+    \item[R.5] If $x' \ge x$, then
+    \[
+    R(p,x') \ge R(p,x)
+    \]
+    \hfill (nondecreasing in $x$)
+\end{itemize}
+
+
+
+
+\subsection*{(continued)}
+
+\begin{itemize}
+    \item[R.6] If $R(p,x)$ is differentiable in $p$, then a unique
+    revenue-maximizing output vector exists, and
+    \[
+    y_i(p,x)=\frac{\partial R(p,x)}{\partial p_i},
+    \qquad i=1,\dots,M.
+    \]
+    This is the \textbf{Samuelson--McFadden lemma}.
+\end{itemize}
+
+\subsection*{Comparative Statics}
+
+Since the revenue function is convex in $p$, its Hessian with respect to $p$,
+\[
+D^2_{pp}R(p,x)
+=
+\nabla_p y(p,x),
+\]
+is positive semidefinite and symmetric.
+
+\medskip
+
+\textbf{A. Symmetry}
+
+\[
+\frac{\partial y_i(p,x)}{\partial p_j}
+=
+\frac{\partial y_j(p,x)}{\partial p_i}
+\]
+by Young's theorem.
+
+\medskip
+
+\textbf{B. Own-price effects}
+
+\[
+\frac{\partial y_i(p,x)}{\partial p_i} \ge 0.
+\]
+
+Thus, own-price effects are nonnegative.
+
+\medskip
+
+\textbf{C. Fundamental inequality of revenue maximization}
+
+\[
+(y^1-y^2)\cdot (p^1-p^2) \ge 0.
+\]
+
+Indeed, since $y^1$ maximizes revenue at $p^1$ and $y^2$ maximizes revenue at $p^2$,
+we have
+\[
+p^1 \cdot y^1 \ge p^1 \cdot y^2,
+\qquad
+p^2 \cdot y^2 \ge p^2 \cdot y^1.
+\]
+Adding the two inequalities and rearranging gives
+\[
+(y^1-y^2)\cdot (p^1-p^2) \ge 0.
+\]
+
+\subsection*{Example 2}
+
+Consider the output set
+\[
+Y(x)=\{y : a_1 y_1 \le x,\ a_2 y_2 \le x,\ a_1,a_2>0\},
+\]
+which represents a Leontief technology.
+
+This output set satisfies R.1--R.5.
+For any $p>0$, revenue is maximized at the vertex where
+\[
+a_i y_i = x
+\qquad \forall i.
+\]
+
+Hence the associated revenue function is
+\[
+R(p,x)
+=
+x \sum_{i=1}^M \frac{p_i}{a_i}.
+\]
+
+This revenue function is differentiable in $p$, and therefore
+\[
+y_i(p,x)
+=
+\frac{\partial R(p,x)}{\partial p_i}
+=
+\frac{x}{a_i}.
+\]
+
+\subsection*{Example 3}
+
+Consider the output set
+\[
+Y(x)=\left\{y : \sum_{i=1}^M \beta_i y_i \le x,\ \beta_i>0\right\},
+\]
+which represents a linear technology.
+
+
+
+\subsection*{(continued)}
+
+\subsection*{Example 3 (Linear Technology)}
+
+Consider the output set
+\[
+Y(x)=\left\{y : \sum_{i=1}^M \beta_i y_i \le x,\ \beta_i>0\right\}.
+\]
+
+Then the revenue function is
+\[
+R(p,x)
+=
+\max \left\{ \frac{p_1}{\beta_1}, \dots, \frac{p_M}{\beta_M} \right\} \cdot x.
+\]
+
+This revenue function is not differentiable.
+If
+\[
+\frac{p_i}{\beta_i} = \frac{p_j}{\beta_j}
+\]
+for some $i \ne j$, then the maximizing output vector is not unique.
+
+\section{2.3 Profit Function}
+
+The profit function is defined as
+\[
+\Pi(p,w)
+=
+\max_{x,y} \{p\cdot y - w\cdot x : (x,y)\in T,\ p>0,\ w>0\}.
+\tag{1}
+\]
+
+Equivalently,
+\[
+\Pi(p,w)
+=
+\max_{y} \{p\cdot y - c(w,y)\}.
+\tag{2}
+\]
+
+Also,
+\[
+\Pi(p,w)
+=
+\max_{x} \{R(p,x) - w\cdot x\}.
+\tag{3}
+\]
+
+\subsection*{Interpretation}
+
+Expression (2) implies a two-stage maximization:
+
+\begin{itemize}
+    \item First, find the cost-minimizing input bundle for each $y$.
+    \item Second, choose the profit-maximizing output level.
+\end{itemize}
+
+Similarly, (3) implies:
+
+\begin{itemize}
+    \item First, find the revenue-maximizing output for each $x$.
+    \item Second, choose the profit-maximizing input level.
+\end{itemize}
+
+\subsection*{Proof of (1) $\Leftrightarrow$ (2)}
+
+We need to show that
+\[
+x(p,w) = x(w, y(p,w)),
+\]
+i.e., the profit-maximizing input equals the cost-minimizing input
+for the profit-maximizing output.
+
+Suppose $x(p,w)=x' \ne x(w,y(p,w))$.
+
+Then
+\[
+\Pi(p,w)
+=
+p\cdot y(p,w) - w\cdot x'
+\ge
+p\cdot y(p,w) - w\cdot x(w,y(p,w)).
+\]
+
+This implies
+\[
+w\cdot x' \le w\cdot x(w,y(p,w)),
+\]
+which contradicts the definition of $x(w,y(p,w))$ as the
+cost-minimizing input bundle unless
+\[
+x' = x(w,y(p,w)).
+\]
+\hfill $\blacksquare$
+
+\begin{tcolorbox}
+
+\subsection*{Exercise 7}
+
+Prove $(1) \Leftrightarrow (3)$ by showing that
+\[
+y(p, x(p,w)) = y(p,w).
+\]
+
+\end{tcolorbox}
+
+\begin{tcolorbox}
+
+\subsection*{Exercise 8}
+
+Prove that a profit-maximizing producer chooses output levels $y(p,w)$ such that
+\[
+p_i = \frac{\partial c(w,y)}{\partial y_i}.
+\]
+
+Moreover, show that the marginal cost
+\[
+\frac{\partial c(w,y)}{\partial y_i}
+\]
+increases in $y_i$ at the optimal choice.
+
+\end{tcolorbox}
+
+\subsection*{Properties of the Profit Function}
+
+\begin{itemize}
+    \item[$\Pi$.1] $\Pi(p,w)\ge 0$ and exists.
+    
+    \item[$\Pi$.2] If $p \ge p'$, then
+    \[
+    \Pi(p,w)\ge \Pi(p',w)
+    \]
+    \hfill (nondecreasing in $p$)
+    
+    \item[$\Pi$.3] If $w \ge w'$, then
+    \[
+    \Pi(p,w)\le \Pi(p,w')
+    \]
+    \hfill (nonincreasing in $w$)
+    
+    \item[$\Pi$.4] $\Pi(p,w)$ is convex in $(p,w)$.
+    
+    \item[$\Pi$.5]
+    \[
+    \Pi(tp,tw)=t\Pi(p,w), \qquad t>0
+    \]
+    \hfill (homogeneous of degree 1 in $(p,w)$)
+    
+    \item[$\Pi$.6] If the profit function is differentiable in $(p,w)$, then
+    \[
+    \frac{\partial \Pi(p,w)}{\partial p_i}=y_i(p,w),
+    \qquad
+    \frac{\partial \Pi(p,w)}{\partial w_i}=-x_i(p,w)
+    \]
+    \hfill (Hotelling's lemma)
+\end{itemize}
+
+\subsection*{Proof Sketch}
+
+$\Pi(p,w)$ exists since $T$ is compact and $p\cdot y - w\cdot x$ is continuous.
+The firm can always choose $(0_N,0_M)$ and earn zero profit, so
+\[
+\Pi(p,w)\ge 0.
+\]
+
+\medskip
+
+If $(x',y')$ is the profit-maximizing choice associated with $(p',w)$, then
+\[
+\Pi(p',w)=p'\cdot y' - w\cdot x'.
+\]
+If $p\ge p'$, then
+\[
+\Pi(p',w)=p'\cdot y' - w\cdot x'
+\le p\cdot y' - w\cdot x'
+\le \Pi(p,w).
+\]
+Hence $\Pi$.2 holds.
+
+\medskip
+
+Similarly, if $(x,y)$ is the profit-maximizing choice associated with $(p,w)$, then
+\[
+\Pi(p,w)=p\cdot y - w\cdot x
+\le p\cdot y - w'\cdot x
+\le \Pi(p,w'),
+\]
+which proves $\Pi$.3.
+
+\medskip
+
+To show convexity, let $(x^2,y^2)$ be the profit-maximizing choice for
+\[
+(p^2,w^2)=\bigl(\theta p^0+(1-\theta)p^1,\ \theta w^0+(1-\theta)w^1\bigr),
+\qquad 0\le \theta \le 1.
+\]
+Then
+\[
+\Pi(p^0,w^0)\ge p^0\cdot y^2 - w^0\cdot x^2,
+\]
+\[
+\Pi(p^1,w^1)\ge p^1\cdot y^2 - w^1\cdot x^2.
+\]
+Therefore,
+\[
+\theta \Pi(p^0,w^0)+(1-\theta)\Pi(p^1,w^1)
+\ge
+\Pi(p^2,w^2),
+\]
+so $\Pi(p,w)$ is convex.
+
+\medskip
+
+For homogeneity,
+\[
+\Pi(tp,tw)
+=
+\max_y \{tp\cdot y - c(tw,y)\}
+=
+\max_y \{tp\cdot y - t c(w,y)\}
+=
+t\max_y \{p\cdot y - c(w,y)\}
+=
+t\Pi(p,w).
+\]
+
+\medskip
+
+Applying the envelope theorem to
+\[
+\mathcal{L}=p\cdot y - w\cdot x + \lambda Y(x,y),
+\]
+we obtain
+\[
+\frac{\partial \Pi(p,w)}{\partial p_i}=y_i(p,w),
+\qquad
+\frac{\partial \Pi(p,w)}{\partial w_i}=-x_i(p,w).
+\]
+\hfill $\blacksquare$
+
+\begin{tcolorbox}
+
+\subsection*{Exercise 9}
+
+Let the production function be CES:
+\[
+y = \left(x_1^\rho + x_2^\rho\right)^{\beta/\rho},
+\qquad \beta<1,\quad 0\ne \rho<1.
+\]
+
+Derive the input demand functions and the profit function.
+
+
+\end{tcolorbox}
+
+
+
+\subsection*{Comparative Statics}
+
+By homogeneity and Hotelling's lemma,
+\[
+y_i(tp,tw)=y_i(p,w),
+\qquad
+x_i(tp,tw)=x_i(p,w).
+\]
+
+Since $\Pi(p,w)$ is convex in $q=(p,w)$, the Hessian
+\[
+\nabla_{qq}^2 \Pi(p,w)
+\]
+is positive semidefinite.
+
+\medskip
+
+In particular,
+\[
+\frac{\partial y_i(p,w)}{\partial p_i} > 0,
+\qquad
+\frac{\partial x_i(p,w)}{\partial w_i} < 0
+\]
+\hfill (own-price effects)
+
+and symmetry implies
+\[
+\frac{\partial x_i(p,w)}{\partial w_j}
+=
+\frac{\partial x_j(p,w)}{\partial w_i},
+\]
+\[
+\frac{\partial y_i(p,w)}{\partial p_j}
+=
+\frac{\partial y_j(p,w)}{\partial p_i},
+\]
+\[
+\frac{\partial y_i(p,w)}{\partial w_j}
+=
+-\frac{\partial x_j(p,w)}{\partial p_i}.
+\]
+
+
+\subsection*{(continued)}
+
+\textbf{Fundamental inequality of profit maximization}
+
+\[
+(p^1-p)\cdot (y^1-y) - (w^1-w)\cdot (x^1-x) \ge 0.
+\]
+
+Indeed, profit maximization implies
+\[
+p\cdot y - w\cdot x \ge p\cdot y^1 - w\cdot x^1,
+\]
+and
+\[
+p^1 \cdot y^1 - w^1 \cdot x^1 \ge p^1 \cdot y - w^1 \cdot x.
+\]
+Adding these inequalities and rearranging yields the result above.
+
+\subsection*{Decomposition of Derived Demands and Output Supplies}
+
+We know that
+\[
+y(p,x(p,w)) = y(p,w),
+\qquad
+x(w,y(p,w)) = x(p,w).
+\]
+
+Therefore,
+\[
+\frac{\partial y_i(p,w)}{\partial p_j}
+=
+\frac{\partial y_i(p,x)}{\partial p_j}
++
+\sum_{v=1}^N
+\frac{\partial y_i(p,x)}{\partial x_v}
+\frac{\partial x_v(p,w)}{\partial p_j}.
+\]
+
+This may be interpreted as
+
+\[
+\text{movement along the boundary of } Y(x)
++
+\text{a shift in } Y(x).
+\]
+
+Similarly,
+\[
+\frac{\partial y_i(p,w)}{\partial w_k}
+=
+\sum_{v=1}^N
+\frac{\partial y_i(p,x)}{\partial x_v}
+\frac{\partial x_v(p,w)}{\partial w_k}.
+\]
+
+Also,
+\[
+\frac{\partial x_i(p,w)}{\partial p_j}
+=
+\sum_{v=1}^M
+\frac{\partial x_i(w,y)}{\partial y_v}
+\frac{\partial y_v(p,w)}{\partial p_j},
+\]
+
+and
+\[
+\frac{\partial x_i(p,w)}{\partial w_k}
+=
+\frac{\partial x_i(w,y)}{\partial w_k}
++
+\sum_{v=1}^M
+\frac{\partial x_i(w,y)}{\partial y_v}
+\frac{\partial y_v(p,w)}{\partial w_k}.
+\]
+
+This may be interpreted as
+
+\[
+\text{movement along the boundary of } V(y)
++
+\text{a shift in } V(y).
+\]
+
+\subsection*{Example 4}
+
+Consider
+\[
+Y(x)=\left\{y : a_1 y_1 + a_2 y_2 \le x^{1/2},\ a_1,a_2>0\right\}.
+\]
+
+For given $x$, consider a revenue-maximization problem.
+Assume that
+\[
+p_1 > \frac{a_1}{a_2} p_2.
+\]
+
+Then the optimal solution is a corner solution:
+\[
+y_2 = 0,
+\qquad
+y_1 = \frac{x^{1/2}}{a_1}.
+\]
+
+The associated profit-maximization problem becomes
+\[
+\max_x \left( \frac{p_1}{a_1} x^{1/2} - wx \right).
+\]
+
+The first-order condition implies
+\[
+x^{-1/2} = 2a_1 \left(\frac{w}{p_1}\right).
+\]
+
+Now suppose $p_1$ rises. Again, $y_2$ is not produced, but the
+profit-maximizing input $x$ increases, so the optimal production point
+moves to a new point on the boundary.
+
+In this case,
+\[
+\frac{\partial y_i(p,w)}{\partial p_j}
+=
+\frac{\partial y_i(p,x)}{\partial p_j}
++
+\sum_{v=1}^N
+\frac{\partial y_i(p,x)}{\partial x_v}
+\frac{\partial x_v(p,w)}{\partial p_j}.
+\]
+
+\subsection*{Le Chatelier--Samuelson Principle}
+
+Let
+\[
+y^* = y(p,w)
+\]
+be the point where the short-run optimum
+(no shift in $V(y)$) and the long-run optimum coincide.
+
+We know that
+\[
+\frac{\partial x_i(p,w)}{\partial w_k}
+=
+\frac{\partial x_i(w,y^*)}{\partial w_k}
++
+\sum_{v=1}^M
+\frac{\partial x_i(w,y)}{\partial y_v}
+\frac{\partial y_v(p,w)}{\partial w_k}.
+\]
+
+By symmetry,
+\[
+\frac{\partial y_v(p,w)}{\partial w_k}
+=
+-
+\frac{\partial x_k(p,w)}{\partial p_v}.
+\]
+
+Combining these gives
+\[
+\frac{\partial x_i(p,w)}{\partial w_k}
+=
+\frac{\partial x_i(w,y^*)}{\partial w_k}
+-
+\sum_{v=1}^M \sum_{s=1}^M
+\frac{\partial x_i(w,y)}{\partial y_v}
+\frac{\partial y_s(p,w)}{\partial p_v}
+\frac{\partial x_k(w,y)}{\partial y_s}.
+\]
+
+In particular, when $i=k$, this expression compares the long-run and short-run
+responses of input demand to a change in input price.
+
+This is the essence of the \textbf{Le Chatelier--Samuelson principle}:
+the long-run response is at least as large in magnitude as the short-run response.
+
+
+
+
+\subsection*{(continued)}
+
+Notice that
+\[
+\sum_{v=1}^M \sum_{s=1}^M
+\frac{\partial x_i(w,y)}{\partial y_v}
+\frac{\partial y_s(p,w)}{\partial p_v}
+\frac{\partial x_i(w,y)}{\partial y_s}
+\]
+is a quadratic form, which can be written as
+\[
+\left( \nabla_y x_i(w,y) \right)^\top
+\left( \nabla^2_{pp} \Pi(p,w) \right)
+\left( \nabla_y x_i(w,y) \right).
+\]
+
+Since the profit function $\Pi(p,w)$ is convex in $(p,w)$,
+its Hessian $\nabla^2_{pp}\Pi(p,w)$ is positive semidefinite.
+Therefore, the quadratic form above is nonnegative.
+
+\medskip
+
+Thus,
+\[
+\frac{\partial x_i(p,w)}{\partial w_i}
+\le
+\frac{\partial x_i(w,y^*)}{\partial w_i}.
+\]
+
+Similarly, we can show
+\[
+\frac{\partial y_i(p,w)}{\partial p_i}
+\ge
+\frac{\partial y_i(p,x^*)}{\partial p_i}.
+\]
+
+\medskip
+
+\textbf{Conclusion (Le Chatelier--Samuelson Principle):}
+
+The long-run response to a price change is more elastic than the short-run response.
+
+\[
+|\text{long-run effect}| \ge |\text{short-run effect}|.
+\]
+
+\section{3 Principle of Duality}
+
+Indirect objective functions such as the cost, revenue, and profit functions
+are defined using the primal technology.
+
+For example, the input requirement set $V(y)$ is used to define the cost function:
+\[
+c(w,y)=\min_{x \ge 0} \{ w \cdot x : x \in V(y) \}.
+\]
+
+\medskip
+
+If we impose restrictions on the primal technology, we implicitly restrict
+the form of the dual functions.
+
+\medskip
+
+The natural question is:
+
+\begin{quote}
+Can we reverse the process?  
+Can we use observed data on dual functions to recover the underlying technology?
+\end{quote}
+
+\medskip
+
+\textbf{Principle of Duality:}
+
+Under certain conditions, this is indeed possible.
+
+Specifying an indirect objective function (such as $c(w,y)$, $R(p,x)$, or $\Pi(p,w)$)
+is equivalent to specifying the underlying primal technology.
+
+
+
+
+\subsection*{3.1 Illustration of the Duality}
+
+Generate a half-space at a particular $w$ and $y$:
+\[
+N(w,y)=\{x : w\cdot x \le c(w,y)\}.
+\]
+
+That is, the cost function defines a half-space.
+
+\medskip
+
+In Figure 12, the half-space $N(w,y)$ is the area below the line $AB$.
+Any point below the hyperplane
+\[
+w\cdot x = c(w,y)
+\]
+cannot produce $y$.
+Therefore, the half-space above $AB$ should contain $V(y)$.
+
+Now consider the half-space defined by
+\[
+N(w,y)=\{x : w\cdot x \ge c(w,y)\}.
+\]
+
+If the hyperplane
+\[
+w\cdot x = c(w,y)
+\]
+is represented by $CD$ in Figure 12, then the area above $CD$ must contain $V(y)$.
+Hence $V(y)$ must lie above both $CD$ and $AB$.
+
+If this construction is repeated for all possible price vectors,
+the lower boundary of the intersection of these half-spaces takes a shape
+similar to that of convex isoquants.
+
+\medskip
+
+The constructed input requirement set is defined as
+\[
+V^*(y)=\{x : w\cdot x \ge c(w,y)\ \forall w>0\}.
+\]
+
+The question is:
+\[
+V^*(y)=V(y)\, ?
+\]
+
+\subsection*{Properties of $V^*(y)$}
+
+\begin{itemize}
+    \item[$V^*$.1] If $x \in V^*(y)$, then for any $x' \ge x$,
+    \[
+    x' \in V^*(y)
+    \]
+    \hfill (monotonicity)
+
+    \item[$V^*$.2]
+    \[
+    0_N \in V^*(0_M),
+    \qquad
+    0_N \notin V^*(y)\ \text{for } y \ne 0
+    \]
+
+    \item[$V^*$.3] $V^*(y)$ is always convex, regardless of whether or not $V(y)$ is convex.
+
+    \item[$V^*$.4] $V^*(y)$ is closed and nonempty.
+\end{itemize}
+
+
+
+
+\subsection*{(continued)}
+
+\subsection*{Proof of Properties of $V^*(y)$}
+
+Since $x \in V^*(y)$, we have
+\[
+w \cdot x \ge c(w,y).
+\]
+If $x' \ge x$, then
+\[
+w \cdot x' \ge w \cdot x \ge c(w,y),
+\]
+so $x' \in V^*(y)$. This proves $V^*.1$.
+
+\medskip
+
+Since $c(w,0)=0$, we have
+\[
+w \cdot 0_N = c(w,0),
+\]
+so $0_N \in V^*(0_M)$.
+
+On the other hand, for any $y \ne 0$, $c(w,y)>0$, so
+\[
+w \cdot 0_N = 0 < c(w,y),
+\]
+and hence $0_N \notin V^*(y)$. This proves $V^*.2$.
+
+\medskip
+
+Suppose $x^0, x' \in V^*(y)$, so
+\[
+w \cdot x^0 \ge c(w,y),
+\qquad
+w \cdot x' \ge c(w,y).
+\]
+Let
+\[
+x^2 = \theta x^0 + (1-\theta)x', \qquad 0 \le \theta \le 1.
+\]
+Then
+\[
+w \cdot x^2
+=
+\theta w \cdot x^0 + (1-\theta) w \cdot x'
+\ge
+\theta c(w,y) + (1-\theta)c(w,y)
+=
+c(w,y).
+\]
+Thus $x^2 \in V^*(y)$, so $V^*(y)$ is convex. This proves $V^*.3$.
+
+\medskip
+
+$V^*.4$ is immediate. \hfill $\blacksquare$
+
+\subsection*{Interpretation}
+
+Property $V^*.3$ implies that $V^*(y)$ is the \textbf{convex hull} of $V(y)$.
+
+That is,
+\[
+V^*(y) \supseteq V(y),
+\qquad
+V^*(y)=V(y) \quad \text{if $V(y)$ is convex}.
+\]
+
+\medskip
+
+\subsection*{Economic Interpretation}
+
+Consider a nonconvex $V(y)$ as in Figure 13.
+
+If the price line is $AB$ or $DE$, then an input bundle on those segments is chosen.
+
+If the price line is $BC$ (or $CD$), then a corner point such as $D$ (or $B$)
+is chosen instead.
+
+Thus, points like $C$ in the nonconvex region of $V(y)$ are never chosen
+in cost minimization.
+
+\medskip
+
+Therefore, although
+\[
+V^*(y) \ne V(y),
+\]
+no economically relevant information is lost by replacing $V(y)$ with $V^*(y)$.
+
+\begin{tcolorbox}
+
+\subsection*{Exercise 10}
+
+Given a profit function $\Pi(p,w)$, define a set...
+
+\end{tcolorbox}
+
+\begin{tcolorbox}
+
+\subsection*{Exercise 10}
+
+Given a profit function $\Pi(p,w)$, define the set
+\[
+T^*
+=
+\{(x,y)\in \mathbb{R}_+^{N+M} : p\cdot y - w\cdot x \le \Pi(p,w)
+\ \text{for all } p>0,\ w>0\}.
+\]
+
+Derive the properties of $T^*$ and compare them with those of $T$.
+
+\end{tcolorbox}
+
+\section{4 Primal vs.\ Dual: Some Dualities}
+
+We can establish the following dual relationships between the input
+distance function and the cost function:
+
+\[
+(1)\qquad
+c(w,y)
+=
+\min \{w\cdot x : D^I(x,y)\ge 1\},
+\]
+
+\[
+(2)\qquad
+c(w,y)
+=
+\min_x \left\{ \frac{w\cdot x}{D^I(x,y)} \right\},
+\]
+
+\[
+(3)\qquad
+D^I(x,y)
+=
+\min \{ w\cdot x : c(w,y)\ge 1\},
+\]
+
+\[
+(4)\qquad
+D^I(x,y)
+=
+\min_w \left\{ \frac{w\cdot x}{c(w,y)} \right\}.
+\]
+
+\subsection*{Proof Sketch}
+
+Relation (1) is immediate from the definition, since
+\[
+D^I(x,y)\ge 1
+\quad \Longleftrightarrow \quad
+x \in V(y).
+\]
+
+Now,
+\[
+D^I(x,y)
+=
+\max \left\{ \lambda : \frac{x}{\lambda}\in V(y) \right\}.
+\]
+
+Since
+\[
+\frac{x}{\lambda}\in V(y)
+\quad \Longleftrightarrow \quad
+w\cdot \frac{x}{\lambda} \ge c(w,y)
+\quad \forall w>0,
+\]
+we obtain
+\[
+D^I(x,y)
+=
+\max \left\{ \lambda : \lambda \le \frac{w\cdot x}{c(w,y)}
+\quad \forall w>0 \right\}.
+\]
+
+Therefore,
+\[
+D^I(x,y)
+=
+\min_w \left\{ \frac{w\cdot x}{c(w,y)} \right\},
+\]
+which proves (4).
+
+\medskip
+
+To prove (2) and (3), we use the following theorem.
+
+\subsection*{Theorem 1}
+
+Suppose $f(y,x)$ and $g(z,x)$ are real-valued functions, and both are
+linearly homogeneous in $x\in X$.
+
+Then
+\[
+\min_x \left\{
+\frac{f(y,x)}{g(z,x)} : y\in Y,\ x\in X,\ z\in Z
+\right\}
+=
+\min_x \left\{
+f(y,x) : g(z,x)\ge 1,\ y\in Y,\ x\in X,\ z\in Z
+\right\},
+\]
+whenever the minimum on each side exists.
+
+\subsection*{Proof}
+
+Let
+\[
+A
+=
+\left\{
+\frac{f(y,x)}{g(z,x)} : y\in Y,\ x\in X,\ z\in Z
+\right\},
+\]
+\[
+B
+=
+\left\{
+f(y,x) : g(z,x)\ge 1,\ y\in Y,\ x\in X,\ z\in Z
+\right\},
+\]
+and define
+\[
+\alpha = \min A,
+\qquad
+\beta = \min B.
+\]
+
+We show that $\alpha=\beta$.
+
+\medskip
+
+First, let $b\in B$. Then for some $(y_0,x_0,z_0)$,
+\[
+b=f(y_0,x_0),
+\qquad
+g(z_0,x_0)\ge 1.
+\]
+Hence
+\[
+\frac{f(y_0,x_0)}{g(z_0,x_0)} \le f(y_0,x_0)=b,
+\]
+so there exists $a\in A$ such that $a\le b$.
+Therefore,
+\[
+\alpha \le \beta.
+\]
+
+\medskip
+
+Conversely, let $a\in A$. Then for some $(y_1,x_1,z_1)$,
+\[
+a = \frac{f(y_1,x_1)}{g(z_1,x_1)}.
+\]
+Define
+\[
+\tilde x = \frac{x_1}{g(z_1,x_1)}.
+\]
+By linear homogeneity,
+\[
+f(y_1,\tilde x)
+=
+\frac{f(y_1,x_1)}{g(z_1,x_1)},
+\qquad
+g(z_1,\tilde x)=1.
+\]
+Thus
+\[
+a=f(y_1,\tilde x)\in B.
+\]
+So
+\[
+A \subseteq B
+\quad \Rightarrow \quad
+\alpha \ge \beta.
+\]
+
+Hence
+\[
+\alpha=\beta.
+\qquad \blacksquare
+\]
+
+\medskip
+
+By this theorem, (1) implies (2), and (4) implies (3).
+
+
+\begin{tcolorbox}
+
+\subsection*{Exercise 11}
+
+Consider the input distance function
+\[
+D^I(x,y)=\frac{x}{\sqrt{y_1^2+y_2^2}}.
+\]
+
+Derive the conditional factor demand functions and the cost function
+corresponding to this input distance function.
+
+
+\end{tcolorbox}
+
+\subsection*{Dual Relations for Output Distance Function}
+
+By symmetry with the input-distance case, we obtain:
+
+\[
+(5)\qquad
+R(p,x)
+=
+\max \{ p\cdot y : D^O(x,y)\le 1 \},
+\]
+
+\[
+(6)\qquad
+R(p,x)
+=
+\max_y \left\{ \frac{p\cdot y}{D^O(x,y)} \right\},
+\]
+
+\[
+(7)\qquad
+D^O(x,y)
+=
+\max \{ p\cdot y : R(p,x)\le 1 \},
+\]
+
+\[
+(8)\qquad
+D^O(x,y)
+=
+\max_p \left\{ \frac{p\cdot y}{R(p,x)} \right\}.
+\]
+
+\subsection*{Geometric Interpretation}
+
+For any output bundle $y$ that can be produced with input $x$,
+there exists a normalized price vector $p$ such that the price line
+is tangent to the production possibility frontier (PPF).
+
+Let $A$ be such a point and $p^A$ the corresponding price vector:
+\[
+R(p^A,x)=p^A \cdot y^A = 1.
+\]
+
+Now consider another bundle $B$.
+
+Let $C$ be the intersection between the ray $OB$ and the price line
+associated with $p^A$.
+
+Define
+\[
+\theta
+=
+\frac{OB}{OC}
+=
+\frac{p^A \cdot y^B}{p^A \cdot y^A}
+=
+p^A \cdot y^B.
+\]
+
+We want to find the price vector $p$ that maximizes $\theta$.
+
+The optimal solution is given by some price vector $p^D$.
+
+\medskip
+
+\textbf{Result:}
+
+The maximized value of $\theta$ is exactly equal to the output distance function:
+\[
+D^O(x,y)=\max_p \frac{p\cdot y}{R(p,x)}.
+\]
+
+
+
+\subsection*{(continued)}
+
+Thus,
+\[
+\max \theta = OD = \frac{OB}{OC} = p^D \cdot y^B = D^O(x,y).
+\]
+
+This explains why
+\[
+D^O(x,y)=\max_p \{p\cdot y : R(p,x)=1\}.
+\]
+
+\begin{tcolorbox}
+
+\subsection*{Exercise 12}
+
+Illustrate (7) using a diagram similar to Figure 14.
+
+\end{tcolorbox}
+
+\subsection*{Example 5: Shadow Prices of Nonmarket Goods}
+
+Using (5), construct the Lagrangian:
+\[
+\mathcal{L}=p\cdot y + \lambda(1 - D^O(x,y)).
+\]
+
+The solutions are $y(p,x)$ and $\lambda(p,x)$.
+
+Applying the envelope theorem:
+\[
+\nabla_x R(p,x)
+=
+-\lambda(p,x)\nabla_x D^O(x,y(p,x)),
+\]
+\[
+\nabla_p R(p,x)=y(p,x).
+\]
+
+The first-order condition is
+\[
+p = \lambda \nabla_y D^O(x,y).
+\]
+
+Thus,
+\[
+p\cdot y(p,x)
+=
+\lambda(p,x)\bigl[\nabla_y D^O(x,y)\cdot y\bigr]
+=
+\lambda(p,x) D^O(x,y)
+\]
+(by homogeneity of degree 1).
+
+If we restrict attention to efficient observations where
+\[
+D^O(x,y)=1,
+\]
+then
+\[
+p\cdot y(p,x)=R(p,x)=\lambda(p,x).
+\]
+
+Substituting back:
+\[
+p = R(p,x)\nabla_y D^O(x,y).
+\]
+
+\medskip
+
+\textbf{Application: Shadow Prices}
+
+Suppose there are two outputs (e.g., electricity $y_1$ and heat $y_2$).
+
+If $p_1$ is observed but $p_2$ is not, then
+\[
+\frac{p_2}{p_1}
+=
+\frac{\partial D^O(x,y)/\partial y_2}
+{\partial D^O(x,y)/\partial y_1},
+\]
+
+which is the marginal rate of transformation (MRT).
+
+Thus, estimating a differentiable output distance function allows us
+to recover shadow prices.
+
+\section{5 Cost, Revenue and Profit}
+
+We can derive a cost function from a profit function.
+
+Define the implicit cost function:
+\[
+c^*(w,y)=\max_p \{p\cdot y - \Pi(p,w)\}.
+\]
+
+\subsection*{Properties}
+
+For any $y_0$,
+\[
+\Pi(p,w)\ge p\cdot y_0 - c(w,y_0),
+\]
+so
+\[
+c(w,y_0)\ge p\cdot y_0 - \Pi(p,w).
+\]
+
+Thus, $c(w,y_0)$ provides an upper bound.
+
+Equality holds when $p$ is such that $y_0$ is the profit-maximizing output.
+
+\medskip
+
+Using first-order conditions:
+\[
+\frac{\partial}{\partial p}\bigl(p\cdot y - \Pi(p,w)\bigr)
+=
+y - y(p,w).
+\]
+
+Thus, the maximum occurs at
+\[
+y=y(p,w),
+\]
+and
+\[
+c^*(w,y)=p\cdot y - \Pi(p,w).
+\]
+
+\subsection*{Homogeneity}
+
+\[
+c^*(tw,y)
+=
+\max_p \{p\cdot y - \Pi(p,tw)\}
+=
+\max_p \{p\cdot y - t\Pi(p/t,w)\}
+=
+t\max_p \{(p/t)\cdot y - \Pi(p/t,w)\}
+=
+t c^*(w,y).
+\]
+
+\subsection*{Convexity}
+
+Since $-\Pi(p,w)$ is concave in $w$, $c^*(w,y)$ is concave in $w$.
+
+Moreover, $c^*(w,y)$ is convex in $y$.
+
+Let
+\[
+y^2=\theta y^0 + (1-\theta)y^1.
+\]
+
+Then
+\[
+c^*(w,y^0)=p^0\cdot y^0 - \Pi(p^0,w),
+\]
+\[
+c^*(w,y^1)=p^1\cdot y^1 - \Pi(p^1,w),
+\]
+\[
+c^*(w,y^2)=p^2\cdot y^2 - \Pi(p^2,w),
+\]
+
+which implies convexity in $y$.
+
+
+
+
+\subsection*{(continued)}
+
+Also,
+\[
+c^*(w,y^0) \ge p^2 \cdot y^0 - \Pi(p^2,w),
+\qquad
+c^*(w,y^1) \ge p^2 \cdot y^1 - \Pi(p^2,w).
+\]
+
+Therefore,
+\[
+c^*(w,y^2)
+=
+p^2 \cdot y^2 - \Pi(p^2,w)
+\]
+\[
+=
+p^2 \cdot \bigl(\theta y^0 + (1-\theta)y^1\bigr) - \Pi(p^2,w)
+\]
+\[
+=
+\theta \bigl(p^2 \cdot y^0 - \Pi(p^2,w)\bigr)
++
+(1-\theta)\bigl(p^2 \cdot y^1 - \Pi(p^2,w)\bigr)
+\]
+\[
+\le
+\theta c^*(w,y^0) + (1-\theta)c^*(w,y^1).
+\]
+
+Hence,
+\[
+c^*(w,y^2)
+\le
+\theta c^*(w,y^0) + (1-\theta)c^*(w,y^1),
+\]
+which proves that $c^*(w,y)$ is convex in $y$.
+
+\medskip
+
+The convexity of $c^*(w,y)$ means that profit is maximized only in the region
+where marginal cost is increasing.
+
+
+\begin{tcolorbox}
+
+\subsection*{Exercise 13}
+
+Derive a revenue function from a known profit function $\Pi(p,w)$.
+
+\end{tcolorbox}
+
+
+

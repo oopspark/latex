@@ -1,0 +1,1111 @@
+\chapter{Applications of  Production Theory}
+
+
+\section{1 Structure of Technology}
+
+Empirical work usually imposes certain restrictions on the structure
+of production technology. We consider:
+
+\begin{itemize}
+    \item Homotheticity
+    \item Separability
+    \item Nonjointness
+\end{itemize}
+
+Elasticity of substitution, which represents production structure,
+is also discussed.
+
+\subsection*{1.1 Input Homotheticity}
+
+\[
+V(y)=h(y)\,V(1),
+\qquad
+h:\mathbb{R}_+^M \to \mathbb{R}_+.
+\]
+
+Here, $h(y)$ is a scalar and $V(1)\subset \mathbb{R}_+^N$
+is a reference input set independent of output.
+
+Under input homotheticity, isoquants are parallel.
+
+\subsection*{Input Distance Function}
+
+\[
+D^I(x,y)=\frac{D^I(x)}{h(y)}.
+\]
+
+\subsection*{Proof}
+
+\[
+D^I(x,y)
+=
+\max \{\lambda : x \in \lambda V(y)\}
+\]
+\[
+=
+\max \{\lambda : x \in \lambda h(y)V(1)\}
+\]
+\[
+=
+\max \left\{ \frac{\lambda'}{h(y)} : x \in \lambda' V(1) \right\}
+\]
+\[
+=
+\frac{1}{h(y)} \max \{\lambda' : x \in \lambda' V(1)\}
+=
+\frac{D^I(x)}{h(y)}.
+\quad \blacksquare
+\]
+
+\subsection*{Cost Function}
+
+\[
+c(w,y)=h(y)c(w).
+\]
+
+\subsection*{Proof}
+
+\[
+c(w,y)
+=
+\min \{w\cdot x : D^I(x,y)\ge 1\}
+\]
+\[
+=
+\min \left\{w\cdot x : \frac{D^I(x)}{h(y)} \ge 1 \right\}
+=
+\min \{w\cdot x : D^I(x)\ge h(y)\}.
+\]
+
+Using homogeneity of degree 1,
+\[
+=
+h(y)\min \{w\cdot x' : D^I(x')\ge 1\}
+=
+h(y)c(w).
+\quad \blacksquare
+\]
+
+\subsection*{Profit Function}
+
+\[
+\Pi(p,w)
+=
+\max_y \{p\cdot y - c(w,y)\}
+=
+\max_y \{p\cdot y - h(y)c(w)\}.
+\]
+
+\[
+=
+c(w)\max_y \left\{ \frac{p}{c(w)}\cdot y - h(y) \right\}
+=
+c(w)\,\Pi\!\left(\frac{p}{c(w)}\right).
+\quad \blacksquare
+\]
+
+
+
+\subsection*{1.2 Input Separability}
+
+Under input separability, it is possible to construct a single aggregate input.
+
+The production process can be viewed as a two-step procedure:
+\begin{itemize}
+    \item First, inputs $x$ are aggregated into a scalar index $g(x)$,
+    \item Second, output is determined from this aggregate input.
+\end{itemize}
+
+\[
+y \in Y(x) \quad \Longleftrightarrow \quad y \in Y(g(x)).
+\]
+
+\[
+g(x): \mathbb{R}_+^N \to \mathbb{R}_+,
+\qquad
+y: \mathbb{R}_+ \to \mathbb{R}_+^M.
+\]
+
+\subsection*{Output Distance Function}
+
+\[
+D^O(x,y)=D^O(g(x),y).
+\]
+
+\subsection*{Proof}
+
+\[
+D^O(x,y)
+=
+\min \{\theta : y \in \theta Y(x)\}
+\]
+\[
+=
+\min \{\theta : y \in \theta Y(g(x))\}
+=
+D^O(g(x),y).
+\quad \blacksquare
+\]
+
+\subsection*{Revenue Function}
+
+\[
+R(p,x)
+=
+\max \{p\cdot y : y \in Y(g(x))\}
+=
+R(p,g(x)).
+\]
+
+\subsection*{Profit Function}
+
+\[
+\Pi(p,w)
+=
+\max_g \{R(p,g) - c(w,g)\},
+\]
+
+where $g$ is the aggregate input and $c(w,g)$ is the cost required to produce $g$.
+
+\medskip
+
+\textbf{Implication:}
+
+Under input separability, the marginal rates of technical substitution (MRTSs)
+are independent of output $y$.
+
+
+
+\subsection*{(continued)}
+
+\subsection*{Implication for MRTS}
+
+\[
+D^O(x,y)=D^O(g(x),y).
+\]
+
+Differentiating,
+\[
+dD^O(x,y)
+=
+dD^O(g(x),y)
+=
+\frac{\partial D^O}{\partial g} \sum_{i=1}^N \frac{\partial g(x)}{\partial x_i} dx_i.
+\]
+
+Thus,
+\[
+\frac{\partial D^O(x,y)}{\partial x_i}
+=
+\frac{\partial D^O(g(x),y)}{\partial g}
+\cdot
+\frac{\partial g(x)}{\partial x_i}.
+\]
+
+Hence the marginal rate of technical substitution is
+\[
+\text{MRTS}_{ij}
+=
+-
+\frac{\partial D^O/\partial x_i}{\partial D^O/\partial x_j}
+=
+-
+\frac{\frac{\partial g}{\partial x_i}}{\frac{\partial g}{\partial x_j}}.
+\]
+
+\medskip
+
+\textbf{Result:}
+
+MRTS is independent of $y$.
+
+\medskip
+
+Very often, separability holds only for a subset of inputs:
+\[
+D^O(x,y)=D^O(g_1(x_1),x_2,y).
+\]
+
+\subsection*{1.3 Input Nonjointness}
+
+When multiple outputs are produced, production technology exhibits
+input nonjointness if each output can be produced independently
+and the collection of single-output technologies fully represents
+the multi-output technology (Lau, 1972).
+
+\[
+V(y)=\sum_{i=1}^M V_i(y_i),
+\]
+
+where
+\[
+V_i(y_i)=\{x_i : y_i \le f_i(x_i)\}.
+\]
+
+\subsection*{Input Distance Function}
+
+\[
+D^I(x,y)
+=
+\max \left\{
+\min_{i=1,\dots,M} D_i(x_i,y_i)
+\ :\ \sum_{i=1}^M x_i = x
+\right\},
+\]
+
+where
+\[
+D_i(x_i,y_i)=\max \{\lambda : x_i \in \lambda V_i(y_i)\}.
+\]
+
+\subsection*{Proof}
+
+\[
+D^I(x,y)
+=
+\max \{\lambda : x \in \lambda V(y)\}
+\]
+\[
+=
+\max \left\{\lambda : x \in \lambda \sum_{i=1}^M V_i(y_i)\right\}
+\]
+\[
+=
+\max \left\{
+\lambda :
+x_i \in \lambda V_i(y_i),\ i=1,\dots,M,\ \sum_{i=1}^M x_i = x
+\right\}
+\]
+\[
+=
+\max \left\{
+\min_{i=1,\dots,M} D_i(x_i,y_i)
+\ :\ \sum_{i=1}^M x_i = x
+\right\}.
+\quad \blacksquare
+\]
+
+\subsection*{Cost Function}
+
+\[
+c(w,y)
+=
+\sum_{i=1}^M c_i(w,y_i),
+\]
+
+i.e., the sum of single-output cost functions (no economies of scope).
+
+\subsection*{Proof}
+
+\[
+c(w,y)
+=
+\min \{w\cdot x : x \in V(y)\}
+\]
+\[
+=
+\min \left\{w\cdot x : x \in \sum_{i=1}^M V_i(y_i)\right\}
+\]
+\[
+=
+\min \left\{
+\sum_{i=1}^M w\cdot x_i
+:\ x_i \in V_i(y_i)
+\right\}
+\]
+\[
+=
+\sum_{i=1}^M \min \{w\cdot x_i : x_i \in V_i(y_i)\}
+=
+\sum_{i=1}^M c_i(w,y_i).
+\quad \blacksquare
+\]
+
+\subsection*{Profit Function}
+
+\[
+\Pi(p,w)
+=
+\sum_{i=1}^M \Pi_i(p_i,w),
+\]
+
+i.e., the sum of single-output profit functions.
+
+
+\subsection*{(continued)}
+
+\subsection*{Profit Function under Nonjointness}
+
+\[
+\Pi(p,w)
+=
+\max_y \left\{ p\cdot y - \sum_{i=1}^M c_i(w,y_i) \right\}
+\]
+\[
+=
+\sum_{i=1}^M \max_{y_i} \{ p_i y_i - c_i(w,y_i) \}
+=
+\sum_{i=1}^M \Pi_i(p_i,w).
+\]
+
+\medskip
+
+\textbf{Implication (Test for Nonjointness):}
+
+Under input nonjointness,
+\[
+\frac{\partial y_i(p,w)}{\partial p_j}
+=
+\frac{\partial^2 \Pi(p,w)}{\partial p_i \partial p_j}
+=
+0
+\quad \text{for } i \ne j.
+\]
+
+\medskip
+
+That is, there is \textbf{no cross-price effect}.
+
+This provides an empirical test for nonjointness.
+
+\section{1.4 Elasticity of Substitution}
+
+\subsection*{1.4.1 Definition}
+
+Consider a two-input production function:
+\[
+y = f(x_1, x_2).
+\]
+
+The elasticity of substitution provides a unit-free measure of the
+substitutability between inputs.
+
+\[
+\sigma
+=
+\frac{d(x_2/x_1)}{d(\text{MRTS})}
+\cdot
+\frac{\text{MRTS}}{x_2/x_1}.
+\]
+
+Equivalently,
+\[
+\sigma
+=
+\frac{d \ln(x_2/x_1)}{d \ln(\text{MRTS})}.
+\]
+
+Since
+\[
+\text{MRTS}
+=
+\frac{f_1}{f_2},
+\]
+we can write
+\[
+\sigma
+=
+\frac{d \ln(x_2/x_1)}{d \ln(f_1/f_2)}.
+\]
+
+\medskip
+
+\textbf{Interpretation:}
+
+$\sigma$ measures the responsiveness of the input ratio to changes in MRTS.
+
+\medskip
+
+Suppose the optimal choice moves from point $A$ to point $B$.
+The slopes at these points represent the MRTSs.
+
+Then $\sigma$ captures how much the input ratio changes relative to
+the change in MRTS.
+
+
+
+\subsection*{(continued)}
+
+Suppose the choice moves from point $A$ to point $B$ on an isoquant.
+Then
+\[
+\frac{d(x_2/x_1)}{d(f_1/f_2)}
+\]
+is given by the ratio of the proportional change in the input ratio
+to the proportional change in MRTS.
+
+Thus, $\sigma$ measures the curvature of the isoquant.
+
+\medskip
+
+Equivalently, $\sigma$ can be rewritten as
+\[
+\sigma
+=
+-\frac{f_1 f_2 (x_1 f_1 + x_2 f_2)}
+{x_1 x_2 \left( f_{11} f_2^2 - 2 f_{12} f_1 f_2 + f_{22} f_1^2 \right)}.
+\]
+
+\subsection*{Derivation Sketch}
+
+\begin{enumerate}
+    \item Note that
+    \[
+    \frac{d}{dx_2}\left(\frac{x_2}{x_1}\right)
+    =
+    \frac{x_1 - x_2 \frac{dx_1}{dx_2}}{x_1^2}.
+    \]
+
+    Since along an isoquant
+    \[
+    f_1\,dx_1 + f_2\,dx_2 = 0,
+    \]
+    we have
+    \[
+    \frac{dx_1}{dx_2} = -\frac{f_2}{f_1}.
+    \]
+
+    \item Similarly,
+    \[
+    \frac{d}{dx_2}\left(\frac{f_1}{f_2}\right)
+    =
+    \frac{\left(f_{11}\frac{dx_1}{dx_2} + f_{12}\right)f_2
+    -
+    f_1\left(f_{21}\frac{dx_1}{dx_2} + f_{22}\right)}
+    {f_2^2}.
+    \]
+
+    Using $f_{12}=f_{21}$ and substituting
+    \[
+    \frac{dx_1}{dx_2}=-\frac{f_2}{f_1},
+    \]
+    this simplifies to the denominator term above.
+
+    \item Combining the two expressions yields the formula for $\sigma$.
+\end{enumerate}
+
+\subsection*{Bordered Hessian Form}
+
+Let
+\[
+F =
+\begin{vmatrix}
+0 & f_1 & f_2 \\
+f_1 & f_{11} & f_{12} \\
+f_2 & f_{21} & f_{22}
+\end{vmatrix}.
+\]
+
+Then $\sigma$ can also be written as
+\[
+\sigma
+=
+\frac{x_1 f_1 + x_2 f_2}{x_1 x_2}\cdot \frac{f_1 f_2}{F}.
+\]
+
+Since $f_{12}=f_{21}$, the measure $\sigma$ is symmetric in the two inputs.
+
+If the production function is quasiconcave, so that the isoquant is convex
+to the origin, then
+\[
+\sigma > 0.
+\]
+
+\subsection*{Cost-Minimization Interpretation}
+
+From the cost-minimization problem,
+\[
+w_i = \lambda f_i,
+\]
+so
+\[
+\frac{f_1}{f_2} = \frac{w_1}{w_2}.
+\]
+
+Hence,
+\[
+\sigma
+=
+\frac{d\ln(x_2/x_1)}{d\ln(f_1/f_2)}
+=
+\frac{d\ln(x_2/x_1)}{d\ln(w_1/w_2)}.
+\]
+
+Thus, $\sigma$ can also be interpreted as the elasticity of the input ratio
+with respect to the ratio of input prices.
+
+\subsection*{More than Two Inputs}
+
+When there are more than two inputs, there are several measures of
+substitution elasticity.
+
+The most popular is the \textbf{Allen--Uzawa elasticity of substitution},
+defined by
+\[
+\sigma_{ij}
+=
+\frac{\sum_{k=1}^N x_k f_k}{x_i x_j}\cdot \frac{F_{ij}}{F},
+\]
+where $F_{ij}$ is the cofactor associated with $f_{ij}$ in the bordered Hessian
+
+\[
+F =
+\begin{vmatrix}
+0 & f_1 & \cdots & f_N \\
+f_1 & f_{11} & \cdots & f_{1N} \\
+\vdots & \vdots & \ddots & \vdots \\
+f_N & f_{N1} & \cdots & f_{NN}
+\end{vmatrix}.
+\]
+
+The Allen--Uzawa elasticity is also symmetric:
+\[
+\sigma_{ij} = \sigma_{ji}.
+\]
+
+Goods are \textbf{complements} if $\sigma_{ij}<0$ and
+\textbf{substitutes} if $\sigma_{ij}>0$.
+
+It can be shown that at least one $\sigma_{ij}$ must be positive.
+
+You should also be able to derive the relation
+\[
+\sigma_{ij} = \frac{E_{ij}}{s_j},
+\]
+where $s_j$ is the cost share of input $x_j$, and $E_{ij}$ is the elasticity
+of conditional factor demand.
+
+\subsection*{Example 1}
+
+Consider the production function
+\[
+y = f(x_1,x_2).
+\]
+
+Taking total differentiation of the production function gives
+\[
+dy - f_1\,dx_1 - f_2\,dx_2 = 0.
+\]
+
+From the cost-minimization conditions
+\[
+w_i = \lambda f_i,
+\]
+we also obtain
+\[
+dw_1 - f_1\,d\lambda - \lambda f_{11}\,dx_1 - \lambda f_{12}\,dx_2 = 0,
+\]
+\[
+dw_2 - f_2\,d\lambda - \lambda f_{21}\,dx_1 - \lambda f_{22}\,dx_2 = 0.
+\]
+
+In matrix form,
+\[
+\begin{pmatrix}
+0 & \lambda f_1 & \lambda f_2 \\
+f_1 & \lambda f_{11} & \lambda f_{12} \\
+f_2 & \lambda f_{21} & \lambda f_{22}
+\end{pmatrix}
+\begin{pmatrix}
+d\lambda \\
+dx_1 \\
+dx_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+dy \\
+dw_1 \\
+dw_2
+\end{pmatrix}.
+\]
+
+
+\subsection*{(continued)}
+
+From cost minimization, we have
+\[
+w_1 x_1 + w_2 x_2 = C(w),
+\]
+and the elasticity relation can be written as
+\[
+\frac{\partial x_2}{\partial w_1}
+=
+- \frac{w_1 x_1 + w_2 x_2}{w_1 x_1} \cdot \frac{x_2}{x_1}
+=
+- \frac{x_2}{x_1} \cdot \frac{1}{s_1},
+\]
+where
+\[
+s_1 = \frac{w_1 x_1}{w_1 x_1 + w_2 x_2}
+\]
+is the cost share of input $x_1$.
+
+\subsection*{1.4.2 Constant Elasticity of Substitution (CES)}
+
+A CES production function is given by
+\[
+Q =
+\left[
+aL^{\rho} + bK^{\rho}
+\right]^{\frac{1}{\rho}},
+\qquad a + b = 1.
+\]
+
+The elasticity of substitution is
+\[
+\sigma = \frac{1}{1-\rho}.
+\]
+
+\subsection*{MRTS}
+
+\[
+\text{MRTS}
+=
+\frac{MPL}{MPK}
+=
+\frac{a L^{\rho-1}}{b K^{\rho-1}}
+=
+\frac{a}{b} \left(\frac{L}{K}\right)^{\rho-1}.
+\]
+
+Thus,
+\[
+\frac{K}{L}
+=
+\left(\frac{b}{a} \cdot \text{MRTS} \right)^{\frac{1}{\rho-1}}.
+\]
+
+Taking derivatives,
+\[
+\sigma
+=
+\frac{d \ln(K/L)}{d \ln(\text{MRTS})}
+=
+\frac{1}{1-\rho}.
+\]
+
+---
+
+\subsection*{Special Cases}
+
+\begin{enumerate}
+    \item \textbf{Perfect Substitutes} ($\rho = 1$)
+
+    \[
+    Q = aL + bK.
+    \]
+
+    \item \textbf{Cobb--Douglas} ($\rho \to 0$)
+
+    Using l'H\^opital's rule:
+    \[
+    \ln Q
+    =
+    \lim_{\rho \to 0}
+    \frac{\ln(aL^\rho + bK^\rho)}{\rho}
+    \]
+
+    Expanding,
+    \[
+    \ln Q = a \ln L + b \ln K,
+    \]
+
+    hence
+    \[
+    Q = L^a K^b.
+    \]
+
+    \item \textbf{Perfect Complements} ($\rho \to -\infty$)
+
+    Using the generalized mean:
+    \[
+    \lim_{\rho \to -\infty}
+    \left( aL^\rho + bK^\rho \right)^{1/\rho}
+    =
+    \min(L,K).
+    \]
+\end{enumerate}
+
+---
+
+\subsection*{Generalized Mean Interpretation}
+
+For $x \in \mathbb{R}_+^N$, define the mean of order $r$:
+\[
+M_r(x)
+=
+\left( \sum_{i=1}^N q_i x_i^r \right)^{1/r},
+\qquad q_i > 0,\ \sum q_i = 1.
+\]
+
+Then:
+\[
+\lim_{r \to \infty} M_r(x) = \max(x),
+\]
+\[
+\lim_{r \to -\infty} M_r(x) = \min(x).
+\]
+
+Thus, CES nests both extremes:
+\[
+\text{Perfect substitutes} \leftrightarrow \max,
+\quad
+\text{Perfect complements} \leftrightarrow \min.
+\]
+
+---
+
+\subsection*{Remark}
+
+The restriction $a + b = 1$ ensures homogeneity of degree one and
+consistent limiting behavior.
+
+\section{2 Parametric Analysis of a Production System}
+
+
+\section{2 Parametric Analysis of a Production System}
+
+Parametric analysis employs a functional form for production technology.
+
+If the chosen functional form is not sufficiently flexible, it may impose
+unintended restrictions on the technology.
+
+\medskip
+
+\textbf{Flexibility} means that the functional form used for empirical
+analysis must approximate the true unknown function up to second order.
+
+Let $h^*(z)$ denote the true (unknown) function.
+We want to approximate it using a function $h(z)$.
+
+\subsection*{Second-Order Approximation}
+
+We consider three conditions:
+
+\[
+(1)\quad h^*(z_0) = h(z_0),
+\]
+\[
+(2)\quad \nabla_z h^*(z_0) = \nabla_z h(z_0),
+\]
+\[
+(3)\quad \nabla^2_z h^*(z_0) = \nabla^2_z h(z_0).
+\]
+
+\subsection*{Interpretation}
+
+\begin{itemize}
+    \item (1): $h(z)$ approximates the \textbf{level} of $h^*(z)$.
+    \item (2): $h(z)$ approximates the \textbf{first derivatives}
+    (e.g., input demand or marginal effects).
+    \item (3): $h(z)$ approximates the \textbf{second derivatives}
+    (curvature properties such as substitution effects).
+\end{itemize}
+
+Thus, it is natural to require that any functional form used in empirical
+work satisfies (1)--(3).
+
+Functions satisfying these conditions are called
+\textbf{second-order differential approximations}.
+
+\subsection*{Number of Independent Effects}
+
+Let $N$ be the dimension of $z$.
+
+\begin{itemize}
+    \item Level condition: $1$ effect
+    \item First derivatives: $N$ effects
+    \item Second derivatives:
+    \[
+    \frac{1}{2}N(N-1) \quad \text{(off-diagonal)}
+    \]
+    \[
+    +\ N \quad \text{(diagonal)}
+    \]
+\end{itemize}
+
+Total number of independent effects:
+\[
+1 + N + \frac{1}{2}N(N-1)
+=
+\frac{1}{2}(N+1)(N+2).
+\]
+
+\subsection*{General Functional Form}
+
+A common flexible functional form (linear in parameters) is:
+
+\[
+h(z)
+=
+\sum_{i=1}^{K} a_i b_i(z),
+\]
+
+where:
+\begin{itemize}
+    \item $b_i(z)$ are known twice continuously differentiable functions,
+    \item $a_i$ are parameters to be estimated,
+    \item
+    \[
+    K = \frac{1}{2}(N+1)(N+2).
+    \]
+\end{itemize}
+
+
+
+\subsection*{Matrix Representation of Approximation}
+
+Let $\{b_i(z)\}_{i=1}^K$ be a set of basis functions.
+Define the matrix $W$ as:
+
+\[
+W =
+\begin{pmatrix}
+b_1(z) & b_2(z) & \cdots & b_K(z) \\
+\frac{\partial b_1(z)}{\partial z_1} & \frac{\partial b_2(z)}{\partial z_1} & \cdots & \frac{\partial b_K(z)}{\partial z_1} \\
+\vdots & \vdots & \ddots & \vdots \\
+\frac{\partial b_1(z)}{\partial z_N} & \frac{\partial b_2(z)}{\partial z_N} & \cdots & \frac{\partial b_K(z)}{\partial z_N} \\
+\frac{\partial^2 b_1(z)}{\partial z_1 \partial z_2} & \frac{\partial^2 b_2(z)}{\partial z_1 \partial z_2} & \cdots & \frac{\partial^2 b_K(z)}{\partial z_1 \partial z_2} \\
+\vdots & \vdots & \ddots & \vdots
+\end{pmatrix}.
+\]
+
+Let the corresponding vector of true function derivatives be:
+
+\[
+\begin{pmatrix}
+h^*(z) \\
+\frac{\partial h^*(z)}{\partial z_1} \\
+\vdots \\
+\frac{\partial h^*(z)}{\partial z_N} \\
+\frac{\partial^2 h^*(z)}{\partial z_1 \partial z_2} \\
+\vdots
+\end{pmatrix}.
+\]
+
+Then $h(z)$ approximates $h^*(z)$ at $z_0$ if:
+
+\begin{itemize}
+\item $W(z_0)$ is invertible,
+\item $W(z_0)$ has full rank.
+\end{itemize}
+
+---
+
+\subsection*{Common Flexible Functional Forms}
+
+\subsubsection*{(1) Generalized Quadratic Function}
+
+\[
+h(z)
+=
+\beta_0
++
+\sum_{i=1}^N \beta_i g_i(z_i)
++
+\frac{1}{2}
+\sum_{i=1}^N \sum_{j=1}^N
+\beta_{ij} g_i(z_i) g_j(z_j),
+\quad \beta_{ij} = \beta_{ji}.
+\]
+
+---
+
+\subsubsection*{(2) Translog Function}
+
+Take a second-order Taylor expansion of $\ln h^*(z)$ around
+$z_0 = (1,\dots,1)$:
+
+\[
+\ln h(z)
+=
+\beta_0
++
+\sum_{i=1}^N \beta_i \ln z_i
++
+\frac{1}{2}
+\sum_{i=1}^N \sum_{j=1}^N
+\beta_{ij} \ln z_i \ln z_j,
+\quad \beta_{ij} = \beta_{ji}.
+\]
+
+This is the \textbf{transcendental logarithmic (translog) function}.
+
+---
+
+\subsection*{Cost Function Forms}
+
+\subsubsection*{(1) Generalized Leontief Cost Function}
+
+\[
+c(w,y)
+=
+y \left[
+\sum_{i=1}^N \sum_{j=1}^N
+\beta_{ij} (w_i w_j)^{1/2}
+\right],
+\quad \beta_{ij} = \beta_{ji}.
+\]
+
+---
+
+\subsubsection*{(2) Translog Cost Function}
+
+\[
+\ln c(w,y)
+=
+\beta_0
++
+\sum_{i=1}^N \beta_i \ln w_i
++
+\frac{1}{2}
+\sum_{i=1}^N \sum_{j=1}^N
+\beta_{ij} \ln w_i \ln w_j
++
+\beta_y \ln y
++
+\frac{1}{2} \beta_{yy} (\ln y)^2
++
+\sum_{i=1}^N \beta_{iy} \ln w_i \ln y.
+\]
+
+---
+
+\subsection*{Homogeneity Conditions}
+
+For the cost function to be homogeneous of degree 1 in prices:
+
+\[
+\sum_{i=1}^N \beta_i = 1,
+\]
+
+\[
+\sum_{j=1}^N \beta_{ij} = 0 \quad \forall i,
+\]
+
+\[
+\sum_{i=1}^N \beta_{iy} = 0.
+\]
+
+
+\begin{tcolorbox}
+
+\subsection*{Exercise 1}
+
+Derive the own- and cross-price elasticities of factor demands when the
+cost function is either a generalized Leontief function or a translog function.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}
+
+\subsection*{Exercise 2}
+
+Consider a single-output translog cost function.
+Show how to impose the restrictions of input homotheticity and input separability,
+respectively.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}
+
+\subsection*{Exercise 3}
+
+There are $i=1,\dots,N$ goods, produced with $j=1,\dots,M$ factors.
+The production functions are written as
+\[
+Y_i = f_i(v_i),
+\]
+where
+\[
+v_i = (v_{i1},\dots,v_{iM})
+\]
+is the vector of factor inputs.
+
+\end{tcolorbox}
+
+
+The production functions are assumed to be positive, increasing, concave,
+and homogeneous of degree one in $v_i$ for all $i$.
+
+Let $p_i$ be the price of output $i$ and $w_j$ the price of factor $j$.
+
+The GDP (gross domestic product) function of the economy is defined as
+\[
+G(p,V)
+=
+\max_{\{v_i\}}
+\sum_{i=1}^N p_i f_i(v_i)
+\]
+subject to
+\[
+\sum_{i=1}^N v_i \le V,
+\]
+where
+\[
+V=(V_1,\dots,V_M)
+\]
+is the $(M\times 1)$ endowment vector, and
+\[
+p=(p_1,\dots,p_N)
+\]
+is the $(N\times 1)$ output price vector.
+
+\begin{enumerate}
+    \item[(i)] Show that $G(p,V)$ is homogeneous of degree one in $p$.
+    
+    \item[(ii)] Show that $G(p,V)$ is homogeneous of degree one in $V$.
+    
+    \item[(iii)] Show the following:
+    \[
+    \frac{\partial G}{\partial p_i} = Y_i,
+    \qquad
+    \frac{\partial G}{\partial V_j} = w_j,
+    \qquad
+    \frac{dw_j}{dp_i} = \frac{dY_i}{dV_j}.
+    \]
+    
+    \item[(iv)] Suppose you want to estimate the GDP function using an
+    international data set:
+    \[
+    \ln G
+    =
+    \alpha_0
+    +
+    \sum_{i=1}^N \alpha_i \ln p_i
+    +
+    \sum_{k=1}^M \beta_k \ln V_k
+    +
+    \frac{1}{2}
+    \sum_{i=1}^N \sum_{j=1}^N \gamma_{ij} \ln p_i \ln p_j
+    \]
+    \[
+    \qquad
+    +
+    \frac{1}{2}
+    \sum_{k=1}^M \sum_{l=1}^M \delta_{kl} \ln V_k \ln V_l
+    +
+    \sum_{i=1}^N \sum_{k=1}^M \phi_{ik} \ln p_i \ln V_k.
+    \]
+    
+    What restrictions must be imposed on $\alpha$, $\beta$, $\gamma$,
+    $\delta$, and $\phi$?
+    
+    \item[(v)] From the GDP function in (iv), derive
+    \[
+    \frac{\partial Y_i}{\partial V_k}
+    \]
+    (Rybczynski elasticity).
+    
+    \item[(vi)] Derive
+    \[
+    \frac{\partial w_j}{\partial p_i}
+    \]
+    (Stolper--Samuelson elasticity).
+    
+    \item[(vii)] Derive
+    \[
+    \frac{\partial V_l}{\partial V_k}
+    \]
+    for the cases $k=l$ and $k\ne l$, respectively.
+\end{enumerate}

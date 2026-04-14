@@ -1,0 +1,2320 @@
+\chapter{Mathematics}
+
+\section{Matrix Notation for Derivatives}
+
+
+
+\subsection*{Scalar-valued function}
+Let $x \in \mathbb{R}^N$ be a vector.\\
+Let $f(x)$ be a real-valued function:
+\[
+f : \mathbb{R}^N \to \mathbb{R}
+\].
+
+
+The gradient vector of $f$ at point $x$ is:
+\[
+\nabla f(x) =
+\begin{pmatrix}
+\frac{\partial f(x)}{\partial x_1} \\
+\vdots \\
+\frac{\partial f(x)}{\partial x_N}
+\end{pmatrix}
+\]
+
+
+\subsection*{Inner Product}
+For $x, y \in \mathbb{R}^N$, the inner product is:
+\[
+x \cdot y = \sum_{n=1}^N x_n y_n
+\]
+
+\subsection*{Vector-valued function}
+Let $f : \mathbb{R}^N \to \mathbb{R}^M$ be a vector-valued differentiable function:
+\[
+f(x) =
+\begin{pmatrix}
+f_1(x_1, \dots, x_N) \\
+f_2(x_1, \dots, x_N) \\
+\vdots \\
+f_M(x_1, \dots, x_N)
+\end{pmatrix}
+\]
+
+The derivative (Jacobian matrix) is:
+\[
+Df(x) =
+\begin{pmatrix}
+\frac{\partial f_1(x)}{\partial x_1} & \frac{\partial f_1(x)}{\partial x_2} & \cdots & \frac{\partial f_1(x)}{\partial x_N} \\
+\frac{\partial f_2(x)}{\partial x_1} & \frac{\partial f_2(x)}{\partial x_2} & \cdots & \frac{\partial f_2(x)}{\partial x_N} \\
+\vdots & \vdots & \ddots & \vdots \\
+\frac{\partial f_M(x)}{\partial x_1} & \frac{\partial f_M(x)}{\partial x_2} & \cdots & \frac{\partial f_M(x)}{\partial x_N}
+\end{pmatrix}
+\]
+
+
+
+\subsection*{Hessian Matrix}
+
+Let $f : \mathbb{R}^N \to \mathbb{R}$.  
+The Hessian matrix is defined as:
+\[
+H = D^2 f(x) = D[\nabla f(x)]
+\]
+
+\[
+H(x) =
+\begin{pmatrix}
+\frac{\partial^2 f(x)}{\partial x_1^2} & \frac{\partial^2 f(x)}{\partial x_1 \partial x_2} & \cdots & \frac{\partial^2 f(x)}{\partial x_1 \partial x_N} \\
+\frac{\partial^2 f(x)}{\partial x_2 \partial x_1} & \frac{\partial^2 f(x)}{\partial x_2^2} & \cdots & \frac{\partial^2 f(x)}{\partial x_2 \partial x_N} \\
+\vdots & \vdots & \ddots & \vdots \\
+\frac{\partial^2 f(x)}{\partial x_N \partial x_1} & \frac{\partial^2 f(x)}{\partial x_N \partial x_2} & \cdots & \frac{\partial^2 f(x)}{\partial x_N^2}
+\end{pmatrix}
+\]
+
+\section{Homogeneous Functions and Euler's Theorem}
+
+A function $f(x_1, \dots, x_N)$ is said to be homogeneous of degree $r$ if for all $t > 0$:
+\[
+f(t x_1, \dots, t x_N) = t^r f(x_1, \dots, x_N)
+\]
+
+\subsection*{Theorem 1}
+
+If $f(x_1, \dots, x_N)$ is homogeneous of degree $r$, then for each $n = 1, \dots, N$,
+\[
+\frac{\partial f(x_1, \dots, x_N)}{\partial x_n}
+\]
+is homogeneous of degree $r - 1$.
+
+\subsection*{Proof}
+
+Define:
+\[
+f(t x_1, \dots, t x_N) - t^r f(x_1, \dots, x_N) = 0
+\]
+
+Differentiate both sides with respect to $x_n$:
+\[
+t \frac{\partial f(t x_1, \dots, t x_N)}{\partial x_n}
+- t^r \frac{\partial f(x_1, \dots, x_N)}{\partial x_n} = 0
+\]
+
+Thus,
+\[
+\frac{\partial f(t x_1, \dots, t x_N)}{\partial x_n}
+= t^{r-1} \frac{\partial f(x_1, \dots, x_N)}{\partial x_n}
+\]
+
+\subsection*{Homothetic Functions}
+
+If $f(x_1, \dots, x_N)$ is homogeneous of degree $r$, and $h(\cdot)$ is an increasing function, then:
+\[
+h(f(x_1, \dots, x_N))
+\]
+is called a homothetic function.
+
+The slopes of the level sets of a homothetic function are unchanged along rays through the origin.
+
+
+\begin{tcolorbox}
+\subsection*{Exercise 1}
+
+Assume that $f(x_1, \dots, x_N)$ and $g(x_1, \dots, x_N)$ are homogeneous
+of degrees $r$ and $s$, respectively. Check whether the function
+$h(x_1, \dots, x_N)$ defined in the following ways is homogeneous.
+In the cases in which it is, determine its degree of homogeneity:
+
+\begin{enumerate}
+    \item[(i)] $h(x_1, \dots, x_N) = f(x_1^p, \dots, x_N^p)$
+    \item[(ii)] $h(x_1, \dots, x_N) = [g(x_1, \dots, x_N)]^p$
+    \item[(iii)] $h(x_1, \dots, x_N) = f(x_1, \dots, x_N) + g(x_1, \dots, x_N)$
+    \item[(iv)] $h(x_1, \dots, x_N) = f(x_1, \dots, x_N)\, g(x_1, \dots, x_N)$
+    \item[(v)] $h(x_1, \dots, x_N) = \dfrac{f(x_1, \dots, x_N)}{g(x_1, \dots, x_N)}, \qquad g \neq 0$
+\end{enumerate}
+
+\end{tcolorbox}
+
+
+\subsection*{Theorem 2 (Euler)}
+
+Suppose that $f(x_1, \dots, x_N)$ is homogeneous of degree $r$ and differentiable.
+Then, at any $(x_1, \dots, x_N)$, we have
+\[
+\sum_{n=1}^N x_n \frac{\partial f(x_1, \dots, x_N)}{\partial x_n}
+= r f(x_1, \dots, x_N).
+\]
+
+Or, in matrix notation,
+\[
+\nabla f(x) \cdot x = r f(x).
+\]
+
+\subsection*{Proof}
+
+By definition, we have
+\[
+f(t x_1, \dots, t x_N) - t^r f(x_1, \dots, x_N) = 0.
+\]
+
+Differentiating with respect to $t$ gives
+\[
+\sum_{n=1}^N \frac{\partial f(t x_1, \dots, t x_N)}{\partial (t x_n)} x_n
+- r t^{r-1} f(x_1, \dots, x_N) = 0.
+\]
+
+This holds for any $t$. Evaluating at $t=1$ yields
+\[
+\sum_{n=1}^N x_n \frac{\partial f(x_1, \dots, x_N)}{\partial x_n}
+= r f(x_1, \dots, x_N).
+\]
+
+\section{Concave and Quasiconcave Functions}
+
+The set $A \subseteq \mathbb{R}^N$ is convex if
+\[
+\alpha x + (1-\alpha)x' \in A
+\]
+whenever $x, x' \in A$ and $\alpha \in [0,1]$.
+
+
+
+\section{Concave and Quasiconcave Functions}
+
+The function $f : A \to \mathbb{R}$, defined on a convex set $A \subset \mathbb{R}^N$,
+is \textbf{concave} if
+\[
+f(\alpha x' + (1-\alpha)x) \ge \alpha f(x') + (1-\alpha) f(x)
+\]
+for all $x, x' \in A$ and all $\alpha \in [0,1]$.
+
+If the inequality is strict for all $x' \neq x$ and all $\alpha \in (0,1)$,
+then $f$ is \textbf{strictly concave}.
+
+The function is \textbf{convex} or \textbf{strictly convex} if the inequality is reversed.
+
+\subsection*{Theorem 3}
+
+A continuously differentiable function $f : A \to \mathbb{R}$ is concave
+if and only if
+\[
+f(x + z) \le f(x) + \nabla f(x) \cdot z
+\]
+for all $x \in A$ and $z \in \mathbb{R}^N$ such that $x + z \in A$.
+
+The function $f$ is strictly concave if and only if the inequality holds strictly
+for all $x \in A$ and $z \neq 0$.
+
+\subsection*{Proof}
+
+Assume concavity. Then for $\alpha \in (0,1)$,
+\[
+f(x+z) - f(x)
+\le f(x + \alpha z) - f(x).
+\]
+
+Thus,
+\[
+f(x + \alpha z) - f(x)
+= f(x + \alpha z) - f(x).
+\]
+
+Taking the limit as $\alpha \to 0$,
+\[
+f(x + \alpha z) - f(x) \to \nabla f(x) \cdot z,
+\]
+hence
+\[
+f(x+z) \le f(x) + \nabla f(x) \cdot z.
+\]
+
+Conversely, assume
+\[
+f(x+z) \le f(x) + \nabla f(x) \cdot z.
+\]
+
+Let
+\[
+x = \alpha (x+z) + (1-\alpha)x = x + \alpha z.
+\]
+
+Then,
+\[
+f(x+z) - f(x) \le \nabla f(x) \cdot z,
+\]
+and
+\[
+f(x) - f(x) \le \nabla f(x) \cdot (x - x) = -\alpha \nabla f(x) \cdot z.
+\]
+
+Multiply the first inequality by $\alpha$ and the second by $(1-\alpha)$:
+\[
+\alpha (f(x+z) - f(x)) + (1-\alpha)(f(x) - f(x))
+\le \alpha(1-\alpha)\nabla f(x)\cdot z - (1-\alpha)\alpha \nabla f(x)\cdot z = 0.
+\]
+
+Thus,
+\[
+\alpha f(x+z) + (1-\alpha) f(x) \le f(x),
+\]
+which implies concavity.
+
+
+
+
+
+\subsection*{(continued)}
+
+Suppose that $f$ is strictly concave (and thus concave) and $z \neq 0$. Then,
+\[
+f(x+z) - f(x)
+< \nabla f(x)\cdot (x+z - x)
+= \nabla f(x)\cdot z.
+\]
+
+If, on the other hand,
+\[
+f(x+z) < f(x) + \nabla f(x)\cdot z,
+\]
+then applying the same steps used to prove concavity yields
+\[
+\alpha f(x+z) + (1-\alpha) f(x) < f(x),
+\]
+and thus $f$ is strictly concave. $\blacksquare$
+
+\vspace{1em}
+
+The $N \times N$ matrix $M$ is \textbf{negative semidefinite} if
+\[
+z^\top M z \le 0 \quad \text{for all } z \in \mathbb{R}^N.
+\]
+
+If the inequality is strict for all $z \neq 0$, then $M$ is
+\textbf{negative definite}:
+\[
+z^\top M z < 0.
+\]
+
+\subsection*{Theorem 4}
+
+A twice continuously differentiable function $f : A \to \mathbb{R}$ is concave
+if and only if $D^2 f(x)$ is negative semidefinite for every $x \in A$.
+
+If $D^2 f(x)$ is negative definite for every $x \in A$, then $f$ is strictly concave.
+
+\subsection*{Proof (necessity only)}
+
+Suppose that $f$ is concave. Consider $x$ and $x + \alpha z$, where $\alpha \in \mathbb{R}$.
+
+Define
+\[
+\phi(\alpha) = f(x + \alpha z).
+\]
+
+Taking a Taylor expansion around $\alpha = 0$ gives
+\[
+f(x+\alpha z) - f(x) - \nabla f(x)\cdot (\alpha z)
+= \frac{1}{2} \alpha^2 z^\top D^2 f(x + \beta z) z
+\]
+for some $\beta \in (0,\alpha)$.
+
+
+
+
+
+\subsection*{(continued)}
+
+for some $\beta \in (0,\alpha]$. By definition, the left-hand side is nonpositive, hence
+\[
+\frac{\alpha^2}{2} z^\top D^2 f(x+\beta z) z \le 0.
+\]
+Taking sufficiently small $\alpha$ and $\beta$ yields
+\[
+z^\top D^2 f(x) z \le 0. \quad \blacksquare
+\]
+
+\textbf{Notice.} Strict concavity does not necessarily imply negative definiteness.  
+Example: $f(x) = -x^4$.
+
+\vspace{1em}
+
+We have the expansion:
+\[
+f(x+\alpha z)
+= f(x) + \nabla f(x)\cdot (\alpha z)
++ \frac{\alpha^2}{2} z^\top D^2 f(x+\beta z) z
+\]
+\[
+= f(x) + \nabla f(x)\cdot (\alpha z)
++ \frac{\alpha^2}{2} z^\top D^2 f(x) z + R
+\le f(x) + \nabla f(x)\cdot (\alpha z)
++ \frac{\alpha^2}{2} z^\top D^2 f(x) z.
+\]
+
+If $f$ is continuous on $[x, x+\alpha z]$, then by the Mean Value Theorem,
+there exists $\beta z$ such that
+\[
+f(x+\alpha z) = f(x) + f'(x+\beta z)(\alpha z).
+\]
+
+Its second-order version (Lagrange form of the remainder) is:
+\[
+f(x+\alpha z)
+= f(x) + f'(x)(\alpha z)
++ \frac{\alpha^2}{2} f''(x+\beta z).
+\]
+
+
+\begin{tcolorbox}
+\subsection*{Exercise 2}
+
+Define the function
+\[
+f(x_1,x_2) = A\left(\delta x_1^{\rho} + (1-\delta)x_2^{\rho}\right)^{1/\rho},
+\]
+where $\rho \neq 0$, $0 \le \delta \le 1$, $A>0$, $x_1>0$, $x_2>0$.
+
+This is the CES function. Examine whether it is concave or convex.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}
+
+\subsection*{Exercise 3}
+
+Prove that the function
+\[
+f(x) = \left(x_1^2 + \cdots + x_N^2\right)^{1/2}
+\]
+is convex.
+
+\textit{Hint: This is a norm, and every norm is convex.}
+
+\end{tcolorbox}
+
+
+\vspace{1em}
+
+The function $f : A \to \mathbb{R}$ defined on a convex set $A \subset \mathbb{R}^N$
+is \textbf{quasiconcave} if its upper contour sets
+\[
+\{x \in A : f(x) \ge t\}
+\]
+are convex.
+
+That is, if $f(x) \ge t$ and $f(x') \ge t$, then
+\[
+f(\alpha x + (1-\alpha)x') \ge t
+\]
+for any $t \in \mathbb{R}$, $x,x' \in A$, and $\alpha \in (0,1]$.
+
+If the inequality is strict whenever $x \neq x'$ and $\alpha \in (0,1)$,
+then $f$ is \textbf{strictly quasiconcave}.
+
+The function is \textbf{quasiconvex} if its lower contour sets are convex.
+
+
+
+\subsection*{Theorem 5}
+
+A continuously differentiable function $f : A \to \mathbb{R}$ is
+\textbf{quasiconcave} if and only if
+\[
+\nabla f(x)\cdot (x' - x) \ge 0
+\quad \text{whenever } f(x') \ge f(x), \ \forall x,x' \in A.
+\]
+
+If
+\[
+\nabla f(x)\cdot (x' - x) > 0
+\]
+whenever $f(x') \ge f(x)$ and $x' \ne x$, then $f$ is
+\textbf{strictly quasiconcave}.
+
+Conversely, if $f$ is strictly quasiconcave and $\nabla f(x) \ne 0$
+for all $x \in A$, then
+\[
+\nabla f(x)\cdot (x' - x) > 0
+\quad \text{whenever } f(x') \ge f(x), \ x' \ne x.
+\]
+
+\subsection*{Proof (necessity only)}
+
+Assume that $f$ is quasiconcave. If $f(x') \ge f(x)$ and $\alpha \in [0,1]$, define
+\[
+g(\alpha) = f(\alpha x' + (1-\alpha)x).
+\]
+
+Then,
+\[
+g(\alpha) \ge \min\{f(x), f(x')\} = f(x) = g(0).
+\]
+
+Hence $g(\alpha)$ is increasing at $\alpha=0$, and
+\[
+g'(0) = \nabla f(x)\cdot (x' - x) \ge 0. \quad \blacksquare
+\]
+
+\vspace{1em}
+
+The condition
+\[
+\nabla f(x)\cdot (x' - x) > 0
+\]
+implies that the angle between the vectors $(x'-x)$ and $\nabla f(x)$ is acute.
+
+\vspace{1em}
+
+\textbf{Remark.} The condition $\nabla f(x) \ne 0$ is necessary.  
+For example, $f(x) = x^3$ is strictly quasiconcave, but
+\[
+\nabla f(0) = 0,
+\]
+so
+\[
+\nabla f(x)\cdot (x' - x) = 0 \quad \text{when } x=0.
+\]
+
+\vspace{1em}
+
+If $f$ is concave, then it is quasiconcave:
+\[
+f(\alpha x + (1-\alpha)x')
+\ge \alpha f(x) + (1-\alpha)f(x')
+\ge \min\{f(x), f(x')\}.
+\]
+
+Thus, if $f(x) \ge t$ and $f(x') \ge t$, then
+\[
+f(\alpha x + (1-\alpha)x') \ge t.
+\]
+
+\begin{tcolorbox}
+
+\subsection*{Exercise 4}
+
+Assume $x \in \mathbb{R}$. Prove that any monotonic function of $x$
+is both quasiconvex and quasiconcave.
+
+
+\end{tcolorbox}
+
+
+\subsection*{Theorem 6}
+
+Let $f : A \to \mathbb{R}$ be a twice continuously differentiable function,
+and assume that $\nabla f(x) \ne 0$ for every $x \in A$.
+
+Then $f$ is \textbf{quasiconcave} if and only if $D^2 f(x)$ is negative semidefinite
+on the subspace
+\[
+\{ z \in \mathbb{R}^N : \nabla f(x)\cdot z = 0 \}
+\]
+for every $x \in A$.
+
+That is,
+\[
+z^\top D^2 f(x) z \le 0
+\quad \text{whenever } \nabla f(x)\cdot z = 0, \ \forall x \in A.
+\]
+
+If $D^2 f(x)$ is negative definite on the subspace
+\[
+\{ z \in \mathbb{R}^N : \nabla f(x)\cdot z = 0,\ z \ne 0 \}
+\]
+for every $x \in A$, then $f$ is \textbf{strictly quasiconcave}.
+
+\vspace{1em}
+
+\textbf{Remark.} If the condition $\nabla f(x) \ne 0$ for every $x$ is not imposed,
+then
+\[
+z^\top D^2 f(x) z \le 0 \quad \text{whenever } \nabla f(x)\cdot z = 0
+\]
+is necessary but not sufficient for quasiconcavity.
+
+Example:
+\[
+f(x) = (x_1 - 1)^2 (x_2 - 1)^2.
+\]
+
+\vspace{1em}
+
+\subsection*{Summary 1 (Concavity)}
+
+\begin{itemize}
+    \item $f(x)$ is concave $\iff z^\top D^2 f(x) z \le 0 \quad \forall z \in \mathbb{R}^N$
+    \item $f(x)$ is strictly concave $\iff z^\top D^2 f(x) z < 0 \quad \forall z \ne 0$
+\end{itemize}
+
+\subsection*{Summary 2 (Quasiconcavity)}
+
+\begin{itemize}
+    \item $f(x)$ is quasiconcave $\iff z^\top D^2 f(x) z \le 0$
+    whenever $\nabla f(x)\cdot z = 0$ and $\nabla f(x) \ne 0$
+    \item $f(x)$ is strictly quasiconcave $\iff z^\top D^2 f(x) z < 0$
+    whenever $\nabla f(x)\cdot z = 0$, $z \ne 0$
+\end{itemize}
+
+
+
+\subsection*{(continued)}
+
+Here only the first $t \le T$ rows and $s \le S$ columns are retained.
+
+Let $M$ be an $N \times N$ symmetric matrix. Then $M$ is \textbf{negative definite}
+if and only if
+\[
+(-1)^r \det(M_r) > 0
+\qquad \text{for every } r=1,\dots,N,
+\]
+where $M_r$ denotes the $r \times r$ leading principal minor of $M$.
+
+\vspace{1em}
+
+\textbf{Example 4.} For $f(x_1,x_2)$,
+\[
+f_{11} < 0, \qquad
+\begin{vmatrix}
+f_{11} & f_{12} \\
+f_{21} & f_{22}
+\end{vmatrix} > 0.
+\]
+Equivalently,
+\[
+f_{11} < 0, \qquad f_{11}f_{22} - (f_{12})^2 > 0.
+\]
+
+\vspace{1em}
+
+$M$ is \textbf{negative semidefinite} if and only if
+\[
+(-1)^r \det(M_r^\pi) \ge 0
+\]
+for every $r=1,\dots,N$ and for every permutation $\pi$ of the indices
+$\{1,\dots,N\}$.
+
+\vspace{1em}
+
+Let $B$ be an $N \times S$ matrix with $S \le N$ and rank equal to $S$.
+Then $M$ is negative definite in the space
+\[
+\{z \in \mathbb{R}^N : B \cdot z = 0,\ z \ne 0\}
+\]
+that is,
+\[
+z^\top M z < 0
+\quad \text{for all } z \in \mathbb{R}^N \text{ with } B\cdot z = 0,\ z\ne 0,
+\]
+if and only if
+\[
+(-1)^r
+\det
+\begin{pmatrix}
+0 & B_r \\
+B_r^\top & M_r
+\end{pmatrix}
+> 0
+\qquad \text{for } r=S+1,\dots,N.
+\]
+
+Moreover, $M$ is negative semidefinite in the space
+\[
+\{z \in \mathbb{R}^N : B\cdot z = 0\}
+\]
+if and only if
+\[
+(-1)^r
+\det
+\begin{pmatrix}
+0 & B_r^\pi \\
+(B_r^\pi)^\top & M_r^\pi
+\end{pmatrix}
+\ge 0
+\]
+for $r=S+1,\dots,N$ and every permutation $\pi$, where $B_r^\pi$
+is the matrix formed by permuting only the rows of $B_r$ according to $\pi$.
+
+\vspace{1em}
+
+\textbf{Example 5.} Since $\nabla f(x)\ne 0$, assume that at least $f_1 \ne 0$.
+Then $f(x)$ is strictly quasiconcave if $D^2 f(x_1,x_2)$ is negative definite
+in the subspace
+\[
+\{z \in \mathbb{R}^2 : \nabla f(x)\cdot z = 0,\ z\ne 0\}
+\qquad \forall x=(x_1,x_2).
+\]
+Here $S=1$ and $r=2$.
+
+By the theorem above, this holds if and only if
+\[
+\begin{vmatrix}
+0 & f_1 & f_2 \\
+f_1 & f_{11} & f_{12} \\
+f_2 & f_{21} & f_{22}
+\end{vmatrix}
+> 0.
+\]
+
+Under the constraint
+\[
+f_1 z_1 + f_2 z_2 = 0,
+\]
+we have
+\[
+[z_1 \ z_2]
+\begin{bmatrix}
+f_{11} & f_{12} \\
+f_{21} & f_{22}
+\end{bmatrix}
+\begin{bmatrix}
+z_1 \\ z_2
+\end{bmatrix}
+=
+\left(-\frac{z_2 f_2}{f_1},\ z_2\right)
+\begin{bmatrix}
+f_{11} & f_{12} \\
+f_{21} & f_{22}
+\end{bmatrix}
+\begin{bmatrix}
+-\frac{z_2 f_2}{f_1} \\ z_2
+\end{bmatrix}
+\]
+\[
+=
+\left(\frac{f_2}{f_1}\right)^2 f_{11} z_2^2
+-2\left(\frac{f_2}{f_1}\right) f_{12} z_2^2
++ f_{22} z_2^2,
+\]
+which is negative when $D^2 f(x_1,x_2)$ is negative definite in the subspace
+\[
+\{z \in \mathbb{R}^2 : \nabla f(x)\cdot z = 0,\ z\ne 0\}.
+\]
+
+\begin{tcolorbox}
+
+\subsection*{Exercise 5}
+
+Prove that the Cobb--Douglas function
+\[
+f(x) = A x_1^{\alpha_1} x_2^{\alpha_2} \cdots x_N^{\alpha_N}
+\]
+is
+
+\begin{enumerate}
+    \item[(i)] always quasiconcave,
+    \item[(ii)] strictly concave if $\alpha = \alpha_1+\cdots+\alpha_N < 1$,
+    \item[(iii)] concave if and only if $\alpha \le 1$.
+\end{enumerate}
+
+\textit{Hint: Taking a log transformation may help.}
+
+\end{tcolorbox}
+
+
+\section{Implicit Function Theorem}
+
+A system of $N$ equations depending on $N$ endogenous variables
+\[
+x = (x_1,\dots,x_N)
+\]
+and $M$ parameters
+\[
+q = (q_1,\dots,q_M)
+\]
+is given by
+\[
+f_n(x_1,\dots,x_N;\, q_1,\dots,q_M)=0,
+\qquad n=1,\dots,N.
+\]
+
+\textbf{Example 6.}  
+If $M=N=1$, then
+\[
+x^2 + q^2 = 1
+\qquad \Rightarrow \qquad
+x = \pm (1-q^2)^{1/2}.
+\]
+
+Suppose that
+\[
+x=(x_1,\dots,x_N)\in A \subset \mathbb{R}^N
+\quad \text{and} \quad
+\bar q=(\bar q_1,\dots,\bar q_M)\in B \subset \mathbb{R}^M
+\]
+satisfy the above system of equations.
+
+Is it possible to solve for
+\[
+x=(x_1,\dots,x_N)
+\]
+as a function of
+\[
+q=(q_1,\dots,q_M)
+\]
+locally around $\bar q$ and $x$?
+
+An open neighborhood (or open ball) of a point $x\in\mathbb{R}^N$ is
+\[
+A'=\{x'\in\mathbb{R}^N:\|x'-x\|<\varepsilon\}
+\]
+for some scalar $\varepsilon>0$, where
+\[
+\|x'-x\|
+=
+\sqrt{(x_1'-x_1)^2+\cdots+(x_N'-x_N)^2}.
+\]
+
+\subsection*{Theorem 7 (Implicit Function Theorem)}
+
+Suppose that every equation $f_n(\cdot)$ is continuously differentiable
+with respect to its $N+M$ variables, and that
+\[
+f_n(x;\bar q)=0
+\qquad \forall n.
+\]
+
+If
+\[
+\det
+\begin{pmatrix}
+\frac{\partial f_1(x;\bar q)}{\partial x_1} & \cdots & \frac{\partial f_1(x;\bar q)}{\partial x_N} \\
+\vdots & \ddots & \vdots \\
+\frac{\partial f_N(x;\bar q)}{\partial x_1} & \cdots & \frac{\partial f_N(x;\bar q)}{\partial x_N}
+\end{pmatrix}
+\neq 0,
+\]
+then the system can be locally solved at $(x,\bar q)$ by implicitly defined
+functions
+\[
+\eta_n : B' \to A'
+\]
+that are continuously differentiable.
+
+Moreover,
+\[
+D_q \eta(q)
+=
+-\bigl[D_x f(x;\bar q)\bigr]^{-1} D_q f(x;\bar q).
+\]
+
+\subsection*{Proof}
+
+Proving the existence of $\eta_n:B'\to A'$ is very technical.
+However, note that the condition in the theorem is a full-rank condition.
+By this condition, we can adjust $x$ in any direction to restore the equilibrium
+when $q$ changes. Therefore, a change in $q$ can be completely reflected by a
+change in $x$, and there exists $\eta_n:B'\to A'$.
+
+Since
+\[
+f(\eta(q);q)=0
+\qquad \forall q\in B',
+\]
+we differentiate to obtain
+\[
+D_x f(x;q)\, D_q \eta(q) + D_q f(x;q)=0.
+\]
+
+By the full-rank condition, $D_x f(x;q)$ is invertible. Therefore,
+\[
+D_q \eta(q)
+=
+-\bigl[D_x f(x;\bar q)\bigr]^{-1} D_q f(x;\bar q).
+\qquad \blacksquare
+\]
+
+\textbf{Example 7.}  
+If $M=N=1$, then
+\[
+\frac{d\eta(q)}{dq}
+=
+-\frac{\partial f(x;q)/\partial q}{\partial f(x;q)/\partial x}.
+\]
+
+\begin{tcolorbox}
+
+\subsection*{Exercise 6}
+
+Consider the system
+\[
+u^3 + xu - 2y - z = 0
+\]
+and
+\[
+u - zv^3 + xy + xv = 0.
+\]
+
+Can you define $u$ and $v$ as differentiable functions of $x,y,z$
+in a neighborhood of
+\[
+(x,y,z,u,v)=(0,1,-1,1,-1)?
+\]
+
+If the answer is yes, then compute the partial derivatives of
+$u$ and $v$ with respect to $x$, $y$, and $z$.
+
+\end{tcolorbox}
+
+
+\section{Continuous Functions and Compact Sets}
+
+A sequence in $\mathbb{R}^N$ assigns to every positive integer $m=1,2,\dots$
+a vector $x_m \in \mathbb{R}^N$, denoted by $\{x_m\}$.
+
+\medskip
+
+The sequence $\{x_m\}$ converges to $x \in \mathbb{R}^N$ if for every $\varepsilon>0$,
+there exists an integer $M_\varepsilon$ such that
+\[
+\|x_m - x\| < \varepsilon
+\quad \text{whenever } m > M_\varepsilon.
+\]
+We write
+\[
+\lim_{m\to\infty} x_m = x
+\quad \text{or} \quad x_m \to x.
+\]
+
+\medskip
+
+Consider a domain $X \subset \mathbb{R}^N$. A function
+\[
+f : X \to \mathbb{R}
+\]
+is \textbf{continuous} if for all $x \in X$ and every sequence $x_m \to x$,
+we have
+\[
+f(x_m) \to f(x).
+\]
+
+Equivalently, $f$ is continuous if for every $\varepsilon>0$, there exists
+$\delta(\varepsilon)>0$ such that
+\[
+\|x - x_0\| < \delta(\varepsilon)
+\quad \Rightarrow \quad
+|f(x) - f(x_0)| < \varepsilon.
+\]
+
+\medskip
+
+Fix a set $X \subset \mathbb{R}^N$.
+
+A set $A \subset X$ is \textbf{open} (relative to $X$) if for every $x \in A$,
+there exists $\varepsilon>0$ such that
+\[
+\|x' - x\| < \varepsilon, \ x' \in X \ \Rightarrow \ x' \in A.
+\]
+
+That is, for every point in $A$, there exists an open ball around it
+contained in $A$.
+
+\medskip
+
+A set $A \subset X$ is \textbf{closed} (relative to $X$) if its complement
+$X \setminus A$ is open.
+
+Equivalently, $A$ is closed if for every sequence $x_m \to x \in X$,
+with $x_m \in A$ for all $m$, we have
+\[
+x \in A.
+\]
+
+\medskip
+
+\textbf{Properties:}
+\begin{itemize}
+    \item The union of any number of open sets is open.
+    \item The intersection of a finite number of open sets is open.
+    \item The intersection of any number of closed sets is closed.
+    \item The union of a finite number of closed sets is closed.
+\end{itemize}
+
+
+\subsection*{(continued)}
+
+A set $A \subset \mathbb{R}^N$ is \textbf{bounded} if there exists $r \in \mathbb{R}$
+such that
+\[
+\|x\| < r \quad \text{for every } x \in A.
+\]
+
+The set $A \subset \mathbb{R}^N$ is \textbf{compact} if it is bounded and closed.
+
+\subsection*{Theorem 8 (Weierstrass)}
+
+Suppose that $f : X \to \mathbb{R}$ is continuous and $X \subset \mathbb{R}^N$
+is nonempty and compact. Then $f$ attains a maximum and a minimum on $X$.
+
+\vspace{1em}
+
+The Weierstrass theorem follows from the following lemmata.
+
+\subsection*{Lemma 1}
+
+If $f : X \to \mathbb{R}$ is continuous on $X \subset \mathbb{R}^N$, and $X$ is compact,
+then $f(X)$ is also compact.
+
+\subsection*{Lemma 2}
+
+If $A \subset \mathbb{R}$ is compact, then
+\[
+\sup A \in A \quad \text{and} \quad \inf A \in A,
+\]
+so the maximum and minimum of $A$ are well defined.
+
+\section{Convex Sets and Separating Hyperplanes}
+
+Given a set $B \subset \mathbb{R}^N$, the \textbf{convex hull} of $B$,
+denoted by $\operatorname{co}(B)$, is the smallest convex set containing $B$.
+
+That is,
+\[
+\operatorname{co}(B)
+=
+\bigcap \{ C \subset \mathbb{R}^N : C \text{ is convex and } B \subset C \}.
+\]
+
+
+\subsection*{(continued)}
+
+$\operatorname{co}(B)$ is the set of all possible convex combinations of elements of $B$:
+\[
+\operatorname{co}(B)
+=
+\left\{
+\sum_{j=1}^J a_j x_j
+\;\middle|\;
+x_j \in B,\ a_j \ge 0,\ \sum_{j=1}^J a_j = 1
+\right\}.
+\]
+
+\vspace{1em}
+
+Given $p \in \mathbb{R}^N$ with $p \ne 0$, and $c \in \mathbb{R}$,
+the \textbf{hyperplane} generated by $p$ and $c$ is
+\[
+H_{p,c} = \{ z \in \mathbb{R}^N : p \cdot z = c \}.
+\]
+
+The sets
+\[
+\{ z \in \mathbb{R}^N : p \cdot z \ge c \}
+\quad \text{and} \quad
+\{ z \in \mathbb{R}^N : p \cdot z \le c \}
+\]
+are called, respectively, the half-space above and below the hyperplane $H_{p,c}$.
+
+\subsection*{Theorem 9 (Separating Hyperplane)}
+
+\begin{itemize}
+    \item[(i)] Suppose that $B \subset \mathbb{R}^N$ is convex and closed,
+    and that $x \notin B$. Then there exists $p \in \mathbb{R}^N$, $p \ne 0$,
+    and $c \in \mathbb{R}$ such that
+    \[
+    p \cdot x > c
+    \quad \text{and} \quad
+    p \cdot y < c \quad \forall y \in B.
+    \]
+
+    \item[(ii)] Suppose that the convex sets $A,B \subset \mathbb{R}^N$ are disjoint.
+    Then there exists $p \in \mathbb{R}^N$, $p \ne 0$, and $c \in \mathbb{R}$ such that
+    \[
+    p \cdot x \ge c \quad \forall x \in A,
+    \qquad
+    p \cdot y \le c \quad \forall y \in B.
+    \]
+\end{itemize}
+
+That is, there exists a hyperplane that separates $A$ and $B$
+(Minkowski separating hyperplane theorem).
+
+\subsection*{Theorem 10 (Supporting Hyperplane)}
+
+Let $B \subset \mathbb{R}^N$ be a convex set and let $x$ be a boundary point of $B$.
+Then there exists at least one supporting hyperplane at $x$.
+
+That is, there exists $p \in \mathbb{R}^N$, $p \ne 0$, such that
+\[
+p \cdot x \ge p \cdot y
+\quad \forall y \in B.
+\]
+
+
+
+
+\section{Unconstrained Maximization}
+
+A vector $x \in \mathbb{R}^N$ is a \textbf{local maximizer} of $f(\cdot)$
+if there exists an open neighborhood $A \subset \mathbb{R}^N$ of $x$ such that
+\[
+f(x) \ge f(x') \quad \text{for every } x' \in A.
+\]
+
+If
+\[
+f(x) \ge f(x') \quad \text{for every } x' \in \mathbb{R}^N,
+\]
+then $x$ is a \textbf{global maximizer}.
+
+\medskip
+
+Suppose that $f(x)$ is differentiable and that $x \in \mathbb{R}^N$
+is a local maximizer or local minimizer of $f(\cdot)$. Then
+\[
+\frac{\partial f(x)}{\partial x_n} = 0 \quad \forall n,
+\qquad \text{or} \qquad
+\nabla f(x) = 0.
+\]
+
+Otherwise, $f$ would be locally increasing or decreasing
+in the direction of some coordinate axis.
+
+\subsection*{Theorem 11}
+
+Suppose that $f : \mathbb{R}^N \to \mathbb{R}$ is twice continuously differentiable
+and that
+\[
+\nabla f(x) = 0.
+\]
+
+\begin{itemize}
+    \item[(i)] If $x$ is a local maximizer, then $D^2 f(x)$ is negative semidefinite.
+    \item[(ii)] If $D^2 f(x)$ is negative definite, then $x$ is a local maximizer.
+\end{itemize}
+
+\subsection*{Proof}
+
+\textbf{(i)} Let $z \in \mathbb{R}^N$ be any direction and $\varepsilon > 0$.
+Consider
+\[
+\phi(\varepsilon) = f(x + \varepsilon z).
+\]
+
+A Taylor expansion around $\varepsilon=0$ gives
+\[
+f(x+\varepsilon z) - f(x)
+=
+\varepsilon \nabla f(x)\cdot z
++ \frac{1}{2}\varepsilon^2 z^\top D^2 f(x) z + R.
+\]
+
+Since $\nabla f(x)=0$,
+\[
+f(x+\varepsilon z) - f(x)
+=
+\frac{1}{2}\varepsilon^2 z^\top D^2 f(x) z + R.
+\]
+
+If $x$ is a local maximizer, then
+\[
+f(x+\varepsilon z) - f(x) \le 0.
+\]
+
+Taking the limit as $\varepsilon \to 0$, we obtain
+\[
+z^\top D^2 f(x) z \le 0.
+\]
+
+\medskip
+
+\textbf{(ii)} If
+\[
+z^\top D^2 f(x) z < 0 \quad \forall z \ne 0,
+\]
+then for sufficiently small $\varepsilon > 0$,
+\[
+f(x+\varepsilon z) < f(x),
+\]
+so $x$ is a local maximizer. \quad $\blacksquare$
+
+
+
+
+\subsection*{Example 8}
+
+Consider the function
+\[
+f(x) = x^3.
+\]
+
+Then
+\[
+\frac{df(x)}{dx}\bigg|_{x=0} = 0,
+\]
+but $x=0$ is neither a maximum nor a minimum.
+
+Thus, a negative semidefinite $D^2 f(x)$ does not guarantee a maximum.
+
+\begin{tcolorbox}
+
+\subsection*{Exercise 7}
+
+Consider the function
+\[
+f(x,y) = x^2 - xy + y^2 + 3x - 2y + 1.
+\]
+
+Find the minimum of $f$ and prove that it is the global minimum.
+
+\end{tcolorbox}
+
+
+\section{Equality Constrained Maximization}
+
+Consider the problem ($N \ge M$):
+\[
+\max_{x \in \mathbb{R}^N} f(x)
+\]
+subject to
+\[
+g_1(x) = b_1,\quad \dots,\quad g_M(x) = b_M.
+\]
+
+The set of all feasible points is called the \textbf{constraint set}:
+\[
+C = \{x \in \mathbb{R}^N : g_m(x) = b_m,\ m=1,\dots,M\}.
+\]
+
+\subsection*{Theorem 12 (The Theorem of Lagrange)}
+
+Suppose that the objective function $f$ and the constraint functions
+$g_1,\dots,g_M$ are differentiable, and that $x \in C$ is a local maximizer.
+
+If the gradients $\nabla g_1(x), \dots, \nabla g_M(x)$ are linearly independent,
+then there exist scalars $\lambda_1,\dots,\lambda_M$ such that
+\[
+\nabla f(x)
+=
+\sum_{m=1}^M \lambda_m \nabla g_m(x).
+\]
+
+Equivalently,
+\[
+\nabla f(x) = \lambda_1 \nabla g_1(x) + \cdots + \lambda_M \nabla g_M(x).
+\]
+
+\subsection*{Lagrangian}
+
+Define the Lagrangian function:
+\[
+\mathcal{L}(x,\lambda)
+=
+f(x)
++ \sum_{m=1}^M \lambda_m \bigl(b_m - g_m(x)\bigr).
+\]
+
+The first-order conditions are:
+\[
+\nabla_x \mathcal{L}(x,\lambda) = 0,
+\qquad
+\frac{\partial \mathcal{L}}{\partial \lambda_m} = 0 \quad (m=1,\dots,M).
+\]
+
+That is,
+\[
+\nabla f(x)
+=
+\sum_{m=1}^M \lambda_m \nabla g_m(x),
+\quad
+g_m(x)=b_m.
+\]
+
+
+\subsection*{(continued)}
+
+Suppose that $x \in C$ is a local constrained maximizer.
+Assume also that the $M \times N$ matrix
+\[
+\begin{pmatrix}
+\frac{\partial g_1(x)}{\partial x_1} & \cdots & \frac{\partial g_1(x)}{\partial x_N} \\
+\vdots & \ddots & \vdots \\
+\frac{\partial g_M(x)}{\partial x_1} & \cdots & \frac{\partial g_M(x)}{\partial x_N}
+\end{pmatrix}
+\]
+has rank $M$.
+
+Then there exist scalars $\lambda_m \in \mathbb{R}$ (Lagrange multipliers),
+one for each constraint, such that
+\[
+\frac{\partial f(x)}{\partial x_n}
+=
+\sum_{m=1}^M \lambda_m \frac{\partial g_m(x)}{\partial x_n},
+\qquad n=1,\dots,N.
+\]
+
+Equivalently,
+\[
+\nabla f(x)
+=
+\sum_{m=1}^M \lambda_m \nabla g_m(x).
+\]
+
+\vspace{1em}
+
+If a pair $(x,\lambda)$ satisfies
+\[
+g_m(x)=b_m \quad \text{and} \quad
+\nabla f(x)=\sum_{m=1}^M \lambda_m \nabla g_m(x),
+\]
+we say that $(x,\lambda)$ satisfies the \textbf{first-order necessary conditions}
+(FOC) for equality-constrained optimization.
+
+\medskip
+
+The rank condition is called the \textbf{constraint qualification condition},
+and it implies that the constraints are locally independent.
+
+\vspace{1em}
+
+\textbf{Interpretation.}  
+At the optimum, the gradient of $f$ lies in the span of the gradients of the constraints.
+That is, there is no feasible direction along which $f$ can increase.
+
+\vspace{1em}
+
+\subsection*{Example 9 (Elimination Approach)}
+
+Consider
+\[
+\max f(x_1,x_2)
+\quad \text{s.t.} \quad g(x_1,x_2)=b.
+\]
+
+The rank condition implies that at least one of $g_1,g_2$ is nonzero.
+Assume $g_1 \ne 0$.
+
+Then there exists $\lambda$ such that
+\[
+f_1(x)=\lambda g_1(x),
+\qquad
+\lambda=\frac{f_1(x)}{g_1(x)}.
+\]
+
+Define the constraint:
+\[
+\phi(x_1,x_2)=g(x_1,x_2)-b=0.
+\]
+
+Since $g_1 \ne 0$, we can locally solve for
+\[
+x_1 = h(x_2).
+\]
+
+Thus the problem becomes an unconstrained problem:
+\[
+\max f(h(x_2), x_2).
+\]
+
+The first-order condition is
+\[
+f_1(x) h'(x_2) + f_2(x)=0.
+\]
+
+From the implicit function theorem,
+\[
+h'(x_2) = -\frac{g_2(x)}{g_1(x)}.
+\]
+
+Substituting,
+\[
+f_1(x)\left(-\frac{g_2(x)}{g_1(x)}\right) + f_2(x)=0
+\quad \Rightarrow \quad
+\frac{f_1(x)}{g_1(x)} = \frac{f_2(x)}{g_2(x)}.
+\]
+
+Thus
+\[
+\nabla f(x) = \lambda \nabla g(x).
+\]
+
+\vspace{1em}
+
+\subsection*{Exercise 8}
+
+Let
+\[
+f(x_1,x_2) = -x_1^2 - x_2^2,
+\qquad
+g(x_1,x_2)=x_2^2 - x_1^2=0.
+\]
+
+Show that $(0,0)$ is the unique maximizer.
+Check the constraint qualification condition at $(0,0)$.
+
+\vspace{1em}
+
+\subsection*{Example 10}
+
+If $N=2$, $M=1$, and $b=0$, then the condition
+\[
+\nabla f(x)=\lambda \nabla g(x)
+\]
+implies that the vectors $\nabla f(x)$ and $\nabla g(x)$ lie on the same line.
+
+That is, at the optimum, the gradient of the objective function is parallel
+to the gradient of the constraint.
+
+
+\subsection*{(continued)}
+
+The point $x$ is a constrained maximum under the constraint $g(x)=0$.
+This is because the curve $g(x)=0$ is tangent at $x$ to the level curve
+$f(x)=f(x)$.
+
+The vector $\nabla g(x)$ is perpendicular to the constraint curve $g(x)=0$,
+and the vector $\nabla f(x)$ is perpendicular to the level curve $f(x)=f(x)$.
+
+\medskip
+
+\textbf{Why is the gradient perpendicular to the level curve?}
+
+Consider a level curve
+\[
+f(x_1,x_2)=k.
+\]
+
+Treat $x_2$ as a function of $x_1$ and differentiate implicitly:
+\[
+f_1(x_1,x_2) + f_2(x_1,x_2)\frac{dx_2}{dx_1}=0.
+\]
+
+Thus, the slope of the tangent line is
+\[
+\frac{dx_2}{dx_1}
+=
+-\frac{f_1(x_1,x_2)}{f_2(x_1,x_2)}.
+\]
+
+On the other hand, the slope of the gradient direction is
+\[
+\frac{\Delta x_2}{\Delta x_1}
+=
+\frac{f_2(x_1,x_2)}{f_1(x_1,x_2)}.
+\]
+
+Since these are negative reciprocals, the gradient $\nabla f(x)$ is
+perpendicular to the tangent line of the level curve.
+
+\medskip
+
+\textbf{General case.}
+
+For $N \ge 3$ and $M \ge 2$, the theorem requires that
+\[
+\nabla f(x)
+\in
+\operatorname{span}\{\nabla g_1(x), \dots, \nabla g_M(x)\}.
+\]
+
+That is,
+\[
+\nabla f(x)
+=
+\sum_{m=1}^M \lambda_m \nabla g_m(x).
+\]
+
+\medskip
+
+Define the Lagrangian:
+\[
+\mathcal{L}(x,\lambda)
+=
+f(x) + \sum_{m=1}^M \lambda_m (b_m - g_m(x)).
+\]
+
+The Theorem of Lagrange implies that if $x$ is a local constrained maximizer
+(and the constraint qualification holds), then there exist multipliers
+$\lambda_1,\dots,\lambda_M$ such that all partial derivatives of the Lagrangian
+are zero:
+
+\[
+\frac{\partial \mathcal{L}(x,\lambda)}{\partial x_n} = 0
+\quad \text{for } n=1,\dots,N,
+\]
+
+\[
+\frac{\partial \mathcal{L}(x,\lambda)}{\partial \lambda_m} = 0
+\quad \text{for } m=1,\dots,M.
+\]
+
+\medskip
+
+Equivalently, the first-order conditions are:
+\[
+\nabla f(x)
+=
+\sum_{m=1}^M \lambda_m \nabla g_m(x),
+\qquad
+g_m(x)=b_m.
+\]
+
+
+\subsection*{(continued)}
+
+Do the same thing for the contour of $g(x)$:
+\[
+\frac{dx_2}{dx_1} = -\frac{g_1(x_1,x_2)}{g_2(x_1,x_2)}.
+\]
+
+Then
+\[
+\frac{d^2 x_2}{dx_1^2}
+=
+\frac{d}{dx_1}\left(-\frac{g_1}{g_2}\right)
+=
+\frac{
+g_2^2 g_{11} - 2 g_1 g_2 g_{12} + g_1^2 g_{22}
+}{g_2^3}.
+\]
+
+The condition of relative convexity requires
+\[
+\frac{d^2 x_2}{dx_1^2}\bigg|_{f}
+>
+\frac{d^2 x_2}{dx_1^2}\bigg|_{g}.
+\]
+
+That is,
+\[
+\frac{
+f_2^2 f_{11} - 2 f_1 f_2 f_{12} + f_1^2 f_{22}
+}{f_2^3}
+-
+\frac{
+g_2^2 g_{11} - 2 g_1 g_2 g_{12} + g_1^2 g_{22}
+}{g_2^3}
+> 0.
+\]
+
+By substituting the first-order conditions
+\[
+f_1 = \lambda g_1,
+\qquad
+f_2 = \lambda g_2,
+\]
+into the above condition, we obtain
+\[
+g_2^2(\lambda g_{11} - f_{11})
+-2g_1g_2(\lambda g_{12} - f_{12})
++g_1^2(\lambda g_{22} - f_{22}) > 0.
+\]
+
+It can be shown that this condition is equivalent to
+\[
+\begin{vmatrix}
+L_{11} & L_{12} & -g_1 \\
+L_{21} & L_{22} & -g_2 \\
+-g_1 & -g_2 & 0
+\end{vmatrix}
+> 0,
+\]
+where
+\[
+L_{11} = f_{11} - \lambda g_{11}, \qquad
+L_{12} = f_{12} - \lambda g_{12},
+\]
+\[
+L_{21} = f_{21} - \lambda g_{21}, \qquad
+L_{22} = f_{22} - \lambda g_{22}.
+\]
+
+\begin{tcolorbox}
+
+    \subsection*{Exercise 9}
+
+Consider the problem
+\[
+\max \ (\min)\ x^2 + y^2 + z^2
+\]
+subject to
+\[
+x + 2y + z = 1
+\]
+and
+\[
+2x - y - 3z = 4.
+\]
+
+Obtain the solution using the Lagrange method.
+Did you find a maximum, a minimum, or neither?
+
+\end{tcolorbox}
+
+\section{Inequality Constrained Maximization}
+
+Consider the problem
+\[
+\max_{x \in \mathbb{R}^N} f(x)
+\]
+subject to
+\[
+g_m(x)=b_m, \qquad m=1,\dots,M,
+\]
+\[
+h_k(x)\le c_k, \qquad k=1,\dots,K.
+\]
+
+Again, let $C$ denote the constraint set.
+
+We say that the \textbf{constraint qualification} is satisfied at $x \in C$
+if the constraints that hold with equality at $x$ are linearly independent.
+
+\subsection*{Theorem 14 (Kuhn--Tucker)}
+
+Suppose that $x \in C$ is a local maximizer and that the constraint qualification is satisfied.
+
+Then there exist multipliers
+\[
+\lambda_m \in \mathbb{R}, \qquad m=1,\dots,M,
+\]
+for the equality constraints, and
+\[
+\mu_k \in \mathbb{R}_+, \qquad k=1,\dots,K,
+\]
+for the inequality constraints, such that
+\[
+\frac{\partial f(x)}{\partial x_n}
+=
+\sum_{m=1}^M \lambda_m \frac{\partial g_m(x)}{\partial x_n}
++
+\sum_{k=1}^K \mu_k \frac{\partial h_k(x)}{\partial x_n},
+\qquad n=1,\dots,N,
+\]
+and
+\[
+\mu_k\bigl(c_k - h_k(x)\bigr)=0,
+\qquad k=1,\dots,K.
+\]
+
+\medskip
+
+Define the Lagrangian function
+\[
+\mathcal{L}(x,\lambda,\mu)
+=
+f(x)
++
+\sum_{m=1}^M \lambda_m \bigl(b_m - g_m(x)\bigr)
++
+\sum_{k=1}^K \mu_k \bigl(c_k - h_k(x)\bigr).
+\]
+
+
+\subsection*{(continued)}
+
+The Lagrangian function is defined as
+\[
+\mathcal{L}(x,\lambda,\mu)
+=
+f(x)
++
+\sum_{m=1}^M \lambda_m \bigl(b_m-g_m(x)\bigr)
++
+\sum_{k=1}^K \mu_k \bigl(c_k-h_k(x)\bigr).
+\]
+
+The Kuhn--Tucker theorem says that if $x$ is a local constrained maximizer
+(and the constraint qualification is satisfied), then there exist values
+$\lambda_m$ and $\mu_k$ such that
+\[
+\frac{\partial \mathcal{L}(x,\lambda,\mu)}{\partial x_n}
+=
+\frac{\partial f(x)}{\partial x_n}
+-
+\sum_{m=1}^M \lambda_m \frac{\partial g_m(x)}{\partial x_n}
+-
+\sum_{k=1}^K \mu_k \frac{\partial h_k(x)}{\partial x_n}
+=0
+\]
+for every $n=1,\dots,N$,
+
+\[
+\frac{\partial \mathcal{L}(x,\lambda,\mu)}{\partial \lambda_m}
+=
+b_m-g_m(x)=0
+\qquad \text{for every } m=1,\dots,M,
+\]
+and
+\[
+\mu_k\bigl(c_k-h_k(x)\bigr)=0
+\qquad \text{for every } k=1,\dots,K.
+\]
+
+\medskip
+
+The \textbf{complementary slackness condition}
+\[
+\mu_k\bigl(c_k-h_k(x)\bigr)=0
+\]
+implies that $\mu_k=0$ for any constraint $k$ that does not bind, that is,
+for any constraint such that
+\[
+h_k(x) < c_k.
+\]
+
+\medskip
+
+A formal proof of the Kuhn--Tucker theorem can be derived from the
+Theorem of Lagrange. Consider the problem
+\[
+\mathcal{L}(x,\mu)
+=
+f(x)+\sum_{k=1}^K \mu_k\bigl(c_k-h_k(x)\bigr).
+\]
+
+Then for some values of $\mu_k$,
+\[
+\frac{\partial \mathcal{L}}{\partial x_n}
+=
+\frac{\partial f(x)}{\partial x_n}
+-
+\sum_{k=1}^K \mu_k \frac{\partial h_k(x)}{\partial x_n}
+=0
+\qquad \text{for every } n=1,\dots,N,
+\]
+and
+\[
+\mu_k\bigl(c_k-h_k(x)\bigr)=0
+\qquad \text{for every } k=1,\dots,K.
+\]
+
+Take auxiliary variables $y_k$ $(k=1,\dots,K)$, and define
+\[
+\Phi(x,y,\mu)
+=
+f(x)+\sum_{k=1}^K \mu_k\bigl(c_k-h_k(x)-y_k\bigr).
+\]
+
+This turns the inequality-constrained problem into an equality-constrained one
+with
+\[
+c_k-h_k(x)-y_k=0.
+\]
+
+Then the Theorem of Lagrange implies
+\[
+\frac{\partial \Phi}{\partial x_n}
+=
+\frac{\partial f(x)}{\partial x_n}
+-
+\sum_{k=1}^K \mu_k \frac{\partial h_k(x)}{\partial x_n}
+=0
+\qquad \text{for every } n=1,\dots,N,
+\]
+\[
+\frac{\partial \Phi}{\partial y_k}=-\mu_k=0,
+\]
+and
+\[
+\frac{\partial \Phi}{\partial \mu_k}
+=
+c_k-h_k(x)-y_k=0
+\qquad \text{for every } k=1,\dots,K.
+\]
+
+If $\mu_k=0$, then the complementary slackness condition is satisfied directly.
+If $\mu_k>0$, then necessarily
+\[
+y_k = c_k-h_k(x)=0,
+\]
+so again the Kuhn--Tucker conditions are satisfied.
+
+Thus the Lagrange conditions for the auxiliary equality-constrained problem
+lead to the Kuhn--Tucker conditions.
+
+\subsection*{A Simple Case}
+
+Consider the case $K=1$, $M=0$, and $c=0$. Then the constraint is
+\[
+h(x)\le 0.
+\]
+
+For example, if $h(x)=-x$, then the problem is equivalent to
+\[
+x \ge 0.
+\]
+
+The Lagrangian is
+\[
+\mathcal{L}(x,\mu)=f(x)+\mu x.
+\]
+
+The Kuhn--Tucker conditions are
+\[
+f'(x)+\mu=0,
+\qquad
+\mu x=0,
+\qquad
+\mu \ge 0,
+\qquad
+x\ge 0.
+\]
+
+There are three possible cases:
+
+\begin{itemize}
+    \item[(a)] \textbf{Interior solution:} $x>0$.  
+    Then $\mu=0$, and so
+    \[
+    f'(x)=0.
+    \]
+
+    \item[(b)] \textbf{Corner solution with binding constraint:} $x=0$ and $\mu>0$.  
+    Then
+    \[
+    f'(x)<0.
+    \]
+
+    \item[(c)] \textbf{Corner solution with zero multiplier:} $x=0$ and $\mu=0$.  
+    Then
+    \[
+    f'(x)=0.
+    \]
+\end{itemize}
+
+\subsection*{Example 12}
+
+Consider
+\[
+\max U(x,y)= y + a\ln x,
+\qquad a>0.
+\]
+
+The Lagrangian is
+\[
+\mathcal{L}(x,y,\mu,\mu_x,\mu_y)
+=
+y + a\ln x
++
+\mu( I - p_x x - p_y y )
++
+\mu_x x
++
+\mu_y y.
+\]
+
+The first-order conditions are
+\[
+\mathcal{L}_x
+=
+\frac{a}{x}-\mu p_x+\mu_x=0,
+\]
+\[
+\mathcal{L}_y
+=
+1-\mu p_y+\mu_y=0.
+\]
+
+
+
+
+\subsection*{(continued)}
+
+The first-order conditions are:
+\[
+(1)\quad \mathcal{L}_x = \frac{a}{x} - \mu p_x + \mu_x = 0,
+\]
+\[
+(2)\quad \mathcal{L}_y = 1 - \mu p_y + \mu_y = 0,
+\]
+\[
+(3)\quad \mu \bigl(I - p_x x - p_y y\bigr) = 0,
+\]
+\[
+(4)\quad \mu_x x = 0,
+\]
+\[
+(5)\quad \mu_y y = 0.
+\]
+
+\medskip
+
+Suppose that $I - p_x x - p_y y > 0$ and $\mu = 0$.
+Then from (1),
+\[
+\frac{a}{x} + \mu_x = 0,
+\]
+which implies $\mu_x < 0$, a contradiction since $\mu_x \ge 0$.
+Thus, the budget constraint must be binding:
+\[
+p_x x + p_y y = I.
+\]
+
+\medskip
+
+We consider the following four cases:
+
+\begin{itemize}
+    \item[(i)] $x=0,\ y=0$.  
+    This is not feasible since the budget constraint is not binding.
+
+    \item[(ii)] $x=0,\ y=\frac{I}{p_y}$.  
+    From (2),
+    \[
+    1 - \mu p_y = 0 \quad \Rightarrow \quad \mu = \frac{1}{p_y}.
+    \]
+    Substituting into (1),
+    \[
+    \frac{a}{x} - \mu p_x + \mu_x = 0,
+    \]
+    which implies $\frac{a}{x} = \infty$, hence not feasible.
+
+    \item[(iii)] $x>0,\ y=0$.  
+    Then $x=\frac{I}{p_x}$ and $\mu_x=0$.
+
+    From (1),
+    \[
+    \frac{a}{x} - \mu p_x = 0
+    \quad \Rightarrow \quad
+    \mu = \frac{a}{I}.
+    \]
+
+    From (2),
+    \[
+    1 - \mu p_y + \mu_y = 0
+    \quad \Rightarrow \quad
+    1 \le \frac{a p_y}{I}.
+    \]
+
+    \item[(iv)] $x>0,\ y>0$.  
+    Then $\mu_x = \mu_y = 0$.
+
+    From (1) and (2),
+    \[
+    \frac{a}{x} = \mu p_x, \qquad 1 = \mu p_y.
+    \]
+
+    Thus,
+    \[
+    \mu = \frac{1}{p_y},
+    \quad
+    x = \frac{a p_y}{p_x}.
+    \]
+
+    Using the budget constraint,
+    \[
+    y = \frac{I}{p_y} - a.
+    \]
+
+    This is feasible if
+    \[
+    I > a p_y.
+    \]
+\end{itemize}
+
+\medskip
+
+\textbf{Conclusion.}
+
+There are two possible solutions:
+
+\begin{itemize}
+    \item[(i)] Corner solution:
+    \[
+    x = \frac{I}{p_x}, \quad y = 0
+    \quad \text{if } I \le a p_y.
+    \]
+
+    \item[(ii)] Interior solution:
+    \[
+    x = \frac{a p_y}{p_x}, \quad y = \frac{I}{p_y} - a
+    \quad \text{if } I > a p_y.
+    \]
+\end{itemize}
+
+\vspace{1em}
+
+A formal statement of second-order sufficient conditions for inequality
+constraints is given in the appendix.
+
+The following theorem provides an example where the SOCs are satisfied.
+
+
+
+\subsection*{Theorem 15}
+
+Suppose that the constraint set $C$ of the inequality-constrained problem
+is convex and that the objective function $f(\cdot)$ is strictly quasiconcave.
+Then there is a unique global constrained maximizer.
+
+\subsection*{Proof}
+
+If $x$ and $x' \ne x$ were both global constrained maximizers, then for any
+$\alpha \in (0,1)$, the point
+\[
+x''=\alpha x+(1-\alpha)x'
+\]
+would be feasible, that is, $x'' \in C$, since $C$ is convex.
+
+By the strict quasiconcavity of $f(\cdot)$,
+\[
+f(x'') = f(\alpha x+(1-\alpha)x') > f(x)=f(x'),
+\]
+which contradicts the assumption that both $x$ and $x'$ are global constrained maximizers.
+\hfill $\blacksquare$
+
+\begin{tcolorbox}
+
+\subsection*{Exercise 10}
+
+Find a solution to the problem
+\[
+\max f(x,y,z)=x+y+z
+\]
+subject to
+\[
+g_1(x,y,z)=x^2+y^2+z^2 \le 1,
+\]
+\[
+g_2(x,y,z)=x-y-z \le 1,
+\]
+\[
+g_3(x,y,z)=-x \le 0.
+\]
+
+\end{tcolorbox}
+
+\begin{tcolorbox}
+
+\subsection*{Exercise 11}
+
+Consider the following cost-minimization problem, where
+\[
+x_1 + x_2^{\delta} \ge y
+\]
+represents the production technology:
+\[
+\min \; w_1 x_1 + w_2 x_2
+\]
+subject to
+\[
+x_1 \ge 0,\qquad x_2 \ge 0,\qquad x_1 + x_2^{\delta} - y \ge 0.
+\]
+
+We may transform the problem into a maximization problem:
+\[
+\max \; -w_1 x_1 - w_2 x_2
+\]
+subject to
+\[
+x_1 \ge 0,\qquad x_2 \ge 0,\qquad x_1 + x_2^{\delta} - y \ge 0.
+\]
+
+\begin{enumerate}
+    \item[(i)] Set up the Lagrangian and derive the first-order conditions
+    of the Kuhn--Tucker theorem.
+    \item[(ii)] Derive the explicit solution(s).
+\end{enumerate}
+
+\end{tcolorbox}
+
+\section{Envelope Theorem}
+
+We often encounter optimization problems such as
+\[
+\max_x f(x,a)
+\qquad \text{s.t.} \qquad g(x,a)=0,
+\]
+where $x$ is a vector of choice variables and $a$ is a vector of parameters
+that may enter the objective function, the constraints, or both.
+
+Clearly, the solution to the problem depends on $a$; we may denote it by
+\[
+x(a).
+\]
+
+We can define a new function $V(a)$, which gives the value achieved by the
+objective function when $x$ is chosen optimally subject to the constraints.
+This is called the \textbf{maximum value function}, and it is defined by
+\[
+V(a)=f(x(a),a)=\max_x f(x,a)\quad \text{s.t.} \quad g(x,a)=0.
+\]
+
+Many times we want to know how the maximum value of a function changes as
+one or more parameters of the problem change. The envelope theorem can be
+used to analyze the behavior of the maximum value function.
+
+\subsection*{Theorem 16 (Envelope)}
+
+Consider a maximization problem
+\[
+\max_x f(x,a)
+\qquad \text{s.t.} \qquad g(x,a)=0,
+\]
+and suppose that the objective function and constraint are continuously
+differentiable in $a$.
+
+Let $x(a)$ solve the problem, and suppose that it is also continuously
+differentiable in $a$.
+
+Let
+\[
+\mathcal{L}(x,a,\lambda)=f(x,a)+\lambda g(x,a)
+\]
+be the Lagrangian, and let $x(a)$ and $\lambda(a)$ solve the problem.
+Finally, let $V(a)$ be the associated maximum value function.
+
+Then the envelope theorem states that
+\[
+\frac{dV(a)}{da}
+=
+\frac{\partial \mathcal{L}}{\partial a}\Big|_{x(a),\,a,\,\lambda(a)}.
+\]
+
+
+\subsection*{Proof of Theorem 16}
+
+Evaluate the partial derivative of the Lagrangian with respect to $a_j$
+at the point $(x(a),\lambda(a))$:
+\[
+\frac{\partial \mathcal{L}}{\partial a_j}
+=
+\frac{\partial f(x(a),a)}{\partial a_j}
++
+\lambda(a)\frac{\partial g(x(a),a)}{\partial a_j}.
+\]
+
+Using the chain rule, we obtain
+\[
+\frac{\partial V(a)}{\partial a_j}
+=
+\sum_{i=1}^N
+\frac{\partial f(x(a),a)}{\partial x_i}
+\frac{\partial x_i(a)}{\partial a_j}
++
+\frac{\partial f(x(a),a)}{\partial a_j}.
+\]
+
+From the first-order conditions,
+\[
+\frac{\partial f(x(a),a)}{\partial x_i}
++
+\lambda(a)\frac{\partial g(x(a),a)}{\partial x_i}
+=0,
+\quad i=1,\dots,N.
+\]
+
+Substituting into the summation term,
+\[
+\frac{\partial V(a)}{\partial a_j}
+=
+\lambda(a)
+\sum_{i=1}^N
+\frac{\partial g(x(a),a)}{\partial x_i}
+\frac{\partial x_i(a)}{\partial a_j}
++
+\frac{\partial f(x(a),a)}{\partial a_j}.
+\]
+
+From the constraint $g(x(a),a)=0$, we obtain
+\[
+\sum_{i=1}^N
+\frac{\partial g(x(a),a)}{\partial x_i}
+\frac{\partial x_i(a)}{\partial a_j}
++
+\frac{\partial g(x(a),a)}{\partial a_j}
+=0.
+\]
+
+Thus,
+\[
+\frac{\partial V(a)}{\partial a_j}
+=
+\lambda(a)\frac{\partial g(x(a),a)}{\partial a_j}
++
+\frac{\partial f(x(a),a)}{\partial a_j}
+=
+\frac{\partial \mathcal{L}}{\partial a_j}.
+\quad \blacksquare
+\]
+
+\subsection*{Example 13}
+
+Consider
+\[
+\max_{x_1,x_2} x_1 x_2
+\quad \text{s.t.} \quad a - 2x_1 - 4x_2 = 0.
+\]
+
+The Lagrangian is
+\[
+\mathcal{L}
+=
+x_1 x_2 + \lambda (a - 2x_1 - 4x_2).
+\]
+
+FOCs:
+\[
+x_2 - 2\lambda = 0,
+\qquad
+x_1 - 4\lambda = 0,
+\qquad
+a - 2x_1 - 4x_2 = 0.
+\]
+
+Solution:
+\[
+x_1(a) = \frac{a}{4},
+\qquad
+x_2(a) = \frac{a}{8},
+\qquad
+\lambda(a) = \frac{a}{16}.
+\]
+
+Value function:
+\[
+V(a)
+=
+x_1(a)x_2(a)
+=
+\frac{a}{4}\cdot \frac{a}{8}
+=
+\frac{a^2}{32}.
+\]
+
+Thus,
+\[
+\frac{dV(a)}{da} = \frac{a}{16}.
+\]
+
+Using the envelope theorem:
+\[
+\frac{dV(a)}{da} = \lambda(a),
+\]
+which matches the result.
+
+\subsection*{Interpretation of $\lambda$}
+
+Consider
+\[
+\mathcal{L}(x,a,b,\lambda)=f(x,a)+\lambda\bigl(b-g(x,a)\bigr),
+\]
+where $b$ measures the strength of the constraint.
+
+Then
+\[
+\frac{\partial V(a,b)}{\partial b}
+=
+\lambda(a,b).
+\]
+
+Thus, the Lagrange multiplier represents the marginal impact of relaxing
+the constraint on the optimal value.
+
+\subsection*{Unconstrained Case}
+
+For
+\[
+\max_x f(x,a),
+\]
+we have
+\[
+\frac{dV(a)}{da}
+=
+\frac{\partial f(x,a)}{\partial a}\Big|_{x=x(a)}.
+\]
+
+\subsection*{Example 14 (First-Price Auction)}
+
+Let $F_v(v)$ be the cumulative distribution of values,
+and $N$ the number of bidders.
+
+Let $b(v)$ be the bidding function.
+The probability of winning is
+\[
+G(b(v)) = F_v(v)^{N-1}.
+\]
+
+A bidder's payoff is
+\[
+\pi(v,b(v)) = G(b(v))\bigl(v - b(v)\bigr).
+\]
+
+By the envelope theorem,
+\[
+\frac{d\pi(v)}{dv}
+=
+G(b(v)) = F_v(v)^{N-1}.
+\]
+
+Integrating over $v$ yields the equilibrium bidding function.
+
+
+
+
+\subsection*{(continued)}
+
+Using the value $\pi(0)=0$ as the constant of integration, we obtain
+\[
+\pi(v,b(v))
+=
+\pi(0)
++
+\int_0^v F_v(x)^{N-1} dx
+=
+\int_0^v F_v(x)^{N-1} dx,
+\]
+since a bidder with $v=0$ never wins, so $\pi(0,b(0))=0$.
+
+\medskip
+
+Combining
+\[
+\pi(v,b(v)) = G(b(v))(v-b(v)),
+\quad
+\frac{d\pi(v)}{dv} = G(b(v)),
+\]
+and the integral expression above, we derive the optimal bidding function:
+\[
+b(v)
+=
+v - \frac{\int_0^v F_v(x)^{N-1} dx}{F_v(v)^{N-1}}.
+\]
+
+Thus,
+\[
+b(v) < v,
+\]
+i.e., bidders shade their bids below their true valuation.
+
+\medskip
+
+\textbf{Uniform distribution case.}
+
+Suppose
+\[
+F_v(v) = \frac{v}{\bar v},
+\quad \text{for } v \in (0,\bar v).
+\]
+
+Then
+\[
+\int_0^v F_v(x)^{N-1} dx
+=
+\int_0^v \left(\frac{x}{\bar v}\right)^{N-1} dx
+=
+\frac{1}{\bar v^{N-1}} \int_0^v x^{N-1} dx
+=
+\frac{1}{\bar v^{N-1}} \cdot \frac{v^N}{N}.
+\]
+
+Also,
+\[
+F_v(v)^{N-1}
+=
+\left(\frac{v}{\bar v}\right)^{N-1}
+=
+\frac{v^{N-1}}{\bar v^{N-1}}.
+\]
+
+Substituting into the bidding function,
+\[
+b(v)
+=
+v - \frac{\frac{v^N}{N\bar v^{N-1}}}{\frac{v^{N-1}}{\bar v^{N-1}}}
+=
+v - \frac{v}{N}
+=
+\frac{N-1}{N}v.
+\]
