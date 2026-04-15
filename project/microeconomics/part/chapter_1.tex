@@ -79,6 +79,8 @@ A function $f(x_1, \dots, x_N)$ is said to be homogeneous of degree $r$ if for a
 f(t x_1, \dots, t x_N) = t^r f(x_1, \dots, x_N)
 \]
 
+\begin{tcolorbox}[breakable, colback=white]
+
 \subsection*{Theorem 1}
 
 If $f(x_1, \dots, x_N)$ is homogeneous of degree $r$, then for each $n = 1, \dots, N$,
@@ -86,6 +88,7 @@ If $f(x_1, \dots, x_N)$ is homogeneous of degree $r$, then for each $n = 1, \dot
 \frac{\partial f(x_1, \dots, x_N)}{\partial x_n}
 \]
 is homogeneous of degree $r - 1$.
+
 
 \subsection*{Proof}
 
@@ -96,15 +99,18 @@ f(t x_1, \dots, t x_N) - t^r f(x_1, \dots, x_N) = 0
 
 Differentiate both sides with respect to $x_n$:
 \[
-t \frac{\partial f(t x_1, \dots, t x_N)}{\partial x_n}
+t \frac{\partial f(t x_1, \dots, t x_N)}{\partial tx_n}
 - t^r \frac{\partial f(x_1, \dots, x_N)}{\partial x_n} = 0
 \]
 
 Thus,
 \[
-\frac{\partial f(t x_1, \dots, t x_N)}{\partial x_n}
+\frac{\partial f(t x_1, \dots, t x_N)}{\partial tx_n}
 = t^{r-1} \frac{\partial f(x_1, \dots, x_N)}{\partial x_n}
 \]
+
+
+\end{tcolorbox}
 
 \subsection*{Homothetic Functions}
 
@@ -117,25 +123,25 @@ is called a homothetic function.
 The slopes of the level sets of a homothetic function are unchanged along rays through the origin.
 
 
-\begin{tcolorbox}
-\subsection*{Exercise 1}
+\begin{tcolorbox}[breakable]
+\subsection*{Exercise 1-1}
 
 Assume that $f(x_1, \dots, x_N)$ and $g(x_1, \dots, x_N)$ are homogeneous
-of degrees $r$ and $s$, respectively. Check whether the function
+of degrees $r$ and $s$, respectively. \\Check whether the function
 $h(x_1, \dots, x_N)$ defined in the following ways is homogeneous.
 In the cases in which it is, determine its degree of homogeneity:
 
 \begin{enumerate}
     \item[(i)] $h(x_1, \dots, x_N) = f(x_1^p, \dots, x_N^p)$
     \item[(ii)] $h(x_1, \dots, x_N) = [g(x_1, \dots, x_N)]^p$
-    \item[(iii)] $h(x_1, \dots, x_N) = f(x_1, \dots, x_N) + g(x_1, \dots, x_N)$
-    \item[(iv)] $h(x_1, \dots, x_N) = f(x_1, \dots, x_N)\, g(x_1, \dots, x_N)$
+    \item[(iii)] $h(x_1, \dots, x_N) \\= f(x_1, \dots, x_N) + g(x_1, \dots, x_N)$
+    \item[(iv)] $h(x_1, \dots, x_N) \\= f(x_1, \dots, x_N)\, g(x_1, \dots, x_N)$
     \item[(v)] $h(x_1, \dots, x_N) = \dfrac{f(x_1, \dots, x_N)}{g(x_1, \dots, x_N)}, \qquad g \neq 0$
 \end{enumerate}
 
 \end{tcolorbox}
 
-
+\begin{tcolorbox}[breakable, colback=white]
 \subsection*{Theorem 2 (Euler)}
 
 Suppose that $f(x_1, \dots, x_N)$ is homogeneous of degree $r$ and differentiable.
@@ -169,17 +175,16 @@ This holds for any $t$. Evaluating at $t=1$ yields
 = r f(x_1, \dots, x_N).
 \]
 
+\end{tcolorbox}
+
 \section{Concave and Quasiconcave Functions}
 
 The set $A \subseteq \mathbb{R}^N$ is convex if
 \[
 \alpha x + (1-\alpha)x' \in A
 \]
-whenever $x, x' \in A$ and $\alpha \in [0,1]$.
+whenever $x, x' \in A$ and $\alpha \in [0,1]$.\\
 
-
-
-\section{Concave and Quasiconcave Functions}
 
 The function $f : A \to \mathbb{R}$, defined on a convex set $A \subset \mathbb{R}^N$,
 is \textbf{concave} if
@@ -193,6 +198,8 @@ then $f$ is \textbf{strictly concave}.
 
 The function is \textbf{convex} or \textbf{strictly convex} if the inequality is reversed.
 
+
+\begin{tcolorbox}[breakable, colback=white]
 \subsection*{Theorem 3}
 
 A continuously differentiable function $f : A \to \mathbb{R}$ is concave
@@ -209,24 +216,22 @@ for all $x \in A$ and $z \neq 0$.
 
 Assume concavity. Then for $\alpha \in (0,1)$,
 \[
+\begin{aligned}
 f(x+z) - f(x)
-\le f(x + \alpha z) - f(x).
+&\le \frac{f(x + \alpha (x + z -x)) - f(x)}{\alpha}\\
+&=\frac{f(x + \alpha z) - f(x)}{\alpha}.
+\end{aligned}
 \]
 
-Thus,
-\[
-f(x + \alpha z) - f(x)
-= f(x + \alpha z) - f(x).
-\]
 
 Taking the limit as $\alpha \to 0$,
 \[
-f(x + \alpha z) - f(x) \to \nabla f(x) \cdot z,
+\frac{f(x + \alpha z) - f(x)}{\alpha} \to \nabla f(x) \cdot z,
 \]
 hence
 \[
 f(x+z) \le f(x) + \nabla f(x) \cdot z.
-\]
+\]\\
 
 Conversely, assume
 \[
@@ -235,41 +240,55 @@ f(x+z) \le f(x) + \nabla f(x) \cdot z.
 
 Let
 \[
-x = \alpha (x+z) + (1-\alpha)x = x + \alpha z.
+\begin{aligned}
+\bar{x} 
+&= \alpha (x+z) + (1-\alpha)x \\
+&= x + \alpha z.
+\end{aligned}
 \]
 
 Then,
 \[
-f(x+z) - f(x) \le \nabla f(x) \cdot z,
+\begin{aligned}
+f(x+z) - f(\bar{x}) 
+&\le \nabla f(\bar{x}) \cdot (x+z-\bar{x})\\
+&=(1-\alpha)\nabla f(\bar{x}) \cdot z,
+\end{aligned}
 \]
 and
 \[
-f(x) - f(x) \le \nabla f(x) \cdot (x - x) = -\alpha \nabla f(x) \cdot z.
+\begin{aligned}
+f(x) - f(\bar{x}) 
+&\le \nabla f(x) \cdot (x - \bar{x}) \\
+&= -\alpha \nabla f(x) \cdot z.
+\end{aligned}
 \]
 
 Multiply the first inequality by $\alpha$ and the second by $(1-\alpha)$:
 \[
-\alpha (f(x+z) - f(x)) + (1-\alpha)(f(x) - f(x))
-\le \alpha(1-\alpha)\nabla f(x)\cdot z - (1-\alpha)\alpha \nabla f(x)\cdot z = 0.
+\begin{aligned}
+&\alpha (f(x+z) - f(\bar{x})) + (1-\alpha)(f(x) - f(\bar{x}))\\
+&\le \alpha(1-\alpha)\nabla f(x)\cdot z - (1-\alpha)\alpha \nabla f(x)\cdot z \\
+&= 0.
+\end{aligned}
 \]
 
 Thus,
 \[
-\alpha f(x+z) + (1-\alpha) f(x) \le f(x),
+\alpha f(x+z) + (1-\alpha) f(x) \le f(\bar{x}),
 \]
-which implies concavity.
+which implies concavity.\\
 
-
-
-
-
-\subsection*{(continued)}
 
 Suppose that $f$ is strictly concave (and thus concave) and $z \neq 0$. Then,
 \[
+\begin{aligned}
 f(x+z) - f(x)
-< \nabla f(x)\cdot (x+z - x)
-= \nabla f(x)\cdot z.
+&< \frac{f(x) - f(\bar{x})}{\alpha} \\
+&\le \frac{\nabla f(x)\cdot (\bar{x}-x)}{\alpha}\\
+&= \nabla f(x)\cdot z
+.
+\end{aligned}
 \]
 
 If, on the other hand,
@@ -278,9 +297,12 @@ f(x+z) < f(x) + \nabla f(x)\cdot z,
 \]
 then applying the same steps used to prove concavity yields
 \[
-\alpha f(x+z) + (1-\alpha) f(x) < f(x),
+\alpha f(x+z) + (1-\alpha) f(x) < f(\bar{x}),
 \]
-and thus $f$ is strictly concave. $\blacksquare$
+and thus $f$ is strictly concave.
+
+\end{tcolorbox}
+
 
 \vspace{1em}
 
@@ -295,6 +317,8 @@ If the inequality is strict for all $z \neq 0$, then $M$ is
 z^\top M z < 0.
 \]
 
+
+\begin{tcolorbox}[breakable, colback=white]
 \subsection*{Theorem 4}
 
 A twice continuously differentiable function $f : A \to \mathbb{R}$ is concave
@@ -304,7 +328,7 @@ If $D^2 f(x)$ is negative definite for every $x \in A$, then $f$ is strictly con
 
 \subsection*{Proof (necessity only)}
 
-Suppose that $f$ is concave. Consider $x$ and $x + \alpha z$, where $\alpha \in \mathbb{R}$.
+Suppose that $f$ is concave. Consider $z$ and $x + \alpha z$, where $\alpha \in \mathbb{R}$.
 
 Define
 \[
@@ -313,25 +337,23 @@ Define
 
 Taking a Taylor expansion around $\alpha = 0$ gives
 \[
-f(x+\alpha z) - f(x) - \nabla f(x)\cdot (\alpha z)
-= \frac{1}{2} \alpha^2 z^\top D^2 f(x + \beta z) z
+\begin{aligned}
+&f(x+\alpha z) - f(x) - \nabla f(x)\cdot (\alpha z)\\
+&= \frac{\alpha^2}{2} z^\top D^2 f(x + \beta z) z
+\end{aligned}
 \]
-for some $\beta \in (0,\alpha)$.
-
-
-
-
-
-\subsection*{(continued)}
-
-for some $\beta \in (0,\alpha]$. By definition, the left-hand side is nonpositive, hence
+for some $\beta \in [0,\alpha]$. By definition, the left-hand side is nonpositive, hence
 \[
 \frac{\alpha^2}{2} z^\top D^2 f(x+\beta z) z \le 0.
 \]
 Taking sufficiently small $\alpha$ and $\beta$ yields
 \[
-z^\top D^2 f(x) z \le 0. \quad \blacksquare
+z^\top D^2 f(x) z \le 0. \quad 
 \]
+
+\end{tcolorbox}
+
+
 
 \textbf{Notice.} Strict concavity does not necessarily imply negative definiteness.  
 Example: $f(x) = -x^4$.
@@ -340,15 +362,15 @@ Example: $f(x) = -x^4$.
 
 We have the expansion:
 \[
+\begin{aligned}
 f(x+\alpha z)
-= f(x) + \nabla f(x)\cdot (\alpha z)
-+ \frac{\alpha^2}{2} z^\top D^2 f(x+\beta z) z
-\]
-\[
-= f(x) + \nabla f(x)\cdot (\alpha z)
-+ \frac{\alpha^2}{2} z^\top D^2 f(x) z + R
-\le f(x) + \nabla f(x)\cdot (\alpha z)
+&= f(x) + \nabla f(x)\cdot (\alpha z)
++ \frac{\alpha^2}{2} z^\top D^2 f(x+\beta z) z\\
+&= f(x) + \nabla f(x)\cdot (\alpha z)
++ \frac{\alpha^2}{2} z^\top D^2 f(x) z + R\\
+&\approx f(x) + \nabla f(x)\cdot (\alpha z)
 + \frac{\alpha^2}{2} z^\top D^2 f(x) z.
+\end{aligned}
 \]
 
 If $f$ is continuous on $[x, x+\alpha z]$, then by the Mean Value Theorem,
@@ -361,12 +383,12 @@ Its second-order version (Lagrange form of the remainder) is:
 \[
 f(x+\alpha z)
 = f(x) + f'(x)(\alpha z)
-+ \frac{\alpha^2}{2} f''(x+\beta z).
++ \frac{(\alpha z)^2}{2} f''(x+\beta z).
 \]
 
 
-\begin{tcolorbox}
-\subsection*{Exercise 2}
+\begin{tcolorbox}[breakable]
+\subsection*{Exercise 1-2}
 
 Define the function
 \[
@@ -375,12 +397,11 @@ f(x_1,x_2) = A\left(\delta x_1^{\rho} + (1-\delta)x_2^{\rho}\right)^{1/\rho},
 where $\rho \neq 0$, $0 \le \delta \le 1$, $A>0$, $x_1>0$, $x_2>0$.
 
 This is the CES function. Examine whether it is concave or convex.
-
 \end{tcolorbox}
 
-\begin{tcolorbox}
+\begin{tcolorbox}[breakable]
 
-\subsection*{Exercise 3}
+\subsection*{Exercise 1-3}
 
 Prove that the function
 \[
@@ -406,7 +427,7 @@ That is, if $f(x) \ge t$ and $f(x') \ge t$, then
 \[
 f(\alpha x + (1-\alpha)x') \ge t
 \]
-for any $t \in \mathbb{R}$, $x,x' \in A$, and $\alpha \in (0,1]$.
+for any $t \in \mathbb{R}$, $x,x' \in A$, and $\alpha \in [0,1]$.
 
 If the inequality is strict whenever $x \neq x'$ and $\alpha \in (0,1)$,
 then $f$ is \textbf{strictly quasiconcave}.
@@ -414,13 +435,15 @@ then $f$ is \textbf{strictly quasiconcave}.
 The function is \textbf{quasiconvex} if its lower contour sets are convex.
 
 
-
+\begin{tcolorbox}[breakable, colback=white]
 \subsection*{Theorem 5}
 
 A continuously differentiable function $f : A \to \mathbb{R}$ is
 \textbf{quasiconcave} if and only if
 \[
 \nabla f(x)\cdot (x' - x) \ge 0
+\]
+\[
 \quad \text{whenever } f(x') \ge f(x), \ \forall x,x' \in A.
 \]
 
@@ -435,7 +458,9 @@ Conversely, if $f$ is strictly quasiconcave and $\nabla f(x) \ne 0$
 for all $x \in A$, then
 \[
 \nabla f(x)\cdot (x' - x) > 0
-\quad \text{whenever } f(x') \ge f(x), \ x' \ne x.
+\]
+\[
+\text{whenever } f(x') \ge f(x), \ x' \ne x.
 \]
 
 \subsection*{Proof (necessity only)}
@@ -455,12 +480,17 @@ Hence $g(\alpha)$ is increasing at $\alpha=0$, and
 g'(0) = \nabla f(x)\cdot (x' - x) \ge 0. \quad \blacksquare
 \]
 
+
+
+\end{tcolorbox}
+
 \vspace{1em}
 
 The condition
 \[
 \nabla f(x)\cdot (x' - x) > 0
 \]
+whenever $f(x') \ge f(x)$ and $x' \ne x$
 implies that the angle between the vectors $(x'-x)$ and $\nabla f(x)$ is acute.
 
 \vspace{1em}
@@ -489,9 +519,9 @@ Thus, if $f(x) \ge t$ and $f(x') \ge t$, then
 f(\alpha x + (1-\alpha)x') \ge t.
 \]
 
-\begin{tcolorbox}
+\begin{tcolorbox}[breakable]
 
-\subsection*{Exercise 4}
+\subsection*{Exercise 1-4}
 
 Assume $x \in \mathbb{R}$. Prove that any monotonic function of $x$
 is both quasiconvex and quasiconcave.
@@ -499,6 +529,8 @@ is both quasiconvex and quasiconcave.
 
 \end{tcolorbox}
 
+
+\begin{tcolorbox}[breakable, colback=white]
 
 \subsection*{Theorem 6}
 
@@ -524,6 +556,9 @@ If $D^2 f(x)$ is negative definite on the subspace
 \]
 for every $x \in A$, then $f$ is \textbf{strictly quasiconcave}.
 
+\end{tcolorbox}
+
+
 \vspace{1em}
 
 \textbf{Remark.} If the condition $\nabla f(x) \ne 0$ for every $x$ is not imposed,
@@ -543,29 +578,33 @@ f(x) = (x_1 - 1)^2 (x_2 - 1)^2.
 \subsection*{Summary 1 (Concavity)}
 
 \begin{itemize}
-    \item $f(x)$ is concave $\iff z^\top D^2 f(x) z \le 0 \quad \forall z \in \mathbb{R}^N$
-    \item $f(x)$ is strictly concave $\iff z^\top D^2 f(x) z < 0 \quad \forall z \ne 0$
+    
+    \item $f(x)$ is concave \\
+    $\iff z^\top D^2 f(x) z \le 0 \quad \forall z \in \mathbb{R}^N$
+    \item $f(x)$ is strictly concave \\
+    $\impliedby z^\top D^2 f(x) z < 0 \quad \forall z \in \mathbb{R}^N, z \ne 0$ 
 \end{itemize}
 
 \subsection*{Summary 2 (Quasiconcavity)}
 
 \begin{itemize}
-    \item $f(x)$ is quasiconcave $\iff z^\top D^2 f(x) z \le 0$
+    \item $f(x)$ is quasiconcave \\
+    $\iff z^\top D^2 f(x) z \le 0$\\
     whenever $\nabla f(x)\cdot z = 0$ and $\nabla f(x) \ne 0$
-    \item $f(x)$ is strictly quasiconcave $\iff z^\top D^2 f(x) z < 0$
+    \item $f(x)$ is strictly quasiconcave \\
+    $\impliedby z^\top D^2 f(x) z < 0$\\
     whenever $\nabla f(x)\cdot z = 0$, $z \ne 0$
 \end{itemize}
 
 
 
-\subsection*{(continued)}
-
-Here only the first $t \le T$ rows and $s \le S$ columns are retained.
+Let $M$ be a $T \times S$ matrix. 
+Then ${}_t M_{s}$ is the $t \times s$ submatrix of $M$ where only the first $t \le T$ rows and $s \le S$ columns are retained.
 
 Let $M$ be an $N \times N$ symmetric matrix. Then $M$ is \textbf{negative definite}
 if and only if
 \[
-(-1)^r \det(M_r) > 0
+(-1)^r \det({}_r M_r) > 0
 \qquad \text{for every } r=1,\dots,N,
 \]
 where $M_r$ denotes the $r \times r$ leading principal minor of $M$.
@@ -589,10 +628,12 @@ f_{11} < 0, \qquad f_{11}f_{22} - (f_{12})^2 > 0.
 
 $M$ is \textbf{negative semidefinite} if and only if
 \[
-(-1)^r \det(M_r^\pi) \ge 0
+(-1)^r \det({}_r M_r^\pi) \ge 0
 \]
 for every $r=1,\dots,N$ and for every permutation $\pi$ of the indices
 $\{1,\dots,N\}$.
+
+
 
 \vspace{1em}
 
@@ -612,7 +653,7 @@ if and only if
 \det
 \begin{pmatrix}
 0 & B_r \\
-B_r^\top & M_r
+B_r^\top & {}_r M_r
 \end{pmatrix}
 > 0
 \qquad \text{for } r=S+1,\dots,N.
@@ -628,7 +669,7 @@ if and only if
 \det
 \begin{pmatrix}
 0 & B_r^\pi \\
-(B_r^\pi)^\top & M_r^\pi
+(B_r^\pi)^\top & {}_r M_r^\pi
 \end{pmatrix}
 \ge 0
 \]
@@ -691,9 +732,9 @@ which is negative when $D^2 f(x_1,x_2)$ is negative definite in the subspace
 \{z \in \mathbb{R}^2 : \nabla f(x)\cdot z = 0,\ z\ne 0\}.
 \]
 
-\begin{tcolorbox}
+\begin{tcolorbox}[breakable]
 
-\subsection*{Exercise 5}
+\subsection*{Exercise 1-5}
 
 Prove that the Cobb--Douglas function
 \[
@@ -728,17 +769,11 @@ f_n(x_1,\dots,x_N;\, q_1,\dots,q_M)=0,
 \qquad n=1,\dots,N.
 \]
 
-\textbf{Example 6.}  
-If $M=N=1$, then
-\[
-x^2 + q^2 = 1
-\qquad \Rightarrow \qquad
-x = \pm (1-q^2)^{1/2}.
-\]
+
 
 Suppose that
 \[
-x=(x_1,\dots,x_N)\in A \subset \mathbb{R}^N
+\bar{x}=(\bar{x}_1,\dots,\bar{x}_N)\in A \subset \mathbb{R}^N
 \quad \text{and} \quad
 \bar q=(\bar q_1,\dots,\bar q_M)\in B \subset \mathbb{R}^M
 \]
@@ -746,13 +781,13 @@ satisfy the above system of equations.
 
 Is it possible to solve for
 \[
-x=(x_1,\dots,x_N)
+{x}=({x}_1,\dots,{x}_N)
 \]
 as a function of
 \[
-q=(q_1,\dots,q_M)
+{q}=({q}_1,\dots,{q}_M)
 \]
-locally around $\bar q$ and $x$?
+locally around $\bar x$ and $\bar{q}$?\\
 
 An open neighborhood (or open ball) of a point $x\in\mathbb{R}^N$ is
 \[
@@ -765,12 +800,14 @@ for some scalar $\varepsilon>0$, where
 \sqrt{(x_1'-x_1)^2+\cdots+(x_N'-x_N)^2}.
 \]
 
+
+\begin{tcolorbox}[breakable, colback=white]
 \subsection*{Theorem 7 (Implicit Function Theorem)}
 
 Suppose that every equation $f_n(\cdot)$ is continuously differentiable
 with respect to its $N+M$ variables, and that
 \[
-f_n(x;\bar q)=0
+f_n(\bar{x};\bar q)=0
 \qquad \forall n.
 \]
 
@@ -778,13 +815,13 @@ If
 \[
 \det
 \begin{pmatrix}
-\frac{\partial f_1(x;\bar q)}{\partial x_1} & \cdots & \frac{\partial f_1(x;\bar q)}{\partial x_N} \\
+\frac{\partial f_1(\bar{x};\bar q)}{\partial x_1} & \cdots & \frac{\partial f_1(\bar{x};\bar q)}{\partial x_N} \\
 \vdots & \ddots & \vdots \\
-\frac{\partial f_N(x;\bar q)}{\partial x_1} & \cdots & \frac{\partial f_N(x;\bar q)}{\partial x_N}
+\frac{\partial f_N(\bar{x};\bar q)}{\partial x_1} & \cdots & \frac{\partial f_N(\bar{x};\bar q)}{\partial x_N}
 \end{pmatrix}
 \neq 0,
 \]
-then the system can be locally solved at $(x,\bar q)$ by implicitly defined
+then the system can be locally solved at $(\bar{x},\bar q)$ by implicitly defined
 functions
 \[
 \eta_n : B' \to A'
@@ -793,9 +830,9 @@ that are continuously differentiable.
 
 Moreover,
 \[
-D_q \eta(q)
+D_q \eta(\bar q)
 =
--\bigl[D_x f(x;\bar q)\bigr]^{-1} D_q f(x;\bar q).
+-\bigl[D_x f(\bar{x};\bar q)\bigr]^{-1} D_q f(\bar{x};\bar q).
 \]
 
 \subsection*{Proof}
@@ -813,28 +850,30 @@ f(\eta(q);q)=0
 \]
 we differentiate to obtain
 \[
-D_x f(x;q)\, D_q \eta(q) + D_q f(x;q)=0.
+D_x f(\bar x;\bar q)\, D_q \eta(\bar q) + D_q f(\bar x;\bar q)=0.
 \]
 
-By the full-rank condition, $D_x f(x;q)$ is invertible. Therefore,
+By the full-rank condition, $D_x f(\bar x;\bar q)$ is invertible. Therefore,
 \[
-D_q \eta(q)
+D_q \eta(\bar q)
 =
--\bigl[D_x f(x;\bar q)\bigr]^{-1} D_q f(x;\bar q).
+-\bigl[D_x f(\bar x;\bar q)\bigr]^{-1} D_q f(\bar x;\bar q).
 \qquad \blacksquare
 \]
+
+\end{tcolorbox}
 
 \textbf{Example 7.}  
 If $M=N=1$, then
 \[
-\frac{d\eta(q)}{dq}
+\frac{d\eta(\bar q)}{dq}
 =
--\frac{\partial f(x;q)/\partial q}{\partial f(x;q)/\partial x}.
+-\frac{\partial f(\bar x;\bar q)/\partial q}{\partial f(\bar x;\bar q)/\partial x}.
 \]
 
-\begin{tcolorbox}
+\begin{tcolorbox}[breakable]
 
-\subsection*{Exercise 6}
+\subsection*{Exercise 1-6}
 
 Consider the system
 \[
