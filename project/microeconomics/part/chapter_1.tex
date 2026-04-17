@@ -981,10 +981,15 @@ such that
 
 The set $A \subset \mathbb{R}^N$ is \textbf{compact} if it is bounded and closed.
 
+
+\begin{tcolorbox}[breakable, colback=white]
+
 \subsection*{Theorem 8 (Weierstrass)}
 
 Suppose that $f : X \to \mathbb{R}$ is continuous and $X \subset \mathbb{R}^N$
 is nonempty and compact. Then $f$ attains a maximum and a minimum on $X$.
+
+
 
 \vspace{1em}
 
@@ -1003,20 +1008,13 @@ If $A \subset \mathbb{R}$ is compact, then
 \]
 so the maximum and minimum of $A$ are well defined.
 
+\end{tcolorbox}
+
 \section{Convex Sets and Separating Hyperplanes}
 
 Given a set $B \subset \mathbb{R}^N$, the \textbf{convex hull} of $B$,
 denoted by $\operatorname{co}(B)$, is the smallest convex set containing $B$.
 
-That is,
-\[
-\operatorname{co}(B)
-=
-\bigcap \{ C \subset \mathbb{R}^N : C \text{ is convex and } B \subset C \}.
-\]
-
-
-\subsection*{(continued)}
 
 $\operatorname{co}(B)$ is the set of all possible convex combinations of elements of $B$:
 \[
@@ -1045,6 +1043,9 @@ The sets
 \]
 are called, respectively, the half-space above and below the hyperplane $H_{p,c}$.
 
+
+\begin{tcolorbox}[breakable, colback=white]
+
 \subsection*{Theorem 9 (Separating Hyperplane)}
 
 \begin{itemize}
@@ -1069,6 +1070,11 @@ are called, respectively, the half-space above and below the hyperplane $H_{p,c}
 That is, there exists a hyperplane that separates $A$ and $B$
 (Minkowski separating hyperplane theorem).
 
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[breakable, colback=white]
+
 \subsection*{Theorem 10 (Supporting Hyperplane)}
 
 Let $B \subset \mathbb{R}^N$ be a convex set and let $x$ be a boundary point of $B$.
@@ -1081,11 +1087,12 @@ p \cdot x \ge p \cdot y
 \]
 
 
+\end{tcolorbox}
 
 
 \section{Unconstrained Maximization}
 
-A vector $x \in \mathbb{R}^N$ is a \textbf{local maximizer} of $f(\cdot)$
+A vector $\bar x \in \mathbb{R}^N$ is a \textbf{local maximizer} of $f(\cdot)$
 if there exists an open neighborhood $A \subset \mathbb{R}^N$ of $x$ such that
 \[
 f(x) \ge f(x') \quad \text{for every } x' \in A.
@@ -1109,6 +1116,7 @@ is a local maximizer or local minimizer of $f(\cdot)$. Then
 
 Otherwise, $f$ would be locally increasing or decreasing
 in the direction of some coordinate axis.
+\begin{tcolorbox}[breakable, colback=white]
 
 \subsection*{Theorem 11}
 
@@ -1128,47 +1136,53 @@ and that
 \textbf{(i)} Let $z \in \mathbb{R}^N$ be any direction and $\varepsilon > 0$.
 Consider
 \[
-\phi(\varepsilon) = f(x + \varepsilon z).
+\phi(\varepsilon) = f(\bar x + \varepsilon z).
 \]
 
 A Taylor expansion around $\varepsilon=0$ gives
 \[
-f(x+\varepsilon z) - f(x)
+f(\bar x+\varepsilon z) - f(\bar x)
 =
-\varepsilon \nabla f(x)\cdot z
-+ \frac{1}{2}\varepsilon^2 z^\top D^2 f(x) z + R.
+\varepsilon \nabla f(\bar x)\cdot z
++ \frac{1}{2}\varepsilon^2 z^\top D^2 f(\bar x) z + R.
 \]
 
-Since $\nabla f(x)=0$,
+Since $\nabla f(\bar x)=0$,
 \[
-f(x+\varepsilon z) - f(x)
+f(\bar x+\varepsilon z) - f(\bar x)
 =
-\frac{1}{2}\varepsilon^2 z^\top D^2 f(x) z + R.
+\frac{1}{2}\varepsilon^2 z^\top D^2 f(\bar x) z + R.
 \]
 
-If $x$ is a local maximizer, then
+If $\bar x$ is a local maximizer, then
 \[
-f(x+\varepsilon z) - f(x) \le 0.
+\begin{aligned}
+&2 \frac{f(\bar x+\varepsilon z) - f(\bar x)}{\varepsilon ^2}\\
+&= z^\top D^2 f(\bar x) z + 2 \frac{R}{\varepsilon ^2}\\
+&\le 0.
+\end{aligned}
 \]
 
 Taking the limit as $\varepsilon \to 0$, we obtain
 \[
-z^\top D^2 f(x) z \le 0.
+z^\top D^2 f(\bar x) z \le 0.
 \]
-
+(Note that $R$ consists of higher-order terms $\varepsilon^3, \varepsilon^4, \dots$.
+Hence $R$ becomes negligible as $\varepsilon \to 0$.)
 \medskip
 
 \textbf{(ii)} If
 \[
-z^\top D^2 f(x) z < 0 \quad \forall z \ne 0,
+z^\top D^2 f(\bar x) z < 0 \quad \forall z \ne 0,
 \]
 then for sufficiently small $\varepsilon > 0$,
 \[
-f(x+\varepsilon z) < f(x),
+f(\bar x+\varepsilon z) < f(\bar x),
 \]
-so $x$ is a local maximizer. \quad $\blacksquare$
+so $\bar x$ is a local maximizer. \quad $\blacksquare$
 
 
+\end{tcolorbox}
 
 
 \subsection*{Example 8}
@@ -1186,9 +1200,9 @@ but $x=0$ is neither a maximum nor a minimum.
 
 Thus, a negative semidefinite $D^2 f(x)$ does not guarantee a maximum.
 
-\begin{tcolorbox}
+\begin{tcolorbox}[breakable]
 
-\subsection*{Exercise 7}
+\subsection*{Exercise 1-7}
 
 Consider the function
 \[
@@ -1216,88 +1230,47 @@ The set of all feasible points is called the \textbf{constraint set}:
 C = \{x \in \mathbb{R}^N : g_m(x) = b_m,\ m=1,\dots,M\}.
 \]
 
+\begin{tcolorbox}[breakable, colback=white]
 \subsection*{Theorem 12 (The Theorem of Lagrange)}
 
 Suppose that the objective function $f$ and the constraint functions
-$g_1,\dots,g_M$ are differentiable, and that $x \in C$ is a local maximizer.
+$g_1, \dots, g_M$ are differentiable, and that $\bar x \in C$ is a local
+constrained maximizer.
 
-If the gradients $\nabla g_1(x), \dots, \nabla g_M(x)$ are linearly independent,
-then there exist scalars $\lambda_1,\dots,\lambda_M$ such that
-\[
-\nabla f(x)
-=
-\sum_{m=1}^M \lambda_m \nabla g_m(x).
-\]
-
-Equivalently,
-\[
-\nabla f(x) = \lambda_1 \nabla g_1(x) + \cdots + \lambda_M \nabla g_M(x).
-\]
-
-\subsection*{Lagrangian}
-
-Define the Lagrangian function:
-\[
-\mathcal{L}(x,\lambda)
-=
-f(x)
-+ \sum_{m=1}^M \lambda_m \bigl(b_m - g_m(x)\bigr).
-\]
-
-The first-order conditions are:
-\[
-\nabla_x \mathcal{L}(x,\lambda) = 0,
-\qquad
-\frac{\partial \mathcal{L}}{\partial \lambda_m} = 0 \quad (m=1,\dots,M).
-\]
-
-That is,
-\[
-\nabla f(x)
-=
-\sum_{m=1}^M \lambda_m \nabla g_m(x),
-\quad
-g_m(x)=b_m.
-\]
-
-
-\subsection*{(continued)}
-
-Suppose that $x \in C$ is a local constrained maximizer.
 Assume also that the $M \times N$ matrix
 \[
+Dg(\bar x) =
 \begin{pmatrix}
-\frac{\partial g_1(x)}{\partial x_1} & \cdots & \frac{\partial g_1(x)}{\partial x_N} \\
+\frac{\partial g_1}{\partial x_1}(\bar x) & \cdots & \frac{\partial g_1}{\partial x_N}(\bar x) \\
 \vdots & \ddots & \vdots \\
-\frac{\partial g_M(x)}{\partial x_1} & \cdots & \frac{\partial g_M(x)}{\partial x_N}
+\frac{\partial g_M}{\partial x_1}(\bar x) & \cdots & \frac{\partial g_M}{\partial x_N}(\bar x)
 \end{pmatrix}
 \]
 has rank $M$.
 
-Then there exist scalars $\lambda_m \in \mathbb{R}$ (Lagrange multipliers),
-one for each constraint, such that
+Then there exist numbers (Lagrange multipliers)
+$\lambda_1, \dots, \lambda_M \in \mathbb{R}$ such that
 \[
-\frac{\partial f(x)}{\partial x_n}
+\frac{\partial f}{\partial x_n}(\bar x)
 =
-\sum_{m=1}^M \lambda_m \frac{\partial g_m(x)}{\partial x_n},
-\qquad n=1,\dots,N.
+\sum_{m=1}^M \lambda_m \frac{\partial g_m}{\partial x_n}(\bar x),
+\qquad n = 1, \dots, N.
 \]
 
 Equivalently,
 \[
-\nabla f(x)
-=
-\sum_{m=1}^M \lambda_m \nabla g_m(x).
+\nabla f(\bar x) = \sum_{m=1}^M \lambda_m \nabla g_m(\bar x).
 \]
+\end{tcolorbox}
 
 \vspace{1em}
 
-If a pair $(x,\lambda)$ satisfies
+If a pair $(\bar x,\bar \lambda)$ satisfies
 \[
-g_m(x)=b_m \quad \text{and} \quad
-\nabla f(x)=\sum_{m=1}^M \lambda_m \nabla g_m(x),
+g_m(\bar x)=b_m \quad \text{and} \quad
+\nabla f(\bar x)=\sum_{m=1}^M \lambda_m \nabla g_m(\bar x),
 \]
-we say that $(x,\lambda)$ satisfies the \textbf{first-order necessary conditions}
+we say that $(\bar x,\bar \lambda)$ satisfies the \textbf{first-order necessary conditions}
 (FOC) for equality-constrained optimization.
 
 \medskip
@@ -1306,81 +1279,78 @@ The rank condition is called the \textbf{constraint qualification condition},
 and it implies that the constraints are locally independent.
 
 \vspace{1em}
-
-\textbf{Interpretation.}  
-At the optimum, the gradient of $f$ lies in the span of the gradients of the constraints.
-That is, there is no feasible direction along which $f$ can increase.
-
-\vspace{1em}
-
 \subsection*{Example 9 (Elimination Approach)}
+
+We prove the theorem using the \textit{Elimination Approach}, reducing the constrained
+problem to an unconstrained one via the implicit function theorem.
+
+\medskip
 
 Consider
 \[
 \max f(x_1,x_2)
-\quad \text{s.t.} \quad g(x_1,x_2)=b.
+\qquad \text{s.t.} \qquad g(x_1,x_2)=b.
 \]
 
 The rank condition implies that at least one of $g_1,g_2$ is nonzero.
-Assume $g_1 \ne 0$.
-
+Assume $g_1 \neq 0$.
 Then there exists $\lambda$ such that
 \[
-f_1(x)=\lambda g_1(x),
+f_1(\bar x)=\lambda g_1(\bar x),
 \qquad
-\lambda=\frac{f_1(x)}{g_1(x)}.
+\lambda=\frac{f_1(\bar x)}{g_1(\bar x)}.
 \]
 
-Define the constraint:
+Define
 \[
 \phi(x_1,x_2)=g(x_1,x_2)-b=0.
 \]
 
-Since $g_1 \ne 0$, we can locally solve for
+Since $g_1 \neq 0$, we can solve locally for
 \[
-x_1 = h(x_2).
+x_1=h(x_2),
 \]
-
-Thus the problem becomes an unconstrained problem:
+and obtain the unconstrained problem
 \[
-\max f(h(x_2), x_2).
+\max f(h(x_2),x_2).
 \]
 
 The first-order condition is
 \[
-f_1(x) h'(x_2) + f_2(x)=0.
+f_1\,h'(x_2)+f_2=0.
 \]
 
-From the implicit function theorem,
+Differentiating the constraint $g(h(x_2),x_2)=b$ gives
 \[
-h'(x_2) = -\frac{g_2(x)}{g_1(x)}.
+g_1\,h'(x_2)+g_2=0
+\quad \Rightarrow \quad
+h'(x_2)=-\frac{g_2}{g_1}.
 \]
 
 Substituting,
 \[
-f_1(x)\left(-\frac{g_2(x)}{g_1(x)}\right) + f_2(x)=0
+f_1\left(-\frac{g_2}{g_1}\right)+f_2=0
 \quad \Rightarrow \quad
-\frac{f_1(x)}{g_1(x)} = \frac{f_2(x)}{g_2(x)}.
+\frac{f_1}{g_1}=\frac{f_2}{g_2}.
 \]
 
 Thus
 \[
-\nabla f(x) = \lambda \nabla g(x).
+\nabla f(\bar x)=\lambda \nabla g(\bar x).
 \]
-
 \vspace{1em}
 
-\begin{tcolorbox}
-\subsection*{Exercise 8}
+\begin{tcolorbox}[breakable]
+\subsection*{Exercise 1-8}
 
 Let
 \[
-f(x_1,x_2) = -x_1^2 - x_2^2,
+f(x_1,x_2) = -x_2,
 \qquad
-g(x_1,x_2)=x_2^2 - x_1^2=0.
+g(x_1,x_2)=x_2^3 - x_1^2=0.
 \]
 
-Show that $(0,0)$ is the unique maximizer.
+Show that $(0,0)$ is the unique maximizer of the constrained maximization problem.
 Check the constraint qualification condition at $(0,0)$.
 
 \end{tcolorbox}
@@ -1390,74 +1360,48 @@ Check the constraint qualification condition at $(0,0)$.
 
 \subsection*{Example 10}
 
-If $N=2$, $M=1$, and $b=0$, then the condition
-\[
-\nabla f(x)=\lambda \nabla g(x)
-\]
-implies that the vectors $\nabla f(x)$ and $\nabla g(x)$ lie on the same line.
+If $N=2$, $M=1$, and $b=0$, then the vector $\nabla f(\bar x)$ must lie on the same line as $\nabla g(\bar x)$ (i.e., $\nabla f(\bar x)=\lambda \nabla g(\bar x)$), where $x$ is the constrained maximum and the constraint is $g(x)=0$.
 
-That is, at the optimum, the gradient of the objective function is parallel
-to the gradient of the constraint.
-
-
-\subsection*{(continued)}
-
-The point $x$ is a constrained maximum under the constraint $g(x)=0$.
-This is because the curve $g(x)=0$ is tangent at $x$ to the level curve
-$f(x)=f(x)$.
-
-The vector $\nabla g(x)$ is perpendicular to the constraint curve $g(x)=0$,
-and the vector $\nabla f(x)$ is perpendicular to the level curve $f(x)=f(x)$.
+This is because the curve $g(x)=0$ is tangent at $\bar x$ to the level curve $f(x)=f(\bar x)$.
+The vector $\nabla g(\bar x)$ is perpendicular at $\bar x$ to the curve $g(x)=0$, and the vector $\nabla f(\bar x)$ is perpendicular at $\bar x$ to the curve $f(x)=f(\bar x)$.
 
 \medskip
 
-\textbf{Why is the gradient perpendicular to the level curve?}
-
-Consider a level curve
-\[
-f(x_1,x_2)=k.
-\]
-
-Treat $x_2$ as a function of $x_1$ and differentiate implicitly:
+Why is the gradient $\nabla f(x)$ perpendicular to its level curve?
+Consider a level curve $k=f(x_1,x_2)$ and differentiate it implicitly, taking $x_2$ as a function of $x_1$:
 \[
 f_1(x_1,x_2) + f_2(x_1,x_2)\frac{dx_2}{dx_1}=0.
 \]
 
-Thus, the slope of the tangent line is
+Hence, the slope of the tangent line is
 \[
-\frac{dx_2}{dx_1}
-=
--\frac{f_1(x_1,x_2)}{f_2(x_1,x_2)}.
+\frac{dx_2}{dx_1} = -\frac{f_1(x_1,x_2)}{f_2(x_1,x_2)}.
 \]
 
-On the other hand, the slope of the gradient direction is
+On the other hand, the slope of the line in the direction of the gradient is
 \[
-\frac{\Delta x_2}{\Delta x_1}
-=
-\frac{f_2(x_1,x_2)}{f_1(x_1,x_2)}.
+\frac{\Delta x_2}{\Delta x_1} = \frac{f_2(x_1,x_2)}{f_1(x_1,x_2)}.
 \]
 
-Since these are negative reciprocals, the gradient $\nabla f(x)$ is
-perpendicular to the tangent line of the level curve.
+Therefore, the gradient $\nabla f(x)$ is perpendicular to the tangent line.
 
 \medskip
 
-\textbf{General case.}
-
-For $N \ge 3$ and $M \ge 2$, the theorem requires that
+For a more general case where $N \ge 3$ and $M \ge 2$, the theorem requires that the gradient vector $\nabla f(\bar x)$ belongs to the subspace spanned by the vectors $\nabla g_m(\bar x)$, $m=1,\dots,M$:
 \[
-\nabla f(x)
-\in
-\operatorname{span}\{\nabla g_1(x), \dots, \nabla g_M(x)\}.
+\begin{aligned}
+&\mathrm{span}\big(\nabla g_1(x),\dots,\nabla g_M(x)\big)\\
+&=
+\left\{
+z \in \mathbb{R}^N : z = \sum_{m=1}^M \alpha_m \nabla g_m(x),\ \alpha_m \in \mathbb{R}
+\right\}.
+\end{aligned}
 \]
 
 That is,
 \[
-\nabla f(x)
-=
-\sum_{m=1}^M \lambda_m \nabla g_m(x).
+\nabla f(x) = \sum_{m=1}^M \lambda_m \nabla g_m(x).
 \]
-
 \medskip
 
 Define the Lagrangian:
@@ -1467,7 +1411,7 @@ Define the Lagrangian:
 f(x) + \sum_{m=1}^M \lambda_m (b_m - g_m(x)).
 \]
 
-The Theorem of Lagrange implies that if $x$ is a local constrained maximizer
+The Theorem of Lagrange implies that if $\bar x$ is a local constrained maximizer
 (and the constraint qualification holds), then there exist multipliers
 $\lambda_1,\dots,\lambda_M$ such that all partial derivatives of the Lagrangian
 are zero:
@@ -1484,64 +1428,136 @@ are zero:
 
 \medskip
 
-Equivalently, the first-order conditions are:
+\begin{tcolorbox}[breakable, colback=white]
+
+\subsection*{Theorem 13 (Second-Order Sufficient Condition)}
+
+Suppose that at $\bar x$ the constraint qualification is satisfied and that
+there exist Lagrange multipliers $\lambda_1,\dots,\lambda_M$ such that
 \[
-\nabla f(x)
+\nabla f(\bar x) = \sum_{m=1}^M \lambda_m \nabla g_m(\bar x).
+\]
+
+Define the Hessian of the Lagrangian by
+\[
+D^2 L(\bar x,\lambda)
 =
-\sum_{m=1}^M \lambda_m \nabla g_m(x),
-\qquad
-g_m(x)=b_m.
+D^2 f(\bar x)
+-
+\sum_{m=1}^M \lambda_m D^2 g_m(\bar x).
 \]
 
-
-\subsection*{(continued)}
-
-Do the same thing for the contour of $g(x)$:
+If $D^2 L(\bar x,\lambda)$ is negative semidefinite on the subspace
 \[
-\frac{dx_2}{dx_1} = -\frac{g_1(x_1,x_2)}{g_2(x_1,x_2)}.
+\{ z \in \mathbb{R}^N : \nabla g_m(\bar x)\cdot z = 0 \ \text{for all } m \},
+\]
+then $\bar x$ satisfies the second-order necessary condition.
+
+If, moreover, $D^2 L(\bar x,\lambda)$ is negative definite on the subspace
+\[
+\{ z \in \mathbb{R}^N : \nabla g_m(\bar x)\cdot z = 0,\ z \ne 0 \ \text{for all } m \},
+\]
+then $\bar x$ is a local maximizer.
+
+
+\end{tcolorbox}
+
+
+\subsection*{Example 11}
+
+The second-order condition (SOC) for the case $N=2$ and $M=1$ can be expressed as
+\[
+\begin{vmatrix}
+L_{11} & L_{12} & -g_1 \\
+L_{21} & L_{22} & -g_2 \\
+-g_1 & -g_2 & 0
+\end{vmatrix}
+> 0.
+\]\\
+
+A formal proof for the SOCs is given in the appendix based on the penalty approach.
+
+\medskip
+
+Assume that $N=2$, $M=1$, and both $f(x)$ and $g(x)$ are increasing in $x$.
+In order to obtain a \textbf{maximum}, the level curve of $f(x)$ should be more convex
+(or less concave) than that of $g(x)$.
+
+\medskip
+
+We derive the slope and curvature of the contour of $f(x)$.
+From the implicit function theorem,
+\[
+\frac{dx_2}{dx_1}
+=
+-\frac{f_1(x_1,x_2)}{f_2(x_1,x_2)}.
 \]
 
-Then
+Differentiating again,
 \[
 \frac{d^2 x_2}{dx_1^2}
 =
-\frac{d}{dx_1}\left(-\frac{g_1}{g_2}\right)
+-\frac{
+f_2^2 f_{11}
+-2 f_1 f_2 f_{12}
++ f_1^2 f_{22}
+}{f_2^3}.
+\]
+
+Similarly, for the contour of $g(x)$,
+\[
+\frac{dx_2}{dx_1}
 =
-\frac{
-g_2^2 g_{11} - 2 g_1 g_2 g_{12} + g_1^2 g_{22}
+-\frac{g_1(x_1,x_2)}{g_2(x_1,x_2)},
+\]
+\[
+\frac{d^2 x_2}{dx_1^2}
+=
+-\frac{
+g_2^2 g_{11}
+-2 g_1 g_2 g_{12}
++ g_1^2 g_{22}
 }{g_2^3}.
 \]
 
+\medskip
+
 The condition of relative convexity requires
 \[
-\frac{d^2 x_2}{dx_1^2}\bigg|_{f}
+\frac{d^2 x_2}{dx_1^2}\Big|_{f}
 >
-\frac{d^2 x_2}{dx_1^2}\bigg|_{g}.
+\frac{d^2 x_2}{dx_1^2}\Big|_{g},
 \]
-
-That is,
+that is,
 \[
-\frac{
-f_2^2 f_{11} - 2 f_1 f_2 f_{12} + f_1^2 f_{22}
+-\frac{
+f_2^2 f_{11}
+-2 f_1 f_2 f_{12}
++ f_1^2 f_{22}
 }{f_2^3}
--
++
 \frac{
-g_2^2 g_{11} - 2 g_1 g_2 g_{12} + g_1^2 g_{22}
+g_2^2 g_{11}
+-2 g_1 g_2 g_{12}
++ g_1^2 g_{22}
 }{g_2^3}
 > 0.
 \]
 
-By substituting the first-order conditions
+\medskip
+
+Substituting the first-order conditions
 \[
 f_1 = \lambda g_1,
 \qquad
 f_2 = \lambda g_2,
 \]
-into the above condition, we obtain
+we obtain
 \[
-g_2^2(\lambda g_{11} - f_{11})
--2g_1g_2(\lambda g_{12} - f_{12})
-+g_1^2(\lambda g_{22} - f_{22}) > 0.
+g_2^2 (\lambda g_{11} - f_{11})
+- 2 g_1 g_2 (\lambda g_{12} - f_{12})
++ g_1^2 (\lambda g_{22} - f_{22})
+> 0.
 \]
 
 It can be shown that this condition is equivalent to
@@ -1555,17 +1571,13 @@ L_{21} & L_{22} & -g_2 \\
 \]
 where
 \[
-L_{11} = f_{11} - \lambda g_{11}, \qquad
-L_{12} = f_{12} - \lambda g_{12},
-\]
-\[
-L_{21} = f_{21} - \lambda g_{21}, \qquad
-L_{22} = f_{22} - \lambda g_{22}.
+L_{ij} = f_{ij} - \lambda g_{ij}.
 \]
 
-\begin{tcolorbox}
 
-    \subsection*{Exercise 9}
+\begin{tcolorbox}[breakable]
+
+\subsection*{Exercise 1-9}
 
 Consider the problem
 \[
@@ -1585,6 +1597,7 @@ Did you find a maximum, a minimum, or neither?
 
 \end{tcolorbox}
 
+
 \section{Inequality Constrained Maximization}
 
 Consider the problem
@@ -1601,12 +1614,15 @@ h_k(x)\le c_k, \qquad k=1,\dots,K.
 
 Again, let $C$ denote the constraint set.
 
-We say that the \textbf{constraint qualification} is satisfied at $x \in C$
-if the constraints that hold with equality at $x$ are linearly independent.
+We say that the \textbf{constraint qualification} is satisfied at $\bar x \in C$
+if the constraints that hold with equality at $\bar x$ are linearly independent.
+
+
+\begin{tcolorbox}[breakable, colback=white]
 
 \subsection*{Theorem 14 (Kuhn--Tucker)}
 
-Suppose that $x \in C$ is a local maximizer and that the constraint qualification is satisfied.
+Suppose that $\bar x \in C$ is a local maximizer and that the constraint qualification is satisfied.
 
 Then there exist multipliers
 \[
@@ -1618,34 +1634,26 @@ for the equality constraints, and
 \]
 for the inequality constraints, such that
 \[
-\frac{\partial f(x)}{\partial x_n}
+\begin{aligned}
+&\frac{\partial f(x)}{\partial x_n}
 =
 \sum_{m=1}^M \lambda_m \frac{\partial g_m(x)}{\partial x_n}
 +
-\sum_{k=1}^K \mu_k \frac{\partial h_k(x)}{\partial x_n},
-\qquad n=1,\dots,N,
+\sum_{k=1}^K \mu_k \frac{\partial h_k(x)}{\partial x_n},\\
+&\qquad n=1,\dots,N,
+\end{aligned}
 \]
 and
 \[
 \mu_k\bigl(c_k - h_k(x)\bigr)=0,
 \qquad k=1,\dots,K.
 \]
+\end{tcolorbox}
+
 
 \medskip
 
-Define the Lagrangian function
-\[
-\mathcal{L}(x,\lambda,\mu)
-=
-f(x)
-+
-\sum_{m=1}^M \lambda_m \bigl(b_m - g_m(x)\bigr)
-+
-\sum_{k=1}^K \mu_k \bigl(c_k - h_k(x)\bigr).
-\]
 
-
-\subsection*{(continued)}
 
 The Lagrangian function is defined as
 \[
@@ -1658,17 +1666,17 @@ f(x)
 \sum_{k=1}^K \mu_k \bigl(c_k-h_k(x)\bigr).
 \]
 
-The Kuhn--Tucker theorem says that if $x$ is a local constrained maximizer
+The Kuhn--Tucker theorem says that if $\bar x$ is a local constrained maximizer
 (and the constraint qualification is satisfied), then there exist values
 $\lambda_m$ and $\mu_k$ such that
 \[
 \frac{\partial \mathcal{L}(x,\lambda,\mu)}{\partial x_n}
 =
-\frac{\partial f(x)}{\partial x_n}
+\frac{\partial f(\bar x)}{\partial x_n}
 -
-\sum_{m=1}^M \lambda_m \frac{\partial g_m(x)}{\partial x_n}
+\sum_{m=1}^M \lambda_m \frac{\partial g_m(\bar x)}{\partial x_n}
 -
-\sum_{k=1}^K \mu_k \frac{\partial h_k(x)}{\partial x_n}
+\sum_{k=1}^K \mu_k \frac{\partial h_k(\bar x)}{\partial x_n}
 =0
 \]
 for every $n=1,\dots,N$,
@@ -1676,12 +1684,12 @@ for every $n=1,\dots,N$,
 \[
 \frac{\partial \mathcal{L}(x,\lambda,\mu)}{\partial \lambda_m}
 =
-b_m-g_m(x)=0
+b_m-g_m(\bar x)=0
 \qquad \text{for every } m=1,\dots,M,
 \]
 and
 \[
-\mu_k\bigl(c_k-h_k(x)\bigr)=0
+\mu_k\bigl(c_k-h_k(\bar x)\bigr)=0
 \qquad \text{for every } k=1,\dots,K.
 \]
 
@@ -1709,58 +1717,64 @@ f(x)+\sum_{k=1}^K \mu_k\bigl(c_k-h_k(x)\bigr).
 
 Then for some values of $\mu_k$,
 \[
-\frac{\partial \mathcal{L}}{\partial x_n}
+\begin{aligned}
+&\frac{\partial \mathcal{L}}{\partial x_n}
 =
-\frac{\partial f(x)}{\partial x_n}
+\frac{\partial f(\bar x)}{\partial x_n}
 -
-\sum_{k=1}^K \mu_k \frac{\partial h_k(x)}{\partial x_n}
-=0
-\qquad \text{for every } n=1,\dots,N,
+\sum_{k=1}^K \mu_k \frac{\partial h_k(\bar x)}{\partial x_n}
+=0\\
+&\qquad \text{for every } n=1,\dots,N,
+\end{aligned}
 \]
 and
 \[
-\mu_k\bigl(c_k-h_k(x)\bigr)=0
-\qquad \text{for every } k=1,\dots,K.
+\begin{aligned}
+&\mu_k\bigl(c_k-h_k(x)\bigr)=0\\
+&\text{for every } k=1,\dots,K.
+\end{aligned}
 \]
 
 Take auxiliary variables $y_k$ $(k=1,\dots,K)$, and define
 \[
 \Phi(x,y,\mu)
 =
-f(x)+\sum_{k=1}^K \mu_k\bigl(c_k-h_k(x)-y_k\bigr).
+f(x)+\sum_{k=1}^K \mu_k\bigl(c_k-h_k(x)-y_k^2\bigr).
 \]
 
 This turns the inequality-constrained problem into an equality-constrained one
 with
 \[
-c_k-h_k(x)-y_k=0.
+c_k-h_k(x)-y_k^2=0.
 \]
 
 Then the Theorem of Lagrange implies
 \[
-\frac{\partial \Phi}{\partial x_n}
+\begin{aligned}
+&\frac{\partial \Phi}{\partial x_n}
 =
 \frac{\partial f(x)}{\partial x_n}
 -
 \sum_{k=1}^K \mu_k \frac{\partial h_k(x)}{\partial x_n}
-=0
-\qquad \text{for every } n=1,\dots,N,
-\]
+=0\\
+&\text{for every } n=1,\dots,N,
+\end{aligned}\]
 \[
-\frac{\partial \Phi}{\partial y_k}=-\mu_k=0,
+\frac{\partial \Phi}{\partial y_k}=-2\mu_k y_k=0,
 \]
 and
 \[
-\frac{\partial \Phi}{\partial \mu_k}
+\begin{aligned}
+&\frac{\partial \Phi}{\partial \mu_k}
 =
-c_k-h_k(x)-y_k=0
-\qquad \text{for every } k=1,\dots,K.
-\]
+c_k-h_k(x)-y_k^2=0\\
+&\text{for every } k=1,\dots,K.
+\end{aligned}\]\\
 
 If $\mu_k=0$, then the complementary slackness condition is satisfied directly.
 If $\mu_k>0$, then necessarily
 \[
-y_k = c_k-h_k(x)=0,
+y_k^2 = c_k-h_k(x)=0,
 \]
 so again the Kuhn--Tucker conditions are satisfied.
 
@@ -1817,6 +1831,16 @@ There are three possible cases:
     \]
 \end{itemize}
 
+\[
+\begin{array}{c|c}
+\text{Case} & \text{Interpretation} \\
+\hline
+\text{(a) } x>0 & \text{Interior optimum} \\
+\text{(b) } x=0,\ \mu>0 & \text{Boundary maximum (binding)} \\
+\text{(c) } x=0,\ \mu=0 & \text{Boundary with flat slope}
+\end{array}
+\]
+
 \subsection*{Example 12}
 
 Consider
@@ -1838,38 +1862,17 @@ y + a\ln x
 \mu_y y.
 \]
 
-The first-order conditions are
-\[
-\mathcal{L}_x
-=
-\frac{a}{x}-\mu p_x+\mu_x=0,
-\]
-\[
-\mathcal{L}_y
-=
-1-\mu p_y+\mu_y=0.
-\]
 
-
-
-
-\subsection*{(continued)}
 
 The first-order conditions are:
 \[
-(1)\quad \mathcal{L}_x = \frac{a}{x} - \mu p_x + \mu_x = 0,
-\]
-\[
-(2)\quad \mathcal{L}_y = 1 - \mu p_y + \mu_y = 0,
-\]
-\[
-(3)\quad \mu \bigl(I - p_x x - p_y y\bigr) = 0,
-\]
-\[
-(4)\quad \mu_x x = 0,
-\]
-\[
-(5)\quad \mu_y y = 0.
+\begin{aligned}
+&(1)\quad \mathcal{L}_x = \frac{a}{x} - \mu p_x + \mu_x = 0,\\
+&(2)\quad \mathcal{L}_y = 1 - \mu p_y + \mu_y = 0,\\
+&(3)\quad \mu \bigl(I - p_x x - p_y y\bigr) = 0,\\
+&(4)\quad \mu_x x = 0,\\
+&(5)\quad \mu_y y = 0.
+\end{aligned}
 \]
 
 \medskip
@@ -1900,9 +1903,9 @@ We consider the following four cases:
     \]
     Substituting into (1),
     \[
-    \frac{a}{x} - \mu p_x + \mu_x = 0,
+    \frac{a}{x} - \frac{p_x}{p_y} + \mu_x = 0,
     \]
-    which implies $\frac{a}{x} = \infty$, hence not feasible.
+    which implies $\frac{a}{x} = \infty \le \frac{p_x}{p_y}$, hence not feasible.
 
     \item[(iii)] $x>0,\ y=0$.  
     Then $x=\frac{I}{p_x}$ and $\mu_x=0$.
@@ -1916,9 +1919,9 @@ We consider the following four cases:
 
     From (2),
     \[
-    1 - \mu p_y + \mu_y = 0
+    1 - \frac{ap_y}{I} + \mu_y = 0
     \quad \Rightarrow \quad
-    1 \le \frac{a p_y}{I}.
+    I \le a p_y.
     \]
 
     \item[(iv)] $x>0,\ y>0$.  
@@ -1976,15 +1979,17 @@ The following theorem provides an example where the SOCs are satisfied.
 
 
 
+\begin{tcolorbox}[breakable, colback=white]
 \subsection*{Theorem 15}
 
 Suppose that the constraint set $C$ of the inequality-constrained problem
 is convex and that the objective function $f(\cdot)$ is strictly quasiconcave.
 Then there is a unique global constrained maximizer.
 
+
 \subsection*{Proof}
 
-If $x$ and $x' \ne x$ were both global constrained maximizers, then for any
+If $x$ and $x' (\ne x)$ were both global constrained maximizers, then for any
 $\alpha \in (0,1)$, the point
 \[
 x''=\alpha x+(1-\alpha)x'
@@ -1998,9 +2003,11 @@ f(x'') = f(\alpha x+(1-\alpha)x') > f(x)=f(x'),
 which contradicts the assumption that both $x$ and $x'$ are global constrained maximizers.
 \hfill $\blacksquare$
 
-\begin{tcolorbox}
+\end{tcolorbox}
 
-\subsection*{Exercise 10}
+\begin{tcolorbox}[breakable]
+
+\subsection*{Exercise 1-10}
 
 Find a solution to the problem
 \[
@@ -2019,13 +2026,15 @@ g_3(x,y,z)=-x \le 0.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}
 
-\subsection*{Exercise 11}
+
+\begin{tcolorbox}[breakable]
+
+\subsection*{Exercise 1-11}
 
 Consider the following cost-minimization problem, where
 \[
-x_1 + x_2^{\delta} \ge y
+x_1^2 + x_2^2 \ge y
 \]
 represents the production technology:
 \[
@@ -2033,7 +2042,7 @@ represents the production technology:
 \]
 subject to
 \[
-x_1 \ge 0,\qquad x_2 \ge 0,\qquad x_1 + x_2^{\delta} - y \ge 0.
+x_1 \ge 0,\qquad x_2 \ge 0,\qquad x_1^2 + x_2^2 - y \ge 0.
 \]
 
 We may transform the problem into a maximization problem:
@@ -2042,7 +2051,7 @@ We may transform the problem into a maximization problem:
 \]
 subject to
 \[
-x_1 \ge 0,\qquad x_2 \ge 0,\qquad x_1 + x_2^{\delta} - y \ge 0.
+x_1 \ge 0,\qquad x_2 \ge 0,\qquad x_1^2 + x_2^2 - y \ge 0.
 \]
 
 \begin{enumerate}
@@ -2052,6 +2061,8 @@ x_1 \ge 0,\qquad x_2 \ge 0,\qquad x_1 + x_2^{\delta} - y \ge 0.
 \end{enumerate}
 
 \end{tcolorbox}
+
+
 
 \section{Envelope Theorem}
 
@@ -2079,6 +2090,7 @@ Many times we want to know how the maximum value of a function changes as
 one or more parameters of the problem change. The envelope theorem can be
 used to analyze the behavior of the maximum value function.
 
+\begin{tcolorbox}[breakable, colback=white]
 \subsection*{Theorem 16 (Envelope)}
 
 Consider a maximization problem
@@ -2107,7 +2119,7 @@ Then the envelope theorem states that
 \]
 
 
-\subsection*{Proof of Theorem 16}
+\subsection*{Proof}
 
 Evaluate the partial derivative of the Lagrangian with respect to $a_j$
 at the point $(x(a),\lambda(a))$:
@@ -2145,7 +2157,7 @@ Substituting into the summation term,
 =
 \lambda(a)
 \sum_{i=1}^N
-\frac{\partial g(x(a),a)}{\partial x_i}
+-\frac{\partial g(x(a),a)}{\partial x_i}
 \frac{\partial x_i(a)}{\partial a_j}
 +
 \frac{\partial f(x(a),a)}{\partial a_j}.
@@ -2172,6 +2184,10 @@ Thus,
 \frac{\partial \mathcal{L}}{\partial a_j}.
 \quad \blacksquare
 \]
+\end{tcolorbox}
+
+
+
 
 \subsection*{Example 13}
 
@@ -2257,108 +2273,74 @@ we have
 \frac{dV(a)}{da}
 =
 \frac{\partial f(x,a)}{\partial a}\Big|_{x=x(a)}.
-\]
+\]\\
+
+
+
 
 \subsection*{Example 14 (First-Price Auction)}
 
-Let $F_v(v)$ be the cumulative distribution of values,
-and $N$ the number of bidders.
+Let $F(v)$ be the cumulative distribution of values $v \in (0,\bar v)$,
+and let $N$ be the number of bidders.
 
-Let $b(v)$ be the bidding function.
-The probability of winning is
+\medskip
+
+Each bidder privately observes their value $v$ and chooses a bid $b$.
+In equilibrium, we look for a \textit{bid function} $b(v)$, which specifies
+the optimal bid for each value $v$.
+
+\medskip
+
+Since all bidders use the same increasing bid function $b(v)$,
+a bidder wins if and only if their value is the highest.
+Thus, the probability of winning is
 \[
-G(b(v)) = F_v(v)^{N-1}.
+G(b(v)) = F(v)^{N-1}.
 \]
 
-A bidder's payoff is
+\medskip
+
+The payoff of a bidder with value $v$ who bids $b(v)$ is
 \[
-\pi(v,b(v)) = G(b(v))\bigl(v - b(v)\bigr).
+\pi(v,b(v)) = G(b(v))\,[v - b(v)].
 \]
+
+\medskip
+
+\textit{Key idea:} Instead of solving directly for $b(v)$,
+we first characterize the payoff function $\pi(v)$ using
+the envelope theorem.
+
+\medskip
 
 By the envelope theorem,
 \[
-\frac{d\pi(v)}{dv}
-=
-G(b(v)) = F_v(v)^{N-1}.
+\frac{d\pi(v)}{dv} = G(b(v)) = F(v)^{N-1}.
 \]
-
-Integrating over $v$ yields the equilibrium bidding function.
-
-
-
-
-\subsection*{(continued)}
-
-Using the value $\pi(0)=0$ as the constant of integration, we obtain
-\[
-\pi(v,b(v))
-=
-\pi(0)
-+
-\int_0^v F_v(x)^{N-1} dx
-=
-\int_0^v F_v(x)^{N-1} dx,
-\]
-since a bidder with $v=0$ never wins, so $\pi(0,b(0))=0$.
 
 \medskip
 
-Combining
+Integrating,
 \[
-\pi(v,b(v)) = G(b(v))(v-b(v)),
-\quad
-\frac{d\pi(v)}{dv} = G(b(v)),
+\pi(v) = \int_0^v F(x)^{N-1}\,dx,
 \]
-and the integral expression above, we derive the optimal bidding function:
-\[
-b(v)
-=
-v - \frac{\int_0^v F_v(x)^{N-1} dx}{F_v(v)^{N-1}}.
-\]
-
-Thus,
-\[
-b(v) < v,
-\]
-i.e., bidders shade their bids below their true valuation.
+with $\pi(0)=0$ (a bidder with $v=0$ never wins).
 
 \medskip
 
-\textbf{Uniform distribution case.}
-
-Suppose
+Now, using the definition of payoff,
 \[
-F_v(v) = \frac{v}{\bar v},
-\quad \text{for } v \in (0,\bar v).
+\pi(v) = F(v)^{N-1}\,[v - b(v)],
+\]
+we can solve for the bid function:
+\[
+b(v) = v - \frac{\pi(v)}{F(v)^{N-1}}
+= v - \frac{\int_0^v F(x)^{N-1}\,dx}{F(v)^{N-1}}.
 \]
 
-Then
-\[
-\int_0^v F_v(x)^{N-1} dx
-=
-\int_0^v \left(\frac{x}{\bar v}\right)^{N-1} dx
-=
-\frac{1}{\bar v^{N-1}} \int_0^v x^{N-1} dx
-=
-\frac{1}{\bar v^{N-1}} \cdot \frac{v^N}{N}.
-\]
+\medskip
 
-Also,
+\textbf{Uniform case:} If $F(v)=\frac{v}{\bar v}$, then
 \[
-F_v(v)^{N-1}
-=
-\left(\frac{v}{\bar v}\right)^{N-1}
-=
-\frac{v^{N-1}}{\bar v^{N-1}}.
-\]
-
-Substituting into the bidding function,
-\[
-b(v)
-=
-v - \frac{\frac{v^N}{N\bar v^{N-1}}}{\frac{v^{N-1}}{\bar v^{N-1}}}
-=
-v - \frac{v}{N}
-=
-\frac{N-1}{N}v.
+b(v) = \frac{N-1}{N}v.
 \]

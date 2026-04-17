@@ -4,6 +4,8 @@
   "latex-workshop.synctex.autoSync.enabled": true,
   "latex-workshop.view.pdf.viewer": "tab",
 
+  "editor.tabCompletion": "on",
+
   "latex-workshop.latex.tools": [
     {
       "name": "xelatex",
