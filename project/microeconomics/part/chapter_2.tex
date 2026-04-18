@@ -12,7 +12,8 @@ Representation of technology can be expressed in several equivalent ways:
     \item Distance function
 \end{enumerate}
 
-\subsection*{1.1 Production Possibilities Set $T$}
+
+\subsection{Production Possibilities Set $T$}
 
 \[
 T = \{(x,y) : x \text{ can produce } y\},
@@ -29,15 +30,15 @@ T = \{(x,y) : x \text{ can produce } y\},
     \item[T.3] $T$ is convex.
     
     \item[T.4] If $(x,y) \in T$ and $x' \ge x$, then $(x',y) \in T$
-    \hfill (free disposability of inputs).
+    \\(free disposability of inputs).
     
     \item[T.5] If $(x,y) \in T$ and $y' \le y$, then $(x,y') \in T$
-    \hfill (free disposability of outputs).
+    \\(free disposability of outputs).
     
     \item[T.6] For every finite $x$, the set of feasible outputs is bounded above.
     
-    \item[T.7] $(x,0) \in T$, but if $y \ne 0$, then $(0,y) \notin T$
-    \hfill (weak essentiality / no free lunch).
+    \item[T.7] $(x,0_M) \in T$, but if $y \ge 0$, then $(0_N,y) \notin T$
+    \\(weak essentiality / no free lunch).
 \end{itemize}
 
 \medskip
@@ -54,21 +55,9 @@ T = \{(x,y) : x \text{ can produce } y\},
     (\alpha x + (1-\alpha)x',\ \alpha y + (1-\alpha)y') \in T,
     \quad \alpha \in [0,1].
     \]
-    That is, convex combinations are feasible.
-\end{itemize}
+    This is closely related to the concept of a diminishing marginal
+    rate of technical substitution (MRTS).
 
-
-
-\subsection*{(continued)}
-
-Property T.3 is closely related to the concept of a diminishing marginal
-rate of technical substitution (MRTS).
-
-\medskip
-
-\textbf{Further interpretation of properties:}
-
-\begin{itemize}
     \item[T.4] If an input bundle $x$ can produce a given output bundle $y$,
     then any larger input bundle $x' \ge x$ can also produce $y$.
 
@@ -84,7 +73,7 @@ rate of technical substitution (MRTS).
     positive input.
 \end{itemize}
 
-\subsection*{1.2 Input Requirement Set $V(y)$}
+\subsection{Input Requirement Set $V(y)$}
 
 \[
 V(y)
@@ -104,24 +93,15 @@ the output bundle $y$.
     \item[V.3] $V(y)$ is convex.
 
     \item[V.4] If $x \in V(y)$ and $x' \ge x$, then $x' \in V(y)$
-    \hfill (free disposability of inputs).
+    \\(free disposability of inputs).
 
-    \item[V.5] If $y' \le y$, $y \ge 0$, then
+    \item[V.5] If $y' \ge y \ge 0$, then
     \[
     V(y') \subseteq V(y).
     \]
-\end{itemize}
 
-
-
-
-\subsection*{(continued)}
-
-\textbf{Additional property:}
-
-\begin{itemize}
-    \item[V.6] $0 \in V(0)$
-    \hfill (follows from T.7: zero output is always producible).
+    \item[V.6] $0_N \notin V(0)$ for $y \ge 0_M$, but $0_N \in y(0_M)$
+    \\(follows from T.7: zero output is always producible).
 \end{itemize}
 
 \subsection*{Proof of properties of $V(y)$}
@@ -196,7 +176,7 @@ Thus, T.3 is more restrictive than V.3.
 
 
 
-\subsection*{1.3 Producible-Output Set $Y(x)$}
+\subsection{Producible-Output Set $Y(x)$}
 
 \[
 Y(x)=\{y : (x,y)\in T\},
