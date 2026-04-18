@@ -592,19 +592,18 @@ function and the input distance function.
 
 However, under constant returns to scale (CRS),
 \[
-D^O(x,y) = \frac{1}{D_i(x,y)}.
+D_o(x,y) = \frac{1}{D_i(x,y)}.
 \]
 
 
 
 
-\subsection*{(continued)}
 
-\subsection*{Proof of the CRS Relationship}
+\subsection*{Proof}
 
 Under CRS, we have
 \[
-D^O(x,y)
+D_o(x,y)
 =
 \min \{\theta > 0 : y/\theta \in Y(x)\}.
 \]
@@ -620,14 +619,14 @@ y \in Y(\theta x).
 
 Thus,
 \[
-D^O(x,y)
+D_o(x,y)
 =
 \min \{\theta > 0 : \theta x \in V(y)\}.
 \]
 
 This implies
 \[
-D^O(x,y)
+D_o(x,y)
 =
 \frac{1}{\max \{ \lambda > 0 : x/\lambda \in V(y)\}}
 =
@@ -640,7 +639,7 @@ D^O(x,y)
 Following Luenberger (1992), Chambers et al. (1996), and Chambers (2002),
 the directional technology distance function is defined as
 \[
-D^{\rightarrow}(x,y;g_x,g_y)
+D^{\rightarrow}_T(x,y;g_x,g_y)
 =
 \max \{\beta \in \mathbb{R} : (x - \beta g_x,\ y + \beta g_y) \in T\},
 \]
@@ -651,13 +650,13 @@ g_x \in \mathbb{R}^N,\quad g_y \in \mathbb{R}^M,\quad (g_x,g_y) \ne (0_N,0_M).
 
 If no such $\beta$ exists, then
 \[
-D^{\rightarrow}(x,y;g_x,g_y) = -\infty.
+D^{\rightarrow}_T(x,y;g_x,g_y) = -\infty.
 \]
 
 \medskip
 
 Here $(g_x,g_y)$ is a reference direction for inputs and outputs.
-The function $D^{\rightarrow}(x,y;g_x,g_y)$ represents the maximal translation
+The function $D^{\rightarrow}_T(x,y;g_x,g_y)$ represents the maximal translation
 of $(x,y)$ in the direction
 \[
 (-g_x,\ g_y)
@@ -668,7 +667,7 @@ that keeps the point inside the technology set $T$.
 
 A firm is said to be \textbf{efficient} if
 \[
-D^{\rightarrow}(x,y;g_x,g_y) = 0.
+D^{\rightarrow}_T(x,y;g_x,g_y) = 0.
 \]
 
 \medskip
@@ -690,7 +689,7 @@ distance function and the profit function.
 
 \section{Indirect Objective Functions}
 
-\subsection*{2.1 Cost Function}
+\subsection{Cost Function}
 
 The cost function is defined as
 \[
@@ -709,77 +708,156 @@ which is called the \textbf{conditional factor demand function}.
 \subsection*{Properties of the Cost Function}
 
 \begin{itemize}
-    \item[c.1] $c(w,y) > 0$ for $y>0$ \hfill (nonnegativity)
+    \item[c.1] $c(w,y) > 0$ for $y>0$ \\
+    (nonnegativity)
 
-    \item[c.2] If $w' \ge w$, then
-    \[
-    c(w',y) \ge c(w,y)
-    \]
-    \hfill (nondecreasing in $w$)
+    \item[c.2] If $w' \ge w$, then $c(w',y) \ge c(w,y)$\\
+    (nondecreasing in $w$)
 
-    \item[c.3] 
-    \[
-    c(tw+(1-t)w',y)
-    \ge
-    t c(w,y)+(1-t)c(w',y),
-    \quad 0<t<1
-    \]
-    \hfill (concave in $w$)
+    \item[c.3] $c(tw+(1-t)w',y)$\\
+    $\ge t c(w,y)+(1-t)c(w',y),$\\
+    $0<t<1$\\
+    (concave in $w$)
 
-    \item[c.4] 
-    \[
-    c(tw,y)=t c(w,y),
-    \quad t>0
-    \]
-    \hfill (homogeneous of degree 1 in $w$)
+    \item[c.4] $c(tw,y)=t c(w,y),$ $t>0$\\
+    (homogeneous of degree 1 in $w$)
 
-    \item[c.5] If $y \ge y'$, then
-    \[
-    c(w,y) \ge c(w,y')
-    \]
-    \hfill (nondecreasing in $y$)
+    \item[c.5] If $y \ge y'$, then $c(w,y) \ge c(w,y')$\\
+    (nondecreasing in $y$)
 
-    \item[c.6] 
-    \[
-    c(w,0)=0
-    \]
-    \hfill (no fixed cost; not required in general)
+    \item[c.6] $c(w,0)=0$\\
+    (no fixed cost; not required in general)
 
-    \item[c.7] (\textbf{Shephard’s Lemma})
-    If $c(w,y)$ is differentiable at $(w,y)$ and $w_i>0$, then
-    \[
-    x_i(w,y)=\frac{\partial c(w,y)}{\partial w_i},
-    \quad i=1,\dots,N.
-    \]
+    \item[c.7] If $c(w,y)$ is differentiable at $(w,y)$ and $w_i>0$,\\
+    then $x_i(w,y)=\frac{\partial c(w,y)}{\partial w_i}, $\\
+    $i=1,\dots,N.$\\
+    (\textbf{Shephard’s Lemma})
 \end{itemize}
 
-\subsection*{Proof Sketch}
+\subsection*{Proof}
 
-\begin{itemize}
-    \item[c.2] If $x,x'$ minimize cost at $w,w'$ respectively, then
-    $wx \le wx'$ and since $w \le w'$, we get $wx' \le w'x'$.
+Property C.1 is immediate.
 
-    \item[c.3] Let $w''=tw+(1-t)w'$. Then
-    \[
-    c(w'',y)=w''x'' = t w x'' + (1-t) w' x''
-    \]
-    and use optimality.
+\medskip
 
-    \item[c.4] Scaling argument: minimizing at $w$ is equivalent to minimizing at $tw$.
+For C.2, let $x$ and $x'$ be the cost-minimizing input bundles under prices $w$ and $w'$, respectively. Then
+\[
+w \cdot x \leq w \cdot x'.
+\]
+Since $w \leq w'$ (componentwise), we also have
+\[
+w \cdot x' \leq w' \cdot x'.
+\]
+Therefore,
+\[
+c(w,y) = w \cdot x \leq w' \cdot x' = c(w',y).
+\]
 
-    \item[c.5] If $y \ge y'$, then $V(y) \subseteq V(y')$.
+\medskip
 
-    \item[c.7] Apply the envelope theorem to
-    \[
-    \mathcal{L}=w\cdot x + \lambda Y(x,y).
-    \]
-\end{itemize}
+For C.3, let
+\[
+w'' = t w + (1-t) w', \quad 0 \leq t \leq 1.
+\]
+Let $x''$ be the cost-minimizing bundle at $w''$. Then
+\[
+c(w'',y) = w'' \cdot x'' = t\, w \cdot x'' + (1-t)\, w' \cdot x''.
+\]
+By definition of the cost function,
+\[
+w \cdot x'' \geq c(w,y), \quad w' \cdot x'' \geq c(w',y).
+\]
+Hence,
+\[
+c(w'',y) \geq t\, c(w,y) + (1-t)\, c(w',y).
+\]
+
+\medskip
+
+For C.4, let $x$ be a cost-minimizing bundle at $w$. Then we claim that $x$ also minimizes cost at $tw$ for $t>0$. Suppose not, and let $x'$ be a minimizing bundle at $tw$ such that
+\[
+t\, w \cdot x' < t\, w \cdot x.
+\]
+Dividing both sides by $t>0$, we obtain
+\[
+w \cdot x' < w \cdot x,
+\]
+which contradicts the optimality of $x$ at $w$. Therefore,
+\[
+c(tw,y) = t\, c(w,y).
+\]
+
+\medskip
+
+For C.5, if $y \leq y'$, then
+\[
+V(y) \subseteq V(y').
+\]
+Any feasible input bundle for producing $y$ is also feasible for producing $y'$. Therefore,
+\[
+c(w,y) \leq c(w,y').
+\]
+
+\medskip
+
+For C.6, since producing zero output requires no inputs,
+\[
+c(w,0) = 0.
+\]
+
+\medskip
+
+For C.7 (Shephard's Lemma), consider the Lagrangian
+\[
+\mathcal{L}(x,\lambda) = w \cdot x + \lambda \bigl( y - f(x) \bigr).
+\]
+By the envelope theorem,
+\[
+\frac{\partial c(w,y)}{\partial w_i} = x_i(w,y), \quad i=1,\dots,N.
+\]
+\hfill $\blacksquare$
 
 \subsection*{Continuity}
 
 $c(w,y)$ is continuous if $V(y)$ is strictly convex.
 
 \subsection*{Comparative Statics}
+
+
+The cost function is concave in $w$. Consider the Hessian matrix of $c(w,y)$ with respect to $w$:
+\[
+D_w^2 c(w,y)
+=
+\left[
+\frac{\partial^2 c(w,y)}{\partial w_i \partial w_j}
+\right]_{i,j=1}^N.
+\]
+
+By Shephard's lemma,
+\[
+x_i(w,y) = \frac{\partial c(w,y)}{\partial w_i}, \quad i=1,\dots,N.
+\]
+
+Hence, the Hessian can be written as
+\[
+D_w^2 c(w,y)
+=
+\left[
+\frac{\partial x_i(w,y)}{\partial w_j}
+\right]_{i,j=1}^N.
+\]
+
+Explicitly,
+\[
+D_w^2 c(w,y)
+=
+\begin{pmatrix}
+\frac{\partial x_1}{\partial w_1} & \frac{\partial x_1}{\partial w_2} & \cdots & \frac{\partial x_1}{\partial w_N} \\
+\frac{\partial x_2}{\partial w_1} & \frac{\partial x_2}{\partial w_2} & \cdots & \frac{\partial x_2}{\partial w_N} \\
+\vdots & \vdots & \ddots & \vdots \\
+\frac{\partial x_N}{\partial w_1} & \frac{\partial x_N}{\partial w_2} & \cdots & \frac{\partial x_N}{\partial w_N}
+\end{pmatrix}.
+\]
 
 \textbf{A. Symmetry (Young’s theorem)}
 
@@ -803,9 +881,6 @@ Own-price effects are nonpositive.
 
 
 
-
-\subsection*{(continued)}
-
 \textbf{C. Fundamental inequality of cost minimization}
 
 \[
@@ -824,11 +899,11 @@ Adding these two inequalities and rearranging yields
 (x^1 - x^2)\cdot (w^1 - w^2) \le 0.
 \]
 
-\begin{tcolorbox}
+\begin{tcolorbox}[breakable]
 
-\subsection*{Exercise 2}
+\subsection*{Exercise 2-2}
 
-Derive a cost function consistent with the CES production function
+Derive a cost function that is consistent with the CES production function
 \[
 y = \left(a x_1^{\rho} + b x_2^{\rho}\right)^{1/\rho},
 \qquad a>0,\; b>0.
@@ -836,9 +911,9 @@ y = \left(a x_1^{\rho} + b x_2^{\rho}\right)^{1/\rho},
 
 \end{tcolorbox}
 
-\begin{tcolorbox}
+\begin{tcolorbox}[breakable]
 
-\subsection*{Exercise 3}
+\subsection*{Exercise 2-3}
 
 Suppose the cost function is
 \[
@@ -850,9 +925,9 @@ Derive the corresponding production function.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}
+\begin{tcolorbox}[breakable]
 
-\subsection*{Exercise 4}
+\subsection*{Exercise 2-4}
 
 If the technology has nonincreasing, constant, or nondecreasing returns to scale,
 show that
@@ -861,16 +936,16 @@ c(w,ty) \le t\,c(w,y)
 \]
 for $0<t<1$, for all $t$, or for all $t>1$, respectively.
 
-If output is one-dimensional and there are constant returns to scale, show that
+If y is one-dimensional and there are constant returns to scale, show that
 \[
 c(w,y)=y\,c(w,1).
 \]
 
 \end{tcolorbox}
 
-\begin{tcolorbox}
+\begin{tcolorbox}[breakable]
 
-\subsection*{Exercise 5}
+\subsection*{Exercise 2-5}
 
 Consider a single-output production function
 \[
@@ -883,7 +958,7 @@ The elasticity of scale is defined as
 =
 \sum_{i=1}^N \frac{\partial f(x)}{\partial x_i}\frac{x_i}{y}
 =
-\sum_{i=1}^N e_i.
+\sum_{i=1}^N \epsilon_i.
 \]
 That is, the elasticity of scale is the sum of the individual scale elasticities.
 
@@ -891,7 +966,7 @@ Let the corresponding cost function be $c(w,y)$.
 
 Define the elasticity of size by
 \[
-\mathcal{E}^*(w,y)
+\frac{1}{\mathcal{E}^*(w,y)}
 =
 \frac{\partial c(w,y)}{\partial y}\frac{y}{c(w,y)}.
 \]
@@ -905,13 +980,15 @@ when cost-minimizing inputs are chosen.
 \end{tcolorbox}
 
 
-\begin{tcolorbox}
 
-\subsection*{Exercise 6}
+
+\begin{tcolorbox}[breakable]
+
+\subsection*{Exercise 2-6}
 
 Suppose
 \[
-c(w,y)=y\,e(w)
+c(w,y)=y\,c(w)
 \]
 is the cost function, and $p$ is the output price.
 
@@ -926,18 +1003,18 @@ D(p)=y.
 \]
 
 Derive the response of input demand $x_i$ to a change in input price $w_j$,
-that is,
+or in elasticity form
 \[
-\frac{\partial x_i}{\partial w_j},
-\]
-or in elasticity form.
+\frac{\partial x_i}{\partial w_j} \frac{w_j}{x_i},
+\].
 
 If the effect can be decomposed into multiple parts, show the decomposition.
 
 \end{tcolorbox}
 
 
-\subsection*{2.2 Revenue Function}
+
+\subsection{Revenue Function}
 
 The revenue function is defined as
 \[
@@ -955,47 +1032,23 @@ y(p,x).
 \subsection*{Properties of the Revenue Function}
 
 \begin{itemize}
-    \item[R.1] 
-    \[
-    R(p,x)>0
-    \]
-    \hfill (nonnegativity)
+    \item[R.1] $R(p,x)>0$\\
+    (nonnegativity)
 
-    \item[R.2] If $p \le p'$, then
-    \[
-    R(p,x) \le R(p',x)
-    \]
-    \hfill (nondecreasing in $p$)
+    \item[R.2] If $p \le p'$, then $R(p,x) \le R(p',x)$\\
+    (nondecreasing in $p$)
 
-    \item[R.3]
-    \[
-    R(tp+(1-t)p',x)
-    \le
-    tR(p,x)+(1-t)R(p',x),
-    \qquad 0\le t\le 1
-    \]
-    \hfill (convex in $p$)
+    \item[R.3] $R(tp+(1-t)p',x) \le tR(p,x)+(1-t)R(p',x),$\\
+    $0\le t\le 1$\\
+    (convex in $p$)
 
-    \item[R.4]
-    \[
-    R(tp,x)=tR(p,x),
-    \qquad t>0
-    \]
-    \hfill (homogeneous of degree 1 in $p$)
+    \item[R.4] $R(tp,x)=tR(p,x),$\\
+    $t>0$\\
+    (homogeneous of degree 1 in $p$)
 
-    \item[R.5] If $x' \ge x$, then
-    \[
-    R(p,x') \ge R(p,x)
-    \]
-    \hfill (nondecreasing in $x$)
-\end{itemize}
+    \item[R.5] If $x' \ge x$, then $R(p,x') \ge R(p,x)$\\
+    (nondecreasing in $x$)
 
-
-
-
-\subsection*{(continued)}
-
-\begin{itemize}
     \item[R.6] If $R(p,x)$ is differentiable in $p$, then a unique
     revenue-maximizing output vector exists, and
     \[
@@ -1004,6 +1057,7 @@ y(p,x).
     \]
     This is the \textbf{Samuelson--McFadden lemma}.
 \end{itemize}
+
 
 \subsection*{Comparative Statics}
 
@@ -2036,26 +2090,26 @@ By symmetry with the input-distance case, we obtain:
 (5)\qquad
 R(p,x)
 =
-\max \{ p\cdot y : D^O(x,y)\le 1 \},
+\max \{ p\cdot y : D_o(x,y)\le 1 \},
 \]
 
 \[
 (6)\qquad
 R(p,x)
 =
-\max_y \left\{ \frac{p\cdot y}{D^O(x,y)} \right\},
+\max_y \left\{ \frac{p\cdot y}{D_o(x,y)} \right\},
 \]
 
 \[
 (7)\qquad
-D^O(x,y)
+D_o(x,y)
 =
 \max \{ p\cdot y : R(p,x)\le 1 \},
 \]
 
 \[
 (8)\qquad
-D^O(x,y)
+D_o(x,y)
 =
 \max_p \left\{ \frac{p\cdot y}{R(p,x)} \right\}.
 \]
@@ -2097,7 +2151,7 @@ The optimal solution is given by some price vector $p^D$.
 
 The maximized value of $\theta$ is exactly equal to the output distance function:
 \[
-D^O(x,y)=\max_p \frac{p\cdot y}{R(p,x)}.
+D_o(x,y)=\max_p \frac{p\cdot y}{R(p,x)}.
 \]
 
 
@@ -2106,12 +2160,12 @@ D^O(x,y)=\max_p \frac{p\cdot y}{R(p,x)}.
 
 Thus,
 \[
-\max \theta = OD = \frac{OB}{OC} = p^D \cdot y^B = D^O(x,y).
+\max \theta = OD = \frac{OB}{OC} = p^D \cdot y^B = D_o(x,y).
 \]
 
 This explains why
 \[
-D^O(x,y)=\max_p \{p\cdot y : R(p,x)=1\}.
+D_o(x,y)=\max_p \{p\cdot y : R(p,x)=1\}.
 \]
 
 \begin{tcolorbox}
@@ -2126,7 +2180,7 @@ Illustrate (7) using a diagram similar to Figure 14.
 
 Using (5), construct the Lagrangian:
 \[
-\mathcal{L}=p\cdot y + \lambda(1 - D^O(x,y)).
+\mathcal{L}=p\cdot y + \lambda(1 - D_o(x,y)).
 \]
 
 The solutions are $y(p,x)$ and $\lambda(p,x)$.
@@ -2135,7 +2189,7 @@ Applying the envelope theorem:
 \[
 \nabla_x R(p,x)
 =
--\lambda(p,x)\nabla_x D^O(x,y(p,x)),
+-\lambda(p,x)\nabla_x D_o(x,y(p,x)),
 \]
 \[
 \nabla_p R(p,x)=y(p,x).
@@ -2143,22 +2197,22 @@ Applying the envelope theorem:
 
 The first-order condition is
 \[
-p = \lambda \nabla_y D^O(x,y).
+p = \lambda \nabla_y D_o(x,y).
 \]
 
 Thus,
 \[
 p\cdot y(p,x)
 =
-\lambda(p,x)\bigl[\nabla_y D^O(x,y)\cdot y\bigr]
+\lambda(p,x)\bigl[\nabla_y D_o(x,y)\cdot y\bigr]
 =
-\lambda(p,x) D^O(x,y)
+\lambda(p,x) D_o(x,y)
 \]
 (by homogeneity of degree 1).
 
 If we restrict attention to efficient observations where
 \[
-D^O(x,y)=1,
+D_o(x,y)=1,
 \]
 then
 \[
@@ -2167,7 +2221,7 @@ p\cdot y(p,x)=R(p,x)=\lambda(p,x).
 
 Substituting back:
 \[
-p = R(p,x)\nabla_y D^O(x,y).
+p = R(p,x)\nabla_y D_o(x,y).
 \]
 
 \medskip
@@ -2180,8 +2234,8 @@ If $p_1$ is observed but $p_2$ is not, then
 \[
 \frac{p_2}{p_1}
 =
-\frac{\partial D^O(x,y)/\partial y_2}
-{\partial D^O(x,y)/\partial y_1},
+\frac{\partial D_o(x,y)/\partial y_2}
+{\partial D_o(x,y)/\partial y_1},
 \]
 
 which is the marginal rate of transformation (MRT).
