@@ -213,9 +213,10 @@ a given input bundle $x$.
     \]
 \end{itemize}
 
-\begin{tcolorbox}
+\begin{tcolorbox}[breakable]
 
-\subsection*{Exercise 1}
+\subsection*{Exercise 2-1}
+
 
 Prove Y.1--Y.7.
 
@@ -235,14 +236,13 @@ The frontiers of $T$, $V(y)$, and $Y(x)$ are, respectively,
 Thus, $T$, $V(y)$, and $Y(x)$ convey almost identical information
 about production technology.
 
-\subsection*{Example 1}
-
-Representing CRS technology:
-
 
 
 
 \subsection*{Example 1 (CRS Technology)}
+
+Representing CRS technology:
+
 
 The technology set $T$ exhibits \textbf{constant returns to scale (CRS)} if
 \[
@@ -254,42 +254,46 @@ The technology set $T$ exhibits \textbf{constant returns to scale (CRS)} if
 
 Under CRS,
 \[
+\begin{aligned}
 V(\theta y)
-=
-\{x : (x,\theta y)\in T\}
-=
-\{x : (x/\theta, y)\in T\}
-=
-\theta \{x/\theta : (x/\theta,y)\in T\}
-=
+&=
+\{x : (x,\theta y)\in T\}\\
+&=
+\{x : (x/\theta, y)\in T\}\\
+&=
+\theta \{x/\theta : (x/\theta,y)\in T\}\\
+&=
 \theta V(y).
-\]
+\end{aligned}\]
 
 Similarly,
 \[
+\begin{aligned}
 Y(\theta x)
-=
-\{y : (\theta x,y)\in T\}
-=
-\{y : (x, y/\theta)\in T\}
-=
-\theta \{y/\theta : (x,y/\theta)\in T\}
-=
+&=
+\{y : (\theta x,y)\in T\}\\
+&=
+\{y : (x, y/\theta)\in T\}\\
+&=
+\theta \{y/\theta : (x,y/\theta)\in T\}\\
+&=
 \theta Y(x).
-\]
+\end{aligned}\]
 
-\subsection*{1.4 Production or Transformation Function}
+\subsection{Production or Transformation Function}
 
-\subsection*{1.4.1 A Production Function}
+\subsubsection{A Production Function}
 
 The production function is defined as
 \[
+\begin{aligned}
 f(x)
-=
-\max \{y : (x,y)\in T\}
-=
-\max \{y \in Y(x)\},
-\qquad y \in \mathbb{R}_+.
+&=
+\max \{y : (x,y)\in T\}\\
+&=
+\max \{y \in Y(x)\},\\
+&y \in \mathbb{R}_+.
+\end{aligned}
 \]
 
 \subsection*{Properties of the Production Function}
@@ -340,7 +344,7 @@ is convex, it follows that $f(x)$ is quasiconcave.
 
 
 
-\subsection*{1.4.2 A Transformation Function}
+\subsubsection{A Transformation Function}
 
 A transformation function is an implicit representation of technology.
 
@@ -358,9 +362,10 @@ Y(x,y)=y - f(x)=0.
 
 Note that
 \[
-V(y)=\{x : Y(x,y)\le 0\},
-\qquad
-Y(x)=\{y : Y(x,y)\le 0\}.
+\begin{aligned}
+&V(y)=\{x : Y(x,y)\le 0\},\\
+&Y(x)=\{y : Y(x,y)\le 0\}.
+\end{aligned}
 \]
 
 \subsection*{Properties of the Transformation Function}
@@ -368,10 +373,12 @@ Y(x)=\{y : Y(x,y)\le 0\}.
 \begin{itemize}
     \item[J.1] If $Y(x_0,y_0)\le 0$ and $Y(x,y)\le 0$, then
     \[
-    Y(\theta x_0+(1-\theta)x,\ \theta y_0+(1-\theta)y)
-    \le
-    \theta Y(x_0,y_0)+(1-\theta)Y(x,y)
-    \quad (\text{convexity}).
+    \begin{aligned}
+    &Y(\theta x_0+(1-\theta)x,\ \theta y_0+(1-\theta)y)\\
+    &\le
+    \theta Y(x_0,y_0)+(1-\theta)Y(x,y)\\
+    &(\text{convexity}).
+    \end{aligned}
     \]
 
     \item[J.2] If $Y(x,y)\le 0$, then
@@ -385,12 +392,12 @@ Y(x)=\{y : Y(x,y)\le 0\}.
     \]
 \end{itemize}
 
-\subsection*{1.5 Output and Input Distance Functions}
+\subsection{Output and Input Distance Functions}
 
-\subsection*{1.5.1 Output Distance Function}
+\subsubsection{Output Distance Function}
 
 \[
-D^O(x,y)
+D_o(x,y)
 =
 \inf \{\theta > 0 : y/\theta \in Y(x)\}.
 \]
@@ -404,26 +411,143 @@ That is, it pushes $y$ as far as possible away from the origin along
 the ray through $y$, while remaining in the feasible set $Y(x)$.
 
 
-\subsection*{(continued)}
+\subsection*{Output Distance Function}
 
-From the properties of the output distance function,
+The value of the output distance function at point $a$ for $b$ on the edge is $\frac{0a}{0b}$.
+Notice that
 \[
-D^O(x,y+y') \le D^O(x,y) + D^O(x,y').
+y \in Y(x) \;\Longleftrightarrow\; D_o(x,y) \le 1.
 \]
 
-Let $y = \lambda y$ and $y' = (1-\lambda)y'$. Then,
+
+\begin{itemize}
+    \item[$D_o$.1] $D_o(x,0)=0$, and $D_o(0,y)=+\infty \;\; \text{if } y \ne 0.$
+
+    \item[$D_o$.2] $D_o(x',y) \le D_o(x,y)$ if $x \le x'$\\
+    \text{(non-increasing in $x$)}.
+    
+    \item[$D_o$.3] $D_o(x,y) \ge D_o(x,y') \quad \text{if } y' \le y $\\
+    \text{(non-decreasing in $y$)}.
+    
+    \item[$D_o$.4] $D_o(x,\mu y) = \mu D_o(x,y), \quad \mu > 0$\\
+    \text{(homogeneous of degree 1 in $y$)}.
+    
+    \item[$D_o$.5] $D_o\bigl(x, \lambda y + (1-\lambda)y'\bigr) \le \lambda D_o(x,y) + (1-\lambda) D_o(x,y'),$
+    $\quad 0 \le \lambda \le 1$
+    $\quad \text{(convex in $y$)}.$
+\end{itemize}
+
+\subsubsection*{Proof}
+
+First,
 \[
-D^O(x, \lambda y + (1-\lambda)y')
+D_o(x,0_M)
+=
+\inf \{\theta > 0 : 0_M \in Y(x)\}
+= 0,
+\]
+since $0_M \in Y(x)$.
+
+If $y \ne 0$, then $y \notin Y(0_N)$, hence
+\[
+D_o(0_N,y) = +\infty.
+\]
+
+By monotonicity of the production set (Y.4),
+\[
+x' \ge x \;\Rightarrow\; Y(x') \supseteq Y(x),
+\]
+so
+\[
+D_o(x',y) \le D_o(x,y).
+\]
+
+Monotonicity in outputs ($D_o$.3) follows from free disposability (Y.5).
+
+For homogeneity,
+\[
+D_o(x,\mu y)
+=
+\inf \{\theta > 0 : \mu y/\theta \in Y(x)\}.
+\]
+Let $\theta = \mu t$. Then
+\[
+D_o(x,\mu y)
+=
+\mu \inf \{t > 0 : y/t \in Y(x)\}
+=
+\mu D_o(x,y).
+\]
+
+Before we prove $D_o$.5, we first show that $D_o(x,y)$ is subadditive in outputs:
+\[
+D_o(x,y+y') \le D_o(x,y) + D_o(x,y').
+\]
+
+From $D_o$.4, we know that
+\[
+D_o\left(x,\frac{y}{D_o(x,y)}\right)
+=
+\frac{1}{D_o(x,y)} D_o(x,y)
+=1.
+\]
+
+Therefore,
+\[
+\frac{y}{D_o(x,y)} \in Y(x),
+\qquad
+\frac{y'}{D_o(x,y')} \in Y(x).
+\]
+
+Because $Y(x)$ is convex, it follows that
+\[
+\lambda \frac{y}{D_o(x,y)}
++
+(1-\lambda)\frac{y'}{D_o(x,y')}
+\in Y(x),
+\qquad 0 < \lambda < 1.
+\]
+
+Let
+\[
+\lambda = \frac{D_o(x,y)}{D_o(x,y)+D_o(x,y')}.
+\]
+
+Then,
+\[
+\frac{y+y'}{D_o(x,y)+D_o(x,y')} \in Y(x).
+\]
+
+Therefore,
+\[
+D_o\left(x,\frac{y+y'}{D_o(x,y)+D_o(x,y')}\right) \le 1.
+\]
+
+By $D_o$.4, this implies
+\[
+D_o(x,y+y') \le D_o(x,y) + D_o(x,y').
+\]
+
+Finally, take $y=\lambda y$ and $y'=(1-\lambda)y'$. Then
+\[
+D_o(x,y+y')
+=
+D_o\bigl(x,\lambda y + (1-\lambda)y'\bigr)
+\]
+\[
 \le
-\lambda D^O(x,y) + (1-\lambda)D^O(x,y'),
+D_o(x,y) + D_o(x,y')
+=
+\lambda D_o(x,y) + (1-\lambda)D_o(x,y').
 \]
-which shows convexity of $D^O(x,y)$ in $y$.
-\hfill $\blacksquare$
 
-\subsection*{1.5.2 Input Distance Function}
+
+
+
+\subsubsection{Input Distance Function}
 
 \[
-D^I(x,y)
+D_i(x,y)
 =
 \sup \{\lambda > 0 : x/\lambda \in V(y)\}.
 \]
@@ -437,45 +561,25 @@ of the input vector $x$ along the ray through $x$ while remaining feasible.
 
 Note that
 \[
-x \in V(y) \;\Longleftrightarrow\; D^I(x,y) \ge 1.
+x \in V(y) \;\Longleftrightarrow\; D_i(x,y) \ge 1.
 \]
 
 \subsection*{Properties of the Input Distance Function}
 
 \begin{itemize}
-    \item[Di.1] 
-    \[
-    D^I(x,0)=+\infty \text{ if } x \ne 0,
-    \qquad
-    D^I(0,y)=0.
-    \]
-
-    \item[Di.2] 
-    \[
-    D^I(x,y') \le D^I(x,y)
-    \quad \text{if } y \le y'
-    \]
+    \item[$D_i$.1] $D_i(x,0)=+\infty \text{ if } x \ne 0, D_i(0,y)=0.$
+    
+    \item[$D_i$.2] $D_i(x,y') \le D_i(x,y)$\\
+    if $y \le y'$\\
     (non-increasing in $y$).
 
-    \item[Di.3] 
-    \[
-    D^I(x,y) \le D^I(x',y)
-    \quad \text{if } x' \le x
-    \]
+    \item[$D_i$.3] $D_i(x,y) \le D_i(x',y)$ \qquad if $x' \le x$\\
     (non-decreasing in $x$).
 
-    \item[Di.4] 
-    \[
-    D^I(\mu x,y)=\mu D^I(x,y), \qquad \mu>0
-    \]
+    \item[$D_i$.4] $D_i(\mu x,y)=\mu D_i(x,y), \qquad \mu>0$\\
     (homogeneous of degree 1 in $x$).
 
-    \item[Di.5] 
-    \[
-    D^I(\lambda x+(1-\lambda)x',y)
-    \ge
-    \lambda D^I(x,y)+(1-\lambda)D^I(x',y)
-    \]
+    \item[$D_i$.5] $D_i(\lambda x+(1-\lambda)x',y) \ge \lambda D_i(x,y)+(1-\lambda)D_i(x',y)$
     (concave in $x$).
 \end{itemize}
 
@@ -488,7 +592,7 @@ function and the input distance function.
 
 However, under constant returns to scale (CRS),
 \[
-D^O(x,y) = \frac{1}{D^I(x,y)}.
+D^O(x,y) = \frac{1}{D_i(x,y)}.
 \]
 
 
@@ -527,7 +631,7 @@ D^O(x,y)
 =
 \frac{1}{\max \{ \lambda > 0 : x/\lambda \in V(y)\}}
 =
-\frac{1}{D^I(x,y)}.
+\frac{1}{D_i(x,y)}.
 \quad \blacksquare
 \]
 
@@ -1741,26 +1845,26 @@ distance function and the cost function:
 (1)\qquad
 c(w,y)
 =
-\min \{w\cdot x : D^I(x,y)\ge 1\},
+\min \{w\cdot x : D_i(x,y)\ge 1\},
 \]
 
 \[
 (2)\qquad
 c(w,y)
 =
-\min_x \left\{ \frac{w\cdot x}{D^I(x,y)} \right\},
+\min_x \left\{ \frac{w\cdot x}{D_i(x,y)} \right\},
 \]
 
 \[
 (3)\qquad
-D^I(x,y)
+D_i(x,y)
 =
 \min \{ w\cdot x : c(w,y)\ge 1\},
 \]
 
 \[
 (4)\qquad
-D^I(x,y)
+D_i(x,y)
 =
 \min_w \left\{ \frac{w\cdot x}{c(w,y)} \right\}.
 \]
@@ -1769,14 +1873,14 @@ D^I(x,y)
 
 Relation (1) is immediate from the definition, since
 \[
-D^I(x,y)\ge 1
+D_i(x,y)\ge 1
 \quad \Longleftrightarrow \quad
 x \in V(y).
 \]
 
 Now,
 \[
-D^I(x,y)
+D_i(x,y)
 =
 \max \left\{ \lambda : \frac{x}{\lambda}\in V(y) \right\}.
 \]
@@ -1790,7 +1894,7 @@ w\cdot \frac{x}{\lambda} \ge c(w,y)
 \]
 we obtain
 \[
-D^I(x,y)
+D_i(x,y)
 =
 \max \left\{ \lambda : \lambda \le \frac{w\cdot x}{c(w,y)}
 \quad \forall w>0 \right\}.
@@ -1798,7 +1902,7 @@ D^I(x,y)
 
 Therefore,
 \[
-D^I(x,y)
+D_i(x,y)
 =
 \min_w \left\{ \frac{w\cdot x}{c(w,y)} \right\},
 \]
@@ -1915,7 +2019,7 @@ By this theorem, (1) implies (2), and (4) implies (3).
 
 Consider the input distance function
 \[
-D^I(x,y)=\frac{x}{\sqrt{y_1^2+y_2^2}}.
+D_i(x,y)=\frac{x}{\sqrt{y_1^2+y_2^2}}.
 \]
 
 Derive the conditional factor demand functions and the cost function
