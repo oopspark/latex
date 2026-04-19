@@ -1,0 +1,10 @@
+{
+	"aligned": {
+		"prefix": "al",
+		"body": [
+			"\\begin{aligned}",
+			"(${TM_SELECTED_TEXT}",
+			"\\end{aligned}"
+		]
+	}
+}

@@ -42,6 +42,7 @@ Decision rule:
 \[
 \text{Reject } H_0 \text{ if } \lambda \ge \lambda_0
 \]
+$\lambda_0$ is a constant chosen on the basis of the relative cost of type-1 versus type-2 errors.
 
 \subsection{p-value Rule}
 
@@ -50,58 +51,492 @@ p = P(\lambda \ge \lambda_T \mid H_0)
 \]
 
 \[
-\text{Reject } H_0 \text{ if } p \le \alpha
-\]
-
-\section{Example: Mean Test}
-
-\[
-H_0: \beta = \beta_0
-\quad
-H_1: \beta \neq \beta_0
-\]
-
-Test statistic:
-\[
-t = \frac{\hat{\beta} - \beta_0}{\sqrt{\hat{\sigma}^2/T}}
+\text{Reject } H_0 
 \]
 
 \[
-t \sim t(T-1)
-\]
-
-\section{Variance Test}
-
-\[
-H_0: \sigma^2 = \sigma_0^2
+\text{ if } \lambda_T \ge \lambda_0
 \]
 
 \[
-S = \frac{(T-1)\hat{\sigma}^2}{\sigma_0^2}
+hence, \quad p \le \alpha
 \]
 
+
+\section{Example 1: Mean Test}
+
+Let $(Y_1,\dots,Y_T)$ be a random sample from
 \[
-S \sim \chi^2(T-1)
+Y_t \sim N(\beta,\sigma^2).
 \]
 
-Reject if
+Consider the hypotheses
 \[
-S \ge S_U \quad \text{or} \quad S \le S_L
+H_0:\beta=\beta_0,
+\qquad
+H_1:\beta\neq\beta_0.
 \]
 
-\section{Equality of Variances}
+\paragraph{Likelihood function.}
 
+The likelihood function of the sample is
 \[
-H_0: \sigma_1^2 = \sigma_2^2
+L(\beta,\sigma^2)
+=
+(2\pi\sigma^2)^{-T/2}
+\exp\!\left(
+-\frac{1}{2\sigma^2}
+\sum_{t=1}^T (Y_t-\beta)^2
+\right).
 \]
 
+The maximum likelihood estimators are
 \[
-F = \frac{\hat{\sigma}_1^2}{\hat{\sigma}_2^2}
+\hat{\beta} = \frac{1}{T}\sum_{t=1}^T Y_t,
+\qquad
+\hat{\sigma}^2 = \frac{1}{T}\sum_{t=1}^T (Y_t-\hat{\beta})^2.
 \]
 
+Under $H_0$, define
 \[
-F \sim F(T_1-1, T_2-1)
+\hat{\sigma}_0^2 = \frac{1}{T}\sum_{t=1}^T (Y_t-\beta_0)^2.
 \]
+
+The maximized likelihoods are
+\[
+l^*(\Omega)
+=
+(2\pi\hat{\sigma}^2)^{-T/2} e^{-T/2},
+\qquad
+l^*(\Omega_0)
+=
+(2\pi\hat{\sigma}_0^2)^{-T/2} e^{-T/2}.
+\]
+
+
+\paragraph{Simplification of the likelihood.}
+
+Note that
+\[
+\hat{\sigma}^2
+=
+\frac{1}{T}\sum_{t=1}^T (Y_t-\hat{\beta})^2.
+\]
+
+Hence,
+\[
+\sum_{t=1}^T \frac{(Y_t-\hat{\beta})^2}{\hat{\sigma}^2}
+=
+\frac{\sum_{t=1}^T (Y_t-\hat{\beta})^2}
+{\frac{1}{T}\sum_{t=1}^T (Y_t-\hat{\beta})^2}
+=
+T.
+\]
+
+
+
+\paragraph{Likelihood ratio.}
+
+The likelihood ratio is
+\[
+\lambda
+=
+\frac{l^*(\Omega)}{l^*(\Omega_0)}
+=
+\left(
+\frac{\hat{\sigma}_0^2}{\hat{\sigma}^2}
+\right)^{T/2}.
+\]
+
+Since the distribution of $\lambda$ is not convenient, consider the monotonic transformation
+\[
+\lambda^*
+=
+(T-1)\left(\lambda^{2/T} - 1\right).
+\]
+After simplification, we obtain
+\begin{align*}
+\lambda^*
+&=
+(T-1)\frac{\hat{\sigma}_0^2-\hat{\sigma}^2}{\hat{\sigma}^2} \\
+&=
+(T-1)
+\frac{
+\frac{1}{T}\sum_{t=1}^T (Y_t-\beta_0)^2
+-
+\frac{1}{T}\sum_{t=1}^T (Y_t-\hat{\beta})^2
+}{
+\frac{1}{T}\sum_{t=1}^T (Y_t-\hat{\beta})^2
+} \\
+&=
+(T-1)
+\frac{
+\sum_{t=1}^T (Y_t-\beta_0)^2
+-
+\sum_{t=1}^T (Y_t-\hat{\beta})^2
+}{
+\sum_{t=1}^T (Y_t-\hat{\beta})^2
+}.
+\end{align*}
+
+Expanding the squares in the numerator,
+\begin{align*}
+\sum_{t=1}^T 
+&(Y_t-\beta_0)^2
+-
+\sum_{t=1}^T (Y_t-\hat{\beta})^2\\
+&=
+\sum_{t=1}^T
+\Bigl[
+(Y_t^2 - 2Y_t\beta_0 + \beta_0^2)
+-
+(Y_t^2 - 2Y_t\hat{\beta} + \hat{\beta}^2)
+\Bigr] \\
+&=
+\sum_{t=1}^T
+\Bigl[
+-2Y_t\beta_0 + \beta_0^2 + 2Y_t\hat{\beta} - \hat{\beta}^2
+\Bigr].
+\end{align*}
+
+Using
+\[
+\hat{\beta}=\frac{1}{T}\sum_{t=1}^T Y_t,
+\qquad\text{so that}\qquad
+\sum_{t=1}^T Y_t = T\hat{\beta},
+\]
+we get
+\begin{align*}
+\sum_{t=1}^T 
+&(Y_t-\beta_0)^2
+-
+\sum_{t=1}^T (Y_t-\hat{\beta})^2\\
+&=
+-2\beta_0 \sum_{t=1}^T Y_t
++ T\beta_0^2
++ 2\hat{\beta}\sum_{t=1}^T Y_t
+- T\hat{\beta}^2 \\
+&=
+-2T\hat{\beta}\beta_0
++ T\beta_0^2
++ 2T\hat{\beta}^2
+- T\hat{\beta}^2 \\
+&=
+T(\hat{\beta}-\beta_0)^2.
+\end{align*}
+
+Therefore,
+\[
+\lambda^*
+=
+(T-1)\frac{T(\hat{\beta}-\beta_0)^2}{\sum_{t=1}^T (Y_t-\hat{\beta})^2}.
+\]
+
+Now define the unbiased sample variance
+\[
+\hat{\sigma}_u^2
+=
+\frac{1}{T-1}\sum_{t=1}^T (Y_t-\hat{\beta})^2.
+\]
+
+Then
+\[
+\sum_{t=1}^T (Y_t-\hat{\beta})^2
+=
+(T-1)\hat{\sigma}_u^2,
+\]
+so that
+\[
+\lambda^*
+=
+\frac{T(\hat{\beta}-\beta_0)^2}{\hat{\sigma}_u^2}
+=
+\frac{(\hat{\beta}-\beta_0)^2}{\hat{\sigma}_u^2/T}.
+\]
+
+\paragraph{Distribution of the test statistic.}
+
+Under the normality assumption, we have
+\[
+\frac{\sqrt{T}(\hat{\beta}-\beta)}{\sigma}
+\sim N(0,1),
+\qquad
+\frac{(T-1)\hat{\sigma}_u^2}{\sigma^2}
+\sim \chi^2(T-1),
+\]
+and these two quantities are independent.
+
+Under $H_0$, it follows that
+\[
+\lambda^*
+=
+\frac{\left[\frac{\sqrt{T}(\hat{\beta}-\beta_0)}{\sigma}\right]^2}
+{\frac{(T-1)\hat{\sigma}_u^2}{\sigma^2}/(T-1)}.
+\]
+
+Hence, $\lambda^*$ is the ratio of two independent chi-square variables,
+so that
+\[
+\lambda^* \sim F(1,T-1).
+\]
+
+\paragraph{Equivalent $t$-statistic.}
+
+Taking the square root,
+\[
+t
+=
+\frac{\hat{\beta}-\beta_0}{\sqrt{\hat{\sigma}_u^2/T}},
+\]
+we obtain
+\[
+t \sim t(T-1).
+\]
+
+\paragraph{Test procedure.}
+
+\begin{enumerate}
+\item Choose significance level $\alpha$.
+\item Compute
+\[
+t = \frac{\hat{\beta}-\beta_0}{\sqrt{\hat{\sigma}_u^2/T}}.
+\]
+\item Find the critical value $t_{\alpha/2,T-1}$.
+\item Reject $H_0$ if $|t| \ge t_{\alpha/2,T-1}$.
+\end{enumerate}
+\section{Example 2: Variance Test}
+
+Let $(Y_1,\dots,Y_T)$ be a random sample from
+\[
+Y_t \sim N(\beta,\sigma^2).
+\]
+
+We want to test
+\[
+H_0:\sigma^2=\sigma_0^2,
+\qquad
+H_1:\sigma^2\neq\sigma_0^2,
+\]
+where $\sigma_0^2$ is known.
+
+\paragraph{Likelihood function.}
+
+The likelihood function of the sample is
+\[
+L(\beta,\sigma^2)
+=
+(2\pi\sigma^2)^{-T/2}
+\exp\!\left(
+-\frac{1}{2\sigma^2}
+\sum_{t=1}^T (Y_t-\beta)^2
+\right).
+\]
+
+The maximum likelihood estimators are
+\[
+\hat{\beta} = \frac{1}{T}\sum_{t=1}^T Y_t,
+\qquad
+\hat{\sigma}^2 = \frac{1}{T}\sum_{t=1}^T (Y_t-\hat{\beta})^2.
+\]
+
+\paragraph{Maximized likelihoods.}
+
+The maximized likelihood functions are
+\[
+l^*(\Omega)
+=
+(2\pi\hat{\sigma}^2)^{-T/2} e^{-T/2},
+\]
+and under $H_0$,
+\[
+l^*(\Omega_0)
+=
+(2\pi\sigma_0^2)^{-T/2}
+\exp\!\left(
+-\frac{T}{2}\frac{\hat{\sigma}^2}{\sigma_0^2}
+\right).
+\]
+
+\paragraph{Why these two expressions are different.}
+
+In the unrestricted case, both $\beta$ and $\sigma^2$ are chosen freely to maximize the likelihood.
+Thus, after substituting the maximum likelihood estimators
+\[
+\hat{\beta} = \frac{1}{T}\sum_{t=1}^T Y_t,
+\qquad
+\hat{\sigma}^2 = \frac{1}{T}\sum_{t=1}^T (Y_t-\hat{\beta})^2,
+\]
+we obtain
+\[
+\sum_{t=1}^T \frac{(Y_t-\hat{\beta})^2}{\hat{\sigma}^2}
+=
+\frac{\sum_{t=1}^T (Y_t-\hat{\beta})^2}
+{\frac{1}{T}\sum_{t=1}^T (Y_t-\hat{\beta})^2}
+=
+T.
+\]
+Therefore,
+\[
+\exp\!\left(
+-\frac{1}{2\hat{\sigma}^2}
+\sum_{t=1}^T (Y_t-\hat{\beta})^2
+\right)
+=
+\exp(-T/2),
+\]
+which explains the simplified form of $l^*(\Omega)$.
+
+Under the null hypothesis, however, $\sigma^2$ is no longer free: it is fixed at the known value $\sigma_0^2$.
+Only $\beta$ is estimated, and its restricted maximum likelihood estimator is still
+\[
+\hat{\beta} = \frac{1}{T}\sum_{t=1}^T Y_t.
+\]
+Hence the exponent becomes
+\[
+-\frac{1}{2\sigma_0^2}\sum_{t=1}^T (Y_t-\hat{\beta})^2.
+\]
+Using
+\[
+\sum_{t=1}^T (Y_t-\hat{\beta})^2 = T\hat{\sigma}^2,
+\]
+this can be written as
+\[
+-\frac{1}{2\sigma_0^2}\sum_{t=1}^T (Y_t-\hat{\beta})^2
+=
+-\frac{1}{2\sigma_0^2}\,T\hat{\sigma}^2
+=
+-\frac{T}{2}\frac{\hat{\sigma}^2}{\sigma_0^2}.
+\]
+Therefore,
+\[
+l^*(\Omega_0)
+=
+(2\pi\sigma_0^2)^{-T/2}
+\exp\!\left(
+-\frac{T}{2}\frac{\hat{\sigma}^2}{\sigma_0^2}
+\right).
+\]
+
+The key point is that in the unrestricted likelihood, $\sigma^2$ is replaced by its own maximum likelihood estimator, so the exponent simplifies to $-T/2$.
+Under $H_0$, by contrast, $\sigma^2$ is fixed at $\sigma_0^2$, so the ratio $\hat{\sigma}^2/\sigma_0^2$ remains in the exponent.
+
+
+\paragraph{Likelihood ratio.}
+
+The likelihood ratio is
+\[
+\lambda
+=
+\frac{l^*(\Omega)}{l^*(\Omega_0)}
+=
+\left(\frac{\hat{\sigma}^2}{\sigma_0^2}\right)^{-T/2}
+\exp\!\left[
+-\frac{T}{2}\left(1-\frac{\hat{\sigma}^2}{\sigma_0^2}\right)
+\right].
+\]
+
+Since $\lambda$ is inconvenient to work with directly, define the statistic
+\[
+S
+=
+\frac{(T-1)\hat{\sigma}_u^2}{\sigma_0^2},
+\]
+where
+\[
+\hat{\sigma}_u^2
+=
+\frac{1}{T-1}\sum_{t=1}^T (Y_t-\hat{\beta})^2
+\]
+is the unbiased estimator of $\sigma^2$.
+
+\paragraph{Distribution of the test statistic.}
+
+Under the normality assumption, we have
+\[
+\frac{(T-1)\hat{\sigma}_u^2}{\sigma^2}
+\sim \chi^2(T-1).
+\]
+
+Under $H_0:\sigma^2=\sigma_0^2$, it follows that
+\[
+S
+=
+\frac{(T-1)\hat{\sigma}_u^2}{\sigma_0^2}
+\sim \chi^2(T-1).
+\]
+
+\paragraph{Interpretation.}
+
+The likelihood ratio $\lambda$ is maximized when $S=T$, and becomes small when $S$ is either very large or very small.
+Thus, the rejection region is two-sided.
+
+\paragraph{Test procedure.}
+
+\begin{enumerate}
+\item Choose significance level $\alpha$.
+\item Find critical values $S_L$ and $S_U$ such that
+\[
+P(S \le S_L)=\frac{\alpha}{2},
+\qquad
+P(S \ge S_U)=\frac{\alpha}{2},
+\]
+using the $\chi^2(T-1)$ distribution.
+\item Compute
+\[
+S = \frac{(T-1)\hat{\sigma}_u^2}{\sigma_0^2}.
+\]
+\item Reject $H_0$ if $S \le S_L$ or $S \ge S_U$.
+Otherwise, fail to reject $H_0$.
+\end{enumerate}
+
+
+
+\section{Example 3: Equality of Variances}
+
+Let
+\[
+Y_1,\dots,Y_{T_1} \sim N(\beta_1,\sigma_1^2),
+\qquad
+X_1,\dots,X_{T_2} \sim N(\beta_2,\sigma_2^2).
+\]
+
+Test
+\[
+H_0:\sigma_1^2=\sigma_2^2,
+\qquad
+H_1:\sigma_1^2\neq\sigma_2^2.
+\]
+
+Define
+\[
+\hat{\sigma}_1^2
+=
+\frac{1}{T_1-1}\sum_{t=1}^{T_1}(Y_t-\bar{Y})^2,
+\qquad
+\hat{\sigma}_2^2
+=
+\frac{1}{T_2-1}\sum_{t=1}^{T_2}(X_t-\bar{X})^2.
+\]
+
+The test statistic is
+\[
+F
+=
+\frac{\hat{\sigma}_1^2}{\hat{\sigma}_2^2}.
+\]
+
+Under $H_0$,
+\[
+F \sim F(T_1-1,T_2-1).
+\]
+
+\paragraph{Test procedure.}
+\begin{enumerate}
+\item Choose $\alpha$.
+\item Find critical values $F_L, F_U$.
+\item Compute $F$.
+\item Reject $H_0$ if $F \le F_L$ or $F \ge F_U$.
+\end{enumerate}
 
 \section{Asymptotic Tests}
 

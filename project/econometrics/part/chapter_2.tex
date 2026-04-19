@@ -26,31 +26,34 @@ Sample moment:
 \hat{\mu}_r = \frac{1}{T} \sum_{t=1}^T Y_t^r
 \]
 
-Population moment:
-\[
-\mu_r = h_r(\theta)
-\]
-
 Estimator:
 \[
-\hat{\mu}_r = h_r(\theta)
+\hat{\mu}_r = h_r(\hat \theta)
 \]
 
 \subsection{Example}
 
 \[
-\hat{\beta}_m = \frac{1}{T} \sum_{t=1}^T Y_t
+\hat{\beta}_m = \frac{1}{T} \sum_{t=1}^T Y_t = \hat{\mu}_1
 \]
 
 \[
-\hat{\sigma}_m^2 = \frac{1}{T} \sum_{t=1}^T (Y_t - \hat{\beta}_m)^2
+\begin{aligned}
+\hat{\sigma}_m^2 
+&= \frac{1}{T} \sum_{t=1}^T (Y_t - \hat{\beta}_m)^2 \\
+&= \hat{\mu}_2 - \hat{\mu}_1^2
+\end{aligned}
 \]
 
 \section{Maximum Likelihood}
 
 Likelihood:
 \[
-L(\theta) = \prod_{t=1}^T f(Y_t|\theta)
+\begin{aligned}
+L(\theta) 
+&= f_T(Y_1, \dots ,Y_t|\theta)\\
+&= \prod_{t=1}^T f(Y_t|\theta) \qquad (i.i.d.)
+\end{aligned}
 \]
 
 Log-likelihood:
@@ -60,34 +63,152 @@ Log-likelihood:
 
 Estimator:
 \[
-\hat{\theta}_{ML} = \arg\max_{\theta \in \Omega} \ell(\theta)
+\begin{aligned}
+\hat{\theta}_{ML} 
+&= \arg\max_{\theta \in \Omega} L(\theta)\\
+&= \arg\max_{\theta \in \Omega} \ell(\theta)
+\end{aligned}
 \]
 
 \subsection{Normal Example}
 
+Let $(Y_1,\dots,Y_T)$ be an i.i.d. sample from
 \[
-\hat{\beta} = \frac{1}{T} \sum_{t=1}^T Y_t
+Y_t \sim N(\beta,\sigma^2),
+\qquad \theta=(\beta,\sigma^2),\ \sigma^2>0.
 \]
 
+The density is
 \[
-\hat{\sigma}^2 = \frac{1}{T} \sum_{t=1}^T (Y_t - \hat{\beta})^2
+f(y_t|\beta,\sigma^2)
+=
+\frac{1}{\sqrt{2\pi\sigma^2}}
+\exp\!\left(-\frac{(y_t-\beta)^2}{2\sigma^2}\right).
 \]
+
+Hence the likelihood is
+\[
+L(\beta,\sigma^2)
+=
+\prod_{t=1}^T f(Y_t|\beta,\sigma^2),
+\]
+and the log-likelihood is
+\[
+\ell(\beta,\sigma^2)
+=
+-\frac{T}{2}\ln(2\pi)
+-\frac{T}{2}\ln(\sigma^2)
+-\frac{1}{2\sigma^2}\sum_{t=1}^T (Y_t-\beta)^2.
+\]
+
+Maximizing $\ell$ yields the first-order conditions:
+\[
+\frac{\partial \ell}{\partial \beta}
+=
+\frac{\sum_{t=1}^T Y_t - T\beta}{\sigma^2}=0,
+\]
+\[
+\frac{\partial \ell}{\partial \sigma^2}
+=
+-\frac{T}{2\sigma^2}
++
+\frac{\sum_{t=1}^T (Y_t-\beta)^2}{2\sigma^4}=0.
+\]
+
+Solving gives the MLE:
+\[
+\hat{\beta}
+=
+\frac{1}{T}\sum_{t=1}^T Y_t,
+\qquad
+\hat{\sigma}^2
+=
+\frac{1}{T}\sum_{t=1}^T (Y_t-\hat{\beta})^2.
+\]
+
+\paragraph{Summary.}
+The log-likelihood is concave in $(\beta,\sigma^2)$, so the first-order conditions characterize the global maximum. 
+For the normal distribution, the MLE coincides with the method of moments:
+the sample mean and (biased) sample variance.
+
+\paragraph{Note:} 
+The maximum likelihood method requires knowing the probability distribution of the Yt’s. (Other methods can be “less demanding”...)
 
 \section{Least Squares}
 
+Assume that the conditional mean of $Y_t$ is given by
 \[
-S(\theta) = \sum_{t=1}^T (Y_t - h_t(\theta))^2
+E(Y_t) = h_t(\theta),
+\qquad t=1,\dots,T,
+\qquad \theta \in \Omega \subset \mathbb{R}^K.
 \]
 
-Estimator:
+Define the error term
 \[
-\hat{\theta}_{LS} = \arg\min_{\theta \in \Omega} S(\theta)
+e_t = Y_t - h_t(\theta),
+\]
+so that $e_t$ is a random variable with mean zero:
+\[
+E(e_t) = E(Y_t) - h_t(\theta) = 0.
+\]
+
+The error sum of squares (ESS) is defined as
+\[
+S(\theta)
+=
+\sum_{t=1}^T (Y_t - h_t(\theta))^2.
+\]
+
+The least squares estimator is
+\[
+\hat{\theta}_{LS}
+=
+\arg\min_{\theta \in \Omega} S(\theta).
 \]
 
 \subsection{Example}
 
+Let $Y_1,\dots,Y_T$ be a sample such that
 \[
-\hat{\beta} = \frac{1}{T} \sum_{t=1}^T Y_t
+E(Y_t) = \beta,
+\]
+and hence $h_t(\beta)=\beta$.
+
+Then the objective function becomes
+\[
+S(\beta)
+=
+\sum_{t=1}^T (Y_t - \beta)^2.
+\]
+
+Since $S(\beta)$ is convex in $\beta$, the first-order condition is sufficient for a minimum:
+\[
+\frac{\partial S}{\partial \beta}
+=
+\sum_{t=1}^T -2(Y_t - \beta)
+=
+0.
+\]
+
+Solving,
+\[
+\hat{\beta}
+=
+\frac{1}{T}\sum_{t=1}^T Y_t.
+\]
+
+\paragraph{Summary.}
+The least squares estimator minimizes the sum of squared deviations from the conditional mean function.
+In this simple case, it coincides with the sample mean.
+
+\paragraph{Note.}
+When $E(Y_t)=\beta$, the least squares, method of moments, and maximum likelihood estimators are identical:
+\[
+\hat{\beta}_{LS}
+=
+\hat{\beta}_{MM}
+=
+\hat{\beta}_{ML}.
 \]
 
 \section{Finite Sample Properties}
@@ -102,56 +223,350 @@ E(\hat{\theta}) = \theta
 
 Smallest variance among unbiased estimators.
 
-\subsection{Cram\'er-Rao Lower Bound}
+\subsection{Cram\'er--Rao Lower Bound}
 
+Let $\hat{\theta}$ be an unbiased estimator of the parameter $\theta \in \mathbb{R}^K$.
+Then, under regularity conditions,
 \[
-V(\hat{\theta}) \ge I(\theta)^{-1}
+\operatorname{Var}(\hat{\theta}) \;\succeq\; I(\theta)^{-1},
+\]
+where
+\[
+I(\theta)
+=
+- E\!\left[\frac{\partial^2 \ell(\theta)}{\partial \theta \,\partial \theta'}\right]
+\]
+is the \emph{information matrix}, and $\ell(\theta)$ is the log-likelihood function.
+
+\paragraph{Interpretation.}
+The matrix $I(\theta)^{-1}$ is called the \emph{Cram\'er--Rao lower bound}.
+It provides a lower bound on the variance--covariance matrix of any unbiased estimator of $\theta$, i.e.
+\[
+\operatorname{Var}(\hat{\theta}) - I(\theta)^{-1}
+\]
+is positive semidefinite.
+
+\paragraph{Efficient estimator.}
+An unbiased estimator $\hat{\theta}$ is said to be \emph{efficient} if
+\[
+\operatorname{Var}(\hat{\theta}) = I(\theta)^{-1}.
+\]
+In this case, no other unbiased estimator has a smaller variance.
+
+\paragraph{Scalar case.}
+If $\theta$ is scalar, then
+\[
+\operatorname{Var}(\hat{\theta}) \ge \frac{1}{I(\theta)}.
 \]
 
-\[
-I(\theta) = -E\left[\frac{\partial^2 \ell}{\partial \theta^2}\right]
-\]
+\paragraph{Note.}
+The information matrix depends on the log-likelihood function, and hence on the full probability distribution of the data.
+Therefore, applying the Cram\'er--Rao bound requires knowledge of the distribution of $Y_t$.
 
-\subsection{BLUE}
+\subsection{Best Linear Unbiased Estimator (BLUE)}
 
+An estimator $\hat{\theta}$ is said to be \emph{best linear unbiased} (BLUE) if:
+
+\begin{itemize}
+\item It is \emph{linear} in the data:
 \[
 \hat{\theta} = \sum_{t=1}^T a_t Y_t
 \]
+for some constants $a_t$.
 
-\section{Variance Estimator}
-
-Biased:
+\item It is \emph{unbiased}:
 \[
-\hat{\sigma}^2 = \frac{1}{T} \sum_{t=1}^T (Y_t - \bar{Y})^2
+E(\hat{\theta}) = \theta.
 \]
 
-Unbiased:
+\item It has the \emph{smallest variance} among all linear unbiased estimators.
+\end{itemize}
+
+\paragraph{Note.}
+The BLUE property does not require knowledge of the full probability distribution of $Y_t$.
+
+\subsubsection{Example 1: Estimation of the Mean}
+
+Let $Y_1,\dots,Y_T$ be a random sample with
 \[
-\hat{\sigma}^2_u = \frac{1}{T-1} \sum_{t=1}^T (Y_t - \bar{Y})^2
+E(Y_t) = \beta,
+\qquad
+V(Y_t) = \sigma^2.
 \]
+
+Consider the estimator
+\[
+\hat{\beta}
+=
+\frac{1}{T}\sum_{t=1}^T Y_t.
+\]
+
+Then
+\[
+E(\hat{\beta})
+=
+\frac{1}{T}\sum_{t=1}^T E(Y_t)
+=
+\beta,
+\]
+so it is unbiased.
+
+Its variance is
+\[
+V(\hat{\beta})
+=
+V\!\left(\frac{1}{T}\sum_{t=1}^T Y_t\right)
+=
+\frac{1}{T^2}\sum_{t=1}^T V(Y_t)
+=
+\frac{\sigma^2}{T}.
+\]
+
+Since $\hat{\beta}$ is linear and has the smallest variance among all linear unbiased estimators,
+it is the \emph{BLUE} of $\beta$.
+
+
+\paragraph{Connection with Cram\'er--Rao Bound.}
+
+
+If, in addition, $Y_t \sim N(\beta,\sigma^2)$, then
+\[
+V(\hat{\beta}) = \frac{\sigma^2}{T} = I(\theta)^{-1}.
+\]
+Hence $\hat{\beta}$ is \emph{efficient}.
+
+\paragraph{Conclusion.}
+In this case,
+\[
+\hat{\beta}_{LS}
+=
+\hat{\beta}_{MM}
+=
+\hat{\beta}_{ML}
+=
+\frac{1}{T}\sum_{t=1}^T Y_t,
+\]
+so all methods coincide.
+\subsection{Variance Estimator}
+
+Let $Y_1,\dots,Y_T$ be a random sample with
+\[
+E(Y_t)=\beta,
+\qquad
+V(Y_t)=\sigma^2.
+\]
+
+Consider the estimator
+\[
+\hat{\sigma}^2
+=
+\frac{1}{T}\sum_{t=1}^T (Y_t - \hat \beta)^2,
+\qquad
+\hat \beta = \frac{1}{T}\sum_{t=1}^T Y_t.
+\]
+
+Using the decomposition
+\[
+Y_t - \hat \beta
+=
+(Y_t - \beta) - (\hat \beta - \beta),
+\]
+we obtain
+\[
+E(\hat{\sigma}^2)
+=
+E\!\left[
+\frac{1}{T}\sum_{t=1}^T (Y_t-\beta)^2
+-
+(\hat \beta-\beta)^2
+\right].
+\]
+
+Hence
+\[
+E(\hat{\sigma}^2)
+=
+\sigma^2 - V(\hat \beta)
+=
+\sigma^2 - \frac{\sigma^2}{T}
+=
+\frac{T-1}{T}\sigma^2
+<
+\sigma^2,
+\]
+so $\hat{\sigma}^2$ is a \emph{biased} estimator.
+
+\paragraph{Unbiased estimator.}
+Define
+\[
+\hat{\sigma}^2_u
+=
+\frac{1}{T-1}\sum_{t=1}^T (Y_t - \hat \beta)^2.
+\]
+
+Since
+\[
+\hat{\sigma}^2_u
+=
+\hat{\sigma}^2 \cdot \frac{T}{T-1},
+\]
+it follows that
+\[
+E(\hat{\sigma}^2_u)
+=
+\sigma^2,
+\]
+so $\hat{\sigma}^2_u$ is unbiased.
+
+\paragraph{Summary.}
+\[
+\text{MLE / MOM: } \frac{1}{T}\sum (Y_t-\hat \beta)^2 \quad (\text{biased})
+\]
+\[
+\text{Unbiased: } \frac{1}{T-1}\sum (Y_t-\hat \beta)^2
+\]
+
 
 \section{Asymptotic Properties}
 
 \subsection{Consistency}
 
+An estimator $\hat{\theta}$ of $\theta$ is said to be \emph{consistent} if, for any $\varepsilon > 0$,
 \[
-\text{plim } \hat{\theta} = \theta
+\lim_{T \to \infty} P\big(|\hat{\theta} - \theta| < \varepsilon \big) = 1.
 \]
 
+Equivalently, $\hat{\theta}$ is consistent if it converges in probability to $\theta$:
+\[
+\text{plim } \hat{\theta} = \theta.
+\]
+
+\paragraph{Sufficient conditions.}
+A sufficient condition for consistency is:
+\[
+\lim_{T \to \infty} E(\hat{\theta}) = \theta
+\quad (\text{asymptotic unbiasedness}),
+\]
+\[
+\lim_{T \to \infty} \operatorname{Var}(\hat{\theta}) = 0.
+\]
+
+\paragraph{Example.}
+Let $Y_1,\dots,Y_T$ be a random sample with
+\[
+E(Y_t) = \beta,
+\qquad
+V(Y_t) = \sigma^2.
+\]
+
+Consider the estimator
+\[
+\hat{\beta}
+=
+\frac{1}{T}\sum_{t=1}^T Y_t.
+\]
+
+Then
+\[
+E(\hat{\beta}) = \beta,
+\qquad
+V(\hat{\beta}) = \frac{\sigma^2}{T} \to 0.
+\]
+
+Hence,
+\[
+\text{plim } \hat{\beta} = \beta,
+\]
+so $\hat{\beta}$ is a consistent estimator of $\beta$.
 \subsection{Central Limit Theorem}
 
+Let $Y_1,\dots,Y_T$ be an i.i.d. sample with
 \[
-\sqrt{T}(\hat{\theta} - \theta) \xrightarrow{d} N(0, \sigma^2)
+E(Y_t)=\beta,
+\qquad
+V(Y_t)=\sigma^2.
 \]
+
+For the sample mean
+\[
+\bar{Y} = \frac{1}{T}\sum_{t=1}^T Y_t,
+\]
+we have
+\[
+\sqrt{T}(\bar{Y} - \beta)
+\xrightarrow{d}
+N(0,\sigma^2).
+\]
+
+\paragraph{Implication.}
+Equivalently, for large $T$,
+\[
+\bar{Y} \approx N\!\left(\beta, \frac{\sigma^2}{T}\right),
+\]
+regardless of the underlying distribution of $Y_t$.
 
 \subsection{Asymptotic Normality}
 
+More generally, an estimator $\hat{\theta}$ is said to be asymptotically normal if
 \[
-\hat{\theta} \approx N\left(\theta, \frac{\sigma^2}{T}\right)
+\sqrt{T}(\hat{\theta} - \theta)
+\xrightarrow{d}
+N(0,\Omega),
+\]
+for some variance matrix $\Omega$.
+
+Equivalently,
+\[
+\hat{\theta}
+\approx
+N\!\left(\theta, \frac{\Omega}{T}\right)
+\quad \text{for large } T.
 \]
 
 \subsection{Asymptotic Efficiency}
 
+An estimator $\hat{\theta}$ is asymptotically efficient if it is consistent and
 \[
-\sqrt{T}(\hat{\theta} - \theta) \xrightarrow{d} N(0, I(\theta)^{-1})
+\sqrt{T}(\hat{\theta} - \theta)
+\xrightarrow{d}
+N\!\left(0,\; \lim_{T\to\infty}\left[\frac{1}{T}I(\theta)\right]^{-1}\right),
+\]
+where
+\[
+I(\theta) = -E\!\left[\frac{\partial^2 \ell(\theta)}{\partial \theta \,\partial \theta'}\right]
+\]
+is the information matrix.
+
+\paragraph{MLE property.}
+Under regularity conditions, the maximum likelihood estimator $\hat{\theta}_{ML}$ is:
+\begin{itemize}
+\item consistent,
+\item asymptotically normal,
+\item asymptotically unbiased,
+\item asymptotically efficient.
+\end{itemize}
+
+\subsection{Example (Normal Case)}
+
+Let $Y_t \sim N(\beta,\sigma^2)$. Then the MLE
+\[
+\hat{\theta}_{ML} = (\hat{\beta}, \hat{\sigma}^2)
+\]
+satisfies
+\[
+\sqrt{T}(\hat{\theta}_{ML} - \theta)
+\xrightarrow{d}
+N\!\left(0,
+\begin{pmatrix}
+\sigma^2 & 0 \\
+0 & 2\sigma^4
+\end{pmatrix}
+\right).
+\]
+
+Hence, asymptotically,
+\[
+V(\hat{\beta}) \approx \frac{\sigma^2}{T},
+\qquad
+V(\hat{\sigma}^2) \approx \frac{2\sigma^4}{T}.
 \]
