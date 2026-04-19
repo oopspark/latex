@@ -1,0 +1,180 @@
+\chapter{Hypothesis Testing}
+
+\section{Basic Setup}
+
+Let $\theta \in \Omega$ be a parameter vector and define restrictions
+\[
+R(\theta) = [R_1(\theta), \dots, R_J(\theta)]'
+\]
+
+\[
+\Omega_0 = \{\theta \in \Omega : R(\theta)=0\}, \quad
+\Omega_1 = \{\theta \in \Omega : R(\theta)\neq 0\}
+\]
+
+Hypotheses:
+\[
+H_0: \theta \in \Omega_0
+\quad
+H_1: \theta \in \Omega_1
+\]
+
+\section{Errors}
+
+\begin{itemize}
+    \item Type I error:
+    \[
+    P(\text{reject } H_0 \mid H_0 \text{ true}) = \alpha
+    \]
+    \item Type II error:
+    \[
+    P(\text{fail to reject } H_0 \mid H_1 \text{ true})
+    \]
+\end{itemize}
+
+\section{Likelihood Ratio Test}
+
+\[
+\lambda = \frac{l^*(\Omega)}{l^*(\Omega_0)}
+\]
+
+Decision rule:
+\[
+\text{Reject } H_0 \text{ if } \lambda \ge \lambda_0
+\]
+
+\subsection{p-value Rule}
+
+\[
+p = P(\lambda \ge \lambda_T \mid H_0)
+\]
+
+\[
+\text{Reject } H_0 \text{ if } p \le \alpha
+\]
+
+\section{Example: Mean Test}
+
+\[
+H_0: \beta = \beta_0
+\quad
+H_1: \beta \neq \beta_0
+\]
+
+Test statistic:
+\[
+t = \frac{\hat{\beta} - \beta_0}{\sqrt{\hat{\sigma}^2/T}}
+\]
+
+\[
+t \sim t(T-1)
+\]
+
+\section{Variance Test}
+
+\[
+H_0: \sigma^2 = \sigma_0^2
+\]
+
+\[
+S = \frac{(T-1)\hat{\sigma}^2}{\sigma_0^2}
+\]
+
+\[
+S \sim \chi^2(T-1)
+\]
+
+Reject if
+\[
+S \ge S_U \quad \text{or} \quad S \le S_L
+\]
+
+\section{Equality of Variances}
+
+\[
+H_0: \sigma_1^2 = \sigma_2^2
+\]
+
+\[
+F = \frac{\hat{\sigma}_1^2}{\hat{\sigma}_2^2}
+\]
+
+\[
+F \sim F(T_1-1, T_2-1)
+\]
+
+\section{Asymptotic Tests}
+
+\subsection{Likelihood Ratio (LR)}
+
+\[
+LR = 2\ln\left(\frac{l^*(\Omega)}{l^*(\Omega_0)}\right)
+\]
+
+\[
+LR \xrightarrow{d} \chi^2(J)
+\]
+
+\subsection{Wald Test}
+
+\[
+W = R(\hat{\theta})'
+\left[
+\frac{\partial R}{\partial \theta}
+V(\hat{\theta})
+\frac{\partial R'}{\partial \theta}
+\right]^{-1}
+R(\hat{\theta})
+\]
+
+\[
+W \xrightarrow{d} \chi^2(J)
+\]
+
+\subsection{Lagrange Multiplier (LM)}
+
+\[
+LM =
+\left(\frac{\partial \ln l}{\partial \theta}\right)
+I(\theta)^{-1}
+\left(\frac{\partial \ln l}{\partial \theta}\right)'
+\]
+
+\[
+LM \xrightarrow{d} \chi^2(J)
+\]
+
+\section{Normal Mean Example}
+
+\[
+H_0: \beta = k
+\]
+
+\subsection{LR}
+
+\[
+LR = T \ln\left(\frac{\hat{\sigma}_0^2}{\hat{\sigma}^2}\right)
+\]
+
+\subsection{Wald}
+
+\[
+W = \frac{(\hat{\beta} - k)^2}{\hat{\sigma}^2/T}
+\]
+
+\subsection{LM}
+
+\[
+LM = \frac{(\hat{\beta} - k)^2}{\hat{\sigma}_0^2/T}
+\]
+
+\section{Relation Between Tests}
+
+\[
+W \ge LR \ge LM
+\]
+
+Asymptotically:
+\[
+LR, W, LM \sim \chi^2(J)
+\]

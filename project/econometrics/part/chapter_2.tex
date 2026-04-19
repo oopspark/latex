@@ -1,0 +1,157 @@
+\chapter{Estimation}
+
+\section{Random Sample}
+
+A sample $(Y_1, Y_2, \dots, Y_T)$ is called \textbf{i.i.d.} if
+\[
+f_T(y_1,\dots,y_T) = \prod_{t=1}^T f(y_t)
+\]
+
+\section{Estimators}
+
+An estimator of $\theta \in \mathbb{R}^K$ is
+\[
+\hat{\theta} = \hat{\theta}(Y_1,\dots,Y_T)
+\]
+
+An estimate is
+\[
+\hat{\theta}(y_1,\dots,y_T)
+\]
+
+\section{Method of Moments}
+
+Sample moment:
+\[
+\hat{\mu}_r = \frac{1}{T} \sum_{t=1}^T Y_t^r
+\]
+
+Population moment:
+\[
+\mu_r = h_r(\theta)
+\]
+
+Estimator:
+\[
+\hat{\mu}_r = h_r(\theta)
+\]
+
+\subsection{Example}
+
+\[
+\hat{\beta}_m = \frac{1}{T} \sum_{t=1}^T Y_t
+\]
+
+\[
+\hat{\sigma}_m^2 = \frac{1}{T} \sum_{t=1}^T (Y_t - \hat{\beta}_m)^2
+\]
+
+\section{Maximum Likelihood}
+
+Likelihood:
+\[
+L(\theta) = \prod_{t=1}^T f(Y_t|\theta)
+\]
+
+Log-likelihood:
+\[
+\ell(\theta) = \sum_{t=1}^T \ln f(Y_t|\theta)
+\]
+
+Estimator:
+\[
+\hat{\theta}_{ML} = \arg\max_{\theta \in \Omega} \ell(\theta)
+\]
+
+\subsection{Normal Example}
+
+\[
+\hat{\beta} = \frac{1}{T} \sum_{t=1}^T Y_t
+\]
+
+\[
+\hat{\sigma}^2 = \frac{1}{T} \sum_{t=1}^T (Y_t - \hat{\beta})^2
+\]
+
+\section{Least Squares}
+
+\[
+S(\theta) = \sum_{t=1}^T (Y_t - h_t(\theta))^2
+\]
+
+Estimator:
+\[
+\hat{\theta}_{LS} = \arg\min_{\theta \in \Omega} S(\theta)
+\]
+
+\subsection{Example}
+
+\[
+\hat{\beta} = \frac{1}{T} \sum_{t=1}^T Y_t
+\]
+
+\section{Finite Sample Properties}
+
+\subsection{Unbiasedness}
+
+\[
+E(\hat{\theta}) = \theta
+\]
+
+\subsection{Efficiency}
+
+Smallest variance among unbiased estimators.
+
+\subsection{Cram\'er-Rao Lower Bound}
+
+\[
+V(\hat{\theta}) \ge I(\theta)^{-1}
+\]
+
+\[
+I(\theta) = -E\left[\frac{\partial^2 \ell}{\partial \theta^2}\right]
+\]
+
+\subsection{BLUE}
+
+\[
+\hat{\theta} = \sum_{t=1}^T a_t Y_t
+\]
+
+\section{Variance Estimator}
+
+Biased:
+\[
+\hat{\sigma}^2 = \frac{1}{T} \sum_{t=1}^T (Y_t - \bar{Y})^2
+\]
+
+Unbiased:
+\[
+\hat{\sigma}^2_u = \frac{1}{T-1} \sum_{t=1}^T (Y_t - \bar{Y})^2
+\]
+
+\section{Asymptotic Properties}
+
+\subsection{Consistency}
+
+\[
+\text{plim } \hat{\theta} = \theta
+\]
+
+\subsection{Central Limit Theorem}
+
+\[
+\sqrt{T}(\hat{\theta} - \theta) \xrightarrow{d} N(0, \sigma^2)
+\]
+
+\subsection{Asymptotic Normality}
+
+\[
+\hat{\theta} \approx N\left(\theta, \frac{\sigma^2}{T}\right)
+\]
+
+\subsection{Asymptotic Efficiency}
+
+\[
+\sqrt{T}(\hat{\theta} - \theta) \xrightarrow{d} N(0, I(\theta)^{-1})
+\]
