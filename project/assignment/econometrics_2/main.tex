@@ -38,9 +38,9 @@
 
 \section{Problem I}
 
-We observe the profit of 100 firms in an industry. Let the sample be
+We have the data of the profit of 100 firms. Let the sample be
 \[
-Y_1,\dots,Y_{100},
+y_1,\dots,y_{100},
 \]
 where profit is measured in units of \$1,000.
 
@@ -48,7 +48,7 @@ where profit is measured in units of \$1,000.
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{profit_plot.png}
-\caption{Dot Plot of Firm Profit Distribution (Bin Width = 1) with Mean}
+\caption{Histogram of Firm Profit Distribution (Bin Width = 1) with Mean}
 \end{figure}
 
 
@@ -59,93 +59,95 @@ where profit is measured in units of \$1,000.
 Let \(\beta = E(Y_i)\) denote the population mean profit per firm.  
 A natural estimator is \textbf{the 1st sample moment} of the random variable Y:
 \[
-\hat{\mu}_1 = \hat \beta = \frac{1}{100}\sum_{i=1}^{100} Y_i.
+\hat{\mu}_1 = \hat \beta = \frac{1}{T}\sum_{i=1}^{T} Y_i.
 \]
 
 Under random sampling, this estimator has the following properties:
 \begin{itemize}
     \item \textbf{Unbiasedness:}
     \[
-    E(\hat \beta) = \beta.
+    E(\hat \beta) =  \beta.
     \]
     \item \textbf{Variance:}
     \[
-    \operatorname{Var}(\hat \beta) = \frac{\sigma^2}{100},
+    \operatorname{Var}(\hat \beta) = \frac{\sigma^2}{T},
     \]
     where \(\sigma^2 = \operatorname{Var}(Y_i)\).
+    As T gets bigger, the variance of $\hat \beta$ converges to zero.
     \item \textbf{Consistency:} \(\hat \beta \xrightarrow{p} \beta\).
     \item \textbf{Asymptotic normality:}
     \[
-    \sqrt{100}(\hat \beta-\beta)\xrightarrow{d}N(0,\sigma^2).
+    \sqrt{T}(\hat \beta-\beta)\xrightarrow{d}N(0,\sigma^2).
     \]
 \end{itemize}
 
-If profits are normally distributed, then \(\hat \beta\) is also the maximum likelihood estimator.
 
 \subsubsection{Estimate of the Mean}
 
-Using the sample data, the estimated mean profit per firm is
+By using the sample data, we can calculate the estimated mean profit per firm as
 \[
-\hat \beta = 9.190527.
+\hat \beta = \frac{1}{100}\sum_{i=1}^{100} Y_i = 9.190527.
 \]
 
-Since the unit is \$1{,}000, this corresponds to
+As the unit of the data is \$1{,}000, this is equal to
 \[
 \$9{,}190.527.
 \]
+
 \subsection{Variance of Profit per Firm}
 
 \subsubsection{Estimators and Their Properties}
 
-Let \(\sigma^2 = \operatorname{Var}(Y_i)\) denote the population variance.
+Let's set \(\sigma^2 = \operatorname{Var}(Y_i)\) as the population variance.
 
-We consider two standard estimators.
+To estimate this variance, We can consider two estimators.
 
 \paragraph{Maximum likelihood estimator}
 \[
 \hat{\sigma}^2_{ML}
 =
-\frac{1}{100}\sum_{i=1}^{100}(Y_i-\hat{\beta})^2.
+\frac{1}{T}\sum_{i=1}^{T}(Y_i-\hat{\beta})^2.
 \]
 
-Under the assumption of normality, this is the maximum likelihood estimator. It is biased in finite samples:
+This requires the assumption of normality, and it is biased in finite samples as following
 \[
-E(\hat{\sigma}^2_{ML})=\frac{99}{100}\sigma^2,
+E(\hat{\sigma}^2_{ML})=\frac{T-1}{T}\sigma^2.
 \]
-but it is consistent and asymptotically efficient.
+However it is consistent and asymptotically efficient.
 
 \paragraph{Unbiased sample variance}
 \[
 \hat{\sigma}^2_{u}
 =
-\frac{1}{99}\sum_{i=1}^{100}(Y_i-\hat{\beta})^2.
+\frac{1}{T-1}\sum_{i=1}^{T}(Y_i-\hat{\beta})^2.
 \]
 
-This estimator satisfies
+This estimator has property such that
 \[
 E(\hat{\sigma}^2_{u})=\sigma^2,
 \]
-and is therefore unbiased. It is also consistent.
+and it implicates that the estimator is unbiased and also consistent.
 
 \medskip
 
-In summary, \(\hat{\sigma}^2_{ML}\) is derived from the likelihood function and is asymptotically efficient, while \(\hat{\sigma}^2_{u}\) corrects the finite-sample bias and provides an unbiased estimate of the population variance.
+In conclusion, \(\hat{\sigma}^2_{ML}\) is derived from the likelihood function and is asymptotically efficient, while \(\hat{\sigma}^2_{u}\) is an unbiased estimate of the population variance.
 
 \subsubsection{Estimate of the Variance}
 
-Using the sample data, we obtain
+by using the sample data, we obtain
 \[
-\hat{\sigma}^2_{ML}=28.532358,
-\qquad
-\hat{\sigma}^2_{u}=28.820563.
+\hat{\sigma}^2_{ML}=\frac{1}{100}\sum_{i=1}^{100}(Y_i-\hat{\beta})^2 = 28.532358,
+\]
+\[
+\hat{\sigma}^2_{u}= \frac{1}{99}\sum_{i=1}^{100}(Y_i-\hat{\beta})^2 = 28.820563.
 \]
 
-Since the sample size is finite, we report the unbiased estimator \(\hat{\sigma}^2_{u}\) as the estimate of the variance. Therefore, the variance of profit per firm is estimated to be approximately 28.82.
+Sd the sample size is finite, we use the unbiased estimator \(\hat{\sigma}^2_{u}\) as the estimate of the variance. Therefore, the variance of profit per firm is estimated to be about 28.82.
 
 
 \subsection{Test of the Hypothesis that Mean Profit Equals \$10,000}
 
-The analyst claims that the mean profit per firm is \$10,000. Since the data are measured in units of \$1,000, this corresponds to the hypothesis
+The question 3 suggests that the mean profit per firm is \$10,000. As the data are measured in units of \$1,000, this matches with the hypothesis
 \[
 H_0:\beta_0 = 10,
 \qquad
@@ -154,36 +156,36 @@ H_1:\beta_0 \neq 10.
 
 \subsubsection{Likelihood Ratio Test: Definition and Intuition}
 
-The likelihood ratio (LR) test compares the maximized likelihood under the unrestricted parameter space \(\Omega\) and the restricted space \(\Omega_0\). Formally,
+The likelihood ratio (LR) test compares the maximized likelihood under the unrestricted parameter space \(\Omega\) and the restricted space \(\Omega_0\) as
 \[
 \lambda
 =
 \frac{l^*(\Omega)}{l^*(\Omega_0)}.
 \]
 
-If the restriction imposed by \(H_0\) significantly increases the likelihood ratio, the null hypothesis is rejected.
+If the restriction imposed by \(H_0\) increases the likelihood ratio significantly, the null hypothesis is rejected.
 
 \subsubsection{Implementation of the Likelihood Ratio Test}
 
-Assume
+We will assume normality for random variable $Y_i$ as
 \[
 Y_i \overset{i.i.d.}{\sim} N(\beta,\sigma^2).
 \]
 
 Under the unrestricted model, the estimators are
 \[
-\hat{\beta} = \frac{1}{100}\sum_{i=1}^{100} Y_i,
+\hat{\beta}_{ML} = \frac{1}{T}\sum_{i=1}^{T} Y_i,
 \qquad
 \hat{\sigma}_{ML}^2
 =
-\frac{1}{100}\sum_{i=1}^{100}(Y_i-\hat{\beta})^2.
+\frac{1}{T}\sum_{i=1}^{T}(Y_i-\hat{\beta})^2.
 \]
 
 Under the null hypothesis \(H_0:\beta_0 = 10\), the restricted variance estimator is
 \[
 \hat{\sigma}_0^2
 =
-\frac{1}{100}\sum_{i=1}^{100}(Y_i-10)^2.
+\frac{1}{T}\sum_{i=1}^{T}(Y_i-\beta_0)^2.
 \]
 
 The likelihood ratio can be written as
@@ -197,14 +199,14 @@ The likelihood ratio can be written as
 \right)^{T/2}.
 \]
 
-To obtain a statistic with a known finite-sample distribution, consider the monotonic transformation
+As we want obtain a statistic with a known finite-sample distribution, we will have the likelyhood ratio to make the monotonic transformation
 \[
 \lambda^*
 =
 (T-1)\left(\lambda^{2/T}-1\right).
 \]
 
-It can be shown that this simplifies to
+This can be simplified as
 \[
 \lambda^*
 =
@@ -214,9 +216,9 @@ where
 \[
 \hat{\sigma}_u^2
 =
-\frac{1}{T-1}\sum_{i=1}^{100}(Y_i-\hat{\beta})^2
+\frac{1}{T-1}\sum_{i=1}^{T}(Y_i-\hat{\beta})^2
 \]
-is the unbiased variance estimator.
+is the unbiased variance estimator.\\
 
 Under \(H_0\),
 \[
@@ -239,9 +241,9 @@ and hence
 
 Thus, the LR test is equivalent to the standard \(t\)-test.
 
-\paragraph{Numerical implementation}
+\paragraph{Small Sample Test Version}
 
-Using the data,
+By using the data, we obtain
 \[
 \hat{\beta} = 9.190527,
 \qquad
@@ -284,7 +286,7 @@ Therefore, at the 5\% significance level, we fail to reject \(H_0\).
 
 \paragraph{Asymptotic LR version}
 
-Alternatively, consider the asymptotic LR statistic
+This time, consider the asymptotic LR statistic
 \[
 LR
 =
@@ -295,7 +297,7 @@ LR
 T\ln\left(\frac{\hat{\sigma}_0^2}{\hat{\sigma}^2}\right).
 \]
 
-Using the data,
+By using the data, we obtain
 \[
 LR
 =
@@ -318,14 +320,16 @@ Since this exceeds 0.05, we again fail to reject \(H_0\).
 
 \subsubsection{Assumptions and Interpretation}
 
-The finite-sample results rely on the assumption that
+The small sample test only requires random sampling, while
+the asymptotic LR test rely on the assumption that
 \[
 Y_i \overset{i.i.d.}{\sim} N(\beta,\sigma^2).
 \]
 
-The asymptotic LR test requires only random sampling and regularity conditions.
 
-Both approaches lead to the same conclusion: there is insufficient evidence to reject the hypothesis that the mean profit per firm is \$10,000. Although the sample mean is below this value, the difference is not statistically significant.
+
+With both approaches, we can get same conclusion: there is \textbf{no sufficient evidence to reject the hypothesis} that the mean profit per firm is \$10,000. 
+
 \section{Problem II}
 
 Let \((Y_1,\dots,Y_T)\) be a random sample from a normal distribution:
@@ -366,7 +370,7 @@ l(\beta,\sigma^2)
 \right).
 \]
 
-Therefore, the log-likelihood function is
+Therefore, we can derive the log-likelihood function as
 \[
 L(\beta,\sigma^2)
 =
@@ -375,27 +379,29 @@ L(\beta,\sigma^2)
 -\frac{1}{2\sigma^2}\sum_{t=1}^T (y_t-\beta)^2.
 \]
 
-To find the MLE, differentiate with respect to \(\beta\):
+In order to find the MLE, we can differentiate the the log-likelihood function above with respect to \(\beta\):
 \[
 \frac{\partial L}{\partial \beta}
 =
 \frac{1}{\sigma^2}\sum_{t=1}^T (y_t-\beta).
 \]
-Setting this equal to zero gives
+
+By setting this equation equal to zero, we can get
 \[
 \sum_{t=1}^T(y_t-\beta)=0
 \quad \Rightarrow \quad
 \hat \beta=\frac{1}{T}\sum_{t=1}^T Y_t.
 \]
 
-Next, differentiate with respect to \(\sigma^2\):
+Next, we can differentiate with respect to \(\sigma^2\):
 \[
 \frac{\partial L}{\partial \sigma^2}
 =
 -\frac{T}{2\sigma^2}
 +\frac{1}{2\sigma^4}\sum_{t=1}^T (y_t-\beta)^2.
 \]
-Setting this equal to zero yields
+
+By setting this equal to zero, it gives
 \[
 \hat{\sigma}^2
 =
@@ -423,17 +429,16 @@ E({\hat \beta})=\beta,
 \qquad
 \operatorname{Var}({\hat \beta})=\frac{\sigma^2}{T}.
 \]
-Hence, \(\hat{\hat \beta}\) is consistent and asymptotically normal.
+Hence, \({\hat \beta}\) is consistent and asymptotically normal.
 
-The estimator \(\hat{\sigma}^2\) is the MLE, but it is biased:
+The estimator \(\hat{\sigma}^2\) is the MLE and consistent, but it is biased as following expression,
 \[
 E(\hat{\sigma}^2)=\frac{T-1}{T}\sigma^2.
 \]
-However, it is consistent.
 
 \subsection{Information Matrix and Asymptotic Distribution}
 
-Let
+We consider the parameter vector as
 \[
 \theta=
 \begin{pmatrix}
@@ -462,7 +467,7 @@ and
 \frac{1}{\sigma^6}\sum_{t=1}^T(Y_t-\beta)^2.
 \]
 
-Taking expectations,
+After taking expectations, we get
 \[
 E\left[\frac{\partial^2 \ell}{\partial \beta \,\partial \sigma^2}\right]=0,
 \]
@@ -497,7 +502,7 @@ I(\theta)^{-1}
 \end{pmatrix}.
 \]
 
-Hence, the MLE is asymptotically distributed as
+Hence, the MLE is asymptotically distributed normally as
 \[
 \sqrt{T}
 \begin{pmatrix}
@@ -517,7 +522,7 @@ N\left(
 \right).
 \]
 
-Equivalently, for large \(T\),
+Also, for large \(T\),
 \[
 \hat{\beta}\approx N\left(\beta,\frac{\sigma^2}{T}\right),
 \qquad
@@ -535,27 +540,32 @@ import pandas as pd
 import numpy as np
 from scipy import stats
 
-# =========================
+#
 # 1. Load data
-# =========================
+# 
+
 file_path = "/home/wlals788/workspace/python/1_src/assignments/econometrics_2/HW2 data.csv"
 df = pd.read_csv(file_path)
 
 print("Columns in dataset:", df.columns.tolist())
 print(df.head())
 
-# -------------------------
+#
 # Select variable
-# -------------------------
+# 
+
+
 y = df["profit"]
 
 y = y.to_numpy()
 n = len(y)
 
 
-# =========================
+#
 # 2. Mean and variance estimation
-# =========================
+# 
+
+
 y_bar = np.mean(y)
 
 # MLE variance (denominator n)
@@ -571,9 +581,11 @@ print("\n[2] Variance Estimation")
 print(f"MLE variance = {sigma2_ml:.6f}")
 print(f"Unbiased variance = {s2_unbiased:.6f}")
 
-# =========================
+#
 # 3. Hypothesis test: H0: mu = 10
-# =========================
+# 
+
+
 mu0 = 10.0
 
 # Small-sample t-test
@@ -605,9 +617,11 @@ print("\nAsymptotic Likelihood Ratio Test")
 print(f"LR statistic = {LR:.6f}")
 print(f"p-value (chi-square(1)) = {p_value_LR:.6f}")
 
-# =========================
+# 
 # 4. Decision at 5% level
-# =========================
+# 
+
+
 alpha = 0.05
 
 print("\n[4] Decision at 5% significance level")
