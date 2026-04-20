@@ -1179,7 +1179,7 @@ Equivalently,
 \[
 \Pi(p,w)
 =
-\max_{y} \{p\cdot y - c(w,y)\}.
+\max_{y} \{p\cdot y - c(w,y) : \ p>0,\ w>0\}.
 \tag{2}
 \]
 
@@ -1187,7 +1187,7 @@ Also,
 \[
 \Pi(p,w)
 =
-\max_{x} \{R(p,x) - w\cdot x\}.
+\max_{x} \{R(p,x) - w\cdot x : \ p>0,\ w>0\}.
 \tag{3}
 \]
 
@@ -1238,20 +1238,31 @@ x' = x(w,y(p,w)).
 \]
 \hfill $\blacksquare$
 
-\begin{tcolorbox}
+\begin{tcolorbox}[breakable]
 
-\subsection*{Exercise 7}
+\subsection*{Exercise 2-7}
 
-Prove $(1) \Leftrightarrow (3)$ by showing that
+\begin{equation}
+\Pi(p,w)=\max_{x,y}\{py-wx : (x,y)\in T,\; p>0,\; w>0\}. \tag{1}
+\end{equation}
+
+\begin{equation}
+\Pi(p,w)=\max_{y}\{py-c(w,y) : p>0,\; w>0\}, \tag{2}
+\end{equation}
+
+\begin{equation}
+\Pi(p,w)=\max_{x}\{R(p,x)-wx : p>0,\; w>0\}. \tag{3}
+\end{equation}
+
+Prove that (1) $\iff$ (3) by showing that
 \[
-y(p, x(p,w)) = y(p,w).
+y(p,x(p,w)) = y(p,w).
 \]
-
 \end{tcolorbox}
 
-\begin{tcolorbox}
+\begin{tcolorbox}[breakable]
 
-\subsection*{Exercise 8}
+\subsection*{Exercise 2-8}
 
 Prove that a profit-maximizing producer chooses output levels $y(p,w)$ such that
 \[
@@ -1274,33 +1285,30 @@ increases in $y_i$ at the optimal choice.
     \item[$\Pi$.2] If $p \ge p'$, then
     \[
     \Pi(p,w)\ge \Pi(p',w)
-    \]
-    \hfill (nondecreasing in $p$)
+    \]\\
+    (nondecreasing in $p$)
     
     \item[$\Pi$.3] If $w \ge w'$, then
     \[
     \Pi(p,w)\le \Pi(p,w')
-    \]
-    \hfill (nonincreasing in $w$)
+    \]\\
+    (nonincreasing in $w$)
     
     \item[$\Pi$.4] $\Pi(p,w)$ is convex in $(p,w)$.
     
-    \item[$\Pi$.5]
-    \[
-    \Pi(tp,tw)=t\Pi(p,w), \qquad t>0
-    \]
-    \hfill (homogeneous of degree 1 in $(p,w)$)
+    \item[$\Pi$.5] $\Pi(tp,tw)=t\Pi(p,w), \qquad t>0$\\
+    (homogeneous of degree 1 in $(p,w)$)
     
     \item[$\Pi$.6] If the profit function is differentiable in $(p,w)$, then
     \[
     \frac{\partial \Pi(p,w)}{\partial p_i}=y_i(p,w),
     \qquad
     \frac{\partial \Pi(p,w)}{\partial w_i}=-x_i(p,w)
-    \]
-    \hfill (Hotelling's lemma)
+    \]\\
+    (Hotelling's lemma)
 \end{itemize}
 
-\subsection*{Proof Sketch}
+\subsection*{Proof}
 
 $\Pi(p,w)$ exists since $T$ is compact and $p\cdot y - w\cdot x$ is continuous.
 The firm can always choose $(0_N,0_M)$ and earn zero profit, so
