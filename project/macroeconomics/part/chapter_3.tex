@@ -1,0 +1,268 @@
+\chapter{General Equilibrium with Production and Consumption}
+
+\section{Production Possibility Curve}
+
+\subsection{Setup}
+
+\begin{itemize}
+    \item Factors: $\bar{L}, \bar{K}$
+    \item Goods: $x, y$
+\end{itemize}
+
+Production functions:
+\[
+x = F^x(L^x, K^x), \quad
+y = F^y(L^y, K^y)
+\]
+
+Resource constraints:
+\[
+L^x + L^y = \bar{L}, \quad
+K^x + K^y = \bar{K}
+\]
+
+---
+
+\subsection{Production Efficiency}
+
+Efficient allocation satisfies:
+\[
+MRTS^x_{LK} = MRTS^y_{LK}
+\]
+
+This determines the contract curve in the Edgeworth box.
+
+---
+
+\subsection{Production Possibility Curve (PPC)}
+
+Efficient combinations of $(x,y)$ form the PPC.
+
+Slope:
+\[
+\frac{dy}{dx} = MRT = -\frac{p_x}{p_y}
+\]
+
+Properties:
+\[
+\frac{dy}{dx} < 0, \quad \frac{d^2 y}{dx^2} < 0
+\]
+
+---
+
+\section{Derivation of PPC}
+
+Let:
+\[
+x = x(p), \quad y = y(p)
+\]
+
+Then:
+\[
+\frac{dy}{dx} = \frac{dy/dp}{dx/dp}
+\]
+
+Using FOC:
+\[
+p_x F_L^x = w, \quad p_x F_K^x = r
+\]
+\[
+p_y F_L^y = w, \quad p_y F_K^y = r
+\]
+
+Thus:
+\[
+\frac{dy}{dx} = -\frac{p_x}{p_y}
+\]
+
+---
+
+\section{General Equilibrium with Production}
+
+\subsection{Setup}
+
+\begin{itemize}
+    \item Two consumers: $A, B$
+    \item Goods: $x, y$
+    \item Factors: $L, K$
+\end{itemize}
+
+---
+
+\subsection{Factor Income}
+
+\[
+B^A = w\bar{L}^A + r\bar{K}^A
+\]
+\[
+B^B = w\bar{L}^B + r\bar{K}^B
+\]
+
+---
+
+\subsection{Consumer Optimization}
+
+Consumer $A$:
+\[
+\max U^A(x^A, y^A)
+\quad \text{s.t.} \quad
+p_x x^A + p_y y^A = B^A
+\]
+
+Lagrangian:
+\[
+\mathcal{L}^A = U^A(x^A, y^A) + \lambda^A(B^A - p_x x^A - p_y y^A)
+\]
+
+FOC:
+\[
+\frac{\partial U^A}{\partial x^A} = \lambda^A p_x
+\]
+\[
+\frac{\partial U^A}{\partial y^A} = \lambda^A p_y
+\]
+
+Thus:
+\[
+MRS^A = \frac{p_x}{p_y}
+\]
+
+---
+
+Similarly for $B$:
+\[
+MRS^B = \frac{p_x}{p_y}
+\]
+
+---
+
+\subsection{Demand Functions}
+
+\[
+x^A = x^A(p_x, p_y, B^A), \quad
+y^A = y^A(p_x, p_y, B^A)
+\]
+
+\[
+x^B = x^B(p_x, p_y, B^B), \quad
+y^B = y^B(p_x, p_y, B^B)
+\]
+
+---
+
+\subsection{Aggregate Demand}
+
+\[
+X = x^A + x^B, \quad Y = y^A + y^B
+\]
+
+---
+
+\subsection{Budget Identity}
+
+\[
+B^A + B^B = w\bar{L} + r\bar{K}
+\]
+
+\[
+p_x X + p_y Y = w\bar{L} + r\bar{K}
+\]
+
+---
+
+\section{Competitive Equilibrium}
+
+Equilibrium requires:
+
+\begin{itemize}
+    \item Production efficiency:
+    \[
+    MRTS^x = MRTS^y
+    \]
+
+    \item Consumption efficiency:
+    \[
+    MRS^A = MRS^B = \frac{p_x}{p_y}
+    \]
+
+    \item Market clearing:
+    \[
+    X = x, \quad Y = y
+    \]
+\end{itemize}
+
+---
+
+\section{Graphical Representation}
+
+\subsection{PPC and Indifference Curve}
+
+Equilibrium occurs where:
+\[
+MRS = MRT
+\]
+
+i.e.,
+\[
+\frac{p_x}{p_y} = -\frac{dy}{dx}
+\]
+
+---
+
+\section{Welfare Comparison}
+
+Let:
+\begin{itemize}
+    \item $P$: production point
+    \item $C$: consumption point
+\end{itemize}
+
+If:
+\[
+X_C > X_P, \quad Y_C > Y_P
+\]
+
+Then:
+\begin{itemize}
+    \item Imports and exports occur
+    \item Gains from trade arise
+\end{itemize}
+
+---
+
+\section{Open Economy Equilibrium}
+
+Relative price:
+\[
+p = \frac{p_x}{p_y}
+\]
+
+Trade balance (BOP):
+\[
+BOP = p_y(Y_P - Y_C) - p_x(X_C - X_P)
+\]
+
+\[
+= (p_x X_P + p_y Y_P) - (p_x X_C + p_y Y_C) = 0
+\]
+
+---
+
+\section{Summary Conditions}
+
+\begin{itemize}
+    \item Production equilibrium:
+    \[
+    MRTS^x = MRTS^y
+    \]
+
+    \item Consumption equilibrium:
+    \[
+    MRS^A = MRS^B
+    \]
+
+    \item General equilibrium:
+    \[
+    MRS = MRT
+    \]
+\end{itemize}

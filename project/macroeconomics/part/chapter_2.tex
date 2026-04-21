@@ -1,0 +1,284 @@
+\chapter{General Equilibrium with Production}
+
+\section{Production Economy Setup}
+
+Consider an economy with:
+\begin{itemize}
+    \item Two goods: $X, Y$
+    \item Two factors: Labor $L$, Capital $K$
+\end{itemize}
+
+Production functions:
+\[
+x = F^x(L^x, K^x), \quad
+y = F^y(L^y, K^y)
+\]
+
+Resource constraints:
+\[
+L^x + L^y = \bar{L}, \quad
+K^x + K^y = \bar{K}
+\]
+
+---
+
+\section{Homogeneous Production Function}
+
+A production function is homogeneous of degree $r$ if:
+\[
+F(tL, tK) = t^r F(L,K)
+\]
+
+If $r=1$, the function exhibits constant returns to scale.
+
+---
+
+\section{Euler's Theorem}
+
+If $F(L,K)$ is homogeneous of degree 1:
+\[
+F(L,K) = F_L L + F_K K
+\]
+
+This implies that total output is exactly exhausted by factor payments.
+
+---
+
+\section{Firm Optimization}
+
+Profit maximization:
+\[
+\max \pi = pF(L,K) - wL - rK
+\]
+
+First-order conditions:
+\[
+pF_L = w, \quad pF_K = r
+\]
+
+Thus:
+\[
+\frac{F_L}{F_K} = \frac{w}{r}
+\]
+
+---
+
+\section{Cost Minimization}
+
+\[
+\min C = wL + rK
+\quad \text{s.t. } Q = F(L,K)
+\]
+
+FOC:
+\[
+\frac{F_L}{F_K} = \frac{w}{r}
+\]
+
+---
+
+\section{Marginal Rate of Technical Substitution}
+
+\[
+MRTS = \frac{F_L}{F_K}
+\]
+
+At optimum:
+\[
+MRTS = \frac{w}{r}
+\]
+
+---
+
+\section{Capital-Labor Ratio Representation}
+
+Define:
+\[
+k = \frac{K}{L}
+\]
+
+Then:
+\[
+Q = L f(k)
+\]
+
+Marginal products:
+\[
+F_K = f'(k), \quad
+F_L = f(k) - kf'(k)
+\]
+
+---
+
+\section{Elasticity of Substitution}
+
+\[
+\sigma = \frac{d(K/L)/(K/L)}{d(MRTS)/(MRTS)}
+\]
+
+Interpretation:
+\begin{itemize}
+    \item $\sigma > 1$: factors are easily substitutable
+    \item $\sigma < 1$: factors are weak substitutes
+\end{itemize}
+
+---
+
+\section{Factor Income Distribution}
+
+From Euler's theorem:
+\[
+pF(L,K) = wL + rK
+\]
+
+Factor shares:
+\[
+s_L = \frac{wL}{Q}, \quad s_K = \frac{rK}{Q}
+\]
+
+---
+
+\section{Production Efficiency}
+
+Efficiency requires:
+\[
+MRTS^x = MRTS^y = \frac{w}{r}
+\]
+
+---
+
+\section{Production Possibility Frontier}
+
+The PPF represents feasible combinations of $(x,y)$.
+
+Slope:
+\[
+\frac{dy}{dx} = MRT
+\]
+
+---
+
+\section{General Equilibrium Conditions}
+
+\subsection{Production Side}
+\[
+MRTS^x = MRTS^y = \frac{w}{r}
+\]
+
+\subsection{Consumption Side}
+\[
+MRS = \frac{p_X}{p_Y}
+\]
+
+\subsection{Overall Condition}
+\[
+MRS = MRT
+\]
+
+---
+
+\section{Price-Factor Relationship}
+
+Unit cost conditions:
+\[
+p_x = w a_{Lx} + r a_{Kx}
+\]
+
+\[
+p_y = w a_{Ly} + r a_{Ky}
+\]
+
+---
+
+\section{Comparative Statics}
+
+Differentiation:
+\[
+a_{Lx} dw + a_{Kx} dr = dp_x
+\]
+
+\[
+a_{Ly} dw + a_{Ky} dr = 0
+\]
+
+Matrix form:
+\[
+\begin{bmatrix}
+a_{Lx} & a_{Kx} \\
+a_{Ly} & a_{Ky}
+\end{bmatrix}
+\begin{bmatrix}
+dw \\
+dr
+\end{bmatrix}
+=
+\begin{bmatrix}
+dp_x \\
+0
+\end{bmatrix}
+\]
+
+---
+
+\section{Stolper--Samuelson Theorem}
+
+Results:
+\[
+\frac{dw}{dp_x} > 0, \quad
+\frac{dr}{dp_x} < 0
+\]
+
+Interpretation:
+\begin{itemize}
+    \item Increase in price of labor-intensive good raises wages
+    \item Lowers return to capital
+\end{itemize}
+
+Stronger result:
+\[
+\frac{dw}{w} > \frac{dp_x}{p_x}
+\]
+
+---
+
+\section{Rybczynski Theorem}
+
+If factor endowment changes:
+
+\[
+L = a_{Lx} x + a_{Ly} y
+\]
+\[
+K = a_{Kx} x + a_{Ky} y
+\]
+
+Differentiation:
+\[
+a_{Lx} dx + a_{Ly} dy = d\bar{L}
+\]
+\[
+a_{Kx} dx + a_{Ky} dy = 0
+\]
+
+Results:
+\[
+\frac{dx}{d\bar{L}} > 0, \quad
+\frac{dy}{d\bar{L}} < 0
+\]
+
+Interpretation:
+\begin{itemize}
+    \item Increase in labor increases labor-intensive good
+    \item Decreases capital-intensive good
+\end{itemize}
+
+---
+
+\section{Economic Interpretation}
+
+General equilibrium with production involves:
+\begin{itemize}
+    \item Resource allocation across industries
+    \item Factor price determination
+    \item Interaction between goods and factor markets
+\end{itemize}

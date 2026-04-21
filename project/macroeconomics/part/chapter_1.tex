@@ -1,0 +1,300 @@
+\chapter{General Equilibrium Theory: Pure Exchange Economy}
+
+\section{Introduction to General Equilibrium}
+
+Economic equilibrium can be analyzed using two main approaches.
+
+\subsection{Partial Equilibrium}
+Partial equilibrium analysis focuses on a single market while holding all other factors constant (ceteris paribus).  
+This approach provides simple and intuitive insights.
+
+\subsection{General Equilibrium}
+General equilibrium analysis studies all markets simultaneously, removing the ceteris paribus assumption.  
+It captures interdependence across markets and provides a more complete framework.
+
+\paragraph{Definition}
+A \textbf{general equilibrium} is a situation in which:
+\begin{itemize}
+    \item Consumers maximize utility subject to budget constraints
+    \item All markets clear (demand equals supply)
+    \item All agents act optimally given prices
+\end{itemize}
+
+\paragraph{Intuition}
+General equilibrium can be interpreted as a state in which a single price system
+coordinates all decisions in the economy.  
+Consumers, taking prices as given, choose optimal bundles, and these choices are
+mutually consistent across all markets.
+
+---
+
+\section{Walrasian Equilibrium}
+
+A \textbf{Walrasian equilibrium} is a set of prices and allocations such that:
+\begin{itemize}
+    \item Consumers maximize utility
+    \item Markets clear simultaneously
+\end{itemize}
+
+\subsection{Walras' Law}
+
+Let $Z_i(p)$ denote excess demand for good $i$. Then:
+\[
+\sum_{i=1}^{n} p_i Z_i(p) = 0
+\]
+
+\paragraph{Intuition}
+Walras' Law states that the total value of excess demand in the economy is always zero.  
+If there is excess demand in one market, there must be excess supply in another.
+
+\paragraph{Implication}
+If $(n-1)$ markets are in equilibrium, the last market must also be in equilibrium.
+Thus, only $(n-1)$ independent equilibrium conditions are needed.
+
+---
+
+\section{Pure Exchange Economy}
+
+We consider an economy with:
+\begin{itemize}
+    \item Two consumers: $A, B$
+    \item Two goods: $X, Y$
+\end{itemize}
+
+\subsection{Initial Endowment}
+
+\[
+\omega_A = (X_A^0, Y_A^0), \quad
+\omega_B = (X_B^0, Y_B^0)
+\]
+
+\[
+\bar{X} = X_A^0 + X_B^0, \quad
+\bar{Y} = Y_A^0 + Y_B^0
+\]
+
+\paragraph{Interpretation}
+The total amount of goods is fixed, and the problem is how to allocate these goods
+between consumers.
+
+---
+
+\subsection{Preferences}
+
+\[
+U_A = U_A(X_A, Y_A), \quad
+U_B = U_B(X_B, Y_B)
+\]
+
+Preferences are assumed to be continuous and strictly convex.
+
+\paragraph{Interpretation}
+Convex preferences imply diminishing marginal rate of substitution, ensuring
+interior solutions and smooth trade-offs between goods.
+
+---
+
+\section{Edgeworth Box}
+
+The Edgeworth box represents all feasible allocations:
+\[
+X_A + X_B = \bar{X}, \quad
+Y_A + Y_B = \bar{Y}
+\]
+
+Each point corresponds to an allocation between the two consumers.
+
+\subsection{Initial Allocation}
+
+The initial endowment point is:
+\[
+I = (\omega_A, \omega_B)
+\]
+
+\paragraph{Intuition}
+The Edgeworth box illustrates all possible reallocations of goods.  
+Starting from the initial endowment, trade moves the economy to other feasible allocations.
+
+---
+
+\section{Pareto Efficiency and Contract Curve}
+
+\subsection{Pareto Efficiency}
+
+An allocation is Pareto efficient if no individual can be made better off without making someone else worse off.
+
+\paragraph{Intuition}
+At a Pareto efficient allocation, all mutually beneficial trades have been exhausted.
+
+---
+
+\subsection{Contract Curve}
+
+The contract curve is the set of Pareto efficient allocations:
+\[
+MRS_A = MRS_B
+\]
+
+where
+\[
+MRS_i = \frac{\partial U_i / \partial X_i}{\partial U_i / \partial Y_i}
+\]
+
+\paragraph{Intuition}
+If $MRS_A \neq MRS_B$, then gains from trade still exist.  
+Equality implies no further mutually beneficial exchange is possible.
+
+---
+
+\section{Exchange and Price Adjustment}
+
+A Walrasian auctioneer announces prices $p = (p_X, p_Y)$.
+
+Each consumer solves:
+\[
+\max U_i(X_i, Y_i)
+\quad \text{s.t.} \quad
+p_X X_i + p_Y Y_i = p_X X_i^0 + p_Y Y_i^0
+\]
+
+\paragraph{Interpretation}
+Consumers choose bundles that maximize utility given their income (value of endowment).
+
+---
+
+\subsection{Excess Demand}
+
+\[
+Z_X = (X_A + X_B) - \bar{X}
+\]
+\[
+Z_Y = (Y_A + Y_B) - \bar{Y}
+\]
+
+Prices adjust until:
+\[
+Z_X = 0, \quad Z_Y = 0
+\]
+
+\paragraph{Intuition}
+If demand exceeds supply, prices rise; if supply exceeds demand, prices fall.  
+This adjustment process continues until markets clear.
+
+---
+
+\section{Consumer Optimization}
+
+\subsection{Agent A}
+
+\[
+\max U_A(X_A, Y_A)
+\]
+\[
+\text{s.t. } p_X X_A + p_Y Y_A = p_X X_A^0 + p_Y Y_A^0
+\]
+
+\[
+\mathcal{L}_A =
+U_A(X_A, Y_A)
++ \lambda_A (p_X X_A^0 + p_Y Y_A^0 - p_X X_A - p_Y Y_A)
+\]
+
+\[
+\frac{\partial U_A}{\partial X_A} = \lambda_A p_X
+\quad
+\frac{\partial U_A}{\partial Y_A} = \lambda_A p_Y
+\]
+
+\[
+MRS_A = \frac{p_X}{p_Y}
+\]
+
+\paragraph{Interpretation}
+Consumers equate their marginal rate of substitution to the price ratio.  
+This ensures that the subjective trade-off equals the market trade-off.
+
+---
+
+\subsection{Agent B}
+
+\[
+MRS_B = \frac{p_X}{p_Y}
+\]
+
+---
+
+\section{General Equilibrium Condition}
+
+\[
+MRS_A = MRS_B = \frac{p_X}{p_Y}
+\]
+
+\[
+Z_X = 0, \quad Z_Y = 0
+\]
+
+\paragraph{Key Insight}
+General equilibrium simultaneously achieves:
+\begin{itemize}
+    \item Individual optimality
+    \item Market clearing
+    \item Pareto efficiency
+\end{itemize}
+
+---
+
+\section{Relative Prices}
+
+Only relative prices matter:
+\[
+\frac{p_X}{p_Y}
+\]
+
+We may normalize:
+\[
+p_X + p_Y = 1
+\]
+
+\paragraph{Interpretation}
+Absolute prices are irrelevant; only price ratios affect decisions.
+
+---
+
+\section{Existence of Equilibrium}
+
+Equilibrium exists if:
+\begin{itemize}
+    \item Excess demand functions are continuous
+    \item Goods are desirable
+\end{itemize}
+
+Then there exists $p^*$ such that:
+\[
+Z(p^*) = 0
+\]
+
+---
+
+\section{Walras' Law in Two-Good Case}
+
+\[
+p_X Z_X + p_Y Z_Y = 0
+\]
+
+\paragraph{Implication}
+If one market clears, the other must also clear automatically.
+
+---
+
+\section{Economic Interpretation}
+
+General equilibrium implies:
+\begin{itemize}
+    \item All markets clear simultaneously
+    \item Agents optimize given prices
+    \item Allocation is Pareto efficient
+\end{itemize}
+
+\paragraph{Final Insight}
+Prices act as a coordination mechanism that aligns individual incentives with
+aggregate feasibility, leading to an efficient allocation of resources.

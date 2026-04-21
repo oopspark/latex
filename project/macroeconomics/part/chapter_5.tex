@@ -1,0 +1,253 @@
+\chapter{Open Economy General Equilibrium (Heckscher--Ohlin Model)}
+
+\section{Basic Structure}
+
+\begin{itemize}
+    \item Two countries: $A, B$
+    \item Two goods: $x, y$
+    \item Two factors: Labor $L$, Capital $K$
+\end{itemize}
+
+This is a $2 \times 2 \times 2$ model.
+
+---
+
+\section{Assumptions}
+
+\begin{itemize}
+    \item Identical production functions across countries
+    \item Constant returns to scale (CRS)
+    \item Perfect competition
+    \item Factors are mobile domestically but immobile internationally
+    \item Goods are freely tradable
+    \item Preferences are identical across countries
+\end{itemize}
+
+---
+
+\section{Production Function}
+
+\[
+X = F(L,K)
+\]
+
+Using CRS:
+
+\[
+X = L f\left(\frac{K}{L}\right) = L f(k), \quad k = \frac{K}{L}
+\]
+
+Marginal products:
+
+\[
+F_L = f(k) - k f'(k), \quad F_K = f'(k)
+\]
+
+---
+
+\section{MRTS}
+
+\[
+MRTS_{LK} = \frac{F_L}{F_K}
+\]
+
+---
+
+\section{Euler's Theorem}
+
+\[
+F(L,K) = F_L L + F_K K
+\]
+
+Thus:
+\[
+pX = wL + rK
+\]
+
+---
+
+\section{Factor Intensity}
+
+\begin{itemize}
+    \item Good $x$: labor-intensive
+    \item Good $y$: capital-intensive
+\end{itemize}
+
+\[
+\left(\frac{K}{L}\right)_x < \left(\frac{K}{L}\right)_y
+\]
+
+---
+
+\section{Factor Endowment}
+
+\begin{itemize}
+    \item Country $A$: labor abundant
+    \item Country $B$: capital abundant
+\end{itemize}
+
+\[
+\left(\frac{K}{L}\right)^A < \left(\frac{K}{L}\right)^B
+\]
+
+---
+
+\section{Autarky Prices}
+
+\[
+\left(\frac{p_x}{p_y}\right)^A < \left(\frac{p_x}{p_y}\right)^B
+\]
+
+---
+
+\section{Trade Pattern}
+
+\begin{itemize}
+    \item $A$ exports labor-intensive good $x$
+    \item $B$ exports capital-intensive good $y$
+\end{itemize}
+
+---
+
+\section{Factor Price Equalization}
+
+Under free trade:
+
+\[
+w^A = w^B, \quad r^A = r^B
+\]
+
+---
+
+\section{Income Distribution}
+
+Factor price changes:
+
+\begin{itemize}
+    \item Labor abundant country: $w \uparrow$
+    \item Capital abundant country: $r \uparrow$
+\end{itemize}
+
+---
+
+\section{Stolper--Samuelson Theorem}
+
+\[
+p_x = w a_{Lx} + r a_{Kx}
+\]
+\[
+p_y = w a_{Ly} + r a_{Ky}
+\]
+
+Differentiation:
+
+\[
+\theta_{Lx} \hat{w} + \theta_{Kx} \hat{r} = \hat{p}_x
+\]
+\[
+\theta_{Ly} \hat{w} + \theta_{Ky} \hat{r} = \hat{p}_y
+\]
+
+Matrix form:
+
+\[
+\begin{bmatrix}
+\theta_{Lx} & \theta_{Kx} \\
+\theta_{Ly} & \theta_{Ky}
+\end{bmatrix}
+\begin{bmatrix}
+\hat{w} \\
+\hat{r}
+\end{bmatrix}
+=
+\begin{bmatrix}
+\hat{p}_x \\
+\hat{p}_y
+\end{bmatrix}
+\]
+
+Solution:
+
+\[
+\hat{w} = \frac{\theta_{Ky} \hat{p}_x - \theta_{Kx} \hat{p}_y}{|\theta|}
+\]
+
+\[
+\hat{r} = \frac{\theta_{Lx} \hat{p}_y - \theta_{Ly} \hat{p}_x}{|\theta|}
+\]
+
+---
+
+\section{Implication}
+
+\begin{itemize}
+    \item Increase in $p_x$ raises real wage
+    \item Decreases return to capital
+\end{itemize}
+
+---
+
+\section{Rybczynski Theorem}
+
+\[
+a_{Lx} x + a_{Ly} y = \bar{L}
+\]
+\[
+a_{Kx} x + a_{Ky} y = \bar{K}
+\]
+
+Differentiation:
+
+\[
+a_{Lx} dx + a_{Ly} dy = d\bar{L}
+\]
+\[
+a_{Kx} dx + a_{Ky} dy = d\bar{K}
+\]
+
+Matrix form:
+
+\[
+\begin{bmatrix}
+a_{Lx} & a_{Ly} \\
+a_{Kx} & a_{Ky}
+\end{bmatrix}
+\begin{bmatrix}
+dx \\
+dy
+\end{bmatrix}
+=
+\begin{bmatrix}
+d\bar{L} \\
+d\bar{K}
+\end{bmatrix}
+\]
+
+---
+
+\section{Result}
+
+\begin{itemize}
+    \item Increase in labor expands labor-intensive good
+    \item Contracts capital-intensive good
+\end{itemize}
+
+---
+
+\section{Factor Price Equalization Range}
+
+There exists a range of prices such that:
+
+\[
+\left(\frac{p_x}{p_y}\right)^A \leq \left(\frac{p_x}{p_y}\right)^W \leq \left(\frac{p_x}{p_y}\right)^B
+\]
+
+---
+
+\section{Summary}
+
+\begin{itemize}
+    \item Trade is driven by factor endowment differences
+    \item Prices determine factor rewards
+    \item Trade leads to convergence of factor prices
+\end{itemize}
