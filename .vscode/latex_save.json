@@ -3,8 +3,16 @@
 		"prefix": "al",
 		"body": [
 			"\\begin{aligned}",
-			"(${TM_SELECTED_TEXT}",
+			"${TM_SELECTED_TEXT}",
 			"\\end{aligned}"
+		]
+	},
+	"theorem": {
+		"prefix": "th",
+		"body": [
+			"\\begin{tcolorbox}[breakable, colback=white]",
+			"${TM_SELECTED_TEXT}",
+			"\\end{tcolorbox}"
 		]
 	}
 }

@@ -1342,23 +1342,23 @@ which proves $\Pi$.3.
 
 \medskip
 
-To show convexity, let $(x^2,y^2)$ be the profit-maximizing choice for
+To show convexity, let $(x_2,y_2)$ be the profit-maximizing choice for
 \[
-(p^2,w^2)=\bigl(\theta p^0+(1-\theta)p^1,\ \theta w^0+(1-\theta)w^1\bigr),
+(p_2,w_2)=\bigl(\theta p_0+(1-\theta)p_1,\ \theta w_0+(1-\theta)w_1\bigr),
 \qquad 0\le \theta \le 1.
 \]
 Then
 \[
-\Pi(p^0,w^0)\ge p^0\cdot y^2 - w^0\cdot x^2,
+\Pi(p_0,w_0)\ge p_0\cdot y_2 - w_0\cdot x_2,
 \]
 \[
-\Pi(p^1,w^1)\ge p^1\cdot y^2 - w^1\cdot x^2.
+\Pi(p_1,w_1)\ge p_1\cdot y_2 - w_1\cdot x_2.
 \]
 Therefore,
 \[
-\theta \Pi(p^0,w^0)+(1-\theta)\Pi(p^1,w^1)
+\theta \Pi(p_0,w_0)+(1-\theta)\Pi(p_1,w_1)
 \ge
-\Pi(p^2,w^2),
+\Pi(p_2,w_2),
 \]
 so $\Pi(p,w)$ is convex.
 
@@ -1366,15 +1366,17 @@ so $\Pi(p,w)$ is convex.
 
 For homogeneity,
 \[
+\begin{aligned}
 \Pi(tp,tw)
-=
-\max_y \{tp\cdot y - c(tw,y)\}
-=
-\max_y \{tp\cdot y - t c(w,y)\}
-=
-t\max_y \{p\cdot y - c(w,y)\}
-=
+&=
+\max_y \{tp\cdot y - c(tw,y)\}\\
+&=
+\max_y \{tp\cdot y - t c(w,y)\}\\
+&=
+t\max_y \{p\cdot y - c(w,y)\}\\
+&=
 t\Pi(p,w).
+\end{aligned}
 \]
 
 \medskip
@@ -1391,9 +1393,11 @@ we obtain
 \]
 \hfill $\blacksquare$
 
-\begin{tcolorbox}
 
-\subsection*{Exercise 9}
+
+\begin{tcolorbox}[breakable]
+
+\subsection*{Exercise 2-9}
 
 Let the production function be CES:
 \[
@@ -1451,7 +1455,6 @@ and symmetry implies
 \]
 
 
-\subsection*{(continued)}
 
 \textbf{Fundamental inequality of profit maximization}
 
@@ -1490,7 +1493,6 @@ Therefore,
 \]
 
 This may be interpreted as
-
 \[
 \text{movement along the boundary of } Y(x)
 +
@@ -1527,7 +1529,6 @@ and
 \]
 
 This may be interpreted as
-
 \[
 \text{movement along the boundary of } V(y)
 +
@@ -1627,9 +1628,6 @@ the long-run response is at least as large in magnitude as the short-run respons
 
 
 
-
-\subsection*{(continued)}
-
 Notice that
 \[
 \sum_{v=1}^M \sum_{s=1}^M
@@ -1674,7 +1672,7 @@ The long-run response to a price change is more elastic than the short-run respo
 |\text{long-run effect}| \ge |\text{short-run effect}|.
 \]
 
-\section{3 Principle of Duality}
+\section{Principle of Duality}
 
 Indirect objective functions such as the cost, revenue, and profit functions
 are defined using the primal technology.
@@ -1710,7 +1708,7 @@ is equivalent to specifying the underlying primal technology.
 
 
 
-\subsection*{3.1 Illustration of the Duality}
+\subsection{Illustration of the Duality}
 
 Generate a half-space at a particular $w$ and $y$:
 \[
@@ -1780,8 +1778,6 @@ V^*(y)=V(y)\, ?
 
 
 
-
-\subsection*{(continued)}
 
 \subsection*{Proof of Properties of $V^*(y)$}
 
@@ -1870,26 +1866,25 @@ V^*(y) \ne V(y),
 \]
 no economically relevant information is lost by replacing $V(y)$ with $V^*(y)$.
 
-\begin{tcolorbox}
+\begin{tcolorbox}[breakable]
 
-\subsection*{Exercise 10}
-
-Given a profit function $\Pi(p,w)$, define a set...
-
+\subsection*{Exercise 2-10}
 
 Given a profit function $\Pi(p,w)$, define the set
 \[
+\begin{aligned}
 T^*
 =
-\{(x,y)\in \mathbb{R}_+^{N+M} : p\cdot y - w\cdot x \le \Pi(p,w)
-\ \text{for all } p>0,\ w>0\}.
+\{(x,y)\in \mathbb{R}_+^{N+M} : p\cdot y - w\cdot x \le \Pi(p,w)\\
+\text{for all } p>0,\ w>0\}.
+\end{aligned}
 \]
 
 Derive the properties of $T^*$ and compare them with those of $T$.
 
 \end{tcolorbox}
 
-\section{4 Primal vs.\ Dual: Some Dualities}
+\section{Primal vs.\ Dual: Some Dualities}
 
 We can establish the following dual relationships between the input
 distance function and the cost function:
@@ -1965,6 +1960,11 @@ which proves (4).
 
 To prove (2) and (3), we use the following theorem.
 
+
+
+
+
+\begin{tcolorbox}[breakable, colback=white]
 \subsection*{Theorem 1}
 
 Suppose $f(y,x)$ and $g(z,x)$ are real-valued functions, and both are
@@ -1972,13 +1972,15 @@ linearly homogeneous in $x\in X$.
 
 Then
 \[
-\min_x \left\{
+\begin{aligned}
+&\min_x \left\{
 \frac{f(y,x)}{g(z,x)} : y\in Y,\ x\in X,\ z\in Z
-\right\}
-=
+\right\}\\
+&=
 \min_x \left\{
 f(y,x) : g(z,x)\ge 1,\ y\in Y,\ x\in X,\ z\in Z
 \right\},
+\end{aligned}
 \]
 whenever the minimum on each side exists.
 
@@ -2061,18 +2063,19 @@ Hence
 \qquad \blacksquare
 \]
 
+\end{tcolorbox}
 \medskip
 
 By this theorem, (1) implies (2), and (4) implies (3).
 
 
-\begin{tcolorbox}
+\begin{tcolorbox}[breakable]
 
-\subsection*{Exercise 11}
+\subsection*{Exercise 2-11}
 
 Consider the input distance function
 \[
-D_i(x,y)=\frac{x}{\sqrt{y_1^2+y_2^2}}.
+D_i(x,y)=\frac{\sqrt{x_1 x_2}}{\sqrt{y_1^2+y_2^2}}.
 \]
 
 Derive the conditional factor demand functions and the cost function
@@ -2080,6 +2083,8 @@ corresponding to this input distance function.
 
 
 \end{tcolorbox}
+
+
 
 \subsection*{Dual Relations for Output Distance Function}
 
@@ -2155,7 +2160,6 @@ D_o(x,y)=\max_p \frac{p\cdot y}{R(p,x)}.
 
 
 
-\subsection*{(continued)}
 
 Thus,
 \[
@@ -2167,13 +2171,18 @@ This explains why
 D_o(x,y)=\max_p \{p\cdot y : R(p,x)=1\}.
 \]
 
-\begin{tcolorbox}
+\begin{tcolorbox}[breakable]
 
-\subsection*{Exercise 12}
+\subsection*{Exercise 2-12}
 
-Illustrate (7) using a diagram similar to Figure 14.
+Illustrate (7) 
+\[
+D_i(x,y)=\min_{w \ge 0}\{\,w \cdot x : c(w,y)\ge 1\,\}
+\]\\
+using a diagram similar to Figure 14.
 
 \end{tcolorbox}
+
 
 \subsection*{Example 5: Shadow Prices of Nonmarket Goods}
 
@@ -2242,7 +2251,7 @@ which is the marginal rate of transformation (MRT).
 Thus, estimating a differentiable output distance function allows us
 to recover shadow prices.
 
-\section{5 Cost, Revenue and Profit}
+\section{Cost, Revenue and Profit}
 
 We can derive a cost function from a profit function.
 
@@ -2287,15 +2296,17 @@ c^*(w,y)=p\cdot y - \Pi(p,w).
 \subsection*{Homogeneity}
 
 \[
+\begin{aligned}
 c^*(tw,y)
-=
-\max_p \{p\cdot y - \Pi(p,tw)\}
-=
-\max_p \{p\cdot y - t\Pi(p/t,w)\}
-=
-t\max_p \{(p/t)\cdot y - \Pi(p/t,w)\}
-=
+&=
+\max_p \{p\cdot y - \Pi(p,tw)\}\\
+&=
+\max_p \{p\cdot y - t\Pi(p/t,w)\}\\
+&=
+t\max_p \{(p/t)\cdot y - \Pi(p/t,w)\}\\
+&=
 t c^*(w,y).
+\end{aligned}
 \]
 
 \subsection*{Convexity}
@@ -2320,17 +2331,15 @@ c^*(w,y^1)=p^1\cdot y^1 - \Pi(p^1,w),
 c^*(w,y^2)=p^2\cdot y^2 - \Pi(p^2,w),
 \]
 
-which implies convexity in $y$.
+which implies convexity in $y$.\\
 
 
-
-
-\subsection*{(continued)}
 
 Also,
 \[
 c^*(w,y^0) \ge p^2 \cdot y^0 - \Pi(p^2,w),
-\qquad
+\]
+\[
 c^*(w,y^1) \ge p^2 \cdot y^1 - \Pi(p^2,w).
 \]
 
@@ -2369,13 +2378,12 @@ The convexity of $c^*(w,y)$ means that profit is maximized only in the region
 where marginal cost is increasing.
 
 
-\begin{tcolorbox}
+\begin{tcolorbox}[breakable]
 
-\subsection*{Exercise 13}
+\subsection*{Exercise 2-13}
 
 Derive a revenue function from a known profit function $\Pi(p,w)$.
 
 \end{tcolorbox}
-
 
 

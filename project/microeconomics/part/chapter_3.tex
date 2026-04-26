@@ -1,7 +1,7 @@
 \chapter{Applications of  Production Theory}
 
 
-\section{1 Structure of Technology}
+\section{Structure of Technology}
 
 Empirical work usually imposes certain restrictions on the structure
 of production technology. We consider:
@@ -15,7 +15,7 @@ of production technology. We consider:
 Elasticity of substitution, which represents production structure,
 is also discussed.
 
-\subsection*{1.1 Input Homotheticity}
+\subsection{Input Homotheticity}
 
 \[
 V(y)=h(y)\,V(1),
@@ -31,13 +31,13 @@ Under input homotheticity, isoquants are parallel.
 \subsection*{Input Distance Function}
 
 \[
-D^I(x,y)=\frac{D^I(x)}{h(y)}.
+D_i(x,y)=\frac{D_i(x)}{h(y)}.
 \]
 
 \subsection*{Proof}
 
 \[
-D^I(x,y)
+D_i(x,y)
 =
 \max \{\lambda : x \in \lambda V(y)\}
 \]
@@ -53,7 +53,7 @@ D^I(x,y)
 =
 \frac{1}{h(y)} \max \{\lambda' : x \in \lambda' V(1)\}
 =
-\frac{D^I(x)}{h(y)}.
+\frac{D_i(x)}{h(y)}.
 \quad \blacksquare
 \]
 
@@ -66,47 +66,50 @@ c(w,y)=h(y)c(w).
 \subsection*{Proof}
 
 \[
+\begin{aligned}
 c(w,y)
-=
-\min \{w\cdot x : D^I(x,y)\ge 1\}
-\]
-\[
-=
-\min \left\{w\cdot x : \frac{D^I(x)}{h(y)} \ge 1 \right\}
-=
-\min \{w\cdot x : D^I(x)\ge h(y)\}.
-\]
-
-Using homogeneity of degree 1,
-\[
-=
-h(y)\min \{w\cdot x' : D^I(x')\ge 1\}
-=
+&=
+\min \{w\cdot x : D_i(x,y)\ge 1\}\\
+&=
+\min \left\{w\cdot x : \frac{D_i(x)}{h(y)} \ge 1 \right\}\\
+&=
+\min \{w\cdot x : D_i(x)\ge h(y)\}.\\
+&=
+h(y)\min \{w\cdot x' : D^I(x')\ge 1\}\\
+&=
 h(y)c(w).
 \quad \blacksquare
+\end{aligned}
 \]
+
+
 
 \subsection*{Profit Function}
 
 \[
-\Pi(p,w)
-=
-\max_y \{p\cdot y - c(w,y)\}
-=
-\max_y \{p\cdot y - h(y)c(w)\}.
+\Pi(p,w)=c(w)\,\Pi\!\left(\frac{p}{c(w)}\right).
 \]
+
+\subsection*{Proof}
 
 \[
-=
-c(w)\max_y \left\{ \frac{p}{c(w)}\cdot y - h(y) \right\}
-=
+\begin{aligned}
+\Pi(p,w)
+&=
+\max_y \{p\cdot y - c(w,y)\}\\
+&=
+\max_y \{p\cdot y - h(y)c(w)\}.\\
+&=
+c(w)\max_y \left\{ \frac{p}{c(w)}\cdot y - h(y) \right\}\\
+&=
 c(w)\,\Pi\!\left(\frac{p}{c(w)}\right).
 \quad \blacksquare
+\end{aligned}
 \]
 
 
 
-\subsection*{1.2 Input Separability}
+\subsection{Input Separability}
 
 Under input separability, it is possible to construct a single aggregate input.
 
@@ -117,7 +120,7 @@ The production process can be viewed as a two-step procedure:
 \end{itemize}
 
 \[
-y \in Y(x) \quad \Longleftrightarrow \quad y \in Y(g(x)).
+y \in Y(x) \quad \Longleftrightarrow \quad y \in \hat Y(g(x)).
 \]
 
 \[
@@ -129,22 +132,22 @@ y: \mathbb{R}_+ \to \mathbb{R}_+^M.
 \subsection*{Output Distance Function}
 
 \[
-D^O(x,y)=D^O(g(x),y).
+D_o(x,y)=\hat D_o(g(x),y).
 \]
 
 \subsection*{Proof}
 
 \[
-D^O(x,y)
-=
-\min \{\theta : y \in \theta Y(x)\}
-\]
-\[
-=
-\min \{\theta : y \in \theta Y(g(x))\}
-=
-D^O(g(x),y).
+\begin{aligned}
+D_o(x,y)
+&=
+\min \{\theta : y \in \theta Y(x)\}\\
+&=
+\min \{\theta : y \in \theta \hat Y(g(x))\}\\
+&=
+\hat D_o(g(x),y).
 \quad \blacksquare
+\end{aligned}
 \]
 
 \subsection*{Revenue Function}
@@ -152,7 +155,7 @@ D^O(g(x),y).
 \[
 R(p,x)
 =
-\max \{p\cdot y : y \in Y(g(x))\}
+\max \{p\cdot y : y \in \hat Y(g(x))\}
 =
 R(p,g(x)).
 \]
@@ -181,23 +184,23 @@ are independent of output $y$.
 \subsection*{Implication for MRTS}
 
 \[
-D^O(x,y)=D^O(g(x),y).
+D_o(x,y)=\hat D_o(g(x),y).
 \]
 
 Differentiating,
 \[
-dD^O(x,y)
+dD_o(x,y)
 =
-dD^O(g(x),y)
+d\hat D_o(g(x),y)
 =
-\frac{\partial D^O}{\partial g} \sum_{i=1}^N \frac{\partial g(x)}{\partial x_i} dx_i.
+\frac{\partial D_o}{\partial g} \sum_{i=1}^N \frac{\partial g(x)}{\partial x_i} dx_i.
 \]
 
 Thus,
 \[
-\frac{\partial D^O(x,y)}{\partial x_i}
+\frac{\partial D_o(x,y)}{\partial x_i}
 =
-\frac{\partial D^O(g(x),y)}{\partial g}
+\frac{\partial \hat D_o(g(x),y)}{\partial g}
 \cdot
 \frac{\partial g(x)}{\partial x_i}.
 \]
@@ -207,7 +210,7 @@ Hence the marginal rate of technical substitution is
 \text{MRTS}_{ij}
 =
 -
-\frac{\partial D^O/\partial x_i}{\partial D^O/\partial x_j}
+\frac{\partial D_o/\partial x_i}{\partial D_o/\partial x_j}
 =
 -
 \frac{\frac{\partial g}{\partial x_i}}{\frac{\partial g}{\partial x_j}}.
@@ -223,7 +226,7 @@ MRTS is independent of $y$.
 
 Very often, separability holds only for a subset of inputs:
 \[
-D^O(x,y)=D^O(g_1(x_1),x_2,y).
+D_o(x,y)=\tilde D_o(g_1(x_1),x_2,y).
 \]
 
 \subsection*{1.3 Input Nonjointness}
@@ -245,7 +248,7 @@ V_i(y_i)=\{x_i : y_i \le f_i(x_i)\}.
 \subsection*{Input Distance Function}
 
 \[
-D^I(x,y)
+D_i(x,y)
 =
 \max \left\{
 \min_{i=1,\dots,M} D_i(x_i,y_i)
@@ -261,7 +264,7 @@ D_i(x_i,y_i)=\max \{\lambda : x_i \in \lambda V_i(y_i)\}.
 \subsection*{Proof}
 
 \[
-D^I(x,y)
+D_i(x,y)
 =
 \max \{\lambda : x \in \lambda V(y)\}
 \]
@@ -314,11 +317,13 @@ c(w,y)
 \right\}
 \]
 \[
-=
-\sum_{i=1}^M \min \{w\cdot x_i : x_i \in V_i(y_i)\}
-=
+\begin{aligned}
+&=
+\sum_{i=1}^M \min \{w\cdot x_i : x_i \in V_i(y_i)\}\\
+&=
 \sum_{i=1}^M c_i(w,y_i).
 \quad \blacksquare
+\end{aligned}
 \]
 
 \subsection*{Profit Function}
@@ -332,20 +337,18 @@ c(w,y)
 i.e., the sum of single-output profit functions.
 
 
-\subsection*{(continued)}
-
-\subsection*{Profit Function under Nonjointness}
+\subsection*{Proof}
 
 \[
+\begin{aligned}
 \Pi(p,w)
-=
-\max_y \left\{ p\cdot y - \sum_{i=1}^M c_i(w,y_i) \right\}
-\]
-\[
-=
-\sum_{i=1}^M \max_{y_i} \{ p_i y_i - c_i(w,y_i) \}
-=
+&=
+\max_y \left\{ p\cdot y - \sum_{i=1}^M c_i(w,y_i) \right\}\\
+&=
+\sum_{i=1}^M \max_{y_i} \{ p_i y_i - c_i(w,y_i) \}\\
+&=
 \sum_{i=1}^M \Pi_i(p_i,w).
+\end{aligned}
 \]
 
 \medskip
@@ -368,9 +371,9 @@ That is, there is \textbf{no cross-price effect}.
 
 This provides an empirical test for nonjointness.
 
-\section{1.4 Elasticity of Substitution}
+\section{Elasticity of Substitution}
 
-\subsection*{1.4.1 Definition}
+\subsection{Definition}
 
 Consider a two-input production function:
 \[
@@ -424,7 +427,6 @@ the change in MRTS.
 
 
 
-\subsection*{(continued)}
 
 Suppose the choice moves from point $A$ to point $B$ on an isoquant.
 Then
@@ -500,7 +502,7 @@ Then $\sigma$ can also be written as
 \[
 \sigma
 =
-\frac{x_1 f_1 + x_2 f_2}{x_1 x_2}\cdot \frac{f_1 f_2}{F}.
+\frac{x_1 f_1 + x_2 f_2}{x_1 x_2}\cdot \frac{F_{12}}{F}.
 \]
 
 Since $f_{12}=f_{21}$, the measure $\sigma$ is symmetric in the two inputs.
@@ -570,11 +572,10 @@ It can be shown that at least one $\sigma_{ij}$ must be positive.
 
 You should also be able to derive the relation
 \[
-\sigma_{ij} = \frac{E_{ij}}{s_j},
+\sigma_{ij} = \frac{\varepsilon_{ij}}{s_j},
 \]
 where $s_j$ is the cost share of input $x_j$, and $E_{ij}$ is the elasticity
 of conditional factor demand.
-
 \subsection*{Example 1}
 
 Consider the production function
@@ -589,14 +590,14 @@ dy - f_1\,dx_1 - f_2\,dx_2 = 0.
 
 From the cost-minimization conditions
 \[
-w_i = \lambda f_i,
+w_i=\lambda f_i,\qquad i=1,2,
 \]
-we also obtain
+we obtain
 \[
-dw_1 - f_1\,d\lambda - \lambda f_{11}\,dx_1 - \lambda f_{12}\,dx_2 = 0,
+dw_1-f_1\,d\lambda-\lambda f_{11}\,dx_1-\lambda f_{12}\,dx_2=0,
 \]
 \[
-dw_2 - f_2\,d\lambda - \lambda f_{21}\,dx_1 - \lambda f_{22}\,dx_2 = 0.
+dw_2-f_2\,d\lambda-\lambda f_{21}\,dx_1-\lambda f_{22}\,dx_2=0.
 \]
 
 In matrix form,
@@ -607,7 +608,7 @@ f_1 & \lambda f_{11} & \lambda f_{12} \\
 f_2 & \lambda f_{21} & \lambda f_{22}
 \end{pmatrix}
 \begin{pmatrix}
-d\lambda \\
+d\lambda/\lambda \\
 dx_1 \\
 dx_2
 \end{pmatrix}
@@ -619,28 +620,90 @@ dw_2
 \end{pmatrix}.
 \]
 
-
-\subsection*{(continued)}
-
-From cost minimization, we have
+Equivalently,
 \[
-w_1 x_1 + w_2 x_2 = C(w),
+\lambda
+\begin{pmatrix}
+0 & f_1 & f_2 \\
+f_1 & f_{11} & f_{12} \\
+f_2 & f_{12} & f_{22}
+\end{pmatrix}
+\begin{pmatrix}
+d\lambda/\lambda \\
+dx_1 \\
+dx_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+\lambda dy \\
+dw_1 \\
+dw_2
+\end{pmatrix}.
 \]
-and the elasticity relation can be written as
+
+When
+\[
+dy=dw_2=0,
+\]
+Cramer's rule gives
 \[
 \frac{\partial x_2}{\partial w_1}
 =
-- \frac{w_1 x_1 + w_2 x_2}{w_1 x_1} \cdot \frac{x_2}{x_1}
+\frac{F_{12}}{\lambda F},
+\]
+where \(F\) is the determinant of the bordered Hessian and \(F_{12}\) is the corresponding cofactor.
+
+We know that the elasticity of substitution is
+\[
+\sigma_2=
+\frac{x_1f_1+x_2f_2}{x_1x_2}\frac{F_{12}}{F}.
+\]
+
+Therefore,
+\[
+\sigma_2
 =
-- \frac{x_2}{x_1} \cdot \frac{1}{s_1},
+\frac{\lambda x_1f_1+\lambda x_2f_2}{x_1x_2}
+\frac{\partial x_2}{\partial w_1}.
+\]
+
+Using
+\[
+w_i=\lambda f_i,
+\]
+this becomes
+\[
+\sigma_2
+=
+\frac{w_1x_1+w_2x_2}{x_1x_2}
+\frac{\partial x_2}{\partial w_1}.
+\]
+
+Rearranging,
+\[
+\sigma_2
+=
+\frac{w_1x_1+w_2x_2}{w_1x_1}
+\left(\frac{\partial x_2}{\partial w_1}\frac{w_1}{x_2}\right).
+\]
+
+Hence,
+\[
+\sigma_2=\frac{\varepsilon_{21}}{s_1},
 \]
 where
 \[
-s_1 = \frac{w_1 x_1}{w_1 x_1 + w_2 x_2}
+\varepsilon_{21}
+=
+\frac{\partial x_2}{\partial w_1}\frac{w_1}{x_2},
 \]
-is the cost share of input $x_1$.
+and
+\[
+s_1=
+\frac{w_1x_1}{w_1x_1+w_2x_2}.
+\]
 
-\subsection*{1.4.2 Constant Elasticity of Substitution (CES)}
+\subsection{Constant Elasticity of Substitution (CES)}
 
 A CES production function is given by
 \[
@@ -689,19 +752,19 @@ Taking derivatives,
 \subsection*{Special Cases}
 
 \begin{enumerate}
-    \item \textbf{Perfect Substitutes} ($\rho = 1$)
+    \item \textbf{Perfect Substitutes} ($\rho = 1, \, \sigma=\infty$)
 
     \[
     Q = aL + bK.
     \]
 
-    \item \textbf{Cobb--Douglas} ($\rho \to 0$)
+    \item \textbf{Cobb--Douglas} ($\rho \to 0, \, \sigma=1$)
 
     Using l'H\^opital's rule:
     \[
     \ln Q
     =
-    \lim_{\rho \to 0}
+    \lim_{\rho \to 0x}
     \frac{\ln(aL^\rho + bK^\rho)}{\rho}
     \]
 
@@ -715,7 +778,7 @@ Taking derivatives,
     Q = L^a K^b.
     \]
 
-    \item \textbf{Perfect Complements} ($\rho \to -\infty$)
+    \item \textbf{Perfect Complements} ($\rho \to -\infty, \, \sigma=0$)
 
     Using the generalized mean:
     \[
@@ -760,10 +823,9 @@ Thus, CES nests both extremes:
 The restriction $a + b = 1$ ensures homogeneity of degree one and
 consistent limiting behavior.
 
-\section{2 Parametric Analysis of a Production System}
 
 
-\section{2 Parametric Analysis of a Production System}
+\section{Parametric Analysis of a Production System}
 
 Parametric analysis employs a functional form for production technology.
 
@@ -789,7 +851,7 @@ We consider three conditions:
 (2)\quad \nabla_z h^*(z_0) = \nabla_z h(z_0),
 \]
 \[
-(3)\quad \nabla^2_z h^*(z_0) = \nabla^2_z h(z_0).
+(3)\quad \nabla_{zz} h^*(z_0) = \nabla_{zz} h(z_0).
 \]
 
 \subsection*{Interpretation}
@@ -906,7 +968,9 @@ h(z)
 \frac{1}{2}
 \sum_{i=1}^N \sum_{j=1}^N
 \beta_{ij} g_i(z_i) g_j(z_j),
-\quad \beta_{ij} = \beta_{ji}.
+\]
+\[
+\beta_{ij} = \beta_{ji}.
 \]
 
 ---
@@ -926,7 +990,9 @@ $z_0 = (1,\dots,1)$:
 \frac{1}{2}
 \sum_{i=1}^N \sum_{j=1}^N
 \beta_{ij} \ln z_i \ln z_j,
-\quad \beta_{ij} = \beta_{ji}.
+\]
+\[
+\beta_{ij} = \beta_{ji}.
 \]
 
 This is the \textbf{transcendental logarithmic (translog) function}.
@@ -952,21 +1018,23 @@ y \left[
 \subsubsection*{(2) Translog Cost Function}
 
 \[
+\begin{aligned}
 \ln c(w,y)
 =
 \beta_0
-+
-\sum_{i=1}^N \beta_i \ln w_i
-+
+&+
+\sum_{i=1}^N \beta_i \ln w_i\\
+&+
 \frac{1}{2}
 \sum_{i=1}^N \sum_{j=1}^N
-\beta_{ij} \ln w_i \ln w_j
-+
-\beta_y \ln y
-+
-\frac{1}{2} \beta_{yy} (\ln y)^2
-+
+\beta_{ij} \ln w_i \ln w_j\\
+&+
+\beta_y \ln y\\
+&+
+\frac{1}{2} \beta_{yy} (\ln y)^2\\
+&+
 \sum_{i=1}^N \beta_{iy} \ln w_i \ln y.
+\end{aligned}
 \]
 
 ---
@@ -988,18 +1056,19 @@ For the cost function to be homogeneous of degree 1 in prices:
 \]
 
 
-\begin{tcolorbox}
+\begin{tcolorbox}[breakable]
 
-\subsection*{Exercise 1}
+\subsection*{Exercise 3-1}
 
 Derive the own- and cross-price elasticities of factor demands when the
 cost function is either a generalized Leontief function or a translog function.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}
 
-\subsection*{Exercise 2}
+\begin{tcolorbox}[breakable]
+
+\subsection*{Exercise 3-2}
 
 Consider a single-output translog cost function.
 Show how to impose the restrictions of input homotheticity and input separability,
@@ -1007,105 +1076,83 @@ respectively.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}
+\begin{tcolorbox}[breakable]
 
-\subsection*{Exercise 3}
+\subsection*{Exercise 3-3}
 
-There are $i=1,\dots,N$ goods, produced with $j=1,\dots,M$ factors.
+There are \(i = 1, \dots, N\) goods, produced with \(j = 1, \dots, M\) factors.  
 The production functions are written as
 \[
-Y_i = f_i(v_i),
+y_i = f_i(v_i),
 \]
 where
 \[
-v_i = (v_{i1},\dots,v_{iM})
+v_i = (v_{i1}, \dots, v_{iM})
 \]
 is the vector of factor inputs.
 
-\end{tcolorbox}
+The production functions are assumed to be positive, increasing, concave, and homogeneous of degree one for all \(v_i\).
 
-
-The production functions are assumed to be positive, increasing, concave,
-and homogeneous of degree one in $v_i$ for all $i$.
-
-Let $p_i$ be the price of output $i$ and $w_j$ the price of factor $j$.
+Let \(p_i\) be the price of output \(i\) and \(w_j\) be the price of factor \(j\).
 
 The GDP (gross domestic product) function of the economy is defined as
 \[
-G(p,V)
-=
-\max_{\{v_i\}}
-\sum_{i=1}^N p_i f_i(v_i)
-\]
-subject to
-\[
-\sum_{i=1}^N v_i \le V,
+G(p, V) = \max_{\{v_i\}} \left\{ \sum_{i=1}^N p_i f_i(v_i) \;\middle|\; \sum_{i=1}^N v_i \leq V \right\},
 \]
 where
 \[
-V=(V_1,\dots,V_M)
+V = (V_1, \dots, V_M)
 \]
-is the $(M\times 1)$ endowment vector, and
+is the \((M \times 1)\) endowment vector, and
 \[
-p=(p_1,\dots,p_N)
+p = (p_1, \dots, p_N)
 \]
-is the $(N\times 1)$ output price vector.
+is the \((N \times 1)\) output price vector.
 
 \begin{enumerate}
-    \item[(i)] Show that $G(p,V)$ is homogeneous of degree one in $p$.
-    
-    \item[(ii)] Show that $G(p,V)$ is homogeneous of degree one in $V$.
-    
-    \item[(iii)] Show the following:
-    \[
-    \frac{\partial G}{\partial p_i} = Y_i,
-    \qquad
-    \frac{\partial G}{\partial V_j} = w_j,
-    \qquad
-    \frac{dw_j}{dp_i} = \frac{dY_i}{dV_j}.
-    \]
-    
-    \item[(iv)] Suppose you want to estimate the GDP function using an
-    international data set:
-    \[
-    \ln G
-    =
-    \alpha_0
-    +
-    \sum_{i=1}^N \alpha_i \ln p_i
-    +
-    \sum_{k=1}^M \beta_k \ln V_k
-    +
-    \frac{1}{2}
-    \sum_{i=1}^N \sum_{j=1}^N \gamma_{ij} \ln p_i \ln p_j
-    \]
-    \[
-    \qquad
-    +
-    \frac{1}{2}
-    \sum_{k=1}^M \sum_{l=1}^M \delta_{kl} \ln V_k \ln V_l
-    +
-    \sum_{i=1}^N \sum_{k=1}^M \phi_{ik} \ln p_i \ln V_k.
-    \]
-    
-    What restrictions must be imposed on $\alpha$, $\beta$, $\gamma$,
-    $\delta$, and $\phi$?
-    
-    \item[(v)] From the GDP function in (iv), derive
-    \[
-    \frac{\partial Y_i}{\partial V_k}
-    \]
-    (Rybczynski elasticity).
-    
-    \item[(vi)] Derive
-    \[
-    \frac{\partial w_j}{\partial p_i}
-    \]
-    (Stolper--Samuelson elasticity).
-    
-    \item[(vii)] Derive
-    \[
-    \frac{\partial V_l}{\partial V_k}
-    \]
-    for the cases $k=l$ and $k\ne l$, respectively.
+\item[(i)] Show that \(G(p, V)\) is homogeneous of degree one in \(p\).
+
+\item[(ii)] Show that \(G(p, V)\) is homogeneous of degree one in \(V\).
+
+\item[(iii)] Show that
+\[
+\frac{\partial G}{\partial p_i} = y_i,
+\qquad
+\frac{\partial G}{\partial V_j} = w_j,
+\qquad
+\frac{d w_j}{d p_i} = \frac{d y_i}{d V_j}.
+\]
+
+\item[(iv)] What are the restrictions that have to be imposed on \(\alpha\), \(\beta\), \(\delta\), and \(\phi\) if you want to estimate the GDP function using an international data set:
+\[
+\begin{aligned}
+\ln G &= \alpha_0 \\
+&\quad + \sum_{i=1}^N \alpha_i \ln p_i \\
+&\quad + \sum_{k=1}^M \beta_k \ln V_k \\
+&\quad + \frac{1}{2} \sum_{i=1}^N \sum_{j=1}^N \gamma_{ij} \ln p_i \ln p_j \\
+&\quad + \frac{1}{2} \sum_{k=1}^M \sum_{l=1}^M \delta_{kl} \ln V_k \ln V_l \\
+&\quad + \sum_{i=1}^N \sum_{k=1}^M \phi_{ik} \ln p_i \ln V_k.
+\end{aligned}
+\]
+
+\item[(v)] From the GDP function in (iv), derive the effect
+\[
+\frac{\partial \ln y_i}{\partial \ln V_j}
+\quad \text{(Rybczynski elasticity)}.
+\]
+
+\item[(vi)] Derive the effect
+\[
+\frac{\partial \ln w_j}{\partial \ln p_i}
+\quad \text{(Stolper-Samuelson elasticity)}.
+\]
+
+\item[(vii)] Derive the effects
+\[
+\frac{\partial \ln w_j}{\partial \ln V_k}
+\]
+for the cases where \(k = j\) and \(k \neq j\), respectively.
 \end{enumerate}
+
+\end{tcolorbox}
+
