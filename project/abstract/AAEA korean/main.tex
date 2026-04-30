@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper]{report}
+\documentclass[11pt,a4paper]{article}
 
 % =========================
 % Layout and fonts
@@ -8,10 +8,7 @@
 \usepackage{xetexko}
 \usepackage{fontspec}
 \setmainfont{TeX Gyre Pagella}
-\setmainhangulfont[
-  Ligatures=TeX,
-  BoldFont  = {NanumSquareB.otf}
-]{NanumSquareR.otf}
+\setmainhangulfont{Noto Sans CJK KR}
 
 \usepackage{setspace}
 \singlespacing
@@ -20,339 +17,357 @@
 \setlength{\parindent}{10pt}
 
 % =========================
-% Math and tables
+% Tables and colors
 % =========================
-\usepackage{amsmath}
-\usepackage{siunitx}
-\sisetup{
-  group-separator = {,},
-  group-minimum-digits = 4,
-  round-mode = places,
-  round-precision = 0
-}
-
-\usepackage{multicol}
 \usepackage{booktabs}
+\usepackage{array}
 \usepackage{colortbl}
-
-% =========================
-% Figures and links
-% =========================
-\usepackage{graphicx}
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.18}
-
-\usepackage{float}
 \usepackage[dvipsnames]{xcolor}
+
+% =========================
+% Links
+% =========================
 \usepackage[
     colorlinks=true,
     linkcolor=MidnightBlue
 ]{hyperref}
 
 % =========================
+% Title
+% =========================
+\title{\bfseries 대내외 환경변화에 대응한 公社 역할 정립과 발전 방안}
+\author{녹색전환 분야 연구 수행 과정 기록}
+\date{\today}
+
+% =========================
 \begin{document}
 % =========================
 
-\begin{center}
-{\LARGE \bfseries
-글로벌 곡물 무역 네트워크에서의 구조적 재편 측정
-\par}
-\vspace{0.8em}
+\maketitle
 
-{\large
-다품목 벡터 접근법
-\par}
+\section*{연구 개요}
+
+본 연구의 녹색전환 파트는 기후위기 대응, 탄소중립, 자원순환 및 생태보전이라는
+세 가지 축을 중심으로 농업ㆍ농촌 부문의 구조적 변화를 분석하고,
+이를 한국농어촌공사의 기능 재정립 및 실천과제 도출로 연결하는 것을 목적으로 한다.
+
+최근 기후위기 심화와 국제 식량시장 불안정성 증가는 농업ㆍ농촌의 생산 기반과
+공공 인프라 운영 체계 전반에 구조적 변화를 요구하고 있다.
+특히 농업용수 관리, 농지 정비, 재해 대응, 농촌공간 관리 기능을 수행하는
+한국농어촌공사는 기존의 생산기반 유지ㆍ관리 기능을 넘어,
+기후적응형 자원관리, 탄소중립형 기반시설 운영,
+친환경 농촌공간 조성 기능까지 포괄하는 방향으로
+역할 확대가 필요한 상황이다.
+
+분석의 기본 흐름은 다음과 같다.
+
+\begin{center}
+\textbf{정책 변화 $\rightarrow$ 농업ㆍ농촌 영향 $\rightarrow$ 공사 역할 변화}
 \end{center}
 
-\vspace{2em}
+\section*{1단계: 연구 프레임 설정}
 
-% ======================================================
-% Abstract
-% ======================================================
+\subsection*{목적}
 
-\begin{multicols}{2}
+1단계에서는 녹색전환의 분석 범위를 명확히 설정하고,
+이후 문헌조사, 정책분석, 사례조사, 공사 기능 재정립을 위한 기본 분석틀을 마련한다.
 
-\noindent\textbf{연구 동기 및 의의.}
+녹색전환은 단순히 온실가스 감축 정책에 한정되지 않으며,
+기후위기에 대한 적응(adaptation),
+온실가스 감축 및 탄소중립(mitigation),
+자원순환 및 생태보전(resource circulation and ecological conservation)을
+포괄하는 개념으로 정의한다.
 
-최근 지정학적 충격, 글로벌 공급망 교란, 그리고 식량안보에 대한 우려는
-세계 곡물 무역 구조에 중대한 변화를 초래하고 있다.
-기존의 네트워크 기반 무역 분석은 주로 단일 품목 흐름이나
-총 교역량과 같은 집계 지표에 의존해 왔으며,
-이는 무역 강도의 변화 자체를 파악하는 데에는 유용하다.
-그러나 이러한 접근은
-양자 무역 관계 내부에서
-\emph{품목 구성}이 어떻게 변화하는지를
-체계적으로 설명하는 데에는 한계를 가진다.
+\subsection*{주요 분석 범위}
 
-그 결과, 단순한 무역 규모의 비례적 증감이
-실질적인 무역 구조의 재편과 구분되지 못한 채
-해석되는 문제가 발생한다.
-특히 다수의 품목이 동시에 교역되는 곡물 무역의 특성상,
-무역 관계의 조정이
-규모를 통한 조정인지,
-아니면 품목 간 재배분을 통한 조정인지를
-명확히 구분할 필요가 있다.
-
-본 연구는 이러한 한계를 보완하기 위해,
-각 양자 무역 관계를 다품목 벡터로 표현하는
-벡터 기반 분석 틀을 제시한다.
-이를 통해
-(i) 품목 구성의 변화와
-(ii) 양자 무역 규모의 변화를
-개념적으로 분리하면서도
-상호 일관된 방식으로 측정할 수 있는
-두 가지 글로벌 구조 변화 지수를 도출한다.
-
-\vspace{0.6em}
-
-\noindent\textbf{방법론.}
-
-글로벌 곡물 무역 네트워크는
-FAOSTAT Detailed Trade Matrix를 이용하여
-가중·방향성 인접행렬의 시계열로 구성된다.
-연도 $t$에서 수입국 $i$와 수출국 $j$ 간의 무역 관계는
-다음과 같은 4차원 품목 벡터로 정의된다.
-\[
-\mathbf{x}_{ij,t}
-=
-\bigl(
-x^{\text{wheat}}_{ij,t},
-x^{\text{soy}}_{ij,t},
-x^{\text{maize}}_{ij,t},
-x^{\text{rice}}_{ij,t}
-\bigr)
-\]
-이때 모든 양자 무역 벡터의 집합은
-벡터값 인접행렬 $\mathbf{X}_t$를 이룬다.
-
-연도 $t-1$과 $t$ 사이의 구조적 변화는
-링크 수준에서 측정된다.
-먼저, 품목 구성의 변화는
-연속된 두 무역 벡터 사이의
-시점 간 사이각(intertemporal angle)로 정의된다.
-\[
-\theta_{ij,t}
-=
-\arccos\!\left(
-\frac{
-\mathbf{x}_{ij,t-1} \cdot \mathbf{x}_{ij,t}
-}{
-\lVert \mathbf{x}_{ij,t-1} \rVert
-\lVert \mathbf{x}_{ij,t} \rVert
-}
-\right)
-\]
-이 각도는 무역 규모의 변화와 무관하게
-상대적 품목 비중의 변화를 포착한다.
-
-경제적으로 중요한 무역 관계에서 발생한 구성 변화가
-지수에 더 크게 반영되도록 하기 위해,
-각도 변화는 평균 무역 규모로 가중된다.
-\[
-m^{\text{comp}}_{ij,t}
-=
-\frac{
-\lVert \mathbf{x}_{ij,t-1} \rVert
-+
-\lVert \mathbf{x}_{ij,t} \rVert
-}{2}
-\,
-\theta_{ij,t}
-\]
-
-한편, 양자 무역의 전체 규모 변화는
-무역 벡터 크기의 절대적 변화로 측정된다.
-\[
-m^{\text{scale}}_{ij,t}
-=
-\frac{1}{2}
-\,
-\bigl|
-\lVert \mathbf{x}_{ij,t} \rVert
--
-\lVert \mathbf{x}_{ij,t-1} \rVert
-\bigr|
-\]
-
-구성 또는 규모 변화 지표
-$m_{ij,t} \in
-\{ m^{\text{comp}}_{ij,t}, m^{\text{scale}}_{ij,t} \}$에 대해,
-해당 글로벌 구조 변화 지수는
-다음과 같은 프로베니우스 노름으로 정의된다.
-\[
-D_t
-=
-\left(
-\sum_{i,j}
-m_{ij,t}^2
-\right)^{1/2}
-\]
-
-
-
-\end{multicols}
-
-% ======================================================
-% Figure
-% ======================================================
-
-\begin{figure}[H]
-  \centering
-  {\hspace*{-60pt}\input{곡물네트워크_multi_single_axis.pgf}}
-  \caption{구성 기반 및 규모 기반 구조 변화의 글로벌 지수, 1987--2024}
-  \label{fig:global_indices}
-\end{figure}
-
-% ======================================================
-% Tables
-% ======================================================
-
-\begin{table}[ht]
+\begin{table}[h]
 \centering
-\footnotesize{
-\hfill (1,000 metric tons)\\
 \renewcommand{\arraystretch}{1.3}
-\begin{tabular}{c | c | c | c | c | c | c | c | c | c | c}
-\hline 
-\rowcolor{gray!30}
-Importer($i$) & Exporter($j$) &
-$x^{\text{wheat}}_{ij,2017}$ &
-$x^{\text{soy}}_{ij,2017}$ &
-$x^{\text{maize}}_{ij,2017}$ &
-$x^{\text{rice}}_{ij,2017}$ &
-$x^{\text{wheat}}_{ij,2018}$ &
-$x^{\text{soy}}_{ij,2018}$ &
-$x^{\text{maize}}_{ij,2018}$ &
-$x^{\text{rice}}_{ij,2018}$ &
-Contrib.\\
-\hline
-\hline
-China & USA      & 1,555 & 32,853 &   756 & 0 &   361 & 16,640 &   312 & 0 & 0.4036\\
-China & Brazil   & 0     & 50,927 &     0 & 0 &     0 & 66,084 &     0 & 0 & 0.3511\\
-China & Argentina& 0     &  6,581 &     0 & 0 &     0 &  1,463 &     0 & 0 & 0.0400\\
-\hline
+\begin{tabular}{p{4cm} p{10cm}}
+\toprule
+\rowcolor{gray!20}
+구분 & 주요 내용 \\
+\midrule
+기후위기 대응 & 가뭄, 홍수, 폭염 대응, 농업용수 안정성, 재해예방형 기반정비 \\
+탄소중립 & 농업부문 온실가스 감축, 재생에너지 확대, 저탄소 농업기술 \\
+자원순환ㆍ생태보전 & 물 재이용, 토양ㆍ수질 관리, 생태계 기반 농촌관리 \\
+\bottomrule
 \end{tabular}
-}
-\caption{2018년 글로벌 무역 규모 변화에 가장 크게 기여한 상위 3개 양자 무역 링크}
-\label{tab:stop_links}
+\caption{녹색전환 분석 범위}
 \end{table}
 
+\subsection*{해야 할 일}
 
-\begin{table}[ht]
+\begin{itemize}
+    \item 녹색전환 관련 핵심 개념 정리
+    \begin{itemize}
+        \item 기후위기 대응 관련 개념 정리
+        \begin{itemize}
+            \item 기후변화 적응 (Adaptation)
+            \item 회복탄력성 (Resilience)
+            \item 취약성 (Vulnerability)
+            \item 재해위험관리 (Disaster / Risk Management)
+            \item 기후스마트농업 (Climate-Smart Agriculture)
+            \item 농업용수 관리 (Agricultural Water Management)
+        \end{itemize}
+        \item 탄소중립 관련 개념 정리
+        \begin{itemize}
+            \item 기후변화 완화 (Mitigation)
+            \item 탄소중립 (Carbon Neutrality)
+            \item 넷제로 (Net Zero)
+            \item 탈탄소화 (Decarbonization)
+            \item 탄소흡수원 (Carbon Sink)
+            \item 재생에너지 (Renewable Energy)
+            \item 저탄소농업 (Low-Carbon Agriculture)
+        \end{itemize}
+        \item 자원순환·생태보전 관련 개념 정리
+        \begin{itemize}
+            \item 순환경제 (Circular Economy)
+            \item 자원순환 (Resource Circulation)
+            \item 생태보전 (Ecological Conservation)
+            \item 자연기반해법 (Nature-based Solutions)
+            \item 생물다양성 (Biodiversity)
+            \item 토양·수질 관리 (Soil and Water Management)
+            \item 물 재이용 (Water Reuse / Recycling)
+        \end{itemize}
+    \end{itemize}
+
+    \item 국내외 정책자료 검색을 위한 키워드 리스트 작성
+    \begin{itemize}
+        \item 국내 정책자료 조사
+        \begin{itemize}
+            \item 탄소중립 녹색성장 기본계획
+            \item 농업·농촌 탄소중립 추진전략
+            \item 기후위기 적응대책
+            \item 스마트농업 확산 정책
+            \item 농업용수 및 기반정비 관련 정책
+        \end{itemize}
+        \item 해외 정책자료 조사
+        \begin{itemize}
+            \item EU Green Deal
+            \item Farm to Fork Strategy
+            \item Common Agricultural Policy (CAP)
+            \item USDA Climate-Smart Agriculture
+            \item Japan Green Food System Strategy
+        \end{itemize}
+        \item 국제기구 보고서 및 데이터 검색
+        \begin{itemize}
+            \item FAO
+            \item OECD
+            \item World Bank
+            \item UNFCCC
+            \item IPCC
+            \item IEA
+        \end{itemize}
+        \item 검색 키워드 정리
+        \begin{itemize}
+            \item climate adaptation agriculture
+            \item carbon neutral agriculture
+            \item agricultural water management
+            \item rural resilience
+            \item circular economy agriculture
+        \end{itemize}
+    \end{itemize}
+
+    \item 분석틀 설정
+    \begin{itemize}
+        \item 외부 환경 변화 분석
+        \begin{itemize}
+            \item 기후위기 심화
+            \item 글로벌 정책 변화
+            \item 기술 발전 및 시장 변화
+        \end{itemize}
+        \item 정책 변화 분석
+        \begin{itemize}
+            \item 국내 정책 변화
+            \item 해외 정책 변화
+        \end{itemize}
+        \item 농업·농촌 영향 분석
+        \begin{itemize}
+            \item 생산 구조 변화
+            \item 농촌 생활환경 변화
+            \item 기반시설 수요 변화
+        \end{itemize}
+        \item 농어촌공사 역할 변화 분석
+        \begin{itemize}
+            \item 기존 사업 재편
+            \item 신규 사업 발굴
+            \item 중장기 전략 수립
+        \end{itemize}
+    \end{itemize}
+
+    \item 세부 분석 항목 확정
+    \begin{itemize}
+        \item 농업 생산 측면
+        \begin{itemize}
+            \item 생산성 변화
+            \item 작목 전환 가능성
+            \item 스마트농업 도입
+        \end{itemize}
+        \item 농촌 인프라 측면
+        \begin{itemize}
+            \item 농업용수 공급
+            \item 배수 및 재해예방 시설
+            \item 에너지 인프라
+        \end{itemize}
+        \item 환경·생태 측면
+        \begin{itemize}
+            \item 탄소저감 효과
+            \item 생태복원
+            \item 수질·토양 관리
+        \end{itemize}
+        \item 정책·제도 측면
+        \begin{itemize}
+            \item 법·제도 개선
+            \item 예산 및 지원체계
+            \item ESG 및 녹색금융 연계
+        \end{itemize}
+        \item 기술·디지털 전환 측면
+        \begin{itemize}
+            \item 데이터 기반 관리
+            \item AI / IoT 활용
+            \item 디지털 트윈 / 스마트 인프라
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\section*{2단계: 대내외 동향 조사}
+
+\subsection*{목적}
+
+2단계에서는 녹색전환과 관련된 국제기구, 주요국, 국내 정부의 정책 동향을 검토하고,
+농업ㆍ농촌 부문에 주는 정책적 시사점을 도출한다.
+
+국제적으로는 IPCC, FAO, EU, OECD를 중심으로
+기후변화 대응과 식량안보 확보를 위한 정책 전환이 빠르게 진행되고 있다.
+
+국내에서는 2050 탄소중립 정책과 연계하여
+농업부문 온실가스 감축, 스마트농업 확대,
+통합 물관리 및 재해대응형 기반시설 확충 정책이 추진되고 있다.
+
+\subsection*{해외 동향 조사 대상}
+
+\begin{table}[h]
 \centering
-\footnotesize{
-\hfill (1,000 metric tons)\\
 \renewcommand{\arraystretch}{1.3}
-\begin{tabular}{c | c | c | c | c | c | c | c | c | c | c}
-\hline 
-\rowcolor{gray!30}
-Importer($i$) & Exporter($j$) &
-$x^{\text{wheat}}_{ij,2022}$ &
-$x^{\text{soy}}_{ij,2022}$ &
-$x^{\text{maize}}_{ij,2022}$ &
-$x^{\text{rice}}_{ij,2022}$ &
-$x^{\text{wheat}}_{ij,2023}$ &
-$x^{\text{soy}}_{ij,2023}$ &
-$x^{\text{maize}}_{ij,2023}$ &
-$x^{\text{rice}}_{ij,2023}$ &
-Contrib.\\
-\hline
-\hline
-China & Brazil & 0 & 54,393 &  0    & 0 &   0 & 71,592 & 11,920 & 0 & 0.6384\\
-China & USA    & 625 & 29,532 & 14,864 & 0 & 925 & 26,506 &  7,144 & 0 & 0.2207\\
-Spain & Ukraine& 1,017 & 26 & 3,132 & 0 & 4,097 & 21 & 3,894 & 0 & 0.0287\\
-\hline
+\begin{tabular}{p{4cm} p{5cm} p{5cm}}
+\toprule
+\rowcolor{gray!20}
+기관ㆍ국가 & 주요 정책ㆍ자료 & 검토 포인트 \\
+\midrule
+IPCC & 기후변화 평가보고서 & 농업 부문 기후위험, 적응 필요성 \\
+FAO & 식량안보 및 농업적응 자료 & 식량안보, 농업 생산성, 기후적응 \\
+EU & Green Deal, Farm to Fork & 저탄소 농업, 지속가능 농업체계 \\
+OECD & 농촌 회복력 정책 & 농촌지역 회복력, 지역 기반 대응 \\
+\bottomrule
 \end{tabular}
-}
-\caption{2023년 글로벌 품목 구성 변화에 가장 크게 기여한 상위 3개 양자 무역 링크}
-\label{tab:btop_links}
 \end{table}
 
-\begin{multicols}{2}
+\section*{3단계: 농업ㆍ농촌 영향 분석}
 
-특정 양자 무역 링크 $(i,j)$의 기여도는 다음과 같이 정의된다.
-\[
-\text{Contribution}_{ij,t}
-=
-\frac{m_{ij,t}^2}
-{\sum_{k,\ell} m_{k\ell,t}^2}
-\]
-이러한 분해는
-각 글로벌 지수가
-링크 수준 기여도의 합으로 표현될 수 있음을 보장하며,
-구조적 변화의 특정 국면이
-소수의 경제적으로 중요한 무역 관계로부터
-주도되었는지를 식별할 수 있게 한다.
+\subsection*{목적}
 
+3단계에서는 녹색전환이 농업 생산, 자원관리, 재해대응, 식량안보에 미치는 영향을
+분야별로 분석한다.
 
-\vspace{0.6em}
+첫째, 생산 측면에서는 기온 상승과 강수 패턴 변화로 인해
+작물 생산성 변동성이 증가하고,
+재배 가능 지역의 변화가 발생할 수 있다.
 
-\noindent\textbf{실증적 패턴.}
+둘째, 자원관리 측면에서는 농업용수 부족과 집중호우에 따른
+배수 문제의 동시 발생 가능성이 확대된다.
 
-그림~\ref{fig:global_indices}는
-구성 기반 지수와 규모 기반 지수의
-시간적 변화를 제시한다.
-두 지수 모두 연도별 변동성이 크지만,
-시기별 상대적 크기는 뚜렷한 차이를 보이며,
-이는 글로벌 곡물 무역에서의 구조적 변화가
-서로 상이한 조정 경로를 통해 발생함을 시사한다.
+셋째, 재해 대응 측면에서는 가뭄, 홍수, 염해와 같은
+기후재해의 빈도와 강도가 증가한다.
 
-특히 2018년은 미·중 무역 갈등이 본격화된 시기로,
-규모 기반 지수가 급격히 상승한다.
-이는 양자 무역량의 큰 폭 감소를 반영하는 반면,
-구성 기반 지수는 상대적으로 완만한 수준에 머문다.
-이는 해당 시기의 조정이
-품목 간 재배분보다는
-기존 무역 관계의 비례적 축소를 통해
-주로 이루어졌음을 의미한다.
-실제로 미국으로부터의 수입은
-주요 곡물 품목 전반에서 비교적 균등하게 감소하여,
-$\mathbf{x}_{ij,2017}$과 $\mathbf{x}_{ij,2018}$ 벡터가
-서로 거의 정렬된 상태를 유지하였다.
-그 결과,
-시간 간 각도 $\theta_{ij,t}$는 작게 나타났으며,
-중국–미국 간 무역 링크는
-$D^{\text{scale}}_{2018}$에는 지배적으로 기여한 반면,
-$D^{\text{comp}}_{2018}$에 대한 기여는 제한적인 것으로 확인된다.
+넷째, 식량안보 측면에서는 글로벌 공급망 충격과
+국내 곡물자급률 한계가 주요 리스크로 작용한다.
 
-반면 2023년에는
-두 지수가 모두 크게 상승한다.
-이 시기에는 무역 규모의 변화와 함께
-양자 무역 관계 내부의 품목 구성에서도
-뚜렷한 조정이 동시에 관찰된다.
-$D^{\text{scale}}_{2023}$와 $D^{\text{comp}}_{2023}$의 동시 증가는
-글로벌 곡물 무역 네트워크가
-단순한 확장이나 축소를 넘어
-품목 구조 자체가 재편되는
-보다 근본적인 조정 국면에 진입했음을 시사한다.
+\section*{4단계: 국내외 사례 조사}
 
-\vspace{0.6em}
+\subsection*{목적}
 
-\noindent\textbf{해석.}
+4단계에서는 녹색전환에 대응한 국내외 정책 및 사업 사례를 검토하여,
+한국농어촌공사에 적용 가능한 시사점을 도출한다.
 
-구조적 변화를 구성과 규모로 분리함으로써,
-글로벌 무역 네트워크의 조정 메커니즘을
-보다 명확히 이해할 수 있다.
-대규모 충격이 항상 품목 간 재배분을 수반하는 것은 아니며,
-기존 무역 링크의 비례적 확장이나 축소를 통해서도
-흡수될 수 있음을 본 연구의 결과는 보여준다.
-반대로, 총 교역량의 변화가 제한적이더라도,
-실질적인 구조 재편은 충분히 발생할 수 있다.
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{p{4cm} p{5cm} p{5cm}}
+\toprule
+\rowcolor{gray!20}
+구분 & 사례 & 검토 포인트 \\
+\midrule
+해외 & USDA 기후스마트 농업 & 기후적응형 농업지원, 탄소저감 사업 \\
+해외 & 네덜란드 스마트 물관리 & 정밀 물관리, 수자원 효율화 \\
+해외 & 일본 재해대응 농업기반 & 재해예방형 농업기반시설 관리 \\
+국내 & 한국농어촌공사 스마트 물관리 & ICT 기반 농업용수 관리 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-평균 무역 규모로 각도 변화를 가중함으로써,
-구성 기반 지수는
-경제적으로 중요한 구조 조정을 강조하는 동시에
-소규모 링크가 전체 지수를 과도하게 좌우하는 문제를 완화한다.
-규모 기반 지수는
-벡터 크기의 절대적 변화를 통해
-무역량 변화를 보완적으로 추적한다.
-이 두 지수를 결합함으로써,
-글로벌 곡물 무역 네트워크의 구조적 변화를
-간결하면서도 해석 가능한 방식으로 요약할 수 있으며,
-거시적 패턴을
-소수의 핵심 양자 무역 관계로
-효과적으로 환원할 수 있다.
+\section*{5단계: 공사 기능과의 연결}
 
-\end{multicols}
+앞선 분석 결과를 토대로
+한국농어촌공사의 기존 기능을 녹색전환 관점에서 재해석한다.
+
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{p{5cm} p{9cm}}
+\toprule
+\rowcolor{gray!20}
+기존 기능 & 녹색전환형 기능 \\
+\midrule
+농업용수 공급 & 기후적응형 스마트 물관리 \\
+농지정비 & 탄소저감형 농지관리 \\
+배수개선 & 재해회복형 기반시설 관리 \\
+농촌공간개발 & 친환경ㆍ순환형 농촌공간 조성 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section*{6단계: 실천과제 도출}
+
+실천과제는 정책 실행 가능성과 단계별 추진전략을 고려하여
+단기, 중기, 장기로 구분하여 도출한다.
+
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{p{3cm} p{11cm}}
+\toprule
+\rowcolor{gray!20}
+구분 & 실천과제 \\
+\midrule
+단기 & 기후취약지역 진단지도 구축, 재해취약 기반시설 우선 보강 \\
+중기 & 탄소중립형 농업기반사업 신설, 농업용수 재이용 시스템 확대 \\
+장기 & 기후적응형 농업 인프라 플랫폼 구축 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section*{최종 결과물}
+
+\begin{enumerate}
+    \item 녹색전환 동향 분석 문서
+    \item 국내외 정책ㆍ사례 비교표
+    \item 공사 기능 재정립 표
+    \item 단기ㆍ중기ㆍ장기 실천과제 리스트
+\end{enumerate}
+
+\section*{정리}
+
+\begin{center}
+\textbf{기후위기ㆍ탄소중립ㆍ자원순환 변화}
+\\[0.5em]
+$\Downarrow$
+\\[0.5em]
+\textbf{농업ㆍ농촌 생산 및 자원관리 방식 변화}
+\\[0.5em]
+$\Downarrow$
+\\[0.5em]
+\textbf{한국농어촌공사의 기능 재정립 및 신규과제 도출}
+\end{center}
 
 \end{document}

@@ -1,0 +1,79 @@
+\documentclass[12pt,a4paper]{article}
+
+% =========================
+% Packages
+% =========================
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{fontspec}
+\usepackage{kotex}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+
+% =========================
+% Font
+% =========================
+\setmainfont{Noto Serif CJK KR}
+\setsansfont{Noto Sans CJK KR}
+
+% =========================
+% Layout
+% =========================
+\setstretch{1.25}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+}
+
+% =========================
+% Header
+% =========================
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{한국산업은행}
+\rhead{Korea Development Bank}
+\cfoot{\thepage}
+
+% =========================
+% Title format
+% =========================
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+
+% =========================
+% Document
+% =========================
+\title{\textbf{한국산업은행 구조 분석}}
+\author{}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+% =========================
+% Sections
+% =========================
+
+\include{sections/01_overview}
+\include{sections/02_purpose}
+\include{sections/03_history}
+\include{sections/04_governance}
+\include{sections/05_business}
+\include{sections/06_policy_role}
+\include{sections/07_issues}
+\include{sections/08_conclusion}
+
+\end{document}
