@@ -1,0 +1,2805 @@
+\chapter{Applications of Consumption Theory}
+
+\section{Consumer Benefit Measurement}
+
+Consumer satisfaction, or utility, is not directly observable.
+
+Economists have attempted to develop money-based measures of economic well-being that can be computed from observable consumption decisions.
+
+Three important measures were proposed:
+
+\begin{itemize}
+    \item change in consumer surplus \((\Delta CS)\),
+    \item compensating variation \((CV)\),
+    \item equivalent variation \((EV)\).
+\end{itemize}
+
+\subsection{Consumer Surplus}
+
+\textbf{Marshall}, \textbf{Dupuit}, and other economists suggested using the change in consumer surplus as a measure of welfare change caused by, for example, a change in price from \(p^0\) to \(p^1\).
+
+More generally, consider a change from
+\[
+(p^0,m^0)
+\]
+to
+\[
+(p^1,m^1).
+\]
+
+The change in utility is
+\[
+\Delta u
+=
+v(p^1,m^1)-v(p^0,m^0).
+\]
+
+Using total differentiation,
+\[
+dv
+=
+v_m\,dm+v_p\,dp.
+\]
+
+Hence,
+\[
+\Delta u
+=
+\int_L (v_m\,dm+v_p\,dp).
+\]
+
+Note that
+\[
+\int_L (v_m\,dm+v_p\,dp)
+\]
+is a line integral.
+
+The symbol \(L\) represents a path of integration.
+
+More generally, a line integral of a vector-valued function
+\[
+\int_L \sum_{i=1}^N g_i(z)\,dz_i
+\]
+is an integral evaluated along a particular path \(L\).
+
+For example,
+\[
+\int_L dg
+=
+\int_L
+[g_1(z_1,z_2)+g_2(z_1,z_2)]\,dz
+\]
+can be written as
+\[
+\int_{z_1^0}^{z_1^1}
+g_1(z_1,z_2)\,dz_1
++
+\int_{z_2^0}^{z_2^1}
+g_2(z_1,z_2)\,dz_2,
+\]
+where
+\[
+g_i
+=
+\frac{\partial g}{\partial z_i}.
+\]
+
+That is, one can view the path as changing the variables of integration in a particular order so that the line integral becomes a sum of ordinary definite integrals.
+
+By Roy's identity, we know that
+\[
+v_p=-xv_m.
+\]
+
+Also,
+\[
+v_m=\lambda,
+\]
+where \(\lambda\) is the marginal utility of income.
+
+Therefore,
+\[
+\Delta u
+=
+\int_L \lambda(dm-x\,dp).
+\]
+
+This is an exact measure of utility change.
+
+However, in practice we do not observe \(\lambda\).
+
+Suppose that \(\lambda\) is constant. Then
+\[
+\Delta CS
+=
+\int_L (dm-x\,dp)
+=
+\frac{\Delta u}{\lambda}.
+\]
+
+Thus, the change in consumer surplus measures utility change in monetary units when the marginal utility of income is constant.
+
+
+
+the change in consumer surplus.
+
+The question is whether we can use
+\[
+\Delta CS
+\]
+instead of
+\[
+\Delta u.
+\]
+
+More specifically, we are concerned with the following two issues:
+
+\begin{enumerate}
+    \item Is \(\Delta CS\) path independent? 
+    \item Is it possible to write \(\Delta CS\) as a monotonic transformation of \(\Delta u\)?
+\end{enumerate}
+
+The first issue concerns the uniqueness of consumer surplus, while the second concerns the constancy of the marginal utility of income \(\lambda\).
+
+\subsubsection{Path Dependency of \(\Delta CS\)}
+
+As an example, consider the change from
+\[
+(p_1^0,p_2^0)
+\]
+to
+\[
+(p_1^1,p_2^1).
+\]
+
+There are many possible paths for calculating
+\[
+\Delta CS.
+\]
+
+Two examples are:
+
+\[
+\Delta S_1
+=
+-
+\int_{p_1^0}^{p_1^1}
+x_1(p_1,p_2^0,m)\,dp_1
+-
+\int_{p_2^0}^{p_2^1}
+x_2(p_1^1,p_2,m)\,dp_2,
+\]
+
+and
+
+\[
+\Delta S_2
+=
+-
+\int_{p_2^0}^{p_2^1}
+x_2(p_1^0,p_2,m)\,dp_2
+-
+\int_{p_1^0}^{p_1^1}
+x_1(p_1,p_2^1,m)\,dp_1.
+\]
+
+Can we say that
+\[
+\Delta S_1=\Delta S_2?
+\]
+
+\begin{theorem}
+Consider a continuously differentiable function
+\[
+g(z_1,z_2).
+\]
+
+The line integral
+\[
+\int_L dg
+\]
+is path independent if and only if
+\[
+g_{12}
+=
+\frac{\partial^2 g}{\partial z_1\partial z_2}
+=
+g_{21}
+=
+\frac{\partial^2 g}{\partial z_2\partial z_1}.
+\]
+\end{theorem}
+
+\begin{proof}
+We can write
+\[
+g(z_1^1,z_2^1)-g(z_1^0,z_2^0)
+\]
+as
+\[
+\int_{z_1^0}^{z_1^1}
+g_1(z_1,z_2^0)\,dz_1
++
+\int_{z_2^0}^{z_2^1}
+g_2(z_1^1,z_2)\,dz_2,
+\]
+or alternatively as
+\[
+\int_{z_2^0}^{z_2^1}
+g_2(z_1^0,z_2)\,dz_2
++
+\int_{z_1^0}^{z_1^1}
+g_1(z_1,z_2^1)\,dz_1.
+\]
+
+For the value of the integral to be independent of the path, the mixed partial derivatives must satisfy
+\[
+g_{12}=g_{21}.
+\]
+\end{proof}
+
+
+
+For path independence, we require
+\[
+\int_{z_1^0}^{z_1^1}
+\bigl[
+g_1(z_1,z_2^0)-g_1(z_1,z_2^1)
+\bigr]
+\,dz_1
+=
+\int_{z_2^0}^{z_2^1}
+\bigl[
+g_2(z_1^0,z_2)-g_2(z_1^1,z_2)
+\bigr]
+\,dz_2.
+\]
+
+Equivalently,
+\[
+-
+\int_{z_1^0}^{z_1^1}
+\int_{z_2^0}^{z_2^1}
+g_{12}
+\,dz_2\,dz_1
+=
+-
+\int_{z_2^0}^{z_2^1}
+\int_{z_1^0}^{z_1^1}
+g_{21}
+\,dz_1\,dz_2.
+\]
+
+This holds if and only if
+\[
+g_{12}=g_{21}.
+\]
+
+The theorem above states that the integrand must be an exact differential of a function in order for the line integral to be path independent.
+
+Now consider
+\[
+\Delta S
+=
+\int_L (dm-x\,dp).
+\]
+
+Conditions for path independence are
+\[
+\frac{\partial x_i}{\partial m}
+=
+\frac{\partial (1)}{\partial p_i}
+=
+0,
+\]
+and
+\[
+\frac{\partial x_i}{\partial p_j}
+=
+\frac{\partial x_j}{\partial p_i},
+\qquad
+i,j=1,\dots,N.
+\]
+
+However, these conditions cannot all hold simultaneously.
+
+If
+\[
+\frac{\partial x_i}{\partial m}=0,
+\qquad
+\forall i,
+\]
+that is, if there is zero income effect, then the budget constraint is violated.
+
+Therefore,
+\[
+\Delta S
+\]
+cannot be path independent when all prices and income change simultaneously.
+
+Assume now that income \(m\) and \(N-1\) prices
+\[
+p_1,\dots,p_{N-1}
+\]
+change, while \(p_N\) remains fixed.
+
+Then
+\[
+\Delta S
+=
+\int_L
+\left(
+dm-\sum_{i=1}^{N-1}x_i\,dp_i
+\right).
+\]
+
+Path independence requires
+\[
+\frac{\partial x_i}{\partial m}
+=
+0,
+\qquad
+i=1,\dots,N-1,
+\]
+and
+\[
+\frac{\partial x_i}{\partial p_j}
+=
+\frac{\partial x_j}{\partial p_i},
+\qquad
+i,j=1,\dots,N-1.
+\]
+
+Differentiate Roy's identity
+\[
+-\lambda x_j
+=
+\frac{\partial v}{\partial p_j}
+\]
+with respect to income \(m\):
+\[
+-\lambda\frac{\partial x_j}{\partial m}
+-
+x_j\frac{\partial \lambda}{\partial m}
+=
+\frac{\partial^2 v}{\partial p_j\partial m}
+=
+\frac{\partial \lambda}{\partial p_j}.
+\]
+
+Because
+\[
+\frac{\partial x_j}{\partial m}=0,
+\]
+this becomes
+\[
+\frac{\partial \lambda}{\partial p_j}
+=
+-
+x_j\frac{\partial \lambda}{\partial m}.
+\]
+
+Now differentiate
+\[
+-\lambda x_j
+=
+\frac{\partial v}{\partial p_j}
+\]
+with respect to \(p_i\):
+\[
+-\lambda\frac{\partial x_j}{\partial p_i}
+-
+x_j\frac{\partial \lambda}{\partial p_i}
+=
+\frac{\partial^2 v}{\partial p_j\partial p_i}.
+\]
+
+Using
+\[
+\frac{\partial \lambda}{\partial p_i}
+=
+-
+x_i\frac{\partial \lambda}{\partial m},
+\]
+we obtain
+\[
+-\lambda\frac{\partial x_j}{\partial p_i}
++
+x_jx_i\frac{\partial \lambda}{\partial m}
+=
+\frac{\partial^2 v}{\partial p_j\partial p_i}.
+\]
+
+Hence,
+\[
+\frac{\partial x_j}{\partial p_i}
+=
+\frac{
+x_jx_i\frac{\partial \lambda}{\partial m}
+-
+\frac{\partial^2 v}{\partial p_j\partial p_i}
+}{\lambda}.
+\]
+
+Therefore,
+\[
+\frac{\partial x_j}{\partial p_i}
+=
+\frac{\partial x_i}{\partial p_j}.
+\]
+
+Thus, when
+\[
+\frac{\partial x_i}{\partial m}=0,
+\]
+symmetry automatically holds.
+
+Hence,
+\[
+\Delta S
+\]
+is unique if and only if
+\[
+\frac{\partial x_i}{\partial m}=0,
+\qquad
+i=1,\dots,N-1.
+\]
+
+Now consider another case in which income does not change but all prices change.
+
+In this case, path independence requires
+\[
+\frac{\partial x_i}{\partial p_j}
+=
+\frac{\partial x_j}{\partial p_i},
+\qquad
+i,j=1,\dots,N.
+\]
+
+From the previous equation,
+\[
+-\lambda\frac{\partial x_j}{\partial p_i}
+-
+x_j\frac{\partial \lambda}{\partial p_i}
+=
+-\lambda\frac{\partial x_i}{\partial p_j}
+-
+x_i\frac{\partial \lambda}{\partial p_j}.
+\]
+
+Path independence therefore implies
+\[
+x_j\frac{\partial \lambda}{\partial p_i}
+=
+x_i\frac{\partial \lambda}{\partial p_j}.
+\]
+
+From
+\[
+\frac{\partial \lambda}{\partial p_j}
+=
+-\lambda\frac{\partial x_j/\partial m}{x_j}
+-
+\frac{\partial \lambda}{\partial m},
+\]
+we obtain
+\[
+\frac{\partial x_j}{\partial m}\frac{m}{x_j}
+=
+\frac{\partial x_i}{\partial m}\frac{m}{x_i}.
+\]
+
+That is, path independence requires all income elasticities to be identical.
+
+Moreover, they must all equal one, which corresponds to homothetic utility.
+
+\begin{theorem}[Uniqueness of \(\Delta S\)]
+\[
+\Delta S
+\]
+is unique if and only if income elasticities are identical for all goods whose prices change.
+
+This implies homotheticity with respect to the set of goods whose prices change.
+
+In addition, these income elasticities must be zero if income changes.
+\end{theorem}
+
+\paragraph{Example 1.}
+
+Suppose we have the demand system
+\[
+x_1
+=
+12-5p_1+2p_2+\frac{3}{200}m,
+\]
+and
+\[
+x_2
+=
+5-5p_2+3p_1+\frac{2}{200}m.
+\]
+
+Suppose prices change from
+\[
+(p_1^0,p_2^0)=(1,1).
+\]
+
+
+
+
+to
+\[
+(p_1^1,p_2^1)=(2,2),
+\]
+because of a government policy.
+
+Income is fixed at
+\[
+m=400.
+\]
+
+\paragraph{Path 1: Change \(p_1\) first.}
+
+Along the first segment,
+\[
+x_1=20-5p_1.
+\]
+
+Along the second segment,
+\[
+x_2=15-5p_2.
+\]
+
+Therefore,
+\[
+\Delta S_1
+=
+-\int_1^2 (20-5p_1)\,dp_1
+-
+\int_1^2 (15-5p_2)\,dp_2.
+\]
+
+Thus,
+\[
+\Delta S_1=-20.
+\]
+
+\paragraph{Path 2: Change \(p_2\) first.}
+
+Along the first segment,
+\[
+x_2=12-5p_2.
+\]
+
+Along the second segment,
+\[
+x_1=22-5p_1.
+\]
+
+Therefore,
+\[
+\Delta S_2
+=
+-\int_1^2 (12-5p_2)\,dp_2
+-
+\int_1^2 (22-5p_1)\,dp_1.
+\]
+
+Thus,
+\[
+\Delta S_2=-19.
+\]
+
+Since
+\[
+\Delta S_1 \ne \Delta S_2,
+\]
+the change in consumer surplus is path dependent in this example.
+
+\subsubsection{Constancy of \(\lambda\)}
+
+If \(\lambda\) is not constant, then
+\[
+\Delta S
+\]
+is not proportional to
+\[
+\Delta u.
+\]
+
+In this case, there is no one-to-one relation between \(\Delta S\) and \(\Delta u\), and therefore \(\Delta S\) is not meaningful as an exact welfare measure.
+
+Equation \((c)\) implies
+\[
+-\lambda\frac{\partial x_j}{\partial m}
+-
+x_j\frac{\partial \lambda}{\partial m}
+=
+\frac{\partial \lambda}{\partial p_j}.
+\]
+
+Hence, if
+\[
+\frac{\partial \lambda}{\partial p_j}=0
+\]
+and
+\[
+\frac{\partial \lambda}{\partial m}=0,
+\]
+then
+\[
+\frac{\partial x_j}{\partial m}=0,
+\qquad
+\forall j.
+\]
+
+This violates the budget constraint. Therefore, \(\lambda\) cannot be constant for all prices and income.
+
+Constancy of \(\lambda\) automatically imposes the condition of zero income effects:
+\[
+\frac{\partial x_j}{\partial m}=0,
+\qquad
+\forall j.
+\]
+
+However, the converse is not true. Thus, constancy of \(\lambda\) is more restrictive than path independence.
+
+\subsection{Willingness to Pay Measure}
+
+Consider the change
+\[
+(p^0,m^0)
+\to
+(p^1,m^1).
+\]
+
+The maximum utility is
+\[
+u^0
+\]
+under
+\[
+(p^0,m^0),
+\]
+and
+\[
+u^1
+\]
+under
+\[
+(p^1,m^1).
+\]
+
+\subsubsection{Compensating Variation}
+
+Compensating variation, denoted by \(CV\), is the amount of compensation taken away from the consumer, possibly negative, that just allows the consumer to attain the initial utility level after the change.
+
+Thus,
+\[
+v(p^0,m^0)
+=
+v(p^1,m^1-CV)
+=
+u^0.
+\]
+
+Equivalently,
+\[
+CV
+=
+e(p^0,u^0)-e(p^1,u^0)+m^1-m^0.
+\]
+
+Since
+\[
+e(p^0,u^0)=m^0,
+\]
+we obtain
+\[
+CV
+=
+m^1-e(p^1,u^0).
+\]
+
+We can show that the two definitions of \(CV\) are identical.
+
+Note that
+\[
+v(p,e(p,u^0))=u^0.
+\]
+
+Therefore,
+\[
+v(p^1,m^1-CV)
+=
+u^0
+=
+v(p^1,e(p^1,u^0)).
+\]
+
+Since \(v(p,m)\) is strictly increasing in \(m\), this implies
+\[
+m^1-CV=e(p^1,u^0).
+\]
+
+Hence,
+\[
+CV=m^1-e(p^1,u^0).
+\]
+
+\subsubsection{Equivalent Variation}
+
+Equivalent variation, denoted by \(EV\), is the amount of compensation given to the consumer, possibly negative, that just allows the consumer to attain the subsequent utility level in the absence of the change.
+
+Thus,
+\[
+v(p^0,m^0+EV)
+=
+v(p^1,m^1)
+=
+u^1.
+\]
+
+Equivalently,
+\[
+EV
+=
+e(p^0,u^1)-e(p^1,u^1)+m^1-m^0.
+\]
+
+Since
+\[
+e(p^1,u^1)=m^1,
+\]
+we obtain
+\[
+EV
+=
+e(p^0,u^1)-m^0.
+\]
+
+Notice that the \(CV\) of the change from
+\[
+(p^0,m^0)
+\]
+to
+\[
+(p^1,m^1)
+\]
+is equivalent to minus the \(EV\) of the reverse change from
+\[
+(p^1,m^1)
+\]
+to
+\[
+(p^0,m^0).
+\]
+
+Because
+\[
+e_p(p,u)=h(p,u),
+\]
+we have
+\[
+e(p^0,u^0)-e(p^1,u^0)
+=
+-\int_L e_p(p,u^0)\,dp
+=
+-\int_L h(p,u^0)\,dp.
+\]
+
+Since \(e_p\) is an exact differential of \(e(p,u)\), both \(CV\) and \(EV\) are path independent.
+
+When multiple prices change, \(CV\) is the sum of changes in areas below compensated demand curves, where all demands are evaluated at the initial utility level but are successively conditioned on previously considered price changes.
+
+
+
+\[
+\begin{aligned}
+CV
+&=
+m^1-m^0+e(p^0,u^0)-e(p^1,u^0) \\
+&=
+\Delta m
+-
+\int_{p_1^0}^{p_1^1}
+h_1(p_1,p_2^0,\dots,p_N^0,u^0)\,dp_1 \\
+&\quad
+-
+\int_{p_2^0}^{p_2^1}
+h_2(p_1^1,p_2,\dots,p_N^0,u^0)\,dp_2 \\
+&\quad
+-\cdots-
+\int_{p_N^0}^{p_N^1}
+h_N(p_1^1,\dots,p_{N-1}^1,p_N,u^0)\,dp_N.
+\end{aligned}
+\]
+
+Equivalently,
+\[
+CV
+=
+\Delta m
+-
+\sum_{j=1}^N
+\int_{\tilde p^{\,j-1}}^{\tilde p^{\,j}}
+h_j(\tilde p^{\,j},u^0)\,dp_j,
+\]
+where
+\[
+\tilde p^{\,j}
+=
+(p_1^1,\dots,p_j^1,p_{j+1}^0,\dots,p_N^0),
+\]
+and
+\[
+\tilde p^{\,j-1}
+=
+(p_1^1,\dots,p_{j-1}^1,p_j^0,\dots,p_N^0).
+\]
+
+Similarly,
+\[
+EV
+=
+\Delta m
+-
+\sum_{j=1}^N
+\int_{\tilde p^{\,j-1}}^{\tilde p^{\,j}}
+h_j(\tilde p^{\,j},u^1)\,dp_j.
+\]
+
+In Figure 2,
+\[
+CV=A,
+\qquad
+\Delta S=A+B,
+\qquad
+EV=A+B+C.
+\]
+
+Therefore,
+\[
+CV\le \Delta S\le EV.
+\]
+
+These inequalities hold as long as only one price changes.
+
+Moreover,
+\[
+EV-CV
+=
+\sum_{j=1}^N
+\int_{\tilde p^{\,j-1}}^{\tilde p^{\,j}}
+\left[
+h_j(\tilde p^{\,j},u^0)
+-
+h_j(\tilde p^{\,j},u^1)
+\right]
+dp_j.
+\]
+
+Using the fundamental theorem of calculus,
+\[
+EV-CV
+=
+-
+\sum_{j=1}^N
+\int_{\tilde p^{\,j-1}}^{\tilde p^{\,j}}
+\int_{u^0}^{u^1}
+\frac{\partial h_j(\tilde p^{\,j},u)}{\partial u}
+\,du\,dp_j.
+\]
+
+Note that
+\[
+\frac{\partial h_j}{\partial u}
+=
+\frac{\partial x_j}{\partial m}
+\frac{\partial e}{\partial u}.
+\]
+
+Therefore, if all goods whose prices change have zero income effects,
+\[
+\frac{\partial x_j}{\partial m}=0,
+\]
+then
+\[
+\frac{\partial h_j}{\partial u}=0,
+\]
+and hence
+\[
+EV=CV=\Delta S.
+\]
+
+
+
+If all goods whose prices change have zero income effects, then
+\[
+EV=CV,
+\]
+and
+\[
+\Delta m+\sum_{j=1}^N \Delta S_j
+=
+EV
+=
+CV.
+\]
+
+\paragraph{Exercise 1.}
+Suppose the indirect utility function is
+\[
+v(p,m)
+=
+-g(p)+\ln m,
+\qquad
+p\in \mathbb{R}_{++}^N.
+\]
+
+Derive the corresponding \(\Delta S\), \(CV\), and \(EV\) of the price change
+\[
+(p_1^0,p_2^0)
+\to
+(p_1^1,p_2^1).
+\]
+
+\subsection{Willig's Bounds}
+
+How large is the difference between \(CV\) and \(\Delta S\), or between \(EV\) and \(\Delta S\)?
+
+Let \(\eta\) be the income elasticity. Then
+\[
+\eta
+=
+\frac{\partial x}{\partial m}\frac{m}{x}.
+\]
+
+Thus,
+\[
+\Delta x
+=
+\eta x\frac{\Delta m}{m}.
+\]
+
+For a small price change \(\Delta p\), the area \(\Delta S\) in Figure 2 is approximated by
+\[
+\Delta S
+\simeq
+x|\Delta p|.
+\]
+
+The income change that leads to a reduction in consumption by \(\Delta x\), while holding utility at \(u^0\), is \(CV\). However, we approximate it by \(\Delta S\) when \(|\Delta p|\) is small.
+
+That is,
+\[
+\Delta S\simeq \Delta m.
+\]
+
+Therefore,
+\[
+\Delta x
+\simeq
+\eta x\frac{\Delta S}{m}.
+\]
+
+When the demand function in Figure 2 is nearly linear, that is, when \(\Delta p\) is small, area \(B\) can be approximated as
+\[
+B
+\simeq
+\frac{1}{2}|\Delta x|\,|\Delta p|.
+\]
+
+Using the approximation above,
+\[
+B
+\simeq
+\frac{1}{2}
+\eta x
+\frac{|\Delta S|}{m}
+|\Delta p|.
+\]
+
+Since
+\[
+|\Delta S|
+\simeq
+x|\Delta p|,
+\]
+we obtain
+\[
+B
+\simeq
+\frac{1}{2}
+\eta
+\frac{|\Delta S|^2}{m}.
+\]
+
+Hence,
+\[
+CV
+\simeq
+\Delta S
+-
+\frac{\eta}{2m}|\Delta S|^2.
+\]
+
+Suppose that all prices change. Define
+\[
+\eta_1=\min\{\eta_1,\dots,\eta_N\},
+\qquad
+\eta_2=\max\{\eta_1,\dots,\eta_N\}.
+\]
+
+Then
+\[
+\frac{\eta_1}{2m_0}|\Delta S|
+\le
+\frac{\Delta S-CV}{|\Delta S|}
+\le
+\frac{\eta_2}{2m_0}|\Delta S|,
+\]
+and
+\[
+\frac{\eta_1}{2m_0}|\Delta S|
+\le
+\frac{EV-\Delta S}{|\Delta S|}
+\le
+\frac{\eta_2}{2m_0}|\Delta S|.
+\]
+
+Here,
+\[
+\Delta S
+=
+\sum_{i=1}^N \Delta S_i.
+\]
+
+In sum, \(\Delta S\) can be a good proxy for \(CV\) or \(EV\) if income elasticity \(\eta\) is small or if
+\[
+\frac{|\Delta S|}{m}
+\]
+is small.
+
+For a complete derivation of the bounds, see Willig (1976).
+
+\paragraph{Example 2.}
+In Example 1, when path 1 is chosen,
+\[
+0.4\le \eta_1<0.6,
+\qquad
+0.4<\eta_2<0.8.
+\]
+
+Thus, the bound is
+\[
+\frac{0.4}{2m}|\Delta S|
+<
+\frac{CV-\Delta S}{|\Delta S|}
+<
+\frac{0.8}{2m}|\Delta S|.
+\]
+
+\subsection{Accurate Measurement with \(x(p,m)\)}
+
+Although we can figure out the range of \(EV\) and \(CV\) using Willig's bounds, it is still possible to derive exact measurements of \(EV\) and \(CV\) using information on
+\[
+x(p,m).
+\]
+
+Hausman (1975) substituted \(e(p,u)\) into estimates of \(x(p,m)\), obtaining the identity
+\[
+h_i(p,u)
+=
+x_i(p,e(p,u)).
+\]
+
+Then we have
+\[
+\frac{\partial e(p,u)}{\partial p_i}
+=
+x_i(p,e(p,u)).
+\]
+
+This partial differential equation, together with the boundary condition
+\[
+e(p^0,u^0)=m^0,
+\]
+may be solved to obtain \(CV\).
+
+Hausman (1981) alternatively used the differential relationship between \(v(p,m)\) and \(x(p,m)\) following Roy's identity.
+
+
+
+
+Although analytical solutions to this approach are possible only for certain demand specifications, a solution is possible for many demand specifications commonly used in empirical work.
+
+Suppose
+\[
+x_i(p_i,m)
+=
+\alpha p_i+\beta m+\gamma.
+\]
+
+By the implicit function theorem and Roy's identity, we derive
+\[
+\frac{dm}{dp_i}
+=
+-\frac{v_{p_i}}{v_m}
+=
+\alpha p_i+\beta m+\gamma.
+\]
+
+Thus, \(m=m(p_i)\) satisfies the differential equation
+\[
+\frac{dm}{dp_i}
+-
+\beta m
+=
+\alpha p_i+\gamma.
+\]
+
+The solution is
+\[
+m(p_i)
+=
+u e^{\beta p_i}
+-
+\frac{1}{\beta}
+\left(
+\alpha p_i+\frac{\alpha}{\beta}+\gamma
+\right).
+\]
+
+Putting
+\[
+u=v(p_i,m),
+\]
+we derive the indirect utility function
+\[
+v(p_i,m)
+=
+\left[
+m
++
+\frac{1}{\beta}
+\left(
+\alpha p_i+\frac{\alpha}{\beta}+\gamma
+\right)
+\right]
+e^{-\beta p_i}.
+\]
+
+Since
+\[
+v(p_i^1,m^0-CV)
+=
+v(p_i^0,m^0),
+\]
+we obtain
+\[
+CV
+=
+\frac{1}{\beta}
+\left[
+x_i(p_i^1,m^0)
++
+\frac{\alpha}{\beta}
+\right]
+-
+\frac{1}{\beta}
+e^{\beta(p_i^1-p_i^0)}
+\left[
+x_i(p_i^0,m^0)
++
+\frac{\alpha}{\beta}
+\right].
+\]
+
+Therefore, we can derive an accurate measurement of \(CV\) using only the information on
+\[
+x(p,m).
+\]
+
+\paragraph{Exercise 2.}
+Assume
+\[
+x_i(p_i,m)
+=
+A p_i^\alpha m^\beta.
+\]
+
+Derive the exact measurement of \(CV\).
+
+\section{Household Production Model}
+
+Traditional consumption theory assumes that each consumer buys final consumption goods directly from markets.
+
+In fact, people consume many kinds of commodities or services that are not traded in markets. Health, clean environment, and fertility are some examples.
+
+For those commodities or services, consumers purchase something from markets and produce the final consumption goods by adding their own time.
+
+For instance, a consumer may buy a doctor's service, spend time visiting the doctor, and consume recovered health.
+
+Denote the consumer's utility by
+\[
+u(z),
+\]
+where
+\[
+z=(z_1,\dots,z_N)
+\]
+is the bundle of final goods, which are not traded in markets.
+
+Each final good is produced with time and inputs purchased from the market:
+\[
+z_i=f_i(t_i,x_i),
+\]
+where
+\[
+t_i
+=
+\text{time spent to produce } z_i
+\]
+and
+\[
+x_i
+=
+\text{purchased inputs}.
+\]
+
+We rule out jointness in production.
+
+The consumer faces the following two constraints, following Becker (1965).
+
+\paragraph{Time constraint.}
+\[
+T-\sum_{i=1}^N t_i-t_w=0,
+\]
+where
+\[
+T
+=
+\text{time endowment},
+\]
+\[
+\sum_{i=1}^N t_i
+=
+\text{time spent on producing utility},
+\]
+and
+\[
+t_w
+=
+\text{time spent working}.
+\]
+
+\paragraph{Money constraint.}
+\[
+wt_w+V-\sum_{i=1}^N p_ix_i=0,
+\]
+where
+\[
+w
+=
+\text{wage rate},
+\]
+\[
+V
+=
+\text{nonlabor income},
+\]
+and
+\[
+\sum_{i=1}^N p_ix_i
+=
+\text{expenditure on commodities used to produce utility}.
+\]
+
+Multiplying the time constraint by \(w\) and adding the money constraint gives
+
+
+Multiplying the time constraint by \(w\) and adding the money constraint gives
+\[
+wT+V-\sum_{i=1}^N p_i x_i-w\sum_{i=1}^N t_i=0.
+\]
+
+Equivalently,
+\[
+S-\sum_{i=1}^N p_i x_i-w\sum_{i=1}^N t_i=0,
+\]
+where
+\[
+S=wT+V.
+\]
+
+The variable \(S\) is often called \textbf{full income}.
+
+Then the consumer's problem is
+\[
+\max_{\{z_i,t_i,x_i\}_{i=1}^N} u(z)
+\]
+subject to
+\[
+S-\sum_{i=1}^N p_i x_i-w\sum_{i=1}^N t_i=0,
+\]
+and
+\[
+z_i=f_i(x_i,t_i),
+\qquad
+i=1,\dots,N.
+\]
+
+The Lagrangian is
+\[
+\mathcal{L}
+=
+u(z)
++
+\lambda_0
+\left[
+S-\sum_{i=1}^N p_i x_i-w\sum_{i=1}^N t_i
+\right]
++
+\sum_{i=1}^N
+\lambda_i
+\left[
+f_i(x_i,t_i)-z_i
+\right].
+\]
+
+The first-order conditions are
+\[
+\frac{\partial \mathcal{L}}{\partial z_i}
+=
+\frac{\partial u}{\partial z_i}
+-
+\lambda_i
+=
+0,
+\qquad
+i=1,\dots,N,
+\]
+\[
+\frac{\partial \mathcal{L}}{\partial x_i}
+=
+-\lambda_0p_i
++
+\lambda_i
+\frac{\partial f_i}{\partial x_i}
+=
+0,
+\qquad
+i=1,\dots,N,
+\]
+and
+\[
+\frac{\partial \mathcal{L}}{\partial t_i}
+=
+-\lambda_0w
++
+\lambda_i
+\frac{\partial f_i}{\partial t_i}
+=
+0,
+\qquad
+i=1,\dots,N.
+\]
+
+The second and third first-order conditions imply
+\[
+\frac{p_i}{w}
+=
+\frac{
+\partial f_i/\partial x_i
+}{
+\partial f_i/\partial t_i
+}.
+\]
+
+That is,
+\[
+MRTS_{x_it_i}
+=
+\frac{p_i}{w}.
+\]
+
+This is the production-side condition. The marginal rate of technical substitution between purchased input \(x_i\) and time input \(t_i\) must equal their input price ratio.
+
+Thus, the household acts like a firm that produces \(z_i\) at minimum cost. Since each household faces a different wage rate \(w\), each household chooses a different combination of \(x_i\) and \(t_i\) to produce \(z_i\).
+
+The first and second first-order conditions imply
+\[
+\frac{
+\partial u/\partial z_i
+}{
+\partial u/\partial z_j
+}
+=
+\frac{
+p_i/(\partial f_i/\partial x_i)
+}{
+p_j/(\partial f_j/\partial x_j)
+}.
+\]
+
+This is the consumption-side condition.
+
+There is no market price for \(z_i\). To define its shadow price, consider the cost-minimization problem
+\[
+\min_{x_i,t_i} p_i x_i+wt_i
+\]
+subject to
+\[
+z_i=f_i(x_i,t_i).
+\]
+
+One first-order condition is
+\[
+p_i
+=
+\mu_i
+\frac{\partial f_i}{\partial x_i}.
+\]
+
+Thus,
+\[
+\mu_i
+=
+\frac{p_i}{\partial f_i/\partial x_i}.
+\]
+
+The multiplier \(\mu_i\) is the marginal cost of producing \(z_i\). Therefore,
+\[
+\frac{
+p_i/(\partial f_i/\partial x_i)
+}{
+p_j/(\partial f_j/\partial x_j)
+}
+\]
+is the price ratio of \(z_i\) and \(z_j\), where the shadow prices are measured by marginal costs.
+
+Therefore, the household produces the commodities at minimum cost and provides the commodities to the consumption side. On the consumption side, it maximizes utility subject to the condition
+\[
+MRS=\text{shadow price ratio}.
+\]
+
+\paragraph{Exercise 3.}
+Consider a concave utility function
+\[
+U(X,C,t_L,H(X,t_L)),
+\]
+where \(U\) depends on consumption of food and drink \(X\), other purchased goods \(C\), leisure activity \(t_L\), and health status \(H\).
+
+Health status \(H\) is determined by consumption of \(X\) and leisure activity \(t_L\).
+
+Total time endowment \(T\) is allocated to leisure \(t_L\) and work \(t_w\):
+\[
+T=t_w+t_L.
+\]
+
+This consumer has nonlabor income \(V\). The prices, or wage, for
+\[
+(X,C,t_w)
+\]
+are
+\[
+(p_X,p_C,p_w).
+\]
+
+Derive the conditions for the optimal consumption behavior of this consumer and explain them. Assume that there are no corner solutions.
+
+What are the determinants of the optimal choice
+\[
+(X,C,t_L)?
+\]
+
+
+
+\paragraph{Example 3. Weak Complementarity}
+
+Malor (1974) and Bockstael and McConnell (1983) discuss the concept of weak complementarity.
+
+The benefit of some change other than the price of a good in an observable market can be estimated under the framework of household production.
+
+In this case, we assume that utility depends additionally on some exogenous condition represented by \(q\). For example, \(q\) may represent the price of a good in an unobservable market, or the amount or quality of some public good.
+
+More specifically, the household production framework has contributed to deriving the shadow price of environmental goods by examining the relationship between demands for market goods and the value of environmental quality change.
+
+We consider a case where an environmental good is weakly complementary to market goods.
+
+Consider an individual's choice problem:
+\[
+\max_x u(z,q)
+\]
+subject to
+\[
+z=z(x,q),
+\qquad
+px=m.
+\]
+
+Here, \(x\) is the vector of market goods, while \(q\) is the environmental good. The final service \(z\) is produced with \(x\) and \(q\). The individual can choose the level of \(x\), but \(q\) is fixed as a public good.
+
+We know that the Marshallian demand for \(x\) is
+\[
+x(p,q,m),
+\]
+and a change in \(q\) results in a change in the demand for \(x\).
+
+The Hicksian demand function for \(x\) is represented as
+\[
+h(p,q,u).
+\]
+
+Define the expenditure function
+\[
+e(p,q,u)
+=
+\min_x
+\left\{
+px
+:
+u(z(x,q),q)=u
+\right\}.
+\]
+
+Then, by Shephard's lemma,
+\[
+h_i(p,q,u)
+=
+\frac{\partial e(p,q,u)}{\partial p_i},
+\qquad
+i=1,\dots,N.
+\]
+
+Suppose that \(z_1\) is produced with \(q\) and \(x_1\), and that \(q\) is used only in the household production of \(z_1\).
+
+An increase in \(q\) will lower the marginal cost of producing \(z_1\), and therefore increase the quantity demanded of \(z_1\). Then the demand for \(x_1\) will also increase.
+
+In Figure 3,
+\[
+h_1(q^0)
+\quad \text{and} \quad
+h_1(q^1)
+\]
+represent the Hicksian demands for \(x_1\) under \(q^0\) and \(q^1\), respectively.
+
+The price of \(x_1\),
+\[
+p_1^c,
+\]
+is the choke price that makes the demand for \(x_1\) equal to zero. The choke price may depend on \(q\).
+
+The benefit of the change in \(q\) from \(q^0\) to \(q^1\) is measured as the area
+\[
+ADE-ABC.
+\]
+
+This area can be represented as
+\[
+CV
+=
+\left[
+e(p_1^c,q^1,u^0)
+-
+e(p_1,q^1,u^0)
+\right]
+-
+\left[
+e(p_1^c,q^0,u^0)
+-
+e(p_1,q^0,u^0)
+\right].
+\]
+
+If
+\[
+e(p_1^c,q^1,u^0)
+=
+e(p_1^c,q^0,u^0),
+\]
+then
+\[
+CV
+=
+e(p_1,q^0,u^0)
+-
+e(p_1,q^1,u^0),
+\]
+and the usual willingness-to-pay measure is defined.
+
+The sufficient conditions, called weak complementarity conditions, for
+\[
+e(p_1^c,q^1,u^0)
+=
+e(p_1^c,q^0,u^0)
+\]
+are the following:
+
+\begin{enumerate}
+    \item \(x_1\) is essential in the production of \(z_1\). That is, if
+    \[
+    x_1=0,
+    \]
+    then
+    \[
+    z_1=0.
+    \]
+    This is a restriction on the production function.
+
+    \item \(q\) does not affect utility when \(x_1=0\). That is,
+    \[
+    \frac{\partial u}{\partial q}=0
+    \]
+    when
+    \[
+    x_1=0.
+    \]
+    This is a restriction on preferences.
+\end{enumerate}
+
+The function
+\[
+h(p,q,u)
+\]
+is a Hicksian demand function.
+
+The corresponding Marshallian demand function is
+\[
+x(p,q,m).
+\]
+
+We may approximate the welfare effect of the change from \(q^0\) to \(q^1\) by estimating the Marshallian demand
+\[
+x(p,q,m).
+\]
+
+
+
+Notice that
+\[
+x(p,q,e(p,q,u))=h(p,q,u).
+\]
+
+Differentiating this identity with respect to \(q\) gives
+\[
+\frac{\partial x}{\partial q}
++
+\frac{\partial x}{\partial m}
+\frac{\partial e}{\partial q}
+=
+\frac{\partial h}{\partial q}.
+\]
+
+For a normal good,
+\[
+\frac{\partial x}{\partial m}>0.
+\]
+
+Since an improvement in environmental quality lowers the expenditure necessary to reach the same utility level, we have
+\[
+\frac{\partial e}{\partial q}<0.
+\]
+
+Therefore,
+\[
+\frac{\partial x}{\partial q}
+>
+\frac{\partial h}{\partial q}.
+\]
+
+This implies that
+\[
+x(p,q^1,m)\ne h(p,q^1,u),
+\]
+even if
+\[
+x(p,q^0,m)=h(p,q^0,u).
+\]
+
+Under \(q^1\), \(x=h\) at some price
+\[
+p_1>p.
+\]
+
+The error arising when \(\Delta S\) is used to approximate \(CV\) is
+\[
+A+C-B.
+\]
+
+The fact that \(h\) and \(x\) do not cross at \(p\) when \(q=q^1\) makes the error difficult to assess.
+
+This error could be negative, positive, or zero.
+
+\paragraph{Exercise 4.}
+Suppose the consumer's utility function is
+\[
+u(z(x_1,q),x_2),
+\]
+where \(x_1\) and \(x_2\) are food and other commodities purchased in the market, respectively.
+
+The variable \(q\) is the level of food safety, which is exogenously given to the consumer.
+
+The variable \(z\) is the satisfaction obtained from consuming food and depends on the amount of food purchased, \(x_1\), and food safety, \(q\).
+
+The current price of \(x_1\) is \(p_1^0\), and the current level of food safety is \(q^0\).
+
+We want to derive a welfare measure of the improvement in \(q\) from
+\[
+q^0
+\]
+to
+\[
+q^1
+\]
+using the compensated demand function for \(x_1\),
+\[
+h_1(p,q,u).
+\]
+
+What is the welfare measure, and what conditions are required for the measure to be exact?
+
+\section{Empirical Analysis of Consumer Demand}
+
+\subsection{Stone's Analysis}
+
+Stone (1954a) considered the demand system
+\[
+\ln x_i
+=
+\alpha_i
++
+\varepsilon_i \ln m
++
+\sum_{k=1}^N
+\varepsilon_{ik}\ln p_k,
+\]
+where
+\[
+\varepsilon_i
+=
+\text{income elasticity},
+\]
+and
+\[
+\varepsilon_{ik}
+=
+\text{price elasticity of the } k\text{-th price on the } i\text{-th demand}.
+\]
+
+Stone tried to estimate 48 food demands using the British annual data set from 1920 to 1938. Therefore, it was necessary to reduce the number of parameters to be estimated.
+
+The only way would be to reduce the number of
+\[
+\varepsilon_{ik}.
+\]
+
+As long as one estimates an ordinary demand system, there is no way to reduce the number of \(\varepsilon_{ik}\), since ordinary demands contain not only substitution effects but also income effects.
+
+If one estimates a compensated demand system, then it may be possible to reduce the number of \(\varepsilon_{ik}\) by incorporating only close substitutes and complements.
+
+From the Slutsky equation,
+\[
+\frac{\partial h_i}{\partial p_j}
+=
+\frac{\partial x_i}{\partial p_j}
++
+\frac{\partial x_i}{\partial m}x_j,
+\]
+we obtain
+\[
+\frac{\partial h_i}{\partial p_j}
+\frac{p_j}{h_i}
+=
+\frac{\partial x_i}{\partial p_j}
+\frac{p_j}{x_i}
++
+\frac{\partial x_i}{\partial m}
+\frac{x_jp_j}{x_i}.
+\]
+
+Since
+\[
+h_i=x_i,
+\]
+and
+\[
+w_j=\frac{p_jx_j}{m},
+\]
+we can write
+\[
+\varepsilon_{ij}^*
+=
+\varepsilon_{ij}
++
+\varepsilon_i w_j.
+\]
+
+Here,
+\[
+\varepsilon_{ij}^*
+\]
+is the compensated price elasticity.
+
+Thus, the Slutsky equation can be represented as
+\[
+\varepsilon_{ij}^*
+=
+\varepsilon_{ij}
++
+\varepsilon_i w_j.
+\]
+
+Equivalently,
+\[
+\varepsilon_{ij}
+=
+\varepsilon_{ij}^*
+-
+\varepsilon_i w_j.
+\]
+
+Therefore,
+\[
+\ln x_i
+=
+\alpha_i
++
+\varepsilon_i
+\left(
+\ln m
+-
+\sum_{k=1}^N w_k\ln p_k
+\right)
++
+\sum_{k=1}^N
+\varepsilon_{ik}^*
+\ln p_k.
+\]
+
+We may regard
+\[
+\sum_{k=1}^N w_k\ln p_k
+\]
+as a general price index:
+\[
+\ln P
+=
+\sum_{k=1}^N w_k\ln p_k.
+\]
+
+Then
+\[
+\ln x_i
+=
+\alpha_i
++
+\varepsilon_i
+\ln\left(\frac{m}{P}\right)
++
+\sum_{k=1}^N
+\varepsilon_{ik}^*
+\ln p_k.
+\]
+
+The homogeneity condition implies
+\[
+\sum_{k=1}^N \varepsilon_{ik}
++
+\varepsilon_i
+=
+0.
+\]
+
+
+
+The homogeneity condition implies
+\[
+\sum_{k=1}^N \varepsilon_{ik}+\varepsilon_i=0.
+\]
+
+This can be rewritten as
+\[
+\sum_{k=1}^N \varepsilon_{ik}^*=0.
+\]
+
+Therefore,
+\[
+\ln x_i
+=
+\alpha_i
++
+\varepsilon_i\ln\left(\frac{m}{P}\right)
++
+\sum_{k=1}^N
+\varepsilon_{ik}^*
+\ln\left(\frac{p_k}{P}\right).
+\]
+
+Now we have a Hicksian demand system and are allowed to drop many variables from the system:
+\[
+\ln x_i
+=
+\alpha_i
++
+\varepsilon_i\ln\left(\frac{m}{P}\right)
++
+\sum_{k\in K}
+\varepsilon_{ik}^*
+\ln\left(\frac{p_k}{P}\right),
+\]
+where \(K\) is the set of close substitutes and complements.
+
+The estimated results of Stone showed that the Slutsky symmetry condition,
+\[
+w_i\varepsilon_{ij}^*
+=
+w_j\varepsilon_{ji}^*,
+\]
+is violated for many commodities.
+
+That is, the model does not allow integrability.
+
+The Rotterdam model, developed by Theil (1965) and Barten (1966), generalizes Stone's method by imposing the symmetry condition. However, both models are based on log-linear specifications and do not generally allow integrability.
+
+\subsection{Linear Expenditure System}
+
+The Linear Expenditure System was developed by Klein and Rubin (1947--1948), Samuelson (1947--1948), and Stone (1954b).
+
+Define the utility function
+\[
+u(x_1,x_2)
+=
+(x_1-\gamma_1)^{\beta_1}
+(x_2-\gamma_2)^{\beta_2},
+\]
+where
+\[
+\beta_1+\beta_2=1,
+\qquad
+x_i-\gamma_i\ge 0.
+\]
+
+Here, \(\gamma_i\) is often defined as the subsistence quantity of each good, but it is not necessarily nonnegative.
+
+The Lagrangian is
+\[
+\mathcal{L}
+=
+(x_1-\gamma_1)^{\beta_1}
+(x_2-\gamma_2)^{\beta_2}
++
+\lambda(m-p_1x_1-p_2x_2).
+\]
+
+The first-order conditions are
+\[
+\beta_1
+(x_1-\gamma_1)^{\beta_1-1}
+(x_2-\gamma_2)^{\beta_2}
+-
+\lambda p_1
+=
+0,
+\]
+\[
+\beta_2
+(x_1-\gamma_1)^{\beta_1}
+(x_2-\gamma_2)^{\beta_2-1}
+-
+\lambda p_2
+=
+0,
+\]
+and
+\[
+m=p_1x_1+p_2x_2.
+\]
+
+From these first-order conditions, one can derive the demand function
+\[
+p_1x_1
+=
+p_1\gamma_1
++
+\beta_1
+\left(
+m-p_1\gamma_1-p_2\gamma_2
+\right).
+\]
+
+In general,
+\[
+p_ix_i
+=
+p_i\gamma_i
++
+\beta_i
+\left(
+m-\sum_k p_k\gamma_k
+\right),
+\qquad
+i=1,\dots,N.
+\]
+
+The corresponding expenditure function is
+\[
+e(p,u)
+=
+\sum_k p_k\gamma_k
++
+u\beta_0
+\prod_k p_k^{\beta_k}.
+\]
+
+The direct utility function is
+\[
+u(x)
+=
+\prod_k (x_k-\gamma_k)^{\beta_k}.
+\]
+
+The indirect utility function is
+\[
+v(p,m)
+=
+\frac{
+m-\sum_k p_k\gamma_k
+}{
+\beta_0\prod_k p_k^{\beta_k}
+},
+\]
+where \(\beta_0\) is a function of parameters only.
+
+This demand system is derived from a utility function. Therefore, it automatically satisfies homogeneity, adding-up, and symmetry.
+
+\begin{theorem}
+Consider a theoretically plausible demand system, that is, a demand system consistent with utility maximization, in which the Marshallian demand of each good is a linear function of prices and expenditure:
+\[
+x_i
+=
+\sum_j \alpha_{ij}p_j
++
+\beta_i m.
+\]
+
+
+
+\end{theorem}
+
+
+
+
+
+Then any such demand system must be written in the LES form:
+\[
+p_i x_i
+=
+p_i\gamma_i
++
+\beta_i
+\left(
+m-\sum_j p_j\gamma_j
+\right),
+\qquad
+i=1,\dots,N.
+\]
+
+\begin{proof}
+See the Appendix.
+\end{proof}
+
+\subsection{PIGLOG}
+
+We may specify a demand system directly and impose the restrictions required for theoretical plausibility.
+
+Alternatively, we may specify a utility function or an expenditure function and derive the demand system corresponding to that function.
+
+Stone's model and the Rotterdam model are two examples derived by the first approach.
+
+The PIGLOG class of demand systems also belongs to the first approach, but it is more theoretically plausible than Stone's or the Rotterdam model.
+
+The class of PIGLOG, or price independent generalized logarithmic, demand systems is
+\[
+x_i(p,m)
+=
+d_i(p)m\ln m
++
+b_i(p)m.
+\]
+
+Muellbauer (1975) has shown that all theoretically plausible PIGLOG demand systems can be written in the form
+\[
+x_i(p,m)
+=
+\frac{g_i(p)}{g(p)}m
+-
+\frac{c_i(p)}{c(p)}
+\left[
+\ln m-\ln g(p)
+\right]m,
+\]
+where \(g(p)\) is homogeneous of degree one and \(c(p)\) is homogeneous of degree zero.
+
+An expenditure share of a PIGLOG system has the form
+\[
+w_i
+=
+\frac{p_i x_i(p,m)}{m}.
+\]
+
+Thus,
+\[
+w_i
+=
+\frac{p_i g_i(p)}{g(p)}
+-
+\frac{p_i c_i(p)}{c(p)}
+\left[
+\ln m-\ln g(p)
+\right].
+\]
+
+Hence, \(w_i\) is linear in \(\ln m\).
+
+The corresponding indirect utility function is given by
+\[
+v(p,m)
+=
+c(p)\left[
+\ln m-\ln g(p)
+\right].
+\]
+
+\paragraph{Exercise 5.}
+Consider a PIGLOG expenditure function:
+\[
+\ln e(p,u)
+=
+a(p)+b(p)u.
+\]
+
+Derive the \(CV\) of the price change
+\[
+p^0\to p^1.
+\]
+
+Does the \(CV\) depend on the income level?
+
+\subsection{Translog Indirect Utility Function}
+
+Jorgenson et al. (1982) use the second approach and specify an indirect objective function first.
+
+Specify a translog indirect utility function:
+\[
+\ln v\left(\frac{p}{m}\right)
+=
+\alpha_0
++
+\sum_k \alpha_k
+\ln\left(\frac{p_k}{m}\right)
++
+\frac{1}{2}
+\sum_i\sum_j
+\beta_{ij}
+\ln\left(\frac{p_i}{m}\right)
+\ln\left(\frac{p_j}{m}\right),
+\]
+where
+\[
+\beta_{ij}=\beta_{ji}
+\]
+and
+\[
+\sum_k \alpha_k=-1.
+\]
+
+By dividing prices by income, the function automatically satisfies the condition that
+\[
+v(p,m)
+\]
+is homogeneous of degree zero in \((p,m)\).
+
+The Marshallian demand system corresponding to this utility function is
+\[
+w_k
+=
+\frac{p_kx_k(p,m)}{m}
+=
+\frac{
+\alpha_k
++
+\sum_j
+\beta_{kj}
+\ln\left(\frac{p_j}{m}\right)
+}{
+-1
++
+\sum_i\sum_j
+\beta_{ij}
+\ln\left(\frac{p_j}{m}\right)
+},
+\qquad
+k=1,\dots,N.
+\]
+
+If
+\[
+\sum_i\sum_j \beta_{ij}=0,
+\]
+then \(w_k\) becomes a linear function of \(\ln m\). Hence, the translog system with this restriction belongs to the PIGLOG class.
+
+The budget share \(w_k\) is easily derived from the log-form of Roy's identity.
+
+
+
+
+From the log-form of Roy's identity, we have
+\[
+w_k
+=
+-
+\frac{
+\partial \ln v(p,m)/\partial \ln p_k
+}{
+\partial \ln v(p,m)/\partial \ln m
+}.
+\]
+
+Since
+\[
+\ln v(p,m)
+=
+\alpha_0
++
+\sum_k \alpha_k\ln p_k
+-
+\sum_k \alpha_k\ln m
++
+\frac{1}{2}
+\sum_i\sum_j
+\beta_{ij}
+\left[
+\ln p_i\ln p_j
+-
+\ln p_i\ln m
+-
+\ln p_j\ln m
++
+(\ln m)^2
+\right],
+\]
+we obtain
+\[
+\frac{\partial \ln v(p,m)}{\partial \ln p_k}
+=
+\alpha_k
++
+\sum_j
+\beta_{kj}
+\ln\left(\frac{p_j}{m}\right),
+\]
+and
+\[
+\frac{\partial \ln v(p,m)}{\partial \ln m}
+=
+1
+-
+\sum_j\sum_i
+\beta_{ji}
+\ln\left(\frac{p_i}{m}\right).
+\]
+
+Therefore,
+\[
+w_k
+=
+-
+\frac{
+\alpha_k
++
+\sum_j
+\beta_{kj}
+\ln(p_j/m)
+}{
+1
+-
+\sum_j\sum_i
+\beta_{ji}
+\ln(p_i/m)
+}.
+\]
+
+\begin{theorem}
+Let \(v(q)\) be an indirect utility function with prices normalized by income:
+\[
+q=\frac{p}{m}.
+\]
+
+Then we have the modified Roy's identity:
+\[
+x_i(q)
+=
+x_i(p/m)
+=
+-
+\frac{
+\partial v(q)/\partial q_i
+}{
+\sum_{j=1}^N
+(\partial v(q)/\partial q_j)q_j
+}.
+\]
+\end{theorem}
+
+\begin{proof}
+Apply the envelope theorem to the problem
+\[
+\mathcal{L}
+=
+u(x)+\lambda(1-qx).
+\]
+
+Then
+\[
+\frac{\partial v(q)}{\partial q_i}
+=
+-\lambda x_i.
+\]
+
+Therefore,
+\[
+\sum_{j=1}^N
+\frac{\partial v(q)}{\partial q_j}q_j
+=
+-\lambda \sum_{j=1}^N q_jx_j.
+\]
+
+Since the normalized budget constraint is
+\[
+qx=1,
+\]
+we have
+\[
+\sum_{j=1}^N q_jx_j=1.
+\]
+
+Thus,
+\[
+\sum_{j=1}^N
+\frac{\partial v(q)}{\partial q_j}q_j
+=
+-\lambda.
+\]
+
+Hence,
+\[
+\frac{\partial v(q)}{\partial q_i}
+=
+x_i
+\sum_{j=1}^N
+\frac{\partial v(q)}{\partial q_j}q_j.
+\]
+
+Solving for \(x_i\), we obtain
+\[
+x_i(q)
+=
+\frac{
+\partial v(q)/\partial q_i
+}{
+\sum_{j=1}^N
+(\partial v(q)/\partial q_j)q_j
+}.
+\]
+\end{proof}
+
+\paragraph{Exercise 6.}
+Consider the indirect utility function
+\[
+v\left(\frac{p}{m}\right)
+=
+v(q)
+=
+\alpha_0
++
+\sum_{i=1}^N
+\alpha_i q_i^{1/2}
++
+\frac{1}{2}
+\sum_{i=1}^N
+\sum_{j=1}^N
+\beta_{ij}q_i^{1/2}q_j^{1/2},
+\]
+where
+\[
+\beta_{ij}=\beta_{ji},
+\qquad
+q_i=\frac{p_i}{m}.
+\]
+
+Derive the ordinary demand functions and the share equations that are consistent with this utility function.
+
+\subsection{Almost Ideal Demand System}
+
+Deaton and Muellbauer (1980) proposed the Almost Ideal Demand System.
+
+We know that PIGLOG demand systems are generated from an indirect utility function of the form
+\[
+v(p,m)
+=
+c(p)
+\left[
+\ln m-\ln g(p)
+\right],
+\]
+and the share equations are
+\[
+w_i(p,m)
+=
+\frac{p_ig_i(p)}{g(p)}
+-
+\frac{p_ic_i(p)}{c(p)}
+\left[
+\ln m-\ln g(p)
+\right].
+\]
+
+The Almost Ideal Demand System is the special case where
+\[
+c(p)
+=
+\prod_i p_i^{\gamma_i},
+\qquad
+\sum_i \gamma_i=0,
+\]
+and
+\[
+\ln g(p)
+=
+\alpha_0
++
+\sum_k \alpha_k\ln p_k
++
+\frac{1}{2}
+\sum_i\sum_j
+\beta_{ij}\ln p_i\ln p_j,
+\]
+with
+\[
+\beta_{ij}=\beta_{ji},
+\qquad
+\sum_j\beta_{ji}=0,
+\qquad
+\sum_k\alpha_k=1.
+\]
+
+The share equations are given by
+\[
+w_i(p,m)
+=
+\alpha_i
++
+\sum_j\beta_{ij}\ln p_j
++
+\gamma_i
+\ln\left(
+\frac{m}{g(p)}
+\right).
+\]
+
+For estimation, the price index \(\ln g(p)\) is usually calculated as Stone's price index:
+\[
+\ln P
+=
+\sum_k w_k\ln p_k.
+\]
+
+This gives the linear approximate AIDS model, usually called LA-AIDS.
+
+Note that a PIGLOG system allows exact nonlinear aggregation.
+
+Consider a household's share equation:
+\[
+w_i^h(p,m_h)
+=
+\frac{p_ig_i(p)}{g(p)}
+-
+\frac{p_ic_i(p)}{c(p)}
+\left[
+\ln m_h-\ln g(p)
+\right].
+\]
+
+Let
+\[
+M
+=
+\sum_{h=1}^H m_h.
+\]
+
+Since
+\[
+w_i
+=
+\sum_{h=1}^H
+\frac{m_h}{M}w_i^h,
+\]
+we have
+\[
+w_i
+=
+\frac{p_ig_i(p)}{g(p)}
+-
+\frac{p_ic_i(p)}{c(p)}
+\left[
+\sum_{h=1}^H
+\frac{m_h}{M}\ln m_h
+-
+\ln g(p)
+\right].
+\]
+
+Therefore, if the aggregate income variable is constructed as
+\[
+F(m_1,\dots,m_H)
+=
+\sum_{h=1}^H
+\frac{m_h}{M}\ln m_h,
+\]
+then the aggregate share equation
+\[
+w_i
+=
+\frac{p_ig_i(p)}{g(p)}
+-
+\frac{p_ic_i(p)}{c(p)}
+\left[
+F(m_1,\dots,m_H)-\ln g(p)
+\right]
+\]
+is consistent with the individual share equations.
+
+
+
+\paragraph{Exercise 7.}
+Consider the previous exercise in which a consumer maximizes utility
+\[
+U(X,C,t_L,H(X,t_L))
+\]
+subject to the time constraint
+\[
+T=t_W+t_L.
+\]
+
+Derive the LA-AIDS demand system for this consumer.
+
+\subsection{Rank Extended Models}
+
+The PIGLOG model assumes that expenditure shares are linear in the logarithm of total expenditure.
+
+Very often, however, this assumption is not supported by actual data.
+
+Banks et al.\ (1997) suggested the following indirect utility function in order to relax the linearity assumption:
+\[
+v(p,m)
+=
+\left\{
+\left[
+\frac{\ln m-a(p)}{b(p)}
+\right]^{-1}
++
+\lambda(p)
+\right\}^{-1}.
+\]
+
+The system reduces to a PIGLOG system when
+\[
+\lambda(p)=0.
+\]
+
+Applying Roy's identity yields
+\[
+w_i
+=
+\frac{\partial a(p)}{\partial \ln p_i}
++
+\frac{\partial \ln b(p)}{\partial \ln p_i}
+\ln y
++
+\frac{\partial \lambda(p)}{\partial \ln p_i}
+\frac{1}{b(p)}
+(\ln y)^2,
+\]
+where
+\[
+\ln y
+=
+\ln m-a(p).
+\]
+
+Specify the following functional forms:
+\[
+a(p)
+=
+\alpha_0
++
+\sum_k \alpha_k\ln p_k
++
+\frac{1}{2}
+\sum_k\sum_l
+\gamma_{kl}\ln p_k\ln p_l,
+\]
+
+\[
+b(p)
+=
+\prod_k p_k^{\beta_k},
+\]
+
+with
+\[
+\gamma_{ij}=\gamma_{ji},
+\qquad
+\sum_k \alpha_k=1,
+\qquad
+\sum_k \beta_k=0,
+\]
+and
+\[
+\sum_k \gamma_{kj}
+=
+\sum_k \gamma_{jk}
+=
+0.
+\]
+
+Finally,
+\[
+\lambda(p)
+=
+\sum_k \lambda_k\ln p_k,
+\qquad
+\sum_k \lambda_k=0.
+\]
+
+
+
+The corresponding share equation system is
+\[
+w_i
+=
+\alpha_i
++
+\sum_j \gamma_{ij}\ln p_j
++
+\beta_i\bigl(\ln m-a(p)\bigr)
++
+\frac{\lambda_i}{b(p)}
+\bigl(\ln m-a(p)\bigr)^2.
+\]
+
+This system is called \textbf{QU-AIDS}.
+
+Likewise, a generalized translog model was suggested by Lewbel (2000):
+\[
+\ln v\left(\frac{p}{m}\right)
+=
+\left\{
+\left[
+\ln \tilde v\left(\frac{p}{m}\right)
+\right]^{-1}
+-
+\sum_i \gamma_i \ln\left(\frac{p_i}{m}\right)
+\right\}^{-1}.
+\]
+
+Here,
+\[
+\ln \tilde v\left(\frac{p}{m}\right)
+=
+\alpha_0
++
+\sum_k \alpha_k
+\ln\left(\frac{p_k}{m}\right)
++
+\frac{1}{2}
+\sum_i\sum_j
+\beta_{ij}
+\ln\left(\frac{p_i}{m}\right)
+\ln\left(\frac{p_j}{m}\right),
+\]
+where
+\[
+\beta_{ij}=\beta_{ji}.
+\]
+
+The parameter restrictions are
+\[
+\sum_k \alpha_k=-1,
+\qquad
+\sum_i\sum_j \beta_{ij}=0.
+\]
+
+The corresponding share equations are
+\[
+w_i
+=
+\frac{
+\alpha_i
++
+\sum_j \beta_{ij}
+\ln\left(\frac{p_j}{m}\right)
++
+\gamma_i(\ln \tilde v)^2
+}{
+-1
++
+\sum_j\sum_k
+\beta_{jk}
+\ln\left(\frac{p_k}{m}\right)
+},
+\qquad
+i=1,\dots,N.
+\]
+
+\paragraph{Exercise 8.}
+Verify that the following relationships hold for any demand system:
+\[
+\frac{\partial w_i(p,m)}{\partial \ln p_i}
+=
+w_i(1+\varepsilon_{ii}),
+\]
+\[
+\frac{\partial w_i(p,m)}{\partial \ln p_j}
+=
+w_i\varepsilon_{ij},
+\qquad
+i\ne j,
+\]
+and
+\[
+\frac{\partial w_i(p,m)}{\partial \ln m}
+=
+w_i\eta_i-w_i.
+\]
+
+Here,
+\[
+\varepsilon_{ij}
+=
+\frac{\partial x_i(p,m)}{\partial p_j}
+\frac{p_j}{x_i},
+\]
+and
+\[
+\eta_i
+=
+\frac{\partial x_i(p,m)}{\partial m}
+\frac{m}{x_i}
+\]
+are the price and income elasticities, respectively.
+
+These relationships are useful when deriving elasticities from the estimated system.
+
+Use these relationships and show that the uncompensated own-price elasticity and expenditure elasticity of the LA-AIDS model are
+\[
+\varepsilon_{ii}
+=
+-1
++
+\frac{\beta_{ii}}{w_i}
+-
+\gamma_i,
+\]
+and
+\[
+\eta_i
+=
+1+\frac{\gamma_i}{w_i}.
+\]
+
+
+
+

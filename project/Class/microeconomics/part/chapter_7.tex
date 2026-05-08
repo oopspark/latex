@@ -1,0 +1,3600 @@
+\chapter{Economics of Uncertainty}
+
+\section{Expected Utility Theory}
+
+\subsection{The Expected Utility Theorem}
+
+Let \(X\) be the set of all possible outcomes.
+
+Assume that the number of possible outcomes in \(X\) is finite:
+\[
+n=1,\dots,N.
+\]
+
+Under an uncertain environment, we need a vector of probabilities associated with the possible outcomes.
+
+Let
+\[
+p_n\ge 0
+\]
+be the probability of occurrence of outcome
+\[
+x_n,
+\]
+with
+\[
+\sum_{n=1}^N p_n=1.
+\]
+
+A simple lottery \(L\) is described by the vector
+\[
+(x_1,p_1;x_2,p_2;\dots;x_N,p_N).
+\]
+
+Since the set of potential outcomes is fixed, we define a lottery \(L\) by its probability vector:
+\[
+L=(p_1,\dots,p_N).
+\]
+
+The set of all lotteries over outcomes \(X\) is denoted
+\[
+\mathcal{L}
+=
+\left\{
+(p_1,\dots,p_N)\in\mathbb{R}_+^N
+:
+p_1+\cdots+p_N=1
+\right\}.
+\]
+
+A compound lottery is a lottery whose outcomes are themselves lotteries.
+
+Consider a compound lottery \(L\) which yields lottery
+\[
+L^a=(p_1^a,\dots,p_N^a)
+\]
+with probability
+\[
+\alpha,
+\]
+and lottery
+\[
+L^b=(p_1^b,\dots,p_N^b)
+\]
+with probability
+\[
+1-\alpha.
+\]
+
+The probability that the outcome of \(L\) is \(x_n\) equals
+\[
+p_n
+=
+\alpha p_n^a
++
+(1-\alpha)p_n^b.
+\]
+
+More generally, a compound lottery
+\[
+(L^1,\dots,L^K;\alpha_1,\dots,\alpha_K)
+\]
+is the risky alternative that yields lottery
+\[
+L^k
+\]
+with probability
+\[
+\alpha_k,
+\qquad
+k=1,\dots,K.
+\]
+
+The reduced lottery of
+\[
+(L^1,\dots,L^K;\alpha_1,\dots,\alpha_K)
+\]
+is
+\[
+L=(p_1,\dots,p_N),
+\]
+which is the simple lottery generating the same ultimate distribution over outcomes:
+\[
+p_n
+=
+\alpha_1 p_n^1
++\cdots+
+\alpha_K p_n^K,
+\qquad
+n=1,\dots,N.
+\]
+
+That is,
+\[
+L
+=
+\alpha_1L^1+\cdots+\alpha_KL^K.
+\]
+
+Whether uncertainty comes from a simple lottery or from a compound lottery has no significance.
+
+Only the probabilities of final outcomes matter.
+
+This is called the axiom of reduction.
+
+The decision maker has a rational preference relation
+\[
+\succeq
+\]
+over the space of simple lotteries,
+\[
+\mathcal{L}.
+\]
+
+We assume that the preference relation is complete, reflexive, transitive, and continuous.
+
+
+
+
+
+complete and transitive.
+
+In addition, we employ the axioms of continuity and independence.
+
+\paragraph{Axiom 1. Continuity}
+
+The preference relation \(\succeq\) on the space of simple lotteries
+\(\mathcal{L}\) is such that for all
+\[
+L^a,L^b,L^c\in\mathcal{L}
+\]
+satisfying
+\[
+L^a\succeq L^b\succeq L^c,
+\]
+there exists a scalar
+\[
+\alpha\in[0,1]
+\]
+such that
+\[
+L^b
+\sim
+\alpha L^a+(1-\alpha)L^c.
+\]
+
+We know that the axioms of completeness, transitivity, and continuity imply the existence of a utility function
+\[
+U:\mathcal{L}\to\mathbb{R}
+\]
+such that
+\[
+U(L^a)\ge U(L^b)
+\quad\Longleftrightarrow\quad
+L^a\succeq L^b.
+\]
+
+Uncertainty requires an additional structure, namely the independence axiom.
+
+\paragraph{Axiom 2. Independence}
+
+The preference relation \(\succeq\) on the space of simple lotteries
+\(\mathcal{L}\) is such that for all
+\[
+L^a,L^b,L^c\in\mathcal{L}
+\]
+and for all
+\[
+\alpha\in[0,1],
+\]
+\[
+L^a\succeq L^b
+\quad\Longleftrightarrow\quad
+\alpha L^a+(1-\alpha)L^c
+\succeq
+\alpha L^b+(1-\alpha)L^c.
+\]
+
+This means that if we mix each of two lotteries,
+\[
+L^a
+\quad\text{and}\quad
+L^b,
+\]
+with a third lottery
+\[
+L^c,
+\]
+then the preference ordering of the two resulting mixtures is independent of the particular third lottery used.
+
+Unlike the other assumptions made above, the independence axiom has no parallel in consumer theory under certainty.
+
+For example, if an individual prefers beef to wine, it does not necessarily follow that the individual also prefers a bundle of beef and pork to a bundle of wine and pork.
+
+Under uncertainty, however, the individual does not consume
+\[
+L^a
+\quad\text{or}\quad
+L^b
+\]
+together with
+\[
+L^c,
+\]
+but rather instead of it.
+
+Thus, the independence axiom is natural in the context of uncertainty and lies at the heart of the theory of choice under uncertainty.
+
+\paragraph{Definition 1.}
+
+A utility function
+\[
+U:\mathcal{L}\to\mathbb{R}
+\]
+is called a von Neumann--Morgenstern expected utility function if there exists an assignment of numbers
+\[
+(u_1,\dots,u_N)
+\]
+to the \(N\) outcomes, where
+\[
+u_n=u(x_n),
+\]
+such that for every simple lottery
+\[
+L=(p_1,\dots,p_N)\in\mathcal{L},
+\]
+we have
+\[
+U(L)
+=
+\sum_{n=1}^N p_nu_n.
+\]
+
+\paragraph{Theorem 1. Expected Utility}
+
+Suppose that the rational preference relation \(\succeq\) on the space of simple lotteries \(\mathcal{L}\) satisfies the continuity and independence axioms.
+
+Then \(\succeq\) can be represented by a preference function that is linear in probabilities.
+
+That is, there exists a scalar \(u_n\) associated with each outcome
+\[
+x_n,
+\qquad
+n=1,\dots,N,
+\]
+such that for any two lotteries
+\[
+L^a=(p_1^a,\dots,p_N^a)
+\]
+and
+\[
+L^b=(p_1^b,\dots,p_N^b),
+\]
+we have
+\[
+L^a\succeq L^b
+\quad\Longleftrightarrow\quad
+\sum_{n=1}^N p_n^a u_n
+\ge
+\sum_{n=1}^N p_n^b u_n.
+\]
+
+
+
+\paragraph{Proof.}
+It is enough to prove that, for any compound lottery
+\[
+L=\beta L^a+(1-\beta)L^b,
+\]
+we have
+\[
+U(L)
+=
+\beta U(L^a)+(1-\beta)U(L^b).
+\]
+
+Once this is established, we obtain an expected utility representation. For any lottery
+\[
+L=(p_1,\dots,p_N),
+\]
+we can write
+\[
+L
+=
+p_1[1,0,\dots,0]
++
+p_2[0,1,\dots,0]
++
+\cdots
++
+p_N[0,0,\dots,1].
+\]
+
+Hence,
+\[
+\begin{aligned}
+U(L)
+&=
+U\left(
+p_1[1,0,\dots,0]
++
+p_2[0,1,\dots,0]
++
+\cdots
++
+p_N[0,0,\dots,1]
+\right) \\
+&=
+p_1U([1,0,\dots,0])
++
+p_2U([0,1,\dots,0])
++
+\cdots
++
+p_NU([0,0,\dots,1]) \\
+&=
+p_1u_1+p_2u_2+\cdots+p_Nu_N.
+\end{aligned}
+\]
+
+Here,
+\[
+[0,\dots,1,\dots,0]
+\]
+denotes the degenerate lottery that yields \(x_n\) with probability one.
+
+Let \(\underline L\) and \(\overline L\) be the worst and best lotteries in \(\mathcal{L}\). That is,
+\[
+\overline L\succeq L\succeq \underline L
+\]
+for any
+\[
+L\in\mathcal{L}.
+\]
+
+By the continuity axiom, there exist two scalars
+\[
+\alpha_a,\alpha_b\in[0,1]
+\]
+such that
+\[
+L^a
+\sim
+\alpha_a\overline L+(1-\alpha_a)\underline L
+\]
+and
+\[
+L^b
+\sim
+\alpha_b\overline L+(1-\alpha_b)\underline L.
+\]
+
+Suppose
+\[
+\alpha_a\ge \alpha_b.
+\]
+
+Then
+\[
+L^a\succeq L^b.
+\]
+
+Conversely, if
+\[
+L^a\succeq L^b,
+\]
+then
+\[
+\alpha_a\ge \alpha_b.
+\]
+
+Therefore,
+\[
+L^a\succeq L^b
+\quad\Longleftrightarrow\quad
+\alpha_a\ge \alpha_b.
+\]
+
+Define
+\[
+U(L)=\alpha,
+\]
+where \(\alpha\) is such that
+\[
+L\sim \alpha\overline L+(1-\alpha)\underline L.
+\]
+
+Then \(U\) represents the preference relation:
+\[
+U(L^a)\ge U(L^b)
+\quad\Longleftrightarrow\quad
+L^a\succeq L^b.
+\]
+
+Thus,
+\[
+U(L^a)=\alpha_a,
+\qquad
+U(L^b)=\alpha_b.
+\]
+
+It remains to prove that
+\[
+U(\beta L^a+(1-\beta)L^b)
+=
+\beta\alpha_a+(1-\beta)\alpha_b.
+\]
+
+Equivalently, we need to show that
+\[
+\beta L^a+(1-\beta)L^b
+\sim
+\left[
+\beta\alpha_a+(1-\beta)\alpha_b
+\right]\overline L
++
+\left[
+1-\beta\alpha_a-(1-\beta)\alpha_b
+\right]\underline L.
+\]
+
+Using the independence axiom twice, we have
+\[
+\begin{aligned}
+\beta L^a+(1-\beta)L^b
+&\sim
+\beta\left[
+\alpha_a\overline L+(1-\alpha_a)\underline L
+\right]
++
+(1-\beta)L^b \\
+&\sim
+\beta\left[
+\alpha_a\overline L+(1-\alpha_a)\underline L
+\right]
++
+(1-\beta)\left[
+\alpha_b\overline L+(1-\alpha_b)\underline L
+\right] \\
+&=
+\left[
+\beta\alpha_a+(1-\beta)\alpha_b
+\right]\overline L \\
+&\quad+
+\left[
+\beta(1-\alpha_a)+(1-\beta)(1-\alpha_b)
+\right]\underline L.
+\end{aligned}
+\]
+
+Therefore,
+\[
+U(\beta L^a+(1-\beta)L^b)
+=
+\beta U(L^a)+(1-\beta)U(L^b).
+\]
+
+This proves the expected utility representation.
+
+\medskip
+
+Suppose
+\[
+U:\mathcal{L}\to\mathbb{R}
+\]
+is an expected utility function. Then
+\[
+V(L)=\beta U(L)+\gamma,
+\qquad
+\beta>0,
+\]
+is another expected utility function representing the same preferences.
+
+\subsection{Critics of the Expected Utility Theorem}
+
+Most criticisms of the expected utility theorem are criticisms of the independence axiom.
+
+\subsubsection{The Allais Paradox}
+
+There are three outcomes:
+\[
+x_1=2{,}500{,}000,
+\qquad
+x_2=500{,}000,
+\qquad
+x_3=0.
+\]
+
+The four lotteries in the Allais experiment are
+\[
+L_1=(0,1,0),
+\qquad
+L_1'=(0.1,0.89,0.01),
+\]
+and
+\[
+L_2=(0,0.11,0.89),
+\qquad
+L_2'=(0.1,0,0.9).
+\]
+
+Experiments usually show that
+\[
+L_1\succ L_1'
+\]
+and
+\[
+L_2'\succ L_2.
+\]
+
+However, expected utility theory does not imply this preference pattern.
+
+Since
+\[
+L_1\succ L_1',
+\]
+we have
+\[
+u_2
+>
+0.1u_1+0.89u_2+0.01u_3.
+\]
+
+Add \(0.89u_3\) to both sides and rearrange:
+\[
+0.11u_2+0.89u_3
+>
+0.1u_1+0.9u_3.
+\]
+
+This implies
+\[
+L_2\succ L_2',
+\]
+which contradicts the experimental pattern
+\[
+L_2'\succ L_2.
+\]
+
+
+
+\subsubsection{The Machina Paradox}
+
+The outcomes are
+\[
+x_1=\text{a free trip to Hawaii},
+\]
+\[
+x_2=\text{watching an excellent movie about Hawaii},
+\]
+and
+\[
+x_3=\text{staying home}.
+\]
+
+Under certainty, the preference ordering is
+\[
+x_1\succeq x_2\succeq x_3.
+\]
+
+Consider the two lotteries
+\[
+L_1
+=
+0.999x_1+0.001x_2
+\]
+and
+\[
+L_2
+=
+0.999x_1+0.001x_3.
+\]
+
+By the independence axiom, we must have
+\[
+L_1\succeq L_2.
+\]
+
+However, in actual experiments many people prefer
+\[
+L_2
+\]
+to
+\[
+L_1.
+\]
+
+This paradox, together with the Allais paradox, suggests that decision makers may value not only what they receive, but also what they receive relative to what they might have received by choosing differently.
+
+If we do not impose the independence axiom, then we may specify a more general utility representation:
+\[
+U(L)
+=
+\sum_{n=1}^N u_n g_n(p),
+\]
+which is called a generalized expected utility function.
+
+This generalization makes the utility function much more difficult to analyze.
+
+For this reason, the expected utility theorem remains widely used in economics.
+
+\subsubsection{Prospect Theory: Kahneman and Tversky}
+
+Kahneman and Tversky (1979) presented evidence from many experiments showing the importance of reference points.
+
+That is, utility is not evaluated independently of the current level of well-being.
+
+Instead, outcomes are evaluated relative to a reference point.
+
+Their proposed value function has the following properties:
+
+\begin{enumerate}
+    \item It is defined over gains and losses rather than absolute wealth levels.
+    
+    \item It is generally concave for gains but convex for losses.
+    
+    \item It is steeper for losses than for gains.
+\end{enumerate}
+
+The third property is often referred to as loss aversion.
+
+\section{Risk Aversion}
+
+\subsection{Characterization of Risk Aversion}
+
+We now consider the effect of a pure risk, which is a zero-mean risk.
+
+An individual is risk-averse if he dislikes all zero-mean risks at all wealth levels.
+
+Let
+\[
+w
+\]
+denote non-random wealth and let
+\[
+x
+\]
+be a random variable satisfying
+\[
+E[x]=0.
+\]
+
+Then the individual is risk-averse if
+\[
+E[u(w+x)]
+\le
+u(w).
+\]
+
+The following proposition states that risk aversion is equivalent to concavity of the utility function.
+
+\paragraph{Proposition 1.}
+
+An agent with utility function
+\[
+u
+\]
+is risk-averse if and only if
+\[
+u
+\]
+is concave.
+
+
+
+\paragraph{Proof.}
+
+The definition of risk aversion implies that an agent is risk-averse if
+\[
+E[u(z)]
+\le
+u(E[z])
+\]
+for all random variables
+\[
+z=w+x.
+\]
+
+The function
+\[
+u
+\]
+is concave if and only if
+\[
+\lambda u(a)+(1-\lambda)u(b)
+\le
+u(\lambda a+(1-\lambda)b)
+\]
+for all
+\[
+\lambda\in[0,1]
+\]
+and all
+\[
+a,b.
+\]
+
+This definition of concavity is equivalent to
+\[
+E[u(z)]
+\le
+u(E[z])
+\]
+when \(z\) is a binary random variable distributed as
+\[
+(\lambda,a;1-\lambda,b).
+\]
+
+That is,
+\[
+E[u(z)]
+\le
+u(E[z])
+\]
+if and only if
+\[
+u
+\]
+is concave.
+
+This is Jensen's inequality.
+
+Therefore, an individual is risk-averse if and only if the utility function is concave.
+
+\hfill\(\blacksquare\)
+
+\medskip
+
+We can prove Jensen's inequality in another way.
+
+Concavity implies
+\[
+u(z)
+\le
+u(\bar z)
++
+u'(\bar z)(z-\bar z),
+\]
+where
+\[
+\bar z=E[z].
+\]
+
+Taking expectations on both sides gives
+\[
+E[u(z)]
+\le
+u(\bar z)
++
+u'(\bar z)E[z-\bar z].
+\]
+
+Since
+\[
+E[z-\bar z]=0,
+\]
+we obtain
+\[
+E[u(z)]
+\le
+u(\bar z)
+=
+u(E[z]).
+\]
+
+\subsection{Comparative Risk Aversion}
+
+How do we compare the degree of risk aversion across individuals?
+
+\paragraph{Definition 2.}
+
+Let agents
+\[
+u_1
+\]
+and
+\[
+u_2
+\]
+have the same initial wealth.
+
+Agent
+\[
+u_1
+\]
+is more risk-averse than agent
+\[
+u_2
+\]
+if
+\[
+u_1
+\]
+dislikes every lottery that
+\[
+u_2
+\]
+dislikes, independently of the level of initial wealth.
+
+That is,
+\[
+u_1
+\]
+is more reluctant to take risks than
+\[
+u_2.
+\]
+
+Define the function
+\[
+\phi(u)
+=
+u_1(u_2^{-1}(u)).
+\]
+
+Therefore,
+\[
+u_1(z)
+=
+\phi(u_2(z))
+\]
+for all
+\[
+z.
+\]
+
+The function
+\[
+\phi
+\]
+transforms
+\[
+u_2
+\]
+into
+\[
+u_1.
+\]
+
+Since
+\[
+\phi'(u_2(z))
+=
+\frac{
+u_1'(z)
+}{
+u_2'(z)
+}
+>0,
+\]
+the function
+\[
+\phi
+\]
+is increasing.
+
+Further, assume that
+\[
+\phi
+\]
+is concave.
+
+
+
+
+Consider any risk \(x\) that is disliked by agent \(u_2\). That is,
+\[
+E[u_2(w+x)]\le u_2(w).
+\]
+
+Since \(\phi\) is increasing and concave, Jensen's inequality implies
+\[
+E[u_1(w+x)]
+=
+E[\phi(u_2(w+x))]
+\le
+\phi(E[u_2(w+x)]).
+\]
+
+Since
+\[
+E[u_2(w+x)]\le u_2(w)
+\]
+and \(\phi\) is increasing, we have
+\[
+\phi(E[u_2(w+x)])
+\le
+\phi(u_2(w)).
+\]
+
+Therefore,
+\[
+E[u_1(w+x)]
+\le
+\phi(u_2(w))
+=
+u_1(w).
+\]
+
+That is, \(u_1\) dislikes all risks that \(u_2\) dislikes if and only if \(\phi\) is concave.
+
+The above discussion implies that \(u_1\) is more risk-averse than \(u_2\) if and only if \(u_1\) is a concave transformation of \(u_2\).
+
+This requires
+\[
+\phi''\le 0.
+\]
+
+We obtain
+\[
+\phi''(u_2(z))
+=
+\frac{u_1'(z)}{[u_2'(z)]^2}
+\left[
+A_2(z)-A_1(z)
+\right],
+\]
+where
+\[
+A_i(z)
+=
+-\frac{u_i''(z)}{u_i'(z)}.
+\]
+
+Therefore, \(\phi\) is concave if and only if
+\[
+A_1(z)\ge A_2(z)
+\]
+for all \(z\).
+
+Hence, the following conditions are equivalent:
+
+\begin{enumerate}
+    \item The agent with utility function \(u_1\) is more risk-averse than the agent with utility function \(u_2\). That is, the former rejects every lottery that the latter rejects.
+    
+    \item \(u_1\) is a concave transformation of \(u_2\).
+    
+    \item \(A_1\) is uniformly larger than \(A_2\).
+\end{enumerate}
+
+\paragraph{Exercise 1.}
+Let \(w\) be current wealth, and let \(w+x\) be uncertain final wealth.
+
+Assume that
+\[
+E[x]=0.
+\]
+
+Let
+\[
+u(\cdot)
+\]
+be the investor's utility function.
+
+Define
+\[
+v(w)
+=
+E[u(w+x)]-u(w).
+\]
+
+This represents the difference between expected utility under uncertainty and utility under certainty.
+
+\begin{enumerate}
+    \item[(i)] How do you incorporate the fact that the investor is risk-averse into the function \(v(w)\)?
+\end{enumerate}
+
+
+
+\begin{enumerate}
+    \item[(ii)] If
+    \[
+    v'(w)\ge 0,
+    \]
+    what is the corresponding property of the utility function \(u(\cdot)\)?
+\end{enumerate}
+
+\subsection{Measuring Risk Aversion}
+
+How much would an individual be willing to give up to eliminate risk?
+
+This amount is called the \textbf{risk premium}. Denote it by \(\rho\). It is defined by
+\[
+u(Y-\rho)=E[u(Y)].
+\]
+
+The amount
+\[
+Y-\rho
+\]
+is the certainty equivalent of the random income \(Y\).
+
+In fact, \(\rho\) is a function of several variables:
+\[
+\rho=\rho(Y,u).
+\]
+
+That is, \(\rho\) is determined by:
+
+\begin{enumerate}
+    \item properties of the utility function,
+    \item properties of the distribution of \(Y\).
+\end{enumerate}
+
+Suppose that \(u_1\) is more risk-averse than \(u_2\). Then this implies
+\[
+\rho_1\ge \rho_2.
+\]
+
+That is,
+\[
+E[u_2(z+x)]=u_2(z-\rho_2)
+\]
+implies
+\[
+E[u_1(z+x)]\le u_1(z-\rho_2)
+\]
+for all \(z\), \(\rho_2\), and \(x\).
+
+Define
+\[
+Y_0=z-\rho_2
+\]
+and
+\[
+Y=z+x.
+\]
+
+Then the inequality condition is equivalent to requiring that agent \(u_1\) rejects all lotteries \(Y\) for which agent \(u_2\) is indifferent, assuming that they have the same certain wealth \(Y_0\).
+
+We know that this is true if and only if \(u_1\) is more concave than \(u_2\).
+
+Therefore,
+\[
+\rho_1\ge \rho_2
+\]
+if and only if \(u_1\) is more risk-averse than \(u_2\).
+
+\subsubsection{Approximation of the Risk Premium}
+
+Using a second-order Taylor approximation,
+\[
+u(Y)
+\simeq
+u(\bar Y)
++
+u'(\bar Y)(Y-\bar Y)
++
+\frac{1}{2}u''(\bar Y)(Y-\bar Y)^2,
+\]
+where
+\[
+\bar Y=E[Y].
+\]
+
+Taking expectations gives
+\[
+E[u(Y)]
+\simeq
+u(\bar Y)
++
+u'(\bar Y)E[Y-\bar Y]
++
+\frac{1}{2}u''(\bar Y)E[(Y-\bar Y)^2].
+\]
+
+Since
+\[
+E[Y-\bar Y]=0
+\]
+and
+\[
+E[(Y-\bar Y)^2]=\sigma_Y^2,
+\]
+we obtain
+\[
+E[u(Y)]
+\simeq
+u(\bar Y)
++
+\frac{1}{2}u''(\bar Y)\sigma_Y^2.
+\]
+
+Also,
+\[
+u(\bar Y-\rho)
+\simeq
+u(\bar Y)-u'(\bar Y)\rho.
+\]
+
+Since
+\[
+u(\bar Y-\rho)=E[u(Y)],
+\]
+we have
+\[
+u(\bar Y)-u'(\bar Y)\rho
+\simeq
+u(\bar Y)
++
+\frac{1}{2}u''(\bar Y)\sigma_Y^2.
+\]
+
+Therefore,
+\[
+\rho
+\simeq
+-\frac{1}{2}
+\frac{u''(\bar Y)}{u'(\bar Y)}
+\sigma_Y^2.
+\]
+
+Define
+\[
+A(Y)
+=
+-\frac{u''(Y)}{u'(Y)}.
+\]
+
+Then
+\[
+\rho
+\simeq
+\frac{1}{2}A(\bar Y)\sigma_Y^2.
+\]
+
+Here, \(A(Y)\) is the Arrow--Pratt measure of absolute risk aversion.
+
+Equivalently, in relative terms,
+\[
+\frac{\rho}{\bar Y}
+\simeq
+\frac{1}{2}R(\bar Y)s_Y^2,
+\]
+where
+\[
+R(Y)
+=
+-\frac{u''(Y)Y}{u'(Y)}
+\]
+is the Arrow--Pratt measure of relative risk aversion, and
+\[
+s_Y^2
+=
+\frac{\sigma_Y^2}{\bar Y^2}
+\]
+is an index of dispersion.
+
+\subsubsection{Decreasing Absolute Risk Aversion}
+
+It is widely believed that the wealthier we are, the smaller is the maximum amount we are willing to pay to avoid a given additive risk.
+
+This corresponds to the notion of \textbf{decreasing absolute risk aversion}, or DARA.
+
+Define the risk premium by
+\[
+E[u(z+x)]
+=
+u(z-\rho).
+\]
+
+Applying the implicit function theorem to this equality gives
+\[
+\frac{d\rho}{dz}
+=
+1-
+\frac{E[u'(z+x)]}{u'(z-\rho)}.
+\]
+
+Thus,
+\[
+\frac{d\rho}{dz}<0
+\]
+if
+\[
+E[u'(z+x)]>u'(z-\rho).
+\]
+
+Therefore, the risk premium is decreasing in wealth if the following property holds:
+\[
+E[u(z+x)]=u(z-\rho)
+\quad\Longrightarrow\quad
+E[u'(z+x)]>u'(z-\rho)
+\]
+for all \(z\), \(\rho\), and \(x\).
+
+This condition is equivalent to the condition
+\[
+E[u_2(z+x)]=u_2(z-\rho_2)
+\quad\Longrightarrow\quad
+E[u_1(z+x)]\le u_1(z-\rho_2)
+\]
+when
+\[
+u_2=u
+\]
+and
+\[
+u_1=-u'.
+\]
+
+The latter condition implies that \(u_1\) is more concave than \(u_2\).
+
+Therefore, the fact that \(\rho\) decreases in wealth implies that
+\[
+-u'
+\]
+is more concave than
+\[
+u.
+\]
+
+Let
+\[
+P(Y)
+=
+-\frac{u'''(Y)}{u''(Y)}.
+\]
+
+This is called the degree of absolute prudence and denotes the degree of concavity of \(-u'\).
+
+The condition that \(-u'\) is more concave than \(u\) implies
+\[
+P(Y)\ge A(Y).
+\]
+
+
+
+
+the condition that \(A\) be decreasing in wealth, since it is easily verified that
+\[
+A'(Y)
+=
+A(Y)\bigl[A(Y)-P(Y)\bigr].
+\]
+
+That is, the following conditions are equivalent:
+
+\begin{enumerate}
+    \item The risk premium is a decreasing function of wealth.
+    
+    \item Absolute risk aversion decreases with wealth, meaning that
+    \[
+    -\frac{u''(Y)}{u'(Y)}
+    \]
+    is decreasing in \(Y\).
+    
+    \item \(-u'\) is a concave transformation of \(u\):
+    \[
+    -\frac{u'''(Y)}{u''(Y)}
+    \ge
+    -\frac{u''(Y)}{u'(Y)}
+    \]
+    for all \(Y\).
+\end{enumerate}
+
+\paragraph{Example 1.}
+
+A consumer prefers stable consumption to fluctuating consumption.
+
+It is also known that this consumer wants to avoid income instability.
+
+Suppose that the price of a consumption good,
+\[
+p_i,
+\]
+is highly unstable.
+
+Would this consumer prefer the price to be stabilized at its mean rather than fluctuate randomly?
+
+We know that
+\[
+v_{p_i}
+=
+-x_i v_m.
+\]
+
+Differentiating again with respect to \(p_i\),
+\[
+v_{p_ip_i}
+=
+-\frac{\partial x_i}{\partial p_i}v_m
+-
+x_i v_{mp_i}.
+\]
+
+Using Roy's identity and elasticity notation, we obtain
+\[
+v_{p_ip_i}
+=
+\frac{x_i^2v_m}{m}
+\left[
+-E-\beta(R-\eta)
+\right],
+\]
+where
+
+\begin{itemize}
+    \item \(E\) is the price elasticity of demand,
+    \item \(\eta\) is the income elasticity,
+    \item \(R\) is relative risk aversion,
+    \item \(\beta\) is the expenditure share of the commodity.
+\end{itemize}
+
+Unless
+\[
+E\ge -\beta(R-\eta),
+\]
+the term
+\[
+v_{p_ip_i}
+\]
+can be positive.
+
+In that case, the consumer may actually prefer price variability even though the utility function is concave.
+
+Consider the utility function
+\[
+u(x,y)=a\ln x+y,
+\qquad
+a>0,
+\qquad
+m>a,
+\]
+with budget constraint
+\[
+px+y=m,
+\]
+where \(p\) is uncertain.
+
+The indirect utility function is
+\[
+v(p,m)
+=
+m-a+a\ln a-a\ln p.
+\]
+
+The Marshallian demands are
+\[
+x(p,m)=\frac{a}{p},
+\]
+and
+\[
+y(p,m)=m-a.
+\]
+
+Differentiating,
+\[
+v_m=1,
+\qquad
+v_{mm}=0,
+\]
+\[
+v_p=-\frac{a}{p},
+\qquad
+v_{pp}=\frac{a}{p^2}>0.
+\]
+
+Thus the consumer is risk-loving with respect to variation in price \(p\).
+
+In this case,
+\[
+E=-1,
+\qquad
+\eta=0,
+\qquad
+R=0.
+\]
+
+Hence,
+\[
+E<-\beta(R-\eta)=0.
+\]
+
+\subsubsection{Recovering Utility from Absolute Risk Aversion}
+
+It is possible to recover a utility function from the Arrow--Pratt measure of absolute risk aversion.
+
+Recall that
+\[
+A(Y)
+=
+-\frac{u''(Y)}{u'(Y)}
+=
+-\frac{d\ln u'(Y)}{dY}.
+\]
+
+Integrating,
+\[
+\ln u'(Y)
+=
+-\int^Y A(s)\,ds + k_1.
+\]
+
+Exponentiating both sides,
+\[
+u'(Y)
+=
+e^{k_1}
+\exp\left(
+-\int^Y A(s)\,ds
+\right).
+\]
+
+Integrating once more,
+\[
+u(Y)
+=
+k_2
++
+e^{k_1}
+\int^Y
+\exp\left(
+-\int^z A(s)\,ds
+\right)\,dz.
+\]
+
+Thus the utility function is determined up to a positive affine transformation.
+
+\subsubsection{HARA Utility Functions}
+
+A specific class of utility functions is particularly useful for deriving analytical results.
+
+This is the class of utility functions exhibiting \textbf{harmonic absolute risk aversion} (HARA).
+
+A utility function exhibits HARA if the inverse of absolute risk aversion is linear in wealth:
+\[
+T(Y)
+=
+\frac{1}{A(Y)}
+=
+-\frac{u'(Y)}{u''(Y)}
+\]
+is linear in \(Y\).
+
+A HARA utility function takes the form
+\[
+u(Y)
+=
+\frac{1}{\gamma}
+\left(
+\eta+\frac{Y}{\gamma}
+\right)^{1-\gamma},
+\]
+where \(\gamma\neq 1\).
+
+Then,
+\[
+u'(Y)
+=
+\left(
+\eta+\frac{Y}{\gamma}
+\right)^{-\gamma},
+\]
+\[
+u''(Y)
+=
+-
+\left(
+\eta+\frac{Y}{\gamma}
+\right)^{-\gamma-1},
+\]
+and
+\[
+u'''(Y)
+=
+(\gamma+1)
+\left(
+\eta+\frac{Y}{\gamma}
+\right)^{-\gamma-2}.
+\]
+
+
+
+To ensure that
+\[
+u'(Y)>0
+\]
+and
+\[
+u''(Y)<0,
+\]
+we impose the appropriate parameter restrictions.
+
+For the HARA utility function, we have
+\[
+A(Y)
+=
+\left(
+\eta+\frac{Y}{\gamma}
+\right)^{-1},
+\]
+and therefore
+\[
+T(Y)
+=
+\frac{1}{A(Y)}
+=
+\eta+\frac{Y}{\gamma}.
+\]
+
+Also,
+\[
+P(Y)
+=
+\frac{\gamma+1}{\gamma}
+\left(
+\eta+\frac{Y}{\gamma}
+\right)^{-1},
+\]
+and
+\[
+R(Y)
+=
+Y
+\left(
+\eta+\frac{Y}{\gamma}
+\right)^{-1}.
+\]
+
+\subsubsection{Special Cases of HARA Utility}
+
+Three special cases of HARA utility functions are well known.
+
+\paragraph{Constant Relative Risk Aversion}
+
+For constant relative risk aversion, or CRRA, impose
+\[
+\eta=0.
+\]
+
+Then
+\[
+R(Y)=\gamma
+\]
+is constant.
+
+We may select the normalization so that
+\[
+u'(1)=1.
+\]
+
+This implies
+\[
+u'(Y)=Y^{-\gamma}.
+\]
+
+Therefore,
+\[
+u(Y)
+=
+\begin{cases}
+\dfrac{Y^{1-\gamma}}{1-\gamma}, & \gamma\ne 1,\\[1em]
+\ln Y, & \gamma=1.
+\end{cases}
+\]
+
+Notice that all these functions exhibit decreasing absolute risk aversion, since
+\[
+A(Y)=\frac{\gamma}{Y}
+\]
+and
+\[
+A'(Y)
+=
+-\frac{\gamma}{Y^2}<0.
+\]
+
+\paragraph{Constant Absolute Risk Aversion}
+
+For constant absolute risk aversion, or CARA, \(A(Y)\) is independent of \(Y\).
+
+Let
+\[
+A(Y)=A.
+\]
+
+The differential equation is
+\[
+-u''(Y)=A u'(Y).
+\]
+
+Solving this equation gives
+\[
+u(Y)
+=
+-\exp(-AY),
+\]
+up to a positive affine transformation.
+
+\paragraph{Quadratic Utility}
+
+We obtain quadratic utility functions by choosing
+\[
+\gamma=-1.
+\]
+
+In this case, the utility function is defined only on the interval
+\[
+Y<\eta,
+\]
+since it is decreasing in \(Y\) above \(\eta\).
+
+Quadratic utility functions exhibit increasing absolute risk aversion, or IARA.
+
+\subsubsection{Test for Your Own Degree of Risk Aversion}
+
+Answer the following question:
+
+What share of your wealth are you willing to pay to avoid the risk of gaining or losing a share \(\alpha\) of your wealth with equal probability?
+
+The following relationship allows you to translate your answer \(k\) into your degree of relative risk aversion \(\gamma\):
+\[
+\frac{1}{2}
+\frac{(1-\alpha)^{1-\gamma}}{1-\gamma}
++
+\frac{1}{2}
+\frac{(1+\alpha)^{1-\gamma}}{1-\gamma}
+=
+\frac{(1-k)^{1-\gamma}}{1-\gamma}.
+\]
+
+Equivalently, for \(\gamma\ne 1\),
+\[
+\frac{1}{2}(1-\alpha)^{1-\gamma}
++
+\frac{1}{2}(1+\alpha)^{1-\gamma}
+=
+(1-k)^{1-\gamma}.
+\]
+
+For the logarithmic case \(\gamma=1\), the corresponding equation is
+\[
+\frac{1}{2}\ln(1-\alpha)
++
+\frac{1}{2}\ln(1+\alpha)
+=
+\ln(1-k).
+\]
+
+\section{Stochastic Dominance}
+
+In this section, we ask under what general conditions it is possible to assert that one prospective income vector is preferred to another.
+
+We want to answer this question by comparing only the probability distributions of income, while imposing a minimal set of restrictions on preferences.
+
+In this section, it is more convenient to deal with continuous distributions.
+
+Let
+\[
+x_1
+\]
+and
+\[
+x_2
+\]
+be two income prospects.
+
+We can write their cumulative distribution functions as
+\[
+F(x)=\Pr[x_1\le x]
+\]
+and
+\[
+G(x)=\Pr[x_2\le x].
+\]
+
+We assume that both \(x_1\) and \(x_2\) lie between the nonnegative limits
+\[
+\alpha
+\quad
+\text{and}
+\quad
+\beta,
+\]
+and that both \(F\) and \(G\) are continuously differentiable.
+
+
+
+There are two associated density functions,
+\[
+F'(x)
+\]
+and
+\[
+G'(x).
+\]
+
+The expected utilities under the two distributions are
+\[
+E_F[u(x)]
+=
+\int_{\alpha}^{\beta}
+u(x)F'(x)\,dx,
+\]
+and
+\[
+E_G[u(x)]
+=
+\int_{\alpha}^{\beta}
+u(x)G'(x)\,dx.
+\]
+
+In general, two individuals with different preferences may rank these two income prospects differently.
+
+However, in some cases it is possible to obtain an ordering that holds for all individuals regardless of their specific preferences.
+
+In other words, we want to determine how far we can proceed using only the probability distributions themselves.
+
+\paragraph{Definition 3. First-Order Stochastic Dominance}
+
+If, for all \(x\),
+\[
+F(x)\le G(x),
+\]
+and the inequality is strict over some interval, then the distribution \(F\) is said to exhibit \textbf{first-order stochastic dominance} over \(G\).
+
+Graphically, if \(F\) lies everywhere below \(G\), then \(F\) first-order stochastically dominates \(G\).
+
+For example, suppose \(F\) and \(H\) both lie everywhere below \(G\). Then both \(F\) and \(H\) first-order stochastically dominate \(G\).
+
+However, if the curves \(F\) and \(H\) cross each other, then neither distribution first-order stochastically dominates the other.
+
+The following theorem states that if \(F\) first-order stochastically dominates \(G\), then every individual with positive marginal utility prefers \(F\) to \(G\).
+
+That is, if
+\[
+u'(x)>0,
+\]
+then
+\[
+E_F[u(x)]
+\ge
+E_G[u(x)].
+\]
+
+
+
+The proof of this theorem is somewhat lengthy.
+
+Define
+\[
+F_u(u)
+\]
+to be the cumulative distribution function of realized utility when income \(x\) follows the distribution \(F(x)\).
+
+Since utility is monotonic,
+\[
+F_u(u(x))
+=
+\Pr[u\le u(x)].
+\]
+
+Because
+\[
+u(z)\le u(x)
+\quad\Longleftrightarrow\quad
+z\le x,
+\]
+we obtain
+\[
+F_u(u(x))
+=
+\Pr[z\le x]
+=
+F(x).
+\]
+
+The key point of the theorem is that the area lying to the left of the cumulative utility distribution represents expected utility.
+
+Let
+\[
+P=F_u(u)
+\]
+denote cumulative probability.
+
+Then
+\[
+dP
+=
+F_u'(u)\,du.
+\]
+
+The expected value of utility is
+\[
+E[u(x)]
+=
+\int_{u(\alpha)}^{u(\beta)}
+uF_u'(u)\,du.
+\]
+
+Changing variables,
+\[
+E[u(x)]
+=
+\int_0^1 u\,dP.
+\]
+
+Since
+\[
+u=F_u^{-1}(P),
+\]
+we can write
+\[
+E[u(x)]
+=
+\int_0^1 F_u^{-1}(P)\,dP.
+\]
+
+Geometrically, this corresponds to the shaded area obtained by integrating along the vertical axis.
+
+Equivalently, expected utility can be represented as the area of the rectangle minus the area under the cumulative distribution function:
+\[
+E[u(x)]
+=
+[u(\beta)-u(\alpha)]
+-
+\int_{u(\alpha)}^{u(\beta)}
+F_u(u)\,du.
+\]
+
+Therefore,
+\[
+E_F[u(x)]
+-
+E_G[u(x)]
+=
+-
+\int_{u(\alpha)}^{u(\beta)}
+\bigl[
+F_u(u)-G_u(u)
+\bigr]\,du.
+\]
+
+Using the identity
+\[
+F_u(u(x))=F(x),
+\qquad
+G_u(u(x))=G(x),
+\]
+and applying the change of variables
+\[
+du=u'(x)\,dx,
+\]
+we obtain
+\[
+E_F[u(x)]
+-
+E_G[u(x)]
+=
+-
+\int_{\alpha}^{\beta}
+\bigl[
+F(x)-G(x)
+\bigr]
+u'(x)\,dx.
+\]
+
+Now suppose that
+\[
+F(x)\le G(x)
+\]
+for all \(x\), with strict inequality on some interval.
+
+If
+\[
+u'(x)>0,
+\]
+then
+\[
+\bigl[F(x)-G(x)\bigr]u'(x)\le 0.
+\]
+
+Hence,
+\[
+E_F[u(x)]
+-
+E_G[u(x)]
+\ge 0.
+\]
+
+Therefore, every individual with increasing utility prefers distribution \(F\) to distribution \(G\).
+
+This proves first-order stochastic dominance.
+
+
+
+Consider the case illustrated in Figure 3, where the cumulative distributions
+\[
+F
+\quad\text{and}\quad
+H
+\]
+cross exactly once at some point
+\[
+\bar x.
+\]
+
+Then,
+\[
+E_F[u(x)]-E_H[u(x)]
+=
+\int_{\alpha}^{\bar x}
+\bigl[H(x)-F(x)\bigr]u'(x)\,dx
+-
+\int_{\bar x}^{\beta}
+\bigl[F(x)-H(x)\bigr]u'(x)\,dx.
+\]
+
+Suppose that the utility function is concave:
+\[
+u''(x)<0.
+\]
+
+Then
+\[
+u'(x)
+\]
+is decreasing in \(x\).
+
+Hence, for
+\[
+x\le \bar x,
+\]
+we have
+\[
+u'(x)\ge u'(\bar x),
+\]
+while for
+\[
+x>\bar x,
+\]
+we have
+\[
+u'(x)\le u'(\bar x).
+\]
+
+Therefore,
+\[
+E_F[u(x)]-E_H[u(x)]
+>
+u'(\bar x)
+\left[
+\int_{\alpha}^{\bar x}
+(H(x)-F(x))\,dx
+-
+\int_{\bar x}^{\beta}
+(F(x)-H(x))\,dx
+\right].
+\]
+
+Combining the two integrals,
+\[
+E_F[u(x)]-E_H[u(x)]
+=
+u'(\bar x)
+\int_{\alpha}^{\beta}
+\bigl[H(x)-F(x)\bigr]\,dx.
+\]
+
+From the definition of second-order stochastic dominance, this integral is positive.
+
+Thus,
+\[
+E_F[u(x)]>E_H[u(x)].
+\]
+
+Therefore, every risk-averse individual prefers distribution \(F\) to distribution \(H\).
+
+\paragraph{Mean-Preserving Spread}
+
+Suppose that the shaded areas \(A\) and \(B\) in Figure 3 are equal.
+
+Then \(F\) and \(H\) have the same mean, but \(F\) still second-order stochastically dominates \(H\).
+
+Figure 5 illustrates the corresponding density functions
+\[
+F'(x)
+\quad\text{and}\quad
+H'(x).
+\]
+
+The density
+\[
+H'(x)
+\]
+places more probability weight in the tails of the distribution, while
+\[
+F'(x)
+\]
+places more probability weight near the center.
+
+More precisely,
+\[
+H'(x)>F'(x)
+\]
+near the lower and upper tails, whereas
+\[
+F'(x)>H'(x)
+\]
+in the middle range.
+
+Thus, \(H\) is obtained from \(F\) by shifting probability mass toward the extremes while preserving the mean.
+
+This transformation is called a \textbf{mean-preserving spread}.
+
+A mean-preserving spread increases risk without changing expected income.
+
+Ranking Theorem II therefore implies that all risk-averse individuals prefer the less spread distribution.
+
+
+
+\paragraph{Theorem 4. Ranking Theorem III}
+
+For all concave functions \(u(x)\), with strict concavity somewhere, if \(F\) and \(H\) have the same mean and \(F\) exhibits second-order stochastic dominance over \(H\), then
+\[
+E_F[u(x)]>E_H[u(x)].
+\]
+
+Apply integration by parts twice:
+\[
+\begin{aligned}
+E_F[u(x)]
+&=
+\int_{\alpha}^{\beta}u(x)F'(x)\,dx \\
+&=
+u(x)F(x)\bigg|_{\alpha}^{\beta}
+-
+\int_{\alpha}^{\beta}u'(x)F(x)\,dx \\
+&=
+u(\beta)
+-
+\int_{\alpha}^{\beta}u'(x)F(x)\,dx.
+\end{aligned}
+\]
+
+Now write
+\[
+F(x)
+=
+\frac{d}{dx}
+\left[
+\int_{\alpha}^{x}F(z)\,dz
+\right].
+\]
+
+Then
+\[
+\begin{aligned}
+\int_{\alpha}^{\beta}u'(x)F(x)\,dx
+&=
+u'(x)
+\left[
+\int_{\alpha}^{x}F(z)\,dz
+\right]_{\alpha}^{\beta}
+-
+\int_{\alpha}^{\beta}
+u''(x)
+\left[
+\int_{\alpha}^{x}F(z)\,dz
+\right]dx.
+\end{aligned}
+\]
+
+Therefore,
+\[
+E_F[u(x)]
+=
+u(\beta)
+-
+u'(\beta)
+\int_{\alpha}^{\beta}F(z)\,dz
++
+\int_{\alpha}^{\beta}
+u''(x)
+\left[
+\int_{\alpha}^{x}F(z)\,dz
+\right]dx.
+\]
+
+Similarly,
+\[
+E_H[u(x)]
+=
+u(\beta)
+-
+u'(\beta)
+\int_{\alpha}^{\beta}H(z)\,dz
++
+\int_{\alpha}^{\beta}
+u''(x)
+\left[
+\int_{\alpha}^{x}H(z)\,dz
+\right]dx.
+\]
+
+Thus,
+\[
+\begin{aligned}
+E_F[u(x)]-E_H[u(x)]
+&=
+u'(\beta)
+\left[
+\int_{\alpha}^{\beta}H(z)\,dz
+-
+\int_{\alpha}^{\beta}F(z)\,dz
+\right] \\
+&\quad+
+\int_{\alpha}^{\beta}
+u''(x)
+\left[
+\int_{\alpha}^{x}F(z)\,dz
+-
+\int_{\alpha}^{x}H(z)\,dz
+\right]dx.
+\end{aligned}
+\]
+
+Since \(F\) and \(H\) have the same mean, the first term is zero.
+
+Hence,
+\[
+E_F[u(x)]-E_H[u(x)]
+=
+\int_{\alpha}^{\beta}
+u''(x)
+\left[
+\int_{\alpha}^{x}F(z)\,dz
+-
+\int_{\alpha}^{x}H(z)\,dz
+\right]dx.
+\]
+
+By second-order stochastic dominance,
+\[
+\int_{\alpha}^{x}F(z)\,dz
+-
+\int_{\alpha}^{x}H(z)\,dz
+\le 0
+\]
+for all \(x\), with strict inequality somewhere.
+
+Since \(u\) is concave,
+\[
+u''(x)\le 0,
+\]
+with strict inequality somewhere.
+
+Therefore,
+\[
+E_F[u(x)]-E_H[u(x)]>0.
+\]
+
+Notice that the sign of \(u'(x)\) was not used.
+
+Thus, Ranking Theorem III holds even if \(u(x)\) is decreasing, as long as it is concave.
+
+\paragraph{Variance under Mean-Preserving Spread}
+
+It can be proved that \(H\) must have a larger variance than \(F\) if \(H\) is a mean-preserving spread of \(F\).
+
+Let
+\[
+v(x)=(x-\mu)^2,
+\]
+which is a convex function.
+
+Since \(F\) second-order stochastically dominates \(H\), every concave utility function prefers \(F\) to \(H\). Equivalently, every convex function has a larger expectation under \(H\) than under \(F\).
+
+Therefore,
+\[
+E_F[v(x)]<E_H[v(x)].
+\]
+
+That is,
+\[
+E_F[(x-\mu)^2]
+<
+E_H[(x-\mu)^2].
+\]
+
+Hence,
+\[
+\sigma_F^2<\sigma_H^2.
+\]
+
+
+
+
+In sum, we have seen the following:
+
+\begin{enumerate}
+    \item If \(F\) is second-order stochastically dominant over \(H\), then \(F\) is strictly preferred by all risk-averse individuals.
+    
+    \item If, in addition, \(F\) and \(H\) have the same mean, then \(F\) has a smaller variance.
+\end{enumerate}
+
+However, it must be noted that if two distributions \(x_1\) and \(x_2\) have the same mean and \(x_1\) has a smaller variance, then \(x_1\) is not necessarily preferred.
+
+Even in this case, \(x_1\) is not necessarily stochastically dominant.
+
+\paragraph{Example 2.}
+
+Let
+\[
+x_1=
+\begin{cases}
+0.4, & \text{with probability } 1/2,\\
+2.1, & \text{with probability } 1/2,
+\end{cases}
+\]
+and
+\[
+x_2=
+\begin{cases}
+0.25, & \text{with probability } 1/3,\\
+1, & \text{with probability } 1/3,\\
+4, & \text{with probability } 1/3.
+\end{cases}
+\]
+
+Then
+\[
+E[x_1]=E[x_2]
+\]
+and
+\[
+\operatorname{Var}(x_1)<\operatorname{Var}(x_2).
+\]
+
+However, with
+\[
+u(x)=\ln x,
+\]
+we have
+\[
+E[u(x_2)]>E[u(x_1)].
+\]
+
+\section{Insurance and Risky Asset}
+
+\subsection{Insurance}
+
+Let
+\[
+W
+\]
+denote the individual's initial wealth, and let
+\[
+D
+\]
+be the possible damage to wealth.
+
+The probability that damage occurs is
+\[
+\pi.
+\]
+
+One unit of insurance costs \(q\) dollars and pays one dollar if the loss occurs.
+
+If \(a\) units of insurance are purchased, then final wealth is
+
+\[
+W-aq
+\]
+with probability
+\[
+1-\pi
+\]
+when no damage occurs, and
+
+\[
+W-D-aq+a
+\]
+with probability
+\[
+\pi
+\]
+when damage occurs.
+
+Expected wealth is
+\[
+W-\pi D+a(\pi-q).
+\]
+
+The individual solves
+\[
+\max_{a\ge 0}
+(1-\pi)u(W-aq)
++
+\pi u(W-aq-D+a).
+\]
+
+The first-order condition is
+\[
+-q(1-\pi)u'(W-a^*q)
++
+\pi(1-q)u'(W-a^*q-D+a^*)
+\le 0,
+\]
+with equality if
+\[
+a^*>0.
+\]
+
+If insurance is actuarially fair, then its price equals the insurance company's expected cost of insurance:
+\[
+q=\pi.
+\]
+
+Therefore, the first-order condition becomes
+\[
+u'(W-D+a^*(1-\pi))
+-
+u'(W-a^*\pi)
+\le 0,
+\]
+with equality if
+\[
+a^*>0.
+\]
+
+If
+\[
+a^*=0,
+\]
+then the condition would imply
+\[
+u'(W-D)-u'(W)\le 0.
+\]
+
+But this does not hold, since
+\[
+W-D<W
+\]
+and \(u\) is concave, so
+\[
+u'(W-D)>u'(W).
+\]
+
+Therefore,
+\[
+a^*>0.
+\]
+
+The first-order condition must hold with equality:
+\[
+u'(W-D+a^*(1-\pi))
+=
+u'(W-a^*\pi).
+\]
+
+Since \(u'\) is strictly decreasing, this implies
+\[
+W-D+a^*(1-\pi)
+=
+W-a^*\pi.
+\]
+
+Hence,
+\[
+a^*=D.
+\]
+
+\paragraph{Theorem 5.}
+
+If insurance is actuarially fair, then the decision maker insures completely.
+
+\paragraph{Exercise 2.}
+
+Show that
+\[
+a^*=D
+\]
+cannot be the optimal choice if
+\[
+q>\pi.
+\]
+
+Derive
+\[
+\frac{\partial a^*}{\partial q},
+\]
+and discuss its sign in this case.
+
+
+
+\subsection{Demand for a Risky Asset}
+
+Let
+\[
+W
+\]
+be initial wealth.
+
+If the individual pays one dollar for a safe asset, then he obtains exactly one dollar.
+
+If the individual pays one dollar for a risky asset, then he obtains
+\[
+z
+\]
+dollars, where \(z\) is uncertain.
+
+Assume that the risky asset is actuarially favorable:
+\[
+\int z\,dF(z)>1.
+\]
+
+Let
+\[
+a
+\]
+be the amount of wealth invested in the risky asset, and let
+\[
+\beta
+\]
+be the amount invested in the safe asset.
+
+Thus,
+\[
+a+\beta=W.
+\]
+
+Final wealth is
+\[
+az+(W-a)
+=
+W+a(z-1).
+\]
+
+The problem is
+\[
+\max_a
+\int u(W+a(z-1))\,dF(z).
+\]
+
+The first-order condition is
+\[
+\phi(a^*)
+=
+\int
+u'(W+a^*(z-1))(z-1)\,dF(z)
+\le 0,
+\]
+with equality if
+\[
+a^*>0.
+\]
+
+Note that
+\[
+\phi(0)
+=
+\int u'(W)(z-1)\,dF(z)
+=
+u'(W)
+\int (z-1)\,dF(z)>0,
+\]
+because
+\[
+\int z\,dF(z)>1.
+\]
+
+Therefore,
+\[
+a^*=0
+\]
+cannot satisfy the first-order condition, and hence
+\[
+a^*>0.
+\]
+
+\paragraph{Theorem 6.}
+
+If a risky asset is actuarially favorable, then a risk-averse individual will always accept at least a small amount of it.
+
+\subsection{The Effects of Wealth on the Allocation}
+
+Let \(a\) be the amount spent on the risky asset.
+
+Final wealth is
+\[
+W+a(z-1).
+\]
+
+The problem is
+\[
+\max_a
+E[u(W+a(z-1))].
+\]
+
+The first-order condition is
+\[
+E[u'(W+a(z-1))(z-1)]=0.
+\]
+
+We know that
+\[
+a^*>0.
+\]
+
+Represent the solution as
+\[
+a=a^*(W).
+\]
+
+Differentiate
+\[
+E[u'(W+a^*(W)(z-1))(z-1)]=0
+\]
+with respect to \(W\).
+
+Then
+\[
+E\left[
+u''(W+a(z-1))(z-1)
+\left\{
+1+(z-1)a^{*'}(W)
+\right\}
+\right]
+=
+0.
+\]
+
+Equivalently,
+\[
+E[u''(W+a(z-1))(z-1)]
++
+E[u''(W+a(z-1))(z-1)^2]a^{*'}(W)
+=
+0.
+\]
+
+Therefore,
+\[
+a^{*'}(W)
+=
+-
+\frac{
+E[u''(W+a(z-1))(z-1)]
+}{
+E[u''(W+a(z-1))(z-1)^2]
+}.
+\]
+
+The denominator is negative because
+\[
+u''<0
+\]
+and
+\[
+(z-1)^2\ge 0.
+\]
+
+It turns out that the numerator is positive if absolute risk aversion decreases with wealth.
+
+That is,
+\[
+a^{*'}(W)\ge 0
+\quad
+\text{if}
+\quad
+A'(W)\le 0.
+\]
+
+If
+\[
+A'(W)\le 0,
+\]
+then
+\[
+-\frac{u''(W+a(z-1))}{u'(W+a(z-1))}
+<
+-\frac{u''(W)}{u'(W)}
+\]
+for
+\[
+z>1,
+\]
+and
+\[
+-\frac{u''(W+a(z-1))}{u'(W+a(z-1))}
+>
+-\frac{u''(W)}{u'(W)}
+\]
+for
+\[
+z<1.
+\]
+
+Multiplying both sides by
+\[
+-u'(W+a(z-1))(z-1),
+\]
+which is negative for the first inequality and positive for the second inequality, gives
+\[
+u''(W+a(z-1))(z-1)
+\ge
+\frac{u''(W)}{u'(W)}
+u'(W+a(z-1))(z-1)
+\]
+for all \(z\).
+
+Therefore,
+\[
+E[u''(W+a(z-1))(z-1)]
+\ge
+\frac{u''(W)}{u'(W)}
+E[u'(W+a(z-1))(z-1)].
+\]
+
+The right-hand side is zero by the first-order condition.
+
+Thus,
+\[
+E[u''(W+a(z-1))(z-1)]\ge 0.
+\]
+
+Hence,
+\[
+a^{*'}(W)\ge 0
+\]
+when
+\[
+A'(W)\le 0.
+\]
+
+\paragraph{Exercise 3.}
+
+Assume \(a\) is spent on the risky asset, while \(\beta\) is spent on the safe asset:
+\[
+a+\beta=W.
+\]
+
+What is the impact of an increase in \(W\) on
+\[
+\frac{a}{W}?
+\]
+
+
+\paragraph{Exercise 4.}
+
+An individual has initial wealth \(W\).
+
+If he invests \(x\) dollars in a risky asset, then final wealth is
+\[
+(W-x)+x(1+R)=W+xR.
+\]
+
+Here, \(R\) is a random variable with mean
+\[
+\bar R
+\]
+and variance
+\[
+\sigma_R^2.
+\]
+
+Suppose the utility function is
+\[
+u(W)=aW-bW^2,
+\qquad
+a>0,
+\qquad
+b>0.
+\]
+
+Does this utility function exhibit increasing or decreasing risk aversion?
+
+What is the optimal amount of investment in the risky asset?
+
+Is the optimal amount of risky investment increasing or decreasing in wealth?
+
+\section{Output Decisions}
+
+\subsection{Output Decisions under Price Uncertainty}
+
+The objective of the firm is to maximize expected utility of profits:
+\[
+\max_y E[u(py-c(y))],
+\]
+where \(p\) is a random price variable, \(y\) is the firm's output, and \(c(y)\) is the cost function.
+
+The first-order condition is
+\[
+E\left[
+u'(py-c(y))(p-c'(y))
+\right]
+=
+0.
+\]
+
+The second-order condition is
+\[
+D
+=
+E\left[
+u''(py-c(y))(p-c'(y))^2
+-
+u'(py-c(y))c''(y)
+\right]
+<0.
+\]
+
+Let
+\[
+\bar p=E[p].
+\]
+
+Write the first-order condition as
+\[
+E[u'(py-c(y))p]
+=
+E[u'(py-c(y))c'(y)].
+\]
+
+Subtract
+\[
+E[u'(py-c(y))\bar p]
+\]
+from both sides:
+\[
+E[u'(py-c(y))(p-\bar p)]
+=
+E[u'(py-c(y))(c'(y)-\bar p)].
+\]
+
+The left-hand side is the covariance between
+\[
+u'(py-c(y))
+\]
+and
+\[
+p-\bar p.
+\]
+
+Since \(u\) is concave, \(u'\) is decreasing. Thus, when \(p\) is high, profit is high and marginal utility is low. Therefore,
+\[
+\operatorname{Cov}(u'(py-c(y)),p)<0.
+\]
+
+Hence,
+\[
+c'(y)\le \bar p.
+\]
+
+\paragraph{Theorem 7.}
+
+Under output price uncertainty, optimal output is characterized by marginal cost being less than the expected price:
+\[
+c'(y^*)\le E[p].
+\]
+
+Output \(y^*\) depends on the distribution of price.
+
+Since \(p\) is random, we do not ask how \(y^*\) changes as \(p\) varies pointwise.
+
+Instead, we ask how \(y^*\) changes when the mean price \(\bar p\) changes.
+
+Write
+\[
+p=\bar p+\varepsilon,
+\qquad
+E[\varepsilon]=0.
+\]
+
+The first-order condition is
+\[
+E\left[
+u'\left((\bar p+\varepsilon)y^*(\bar p)-c(y^*(\bar p))\right)
+\left((\bar p+\varepsilon)-c'(y^*(\bar p))\right)
+\right]
+=
+0.
+\]
+
+Applying the implicit function theorem gives
+\[
+\frac{dy^*}{d\bar p}
+=
+-
+\frac{
+E\left[
+u''(py-c(y))y(p-c'(y))
++
+u'(py-c(y))
+\right]
+}{
+D
+}.
+\]
+
+Equivalently,
+\[
+\frac{dy^*}{d\bar p}
+=
+-
+\frac{
+yE[u''(py-c(y))(p-c'(y))]
++
+E[u'(py-c(y))]
+}{
+D
+}.
+\]
+
+Since
+\[
+D<0,
+\]
+the second term,
+\[
+-\frac{E[u'(py-c(y))]}{D},
+\]
+is positive. This is the substitution effect.
+
+Let \(x\) be the level of profit when
+\[
+p=c'(y).
+\]
+
+Then \(x\) is nonrandom.
+
+If
+\[
+A'(x)<0,
+\]
+then
+\[
+-\frac{u''(py-c(y))}{u'(py-c(y))}
+<
+-\frac{u''(x)}{u'(x)}
+\]
+for
+\[
+p>c'(y),
+\]
+and
+\[
+-\frac{u''(py-c(y))}{u'(py-c(y))}
+>
+-\frac{u''(x)}{u'(x)}
+\]
+for
+\[
+p<c'(y).
+\]
+
+Multiplying both sides by
+\[
+-u'(py-c(y))(p-c'(y)),
+\]
+we obtain
+\[
+u''(py-c(y))(p-c'(y))
+\ge
+\frac{u''(x)}{u'(x)}
+u'(py-c(y))(p-c'(y))
+\]
+for all \(p\).
+
+Taking expectations gives
+\[
+E[u''(py-c(y))(p-c'(y))]
+\ge
+\frac{u''(x)}{u'(x)}
+E[u'(py-c(y))(p-c'(y))].
+\]
+
+By the first-order condition, the right-hand side is zero.
+
+Therefore,
+\[
+E[u''(py-c(y))(p-c'(y))]\ge 0.
+\]
+
+Hence,
+\[
+-\frac{
+yE[u''(py-c(y))(p-c'(y))]
+}{
+D
+}
+\]
+is also positive. This is the wealth effect.
+
+Thus, if
+\[
+A'(x)<0,
+\]
+then
+\[
+\frac{dy^*}{d\bar p}>0.
+\]
+
+However, if
+\[
+A'(x)>0,
+\]
+then the sign of
+\[
+\frac{dy^*}{d\bar p}
+\]
+is ambiguous.
+
+
+
+\paragraph{Example 3.}
+
+There is a deficiency, or direct, payment given to farmers.
+
+The amount of payment,
+\[
+G,
+\]
+is fixed and independent of output
+\[
+y.
+\]
+
+The output price \(p\) is random, with mean
+\[
+\bar p
+\]
+and variance
+\[
+\sigma^2.
+\]
+
+Production cost is
+\[
+c(y).
+\]
+
+Therefore, the farmer's profit is
+\[
+\pi
+=
+py-c(y)+G.
+\]
+
+The first-order condition is
+\[
+\phi
+=
+E[u'(\pi)(p-c'(y))]
+=
+0.
+\]
+
+The second-order condition is
+\[
+\phi_y
+=
+E[u''(\pi)(p-c'(y))^2]
+-
+E[u'(\pi)c''(y)]
+<
+0.
+\]
+
+We want to know the condition under which
+\[
+\frac{\partial y}{\partial G}=0.
+\]
+
+By the implicit function theorem,
+\[
+\frac{\partial y}{\partial G}
+=
+-
+\frac{\phi_G}{\phi_y}.
+\]
+
+Since
+\[
+\phi_G
+=
+E[u''(\pi)(p-c'(y))],
+\]
+the condition for
+\[
+\frac{\partial y}{\partial G}=0
+\]
+is
+\[
+E[u''(\pi)(p-c'(y))]=0.
+\]
+
+Compare this with the first-order condition:
+\[
+E[u'(\pi)(p-c'(y))]=0.
+\]
+
+If \(u''\) is a scalar multiple of \(u'\), that is, if the utility function has CARA preferences, then these two conditions are the same.
+
+Therefore, under CARA preferences, the optimal production decision does not depend on
+\[
+G.
+\]
+
+\subsection{Output Decisions under Production Uncertainty}
+
+The production function is
+\[
+f(x,\varepsilon),
+\]
+where
+\[
+E[\varepsilon]=0.
+\]
+
+Assume
+\[
+f_x>0,
+\qquad
+f_{\varepsilon}>0,
+\qquad
+f_{xx}<0,
+\qquad
+f_{\varepsilon\varepsilon}<0.
+\]
+
+Output price \(p\) is fixed.
+
+The objective function is
+\[
+E[u(\pi)]
+=
+E[u(pf(x,\varepsilon)-wx)].
+\]
+
+The first-order condition is
+\[
+E[u'(\pi)(pf_x-w)]=0.
+\]
+
+Thus,
+\[
+\operatorname{Cov}[u'(\pi),pf_x-w]
+=
+E[u'(\pi)(pf_x-w)]
+-
+E[u'(\pi)]E[pf_x-w].
+\]
+
+Using the first-order condition,
+\[
+E[u'(\pi)(pf_x-w)]=0.
+\]
+
+Hence,
+\[
+\operatorname{Cov}[u'(\pi),pf_x-w]
+=
+-
+E[u'(\pi)]E[pf_x-w].
+\]
+
+Therefore,
+\[
+pE[f_x(x,\varepsilon)]-w
+=
+-
+\frac{
+\operatorname{Cov}[u'(\pi),pf_x(x,\varepsilon)-w]
+}{
+E[u'(\pi)]
+}.
+\]
+
+Equivalently,
+\[
+pE[f_x(x,\varepsilon)]-w
+=
+-
+\frac{
+p\operatorname{Cov}[u'(\pi),f_x(x,\varepsilon)]
+}{
+E[u'(\pi)]
+}.
+\]
+
+Let \(\bar x\) be the risk-neutral choice satisfying
+\[
+pE[f_x(\bar x,\varepsilon)]=w.
+\]
+
+If
+\[
+f_{x\varepsilon}>0,
+\]
+then
+\[
+\operatorname{Cov}[u'(\pi),f_x(x,\varepsilon)]<0.
+\]
+
+Hence,
+\[
+pE[f_x(x,\varepsilon)]>w.
+\]
+
+Since
+\[
+f_{xx}<0,
+\]
+this implies
+\[
+x^*<\bar x.
+\]
+
+But if
+\[
+f_{x\varepsilon}<0,
+\]
+then
+\[
+x^*>\bar x.
+\]
+
+\paragraph{Exercise 5.}
+
+Derive
+\[
+\frac{\partial x^*}{\partial p}.
+\]
+
+\paragraph{Example 4.}
+
+The government sells crop insurance to producers.
+
+An insurance contract consists of an indemnity schedule
+\[
+I(\varepsilon),
+\]
+conditional on \(\varepsilon\), and a premium
+\[
+q,
+\]
+which is independent of \(\varepsilon\).
+
+With a given input level \(x\), chosen by the producer, the government wants to choose
+\[
+(I(\varepsilon),q)
+\]
+to solve
+\[
+\max_{\{I(\varepsilon),q\}}
+E[u(pf(x,\varepsilon)-wx+I(\varepsilon)-q)]
+\]
+subject to
+\[
+E[I(\varepsilon)]=q.
+\]
+
+The Lagrangian is
+\[
+\mathcal{L}
+=
+E[u(pf(x,\varepsilon)-wx+I(\varepsilon)-q)]
++
+\lambda
+\left[
+q-E[I(\varepsilon)]
+\right].
+\]
+
+The first-order conditions are
+\[
+u'(\pi)=\lambda
+\]
+for all \(\varepsilon\), and
+\[
+E[u'(\pi)]=\lambda.
+\]
+
+The condition
+\[
+u'(\pi)=\lambda
+\]
+for all \(\varepsilon\) implies that \(\pi\) is constant across states.
+
+Because the insurance is fair, profit is fixed at its expected value.
+
+Therefore, the producer chooses the optimal input
+\[
+x^{**}
+\]
+that maximizes expected profit:
+\[
+pE[f_x(x^{**},\varepsilon)]=w.
+\]
+
+Fair insurance induces the producer to behave as a risk-neutral decision maker.
+
+\subsection{The Impacts of a Mean-Preserving Spread}
+
+What happens to behavior when the distribution becomes more risky while the mean remains unchanged?
+
+Suppose an individual
+
+
+\(\varepsilon\) is a random variable with mean zero.
+
+Suppose that there is an improvement in the mean quality of eggs, that is, an increase in
+\[
+\mu.
+\]
+
+Derive
+\[
+\frac{\partial y^*}{\partial \mu}
+\]
+and discuss the impact.
+
+Now suppose that \(\mu\) does not change, but
+\[
+\sigma
+\]
+increases.
+
+Derive
+\[
+\frac{\partial y^*}{\partial \sigma}
+\]
+and discuss the result.
+
+\section{Mean-Variance Analysis}
+
+Sometimes preferences over risky assets can be represented by a function of only the mean and the variance of the probability distributions of the assets.
+
+This simplification is possible if either the random variable follows a normal distribution or the utility function is quadratic.
+
+If the utility function is quadratic, for example
+\[
+u(x)=ax^2+x,
+\]
+then
+\[
+E[u(x)]
+=
+\int u(x)\,dF(x).
+\]
+
+Therefore,
+\[
+E[u(x)]
+=
+a\int x^2\,dF(x)
++
+\int x\,dF(x).
+\]
+
+Since
+\[
+E[x]=\mu
+\]
+and
+\[
+E[x^2]=\mu^2+\sigma^2,
+\]
+we obtain
+\[
+E[u(x)]
+=
+a(\mu^2+\sigma^2)+\mu.
+\]
+
+Thus expected utility depends only on
+\[
+\mu
+\]
+and
+\[
+\sigma^2.
+\]
+
+If the random variable follows a normal distribution, then all of its moments can be described by its mean and variance.
+
+Therefore, expected utility itself depends only on mean and variance.
+
+Suppose the utility function is negative exponential:
+\[
+u(x)=-\exp(-Ax),
+\qquad
+A>0.
+\]
+
+Then
+\[
+u'(x)=A\exp(-Ax)>0
+\]
+and
+\[
+u''(x)=-A^2\exp(-Ax)<0.
+\]
+
+The measure of absolute risk aversion is
+\[
+-\frac{u''(x)}{u'(x)}=A.
+\]
+
+Now suppose
+\[
+x\sim N(\mu,\sigma^2).
+\]
+
+The density of \(x\) is
+\[
+f(x)
+=
+\frac{1}{(2\pi\sigma^2)^{1/2}}
+\exp\left[
+-\frac{(x-\mu)^2}{2\sigma^2}
+\right].
+\]
+
+Therefore,
+\[
+E[u(x)]
+=
+-\frac{1}{(2\pi\sigma^2)^{1/2}}
+\int_{-\infty}^{\infty}
+\exp(-Ax)
+\exp\left[
+-\frac{(x-\mu)^2}{2\sigma^2}
+\right]dx.
+\]
+
+Combining the exponents,
+\[
+Ax+\frac{(x-\mu)^2}{2\sigma^2}
+=
+\frac{(x-\mu+A\sigma^2)^2}{2\sigma^2}
++
+A\mu
+-
+\frac{1}{2}A^2\sigma^2.
+\]
+
+Thus,
+\[
+E[u(x)]
+=
+-
+\exp\left[
+-A\left(
+\mu-\frac{1}{2}A\sigma^2
+\right)
+\right]
+\frac{1}{(2\pi\sigma^2)^{1/2}}
+\int_{-\infty}^{\infty}
+\exp\left[
+-\frac{(x-\mu+A\sigma^2)^2}{2\sigma^2}
+\right]dx.
+\]
+
+Since
+\[
+\frac{1}{(2\pi\sigma^2)^{1/2}}
+\int_{-\infty}^{\infty}
+\exp\left[
+-\frac{(x-\mu+A\sigma^2)^2}{2\sigma^2}
+\right]dx
+=
+1,
+\]
+we obtain
+\[
+E[u(x)]
+=
+-
+\exp\left[
+-A\left(
+\mu-\frac{1}{2}A\sigma^2
+\right)
+\right].
+\]
+
+Hence, maximizing expected utility is equivalent to maximizing
+\[
+\mu-\frac{1}{2}A\sigma^2.
+\]
+
+\paragraph{Exercise 8.}
+Let \(1\) and \(w\) be the prices of rice and fertilizer, respectively.
+
+
+The production function of rice is
+\[
+f(x)+g(x)\varepsilon,
+\]
+where \(x\) is the amount of fertilizer used, and
+\[
+\varepsilon\sim N(0,1).
+\]
+
+Profit is
+\[
+\pi(x)
+=
+f(x)+g(x)\varepsilon-wx.
+\]
+
+Let
+\[
+\mu(x)
+\]
+and
+\[
+\sigma^2(x)
+\]
+be the mean and variance of \(\pi(x)\), respectively.
+
+Since
+\[
+E[\varepsilon]=0,
+\]
+we have
+\[
+\mu(x)
+=
+E[\pi(x)]
+=
+f(x)-wx.
+\]
+
+Since
+\[
+\operatorname{Var}(\varepsilon)=1,
+\]
+we have
+\[
+\sigma^2(x)
+=
+\operatorname{Var}(\pi(x))
+=
+[g(x)]^2.
+\]
+
+Assume the utility function is
+\[
+u(\pi)
+=
+-\exp(-\lambda\pi),
+\qquad
+\lambda>0.
+\]
+
+Since \(\pi(x)\) is normally distributed, maximizing expected utility is equivalent to maximizing
+\[
+\mu(x)-\frac{1}{2}\lambda\sigma^2(x).
+\]
+
+Thus, the farmer solves
+\[
+\max_x
+\left[
+f(x)-wx
+-
+\frac{1}{2}\lambda g(x)^2
+\right].
+\]
+
+The first-order condition is
+\[
+f'(x)-w-\lambda g(x)g'(x)=0.
+\]
+
+Therefore, the optimal fertilizer use \(x^*\) satisfies
+\[
+f'(x^*)-\lambda g(x^*)g'(x^*)=w.
+\]
+
+If \(\varepsilon\) is fixed at \(0\), then there is no production risk:
+\[
+\pi(x)=f(x)-wx.
+\]
+
+The farmer then solves
+\[
+\max_x [f(x)-wx],
+\]
+and the first-order condition is
+\[
+f'(x^*)=w.
+\]
+
+\paragraph{Exercise 9.}
+
+The initial wealth of an investor is
+\[
+W_0.
+\]
+
+The return on the risky asset is \(\theta\), whose expected value is greater than the riskless rate \(r\):
+\[
+E[\theta]>r.
+\]
+
+The utility function is
+\[
+u(W)
+=
+-\exp(-\lambda W),
+\qquad
+\lambda>0.
+\]
+
+Assume
+\[
+\theta\sim N(\bar\theta,\sigma_\theta^2).
+\]
+
+Let \(a\) be the amount of money invested in the risky asset.
+
+Then final wealth is
+\[
+W
+=
+W_0(1+r)+a(\theta-r).
+\]
+
+Therefore,
+\[
+E[W]
+=
+W_0(1+r)+a(\bar\theta-r),
+\]
+and
+\[
+\operatorname{Var}(W)
+=
+a^2\sigma_\theta^2.
+\]
+
+Since final wealth is normally distributed and utility is negative exponential, maximizing expected utility is equivalent to maximizing
+\[
+E[W]
+-
+\frac{1}{2}\lambda\operatorname{Var}(W).
+\]
+
+Thus, the investor solves
+\[
+\max_a
+\left[
+W_0(1+r)+a(\bar\theta-r)
+-
+\frac{1}{2}\lambda a^2\sigma_\theta^2
+\right].
+\]
+
+The first-order condition is
+\[
+\bar\theta-r-\lambda a\sigma_\theta^2=0.
+\]
+
+Hence,
+\[
+a^*
+=
+\frac{\bar\theta-r}{\lambda\sigma_\theta^2}.
+\]
+
+Therefore, \(a^*\) does not depend on initial wealth \(W_0\).
+
+Also,
+\[
+\frac{\partial a^*}{\partial \lambda}
+=
+-
+\frac{\bar\theta-r}{\lambda^2\sigma_\theta^2}<0.
+\]
+
+Thus, a higher degree of absolute risk aversion lowers the optimal investment in the risky asset.
+
+
+
+
+

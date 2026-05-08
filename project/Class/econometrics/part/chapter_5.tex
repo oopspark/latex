@@ -1,0 +1,400 @@
+\chapter{Linear Model under General Variance}
+
+\section{Model}
+
+Consider the linear model
+\[
+y = X\beta + e,
+\]
+
+In the classical linear model, we assumed
+\[
+V(e)=\sigma^2 I_T.
+\]
+
+\paragraph{Intuition}
+This assumption means that all error terms have:
+\begin{itemize}
+    \item the same variance (homoskedasticity),
+    \item zero covariance across observations (no correlation).
+\end{itemize}
+
+In reality, this is often too restrictive. For example:
+\begin{itemize}
+    \item Some observations may be noisier than others (heteroskedasticity).
+    \item Time series data often exhibit correlation across time (autocorrelation).
+\end{itemize}
+
+Now we relax this assumption and allow
+\[
+V(e)=\sigma^2 \Psi,
+\]
+
+where $\Psi$ is a symmetric positive definite matrix.
+
+\paragraph{Interpretation}
+The matrix $\Psi$ captures the full variance structure:
+\begin{itemize}
+    \item diagonal elements = variances of each observation,
+    \item off-diagonal elements = covariances between observations.
+\end{itemize}
+
+Thus, $\Psi$ tells us how “reliable” each observation is and how they relate to each other.
+
+---
+
+\section{Transformation of the Model}
+
+Since $\Psi$ is positive definite, $\Psi^{-1}$ exists. Let
+\[
+\Psi^{-1} = P'P.
+\]
+
+\paragraph{Key Idea}
+We want to transform the model so that the new error term satisfies the classical assumptions.
+
+Premultiply the model:
+\[
+Py = PX\beta + Pe.
+\]
+
+Define
+\[
+y^* = Py, \quad X^* = PX, \quad e^* = Pe.
+\]
+
+Then
+\[
+y^* = X^*\beta + e^*.
+\]
+
+Now compute the variance:
+\[
+V(e^*) = P V(e) P' = P(\sigma^2 \Psi)P' = \sigma^2 P\Psi P'.
+\]
+
+Since
+\[
+\Psi^{-1} = P'P,
+\]
+we obtain
+\[
+P\Psi P' = I_T.
+\]
+
+Therefore,
+\[
+V(e^*) = \sigma^2 I_T.
+\]
+
+\paragraph{Conclusion}
+We have transformed the model into a standard classical linear model.
+
+\paragraph{Deep Intuition}
+The transformation matrix $P$ “whitens” the data:
+\begin{itemize}
+    \item it removes correlation,
+    \item it rescales observations to equal variance.
+\end{itemize}
+
+Thus,
+\[
+\text{GLS = OLS applied to transformed data}
+\]
+
+---
+
+\section{Generalized Least Squares}
+
+The transformed model implies minimizing:
+\[
+S = e^{*'} e^*.
+\]
+
+Since $e^* = Pe$, we have:
+\[
+S = e'P'Pe = e'\Psi^{-1}e.
+\]
+
+Thus,
+\[
+S(\beta)
+=
+(y-X\beta)'\Psi^{-1}(y-X\beta).
+\]
+
+\paragraph{Interpretation}
+This is called the \textbf{weighted least squares} criterion.
+
+\paragraph{Key Insight}
+Unlike OLS, GLS assigns different weights:
+\begin{itemize}
+    \item Observations with large variance → lower weight
+    \item Observations with small variance → higher weight
+\end{itemize}
+
+\paragraph{Why $\Psi^{-1}$?}
+Because the inverse variance determines optimal weighting:
+\[
+\text{weight} \propto \frac{1}{\text{variance}}
+\]
+
+---
+
+First-order condition:
+\[
+X'\Psi^{-1}X\beta = X'\Psi^{-1}y.
+\]
+
+Thus,
+\[
+\hat{\beta}_{GLS}
+=
+(X'\Psi^{-1}X)^{-1}X'\Psi^{-1}y.
+\]
+
+---
+
+\section{Properties of GLS}
+
+\subsection{Unbiasedness}
+
+\[
+E(\hat{\beta}_{GLS})=\beta.
+\]
+
+\paragraph{Insight}
+GLS remains unbiased because it is still a linear function of $y$ and $E(e)=0$.
+
+---
+
+\subsection{Variance}
+
+\[
+V(\hat{\beta}_{GLS})
+=
+\sigma^2 (X'\Psi^{-1}X)^{-1}.
+\]
+
+\paragraph{Key Point}
+This variance explicitly accounts for heteroskedasticity and correlation.
+
+---
+
+\subsection{Efficiency}
+
+GLS is BLUE.
+
+\paragraph{Deep Intuition}
+OLS ignores $\Psi$, while GLS uses it.
+
+Thus:
+\begin{itemize}
+    \item OLS = correct mean, wrong weighting
+    \item GLS = correct mean, correct weighting
+\end{itemize}
+
+Therefore,
+\[
+V(GLS) \leq V(OLS).
+\]
+
+---
+
+\section{Comparison between OLS and GLS}
+
+OLS:
+\[
+\hat{\beta}_{OLS}=(X'X)^{-1}X'y
+\]
+
+GLS:
+\[
+\hat{\beta}_{GLS}=(X'\Psi^{-1}X)^{-1}X'\Psi^{-1}y
+\]
+
+\paragraph{Core Difference}
+OLS treats all observations equally, while GLS adjusts for reliability.
+
+\paragraph{Geometric Insight}
+OLS minimizes Euclidean distance:
+\[
+e'e
+\]
+
+GLS minimizes a weighted distance:
+\[
+e'\Psi^{-1}e
+\]
+
+---
+
+\subsection{OLS under General Variance}
+
+\[
+E(\hat{\beta}_{OLS})=\beta
+\]
+
+\[
+V(\hat{\beta}_{OLS})
+=
+\sigma^2 (X'X)^{-1}X'\Psi X(X'X)^{-1}.
+\]
+
+\paragraph{Important Insight}
+OLS is still unbiased but inefficient.
+
+\paragraph{Interpretation}
+Ignoring $\Psi$ leads to suboptimal use of information.
+
+---
+
+\section{Estimation of $\sigma^2$}
+
+\[
+s^2_{GLS}
+=
+\frac{
+(y-X\hat{\beta}_{GLS})'\Psi^{-1}(y-X\hat{\beta}_{GLS})
+}{T-K}.
+\]
+
+\paragraph{Key Idea}
+Residuals must also be weighted consistently with the model.
+
+---
+
+\section{Prediction}
+
+\[
+y_0 = X_0\beta + e_0.
+\]
+
+\[
+\hat{y}_0
+=
+X_0\hat{\beta}_{GLS}
++
+C'\Psi^{-1}(y-X\hat{\beta}_{GLS}).
+\]
+
+\paragraph{Intuition}
+Prediction combines:
+\begin{itemize}
+    \item structural component: $X_0\beta$
+    \item correction term: based on past errors
+\end{itemize}
+
+\paragraph{Special Case}
+If $C=0$, then
+\[
+\hat{y}_0 = X_0\hat{\beta}_{GLS}.
+\]
+
+\paragraph{Meaning}
+If errors are uncorrelated across samples, no correction is needed.
+
+---
+
+\section{Hypothesis Testing}
+
+\[
+H_0: R\beta = r
+\]
+
+Test statistic:
+\[
+F
+=
+\frac{(WSSE_R-WSSE_u)/J}{WSSE_u/(T-K)}.
+\]
+
+\paragraph{Interpretation}
+Same structure as OLS F-test, but:
+\begin{itemize}
+    \item SSE replaced with weighted SSE
+\end{itemize}
+
+---
+
+\section{Feasible GLS}
+
+\paragraph{Problem}
+GLS requires knowing $\Psi$, which is usually unknown.
+
+\paragraph{Solution}
+Estimate $\Psi$ from data.
+
+\[
+\hat{\beta}_{FGLS}
+=
+(X'\hat{\Psi}^{-1}X)^{-1}X'\hat{\Psi}^{-1}y.
+\]
+
+\paragraph{Key Insight}
+FGLS approximates GLS using estimated variance structure.
+
+---
+
+\section{FGLS Procedure}
+
+\begin{enumerate}
+    \item Estimate OLS:
+    \[
+    \hat{\beta}_{OLS}
+    \]
+    \item Compute residuals:
+    \[
+    \hat{e}
+    \]
+    \item Estimate $\Psi$
+    \item Apply GLS using $\hat{\Psi}$
+\end{enumerate}
+
+\paragraph{Big Picture}
+\[
+\text{OLS} \rightarrow \text{estimate structure} \rightarrow \text{GLS}
+\]
+
+---
+
+\section{Asymptotic Properties of FGLS}
+
+If
+\[
+\hat{\Psi} \xrightarrow{p} \Psi,
+\]
+
+then
+\[
+\hat{\beta}_{FGLS}
+\approx
+N\left(
+\beta,
+\sigma^2 (X'\Psi^{-1}X)^{-1}
+\right).
+\]
+
+\paragraph{Important Insight}
+FGLS behaves like GLS in large samples.
+
+---
+
+\section{Final Summary}
+
+\begin{itemize}
+    \item OLS is always unbiased
+    \item OLS is inefficient if $\Psi \neq I$
+    \item GLS is the optimal estimator
+    \item FGLS is the practical implementation
+\end{itemize}
+
+\[
+\text{OLS: simple but inefficient}
+\]
+\[
+\text{GLS: optimal but requires }\Psi
+\]
+\[
+\text{FGLS: feasible approximation}
+\]

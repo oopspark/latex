@@ -22,7 +22,9 @@ In the cases in which it is, determine its degree of homogeneity:
 
 Let $f(x_1,\dots,x_N)$ and $g(x_1,\dots,x_N)$ be homogeneous functions of degrees $r$ and $s$, respectively. That is,
 \[
-f(tx_1,\dots,tx_N)=t^r f(x_1,\dots,x_N), \quad
+f(tx_1,\dots,tx_N)=t^r f(x_1,\dots,x_N),
+\]
+\[
 g(tx_1,\dots,tx_N)=t^s g(x_1,\dots,x_N).
 \]
 
@@ -32,11 +34,13 @@ We examine whether each function $h$ is homogeneous and determine its degree.
     \item[(i)] $h(x_1,\dots,x_N)=f(x_1^v,\dots,x_N^v)$
 
     \[
+\begin{aligned}
     h(tx_1,\dots,tx_N)
-    = f((tx_1)^v,\dots,(tx_N)^v)
-    = f(t^v x_1^v,\dots,t^v x_N^v)
-    = (t^v)^r f(x_1^v,\dots,x_N^v)
-    = t^{vr} h(x_1,\dots,x_N).
+    &= f((tx_1)^v,\dots,(tx_N)^v)\\
+    &= f(t^v x_1^v,\dots,t^v x_N^v)\\
+    &= (t^v)^r f(x_1^v,\dots,x_N^v)\\
+    &= t^{vr} h(x_1,\dots,x_N).
+\end{aligned}
     \]
 
     Hence, $h$ is homogeneous of degree $\boxed{vr}$.
@@ -44,10 +48,12 @@ We examine whether each function $h$ is homogeneous and determine its degree.
     \item[(ii)] $h(x_1,\dots,x_N)=[g(x_1,\dots,x_N)]^p$
 
     \[
+\begin{aligned}
     h(tx_1,\dots,tx_N)
-    = [g(tx_1,\dots,tx_N)]^p
-    = [t^s g(x_1,\dots,x_N)]^p
-    = t^{sp} h(x_1,\dots,x_N).
+    &= [g(tx_1,\dots,tx_N)]^p\\
+    &= [t^s g(x_1,\dots,x_N)]^p\\
+    &= t^{sp} h(x_1,\dots,x_N).
+\end{aligned}
     \]
 
     Hence, $h$ is homogeneous of degree $\boxed{sp}$.
@@ -62,7 +68,11 @@ We examine whether each function $h$ is homogeneous and determine its degree.
     This expression is generally not of the form $t^k h(x)$ unless $r=s$.  
     If $r=s$, then
     \[
-    h(tx)=t^r(f(x)+g(x))=t^r h(x).
+    \begin{aligned}
+    h(tx)
+    &=t^r(f(x)+g(x))\\
+    &=t^r h(x).
+    \end{aligned}
     \]
 
     Therefore, $h$ is homogeneous if and only if $r=s$, and in that case the degree is $\boxed{r}$.
@@ -70,10 +80,12 @@ We examine whether each function $h$ is homogeneous and determine its degree.
     \item[(iv)] $h(x_1,\dots,x_N)=f(x_1,\dots,x_N)\cdot g(x_1,\dots,x_N)$
 
     \[
+\begin{aligned}
     h(tx_1,\dots,tx_N)
-    = f(tx)g(tx)
-    = (t^r f(x))(t^s g(x))
-    = t^{r+s} h(x_1,\dots,x_N).
+    &= f(tx)g(tx)\\
+    &= (t^r f(x))(t^s g(x))\\
+    &= t^{r+s} h(x_1,\dots,x_N).
+\end{aligned}
     \]
 
     Hence, $h$ is homogeneous of degree $\boxed{r+s}$.
@@ -81,10 +93,12 @@ We examine whether each function $h$ is homogeneous and determine its degree.
     \item[(v)] $h(x_1,\dots,x_N)=\dfrac{f(x_1,\dots,x_N)}{g(x_1,\dots,x_N)}$, $g\neq 0$
 
     \[
+\begin{aligned}
     h(tx_1,\dots,tx_N)
-    = \frac{f(tx)}{g(tx)}
-    = \frac{t^r f(x)}{t^s g(x)}
-    = t^{r-s} h(x_1,\dots,x_N).
+    &= \frac{f(tx)}{g(tx)}\\
+    &= \frac{t^r f(x)}{t^s g(x)}\\
+    &= t^{r-s} h(x_1,\dots,x_N).
+\end{aligned}
     \]
 
     Hence, $h$ is homogeneous of degree $\boxed{r-s}$.
@@ -110,7 +124,9 @@ This is the CES function. Examine whether it is concave or convex.
 Define
 \[
 f(x_1,x_2)=A\left[\delta x_1^{-p}+(1-\delta)x_2^{-p}\right]^{-1/p},
-\qquad p\neq 0,\; 0\le \delta \le 1,\; A>0,\; x_1,x_2>0.
+\]
+\[
+p\neq 0,\; 0\le \delta \le 1,\; A>0,\; x_1,x_2>0.
 \]
 Let
 \[
@@ -124,7 +140,8 @@ f=A g^{-1/p}.
 First derivatives are
 \[
 f_{x_1}=A\delta g^{-1/p-1}x_1^{-p-1},
-\qquad
+\]
+\[
 f_{x_2}=A(1-\delta)g^{-1/p-1}x_2^{-p-1}.
 \]
 
@@ -208,13 +225,15 @@ f(x)=\left(x_1^2+\cdots+x_n^2\right)^{1/2}=\|x\|_2.
 \]
 This is the Euclidean norm. Every norm is convex. Indeed, for any \(x,y\in\mathbb{R}^n\) and any \(0\le \lambda \le 1\),
 \[
-f(\lambda x+(1-\lambda)y)
-=
-\|\lambda x+(1-\lambda)y\|_2
-\le
-\|\lambda x\|_2+\|(1-\lambda)y\|_2
-=
+\begin{aligned}
+&f(\lambda x+(1-\lambda)y)\\
+&=
+\|\lambda x+(1-\lambda)y\|_2\\
+&\le
+\|\lambda x\|_2+\|(1-\lambda)y\|_2\\
+&=
 \lambda \|x\|_2+(1-\lambda)\|y\|_2.
+\end{aligned}
 \]
 Hence,
 \[
@@ -268,9 +287,8 @@ f(\lambda x+(1-\lambda)y)\ge \min\{f(x),f(y)\},
 so \(f\) is quasiconcave.
 
 Thus,
-\[
-\boxed{\text{Any monotonic function on } \mathbb{R} \text{ is both quasiconvex and quasiconcave.}}
-\]
+Any monotonic function on $\mathbb{R}$ is both quasiconvex and quasiconcave.
+
 
 
 
@@ -303,7 +321,9 @@ is
 Consider the Cobb-Douglas function
 \[
 f(x)=A x_1^{a_1}x_2^{a_2}\cdots x_N^{a_N},
-\qquad A>0,\; x_i>0,\; a_i\ge 0,
+\]
+\[
+A>0,\; x_i>0,\; a_i\ge 0,
 \]
 and let
 \[
@@ -332,7 +352,8 @@ f_i=\frac{\partial f}{\partial x_i}=\frac{a_i}{x_i}f.
 Second derivatives are
 \[
 f_{ii}=a_i(a_i-1)\frac{f}{x_i^2},
-\qquad
+\]
+\[
 f_{ij}=a_i a_j \frac{f}{x_i x_j}\quad (i\ne j).
 \]
 
@@ -352,13 +373,15 @@ f\left[
 \]
 By the Cauchy-Schwarz inequality,
 \[
-\left(\sum_{i=1}^N a_i u_i\right)^2
-=
-\left(\sum_{i=1}^N \sqrt{a_i}\,\sqrt{a_i}u_i\right)^2
-\le
-\left(\sum_{i=1}^N a_i\right)\left(\sum_{i=1}^N a_i u_i^2\right)
-=
+\begin{aligned}
+&\left(\sum_{i=1}^N a_i u_i\right)^2\\
+&=
+\left(\sum_{i=1}^N \sqrt{a_i}\,\sqrt{a_i}u_i\right)^2\\
+&\le
+\left(\sum_{i=1}^N a_i\right)\left(\sum_{i=1}^N a_i u_i^2\right)\\
+&=
 a\sum_{i=1}^N a_i u_i^2.
+\end{aligned}
 \]
 Hence,
 \[
@@ -461,17 +484,19 @@ First check that the point satisfies the system:
 
 Now compute the Jacobian matrix with respect to \((u,v)\):
 \[
+\begin{aligned}
 \frac{\partial(F_1,F_2)}{\partial(u,v)}
-=
+&=
 \begin{pmatrix}
 \frac{\partial F_1}{\partial u} & \frac{\partial F_1}{\partial v}\\
 \frac{\partial F_2}{\partial u} & \frac{\partial F_2}{\partial v}
-\end{pmatrix}
-=
+\end{pmatrix}\\
+&=
 \begin{pmatrix}
 3u^2+x & 0\\
 1 & -3zv^2+x
 \end{pmatrix}.
+\end{aligned}
 \]
 At \((0,1,-1,1,-1)\),
 \[
@@ -701,24 +726,28 @@ Therefore the only critical point is
 
 Now evaluate \(f\) at this point:
 \[
+\begin{aligned}
 f\left(-\frac{4}{3},\frac{1}{3}\right)
 =
-\left(-\frac{4}{3}\right)^2
+&\left(-\frac{4}{3}\right)^2
 -\left(-\frac{4}{3}\cdot\frac{1}{3}\right)
-+\left(\frac{1}{3}\right)^2
-+3\left(-\frac{4}{3}\right)
++\left(\frac{1}{3}\right)^2\\
+&+3\left(-\frac{4}{3}\right)
 -2\left(\frac{1}{3}\right)+1.
+\end{aligned}
 \]
 That is,
 \[
-=
-\frac{16}{9}+\frac{4}{9}+\frac{1}{9}-4-\frac{2}{3}+1
-=
-\frac{21}{9}-3-\frac{2}{3}
-=
-\frac{7}{3}-3-\frac{2}{3}
-=
+\begin{aligned}
+&=
+\frac{16}{9}+\frac{4}{9}+\frac{1}{9}-4-\frac{2}{3}+1\\
+&=
+\frac{21}{9}-3-\frac{2}{3}\\
+&=
+\frac{7}{3}-3-\frac{2}{3}\\
+&=
 -\frac{4}{3}.
+\end{aligned}
 \]
 
 So the minimum value candidate is
@@ -743,7 +772,12 @@ Its leading principal minors are
 \[
 2>0,
 \qquad
-\det(H)=2\cdot 2-(-1)^2=4-1=3>0.
+\begin{aligned}
+\det(H)
+&=2\cdot 2-(-1)^2\\
+&=3\\
+&>0.
+\end{aligned}
 \]
 Hence \(H\) is positive definite, so \(f\) is strictly convex on \(\mathbb{R}^2\).
 
@@ -841,14 +875,16 @@ A standard constraint qualification for equality constraints requires that the g
 
 Compute the gradient:
 \[
+\begin{aligned}
 \nabla g(x_1,x_2)
-=
+&=
 \left(
 \frac{\partial g}{\partial x_1},
 \frac{\partial g}{\partial x_2}
-\right)
-=
+\right)\\
+&=
 (-2x_1,\,3x_2^2).
+\end{aligned}
 \]
 At \((0,0)\),
 \[
@@ -858,9 +894,8 @@ At \((0,0)\),
 Since the gradient of the equality constraint vanishes at \((0,0)\), the Jacobian of the constraint does not have full rank there. Therefore the usual constraint qualification fails at \((0,0)\).
 
 Thus,
-\[
-\boxed{\nabla g(0,0)=(0,0), \text{ so the constraint qualification condition does not hold at } (0,0).}
-\]
+$\nabla g(0,0)=(0,0)$, so the constraint qualification condition does not hold at $(0,0)$. 
+
 
 \subsection*{Conclusion}
 
@@ -910,11 +945,19 @@ Consider the problem
 \]
 subject to
 \[
-g_1(x,y,z)=x+2y+z-1=0
+\begin{aligned}
+g_1(x,y,z)
+&=x+2y+z-1\\
+&=0
+\end{aligned}
 \]
 and
 \[
-g_2(x,y,z)=2x-y-3z-4=0.
+\begin{aligned}
+g_2(x,y,z)
+&=2x-y-3z-4\\
+&=0.
+\end{aligned}
 \]
 
 We solve it by the Lagrange method.
@@ -923,11 +966,13 @@ We solve it by the Lagrange method.
 
 Define
 \[
+\begin{aligned}
 \mathcal{L}(x,y,z,\lambda,\mu)
 =
-x^2+y^2+z^2
-+\lambda(x+2y+z-1)
-+\mu(2x-y-3z-4).
+&x^2+y^2+z^2
++\lambda(x+2y+z-1)\\
+&+\mu(2x-y-3z-4).
+\end{aligned}
 \]
 
 The first-order conditions are
@@ -1019,40 +1064,52 @@ so
 \]
 Then
 \[
-\mu=1+3\left(-\frac{11}{20}\right)
-=1-\frac{33}{20}
-=-\frac{13}{20}.
+\begin{aligned}
+\mu
+&=1+3\left(-\frac{11}{20}\right)\\
+&=1-\frac{33}{20}\\
+&=-\frac{13}{20}.
+\end{aligned}
 \]
 
 \subsection*{3. Compute \(x,y,z\)}
 
 Now
 \[
-x=-\frac{\lambda+2\mu}{2}
-=
--\frac{-\frac{11}{20}+2\left(-\frac{13}{20}\right)}{2}
-=
--\frac{-\frac{37}{20}}{2}
-=
+\begin{aligned}
+x
+&=-\frac{\lambda+2\mu}{2}\\
+&=
+-\frac{-\frac{11}{20}+2\left(-\frac{13}{20}\right)}{2}\\
+&=
+-\frac{-\frac{37}{20}}{2}\\
+&=
 \frac{37}{40},
+\end{aligned}
 \]
 \[
-y=-\frac{2\lambda-\mu}{2}
-=
--\frac{2\left(-\frac{11}{20}\right)-\left(-\frac{13}{20}\right)}{2}
-=
--\frac{-\frac{9}{20}}{2}
-=
+\begin{aligned}
+y
+&=-\frac{2\lambda-\mu}{2}\\
+&=
+-\frac{2\left(-\frac{11}{20}\right)-\left(-\frac{13}{20}\right)}{2}\\
+&=
+-\frac{-\frac{9}{20}}{2}\\
+&=
 \frac{9}{40},
+\end{aligned}
 \]
 \[
-z=-\frac{\lambda-3\mu}{2}
-=
--\frac{-\frac{11}{20}-3\left(-\frac{13}{20}\right)}{2}
-=
--\frac{\frac{28}{20}}{2}
-=
+\begin{aligned}
+z
+&=-\frac{\lambda-3\mu}{2}\\
+&=
+-\frac{-\frac{11}{20}-3\left(-\frac{13}{20}\right)}{2}\\
+&=
+-\frac{\frac{28}{20}}{2}\\
+&=
 -\frac{7}{10}.
+\end{aligned}
 \]
 
 Therefore the critical point is
@@ -1075,18 +1132,20 @@ f\left(\frac{37}{40},\frac{9}{40},-\frac{7}{10}\right)
 \]
 That is,
 \[
-=
+\begin{aligned}
+&=
 \frac{1369}{1600}
 +
 \frac{81}{1600}
 +
-\frac{49}{100}
-=
-\frac{1450}{1600}+\frac{784}{1600}
-=
-\frac{2234}{1600}
-=
+\frac{49}{100}\\
+&=
+\frac{1450}{1600}+\frac{784}{1600}\\
+&=
+\frac{2234}{1600}\\
+&=
 \frac{1117}{800}.
+\end{aligned}
 \]
 
 So
@@ -1171,26 +1230,39 @@ Consider the problem
 \max \ f(x,y,z)=x+y+z
 \]
 subject to
-\[
-g_1(x,y,z)=x^2+y^2+z^2-1\le 0,
+\[\begin{aligned}
+g_1(x,y,z)
+&=x^2+y^2+z^2-1\\
+&\le 0,
+\end{aligned}
 \]
 \[
-g_2(x,y,z)=x-y-z-1\le 0,
+\begin{aligned}
+g_2(x,y,z)
+&=x-y-z-1\\
+&\le 0,
+\end{aligned}
 \]
 \[
-g_3(x,y,z)=-x\le 0.
+\begin{aligned}
+g_3(x,y,z)
+&=-x\\
+&\le 0.
+\end{aligned}
 \]
 
 We solve it using the Kuhn-Tucker conditions.
 
 Define the Lagrangian
 \[
+\begin{aligned}
 \mathcal{L}(x,y,z,\lambda_1,\lambda_2,\lambda_3)
 =
-x+y+z
--\lambda_1(x^2+y^2+z^2-1)
--\lambda_2(x-y-z-1)
+&x+y+z
+-\lambda_1(x^2+y^2+z^2-1)\\
+&-\lambda_2(x-y-z-1)
 -\lambda_3(-x),
+\end{aligned}
 \]
 with
 \[
@@ -1199,19 +1271,30 @@ with
 
 The first-order conditions are
 \[
+\begin{aligned}
 \frac{\partial \mathcal{L}}{\partial x}
-=
-1-2\lambda_1 x-\lambda_2+\lambda_3=0, \tag{1}
+&=1-2\lambda_1 x-\lambda_2+\lambda_3\\
+&=0,
+\end{aligned}
+ \tag{1}
 \]
 \[
+\begin{aligned}
 \frac{\partial \mathcal{L}}{\partial y}
-=
-1-2\lambda_1 y+\lambda_2=0, \tag{2}
+&=
+1-2\lambda_1 y+\lambda_2\\
+&=0, 
+\end{aligned}
+\tag{2}
 \]
 \[
+\begin{aligned}
 \frac{\partial \mathcal{L}}{\partial z}
-=
-1-2\lambda_1 z+\lambda_2=0. \tag{3}
+&=
+1-2\lambda_1 z+\lambda_2\\
+&=0. 
+\end{aligned}
+\tag{3}
 \]
 
 The complementary slackness conditions are
@@ -1275,15 +1358,22 @@ x=y=z=\frac{1}{\sqrt{3}}.
 \]
 Check feasibility:
 \[
+\begin{aligned}
 x-y-z-1
-=
-\frac1{\sqrt3}-\frac1{\sqrt3}-\frac1{\sqrt3}-1
-=
--\frac1{\sqrt3}-1<0,
+&=
+\frac1{\sqrt3}-\frac1{\sqrt3}-\frac1{\sqrt3}-1\\
+&=
+-\frac1{\sqrt3}-1\\
+&<0,
+\end{aligned}
 \]
 and
 \[
--x=-\frac1{\sqrt3}<0.
+\begin{aligned}
+-x
+&=-\frac1{\sqrt3}\\
+&<0.
+\end{aligned}
 \]
 So this point is feasible.
 
@@ -1329,7 +1419,11 @@ a contradiction.
 
 If \(y=-\frac23\), then \(z=-\frac23\) and
 \[
-x=1+2\left(-\frac23\right)=-\frac13,
+\begin{aligned}
+x
+&=1+2\left(-\frac23\right)\\
+&=-\frac13,
+\end{aligned}
 \]
 which violates the constraint \(x\ge 0\).
 
@@ -1369,11 +1463,14 @@ y=z=-\frac12.
 \]
 Then
 \[
+\begin{aligned}
 x^2+y^2+z^2
-=
-0+\frac14+\frac14
-=
-\frac12 \neq 1,
+&=
+0+\frac14+\frac14\\
+&=
+\frac12 \\
+&\neq 1,
+\end{aligned}
 \]
 which contradicts \(x^2+y^2+z^2=1\).
 
@@ -1459,10 +1556,13 @@ We assume \(w_1>0\), \(w_2>0\), and \(y\ge 0\).
 
 Since all constraints are of the form \(\ge 0\) and the problem is written as a maximization problem, the Lagrangian is
 \[
+\begin{aligned}
 \mathcal{L}(x_1,x_2,\lambda_1,\lambda_2,\lambda_3)
 =
--w_1x_1-w_2x_2
-+\lambda_1x_1+\lambda_2x_2+\lambda_3(x_1^2+x_2^2-y),
+&-w_1x_1-w_2x_2
++\lambda_1x_1+\lambda_2x_2\\
+&+\lambda_3(x_1^2+x_2^2-y),
+\end{aligned}
 \]
 where
 \[
@@ -1473,14 +1573,20 @@ The Kuhn--Tucker first-order conditions are:
 
 \paragraph{Stationarity}
 \[
+\begin{aligned}
 \frac{\partial \mathcal{L}}{\partial x_1}
-=
--w_1+\lambda_1+2\lambda_3x_1=0,
+&=
+-w_1+\lambda_1+2\lambda_3x_1\\
+&=0,
+\end{aligned}
 \]
 \[
+\begin{aligned}
 \frac{\partial \mathcal{L}}{\partial x_2}
-=
--w_2+\lambda_2+2\lambda_3x_2=0.
+&=
+-w_2+\lambda_2+2\lambda_3x_2\\
+&=0.
+\end{aligned}
 \]
 
 \paragraph{Primal feasibility}
@@ -1588,13 +1694,15 @@ x_2^*
 
 The minimized cost is
 \[
+\begin{aligned}
 C(w_1,w_2,y)
-=
-w_1x_1^*+w_2x_2^*
-=
-\frac{w_1^2\sqrt{y}+w_2^2\sqrt{y}}{\sqrt{w_1^2+w_2^2}}
-=
+&=
+w_1x_1^*+w_2x_2^*\\
+&=
+\frac{w_1^2\sqrt{y}+w_2^2\sqrt{y}}{\sqrt{w_1^2+w_2^2}}\\
+&=
 \sqrt{y}\,\sqrt{w_1^2+w_2^2}.
+\end{aligned}
 \]
 Hence
 \[
@@ -1719,9 +1827,12 @@ Take any \(y^1,y^2\in Y(x)\). Then
 \]
 Since \(T\) is convex, for every \(0\le \lambda \le 1\),
 \[
+\begin{aligned}
 \lambda (x,y^1)+(1-\lambda)(x,y^2)
-=
-(x,\lambda y^1+(1-\lambda)y^2)\in T.
+&=
+(x,\lambda y^1+(1-\lambda)y^2)\\
+&\in T.
+\end{aligned}
 \]
 Hence
 \[
@@ -1891,9 +2002,12 @@ x_2=\frac{yr}{(a+b r^\rho)^{1/\rho}}.
 
 Therefore
 \[
-c(w_1,w_2,y)=w_1x_1+w_2x_2
-=
+\begin{aligned}
+c(w_1,w_2,y)
+&=w_1x_1+w_2x_2\\
+&=
 \frac{y(w_1+w_2 r)}{(a+b r^\rho)^{1/\rho}}.
+\end{aligned}
 \]
 
 Now simplify this expression. Using
@@ -1973,13 +2087,16 @@ x_i(w,y)=\frac{\partial c(w,y)}{\partial w_i}.
 
 First,
 \[
-x_1(w,y)=\frac{\partial c}{\partial w_1}
-=
-w_2 \cdot \frac{\partial}{\partial w_1}\ln\left(\frac{w_1}{w_2}\right)
-=
-w_2\cdot \frac{1}{w_1}
-=
+\begin{aligned}
+x_1(w,y)
+&=\frac{\partial c}{\partial w_1}\\
+&=
+w_2 \cdot \frac{\partial}{\partial w_1}\ln\left(\frac{w_1}{w_2}\right)\\
+&=
+w_2\cdot \frac{1}{w_1}\\
+&=
 \frac{w_2}{w_1}.
+\end{aligned}
 \]
 
 Next,
@@ -1992,13 +2109,15 @@ c(w,y)=w_2(1+y+\ln(w_1/w_2)),
 \]
 we get
 \[
+\begin{aligned}
 x_2(w,y)
-=
+&=
 1+y+\ln\left(\frac{w_1}{w_2}\right)
 +
-w_2\left(-\frac{1}{w_2}\right)
-=
+w_2\left(-\frac{1}{w_2}\right)\\
+&=
 y+\ln\left(\frac{w_1}{w_2}\right).
+\end{aligned}
 \]
 
 Thus the conditional factor demands are
@@ -2067,9 +2186,12 @@ x_1=\frac{w_2}{w_1}.
 \]
 Then
 \[
-x_2=y-\ln\left(\frac{w_2}{w_1}\right)
-=
+\begin{aligned}
+x_2
+&=y-\ln\left(\frac{w_2}{w_1}\right)\\
+&=
 y+\ln\left(\frac{w_1}{w_2}\right).
+\end{aligned}
 \]
 Hence the minimized cost is
 \[
@@ -2125,8 +2247,13 @@ Then if \(x\) can produce \(y\), the scaled input bundle \(tx\) can produce \(ty
 
 Let \(x^*(w,y)\) be a cost-minimizing input bundle for output \(y\). Then \(x^*(w,y)\) produces \(y\), so by nonincreasing returns to scale, \(t x^*(w,y)\) produces \(ty\). Hence \(t x^*(w,y)\) is feasible for producing \(ty\), and therefore
 \[
-c(w,ty)\le w\cdot (t x^*(w,y))=t\, w\cdot x^*(w,y)=t\,c(w,y),
-\qquad 0<t<1.
+\begin{aligned}
+c(w,ty)
+&\le w\cdot (t x^*(w,y))\\
+&=t\, w\cdot x^*(w,y)\\
+&=t\,c(w,y), \\
+&0<t<1.
+\end{aligned}
 \]
 
 Thus,
@@ -2141,12 +2268,20 @@ Then if \(x\) can produce \(y\), the scaled input bundle \(tx\) can produce \(ty
 
 Again let \(x^*(w,y)\) be cost-minimizing for \(y\). Since \(t x^*(w,y)\) can produce \(ty\), we have
 \[
-c(w,ty)\le w\cdot (t x^*(w,y))=t\,c(w,y)
-\qquad \text{for all } t>0.
+\begin{aligned}
+c(w,ty)
+&\le w\cdot (t x^*(w,y))\\
+&=t\,c(w,y)\\
+&\text{for all } t>0.
+\end{aligned}
 \]
 Now replace \(y\) by \(ty\) and \(t\) by \(1/t\). Since constant returns to scale holds for every positive scalar,
 \[
-c(w,y)=c\!\left(w,\frac{1}{t}(ty)\right)\le \frac{1}{t}c(w,ty).
+\begin{aligned}
+c(w,y)
+&=c\!\left(w,\frac{1}{t}(ty)\right)\\
+&\le \frac{1}{t}c(w,ty).
+\end{aligned}
 \]
 Multiplying both sides by \(t\), we get
 \[
@@ -2170,8 +2305,12 @@ Then if \(x\) can produce \(y\), the scaled input bundle \(tx\) can produce \(ty
 
 Let \(x^*(w,y)\) be cost-minimizing for \(y\). Then \(t x^*(w,y)\) is feasible for \(ty\), so
 \[
-c(w,ty)\le w\cdot (t x^*(w,y))=t\,c(w,y),
-\qquad t>1.
+\begin{aligned}\
+c(w,ty)
+&\le w\cdot (t x^*(w,y))\\
+&=t\,c(w,y),\\
+&t>1.
+\end{aligned}
 \]
 
 Hence,
@@ -2446,13 +2585,15 @@ x_i(w)=\frac{\partial}{\partial w_i}\bigl[y\,c(w)\bigr].
 
 Since \(y=D(c(w))\) depends on \(w\), we must apply the product rule:
 \[
+\begin{aligned}
 x_i(w)
-=
-\frac{\partial}{\partial w_i}\Bigl(D(c(w))\,c(w)\Bigr)
-=
+&=
+\frac{\partial}{\partial w_i}\Bigl(D(c(w))\,c(w)\Bigr)\\
+&=
 D(c(w))\frac{\partial c(w)}{\partial w_i}
 +
 c(w)D'(c(w))\frac{\partial c(w)}{\partial w_i}.
+\end{aligned}
 \]
 Thus
 \[
@@ -2474,29 +2615,35 @@ Differentiate \(x_i(w)\) with respect to \(w_j\):
 \]
 Using the product rule,
 \[
+\begin{aligned}
 \frac{\partial x_i}{\partial w_j}
 =
-\left[D(c(w))+c(w)D'(c(w))\right]\frac{\partial^2 c(w)}{\partial w_i\partial w_j}
-+
+&\left[D(c(w))+c(w)D'(c(w))\right]\frac{\partial^2 c(w)}{\partial w_i\partial w_j}\\
+&+
 \frac{\partial}{\partial w_j}\left[D(c(w))+c(w)D'(c(w))\right]\frac{\partial c(w)}{\partial w_i}.
+\end{aligned}
 \]
 
 Now compute the derivative of the bracketed term:
 \[
-\frac{\partial}{\partial w_j}\left[D(c(w))+c(w)D'(c(w))\right]
-=
+\begin{aligned}
+&\frac{\partial}{\partial w_j}\left[D(c(w))+c(w)D'(c(w))\right]\\
+&=
 \left[2D'(c(w))+c(w)D''(c(w))\right]\frac{\partial c(w)}{\partial w_j}.
+\end{aligned}
 \]
 Therefore,
 \[
 \boxed{
+\begin{aligned}
 \frac{\partial x_i}{\partial w_j}
-=
-\left[D(c(w))+c(w)D'(c(w))\right]\frac{\partial^2 c(w)}{\partial w_i\partial w_j}
-+
+&=
+\left[D(c(w))+c(w)D'(c(w))\right]\frac{\partial^2 c(w)}{\partial w_i\partial w_j}\\
+&+
 \left[2D'(c(w))+c(w)D''(c(w))\right]
 \frac{\partial c(w)}{\partial w_i}
 \frac{\partial c(w)}{\partial w_j}.
+\end{aligned}
 }
 \]
 
@@ -2505,17 +2652,19 @@ Therefore,
 This expression can be decomposed into two parts:
 
 \[
+\begin{aligned}
 \frac{\partial x_i}{\partial w_j}
 =
-\underbrace{
+&\underbrace{
 \left[D(c(w))+c(w)D'(c(w))\right]\frac{\partial^2 c(w)}{\partial w_i\partial w_j}
-}_{\text{substitution effect}}
-+
+}_{\text{substitution effect}}\\
+&+
 \underbrace{
 \left[2D'(c(w))+c(w)D''(c(w))\right]
 \frac{\partial c(w)}{\partial w_i}
 \frac{\partial c(w)}{\partial w_j}
 }_{\text{output effect}}.
+\end{aligned}
 \]
 
 The first term reflects the change in conditional factor demand due to the change in relative input prices.  
@@ -2530,35 +2679,41 @@ The elasticity of input demand \(x_i\) with respect to input price \(w_j\) is
 Using the expression above,
 \[
 \boxed{
-\frac{\partial x_i}{\partial w_j}\frac{w_j}{x_i}
-=
+\begin{aligned}
+&\frac{\partial x_i}{\partial w_j}\frac{w_j}{x_i}\\
+&=
 \frac{w_j}{x_i}
 \left\{
-\left[D(c(w))+c(w)D'(c(w))\right]\frac{\partial^2 c(w)}{\partial w_i\partial w_j}
-+
+\begin{aligned}
+&\left[D(c(w))+c(w)D'(c(w))\right]\frac{\partial^2 c(w)}{\partial w_i\partial w_j}\\
+&+
 \left[2D'(c(w))+c(w)D''(c(w))\right]
 \frac{\partial c(w)}{\partial w_i}
 \frac{\partial c(w)}{\partial w_j}
+\end{aligned}
 \right\}.
+\end{aligned}
 }
 \]
 
 Equivalently, the elasticity can be written as the sum of two components:
 \[
+\begin{aligned}
 \frac{\partial x_i}{\partial w_j}\frac{w_j}{x_i}
 =
-\underbrace{
+&\underbrace{
 \left[D(c(w))+c(w)D'(c(w))\right]
 \frac{\partial^2 c(w)}{\partial w_i\partial w_j}
 \frac{w_j}{x_i}
-}_{\text{substitution component}}
-+
+}_{\text{substitution component}}\\
+&+
 \underbrace{
 \left[2D'(c(w))+c(w)D''(c(w))\right]
 \frac{\partial c(w)}{\partial w_i}
 \frac{\partial c(w)}{\partial w_j}
 \frac{w_j}{x_i}
 }_{\text{output component}}.
+\end{aligned}
 \]
 
 \subsection*{Conclusion}
@@ -2572,13 +2727,15 @@ When output is endogenous through the demand schedule \(y=D(p)\) and \(p=c(w)\),
 Thus the response of input demand is
 \[
 \boxed{
+\begin{aligned}
 \frac{\partial x_i}{\partial w_j}
-=
-\left[D(c(w))+c(w)D'(c(w))\right]\frac{\partial^2 c(w)}{\partial w_i\partial w_j}
-+
+&=
+\left[D(c(w))+c(w)D'(c(w))\right]\frac{\partial^2 c(w)}{\partial w_i\partial w_j}\\
+&+
 \left[2D'(c(w))+c(w)D''(c(w))\right]
 \frac{\partial c(w)}{\partial w_i}
 \frac{\partial c(w)}{\partial w_j},
+\end{aligned}
 }
 \]
 with the corresponding elasticity obtained by multiplying by \(w_j/x_i\).
@@ -2712,11 +2869,13 @@ R(p,x)-wx
 \]
 Taking the maximum over \(x\), we obtain
 \[
+\begin{aligned}
 \Pi(p,w)
-=
-\max_x\max_y\{py-wx:(x,y)\in T\}
-=
+&=
+\max_x\max_y\{py-wx:(x,y)\in T\}\\
+&=
 \max_{x,y}\{py-wx:(x,y)\in T\}.
+\end{aligned}
 \]
 Therefore (1) holds.
 
@@ -2955,9 +3114,12 @@ w_2=p\beta S^{\beta/\rho-1}x_2^{\rho-1}.
 \]
 Substitute \(S=(t^\rho+1)x_2^\rho\):
 \[
-w_2=p\beta (t^\rho+1)^{\beta/\rho-1}x_2^{\beta-\rho}x_2^{\rho-1}
-=
+\begin{aligned}
+w_2
+&=p\beta (t^\rho+1)^{\beta/\rho-1}x_2^{\beta-\rho}x_2^{\rho-1}\\
+&=
 p\beta (t^\rho+1)^{\beta/\rho-1}x_2^{\beta-1}.
+\end{aligned}
 \]
 Hence
 \[
@@ -3015,7 +3177,11 @@ p\sum_i f_i(x)x_i=\sum_i w_ix_i.
 \]
 Since \(f\) is homogeneous of degree \(\beta\),
 \[
-\sum_i f_i(x)x_i=\beta f(x)=\beta y.
+\begin{aligned}
+\sum_i f_i(x)x_i
+&=\beta f(x)\\
+&=\beta y.
+\end{aligned}
 \]
 Hence
 \[
@@ -3023,7 +3189,12 @@ Hence
 \]
 Therefore profit is
 \[
-\Pi(p,w)=py-w\cdot x=p y-p\beta y=p(1-\beta)y.
+\begin{aligned}
+\Pi(p,w)
+&=py-w\cdot x\\
+&=p y-p\beta y\\
+&=p(1-\beta)y.
+\end{aligned}
 \]
 
 Thus
@@ -3082,10 +3253,12 @@ Given a profit function \(\Pi(p,w)\), define
 T^*
 =
 \left\{
+\begin{aligned}
 (x,y)\in \mathbb{R}_+^{N+M}
 :
-p\cdot y-w\cdot x\le \Pi(p,w)
-\text{ for all } p>0,\; w>0
+&p\cdot y-w\cdot x\le \Pi(p,w)\\
+&\text{ for all } p>0,\; w>0
+\end{aligned}
 \right\}.
 \]
 
@@ -3423,9 +3596,10 @@ D_i(x,y)=\frac{\sqrt{x_1x_2}}{\sqrt{y_1^2+y_2^2}}
 are
 \[
 \boxed{
-x_1^*(w,y)=\sqrt{\frac{w_2}{w_1}}\sqrt{y_1^2+y_2^2},
-\qquad
-x_2^*(w,y)=\sqrt{\frac{w_1}{w_2}}\sqrt{y_1^2+y_2^2},
+\begin{aligned}
+&x_1^*(w,y)=\sqrt{\frac{w_2}{w_1}}\sqrt{y_1^2+y_2^2},\\
+&x_2^*(w,y)=\sqrt{\frac{w_1}{w_2}}\sqrt{y_1^2+y_2^2},
+\end{aligned}
 }
 \]
 and the associated cost function is
@@ -3519,7 +3693,7 @@ Thus, geometrically, \(D_i(x,y)\) is the smallest value of \(w\cdot x\) such tha
 
     % Higher isodistance line
     \draw[dashed] (0.5,4.4) -- (5.0,1.0)
-        node[right] {$w\cdot x=k$};
+        node[pos=0.8, right] {$w\cdot x=k$};
 
     % Tangency point
     \fill (2.2,2.55) circle (2pt) node[above right] {$w^*$};
@@ -3654,11 +3828,13 @@ y\sum_{j=1}^N b_{ij}\frac{\partial}{\partial w_i}(w_i w_j)^{1/2}.
 \]
 Since
 \[
+\begin{aligned}
 \frac{\partial}{\partial w_i}(w_i w_j)^{1/2}
-=
-\frac{1}{2}(w_i w_j)^{-1/2}w_j
-=
+&=
+\frac{1}{2}(w_i w_j)^{-1/2}w_j\\
+&=
 \frac{1}{2}\left(\frac{w_j}{w_i}\right)^{1/2},
+\end{aligned}
 \]
 we obtain
 \[
@@ -3676,25 +3852,29 @@ Differentiate \(x_i\) with respect to \(w_j\).
 \paragraph{Case 1: \(j\neq i\).}
 Only the \(j\)-th term depends on \(w_j\), so
 \[
+\begin{aligned}
 \frac{\partial x_i}{\partial w_j}
-=
-\frac{y}{2}b_{ij}\frac{\partial}{\partial w_j}\left(\frac{w_j}{w_i}\right)^{1/2}
-=
-\frac{y}{2}b_{ij}\cdot \frac{1}{2}(w_i^{-1}w_j)^{-1/2}\frac{1}{w_i}
-=
+&=
+\frac{y}{2}b_{ij}\frac{\partial}{\partial w_j}\left(\frac{w_j}{w_i}\right)^{1/2}\\
+&=
+\frac{y}{2}b_{ij}\cdot \frac{1}{2}(w_i^{-1}w_j)^{-1/2}\frac{1}{w_i}\\
+&=
 \frac{y}{4}b_{ij}\frac{1}{\sqrt{w_i w_j}}.
+\end{aligned}
 \]
 Hence
 \[
 \boxed{
+\begin{aligned}
 \varepsilon_{ij}
-=
-\frac{\partial x_i}{\partial w_j}\frac{w_j}{x_i}
-=
-\frac{y}{4}b_{ij}\frac{1}{\sqrt{w_i w_j}}\frac{w_j}{x_i}
-=
-\frac{y}{4x_i}b_{ij}\left(\frac{w_j}{w_i}\right)^{1/2},
-\qquad i\neq j.
+&=
+\frac{\partial x_i}{\partial w_j}\frac{w_j}{x_i}\\
+&=
+\frac{y}{4}b_{ij}\frac{1}{\sqrt{w_i w_j}}\frac{w_j}{x_i}\\
+&=
+\frac{y}{4x_i}b_{ij}\left(\frac{w_j}{w_i}\right)^{1/2},\\
+&i\neq j.
+\end{aligned}
 }
 \]
 
@@ -3707,11 +3887,13 @@ x_i
 \]
 differentiate with respect to \(w_i\):
 \[
+\begin{aligned}
 \frac{\partial x_i}{\partial w_i}
-=
-\frac{y}{2}\sum_{k=1}^N b_{ik}\left(-\frac{1}{2}\right)\left(\frac{w_k}{w_i}\right)^{1/2}\frac{1}{w_i}
-=
+&=
+\frac{y}{2}\sum_{k=1}^N b_{ik}\left(-\frac{1}{2}\right)\left(\frac{w_k}{w_i}\right)^{1/2}\frac{1}{w_i}\\
+&=
 -\frac{y}{4w_i}\sum_{k=1}^N b_{ik}\left(\frac{w_k}{w_i}\right)^{1/2}.
+\end{aligned}
 \]
 Since
 \[
@@ -3726,11 +3908,11 @@ it follows that
 Therefore
 \[
 \boxed{
-\varepsilon_{ii}
-=
-\frac{\partial x_i}{\partial w_i}\frac{w_i}{x_i}
-=
--\frac{1}{2}.
+    \varepsilon_{ii}
+    =
+    \frac{\partial x_i}{\partial w_i}\frac{w_i}{x_i}
+    =
+    -\frac{1}{2}.
 }
 \]
 
@@ -3751,19 +3933,21 @@ Thus for the generalized Leontief cost function,
 
 Consider the translog cost function
 \[
+\begin{aligned}
 \ln c(w,y)
 =
-\alpha_0
+&\alpha_0
 +
 \sum_{i=1}^N \alpha_i \ln w_i
 +
-\frac{1}{2}\sum_{i=1}^N\sum_{j=1}^N \gamma_{ij}\ln w_i \ln w_j
-+
+\frac{1}{2}\sum_{i=1}^N\sum_{j=1}^N \gamma_{ij}\ln w_i \ln w_j\\
+&+
 \beta \ln y
 +
 \frac{1}{2}\delta (\ln y)^2
 +
 \sum_{i=1}^N \phi_i \ln w_i \ln y.
+\end{aligned}
 \]
 
 \subsection*{2.1 Cost shares}
@@ -3920,26 +4104,29 @@ respectively.
 
 Consider a single-output translog cost function of the form
 \[
+\begin{aligned}
 \ln c(w,y)
 =
-\alpha_0
+&\alpha_0
 +
 \sum_{i=1}^N \alpha_i \ln w_i
 +
-\frac{1}{2}\sum_{i=1}^N \sum_{j=1}^N \gamma_{ij}\ln w_i \ln w_j
-+
+\frac{1}{2}\sum_{i=1}^N \sum_{j=1}^N \gamma_{ij}\ln w_i \ln w_j\\
+&+
 \beta \ln y
 +
 \frac{1}{2}\delta (\ln y)^2
 +
 \sum_{i=1}^N \phi_i \ln w_i \ln y.
+\end{aligned}
 \]
 For a well-defined translog cost function, one usually also imposes the symmetry and linear homogeneity restrictions
 \[
 \gamma_{ij}=\gamma_{ji},
 \qquad
 \sum_{i=1}^N \alpha_i=1,
-\qquad
+\]
+\[
 \sum_{i=1}^N \gamma_{ij}=0 \ \ \text{for all } j,
 \qquad
 \sum_{i=1}^N \phi_i=0.
@@ -3966,17 +4153,19 @@ Thus the cost shares depend on output through the term \(\phi_i \ln y\). Therefo
 
 Hence, under input homotheticity, the translog cost function becomes
 \[
+\begin{aligned}
 \ln c(w,y)
 =
-\alpha_0
+&\alpha_0
 +
 \sum_{i=1}^N \alpha_i \ln w_i
 +
-\frac{1}{2}\sum_{i=1}^N \sum_{j=1}^N \gamma_{ij}\ln w_i \ln w_j
-+
+\frac{1}{2}\sum_{i=1}^N \sum_{j=1}^N \gamma_{ij}\ln w_i \ln w_j\\
+&+
 \beta \ln y
 +
 \frac{1}{2}\delta (\ln y)^2.
+\end{aligned}
 \]
 
 \subsection*{2. Input separability}
@@ -4017,19 +4206,21 @@ Thus, the restriction for input separability is
 
 For the single-output translog cost function
 \[
+\begin{aligned}
 \ln c(w,y)
 =
-\alpha_0
+&\alpha_0
 +
 \sum_i \alpha_i \ln w_i
 +
-\frac{1}{2}\sum_i\sum_j \gamma_{ij}\ln w_i \ln w_j
-+
+\frac{1}{2}\sum_i\sum_j \gamma_{ij}\ln w_i \ln w_j\\
+&+
 \beta \ln y
 +
 \frac{1}{2}\delta (\ln y)^2
 +
 \sum_i \phi_i \ln w_i \ln y,
+\end{aligned}
 \]
 the restrictions are:
 
@@ -4147,17 +4338,19 @@ G(\lambda p, V)
 \]
 Since $\lambda$ is just a positive scalar, it can be factored out of the objective:
 \[
+\begin{aligned}
 G(\lambda p, V)
-=
+&=
 \lambda
 \max_{\{v_i\}}
 \left\{
 \sum_{i=1}^N p_i f_i(v_i)
 \;\middle|\;
 \sum_{i=1}^N v_i \le V
-\right\}
-=
+\right\}\\
+&=
 \lambda G(p,V).
+\end{aligned}
 \]
 Hence $G(p,V)$ is homogeneous of degree one in $p$.
 
@@ -4186,24 +4379,26 @@ f_i(v_i)=f_i(\mu z_i)=\mu f_i(z_i).
 \]
 Therefore,
 \[
+\begin{aligned}
 G(p,\mu V)
-=
+&=
 \max_{\{z_i\}}
 \left\{
 \sum_{i=1}^N p_i \mu f_i(z_i)
 \;\middle|\;
 \sum_{i=1}^N z_i \le V
-\right\}
-=
+\right\}\\
+&=
 \mu
 \max_{\{z_i\}}
 \left\{
 \sum_{i=1}^N p_i f_i(z_i)
 \;\middle|\;
 \sum_{i=1}^N z_i \le V
-\right\}
-=
+\right\}\\
+&=
 \mu G(p,V).
+\end{aligned}
 \]
 Hence $G(p,V)$ is homogeneous of degree one in $V$.
 
@@ -4281,14 +4476,14 @@ The translog GDP function is
 \[
 \begin{aligned}
 \ln G
-&=
-\alpha_0
+=
+&\alpha_0
 + \sum_{i=1}^N \alpha_i \ln p_i
 + \sum_{k=1}^M \beta_k \ln V_k \\
-&\quad
-+ \frac12 \sum_{i=1}^N \sum_{j=1}^N \gamma_{ij}\ln p_i \ln p_j
-+ \frac12 \sum_{k=1}^M \sum_{l=1}^M \delta_{kl}\ln V_k \ln V_l
-+ \sum_{i=1}^N \sum_{k=1}^M \phi_{ik}\ln p_i \ln V_k.
+&
++ \frac12 \sum_{i=1}^N \sum_{j=1}^N \gamma_{ij}\ln p_i \ln p_j\\
+&+ \frac12 \sum_{k=1}^M \sum_{l=1}^M \delta_{kl}\ln V_k \ln V_l\\
+&+ \sum_{i=1}^N \sum_{k=1}^M \phi_{ik}\ln p_i \ln V_k.
 \end{aligned}
 \]
 

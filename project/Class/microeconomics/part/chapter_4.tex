@@ -1,0 +1,3246 @@
+\chapter{Theory of Consumption}
+
+\section{Preference}
+
+Let
+\[
+X = \mathbb{R}_+^N
+\]
+be the consumption set, the nonnegative orthant in \(\mathbb{R}^N\).
+
+The set \(X\) is assumed to be closed and convex.
+
+Assume
+\[
+x \in X, \qquad y \in X.
+\]
+
+We define the preference relation as follows:
+
+\[
+x \succeq y
+\]
+means that the consumer thinks bundle \(x\) is at least as good as bundle \(y\).
+
+\[
+x \succ y
+\]
+means that the consumer strictly prefers \(x\) to \(y\).
+
+\[
+x \sim y
+\]
+means that the consumer is indifferent between \(x\) and \(y\).
+
+We want preferences to provide an ordering over the set of consumption bundles.  
+The (partial) ordering is assumed to satisfy the following properties.
+
+\subsection{Completeness}
+
+For all \(x\) and \(y\) in \(X\),
+
+\[
+x \succeq y
+\quad \text{or} \quad
+y \succeq x
+\quad \text{or both.}
+\]
+
+That is, any two bundles can be compared.
+
+\subsection{Reflexiveness}
+
+For all \(x \in X\),
+
+\[
+x \succeq x.
+\]
+
+Every bundle is at least as good as itself.
+
+\subsection{Transitivity}
+
+For all \(x,y,z \in X\),
+
+\[
+x \succeq y
+\quad \text{and} \quad
+y \succeq z
+\quad \Rightarrow \quad
+x \succeq z.
+\]
+
+This guarantees consistency of preferences.
+
+\subsection{Continuity}
+
+For all \(x^0 \in X\), the sets
+
+\[
+\{x : x \succeq x^0\}
+\]
+
+and
+
+\[
+\{x : x \preceq x^0\}
+\]
+
+are closed sets.
+
+Continuity implies that small changes in consumption bundles do not lead to abrupt jumps in preferences.
+
+\subsection{Weak Monotonicity}
+
+If
+
+\[
+x \ge y,
+\]
+
+then
+
+\[
+x \succeq y.
+\]
+
+That is, having at least as much of every good is at least as good.
+
+\subsection{Strong Monotonicity}
+
+If
+
+\[
+x \ge y
+\quad \text{and} \quad
+x \ne y,
+\]
+
+then
+
+\[
+x \succ y.
+\]
+
+This means that more of at least one good, while not having less of any other good, is strictly preferred.
+
+\subsection{Convexity}
+
+If \(x,y,z \in X\), and
+
+\[
+x \succeq z,
+\qquad
+y \succeq z,
+\]
+
+then
+
+\[
+\lambda x + (1-\lambda)y \succeq z
+\]
+
+for all
+
+\[
+0 \le \lambda \le 1.
+\]
+
+Convexity implies that averages are weakly preferred to extremes.
+
+\subsection{Strict Convexity}
+
+Given
+
+\[
+x \ne y
+\]
+
+and \(z \in X\), if
+
+\[
+x \succeq z,
+\qquad
+y \succeq z,
+\]
+
+then
+
+\[
+\lambda x + (1-\lambda)y \succ z
+\]
+
+for all
+
+\[
+0 < \lambda < 1.
+\]
+
+Strict convexity implies a strict preference for diversified bundles.
+
+\subsection{Violation of Transitivity}
+
+If transitivity is violated, indifference curves may intersect.
+
+Figure 2 shows the case where
+
+\[
+x \sim y,
+\qquad
+y \sim z,
+\]
+
+but
+
+\[
+z \succ x.
+\]
+
+This creates inconsistency in consumer preferences.
+
+\subsection{Interpretation of Continuity}
+
+Continuity implies that if
+
+\[
+\{x^i\}
+\]
+
+is a sequence of consumption bundles such that
+
+\[
+x^i \succeq x^0
+\]
+
+for all \(i\), and if
+
+\[
+x^i \to x,
+\]
+
+then
+
+\[
+x \succeq x^0.
+\]
+
+Thus, limits of preferred bundles remain preferred.
+
+
+
+then \(x^*\) is at least as good as \(x^0\).
+
+Lexicographic ordering shows an example where continuity is violated.  
+Denote
+\[
+x_1 = \text{wine},
+\qquad
+x_2 = \text{other goods}.
+\]
+
+Lexicographic ordering says that
+\[
+x \succeq x^0
+\]
+if either
+
+\[
+x_1 > x_1^0,
+\]
+
+or
+
+\[
+x_1 = x_1^0
+\quad \text{and} \quad
+x_2 \ge x_2^0.
+\]
+
+Figure 3 illustrates that continuity is violated in this case.
+
+Weak monotonicity implies that at least as much of everything is at least as good, while strong monotonicity implies that at least as much of every good, and strictly more of some good, is strictly better. In other words, goods are good.
+
+Strong monotonicity implies local nonsatiation. Given any \(x \in X\) and any \(\varepsilon > 0\), there exists some bundle \(y \in X\) such that
+
+\[
+\|x-y\| < \varepsilon
+\]
+
+and
+
+\[
+y \succ x.
+\]
+
+This assumption rules out thick indifference curves.
+
+By convexity, the upper contour set
+
+\[
+\{x \in X : x \succeq y\}
+\]
+
+is convex. This property is a generalization of the diminishing marginal rate of substitution. Moreover, strict convexity rules out flat spots of the indifference curve.
+
+\section{Existence of a Utility Function}
+
+Would there be a function
+
+\[
+u : X \to \mathbb{R}
+\]
+
+such that
+
+\[
+x \succ y
+\quad \Longleftrightarrow \quad
+u(x) > u(y)?
+\]
+
+
+
+
+\subsection{Existence of a Utility Function}
+
+\begin{theorem}
+Suppose preferences are complete, reflexive, transitive, continuous, and strongly monotonic. Then there exists a continuous utility function
+\[
+u : \mathbb{R}_+^N \to \mathbb{R}
+\]
+which represents those preferences.
+\end{theorem}
+
+\begin{proof}
+Let \(e\) be the vector in \(\mathbb{R}_+^N\) consisting of all ones, that is,
+\[
+e =
+\begin{pmatrix}
+1\\
+1\\
+\vdots\\
+1
+\end{pmatrix}.
+\]
+
+Given any vector \(x \in X\), let \(u(x)\) be the number such that
+\[
+x \sim u(x)e.
+\]
+
+We want to show that such a number exists and that it actually represents the preference relation.
+
+\medskip
+
+\noindent
+\textbf{Step 1. Existence.}
+
+Let
+\[
+B = \{t : te \succeq x\}
+\]
+and
+\[
+W = \{t : x \succeq te\}.
+\]
+
+By strong monotonicity, \(B\) is nonempty.  
+Also, \(W\) is nonempty since
+\[
+0 \in W.
+\]
+
+Continuity implies that both sets are closed. Therefore, there exists \(t_x\) such that
+\[
+t_x e \sim x.
+\]
+
+This proves existence.
+
+\medskip
+
+\noindent
+\textbf{Step 2. Representation.}
+
+We now show that this utility function actually represents the underlying preferences.
+
+Let
+\[
+u(x)=t_x,
+\qquad
+t_x e \sim x,
+\]
+and
+\[
+u(y)=t_y,
+\qquad
+t_y e \sim y.
+\]
+
+If
+\[
+t_x < t_y,
+\]
+then strong monotonicity implies that
+\[
+t_x e \prec t_y e.
+\]
+
+By transitivity,
+\[
+x \sim t_x e \prec t_y e \sim y.
+\]
+
+Therefore,
+\[
+x \prec y.
+\]
+
+Similarly, if
+\[
+x \prec y,
+\]
+then
+\[
+t_x e \prec t_y e,
+\]
+so that
+\[
+t_x < t_y.
+\]
+
+Hence,
+\[
+x \succeq y
+\quad \Longleftrightarrow \quad
+u(x) \ge u(y).
+\]
+
+Thus, \(u\) represents the preference relation.
+\end{proof}
+
+The utility function is not unique. If \(u(x)\) represents some preference relation \(\succeq\), and
+\[
+f : \mathbb{R} \to \mathbb{R}
+\]
+is a monotonic function, then
+\[
+f(u(x))
+\]
+will represent exactly the same preferences, since
+\[
+f(u(x)) \ge f(u(y))
+\quad \Longleftrightarrow \quad
+u(x) \ge u(y).
+\]
+
+Strict convexity implies that \(u(x)\) is a strictly quasiconcave function.
+
+\begin{remark}
+For any \(a,b \in \mathbb{R}\) such that
+\[
+a < b,
+\]
+there exists \(q \in \mathbb{Q}\) such that
+\[
+a < q < b.
+\]
+
+See Ok, E. A. (2007), \textit{Real Analysis with Economic Applications}, pp. 42--43.
+\end{remark}
+
+\begin{proposition}
+The lexicographic preference relation on, say,
+\[
+[0,1] \times [0,1]
+\]
+does not have a utility representation.
+\end{proposition}
+
+\begin{proof}
+Assume by contradiction that a function
+\[
+u : X \to \mathbb{R}
+\]
+represents the preference relation.
+
+For any
+\[
+a \in (0,1],
+\]
+we have
+\[
+(a,1) \succ (a,0).
+\]
+
+Thus,
+\[
+u(a,1) > u(a,0).
+\]
+
+Let \(q(a)\) be a rational number in the nonempty interval
+\[
+I_a = \bigl(u(a,0),u(a,1)\bigr).
+\]
+
+The function \(q\) is a function from \(\mathbb{R}\) into the set of rational numbers \(\mathbb{Q}\).
+
+It is a one-to-one function. To see this, suppose
+\[
+b > a.
+\]
+
+Then, under lexicographic preferences,
+\[
+(b,0) \succ (a,1).
+\]
+
+Therefore,
+\[
+u(b,0) > u(a,1).
+\]
+
+It follows that the intervals
+\[
+I_b = \bigl(u(b,0),u(b,1)\bigr)
+\]
+and
+\[
+I_a = \bigl(u(a,0),u(a,1)\bigr)
+\]
+are disjoint.
+
+Thus,
+\[
+q(a) \ne q(b).
+\]
+
+But \(\mathbb{Q}\) is countable while \(\mathbb{R}\) is uncountable. Hence, such a one-to-one function cannot exist.
+
+This is a contradiction. Therefore, the lexicographic preference relation does not have a utility representation.
+\end{proof}
+
+
+
+\section{Consumer Behavior}
+
+A consumer is assumed to maximize his or her preference or utility under the budget constraint. That is,
+
+\[
+\max_{x} \ u(x)
+\]
+
+subject to
+
+\[
+m - px \ge 0,
+\qquad
+x_i \ge 0,
+\qquad
+p_i > 0.
+\]
+
+Local nonsatiation implies that a utility-maximizing bundle must meet the budget constraint with equality. Therefore, the problem can be written as
+
+\[
+\max_{x} \ u(x)
+\]
+
+subject to
+
+\[
+m - px = 0.
+\]
+
+The solution to this problem is the ordinary, or Marshallian, demand function,
+
+\[
+x(p,m).
+\]
+
+The Lagrangian is
+
+\[
+\mathcal{L}
+=
+u(x) + \lambda(m-px).
+\]
+
+The first-order conditions are
+
+\[
+\frac{\partial \mathcal{L}}{\partial x_i}
+=
+\frac{\partial u(x)}{\partial x_i}
+-
+\lambda p_i
+=
+0,
+\qquad
+\forall i,
+\]
+
+and
+
+\[
+\frac{\partial \mathcal{L}}{\partial \lambda}
+=
+m-px
+=
+0.
+\]
+
+Let
+
+\[
+u_i
+=
+\frac{\partial u(x)}{\partial x_i}.
+\]
+
+Then the first-order conditions imply
+
+\[
+u_i = \lambda p_i,
+\qquad
+u_j = \lambda p_j.
+\]
+
+Therefore, at the solution,
+
+\[
+\frac{u_i}{u_j}
+=
+\frac{p_i}{p_j}.
+\]
+
+That is,
+
+\[
+MRS_{ij}
+=
+\frac{p_i}{p_j}.
+\]
+
+From the envelope theorem, we know that
+
+\[
+\lambda
+=
+\text{marginal utility of income}.
+\]
+
+The utility function \(u(x)\) is continuous by assumption. The budget set
+
+\[
+B
+=
+\{x : px \le m\}
+\]
+
+is closed and bounded if
+
+\[
+p_i > 0,
+\qquad
+\forall i.
+\]
+
+Therefore, by the Weierstrass theorem, a solution must exist.
+
+Theorem 17 of Chapter 1 has shown that there is a unique global inequality-constrained maximizer if the objective function is strictly quasiconcave and the constraint set is convex.
+
+By strict convexity of preferences, the utility function is strictly quasiconcave.
+
+We can show that the budget set
+
+\[
+B
+=
+\{x : px \le m\}
+\]
+
+is convex.
+
+Suppose both \(x^0\) and \(x^1\) belong to \(B\), and define
+
+\[
+x^2
+=
+\alpha x^0 + (1-\alpha)x^1,
+\qquad
+0 < \alpha < 1.
+\]
+
+Since
+
+\[
+x^0 \in B
+\quad \text{and} \quad
+x^1 \in B,
+\]
+
+we have
+
+\[
+px^0 \le m
+\]
+
+and
+
+\[
+px^1 \le m.
+\]
+
+Hence,
+
+\[
+\alpha px^0 \le \alpha m,
+\]
+
+and
+
+\[
+(1-\alpha)px^1 \le (1-\alpha)m.
+\]
+
+Adding the two inequalities gives
+
+\[
+\alpha px^0 + (1-\alpha)px^1
+\le
+\alpha m + (1-\alpha)m.
+\]
+
+Therefore,
+
+\[
+p\bigl(\alpha x^0 + (1-\alpha)x^1\bigr)
+\le
+m.
+\]
+
+Since
+
+\[
+x^2
+=
+\alpha x^0 + (1-\alpha)x^1,
+\]
+
+we obtain
+
+\[
+px^2 \le m.
+\]
+
+Thus,
+
+\[
+x^2 \in B.
+\]
+
+Therefore, the budget set \(B\) is convex.
+
+
+
+
+Furthermore,
+
+\[
+px^1 \le m
+\]
+
+and therefore
+
+\[
+(1-\alpha)px^1 \le (1-\alpha)m.
+\]
+
+Therefore,
+
+\[
+px^2
+=
+p\{\alpha x^0 + (1-\alpha)x^1\}
+=
+\alpha px^0 + (1-\alpha)px^1
+\le
+\alpha m + (1-\alpha)m
+=
+m.
+\]
+
+Hence,
+
+\[
+x^2 \in B.
+\]
+
+Thus, the budget set \(B\) is convex.
+
+\section{Ordinary Demand Functions}
+
+Ordinary demand functions \(x(p,m)\) are the solutions to the utility maximization problem:
+
+\[
+\max_x u(x)
+\]
+
+subject to
+
+\[
+m - px = 0.
+\]
+
+The ordinary demand function \(x(p,m)\) has the following three properties:
+
+\begin{enumerate}
+    \item homogeneity condition,
+    \item Engel aggregate condition,
+    \item Cournot aggregate condition.
+\end{enumerate}
+
+The second and third conditions are often called adding-up conditions.
+
+\subsection{Homogeneity Condition}
+
+Consider the problem
+
+\[
+\max_x u(x)
+\]
+
+subject to
+
+\[
+\theta m - \theta px = 0.
+\]
+
+This is exactly the same as the original problem
+
+\[
+\max_x u(x)
+\]
+
+subject to
+
+\[
+m - px = 0.
+\]
+
+That is,
+
+\[
+x(\theta p,\theta m)
+=
+\theta^0 x(p,m)
+=
+x(p,m).
+\]
+
+Therefore, ordinary demand functions are homogeneous of degree zero in prices and income.
+
+Define the price elasticity and income elasticity as
+
+\[
+\varepsilon_{ij}
+=
+\frac{\partial x_i}{\partial p_j}
+\frac{p_j}{x_i},
+\]
+
+and
+
+\[
+\eta_i
+=
+\frac{\partial x_i}{\partial m}
+\frac{m}{x_i}.
+\]
+
+Applying Euler's theorem gives the following homogeneity condition.
+
+\begin{condition}[Homogeneity]
+\[
+\sum_{j=1}^N \varepsilon_{ij} + \eta_i = 0.
+\]
+\end{condition}
+
+\begin{proof}
+By Euler's theorem, since \(x_i(p,m)\) is homogeneous of degree zero,
+
+\[
+0 \cdot x_i(p,m)
+=
+\frac{\partial x_i}{\partial p_1}p_1
++
+\cdots
++
+\frac{\partial x_i}{\partial p_N}p_N
++
+\frac{\partial x_i}{\partial m}m.
+\]
+
+Thus,
+
+\[
+0
+=
+\sum_{j=1}^N
+\frac{\partial x_i}{\partial p_j}p_j
++
+\frac{\partial x_i}{\partial m}m.
+\]
+
+Divide all terms by \(x_i\). Then we have
+
+\[
+0
+=
+\sum_{j=1}^N
+\frac{\partial x_i}{\partial p_j}
+\frac{p_j}{x_i}
++
+\frac{\partial x_i}{\partial m}
+\frac{m}{x_i}.
+\]
+
+Therefore,
+
+\[
+\sum_{j=1}^N \varepsilon_{ij} + \eta_i = 0.
+\]
+\end{proof}
+
+The homogeneity condition implies that the sum of all price elasticities and the income elasticity of demand is zero.
+
+\subsection{Engel Aggregate Condition}
+
+Denote \(\alpha_i\) as the budget share of the \(i\)-th good. That is,
+
+\[
+\alpha_i
+=
+\frac{p_i x_i(p,m)}{m}.
+\]
+
+Then we can show that the sum of the income elasticities weighted by budget shares must be one.
+
+\begin{condition}[Engel Aggregate]
+\[
+\sum_{i=1}^N \alpha_i \eta_i = 1.
+\]
+\end{condition}
+
+
+
+\begin{proof}
+Differentiate the identity
+\[
+\sum_{i=1}^N p_i x_i(p,m)=m
+\]
+with respect to \(m\). Then we have
+\[
+\sum_{i=1}^N p_i \frac{\partial x_i}{\partial m}=1.
+\]
+
+Multiplying and dividing by \(x_i\) and \(m\) gives
+\[
+\sum_{i=1}^N
+\frac{p_i x_i}{m}
+\frac{\partial x_i}{\partial m}
+\frac{m}{x_i}
+=
+1.
+\]
+
+Since
+\[
+\alpha_i
+=
+\frac{p_i x_i}{m}
+\]
+and
+\[
+\eta_i
+=
+\frac{\partial x_i}{\partial m}
+\frac{m}{x_i},
+\]
+we obtain
+\[
+\sum_{i=1}^N \alpha_i \eta_i = 1.
+\]
+\end{proof}
+
+\subsection{Cournot Aggregate Condition}
+
+\begin{condition}[Cournot Aggregate]
+\[
+\alpha_i + \sum_{j=1}^N \alpha_j \varepsilon_{ji}=0.
+\]
+\end{condition}
+
+\begin{proof}
+Differentiate the identity
+\[
+p_1x_1(p,m)+\cdots+p_Nx_N(p,m)=m
+\]
+with respect to \(p_1\). Then
+\[
+x_1
++
+p_1\frac{\partial x_1}{\partial p_1}
++
+\cdots
++
+p_N\frac{\partial x_N}{\partial p_1}
+=
+0.
+\]
+
+Equivalently,
+\[
+x_1
++
+\sum_{j=1}^N p_j\frac{\partial x_j}{\partial p_1}
+=
+0.
+\]
+
+Multiplying by \(p_1\), we get
+\[
+p_1x_1
++
+\sum_{j=1}^N p_jp_1\frac{\partial x_j}{\partial p_1}
+=
+0.
+\]
+
+Now multiply and divide the second term by \(x_j\):
+\[
+p_1x_1
++
+\sum_{j=1}^N
+p_jx_j
+\frac{\partial x_j}{\partial p_1}
+\frac{p_1}{x_j}
+=
+0.
+\]
+
+Dividing all terms by \(m\), we obtain
+\[
+\frac{p_1x_1}{m}
++
+\sum_{j=1}^N
+\frac{p_jx_j}{m}
+\frac{\partial x_j}{\partial p_1}
+\frac{p_1}{x_j}
+=
+0.
+\]
+
+Since
+\[
+\alpha_j
+=
+\frac{p_jx_j}{m}
+\]
+and
+\[
+\varepsilon_{j1}
+=
+\frac{\partial x_j}{\partial p_1}
+\frac{p_1}{x_j},
+\]
+we obtain
+\[
+\alpha_1+\sum_{j=1}^N \alpha_j\varepsilon_{j1}=0.
+\]
+
+More generally, differentiating the budget identity with respect to \(p_i\) gives
+\[
+\alpha_i+\sum_{j=1}^N \alpha_j\varepsilon_{ji}=0.
+\]
+\end{proof}
+
+When we estimate a set of ordinary demand functions using a real data set, we must impose the homogeneity and adding-up conditions.
+
+\subsection{Homothetic Utility Functions}
+
+A function \(u(x)\) is homothetic if
+\[
+u(x)=g(f(x)),
+\]
+where \(f(x)\) is homogeneous of degree one and \(g\) is a strictly increasing function.
+
+This utility function is very specific and imposes quite strong restrictions on the preference structure.
+
+\subsubsection{MRS Depends Only on Ratios}
+
+Take the total differentiation of
+\[
+u(x)=g(f(x_1,x_2)).
+\]
+
+Since \(g\) is strictly increasing, it does not change the marginal rate of substitution implied by \(f\). Therefore,
+\[
+MRS_{12}
+=
+\frac{u_1}{u_2}
+=
+\frac{g'(f)f_1}{g'(f)f_2}
+=
+\frac{f_1}{f_2}.
+\]
+
+By homogeneity of \(f\), we have
+\[
+f_i(\theta x_1,\theta x_2)=f_i(x_1,x_2),
+\]
+for \(i=1,2\).
+
+Therefore, choosing
+\[
+\theta=\frac{1}{x_2},
+\]
+we obtain
+\[
+f_i(x_1,x_2)
+=
+f_i\left(\frac{x_1}{x_2},1\right).
+\]
+
+Hence,
+\[
+MRS_{12}
+=
+\frac{f_1(x_1,x_2)}{f_2(x_1,x_2)}
+=
+\frac{
+f_1\left(\frac{x_1}{x_2},1\right)
+}{
+f_2\left(\frac{x_1}{x_2},1\right)
+}.
+\]
+
+Thus, \(MRS_{12}\) depends only on the ratio of \(x_1\) to \(x_2\). In turn, this implies that the MRSs on a ray from the origin are constant.
+
+\subsubsection{Income Expansion Path}
+
+Since \(MRS_{ij}\) depends only on the ratio
+\[
+\frac{x_i}{x_j},
+\]
+the ratio of chosen goods
+\[
+\frac{x_i}{x_j}
+\]
+remains constant even if income \(m\) changes, as long as the price ratio does not change.
+
+That is,
+\[
+x(p,\theta m)=\theta x(p,m).
+\]
+
+Therefore, ordinary demand is homogeneous of degree one in income.
+
+By Euler's theorem,
+\[
+x_i(p,m)
+=
+\frac{\partial x_i(p,m)}{\partial m}m.
+\]
+
+Dividing both sides by \(x_i(p,m)\), we obtain
+\[
+1
+=
+\frac{\partial x_i(p,m)}{\partial m}
+\frac{m}{x_i(p,m)}.
+\]
+
+Hence,
+\[
+\eta_i=1.
+\]
+
+Therefore, the income elasticity is one for every good.
+
+\subsubsection{Constant Budget Shares}
+
+From
+\[
+\alpha_i
+=
+\frac{p_i x_i(p,m)}{m},
+\]
+we derive
+\[
+\ln \alpha_i
+=
+\ln p_i
++
+\ln x_i(p,m)
+-
+\ln m.
+\]
+
+Differentiate with respect to \(\ln m\). Since prices are fixed,
+\[
+\frac{\partial \ln \alpha_i}{\partial \ln m}
+=
+\frac{\partial \ln x_i(p,m)}{\partial \ln m}
+-
+1.
+\]
+
+Because
+\[
+\frac{\partial \ln x_i(p,m)}{\partial \ln m}
+=
+\eta_i,
+\]
+we have
+\[
+\frac{\partial \ln \alpha_i}{\partial \ln m}
+=
+\eta_i-1.
+\]
+
+Since homotheticity implies
+\[
+\eta_i=1,
+\]
+we obtain
+\[
+\frac{\partial \ln \alpha_i}{\partial \ln m}=0.
+\]
+
+Thus, homotheticity restricts the budget share to be constant across each income level.
+
+
+
+\section{Indirect Utility Function}
+
+We can derive a new function by substituting the utility-maximizing ordinary demand functions into the utility function:
+
+\[
+u(x(p,m)) = v(p,m).
+\]
+
+This new function is called the \textbf{indirect utility function}. It represents the maximum utility that a consumer can obtain when she does her best given prices \(p\) and income \(m\).
+
+Thus,
+
+\[
+v(p,m)
+=
+\max_x u(x)
+\]
+
+subject to
+
+\[
+px \le m.
+\]
+
+The function \(v(p,m)\) is an indirect objective function.
+
+\subsection{Properties of the Indirect Utility Function}
+
+The indirect utility function \(v(p,m)\) satisfies the following properties.
+
+\begin{enumerate}
+    \item[\textbf{v.1}] 
+    \[
+    v(p,m)=v(\theta p,\theta m),
+    \qquad \theta>0.
+    \]
+    That is, \(v(p,m)\) is homogeneous of degree zero in \(p\) and \(m\).
+
+    \item[\textbf{v.2}]
+    If
+    \[
+    p' \ge p,
+    \]
+    then
+    \[
+    v(p',m) \le v(p,m).
+    \]
+    That is, \(v(p,m)\) is nonincreasing in prices.
+
+    \item[\textbf{v.3}]
+    If
+    \[
+    m' \ge m,
+    \]
+    then
+    \[
+    v(p,m') \ge v(p,m).
+    \]
+    That is, \(v(p,m)\) is nondecreasing in income.
+
+    \item[\textbf{v.4}]
+    The indirect utility function \(v(p,m)\) is quasiconvex in prices \(p\).
+
+    \item[\textbf{v.5}]
+    Roy's identity:
+    \[
+    x_i(p,m)
+    =
+    -
+    \frac{\frac{\partial v(p,m)}{\partial p_i}}
+    {\frac{\partial v(p,m)}{\partial m}},
+    \qquad
+    i=1,\dots,N.
+    \]
+\end{enumerate}
+
+\subsection{Proof of Properties}
+
+Since \(x(p,m)\) is homogeneous of degree zero in \((p,m)\), we have
+
+\[
+x(\theta p,\theta m)=x(p,m).
+\]
+
+Therefore,
+
+\[
+v(\theta p,\theta m)
+=
+u(x(\theta p,\theta m))
+=
+u(x(p,m))
+=
+v(p,m).
+\]
+
+This proves \textbf{v.1}.
+
+\medskip
+
+Let
+
+\[
+B=\{x:px\le m\}
+\]
+
+and
+
+\[
+B'=\{x:p'x\le m\}.
+\]
+
+If
+
+\[
+p'\ge p,
+\]
+
+then
+
+\[
+B'\subset B.
+\]
+
+Therefore, the maximum of \(u(x)\) over \(B\) is at least as large as the maximum of \(u(x)\) over \(B'\). Hence,
+
+\[
+v(p',m)\le v(p,m).
+\]
+
+This proves \textbf{v.2}.
+
+\medskip
+
+The proof of \textbf{v.3} is similar. If
+
+\[
+m'\ge m,
+\]
+
+then
+
+\[
+\{x:px\le m\}
+\subset
+\{x:px\le m'\}.
+\]
+
+Therefore, the feasible set expands as income increases. Hence,
+
+\[
+v(p,m')\ge v(p,m).
+\]
+
+This proves \textbf{v.3}.
+
+\medskip
+
+Now we prove \textbf{v.4}. Suppose \(p\) and \(p'\) are such that
+
+\[
+v(p,m)\le k
+\]
+
+and
+
+\[
+v(p',m)\le k.
+\]
+
+Let
+
+\[
+p''=\theta p+(1-\theta)p',
+\qquad
+0<\theta<1.
+\]
+
+Define
+
+\[
+B''=\{x:p''x\le m\}.
+\]
+
+We claim that
+
+\[
+B''\subset B\cup B',
+\]
+where
+
+\[
+B=\{x:px\le m\},
+\qquad
+B'=\{x:p'x\le m\}.
+\]
+
+Assume not. Then there exists some \(x\) such that
+
+\[
+p''x\le m,
+\]
+
+but
+
+\[
+px>m
+\]
+
+and
+
+\[
+p'x>m.
+\]
+
+Since
+
+\[
+p''x
+=
+\theta px+(1-\theta)p'x,
+\]
+
+we would have
+
+\[
+p''x
+=
+\theta px+(1-\theta)p'x
+>
+\theta m+(1-\theta)m
+=
+m.
+\]
+
+This contradicts
+
+\[
+p''x\le m.
+\]
+
+Therefore,
+
+\[
+B''\subset B\cup B'.
+\]
+
+The statement that \(v(p,m)\) is quasiconvex in \(p\) means that the lower contour set
+
+\[
+\{p:v(p,m)\le k\}
+\]
+
+is convex for all \(k\).
+
+Now,
+
+\[
+v(p'',m)
+=
+\max_{x\in B''}u(x).
+\]
+
+Since
+
+\[
+B''\subset B\cup B',
+\]
+
+we have
+
+\[
+\max_{x\in B''}u(x)
+\le
+\max_{x\in B\cup B'}u(x).
+\]
+
+Also,
+
+\[
+\max_{x\in B\cup B'}u(x)
+=
+\max
+\left\{
+\max_{x\in B}u(x),
+\max_{x\in B'}u(x)
+\right\}.
+\]
+
+Therefore,
+
+\[
+v(p'',m)
+\le
+\max\{v(p,m),v(p',m)\}.
+\]
+
+Since
+
+\[
+v(p,m)\le k
+\]
+
+and
+
+\[
+v(p',m)\le k,
+\]
+
+we obtain
+
+\[
+v(p'',m)\le k.
+\]
+
+Thus,
+
+\[
+p''\in \{p:v(p,m)\le k\}.
+\]
+
+Hence, the set
+
+\[
+\{p:v(p,m)\le k\}
+\]
+
+is convex, and \(v(p,m)\) is quasiconvex in prices.
+
+
+
+Since
+\[
+B''\subset B\cup B',
+\]
+we have
+\[
+\max_{x\in B''}u(x)
+\le
+\max_{x\in B\cup B'}u(x).
+\]
+
+Because
+\[
+v(p,m)\le k
+\]
+and
+\[
+v(p',m)\le k,
+\]
+it follows that
+\[
+\max_{x\in B\cup B'}u(x)\le k.
+\]
+
+Therefore,
+\[
+\max_{x\in B''}u(x)\le k.
+\]
+
+Hence,
+\[
+v(p'',m)\le k.
+\]
+
+This proves that \(v(p,m)\) is quasiconvex in prices.
+
+\medskip
+
+Applying the envelope theorem to the problem
+\[
+\mathcal{L}
+=
+u(x)+\lambda(m-px),
+\]
+yields
+\[
+\frac{\partial v(p,m)}{\partial p_i}
+=
+\frac{\partial \mathcal{L}}{\partial p_i}
+=
+-\lambda x_i,
+\qquad
+\forall i,
+\]
+and
+\[
+\frac{\partial v(p,m)}{\partial m}
+=
+\frac{\partial \mathcal{L}}{\partial m}
+=
+\lambda.
+\]
+
+Therefore,
+\[
+x_i(p,m)
+=
+-
+\frac{
+\partial v(p,m)/\partial p_i
+}{
+\partial v(p,m)/\partial m
+}.
+\]
+
+This is Roy's identity.
+
+\section{Expenditure Function}
+
+Consider the expenditure minimization problem with a utility restriction:
+
+\[
+\min_x px
+\]
+
+subject to
+
+\[
+u=u(x).
+\]
+
+The solution to this problem is the compensated, or Hicksian, demand function
+
+\[
+h(p,u).
+\]
+
+The Lagrangian is
+\[
+\mathcal{L}
+=
+px+\lambda(u-u(x)).
+\]
+
+The first-order conditions are
+\[
+\frac{\partial \mathcal{L}}{\partial x_i}
+=
+p_i-\lambda u_i
+=
+0,
+\qquad
+\forall i,
+\]
+and
+\[
+\frac{\partial \mathcal{L}}{\partial \lambda}
+=
+u-u(x)
+=
+0.
+\]
+
+The first-order conditions imply
+\[
+p_i=\lambda u_i,
+\qquad
+p_j=\lambda u_j.
+\]
+
+Therefore,
+\[
+\frac{p_i}{p_j}
+=
+\frac{u_i}{u_j}.
+\]
+
+Equivalently,
+\[
+MRS_{ij}
+=
+\frac{p_i}{p_j}.
+\]
+
+These are exactly the same conditions obtained from the utility maximization problem.
+
+Substituting the compensated demand functions into the expenditure yields the expenditure function:
+\[
+e(p,u)=ph(p,u).
+\]
+
+We have shown that \(v(p,m)\) is increasing in income \(m\). If preferences satisfy local nonsatiation, then \(v(p,m)\) is strictly increasing in \(m\). Therefore, we can invert the indirect utility function and solve for income as a function of utility.
+
+This inversion shows the minimum amount of income necessary to achieve utility level \(u\) at prices \(p\).
+
+Hence, the expenditure function is the inverse of the indirect utility function.
+
+\subsection{Properties of the Expenditure Function}
+
+The expenditure function \(e(p,u)\) and Hicksian demand \(h(p,u)\) satisfy the following properties.
+
+\begin{enumerate}
+    \item[\textbf{e.1}]
+    \[
+    h(\theta p,u)=h(p,u).
+    \]
+    Hicksian demand is homogeneous of degree zero in prices.
+
+    \item[\textbf{e.2}]
+    \[
+    e(\theta p,u)=\theta e(p,u).
+    \]
+    The expenditure function is homogeneous of degree one in prices.
+
+    \item[\textbf{e.3}]
+    \[
+    e(p,u)
+    \]
+    is increasing in utility \(u\) and nondecreasing in prices \(p\).
+
+    \item[\textbf{e.4}]
+    \[
+    e(p,u)
+    \]
+    is concave in prices.
+
+    \item[\textbf{e.5}] Shephard's lemma:
+    \[
+    \frac{\partial e(p,u)}{\partial p_i}
+    =
+    h_i(p,u),
+    \qquad
+    i=1,\dots,N.
+    \]
+
+    \item[\textbf{e.6}]
+    \[
+    \frac{\partial h_i(p,u)}{\partial p_i}
+    <0,
+    \qquad
+    \forall i.
+    \]
+
+    \item[\textbf{e.7}]
+    \[
+    \frac{\partial h_j(p,u)}{\partial p_i}
+    =
+    \frac{\partial h_i(p,u)}{\partial p_j}.
+    \]
+\end{enumerate}
+
+Note that the expenditure function \(e(p,u)\) has exactly the same properties as the cost function
+\[
+c(w,y).
+\]
+
+Hence, all properties of the expenditure function are proved in the same way as those for the cost function.
+
+
+
+
+\section{Some Important Identities}
+
+There are several identities that link all of the following functions:
+
+\[
+e(p,u), \qquad v(p,m), \qquad x(p,m), \qquad h(p,u).
+\]
+
+Consider the indirect utility maximization problem
+
+\[
+v(p,m^*)
+=
+\max_x u(x)
+\]
+
+subject to
+
+\[
+px=m^*.
+\]
+
+Let \(x^*\) be the solution to this problem, and let
+
+\[
+u^*=u(x^*).
+\]
+
+Now consider the expenditure minimization problem
+
+\[
+e(p,u^*)
+=
+\min_x px
+\]
+
+subject to
+
+\[
+u(x)=u^*.
+\]
+
+We know that the same \(x^*\) is also the solution to the expenditure minimization problem. Therefore, we derive the following identities.
+
+\begin{enumerate}
+    \item
+    \[
+    e(p,v(p,m))=m.
+    \]
+    The minimum expenditure necessary to reach utility \(v(p,m)\) is \(m\).
+
+    \item
+    \[
+    v(p,e(p,u))=u.
+    \]
+    The maximum utility from income \(e(p,u)\) is \(u\).
+
+    \item
+    \[
+    x_i(p,m)=h_i(p,v(p,m)).
+    \]
+    The Marshallian demand at income \(m\) is equal to the Hicksian demand at utility \(v(p,m)\).
+
+    \item
+    \[
+    h_i(p,u)=x_i(p,e(p,u)).
+    \]
+    The Hicksian demand at utility \(u\) is the same as the Marshallian demand at income \(e(p,u)\).
+\end{enumerate}
+
+\begin{exercise}[Dixit--Stiglitz Utility Function]
+
+Consider the utility function
+
+\[
+u=C_M
+=
+\left(
+\sum_i c_i^{1-\frac{1}{\sigma}}
+\right)^{\frac{1}{1-\frac{1}{\sigma}}},
+\qquad
+\sigma>1.
+\]
+
+The first-order conditions are
+
+\[
+C_M^{\frac{1}{\sigma}}
+c_j^{-\frac{1}{\sigma}}
+=
+\lambda p_j,
+\qquad
+\forall j.
+\]
+
+Show that the demands are
+
+\[
+c_j
+=
+\frac{p_j^{-\sigma}}{\sum_i p_i^{1-\sigma}}m,
+\qquad
+\forall j,
+\]
+
+and
+
+\[
+v(p,m)
+=
+\frac{m}{P_M},
+\]
+
+where
+
+\[
+P_M
+=
+\left(
+\sum_i p_i^{1-\sigma}
+\right)^{\frac{1}{1-\sigma}}
+\]
+
+is the price index.
+
+This CES utility function is often called \textbf{love of variety} preferences.
+
+Show that adding a new product increases utility if prices of the existing varieties are unchanged.
+\end{exercise}
+
+\begin{exercise}
+Derive Roy's identity from the duality identity
+
+\[
+v(p,e(p,u))=u.
+\]
+\end{exercise}
+
+\section{Comparative Statics: Slutsky Equation}
+
+The following Slutsky equation decomposes the total effect of a price change into the substitution effect and the income effect:
+
+\[
+\frac{\partial x_j(p,m)}{\partial p_i}
+=
+\frac{\partial h_j(p,v(p,m))}{\partial p_i}
+-
+\frac{\partial x_j(p,m)}{\partial m}x_i(p,m).
+\]
+
+\begin{proof}
+Differentiate both sides of the identity
+
+\[
+x_j(p,e(p,u))=h_j(p,u)
+\]
+
+with respect to \(p_i\). Then
+
+\[
+\frac{\partial x_j}{\partial p_i}
++
+\frac{\partial x_j}{\partial m}
+\frac{\partial e}{\partial p_i}
+=
+\frac{\partial h_j}{\partial p_i}.
+\]
+
+By Shephard's lemma,
+
+\[
+\frac{\partial e}{\partial p_i}
+=
+h_i(p,u).
+\]
+
+At the utility level generated by income \(m\),
+
+\[
+u=v(p,m),
+\]
+
+we have
+
+\[
+h_i(p,v(p,m))=x_i(p,m).
+\]
+
+Thus,
+
+\[
+\frac{\partial x_j(p,m)}{\partial p_i}
++
+\frac{\partial x_j(p,m)}{\partial m}x_i(p,m)
+=
+\frac{\partial h_j(p,v(p,m))}{\partial p_i}.
+\]
+
+Rearranging gives
+
+\[
+\frac{\partial x_j(p,m)}{\partial p_i}
+=
+\frac{\partial h_j(p,v(p,m))}{\partial p_i}
+-
+\frac{\partial x_j(p,m)}{\partial m}x_i(p,m).
+\]
+\end{proof}
+
+By the Slutsky equation,
+
+\[
+\frac{\partial h_j(p,v(p,m))}{\partial p_i}
+\]
+
+can be calculated using observable terms.
+
+When \(i=j\), we have
+
+\[
+\frac{\partial x_i(p,m)}{\partial p_i}
+=
+\frac{\partial h_i(p,u)}{\partial p_i}
+-
+\frac{\partial x_i(p,m)}{\partial m}x_i(p,m).
+\]
+
+Equivalently,
+
+\[
+\frac{\partial h_i(p,u)}{\partial p_i}
+=
+\frac{\partial x_i(p,m)}{\partial p_i}
++
+\frac{\partial x_i(p,m)}{\partial m}x_i(p,m).
+\]
+
+For a normal good,
+
+\[
+\frac{\partial x_i(p,m)}{\partial m}>0.
+\]
+
+Therefore,
+
+\[
+\left|
+\frac{\partial h_i(p,u)}{\partial p_i}
+\right|
+<
+\left|
+\frac{\partial x_i(p,m)}{\partial p_i}
+\right|.
+\]
+
+Hence, \(h_i(p,u)\) is steeper than \(x_i(p,m)\).
+
+
+
+
+\[
+\frac{\partial h_i(p,u)}{\partial p_i}
+\]
+represents the substitution effect, while
+
+\[
+\frac{\partial x_i(p,m)}{\partial p_i}
+\]
+represents the sum of the substitution effect and the income effect.
+
+In Figure 6, the move from \(A\) to \(C\) is due to the substitution effect, while the move from \(C\) to \(B\) represents the income effect.
+
+\medskip
+
+We can derive the Slutsky equation using the first-order conditions of the utility maximization or expenditure minimization problem.
+
+Consider the problem
+
+\[
+\mathcal{L}
+=
+u(x_1,x_2)
++
+\lambda(m-p_1x_1-p_2x_2).
+\]
+
+The first-order conditions are
+
+\[
+u_1-\lambda p_1=0,
+\]
+
+\[
+u_2-\lambda p_2=0,
+\]
+
+and
+
+\[
+m-p_1x_1-p_2x_2=0.
+\]
+
+Take the total differentiation of these first-order conditions:
+
+\[
+u_{11}dx_1+u_{12}dx_2-\lambda dp_1-p_1d\lambda=0,
+\]
+
+\[
+u_{21}dx_1+u_{22}dx_2-\lambda dp_2-p_2d\lambda=0,
+\]
+
+\[
+dm-p_1dx_1-p_2dx_2-x_1dp_1-x_2dp_2=0.
+\]
+
+Equivalently,
+
+\[
+\begin{bmatrix}
+u_{11} & u_{12} & -p_1 \\
+u_{21} & u_{22} & -p_2 \\
+-p_1 & -p_2 & 0
+\end{bmatrix}
+\begin{bmatrix}
+dx_1 \\
+dx_2 \\
+d\lambda
+\end{bmatrix}
+=
+\begin{bmatrix}
+\lambda dp_1 \\
+\lambda dp_2 \\
+-dm+x_1dp_1+x_2dp_2
+\end{bmatrix}.
+\]
+
+If we want to know about
+
+\[
+\frac{dx_1}{dp_1}
+\quad \text{and} \quad
+\frac{dx_2}{dp_1},
+\]
+
+set
+
+\[
+dp_2=0,
+\qquad
+dm=0.
+\]
+
+Then
+
+\[
+\begin{bmatrix}
+u_{11} & u_{12} & -p_1 \\
+u_{21} & u_{22} & -p_2 \\
+-p_1 & -p_2 & 0
+\end{bmatrix}
+\begin{bmatrix}
+\dfrac{dx_1}{dp_1} \\
+\dfrac{dx_2}{dp_1} \\
+\dfrac{d\lambda}{dp_1}
+\end{bmatrix}
+=
+\begin{bmatrix}
+\lambda \\
+0 \\
+x_1
+\end{bmatrix}.
+\]
+
+By Cramer's rule, we obtain comparative statics formulas for the demand responses.
+
+
+
+
+
+\[
+\frac{\partial x_1}{\partial p_1}
+=
+\frac{1}{|H|}
+\begin{vmatrix}
+\lambda & u_{12} & -p_1 \\
+0 & u_{22} & -p_2 \\
+x_1 & -p_2 & 0
+\end{vmatrix}.
+\]
+
+\[
+\frac{\partial x_1}{\partial p_1}
+=
+\frac{\lambda}{|H|}
+\begin{vmatrix}
+u_{22} & -p_2 \\
+-p_2 & 0
+\end{vmatrix}
++
+\frac{x_1}{|H|}
+\begin{vmatrix}
+u_{12} & -p_1 \\
+u_{22} & -p_2
+\end{vmatrix}.
+\]
+
+where
+\[
+|H|
+=
+\begin{vmatrix}
+u_{11} & u_{12} & -p_1 \\
+u_{21} & u_{22} & -p_2 \\
+-p_1 & -p_2 & 0
+\end{vmatrix}.
+\]
+
+Now differentiate the first-order conditions with respect to income \(m\). Then we have
+\[
+\begin{bmatrix}
+u_{11} & u_{12} & -p_1 \\
+u_{21} & u_{22} & -p_2 \\
+-p_1 & -p_2 & 0
+\end{bmatrix}
+\begin{bmatrix}
+dx_1/dm \\
+dx_2/dm \\
+d\lambda/dm
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\
+0 \\
+-1
+\end{bmatrix}.
+\]
+
+Therefore,
+\[
+\frac{\partial x_1}{\partial m}
+=
+\frac{1}{|H|}
+\begin{vmatrix}
+0 & u_{12} & -p_1 \\
+0 & u_{22} & -p_2 \\
+-1 & -p_2 & 0
+\end{vmatrix}
+=
+-\frac{1}{|H|}
+\begin{vmatrix}
+u_{12} & -p_1 \\
+u_{22} & -p_2
+\end{vmatrix}.
+\]
+
+Hence,
+\[
+\frac{\partial x_1}{\partial p_1}
+=
+\frac{\lambda}{|H|}
+\begin{vmatrix}
+u_{22} & -p_2 \\
+-p_2 & 0
+\end{vmatrix}
+-
+\frac{\partial x_1}{\partial m}x_1.
+\]
+
+From the expenditure minimization problem, we can show that
+\[
+\frac{\lambda}{|H|}
+\begin{vmatrix}
+u_{22} & -p_2 \\
+-p_2 & 0
+\end{vmatrix}
+=
+\frac{\partial h_1}{\partial p_1}.
+\]
+
+Therefore,
+\[
+\frac{\partial x_1}{\partial p_1}
+=
+\frac{\partial h_1}{\partial p_1}
+-
+\frac{\partial x_1}{\partial m}x_1,
+\]
+which is the Slutsky equation.
+
+\paragraph{Example 1.}
+A firm has a production function
+\[
+y=f(x_1,x_2).
+\]
+
+The price of \(x_1\) is \(w\), and the price of output \(y\) is \(p\). The amount of \(x_2\) is fixed at \(\bar{x}_2\).
+
+We want to know the impact of an increase in \(x_2\) on the optimal use of \(x_1\).
+
+The problem is
+\[
+\mathcal{L}
+=
+pf(x_1,x_2)
+-
+wx_1
++
+\lambda(\bar{x}_2-x_2).
+\]
+
+The first-order conditions are
+\[
+L_1=pf_1-w=0,
+\qquad
+L_2=pf_2-\lambda=0,
+\qquad
+L_{\lambda}=\bar{x}_2-x_2=0.
+\]
+
+The second-order condition is
+\[
+\begin{vmatrix}
+L_{11} & L_{12} & -g_1 \\
+L_{21} & L_{22} & -g_2 \\
+-g_1 & -g_2 & 0
+\end{vmatrix}
+=
+\begin{vmatrix}
+pf_{11} & pf_{12} & 0 \\
+pf_{21} & pf_{22} & -1 \\
+0 & -1 & 0
+\end{vmatrix}
+=
+-pf_{11}>0,
+\]
+since \(f_{11}<0\).
+
+Note that
+\[
+pf_1x_1=wx_1,
+\qquad
+pf_2x_2=\lambda x_2.
+\]
+
+Hence,
+\[
+p(f_1x_1+f_2x_2)
+=
+pf
+=
+wx_1+\lambda x_2.
+\]
+
+This implies that revenue is equal to cost evaluated at shadow prices.
+
+Now differentiate the first-order conditions:
+\[
+pf_{11}dx_1+pf_{12}dx_2-dw=0,
+\]
+\[
+pf_{21}dx_1+pf_{22}dx_2-d\lambda=0,
+\]
+and
+\[
+d\bar{x}_2-dx_2=0.
+\]
+
+Thus,
+\[
+\begin{bmatrix}
+pf_{11} & pf_{12} & 0 \\
+pf_{21} & pf_{22} & -1 \\
+0 & -1 & 0
+\end{bmatrix}
+\begin{bmatrix}
+dx_1/d\bar{x}_2 \\
+dx_2/d\bar{x}_2 \\
+d\lambda/d\bar{x}_2
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\
+0 \\
+-1
+\end{bmatrix}.
+\]
+
+Therefore,
+\[
+\frac{dx_1}{d\bar{x}_2}
+=
+\frac{1}{|H|}
+\begin{vmatrix}
+0 & pf_{12} & 0 \\
+0 & pf_{22} & -1 \\
+-1 & -1 & 0
+\end{vmatrix}
+=
+-\frac{1}{|H|}(-pf_{12})
+=
+-\frac{pf_{12}}{pf_{11}}.
+\]
+
+The sign depends on the sign of \(f_{12}\).
+
+Also,
+\[
+\frac{d\lambda}{d\bar{x}_2}
+=
+\frac{1}{|H|}
+\begin{vmatrix}
+pf_{11} & pf_{12} & 0 \\
+pf_{21} & pf_{22} & 0 \\
+0 & -1 & -1
+\end{vmatrix}.
+\]
+
+Hence,
+\[
+\frac{d\lambda}{d\bar{x}_2}
+=
+-\frac{1}{|H|}
+\begin{vmatrix}
+pf_{11} & pf_{12} \\
+pf_{21} & pf_{22}
+\end{vmatrix}
+=
+-\frac{
+p^2(f_{11}f_{22}-f_{12}^2)
+}{
+-pf_{11}
+}.
+\]
+
+The sign depends on the curvature assumptions on the production function.
+
+
+
+\begin{exercise}
+Define
+\[
+s_{ij}
+=
+\frac{\partial h_i(p,u)}{\partial p_j}.
+\]
+
+Use the homogeneity of degree zero of the Hicksian demands to prove that
+\[
+\sum_k s_{ik}p_k=0.
+\]
+\end{exercise}
+
+\begin{exercise}
+Use the Slutsky equation together with Cournot aggregation to show that
+\[
+\sum_k s_{ki}p_k=0.
+\]
+\end{exercise}
+
+\section{The Integrability Problem}
+
+It is easy to derive \(v(p,m)\) and \(e(p,u)\) from \(u(x)\).
+
+To get \(v(p,m)\), we solve the utility maximization problem and derive the ordinary demand function
+\[
+x(p,m).
+\]
+
+We can get \(v(p,m)\) by substituting \(x(p,m)\) into the utility function:
+\[
+v(p,m)=u(x(p,m)).
+\]
+
+Similarly, we can derive \(e(p,u)\) through the expenditure minimization problem.
+
+Figure 8 illustrates how to get the other relations.
+
+\begin{exercise}
+Consider an expenditure function
+\[
+\ln e(p,u)
+=
+\sum_i \alpha_i \ln p_i
++
+u\prod_i p_i^{\beta_i}.
+\]
+
+Derive the corresponding Hicksian demands, the indirect utility function, and the Marshallian demands.
+
+What conditions should the parameters \(\alpha_i\) and \(\beta_i\) satisfy?
+\end{exercise}
+
+Suppose that we are given a system of demand functions
+\[
+x(p,m).
+\]
+
+Is there a utility function from which these demand functions can be derived?
+
+
+
+derived? This is the question of the \textbf{integrability problem}.
+
+Roy's identity states that
+\[
+x_i(p,m)
+=
+-
+\frac{
+\partial v(p,m)/\partial p_i
+}{
+\partial v(p,m)/\partial m
+}.
+\]
+
+The question is whether it is possible to solve this system of partial differential equations to obtain \(v(p,m)\).
+
+If it is possible to derive \(e(p,u)\) from \(x(p,m)\), then it is possible to get \(v(p,m)\) by inverting \(e(p,u)\).
+
+Suppose we are given
+\[
+x_i(p,m),
+\qquad
+i=1,\dots,N.
+\]
+
+Pick some point
+\[
+x^0=x(p^0,m^0)
+\]
+and assign it utility level \(u^0\). Then we have the following system of partial differential equations:
+\[
+\frac{\partial e(p,u^0)}{\partial p_i}
+=
+h_i(p,u^0)
+=
+x_i(p,e(p,u^0)),
+\qquad
+i=1,\dots,N.
+\]
+
+The initial condition is
+\[
+e(p^0,u^0)=p^0x(p^0,m^0).
+\]
+
+Note that a system of partial differential equations
+\[
+\frac{\partial f(p)}{\partial p_i}
+=
+g_i(p),
+\qquad
+i=1,\dots,N,
+\]
+has a local solution if and only if
+\[
+\frac{\partial g_i(p)}{\partial p_j}
+=
+\frac{\partial g_j(p)}{\partial p_i},
+\qquad
+\forall i,j.
+\]
+
+Therefore,
+\[
+\frac{\partial h_i(p,u)}{\partial p_j}
+=
+\frac{\partial x_i(p,m)}{\partial p_j}
++
+\frac{\partial x_i(p,m)}{\partial m}x_j(p,m)
+\]
+must be symmetric for integration.
+
+This is just the \textbf{Slutsky restriction}.
+
+Furthermore, the matrix
+\[
+\left[
+\frac{\partial h_i(p,u)}{\partial p_j}
+\right]
+\]
+must be negative semidefinite, since \(e(p,u)\) is concave in prices.
+
+That is, if a given set of demand functions \(x_i(p,m)\) has a symmetric, negative semidefinite substitution matrix, then we can solve the system of differential equations to find an expenditure function \(e(p,u^0)\) consistent with \(x_i(p,m)\).
+
+\subsection{Example: Cobb--Douglas Demand}
+
+Suppose
+\[
+x_i(p,m)
+=
+\frac{\alpha_i m}{A p_i},
+\]
+where
+\[
+A=\sum_{i=1}^N \alpha_i.
+\]
+
+Then
+\[
+\frac{\partial e(p,u)}{\partial p_i}
+=
+x_i(p,e(p,u))
+=
+\frac{\alpha_i e(p,u)}{A p_i},
+\qquad
+i=1,\dots,N.
+\]
+
+Therefore,
+\[
+\frac{\partial \ln e(p,u)}{\partial p_i}
+=
+\frac{\alpha_i}{A p_i}.
+\]
+
+The \(i\)-th equation can be integrated with respect to \(p_i\) to obtain
+\[
+\ln e(p,u)
+=
+\frac{\alpha_i}{A}\ln p_i
++
+c_i,
+\]
+where \(c_i\) does not depend on \(p_i\), but may depend on \(p_j\) for \(j\ne i\).
+
+Combining these equations gives
+\[
+\ln e(p,u)
+=
+\sum_i \frac{\alpha_i}{A}\ln p_i
++
+c,
+\]
+where \(c\) is independent of all prices.
+
+For each \(u\), take
+\[
+p^*=(1,\dots,1)
+\]
+and use the boundary condition
+\[
+e(p^*,u)=u.
+\]
+
+Then
+\[
+c=\ln u.
+\]
+
+Therefore,
+\[
+\ln e(p,u)
+=
+\sum_i \frac{\alpha_i}{A}\ln p_i
++
+\ln u.
+\]
+
+Inverting this equation gives
+\[
+\ln v(p,m)
+=
+-
+\sum_i \frac{\alpha_i}{A}\ln p_i
++
+\ln m.
+\]
+
+\subsection{Example: Log-Linear Demand System}
+
+Many empirical works on demand have estimated the following log-linear ordinary demand functions:
+\[
+\ln x_1
+=
+\alpha_1
++
+\beta_{11}\ln p_1
++
+\beta_{12}\ln p_2
++
+\gamma_1\ln m,
+\]
+and
+\[
+\ln x_2
+=
+\alpha_2
++
+\beta_{21}\ln p_1
++
+\beta_{22}\ln p_2
++
+\gamma_2\ln m.
+\]
+
+Does this demand system satisfy the integrability conditions?
+
+Consider the Slutsky equation:
+\[
+\frac{\partial h_i}{\partial p_j}
+=
+\frac{\partial x_i}{\partial p_j}
++
+\frac{\partial x_i}{\partial m}x_j.
+\]
+
+Since
+\[
+\frac{\partial x_i}{\partial p_j}
+=
+\frac{\partial \ln x_i}{\partial \ln p_j}
+\frac{x_i}{p_j}
+=
+\beta_{ij}\frac{x_i}{p_j},
+\]
+and
+\[
+\frac{\partial x_i}{\partial m}
+=
+\frac{\partial \ln x_i}{\partial \ln m}
+\frac{x_i}{m}
+=
+\gamma_i\frac{x_i}{m},
+\]
+the Slutsky equation implies
+\[
+\frac{\partial h_1}{\partial p_2}
+=
+\beta_{12}\frac{x_1}{p_2}
++
+\gamma_1\frac{x_1x_2}{m},
+\]
+and
+\[
+\frac{\partial h_2}{\partial p_1}
+=
+\beta_{21}\frac{x_2}{p_1}
++
+\gamma_2\frac{x_2x_1}{m}.
+\]
+
+Integrability requires symmetry:
+\[
+\frac{\partial h_1}{\partial p_2}
+=
+\frac{\partial h_2}{\partial p_1}.
+\]
+
+Thus,
+\[
+\beta_{12}\frac{x_1}{p_2}
++
+\gamma_1\frac{x_1x_2}{m}
+=
+\beta_{21}\frac{x_2}{p_1}
++
+\gamma_2\frac{x_1x_2}{m}.
+\]
+
+If
+\[
+\gamma_1=\gamma_2
+\]
+and
+\[
+\beta_{12}=\beta_{21}=0,
+\]
+then this condition is satisfied regardless of the size of \(x_1\) and \(x_2\).
+
+The Cournot aggregate condition requires
+\[
+s_1+s_1\beta_{11}+(1-s_1)\beta_{21}=0,
+\]
+where \(s_1\) is the budget share of \(x_1\). Therefore,
+\[
+\beta_{11}=-1.
+\]
+
+Likewise,
+\[
+\beta_{22}=-1.
+\]
+
+Homogeneity then implies
+\[
+\gamma_1=\gamma_2=1.
+\]
+
+Thus, we obtain
+\[
+\ln x_i
+=
+\alpha_i+\ln\left(\frac{m}{p_i}\right),
+\]
+or equivalently,
+\[
+\alpha_i
+=
+\ln\left(\frac{p_ix_i}{m}\right).
+\]
+
+Hence, there is nothing to estimate.
+
+
+
+
+\subsection{Additional Dual Relations}
+
+We can derive some additional dual relations.
+
+Given \(p^0\) and \(u^0\), construct the half-space in the consumption set:
+\[
+A(p^0,u^0)
+=
+\left\{
+x \in \mathbb{R}_+^N
+\;\middle|\;
+p^0x \ge e(p^0,u^0)
+\right\}.
+\]
+
+Proceed similarly for all price vectors and form the infinite intersection of these half-spaces:
+\[
+A(u^0)
+=
+\bigcap_{p>0} A(p,u^0).
+\]
+
+Equivalently,
+\[
+A(u^0)
+=
+\left\{
+x \in \mathbb{R}_+^N
+\;\middle|\;
+px \ge e(p,u^0)
+\text{ for all } p>0
+\right\}.
+\]
+
+\begin{theorem}
+Let \(e(p,u)\) be a function satisfying all properties of an expenditure function, and let \(A(u)\) be defined as above.
+
+Define the function
+\[
+u:\mathbb{R}_+^N \to \mathbb{R}_+
+\]
+by
+\[
+u(x)
+=
+\max
+\left\{
+u \ge 0
+\;\middle|\;
+x \in A(u)
+\right\}.
+\]
+
+Equivalently,
+\[
+u(x)
+=
+\max
+\left\{
+u \ge 0
+\;\middle|\;
+px \ge e(p,u)
+\text{ for all } p>0
+\right\}.
+\]
+
+Then \(u(x)\) is increasing and quasiconcave.
+\end{theorem}
+
+Suppose that \(u(x)\) generates the indirect utility function \(v(p,m)\). Then
+\[
+v(p,px)\ge u(x)
+\]
+for every \(p>0\).
+
+Moreover, there exists some price vector for which equality holds.
+
+\begin{theorem}
+Suppose that \(u(x)\) is quasiconcave and differentiable with strictly positive partial derivatives.
+
+Then for all
+\[
+x\in \mathbb{R}_+^N,
+\]
+the indirect utility function generated by \(u(x)\),
+\[
+v(p,px),
+\]
+attains a minimum with respect to \(p\), and
+\[
+u(x)
+=
+\min_{p\in \mathbb{R}_{++}^N} v(p,px).
+\]
+\end{theorem}
+
+\begin{proof}
+Consider
+\[
+x^0>0,
+\]
+and define
+\[
+p^0=\nabla u(x^0).
+\]
+
+By assumption,
+\[
+p^0>0.
+\]
+
+Let
+\[
+\lambda^0=1,
+\qquad
+m^0=p^0x^0.
+\]
+
+Then
+\[
+\frac{\partial u(x^0)}{\partial x_i}
+-
+\lambda^0 p_i^0
+=
+0,
+\qquad
+i=1,\dots,N.
+\]
+
+
+
+
+
+\[
+i=1,\dots,N,
+\qquad
+p^0x^0=m^0.
+\]
+
+Consequently, \((x^0,\lambda^0)\) satisfies the first-order conditions of
+\[
+\max_x u(x)
+\]
+subject to
+\[
+p^0x=m^0.
+\]
+
+Because \(u(x)\) is quasiconcave, these first-order conditions are sufficient for utility maximization. Therefore,
+\[
+u(x^0)
+=
+v(p^0,m^0)
+=
+v(p^0,p^0x^0).
+\]
+
+Since \(x^0\) was arbitrary, we conclude that for every \(x>0\), there exists some \(p>0\) such that
+\[
+u(x)=v(p,px).
+\]
+\end{proof}
+
+Because \(v(p,m)\) is homogeneous of degree zero in \((p,m)\), we have
+\[
+v(p,px)
+=
+v(\tilde p,1),
+\qquad
+\tilde p=\frac{p}{px},
+\]
+whenever \(px>0\).
+
+Consequently, if \(x>0\) and \(p^*>0\) minimizes \(v(p,px)\) over \(p\in \mathbb{R}_{++}^N\), then
+\[
+\tilde p
+=
+\frac{p^*}{p^*x}
+\]
+minimizes \(v(p,1)\) subject to \(px=1\).
+
+Moreover,
+\[
+v(p^*,p^*x)
+=
+v(\tilde p,1).
+\]
+
+Thus, we may rewrite the theorem as
+\[
+u(x)
+=
+\min
+\left\{
+v(p,1)
+:
+p\in \mathbb{R}_{++}^N,
+\;
+px=1
+\right\}.
+\]
+
+\subsection{Example: Recovering CES Utility}
+
+Assume
+\[
+v(p,m)
+=
+m(p_1+p_2)^{-1/r}.
+\]
+
+We want to solve
+\[
+u(x_1,x_2)
+=
+\min
+\left\{
+(p_1+p_2)^{-1/r}
+:
+p_1x_1+p_2x_2=1
+\right\}.
+\]
+
+The Lagrangian is
+\[
+\mathcal{L}
+=
+(p_1+p_2)^{-1/r}
++
+\lambda(1-p_1x_1-p_2x_2).
+\]
+
+The first-order conditions are
+\[
+-\frac{1}{r}(p_1+p_2)^{-1/r-1}
+-
+\lambda x_1
+=
+0,
+\]
+\[
+-\frac{1}{r}(p_1+p_2)^{-1/r-1}
+-
+\lambda x_2
+=
+0,
+\]
+and
+\[
+1-p_1x_1-p_2x_2=0.
+\]
+
+Eliminating \(\lambda\) gives
+\[
+\frac{p_1}{p_2}
+=
+\left(
+\frac{x_1}{x_2}
+\right)^{1/(r-1)}.
+\]
+
+Define
+\[
+\sigma=\frac{1}{r-1},
+\qquad
+\rho=\frac{r}{r-1}.
+\]
+
+Substituting the first-order condition into the constraint gives
+\[
+p_1
+=
+\frac{x_1^\sigma}{x_1^\rho+x_2^\rho},
+\qquad
+p_2
+=
+\frac{x_2^\sigma}{x_1^\rho+x_2^\rho}.
+\]
+
+Substituting these into the objective function yields
+\[
+u(x_1,x_2)
+=
+(x_1^\rho+x_2^\rho)^{1/\rho}.
+\]
+
+This is the CES direct utility function.
+
+\paragraph{Exercise.}
+Consider the following Marshallian demand system:
+\[
+x_1
+=
+\frac{p_2+m}{2p_1},
+\qquad
+x_2
+=
+\frac{p_1+m}{2p_2}.
+\]
+
+\begin{enumerate}
+    \item[(A)] Verify that the system satisfies the homogeneity condition and the adding-up property.
+    \item[(B)] How do you know that there exists a utility function corresponding to this demand system?
+\end{enumerate}
+
+\section{Aggregate Demand and Aggregate Wealth}
+
+Suppose there are \(I\) consumers whose income levels are
+\[
+(m_1,\dots,m_I).
+\]
+
+Aggregate demand can be written as
+\[
+x(p,m_1,\dots,m_I)
+=
+\sum_{i=1}^I x_i(p,m_i).
+\]
+
+Thus, aggregate demand depends not only on prices but also on the distribution of income across consumers.
+
+The question is whether we are
+
+
+justified in writing aggregate demand in the simpler form
+\[
+x\left(p,\sum_{i=1}^I m_i\right),
+\]
+where aggregate demand depends only on aggregate income
+\[
+\sum_{i=1}^I m_i.
+\]
+
+For aggregation, we must have
+\[
+\sum_{i=1}^I x_i(p,m_i)
+=
+\sum_{i=1}^I x_i(p,m_i')
+\]
+for any income distributions
+\[
+(m_1,\dots,m_I)
+\quad \text{and} \quad
+(m_1',\dots,m_I')
+\]
+such that
+\[
+\sum_{i=1}^I m_i
+=
+\sum_{i=1}^I m_i'.
+\]
+
+Starting from some initial distribution
+\[
+(m_1,\dots,m_I),
+\]
+consider a differential change in income
+\[
+(dm_1,\dots,dm_I)\in \mathbb{R}^I
+\]
+satisfying
+\[
+\sum_{i=1}^I dm_i=0.
+\]
+
+Then, for every good \(k=1,\dots,N\), we must have
+\[
+\sum_{i=1}^I
+\frac{\partial x_k^i(p,m_i)}{\partial m_i}
+dm_i
+=
+0.
+\]
+
+This can be true if and only if
+\[
+\frac{\partial x_k^i(p,m_i)}{\partial m_i}
+=
+\frac{\partial x_k^j(p,m_j)}{\partial m_j}
+\]
+for every good \(k\), for any two individuals \(i\) and \(j\), and for all income distributions
+\[
+(m_1,\dots,m_I).
+\]
+
+In turn, this holds if all consumers' income expansion paths are parallel and straight lines.
+
+\begin{theorem}
+A necessary and sufficient condition for the set of consumers to exhibit parallel and straight income expansion paths at any price vector \(p\) is that preferences admit indirect utility functions of the Gorman polar form:
+\[
+v_i(p,m_i)
+=
+a_i(p)+b(p)m_i.
+\]
+\end{theorem}
+
+\begin{proof}
+We prove sufficiency only.
+
+Suppose
+\[
+v_i(p,m_i)
+=
+a_i(p)+b(p)m_i.
+\]
+
+By Roy's identity,
+\[
+x_k^i(p,m_i)
+=
+-
+\frac{
+\partial v_i(p,m_i)/\partial p_k
+}{
+\partial v_i(p,m_i)/\partial m_i
+}.
+\]
+
+Since
+\[
+\frac{\partial v_i(p,m_i)}{\partial p_k}
+=
+a_{ik}(p)+b_k(p)m_i
+\]
+and
+\[
+\frac{\partial v_i(p,m_i)}{\partial m_i}
+=
+b(p),
+\]
+we obtain
+\[
+x_k^i(p,m_i)
+=
+-
+\frac{
+a_{ik}(p)+b_k(p)m_i
+}{
+b(p)
+}.
+\]
+
+Therefore,
+\[
+\frac{\partial x_k^i(p,m_i)}{\partial m_i}
+=
+-
+\frac{b_k(p)}{b(p)}.
+\]
+
+This is identical for every consumer \(i\). Hence, the income expansion paths are parallel and straight.
+\end{proof}
+
+Sometimes the Gorman polar form is called \textbf{quasi-homotheticity}.
+
+Here, ``homotheticity'' means that income expansion paths are parallel. The word ``quasi'' indicates that the expansion paths may have different intercepts across consumers.
+
+
+
+implies that the slope of indifference curve is identical on a straight line , but the straight line does not necessarily path through the origin. Similar conditions are required for the aggregate supply functions to be defined .
+

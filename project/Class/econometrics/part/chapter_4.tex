@@ -1,0 +1,545 @@
+\chapter{Classical Linear Model}
+
+\section{Model and Assumptions}
+
+\[
+y_t = x_t' \beta + e_t, \quad t=1,\dots,T
+\]
+
+Matrix form:
+\[
+y = X\beta + e
+\]
+
+\subsection{Assumptions}
+
+\begin{itemize}
+    \item[A1] Linearity:
+    \[
+    E(y_t) = x_t' \beta
+    \]
+    \item[A2] $X$ is non-stochastic
+    \item[A3] $e_t$ independent
+    \item[A4] Homoskedasticity:
+    \[
+    V(e_t)=\sigma^2
+    \]
+    \item[A5] Full rank:
+    \[
+    \det(X'X) \neq 0
+    \]
+\end{itemize}
+
+\section{Least Squares Estimation}
+
+\[
+S = e'e = (y - X\beta)'(y - X\beta)
+\]
+
+First order condition:
+\[
+\frac{\partial S}{\partial \beta} = -2X'y + 2X'X\beta = 0
+\]
+
+OLS estimator:
+\[
+\hat{\beta} = (X'X)^{-1}X'y
+\]
+
+\section{Maximum Likelihood Estimation}
+
+Assume:
+\[
+e_t \sim N(0,\sigma^2)
+\]
+
+Log-likelihood:
+\[
+\ell = -\frac{T}{2}\ln(2\pi) - \frac{T}{2}\ln\sigma^2 - \frac{(y-X\beta)'(y-X\beta)}{2\sigma^2}
+\]
+
+MLE:
+\[
+\hat{\beta}_{ML} = (X'X)^{-1}X'y
+\]
+
+\[
+\hat{\sigma}^2 = \frac{(y-X\hat{\beta})'(y-X\hat{\beta})}{T}
+\]
+
+\section{Properties of $\hat{\beta}$}
+
+\subsection{Unbiasedness}
+
+\[
+E(\hat{\beta}) = \beta
+\]
+
+\subsection{Variance}
+
+\[
+V(\hat{\beta}) = \sigma^2 (X'X)^{-1}
+\]
+
+\subsection{Gauss-Markov Theorem}
+
+$\hat{\beta}$ is BLUE.
+
+\section{Variance Estimator}
+
+\[
+\hat{\sigma}^2 = \frac{(y-X\hat{\beta})'(y-X\hat{\beta})}{T}
+\]
+
+Biased:
+\[
+E(\hat{\sigma}^2) = \sigma^2 \frac{T-K}{T}
+\]
+
+Unbiased:
+\[
+s^2 = \frac{(y-X\hat{\beta})'(y-X\hat{\beta})}{T-K}
+\]
+
+\section{Large Sample Properties}
+
+\subsection{Consistency}
+
+\[
+\text{plim } \hat{\beta} = \beta
+\]
+
+\subsection{Asymptotic Variance}
+
+\[
+V(\hat{\beta}) \approx \frac{\sigma^2}{T}Q^{-1}
+\]
+
+\subsection{Asymptotic Normality}
+
+\[
+\hat{\beta} \sim N\left(\beta, s^2 (X'X)^{-1}\right)
+\]
+
+\section{Prediction}
+
+\[
+y_0 = X_0 \beta + e_0
+\]
+
+Prediction:
+\[
+\hat{y}_0 = X_0 \hat{\beta}
+\]
+
+\subsection{Prediction Variance}
+
+\[
+V(y_0 - \hat{y}_0) = \sigma^2 \left[1 + X_0 (X'X)^{-1} X_0'\right]
+\]
+
+\section{Goodness of Fit}
+
+\[
+SST = \sum (y_t - \bar{y})^2
+\]
+
+\[
+SSE = \sum (y_t - x_t'\hat{\beta})^2
+\]
+
+\[
+SSR = SST - SSE
+\]
+
+\subsection{$R^2$}
+
+\[
+R^2 = 1 - \frac{SSE}{SST}
+\]
+
+\subsection{Adjusted $R^2$}
+
+\[
+\bar{R}^2 = 1 - \frac{SSE/(T-K)}{SST/(T-1)}
+\]
+
+
+
+\section{Restricted Least Squares}
+
+Consider the linear restrictions
+\[
+R\beta = r,
+\]
+where $R$ is a $J \times K$ matrix with rank $J$, and $r$ is a $J \times 1$ vector.
+
+The restricted least squares estimator solves
+\[
+\min_{\beta} (y-X\beta)'(y-X\beta)
+\quad \text{subject to} \quad R\beta = r.
+\]
+
+The Lagrangian is
+\[
+\mathcal{L}
+=
+(y-X\beta)'(y-X\beta)
++
+\lambda'(r-R\beta).
+\]
+
+The first order condition is
+\[
+-2X'y + 2X'X\beta - R'\lambda = 0.
+\]
+
+Thus,
+\[
+\beta
+=
+(X'X)^{-1}X'y
++
+(X'X)^{-1}R'\frac{\lambda}{2}.
+\]
+
+Since
+\[
+\hat{\beta} = (X'X)^{-1}X'y,
+\]
+we have
+\[
+\beta
+=
+\hat{\beta}
++
+(X'X)^{-1}R'\frac{\lambda}{2}.
+\]
+
+Using the restriction $R\beta = r$,
+\[
+r
+=
+R\hat{\beta}
++
+R(X'X)^{-1}R'\frac{\lambda}{2}.
+\]
+
+Therefore,
+\[
+\frac{\lambda}{2}
+=
+\left[R(X'X)^{-1}R'\right]^{-1}
+(r-R\hat{\beta}).
+\]
+
+Hence, the restricted estimator is
+\[
+\hat{\beta}_R
+=
+\hat{\beta}
++
+(X'X)^{-1}R'
+\left[R(X'X)^{-1}R'\right]^{-1}
+(r-R\hat{\beta}).
+\]
+
+\section{Properties of the Restricted Estimator}
+
+\subsection{Unbiasedness}
+
+Taking expectations,
+\[
+E(\hat{\beta}_R)
+=
+\beta
++
+(X'X)^{-1}R'
+\left[R(X'X)^{-1}R'\right]^{-1}
+(r-R\beta).
+\]
+
+Therefore,
+\[
+E(\hat{\beta}_R)=\beta
+\quad \text{if} \quad R\beta=r.
+\]
+
+That is, $\hat{\beta}_R$ is unbiased if the imposed restrictions are true.
+
+If the restrictions are false, then
+\[
+E(\hat{\beta}_R) \neq \beta.
+\]
+
+\subsection{Variance}
+
+Define
+\[
+M^*
+=
+I_K
+-
+(X'X)^{-1}R'
+\left[R(X'X)^{-1}R'\right]^{-1}R.
+\]
+
+Then,
+\[
+\hat{\beta}_R
+=
+M^*\hat{\beta}
++
+(X'X)^{-1}R'
+\left[R(X'X)^{-1}R'\right]^{-1}r.
+\]
+
+Since the second term is non-random,
+\[
+V(\hat{\beta}_R)
+=
+M^* V(\hat{\beta}) M^{*'}.
+\]
+
+Using
+\[
+V(\hat{\beta}) = \sigma^2 (X'X)^{-1},
+\]
+we obtain
+\[
+V(\hat{\beta}_R)
+=
+\sigma^2
+\left[
+(X'X)^{-1}
+-
+(X'X)^{-1}R'
+\left[R(X'X)^{-1}R'\right]^{-1}
+R(X'X)^{-1}
+\right].
+\]
+
+Therefore,
+\[
+V(\hat{\beta}_R) \leq V(\hat{\beta}).
+\]
+
+The restricted estimator has smaller variance than the unrestricted estimator, but this advantage is meaningful only when the restrictions are true.
+
+\section{Hypothesis Testing with Linear Restrictions}
+
+Consider the hypothesis
+\[
+H_0: R\beta = r,
+\]
+against
+\[
+H_1: R\beta \neq r.
+\]
+
+Here, $J$ is the number of restrictions.
+
+Let
+\[
+SSE_u = (y-X\hat{\beta})'(y-X\hat{\beta})
+\]
+be the unrestricted sum of squared errors, and
+\[
+SSE_R = (y-X\hat{\beta}_R)'(y-X\hat{\beta}_R)
+\]
+be the restricted sum of squared errors.
+
+Since the restricted model imposes additional constraints,
+\[
+SSE_R \geq SSE_u.
+\]
+
+\subsection{F-Test}
+
+The test statistic is
+\[
+F
+=
+\frac{(SSE_R-SSE_u)/J}{SSE_u/(T-K)}.
+\]
+
+Under the null hypothesis,
+\[
+F \sim F(J,T-K).
+\]
+
+The testing rule is:
+\[
+\text{Reject } H_0
+\quad \text{if} \quad
+F > F_{\alpha}(J,T-K).
+\]
+
+Equivalently, using the unrestricted estimator,
+\[
+F
+=
+\frac{
+(R\hat{\beta}-r)'
+\left[R(X'X)^{-1}R'\right]^{-1}
+(R\hat{\beta}-r)/J
+}{
+s^2
+},
+\]
+where
+\[
+s^2 = \frac{SSE_u}{T-K}.
+\]
+
+\section{Special Case: One Linear Restriction}
+
+Suppose there is only one restriction, so that $J=1$.
+
+The null hypothesis is
+\[
+H_0: R\beta = r.
+\]
+
+The test statistic becomes
+\[
+t
+=
+\frac{R\hat{\beta}-r}
+{
+s\sqrt{R(X'X)^{-1}R'}
+}.
+\]
+
+Under $H_0$,
+\[
+t \sim t(T-K).
+\]
+
+Because
+\[
+t^2 \sim F(1,T-K),
+\]
+the one-restriction $t$-test is equivalent to the corresponding $F$-test.
+
+\section{Testing a Single Coefficient}
+
+A common special case is
+\[
+H_0: \beta_i = r.
+\]
+
+Then the test statistic is
+\[
+t
+=
+\frac{\hat{\beta}_i-r}{se(\hat{\beta}_i)}.
+\]
+
+Under the null hypothesis,
+\[
+t \sim t(T-K).
+\]
+
+The confidence interval for $\beta_i$ is
+\[
+\hat{\beta}_i
+\pm
+t_{\alpha/2,T-K} \, se(\hat{\beta}_i).
+\]
+
+If $r$ lies outside this interval, then $H_0$ is rejected.
+
+\section{Likelihood Ratio Test}
+
+Under normality,
+\[
+e \sim N(0,\sigma^2 I_T).
+\]
+
+The likelihood ratio statistic compares the unrestricted and restricted maximized likelihoods:
+\[
+\lambda
+=
+\frac{L_u^*}{L_R^*}.
+\]
+
+Since the restricted model cannot fit better than the unrestricted model,
+\[
+\lambda \geq 1.
+\]
+
+Using the maximum likelihood variance estimators,
+\[
+\hat{\sigma}_u^2
+=
+\frac{SSE_u}{T},
+\qquad
+\hat{\sigma}_R^2
+=
+\frac{SSE_R}{T},
+\]
+we obtain
+\[
+\lambda
+=
+\left(
+\frac{\hat{\sigma}_R^2}{\hat{\sigma}_u^2}
+\right)^{T/2}.
+\]
+
+Since
+\[
+\frac{\hat{\sigma}_R^2}{\hat{\sigma}_u^2}
+=
+\frac{SSE_R}{SSE_u},
+\]
+the likelihood ratio test is closely related to the $F$-test.
+
+\section{Asymptotic Tests}
+
+For large samples, we can use asymptotic distributions.
+
+Under $H_0$,
+\[
+\frac{
+(R\hat{\beta}-r)'
+\left[R(X'X)^{-1}R'\right]^{-1}
+(R\hat{\beta}-r)
+}{
+s^2
+}
+\sim
+\chi^2(J).
+\]
+
+Thus, the asymptotic Wald test statistic is
+\[
+W
+=
+\frac{
+(R\hat{\beta}-r)'
+\left[R(X'X)^{-1}R'\right]^{-1}
+(R\hat{\beta}-r)
+}{
+s^2
+}.
+\]
+
+The decision rule is
+\[
+\text{Reject } H_0
+\quad \text{if} \quad
+W > \chi^2_{\alpha}(J).
+\]
+
+For a single restriction,
+\[
+\frac{R\hat{\beta}-r}
+{
+s\sqrt{R(X'X)^{-1}R'}
+}
+\approx N(0,1).
+\]
+
+Therefore, in large samples, the $t$-test can be approximated by a standard normal test.
